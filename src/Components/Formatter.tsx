@@ -27,7 +27,7 @@ import {
 	useEffect,
 	useState,
 } from "react"
-import type { Config, ESM } from "../types"
+import Collapsable from "./Collapsable"
 import { useConfig } from "./ConfigProvider"
 import ESMs from "./ESMs"
 
@@ -35,38 +35,6 @@ type NotificationData = {
 	color: "green" | "red" | "yellow"
 	title: string
 	text: string
-}
-
-const Collapsable = ({
-	children,
-	title,
-	...rest
-}: Omit<CollapseProps, "in"> & {
-	children: ReactNode
-	title: string
-}) => {
-	const [collapsed, { toggle }] = useDisclosure(false)
-
-	return (
-		<>
-			<Group>
-				<Text>{title}</Text>
-				<ActionIcon onClick={toggle}>
-					{!collapsed ? (
-						<IconEye style={{ width: "70%", height: "70%" }} stroke={1.5} />
-					) : (
-						<IconEyeClosed
-							style={{ width: "70%", height: "70%" }}
-							stroke={1.5}
-						/>
-					)}
-				</ActionIcon>
-			</Group>
-			<Collapse {...rest} in={collapsed}>
-				{children}
-			</Collapse>
-		</>
-	)
 }
 
 const Formatter = () => {
@@ -195,15 +163,15 @@ const Formatter = () => {
 		try {
 			// @ts-expect-error
 			const count = await window.electronAPI.write(templatesContent)
+			// @ts-expect-error
+			const formatted = await window.electronAPI.format(templatesContent)
+			setTemplatesFormattedContent(formatted.templates)
+			setMorphsContent(formatted.morphs)
 			setNotification({
 				color: "green",
 				title: "Success",
 				text: `Successfully written to ${count} ESMs`,
 			})
-			// @ts-expect-error
-			const formatted = await window.electronAPI.format(templatesContent)
-			setTemplatesFormattedContent(formatted.templates)
-			setMorphsContent(formatted.morphs)
 		} catch (error) {
 			console.error("Error while writing:", error)
 			setNotification({

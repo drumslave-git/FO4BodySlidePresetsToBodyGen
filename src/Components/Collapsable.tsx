@@ -1,0 +1,48 @@
+import {
+	ActionIcon,
+	Collapse,
+	type CollapseProps,
+	Group,
+	type GroupProps,
+	Text,
+} from "@mantine/core"
+import { useDisclosure } from "@mantine/hooks"
+import { IconEye, IconEyeClosed } from "@tabler/icons-react"
+import type { ReactNode } from "react"
+
+const Collapsable = ({
+	children,
+	title,
+	titleProps,
+	collapseProps,
+}: {
+	children: ReactNode
+	title: string
+	titleProps?: GroupProps
+	collapseProps?: Omit<CollapseProps, "in">
+}) => {
+	const [collapsed, { toggle }] = useDisclosure(false)
+
+	return (
+		<>
+			<Group {...titleProps}>
+				<Text>{title}</Text>
+				<ActionIcon onClick={toggle}>
+					{!collapsed ? (
+						<IconEye style={{ width: "70%", height: "70%" }} stroke={1.5} />
+					) : (
+						<IconEyeClosed
+							style={{ width: "70%", height: "70%" }}
+							stroke={1.5}
+						/>
+					)}
+				</ActionIcon>
+			</Group>
+			<Collapse {...collapseProps} in={collapsed}>
+				{children}
+			</Collapse>
+		</>
+	)
+}
+
+export default Collapsable

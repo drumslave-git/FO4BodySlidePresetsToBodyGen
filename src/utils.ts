@@ -80,7 +80,6 @@ const structureData = (content: string) => {
 			acc[morphsSettings] = acc[morphsSettings] || []
 			acc[morphsSettings].push({
 				name,
-				generatedName: `${morphsSettings.replace(/[^a-zA-Z0-9]/g, "_")}_${acc[morphsSettings].length + 1}`,
 				value,
 			})
 			preservedName = "" // Reset preserved name after use
@@ -97,8 +96,8 @@ export const formatINIs = (content: string): FormattedData => {
 			acc.push(`#morphs=${morphs}`)
 			acc.push(
 				templates
-					.reduce((templateAcc, { name, generatedName, value }) => {
-						templateAcc.push(`#${name}\n${generatedName}=${value}`)
+					.reduce((templateAcc, { name, value }) => {
+						templateAcc.push(`${name}=${value}`)
 						return templateAcc
 					}, [])
 					.join("\n\n"),
@@ -110,9 +109,7 @@ export const formatINIs = (content: string): FormattedData => {
 	const morphsContent = Object.entries(structuredData)
 		.reduce((acc, [morphs, templates]) => {
 			for (const morph of morphs.split(";")) {
-				const names = templates
-					.map((template) => template.generatedName)
-					.join("|")
+				const names = templates.map((template) => template.name).join("|")
 				acc.push(`${morph}=${names}`)
 			}
 			return acc
@@ -162,8 +159,8 @@ export const validateESMs = (from: string, content: string) => {
 	return ESMs
 }
 
-export const write = (templatesPath: string, content: string) => {
-	const ESMs = resolveESMs(templatesPath)
+export const write = (from: string, content: string) => {
+	const ESMs = resolveESMs(from)
 	const formattedData = formatINIs(content)
 
 	let count = 0

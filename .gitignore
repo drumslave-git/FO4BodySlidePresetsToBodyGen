@@ -93,3 +93,5 @@ out/
 
 data/*
 !data/.gitkeep
+output/*
+!output/.gitkeep
