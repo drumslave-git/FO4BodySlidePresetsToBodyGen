@@ -18,7 +18,10 @@ contextBridge.exposeInMainWorld("electronAPI", {
 		ipcRenderer.invoke("templates:validate", content),
 	format: (content: string): Promise<FormattedData> =>
 		ipcRenderer.invoke("format", content),
-	write: (content: string): Promise<number> =>
-		ipcRenderer.invoke("write", content),
+	write: (from: string, content: string, local = false): Promise<number> =>
+		ipcRenderer.invoke("write", from, content, local),
+	zipOutput: (): Promise<void> => ipcRenderer.invoke("zipOutput"),
+	pathResolve: (...args: any[]): Promise<string> =>
+		ipcRenderer.invoke("path:resolve", ...args),
 	navigate: (location: Location) => ipcRenderer.send("navigate", location),
 })

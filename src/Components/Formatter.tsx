@@ -1,13 +1,8 @@
 import {
-	ActionIcon,
 	Alert,
-	Badge,
 	Box,
 	Button,
-	Card,
 	Code,
-	Collapse,
-	type CollapseProps,
 	Container,
 	Group,
 	LoadingOverlay,
@@ -16,26 +11,14 @@ import {
 	Paper,
 	Text,
 	Textarea,
-	Tooltip,
 } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import { IconEye, IconEyeClosed } from "@tabler/icons-react"
-import {
-	type ChangeEvent,
-	type ReactNode,
-	useCallback,
-	useEffect,
-	useState,
-} from "react"
+import { type ChangeEvent, useCallback, useEffect, useState } from "react"
+
+import type { NotificationData } from "../types"
 import Collapsable from "./Collapsable"
 import { useConfig } from "./ConfigProvider"
 import ESMs from "./ESMs"
-
-type NotificationData = {
-	color: "green" | "red" | "yellow"
-	title: string
-	text: string
-}
 
 const Formatter = () => {
 	const { templatesFile: initialTemplatesFile } = useConfig()
@@ -162,7 +145,10 @@ const Formatter = () => {
 		setLoading(true)
 		try {
 			// @ts-expect-error
-			const count = await window.electronAPI.write(templatesContent)
+			const count = await window.electronAPI.write(
+				templatesFile,
+				templatesContent,
+			)
 			// @ts-expect-error
 			const formatted = await window.electronAPI.format(templatesContent)
 			setTemplatesFormattedContent(formatted.templates)
@@ -182,7 +168,7 @@ const Formatter = () => {
 		} finally {
 			setLoading(false)
 		}
-	}, [readyToWrite, templatesContent])
+	}, [readyToWrite, templatesFile, templatesContent])
 
 	return (
 		<>

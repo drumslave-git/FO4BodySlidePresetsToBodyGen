@@ -1,6 +1,9 @@
 import fs from "node:fs"
 import path from "node:path"
 import { XMLParser } from "fast-xml-parser"
+import { zip } from "zip-a-folder"
+
+import { BODYGEN_RELATIVE_PATH } from "./consts"
 import type {
 	BodySlidePreset,
 	BodySlidePresetParsed,
@@ -27,12 +30,13 @@ export const validateTemplates = (content: string) => {
 export const resolveESMs = (from: string): ESM[] => {
 	let dir = from
 	let rootDir = from
-	if (from.endsWith(".ini")) {
+	const fromINI = from.endsWith(".ini")
+	if (fromINI) {
 		dir = path.dirname(from)
 		rootDir = path.resolve(dir, "..")
 	}
 
-	return fs
+	const ESMs: ESM[] = fs
 		.readdirSync(rootDir)
 		.filter((item) => item.endsWith(".esm"))
 		.map((item) => {
@@ -53,6 +57,51 @@ export const resolveESMs = (from: string): ESM[] => {
 				},
 			}
 		})
+
+	if (fromINI) {
+		return ESMs
+	}
+	return ESMs.map((esm) => ({
+		...esm,
+		path: path.resolve(from, ...BODYGEN_RELATIVE_PATH, esm.name),
+	}))
+}
+
+export const validateESMs = (from: string, content: string) => {
+	let ESMs = resolveESMs(from)
+	const formattedData = formatINIs(content)
+	ESMs = ESMs.map((esm) => {
+		const statuses = {
+			templates: "",
+			morphs: "",
+		}
+		for (const [key, value] of Object.entries(formattedData)) {
+			const filePath = path.resolve(esm.path, `${key}.ini`)
+			if (fs.existsSync(filePath)) {
+				statuses[key as keyof typeof formattedData] =
+					fs.readFileSync(filePath).toString() === value
+						? "up-to-date"
+						: "will be updated"
+			} else {
+				statuses[key as keyof typeof formattedData] = "will be created"
+			}
+		}
+		return {
+			...esm,
+			filesStatus: {
+				templates: {
+					color: statuses.templates === "up-to-date" ? "green" : "yellow",
+					text: statuses.templates,
+				},
+				morphs: {
+					color: statuses.morphs === "up-to-date" ? "green" : "yellow",
+					text: statuses.morphs,
+				},
+			},
+		}
+	})
+
+	return ESMs
 }
 
 type StructuredData = Record<string, Record<string, string>[]>
@@ -122,50 +171,28 @@ export const formatINIs = (content: string): FormattedData => {
 	}
 }
 
-export const validateESMs = (from: string, content: string) => {
-	let ESMs = resolveESMs(from)
-	const formattedData = formatINIs(content)
-	ESMs = ESMs.map((esm) => {
-		const statuses = {
-			templates: "",
-			morphs: "",
-		}
-		for (const [key, value] of Object.entries(formattedData)) {
-			const filePath = path.resolve(esm.path, `${key}.ini`)
-			if (fs.existsSync(filePath)) {
-				statuses[key as keyof typeof formattedData] =
-					fs.readFileSync(filePath).toString() === value
-						? "up-to-date"
-						: "will be updated"
-			} else {
-				statuses[key as keyof typeof formattedData] = "will be created"
-			}
-		}
-		return {
-			...esm,
-			filesStatus: {
-				templates: {
-					color: statuses.templates === "up-to-date" ? "green" : "yellow",
-					text: statuses.templates,
-				},
-				morphs: {
-					color: statuses.morphs === "up-to-date" ? "green" : "yellow",
-					text: statuses.morphs,
-				},
-			},
-		}
-	})
-
-	return ESMs
-}
-
-export const write = (from: string, content: string) => {
+export const write = (from: string, content: string, local = false) => {
 	const ESMs = resolveESMs(from)
 	const formattedData = formatINIs(content)
-
+	const localPath = path.resolve(
+		__dirname,
+		"..",
+		"..",
+		"output",
+		...BODYGEN_RELATIVE_PATH,
+	)
+	if (!fs.existsSync(localPath)) {
+		fs.mkdirSync(localPath, { recursive: true })
+	}
 	let count = 0
 	for (const esm of ESMs) {
-		const esmPath = esm.path
+		let esmPath = esm.path
+		if (local) {
+			esmPath = path.resolve(localPath, esm.name)
+		}
+		if (!fs.existsSync(esmPath)) {
+			fs.mkdirSync(esmPath, { recursive: true })
+		}
 		const templatesFilePath = path.resolve(esmPath, "templates.ini")
 		const morphsFilePath = path.resolve(esmPath, "morphs.ini")
 
@@ -234,4 +261,8 @@ export const resolveBodySlidePresets = (
 				}
 			}
 		})
+}
+
+export const zipFolder = async (source: string, destination: string) => {
+	await zip(source, destination)
 }

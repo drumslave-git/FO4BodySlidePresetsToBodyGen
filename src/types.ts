@@ -43,3 +43,9 @@ export type BodySlidePresetParsed = {
 	filename: string
 	data: BodySlidePreset[] | string
 }
+
+export type NotificationData = {
+	color: "green" | "red" | "yellow"
+	title: string
+	text: string
+}

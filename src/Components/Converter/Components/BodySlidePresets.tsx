@@ -59,6 +59,7 @@ const Filter = ({
 				clearable
 			/>
 			<Input
+				data-autofocus
 				value={q}
 				onChange={(e: ChangeEvent<HTMLInputElement>) => setQ(e.target.value)}
 				leftSection={<IconSearch size={16} />}

@@ -4,13 +4,19 @@ import {
 	Code,
 	Container,
 	Group,
+	LoadingOverlay,
 	Modal,
+	Notification,
 	Paper,
 	Text,
 } from "@mantine/core"
 import { useCallback, useEffect, useState } from "react"
 
-import type { BodySlidePreset, BodySlidePresetParsed } from "../../types"
+import type {
+	BodySlidePreset,
+	BodySlidePresetParsed,
+	NotificationData,
+} from "../../types"
 import { useConfig } from "../ConfigProvider"
 import ESMs from "../ESMs"
 import BodySlidePresets from "./Components/BodySlidePresets"
@@ -28,10 +34,16 @@ const Converter = () => {
 	const [morphsContent, setMorphsContent] = useState<string>("")
 	const [editedMorphIndex, setEditedMorphIndex] = useState<number | null>(null)
 	const [validationError, setValidationError] = useState<string>("")
+	const [readyToWrite, setReadyToWrite] = useState(false)
+	const [loading, setLoading] = useState(false)
+	const [notification, setNotification] = useState<NotificationData | null>(
+		null,
+	)
 
 	useEffect(() => {
 		if (!dataFolder) {
 			setBodySlidePresets([])
+			setMorphs([])
 			return
 		}
 		// @ts-expect-error
@@ -73,6 +85,10 @@ const Converter = () => {
 		void process(templates)
 	}, [morphs])
 
+	useEffect(() => {
+		setReadyToWrite(!validationError && !!templatesContent && !!morphsContent)
+	}, [validationError, templatesContent, morphsContent])
+
 	const bodySlidePresetsModalOpen = useCallback((index: number) => {
 		setEditedMorphIndex(index)
 	}, [])
@@ -106,8 +122,58 @@ const Converter = () => {
 		[editedMorphIndex, morphs, bodySlidePresetsModalClose],
 	)
 
+	const onWrite = useCallback(async () => {
+		if (!readyToWrite) return
+		setLoading(true)
+		try {
+			// @ts-expect-error
+			const count = await window.electronAPI.write(
+				dataFolder,
+				templatesContent,
+				true,
+			)
+			setNotification({
+				color: "green",
+				title: "Success",
+				text: `Successfully written to ${count} ESMs`,
+			})
+		} catch (error) {
+			console.error("Error while writing:", error)
+			setNotification({
+				color: "red",
+				title: "Error",
+				text: `An error occurred while writing to the ESMs: ${error.message}}`,
+			})
+		} finally {
+			setLoading(false)
+		}
+	}, [readyToWrite, templatesContent])
+
+	const onZip = useCallback(async () => {
+		setLoading(true)
+		try {
+			// @ts-expect-error
+			await window.electronAPI.zipOutput()
+			setNotification({
+				color: "green",
+				title: "Success",
+				text: "Successfully zipped the output",
+			})
+		} catch (error) {
+			console.error("Error while zipping:", error)
+			setNotification({
+				color: "red",
+				title: "Error",
+				text: `An error occurred while zipping the output: ${error.message}}`,
+			})
+		} finally {
+			setLoading(false)
+		}
+	}, [])
+
 	return (
 		<>
+			<LoadingOverlay zIndex={1000} visible={loading} pos="fixed" />
 			<Modal
 				opened={editedMorphIndex !== null}
 				onClose={bodySlidePresetsModalClose}
@@ -122,11 +188,28 @@ const Converter = () => {
 				/>
 			</Modal>
 			<Container>
+				{notification && (
+					<Notification
+						color={notification.color}
+						title={notification.title}
+						onClose={() => setNotification(null)}
+					>
+						{notification.text}
+					</Notification>
+				)}
 				<Paper p="md" shadow="xs" withBorder>
-					<Text>{dataFolder}</Text>
 					<Group>
+						<Text>{dataFolder}</Text>
 						<Button disabled={isPicking} onClick={onPathSelection}>
 							Select Data Folder
+						</Button>
+					</Group>
+					<Group mt="md">
+						<Button color="orange" onClick={onZip}>
+							Zip Output
+						</Button>
+						<Button color="orange" disabled={!readyToWrite} onClick={onWrite}>
+							Write
 						</Button>
 					</Group>
 				</Paper>
@@ -154,7 +237,7 @@ const Converter = () => {
 						<Code block>{morphsContent}</Code>
 					</Paper>
 				)}
-				<Paper>
+				<Paper mt="md" p="md" shadow="xs" withBorder>
 					<ESMs from={dataFolder} content={templatesContent} />
 				</Paper>
 			</Container>

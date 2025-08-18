@@ -62,6 +62,7 @@
 		"fast-xml-parser": "^5.2.5",
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
-		"react-router": "^7.8.1"
+		"react-router": "^7.8.1",
+		"zip-a-folder": "^3.1.9"
 	}
 }
