@@ -1,5 +1,6 @@
 import {
 	ActionIcon,
+	type ActionIconProps,
 	Collapse,
 	type CollapseProps,
 	Group,
@@ -7,7 +8,7 @@ import {
 	Text,
 } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import { IconEye, IconEyeClosed } from "@tabler/icons-react"
+import { IconEye, IconEyeClosed, type IconProps } from "@tabler/icons-react"
 import type { ReactNode } from "react"
 
 const Collapsable = ({
@@ -15,11 +16,13 @@ const Collapsable = ({
 	title,
 	titleProps,
 	collapseProps,
+	iconProps,
 }: {
 	children: ReactNode
 	title: string
 	titleProps?: GroupProps
 	collapseProps?: Omit<CollapseProps, "in">
+	iconProps?: Omit<ActionIconProps, "onClick">
 }) => {
 	const [collapsed, { toggle }] = useDisclosure(false)
 
@@ -27,7 +30,7 @@ const Collapsable = ({
 		<>
 			<Group {...titleProps}>
 				<Text>{title}</Text>
-				<ActionIcon onClick={toggle}>
+				<ActionIcon {...iconProps} onClick={toggle}>
 					{!collapsed ? (
 						<IconEye style={{ width: "70%", height: "70%" }} stroke={1.5} />
 					) : (

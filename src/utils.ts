@@ -3,16 +3,22 @@ import path from "node:path"
 import { XMLParser } from "fast-xml-parser"
 import { zip } from "zip-a-folder"
 
-import { BODYGEN_RELATIVE_PATH } from "./consts"
+import { BODYGEN_RELATIVE_PATH, SLIDERS_RELATIVE_PATH } from "./consts"
 import type {
 	BodySlidePreset,
 	BodySlidePresetParsed,
 	ESM,
 	FormattedData,
+	Slider,
 } from "./types"
 
+const toCRLF = (text: string) => text.replace(/\r?\n/g, "\r\n")
+
+const writeFileSync = (content: string, filePath: string) =>
+	fs.writeFileSync(toCRLF(content), filePath)
+
 export const validateTemplates = (content: string) => {
-	const lines = content.split("\n")
+	const lines = content.split(/\n\r?/)
 	const morphsSettingIndex = lines.findIndex((line) =>
 		line.startsWith("#morphs="),
 	)
@@ -109,7 +115,7 @@ type StructuredData = Record<string, Record<string, string>[]>
 const structureData = (content: string) => {
 	const lines = content
 		.toString()
-		.split("\n")
+		.split(/\n\r?/)
 		.map((item) => item.trim())
 		.filter((line) => !!line)
 	let preservedName = ""
@@ -196,12 +202,56 @@ export const write = (from: string, content: string, local = false) => {
 		const templatesFilePath = path.resolve(esmPath, "templates.ini")
 		const morphsFilePath = path.resolve(esmPath, "morphs.ini")
 
-		fs.writeFileSync(templatesFilePath, formattedData.templates)
-		fs.writeFileSync(morphsFilePath, formattedData.morphs)
+		writeFileSync(templatesFilePath, formattedData.templates)
+		writeFileSync(morphsFilePath, formattedData.morphs)
 		count++
 	}
 
 	return count
+}
+
+export const resolveSliders = (dataFolder: string) => {
+	let results: Slider[] = []
+
+	const slidersDir = path.resolve(dataFolder, ...SLIDERS_RELATIVE_PATH)
+	const folders = fs
+		.readdirSync(path.resolve(dataFolder, ...SLIDERS_RELATIVE_PATH))
+		.filter((item) => fs.statSync(path.resolve(slidersDir, item)).isDirectory())
+
+	for (const folder of folders) {
+		const slidersFilePath = path.resolve(slidersDir, folder, "sliders.json")
+		if (!fs.existsSync(slidersFilePath)) continue
+		results = [
+			...results,
+			...JSON.parse(fs.readFileSync(slidersFilePath).toString()),
+		]
+	}
+
+	return results
+}
+
+export const validateSliders = (
+	dataFolder: string,
+	sliders: BodySlidePreset["sliders"],
+) => {
+	const supportedSliders = resolveSliders(dataFolder)
+	return sliders
+		.map((slider) => {
+			const supportedSlider = supportedSliders.find(
+				(supportedSlider) => supportedSlider.morph === slider.name,
+			)
+			if (!supportedSlider) {
+				return `Slider "${slider.name}" is not supported.`
+			}
+			if (
+				slider.value < supportedSlider.minimum ||
+				slider.value > supportedSlider.maximum
+			) {
+				return `Slider "${slider.name}" value ${slider.value} is out of range (${supportedSlider.minimum} - ${supportedSlider.maximum}).`
+			}
+			return null
+		})
+		.filter(Boolean)
 }
 
 export const resolveBodySlidePresets = (
@@ -236,18 +286,21 @@ export const resolveBodySlidePresets = (
 							: [{ name: preset.Group.name }],
 						sliders: preset.SetSlider.map((slider: any) => ({
 							...slider,
-							value: Number(slider.value),
+							value: Number(slider.value) / 100,
 						})),
 						bodyGen: "",
+						errors: [],
+						valid: true,
 					}
 					item.bodyGen = `${item.name}=`
 					item.bodyGen += item.sliders
 						.reduce((acc, slider) => {
-							acc.push(`${slider.name}@${slider.value / 100}`)
+							acc.push(`${slider.name}@${slider.value}`)
 							return acc
 						}, [])
 						.join(",")
-
+					item.errors = validateSliders(dataFolder, item.sliders)
+					item.valid = item.errors.length === 0
 					return item
 				})
 				return {

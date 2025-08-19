@@ -4,9 +4,11 @@ import {
 	Card,
 	Group,
 	Input,
+	Modal,
 	Stack,
-	Text,
+	Textarea,
 } from "@mantine/core"
+import { useDisclosure } from "@mantine/hooks"
 import { IconMinus, IconPlus, IconSettings } from "@tabler/icons-react"
 import {
 	type ChangeEvent,
@@ -31,6 +33,13 @@ const Morphs = ({
 	setMorphs: Dispatch<SetStateAction<Morph[]>>
 	onSelectBodySlidePresets: (index: number) => void
 }) => {
+	const [
+		showTemplatesModal,
+		{ open: openTemplatesModal, close: closeTemplatesModal },
+	] = useDisclosure(false)
+
+	const templatesRef = useRef<HTMLTextAreaElement>(null)
+
 	const onRuleChange = useCallback(
 		(morphIndex: number, ruleIndex: number, value?: string) => {
 			const updatedMorphs = [...morphs]
@@ -61,15 +70,32 @@ const Morphs = ({
 		[setMorphs],
 	)
 
+	// const onTemplatesPaste = useCallback(() => {
+	//   if (!templatesRef.current) return
+	// })
+
 	return (
 		<>
+			{/*<Modal*/}
+			{/*	opened={showTemplatesModal}*/}
+			{/*	onClose={closeTemplatesModal}*/}
+			{/*	title="Paste Templates"*/}
+			{/*>*/}
+			{/*	<Textarea*/}
+			{/*		minRows={10}*/}
+			{/*		autosize*/}
+			{/*		placeholder="Paste your templates here"*/}
+			{/*		ref={templatesRef}*/}
+			{/*	/>*/}
+			{/*	<Button onClick={onTemplatesPaste}>Close</Button>*/}
+			{/*</Modal>*/}
 			{morphs.map((morph, index) => (
-				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+				// biome-ignore lint/suspicious/noArrayIndexKey: index
 				<Card key={index}>
 					<Group wrap="nowrap">
 						<Stack w="100%">
 							{morph.rules.map((rule, ruleIndex) => (
-								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+								// biome-ignore lint/suspicious/noArrayIndexKey: index
 								<Group key={ruleIndex} wrap="nowrap">
 									<Input
 										value={rule}
@@ -109,9 +135,12 @@ const Morphs = ({
 				</Card>
 			))}
 			<Card>
-				<Button leftSection={<IconPlus />} fullWidth onClick={onAddMorph}>
-					Add Morph
-				</Button>
+				<Group>
+					<Button leftSection={<IconPlus />} onClick={onAddMorph}>
+						Add Morph
+					</Button>
+					{/*<Button onClick={openTemplatesModal}>Paste Templates</Button>*/}
+				</Group>
 			</Card>
 		</>
 	)

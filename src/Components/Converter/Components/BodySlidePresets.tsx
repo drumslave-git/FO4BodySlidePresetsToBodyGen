@@ -1,19 +1,20 @@
 import {
-	ActionIcon,
-	Badge,
 	Box,
 	Button,
 	Card,
+	Checkbox,
 	CloseButton,
 	Code,
 	Divider,
 	Group,
 	Input,
+	List,
 	MultiSelect,
-	Switch,
+	SegmentedControl,
+	Select,
 	Text,
 } from "@mantine/core"
-import { IconMinus, IconPlus, IconSearch } from "@tabler/icons-react"
+import { IconSearch } from "@tabler/icons-react"
 import {
 	type ChangeEvent,
 	Fragment,
@@ -29,6 +30,7 @@ import Collapsable from "../../Collapsable"
 export type FilterValue = {
 	q: string
 	selected: string[]
+	validatedOnly: boolean
 }
 
 const Filter = ({
@@ -40,39 +42,57 @@ const Filter = ({
 }) => {
 	const [selected, setSelected] = useState([])
 	const [q, setQ] = useState("")
+	const [validatedOnly, setValidatedOnly] = useState(false)
+	const [segmentedControlValue, setSegmentedControlValue] = useState("all")
 
 	useEffect(() => {
-		onFilter({ q, selected })
-	}, [onFilter, selected, q])
+		setValidatedOnly(segmentedControlValue === "valid")
+	}, [segmentedControlValue])
+
+	useEffect(() => {
+		onFilter({ q, selected, validatedOnly })
+	}, [onFilter, selected, q, validatedOnly])
 
 	const onToggle = useCallback((value: string[]) => {
 		setSelected(value)
 	}, [])
 
 	return (
-		<Group grow>
-			<MultiSelect
-				data={options}
-				value={selected}
-				onChange={onToggle}
-				searchable
-				clearable
+		<>
+			<Group grow mb="md">
+				<MultiSelect
+					data={options}
+					value={selected}
+					onChange={onToggle}
+					searchable
+					clearable
+					placeholder="Groups"
+				/>
+				<Input
+					data-autofocus
+					value={q}
+					onChange={(e: ChangeEvent<HTMLInputElement>) => setQ(e.target.value)}
+					leftSection={<IconSearch size={16} />}
+					rightSectionPointerEvents="all"
+					placeholder="Search"
+					rightSection={
+						<CloseButton
+							aria-label="Clear input"
+							onClick={() => setQ("")}
+							style={{ display: q ? undefined : "none" }}
+						/>
+					}
+				/>
+			</Group>
+			<SegmentedControl
+				value={segmentedControlValue}
+				onChange={setSegmentedControlValue}
+				data={[
+					{ label: "All", value: "all" },
+					{ label: "Valid", value: "valid" },
+				]}
 			/>
-			<Input
-				data-autofocus
-				value={q}
-				onChange={(e: ChangeEvent<HTMLInputElement>) => setQ(e.target.value)}
-				leftSection={<IconSearch size={16} />}
-				rightSectionPointerEvents="all"
-				rightSection={
-					<CloseButton
-						aria-label="Clear input"
-						onClick={() => setQ("")}
-						style={{ display: q ? undefined : "none" }}
-					/>
-				}
-			/>
-		</Group>
+		</>
 	)
 }
 
@@ -93,7 +113,13 @@ const PresetToggler = ({
 		onTogglePreset(preset)
 	}, [preset, onTogglePreset])
 
-	return <Switch checked={selected} onChange={onChange} />
+	return (
+		<Checkbox
+			checked={selected}
+			onChange={onChange}
+			disabled={!!preset.errors.length}
+		/>
+	)
 }
 
 const BodySlidePresets = ({
@@ -140,21 +166,32 @@ const BodySlidePresets = ({
 
 	const onFilter = useCallback(
 		(value: FilterValue) => {
-			const { q, selected } = value
+			const { q, selected, validatedOnly } = value
 			const filtered = items
 				.map((preset) => {
 					if (typeof preset.data === "string") {
 						return preset
 					}
+					const matchFilenameQuery =
+						!q || preset.filename.toLowerCase().includes(q.toLowerCase())
+					if (!matchFilenameQuery) {
+						return { ...preset, data: [] }
+					}
 					return {
 						...preset,
 						data: preset.data.filter((item) => {
-							const matchQuery =
+							if (validatedOnly && !item.valid) {
+								return false
+							}
+							const matchItemNameQuery =
 								!q || item.name.toLowerCase().includes(q.toLowerCase())
-							const matchGroup =
+							if (!matchItemNameQuery) {
+								return false
+							}
+							return (
 								selected.length === 0 ||
 								item.groups.some((group) => selected.includes(group.name))
-							return matchQuery && matchGroup
+							)
 						}),
 					}
 				})
@@ -184,7 +221,7 @@ const BodySlidePresets = ({
 			<Filter options={filterOptions} onFilter={onFilter} />
 			{filteredItems.map((item) => (
 				<Fragment key={item.filename}>
-					<Text>{item.filename}</Text>
+					<Text size="xs">{item.filename}</Text>
 					{typeof item.data === "string" && (
 						<Text size="sm" c="dimmed" key={item.filename}>
 							{item.data}
@@ -193,22 +230,41 @@ const BodySlidePresets = ({
 					{typeof item.data !== "string" &&
 						item.data.map((preset) => (
 							<Card key={preset.name}>
-								<Group>
-									<PresetToggler
-										preset={preset}
-										selectedPresets={selectedItems}
-										onTogglePreset={onTogglePreset}
+								<Group justify="space-between">
+									<Group>
+										<PresetToggler
+											preset={preset}
+											selectedPresets={selectedItems}
+											onTogglePreset={onTogglePreset}
+										/>
+										<Text size="sm">{preset.name}</Text>
+									</Group>
+									<Select
+										data={preset.groups.map((group) => group.name)}
+										placeholder="Groups"
+										size="sm"
 									/>
-									<Text>{preset.name}</Text>
-									{preset.groups.map((group) => (
-										<Badge key={group.name} size="sm">
-											{group.name}
-										</Badge>
-									))}
 								</Group>
-								<Collapsable title="BodyGen" titleProps={{ mt: "md" }}>
-									<Code block>{preset.bodyGen}</Code>
-								</Collapsable>
+								<Group>
+									<Collapsable
+										title={`BodyGen${!preset.valid ? ` with errors` : ""}`}
+										titleProps={{
+											mt: "md",
+										}}
+										iconProps={{
+											color: !preset.valid ? "red" : undefined,
+											size: "sm",
+										}}
+									>
+										<List size="xs">
+											{preset.errors.map((error, index) => (
+												// biome-ignore lint/suspicious/noArrayIndexKey: index
+												<List.Item key={index}>{error}</List.Item>
+											))}
+										</List>
+										<Code block>{preset.bodyGen}</Code>
+									</Collapsable>
+								</Group>
 							</Card>
 						))}
 				</Fragment>
