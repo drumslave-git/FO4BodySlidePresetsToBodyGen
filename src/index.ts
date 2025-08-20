@@ -1,9 +1,18 @@
 import fs from "node:fs"
 import path from "node:path"
-import { app, BrowserWindow, dialog, ipcMain, Menu, session } from "electron"
+import {
+	app,
+	BrowserWindow,
+	dialog,
+	ipcMain,
+	Menu,
+	nativeImage,
+	session,
+} from "electron"
 import type { Location } from "react-router"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
-
+// @ts-expect-error
+import icon from "./images/icon.png"
 import type { Config } from "./types"
 import {
 	formatINIs,
@@ -105,10 +114,11 @@ const createWindow = (): void => {
 		webPreferences: {
 			preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
 		},
+		icon: nativeImage.createFromDataURL(icon),
 	})
 
 	// and load the index.html of the app.
-	mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
+	void mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
 
 	// Open the DevTools.
 	!app.isPackaged && mainWindow.webContents.openDevTools()
