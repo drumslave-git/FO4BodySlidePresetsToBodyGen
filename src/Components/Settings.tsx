@@ -1,6 +1,5 @@
 import { Button, Container, Group, Paper, Text } from "@mantine/core"
 import { type MouseEvent, useCallback, useEffect, useState } from "react"
-import { BODYGEN_RELATIVE_PATH } from "../consts"
 
 import { useConfig } from "./ConfigProvider"
 

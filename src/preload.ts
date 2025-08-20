@@ -35,6 +35,7 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	): Promise<{ count: number; outDir: string }> =>
 		ipcRenderer.invoke("write", from, content),
 	zipOutput: (): Promise<string> => ipcRenderer.invoke("zipOutput"),
+	// biome-ignore lint/suspicious/noExplicitAny: path resolve
 	pathResolve: (...args: any[]): Promise<string> =>
 		ipcRenderer.invoke("path:resolve", ...args),
 	navigate: (location: Location) => ipcRenderer.send("navigate", location),

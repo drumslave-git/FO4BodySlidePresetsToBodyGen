@@ -3,9 +3,8 @@ import "@mantine/notifications/styles.css"
 import "@mantine/tiptap/styles.css"
 import "@mantine/code-highlight/styles.css"
 
-import { Button, createTheme, MantineProvider } from "@mantine/core"
+import { createTheme, MantineProvider } from "@mantine/core"
 import { createRoot } from "react-dom/client"
-import { BrowserRouter } from "react-router"
 
 import AppShell from "./Components/AppShell"
 

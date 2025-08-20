@@ -253,16 +253,20 @@ export const resolveBodySlidePresets = (
 			try {
 				const parsed = Object.values(
 					parser.parse(content).SliderPresets,
+					// biome-ignore lint/suspicious/noExplicitAny: parsed xml
 				).filter((preset: any) => !!preset.SetSlider)
+				// biome-ignore lint/suspicious/noExplicitAny: parsed xml
 				const data: BodySlidePreset[] = parsed.map((preset: any) => {
 					const item: BodySlidePreset = {
 						name: preset.name,
 						set: preset.set,
 						groups: Array.isArray(preset.Group)
-							? preset.Group.map((group: any) => ({
+							? // biome-ignore lint/suspicious/noExplicitAny: parsed xml
+								preset.Group.map((group: any) => ({
 									name: group.name,
 								}))
 							: [{ name: preset.Group.name }],
+						// biome-ignore lint/suspicious/noExplicitAny: parsed xml
 						sliders: preset.SetSlider.map((slider: any) => ({
 							...slider,
 							value: Number(slider.value) / 100,

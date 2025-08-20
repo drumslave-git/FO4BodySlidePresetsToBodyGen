@@ -8,7 +8,6 @@ import {
 	Modal,
 	Notification,
 	Paper,
-	Text,
 } from "@mantine/core"
 import { useCallback, useEffect, useState } from "react"
 

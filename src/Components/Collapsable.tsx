@@ -5,10 +5,9 @@ import {
 	type CollapseProps,
 	Group,
 	type GroupProps,
-	Text,
 } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks"
-import { IconEye, IconEyeClosed, type IconProps } from "@tabler/icons-react"
+import { IconEye, IconEyeClosed } from "@tabler/icons-react"
 import type { ReactNode } from "react"
 
 const Collapsable = ({

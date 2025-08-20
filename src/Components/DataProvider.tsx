@@ -6,7 +6,7 @@ import {
 	useEffect,
 	useState,
 } from "react"
-import type { BodySlidePresetParsed, ESM, Slider } from "../types"
+import type { BodySlidePresetParsed, ESM } from "../types"
 import { useConfig } from "./ConfigProvider"
 import { useSharedState } from "./SharedStateProvider"
 

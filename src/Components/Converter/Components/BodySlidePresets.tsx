@@ -10,9 +10,6 @@ import {
 	Input,
 	List,
 	MultiSelect,
-	SegmentedControl,
-	Select,
-	Text,
 } from "@mantine/core"
 import { IconSearch } from "@tabler/icons-react"
 import {

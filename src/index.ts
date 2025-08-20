@@ -31,7 +31,7 @@ const fileSystemFix = () => {
 	// https://www.electronjs.org/docs/latest/api/session#event-file-system-access-restricted
 	session.defaultSession.on(
 		"file-system-access-restricted",
-		async (e, details, callback) => {
+		async (_e, details, callback) => {
 			const { origin, path } = details
 			const { response } = await dialog.showMessageBox({
 				message: `Are you sure you want ${origin} to open restricted path ${path}?`,
