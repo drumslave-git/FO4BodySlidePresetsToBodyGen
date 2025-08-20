@@ -52,7 +52,11 @@ const fileSystemFix = () => {
 }
 let mainWindow: BrowserWindow
 
-const CONFIG_PATH = path.resolve(__dirname, "..", "..", "data", "config.json")
+const APP_DIR = app.isPackaged
+	? path.dirname(process.resourcesPath)
+	: process.cwd()
+const CONFIG_PATH = path.join(app.getPath("userData"), "config.json")
+
 const defaultConfig = (config: Config) => {
 	const defaults = {
 		...config,
@@ -107,7 +111,7 @@ const createWindow = (): void => {
 	mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
 
 	// Open the DevTools.
-	mainWindow.webContents.openDevTools()
+	!app.isPackaged && mainWindow.webContents.openDevTools()
 
 	Menu.setApplicationMenu(null)
 
@@ -121,7 +125,7 @@ const openFileSystemDialog = async (
 	const { filePaths } = await dialog.showOpenDialog(options)
 	const filePath = filePaths?.[0]
 	saveConfig({ [folder]: filePath ? filePath : undefined })
-	return filePath
+	return loadConfig()
 }
 
 const handleNavigate = (location: Location) => {
@@ -149,6 +153,7 @@ app.whenReady().then(() => {
 			),
 	)
 	ipcMain.handle("loadConfig", loadConfig)
+	ipcMain.handle("resolveConfigPath", () => CONFIG_PATH)
 	ipcMain.handle("templates:load", (_event, from: string) =>
 		loadTemplates(from),
 	)
@@ -182,7 +187,9 @@ app.whenReady().then(() => {
 	ipcMain.handle("resolveBodySlidePresets", (_events, from: string) =>
 		resolveBodySlidePresets(from),
 	)
-	ipcMain.handle("path:resolve", (_events, ...args) => path.resolve(...args))
+	ipcMain.handle("path:resolve", (_events, ...args) =>
+		path.resolve(...(args.length ? args : [APP_DIR])),
+	)
 	ipcMain.handle("zipOutput", async () => {
 		const out = path.resolve(loadConfig().outputFolder)
 		await zipFolder(

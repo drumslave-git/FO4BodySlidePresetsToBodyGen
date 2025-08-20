@@ -11,18 +11,19 @@ import {
 import type { Config } from "../types"
 
 type ConfigContextValue = Config & {
-	setFolder: (folder: string, path: string) => void
+	loadConfig: () => Promise<void>
 }
 
 const ConfigContext = createContext<ConfigContextValue>({
-	setFolder: () => {},
+	loadConfig: async () => {},
 })
 
 export const ConfigProvider = ({ children }: { children: ReactNode }) => {
 	const [config, setConfig] = useState<Config>({})
 	const [loading, setLoading] = useState(true)
 
-	useEffect(() => {
+	const loadConfig = useCallback(async () => {
+		setLoading(true)
 		// @ts-expect-error
 		window.electronAPI.loadConfig().then((config: Config) => {
 			setConfig(config)
@@ -30,18 +31,15 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
 		})
 	}, [])
 
-	const setFolder = useCallback(async (folder: string, path: string) => {
-		setConfig((prevConfig) => ({
-			...prevConfig,
-			[folder]: path,
-		}))
-	}, [])
+	useEffect(() => {
+		void loadConfig()
+	}, [loadConfig])
 
 	return (
 		<ConfigContext.Provider
 			value={{
 				...config,
-				setFolder,
+				loadConfig,
 			}}
 		>
 			{loading ? (

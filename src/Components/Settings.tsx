@@ -5,16 +5,14 @@ import { BODYGEN_RELATIVE_PATH } from "../consts"
 import { useConfig } from "./ConfigProvider"
 
 const Settings = () => {
-	const { dataFolder, outputFolder, setFolder } = useConfig()
+	const { dataFolder, outputFolder, loadConfig } = useConfig()
 	const [isPicking, setIsPicking] = useState<boolean>(false)
 	const [hint, setHint] = useState<string>("")
 
 	useEffect(() => {
 		// @ts-expect-error
-		window.electronAPI
-			.pathResolve(outputFolder, ...BODYGEN_RELATIVE_PATH)
-			.then(setHint)
-	}, [outputFolder])
+		window.electronAPI.resolveConfigPath().then(setHint)
+	}, [])
 
 	const onPathSelection = useCallback(
 		async (e: MouseEvent<HTMLButtonElement>) => {
@@ -23,15 +21,15 @@ const Settings = () => {
 			const folder = e.currentTarget.dataset.folder
 			try {
 				// @ts-expect-error
-				const path = await window.electronAPI.openDataFolder(folder)
-				setFolder(folder, path)
+				await window.electronAPI.openDataFolder(folder)
+				await loadConfig()
 			} catch (error) {
 				console.error("Error while picking directory:", error)
 			} finally {
 				setIsPicking(false)
 			}
 		},
-		[isPicking, setFolder],
+		[isPicking, loadConfig],
 	)
 
 	return (
@@ -58,7 +56,7 @@ const Settings = () => {
 					</Button>
 				</Group>
 				<Text mt="md" c="dimmed">
-					Results will be stored at: {hint}
+					Settings are saved in: {hint}
 				</Text>
 			</Paper>
 		</Container>

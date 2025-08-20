@@ -13,6 +13,7 @@ import {
 import { useCallback, useEffect, useState } from "react"
 
 import type { BodySlidePreset, NotificationData } from "../../types"
+import Collapsable from "../Collapsable"
 import { useConfig } from "../ConfigProvider"
 import { useSharedState } from "../SharedStateProvider"
 import BodySlidePresets from "./Components/BodySlidePresets"
@@ -163,14 +164,16 @@ const Converter = () => {
 				</Paper>
 				{templatesContent && (
 					<Paper mt="md" p="md" shadow="xs" withBorder>
-						<Text size="lg">Templates Content</Text>
-						<Code block>{templatesContent}</Code>
+						<Collapsable title="templates.ini">
+							<Code block>{templatesContent}</Code>
+						</Collapsable>
 					</Paper>
 				)}
 				{morphsContent && (
 					<Paper mt="md" p="md" shadow="xs" withBorder>
-						<Text size="lg">Morphs Content</Text>
-						<Code block>{morphsContent}</Code>
+						<Collapsable title="morphs.ini">
+							<Code block>{morphsContent}</Code>
+						</Collapsable>
 					</Paper>
 				)}
 			</Container>

@@ -15,6 +15,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	openDataFolder: (folder: string) =>
 		ipcRenderer.invoke("dialog:openDataFolder", folder),
 	loadConfig: (): Promise<Config> => ipcRenderer.invoke("loadConfig"),
+	resolveConfigPath: (): Promise<string> =>
+		ipcRenderer.invoke("resolveConfigPath"),
 	resolveESMs: (from: string): Promise<ESM[]> =>
 		ipcRenderer.invoke("ESM:resolve", from),
 	validateESMs: (from: string, content: string): Promise<ESM[]> =>

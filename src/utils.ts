@@ -3,7 +3,7 @@ import path from "node:path"
 import { XMLParser } from "fast-xml-parser"
 import { zip } from "zip-a-folder"
 
-import { BODYGEN_RELATIVE_PATH, SLIDERS_RELATIVE_PATH } from "./consts"
+import { SLIDERS_RELATIVE_PATH } from "./consts"
 import type {
 	BodySlidePreset,
 	BodySlidePresetParsed,
@@ -180,8 +180,9 @@ export const resolveSliders = (dataFolder: string) => {
 	let results: Slider[] = []
 
 	const slidersDir = path.resolve(dataFolder, ...SLIDERS_RELATIVE_PATH)
+	if (!fs.existsSync(slidersDir)) return results
 	const folders = fs
-		.readdirSync(path.resolve(dataFolder, ...SLIDERS_RELATIVE_PATH))
+		.readdirSync(slidersDir)
 		.filter((item) => fs.statSync(path.resolve(slidersDir, item)).isDirectory())
 
 	for (const folder of folders) {
@@ -241,6 +242,7 @@ export const resolveBodySlidePresets = (
 		trimValues: true, // optional: trim text nodes
 	})
 	const dir = path.resolve(dataFolder, "Tools", "BodySlide", "SliderPresets")
+	if (!fs.existsSync(dir)) return []
 
 	return fs
 		.readdirSync(dir)
