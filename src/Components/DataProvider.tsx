@@ -45,6 +45,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	}, [dataFolder])
 
 	useEffect(() => {
+		if (!dataFolder) {
+			setESMs((prev) => (prev.length ? [] : prev))
+			return
+		}
 		;(templatesContent
 			? // @ts-expect-error
 				window.electronAPI.validateESMs(dataFolder, templatesContent)
