@@ -1,13 +1,12 @@
 export type Config = {
-	templatesFile?: string
 	dataFolder?: string
+	outputFolder?: string
 	lastActiveLocation?: string
 }
 
 export type ESM = {
 	name: string
 	path: string
-	source: boolean
 	filesStatus: {
 		templates: {
 			color: "green" | "grey" | "yellow"
@@ -59,4 +58,8 @@ export type Slider = {
 	maximum: number
 	interval: number
 	gender: number
+}
+
+export type ParsedTemplates = {
+	[key: string]: { name: string; value: string }[]
 }

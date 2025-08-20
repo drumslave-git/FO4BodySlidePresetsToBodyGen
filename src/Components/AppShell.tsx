@@ -1,4 +1,9 @@
-import { AppShell as MantineAppShell, Tabs } from "@mantine/core"
+import {
+	Container,
+	AppShell as MantineAppShell,
+	Paper,
+	Tabs,
+} from "@mantine/core"
 import { useEffect, useState } from "react"
 import {
 	HashRouter,
@@ -10,7 +15,10 @@ import {
 
 import { ConfigProvider, useConfig } from "./ConfigProvider"
 import Converter from "./Converter"
-import Formatter from "./Formatter"
+import { DataProvider } from "./DataProvider"
+import ESMs from "./ESMs"
+import Settings from "./Settings"
+import { SharedStateProvider } from "./SharedStateProvider"
 
 const Header = () => {
 	const navigate = useNavigate()
@@ -31,7 +39,7 @@ const Header = () => {
 		<Tabs value={activeTab} onChange={setActiveTab}>
 			<Tabs.List>
 				<Tabs.Tab value="/">Converter</Tabs.Tab>
-				<Tabs.Tab value="/formatter">Formatter</Tabs.Tab>
+				<Tabs.Tab value="/settings">Settings</Tabs.Tab>
 			</Tabs.List>
 		</Tabs>
 	)
@@ -41,21 +49,30 @@ const AppShell = () => {
 	return (
 		<HashRouter>
 			<ConfigProvider>
-				<MantineAppShell
-					padding="md"
-					header={{ height: 40 }}
-					withBorder={false}
-				>
-					<MantineAppShell.Header>
-						<Header />
-					</MantineAppShell.Header>
-					<MantineAppShell.Main>
-						<Routes>
-							<Route index element={<Converter />} />
-							<Route path="/formatter" element={<Formatter />} />
-						</Routes>
-					</MantineAppShell.Main>
-				</MantineAppShell>
+				<SharedStateProvider>
+					<DataProvider>
+						<MantineAppShell
+							padding="md"
+							header={{ height: 40 }}
+							withBorder={false}
+						>
+							<MantineAppShell.Header>
+								<Header />
+							</MantineAppShell.Header>
+							<MantineAppShell.Main>
+								<Routes>
+									<Route index element={<Converter />} />
+									<Route path="/settings" element={<Settings />} />
+								</Routes>
+								<Container>
+									<Paper mt="md" p="md" shadow="xs" withBorder>
+										<ESMs />
+									</Paper>
+								</Container>
+							</MantineAppShell.Main>
+						</MantineAppShell>
+					</DataProvider>
+				</SharedStateProvider>
 			</ConfigProvider>
 		</HashRouter>
 	)

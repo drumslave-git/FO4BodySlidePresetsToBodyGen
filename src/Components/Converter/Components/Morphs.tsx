@@ -1,7 +1,9 @@
 import {
 	ActionIcon,
+	Box,
 	Button,
 	Card,
+	Divider,
 	Group,
 	Input,
 	Modal,
@@ -15,13 +17,56 @@ import {
 	type Dispatch,
 	type SetStateAction,
 	useCallback,
+	useEffect,
 	useRef,
 } from "react"
-import type { BodySlidePreset } from "../../../types"
+import type {
+	BodySlidePreset,
+	BodySlidePresetParsed,
+	ParsedTemplates,
+} from "../../../types"
+import { useData } from "../../DataProvider"
+import { useSharedState } from "../../SharedStateProvider"
 
 export type Morph = {
 	rules: string[]
 	presets: BodySlidePreset[]
+}
+
+const parseTemplateRaw = async (
+	text: string,
+	bodySlidePresetsParsed: BodySlidePresetParsed[],
+) => {
+	// @ts-expect-error
+	const validation = await window.electronAPI.validateTemplates(text)
+	if (validation) {
+		console.error("Validation error:", validation)
+		return []
+	}
+	// @ts-expect-error
+	const parsed: ParsedTemplates = await window.electronAPI.parseTemplates(text)
+	return Object.entries(parsed).reduce((acc: Morph[], [key, templates]) => {
+		acc.push({
+			rules: key
+				.split(";")
+				.map((rule) => rule.trim())
+				.filter(Boolean),
+			presets: templates
+				.map(({ name, value: bodyGen }: { name: string; value: string }) => {
+					let preset: BodySlidePreset
+					for (const item of bodySlidePresetsParsed) {
+						if (typeof item.data === "string") continue
+						preset = item.data.find(
+							(p) => p.name === name && p.bodyGen === bodyGen,
+						)
+						if (preset) break
+					}
+					return preset
+				})
+				.filter(Boolean),
+		})
+		return acc
+	}, [])
 }
 
 const Morphs = ({
@@ -33,6 +78,8 @@ const Morphs = ({
 	setMorphs: Dispatch<SetStateAction<Morph[]>>
 	onSelectBodySlidePresets: (index: number) => void
 }) => {
+	const { bodySlidePresetsParsed } = useData()
+	const { templatesRaw, setTemplatesRaw } = useSharedState()
 	const [
 		showTemplatesModal,
 		{ open: openTemplatesModal, close: closeTemplatesModal },
@@ -42,21 +89,23 @@ const Morphs = ({
 
 	const onRuleChange = useCallback(
 		(morphIndex: number, ruleIndex: number, value?: string) => {
-			const updatedMorphs = [...morphs]
-			if (
-				value === undefined &&
-				updatedMorphs[morphIndex].rules[ruleIndex] !== undefined
-			) {
-				// Remove the rule if value is undefined
-				updatedMorphs[morphIndex].rules = updatedMorphs[
-					morphIndex
-				].rules.filter((_, i) => i !== ruleIndex)
-			} else {
-				updatedMorphs[morphIndex].rules[ruleIndex] = value
-			}
-			setMorphs(updatedMorphs)
+			setMorphs((morphs) => {
+				const updatedMorphs = [...morphs]
+				if (
+					value === undefined &&
+					updatedMorphs[morphIndex].rules[ruleIndex] !== undefined
+				) {
+					// Remove the rule if value is undefined
+					updatedMorphs[morphIndex].rules = updatedMorphs[
+						morphIndex
+					].rules.filter((_, i) => i !== ruleIndex)
+				} else {
+					updatedMorphs[morphIndex].rules[ruleIndex] = value
+				}
+				return updatedMorphs
+			})
 		},
-		[morphs, setMorphs],
+		[setMorphs],
 	)
 
 	const onAddMorph = useCallback(() => {
@@ -70,25 +119,38 @@ const Morphs = ({
 		[setMorphs],
 	)
 
-	// const onTemplatesPaste = useCallback(() => {
-	//   if (!templatesRef.current) return
-	// })
+	useEffect(() => {
+		if (!templatesRaw) return
+		parseTemplateRaw(templatesRaw, bodySlidePresetsParsed).then(setMorphs)
+	}, [templatesRaw, bodySlidePresetsParsed])
+
+	const onTemplatesEdit = useCallback(() => {
+		if (!templatesRef.current) return
+		const text = templatesRef.current.value
+		setTemplatesRaw(text)
+		closeTemplatesModal()
+	}, [])
 
 	return (
 		<>
-			{/*<Modal*/}
-			{/*	opened={showTemplatesModal}*/}
-			{/*	onClose={closeTemplatesModal}*/}
-			{/*	title="Paste Templates"*/}
-			{/*>*/}
-			{/*	<Textarea*/}
-			{/*		minRows={10}*/}
-			{/*		autosize*/}
-			{/*		placeholder="Paste your templates here"*/}
-			{/*		ref={templatesRef}*/}
-			{/*	/>*/}
-			{/*	<Button onClick={onTemplatesPaste}>Close</Button>*/}
-			{/*</Modal>*/}
+			<Modal
+				opened={showTemplatesModal}
+				onClose={closeTemplatesModal}
+				title="Templates"
+				size="xl"
+			>
+				<Textarea
+					data-autofocus
+					minRows={10}
+					autosize
+					defaultValue={templatesRaw}
+					ref={templatesRef}
+				/>
+				<Box pos="sticky" bottom={0} bg="var(--mantine-color-body)" py="md">
+					<Divider mb="md" />
+					<Button onClick={onTemplatesEdit}>Save</Button>
+				</Box>
+			</Modal>
 			{morphs.map((morph, index) => (
 				// biome-ignore lint/suspicious/noArrayIndexKey: index
 				<Card key={index}>
@@ -139,7 +201,7 @@ const Morphs = ({
 					<Button leftSection={<IconPlus />} onClick={onAddMorph}>
 						Add Morph
 					</Button>
-					{/*<Button onClick={openTemplatesModal}>Paste Templates</Button>*/}
+					<Button onClick={openTemplatesModal}>Edit Templates</Button>
 				</Group>
 			</Card>
 		</>

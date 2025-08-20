@@ -7,6 +7,7 @@ import { BODYGEN_RELATIVE_PATH } from "./consts"
 import type { Config } from "./types"
 import {
 	formatINIs,
+	parseTemplates,
 	resolveBodySlidePresets,
 	resolveESMs,
 	validateESMs,
@@ -52,17 +53,28 @@ const fileSystemFix = () => {
 let mainWindow: BrowserWindow
 
 const CONFIG_PATH = path.resolve(__dirname, "..", "..", "data", "config.json")
+const defaultConfig = (config: Config) => {
+	const defaults = {
+		...config,
+	}
+	if (!defaults.outputFolder && defaults.dataFolder) {
+		defaults.outputFolder = defaults.dataFolder
+	}
+	return defaults
+}
 const loadConfig = (): Config => {
 	if (!fs.existsSync(CONFIG_PATH)) {
 		return {}
 	}
+	let config: Config = {}
 	try {
 		const configContent = fs.readFileSync(CONFIG_PATH)
-		return JSON.parse(configContent.toString())
+		config = JSON.parse(configContent.toString())
 	} catch (error) {
 		console.error("Error reading config file:", error)
-		return {}
 	}
+
+	return defaultConfig(config)
 }
 
 const saveConfig = (data: Partial<Config>) => {
@@ -77,8 +89,8 @@ const saveConfig = (data: Partial<Config>) => {
 	}
 }
 
-const loadTemplates = () => {
-	return fs.readFileSync(loadConfig().templatesFile).toString()
+const loadTemplates = (from: string) => {
+	return fs.readFileSync(from).toString()
 }
 
 const createWindow = (): void => {
@@ -104,14 +116,12 @@ const createWindow = (): void => {
 
 const openFileSystemDialog = async (
 	options: Electron.OpenDialogOptions,
-	field: keyof Config,
+	folder: "dataFolder" | "outputFolder",
 ) => {
-	const { canceled, filePaths } = await dialog.showOpenDialog(options)
-	saveConfig({ [field]: undefined })
-	if (!canceled) {
-		saveConfig({ [field]: filePaths[0] })
-		return filePaths[0]
-	}
+	const { filePaths } = await dialog.showOpenDialog(options)
+	const filePath = filePaths?.[0]
+	saveConfig({ [folder]: filePath ? filePath : undefined })
+	return filePath
 }
 
 const handleNavigate = (location: Location) => {
@@ -127,27 +137,24 @@ const handleNavigate = (location: Location) => {
 app.whenReady().then(() => {
 	createWindow()
 
-	ipcMain.handle("dialog:openTemplates", () =>
-		openFileSystemDialog(
-			{
-				title: "Select source templates file",
-				properties: ["openFile"],
-				filters: [{ name: "INI Files", extensions: ["ini"] }],
-			},
-			"templatesFile",
-		),
-	)
-	ipcMain.handle("dialog:openDataFolder", () =>
-		openFileSystemDialog(
-			{
-				title: "Select Fallout 4 data folder",
-				properties: ["openDirectory"],
-			},
-			"dataFolder",
-		),
+	ipcMain.handle(
+		"dialog:openDataFolder",
+		(_event, folder: "dataFolder" | "outputFolder") =>
+			openFileSystemDialog(
+				{
+					title: "Select Fallout 4 data folder",
+					properties: ["openDirectory"],
+				},
+				folder,
+			),
 	)
 	ipcMain.handle("loadConfig", loadConfig)
-	ipcMain.handle("templates:load", loadTemplates)
+	ipcMain.handle("templates:load", (_event, from: string) =>
+		loadTemplates(from),
+	)
+	ipcMain.handle("templates:parse", (_event, content: string) =>
+		parseTemplates(content),
+	)
 	ipcMain.handle("templates:validate", (_event, content: string) => {
 		try {
 			validateTemplates(content)
@@ -157,10 +164,16 @@ app.whenReady().then(() => {
 		}
 	})
 	ipcMain.handle("format", (_event, content: string) => formatINIs(content))
-	ipcMain.handle(
-		"write",
-		(_event, from: string, content: string, local = false) =>
-			write(from, content, local),
+	ipcMain.handle("write", (_event, from: string, content: string) =>
+		write(
+			from,
+			path.resolve(
+				loadConfig().outputFolder,
+				"BodyGen",
+				...BODYGEN_RELATIVE_PATH,
+			),
+			content,
+		),
 	)
 	ipcMain.handle("ESM:resolve", (_events, from: string) => resolveESMs(from))
 	ipcMain.handle("ESM:validate", (_events, from: string, content: string) =>
@@ -171,11 +184,12 @@ app.whenReady().then(() => {
 	)
 	ipcMain.handle("path:resolve", (_events, ...args) => path.resolve(...args))
 	ipcMain.handle("zipOutput", async () => {
-		const out = path.resolve(__dirname, "..", "..", "output")
+		const out = path.resolve(loadConfig().outputFolder)
 		await zipFolder(
-			path.resolve(out, BODYGEN_RELATIVE_PATH[0]),
+			path.resolve(out, "BodyGen"),
 			path.resolve(out, "BodyGen.zip"),
 		)
+		return path.resolve(out, "BodyGen.zip")
 	})
 
 	ipcMain.on("navigate", (_event, location: Location) =>

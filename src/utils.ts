@@ -9,6 +9,7 @@ import type {
 	BodySlidePresetParsed,
 	ESM,
 	FormattedData,
+	ParsedTemplates,
 	Slider,
 } from "./types"
 
@@ -33,24 +34,15 @@ export const validateTemplates = (content: string) => {
 	}
 }
 
-export const resolveESMs = (from: string): ESM[] => {
-	let dir = from
-	let rootDir = from
-	const fromINI = from.endsWith(".ini")
-	if (fromINI) {
-		dir = path.dirname(from)
-		rootDir = path.resolve(dir, "..")
-	}
-
-	const ESMs: ESM[] = fs
-		.readdirSync(rootDir)
+export const resolveESMs = (dataFolder: string): ESM[] => {
+	return fs
+		.readdirSync(dataFolder)
 		.filter((item) => item.endsWith(".esm"))
 		.map((item) => {
-			const itemPath = path.resolve(rootDir, item)
+			const itemPath = path.resolve(dataFolder, item)
 			return {
 				name: item,
 				path: itemPath,
-				source: itemPath === dir,
 				filesStatus: {
 					templates: {
 						color: "grey",
@@ -63,18 +55,10 @@ export const resolveESMs = (from: string): ESM[] => {
 				},
 			}
 		})
-
-	if (fromINI) {
-		return ESMs
-	}
-	return ESMs.map((esm) => ({
-		...esm,
-		path: path.resolve(from, ...BODYGEN_RELATIVE_PATH, esm.name),
-	}))
 }
 
-export const validateESMs = (from: string, content: string) => {
-	let ESMs = resolveESMs(from)
+export const validateESMs = (dataFolder: string, content: string) => {
+	let ESMs = resolveESMs(dataFolder)
 	const formattedData = formatINIs(content)
 	ESMs = ESMs.map((esm) => {
 		const statuses = {
@@ -110,41 +94,33 @@ export const validateESMs = (from: string, content: string) => {
 	return ESMs
 }
 
-type StructuredData = Record<string, Record<string, string>[]>
-
-const structureData = (content: string) => {
+export const parseTemplates = (content: string) => {
 	const lines = content
-		.toString()
 		.split(/\n\r?/)
 		.map((item) => item.trim())
 		.filter((line) => !!line)
-	let preservedName = ""
 	let morphsSettings = ""
-	return lines.reduce((acc: StructuredData, line) => {
+	return lines.reduce((acc: ParsedTemplates, line) => {
 		if (line.startsWith("#")) {
 			if (line.startsWith("#morphs=")) {
 				morphsSettings = line.replace("#morphs=", "").trim()
-			} else {
-				preservedName = line.replace("#", "").trim() // Preserve name from comment
 			}
 			return acc // Skip comment lines
 		}
-		const [key, value] = line.split("=").map((part) => part.trim())
-		if (key && value) {
-			const name = preservedName || key
+		const [name, value] = line.split("=").map((part) => part.trim())
+		if (name && value) {
 			acc[morphsSettings] = acc[morphsSettings] || []
 			acc[morphsSettings].push({
 				name,
 				value,
 			})
-			preservedName = "" // Reset preserved name after use
 		}
 		return acc
 	}, {})
 }
 
 export const formatINIs = (content: string): FormattedData => {
-	const structuredData = structureData(content)
+	const structuredData = parseTemplates(content)
 
 	const templatesContent = Object.entries(structuredData)
 		.reduce((acc, [morphs, templates]) => {
@@ -177,25 +153,15 @@ export const formatINIs = (content: string): FormattedData => {
 	}
 }
 
-export const write = (from: string, content: string, local = false) => {
+export const write = (from: string, outDir: string, content: string) => {
 	const ESMs = resolveESMs(from)
 	const formattedData = formatINIs(content)
-	const localPath = path.resolve(
-		__dirname,
-		"..",
-		"..",
-		"output",
-		...BODYGEN_RELATIVE_PATH,
-	)
-	if (!fs.existsSync(localPath)) {
-		fs.mkdirSync(localPath, { recursive: true })
+	if (!fs.existsSync(outDir)) {
+		fs.mkdirSync(outDir, { recursive: true })
 	}
 	let count = 0
 	for (const esm of ESMs) {
-		let esmPath = esm.path
-		if (local) {
-			esmPath = path.resolve(localPath, esm.name)
-		}
+		const esmPath = path.resolve(outDir, esm.name)
 		if (!fs.existsSync(esmPath)) {
 			fs.mkdirSync(esmPath, { recursive: true })
 		}
@@ -207,7 +173,7 @@ export const write = (from: string, content: string, local = false) => {
 		count++
 	}
 
-	return count
+	return { count, outDir }
 }
 
 export const resolveSliders = (dataFolder: string) => {
@@ -235,23 +201,34 @@ export const validateSliders = (
 	sliders: BodySlidePreset["sliders"],
 ) => {
 	const supportedSliders = resolveSliders(dataFolder)
-	return sliders
-		.map((slider) => {
-			const supportedSlider = supportedSliders.find(
-				(supportedSlider) => supportedSlider.morph === slider.name,
+	const cleanedSliders = []
+	const errors = []
+	for (const slider of sliders) {
+		const cleanedSlider = {
+			...slider,
+		}
+		const supportedSlider = supportedSliders.find(
+			(supportedSlider) => supportedSlider.morph === slider.name,
+		)
+		if (!supportedSlider) {
+			errors.push(`Slider "${slider.name}" is not supported. Removed.`)
+			continue
+		}
+		if (slider.value < supportedSlider.minimum) {
+			errors.push(
+				`Slider "${slider.name}" value ${slider.value} is less than minimum allowed. Corrected to ${supportedSlider.minimum}.`,
 			)
-			if (!supportedSlider) {
-				return `Slider "${slider.name}" is not supported.`
-			}
-			if (
-				slider.value < supportedSlider.minimum ||
-				slider.value > supportedSlider.maximum
-			) {
-				return `Slider "${slider.name}" value ${slider.value} is out of range (${supportedSlider.minimum} - ${supportedSlider.maximum}).`
-			}
-			return null
-		})
-		.filter(Boolean)
+			cleanedSlider.value = supportedSlider.minimum
+		}
+		if (slider.value > supportedSlider.maximum) {
+			errors.push(
+				`Slider "${slider.name}" value ${slider.value} is greater than maximum allowed. Corrected to ${supportedSlider.maximum}.`,
+			)
+			cleanedSlider.value = supportedSlider.maximum
+		}
+		cleanedSliders.push(cleanedSlider)
+	}
+	return { errors, cleanedSliders }
 }
 
 export const resolveBodySlidePresets = (
@@ -292,15 +269,19 @@ export const resolveBodySlidePresets = (
 						errors: [],
 						valid: true,
 					}
-					item.bodyGen = `${item.name}=`
-					item.bodyGen += item.sliders
+
+					const { errors, cleanedSliders } = validateSliders(
+						dataFolder,
+						item.sliders,
+					)
+					item.errors = errors
+					item.valid = item.errors.length === 0
+					item.bodyGen = cleanedSliders
 						.reduce((acc, slider) => {
 							acc.push(`${slider.name}@${slider.value}`)
 							return acc
 						}, [])
 						.join(",")
-					item.errors = validateSliders(dataFolder, item.sliders)
-					item.valid = item.errors.length === 0
 					return item
 				})
 				return {

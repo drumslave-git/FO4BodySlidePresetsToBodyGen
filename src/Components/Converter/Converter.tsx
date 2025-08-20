@@ -12,78 +12,28 @@ import {
 } from "@mantine/core"
 import { useCallback, useEffect, useState } from "react"
 
-import type {
-	BodySlidePreset,
-	BodySlidePresetParsed,
-	NotificationData,
-} from "../../types"
+import type { BodySlidePreset, NotificationData } from "../../types"
 import { useConfig } from "../ConfigProvider"
-import ESMs from "../ESMs"
+import { useSharedState } from "../SharedStateProvider"
 import BodySlidePresets from "./Components/BodySlidePresets"
-import Morphs, { type Morph } from "./Components/Morphs"
+import Morphs from "./Components/Morphs"
 
 const Converter = () => {
-	const { dataFolder: savedDataFolder } = useConfig()
-	const [dataFolder, setDataFolder] = useState<string>(savedDataFolder || "")
-	const [isPicking, setIsPicking] = useState<boolean>(false)
-	const [bodySlidePresets, setBodySlidePresets] = useState<
-		BodySlidePresetParsed[]
-	>([])
-	const [templatesContent, setTemplatesContent] = useState<string>("")
-	const [morphs, setMorphs] = useState<Morph[]>([])
-	const [morphsContent, setMorphsContent] = useState<string>("")
+	const { dataFolder } = useConfig()
+	const {
+		morphs,
+		setMorphs,
+		validationError,
+		morphsContent,
+		templatesContent,
+		setTemplatesRaw,
+	} = useSharedState()
 	const [editedMorphIndex, setEditedMorphIndex] = useState<number | null>(null)
-	const [validationError, setValidationError] = useState<string>("")
 	const [readyToWrite, setReadyToWrite] = useState(false)
 	const [loading, setLoading] = useState(false)
 	const [notification, setNotification] = useState<NotificationData | null>(
 		null,
 	)
-
-	useEffect(() => {
-		if (!dataFolder) {
-			setBodySlidePresets([])
-			setMorphs([])
-			return
-		}
-		// @ts-expect-error
-		window.electronAPI
-			.resolveBodySlidePresets(dataFolder)
-			.then((presets: BodySlidePresetParsed[]) => {
-				setBodySlidePresets(presets)
-			})
-	}, [dataFolder])
-
-	useEffect(() => {
-		if (!morphs.length) {
-			setTemplatesContent("")
-			setMorphsContent("")
-			return
-		}
-		const templates = morphs
-			.reduce((acc, morph) => {
-				acc.push(`#morphs=${morph.rules.join(";")}`)
-				acc.push(morph.presets.map((preset) => preset.bodyGen).join("\n\n"))
-				return acc
-			}, [])
-			.join("\n\n\n")
-		const process = async (content: string) => {
-			const validation =
-				// @ts-expect-error
-				await window.electronAPI.validateTemplates(content)
-			setValidationError(validation)
-			if (validation) {
-				setMorphsContent("")
-				setTemplatesContent("")
-				return
-			}
-			// @ts-expect-error
-			const formatted = await window.electronAPI.format(content)
-			setTemplatesContent(formatted.templates)
-			setMorphsContent(formatted.morphs)
-		}
-		void process(templates)
-	}, [morphs])
 
 	useEffect(() => {
 		setReadyToWrite(!validationError && !!templatesContent && !!morphsContent)
@@ -97,29 +47,21 @@ const Converter = () => {
 		setEditedMorphIndex(null)
 	}, [])
 
-	const onPathSelection = useCallback(async () => {
-		if (isPicking) return
-		setIsPicking(true)
-		try {
-			// @ts-expect-error
-			const folder = await window.electronAPI.openDataFolder()
-			setDataFolder(folder)
-		} catch (error) {
-			console.error("Error while picking directory:", error)
-		} finally {
-			setIsPicking(false)
-		}
-	}, [isPicking])
-
 	const onBodySlidePresetsSubmit = useCallback(
 		(presets: BodySlidePreset[]) => {
 			if (editedMorphIndex === null) return
-			const updatedMorphs = [...morphs]
-			updatedMorphs[editedMorphIndex].presets = presets
-			setMorphs(updatedMorphs)
 			bodySlidePresetsModalClose()
+			setMorphs((prev) => {
+				return prev.map((morph, index) => {
+					if (index !== editedMorphIndex) return morph
+					return {
+						...morph,
+						presets,
+					}
+				})
+			})
 		},
-		[editedMorphIndex, morphs, bodySlidePresetsModalClose],
+		[editedMorphIndex, setMorphs, bodySlidePresetsModalClose],
 	)
 
 	const onWrite = useCallback(async () => {
@@ -127,16 +69,16 @@ const Converter = () => {
 		setLoading(true)
 		try {
 			// @ts-expect-error
-			const count = await window.electronAPI.write(
+			const { count, outDir } = await window.electronAPI.write(
 				dataFolder,
 				templatesContent,
-				true,
 			)
 			setNotification({
 				color: "green",
 				title: "Success",
-				text: `Successfully written to ${count} ESMs`,
+				text: `Successfully written .ini files to ${count} ESMs in ${outDir}`,
 			})
+			setTemplatesRaw("")
 		} catch (error) {
 			console.error("Error while writing:", error)
 			setNotification({
@@ -153,11 +95,11 @@ const Converter = () => {
 		setLoading(true)
 		try {
 			// @ts-expect-error
-			await window.electronAPI.zipOutput()
+			const result = await window.electronAPI.zipOutput()
 			setNotification({
 				color: "green",
 				title: "Success",
-				text: "Successfully zipped the output",
+				text: `Successfully zipped the output: ${result}`,
 			})
 		} catch (error) {
 			console.error("Error while zipping:", error)
@@ -179,12 +121,12 @@ const Converter = () => {
 				onClose={bodySlidePresetsModalClose}
 				title="Select BodySlide Presets"
 				withCloseButton={false}
-				size="auto"
+				size="xl"
 			>
 				<BodySlidePresets
-					items={bodySlidePresets}
 					onSubmit={onBodySlidePresetsSubmit}
 					onCancel={bodySlidePresetsModalClose}
+					selectedPresets={morphs[editedMorphIndex]?.presets}
 				/>
 			</Modal>
 			<Container>
@@ -198,12 +140,6 @@ const Converter = () => {
 					</Notification>
 				)}
 				<Paper p="md" shadow="xs" withBorder>
-					<Group>
-						<Text>{dataFolder}</Text>
-						<Button disabled={isPicking} onClick={onPathSelection}>
-							Select Data Folder
-						</Button>
-					</Group>
 					<Group mt="md">
 						<Button color="orange" onClick={onZip}>
 							Zip Output
@@ -237,9 +173,6 @@ const Converter = () => {
 						<Code block>{morphsContent}</Code>
 					</Paper>
 				)}
-				<Paper mt="md" p="md" shadow="xs" withBorder>
-					<ESMs from={dataFolder} content={templatesContent} />
-				</Paper>
 			</Container>
 		</>
 	)

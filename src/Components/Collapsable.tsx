@@ -19,7 +19,7 @@ const Collapsable = ({
 	iconProps,
 }: {
 	children: ReactNode
-	title: string
+	title: ReactNode
 	titleProps?: GroupProps
 	collapseProps?: Omit<CollapseProps, "in">
 	iconProps?: Omit<ActionIconProps, "onClick">
@@ -29,7 +29,7 @@ const Collapsable = ({
 	return (
 		<>
 			<Group {...titleProps}>
-				<Text>{title}</Text>
+				{title}
 				<ActionIcon {...iconProps} onClick={toggle}>
 					{!collapsed ? (
 						<IconEye style={{ width: "70%", height: "70%" }} stroke={1.5} />

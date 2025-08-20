@@ -17,7 +17,6 @@ import {
 import { IconSearch } from "@tabler/icons-react"
 import {
 	type ChangeEvent,
-	Fragment,
 	useCallback,
 	useEffect,
 	useMemo,
@@ -26,73 +25,79 @@ import {
 
 import type { BodySlidePreset, BodySlidePresetParsed } from "../../../types"
 import Collapsable from "../../Collapsable"
+import { useData } from "../../DataProvider"
 
 export type FilterValue = {
 	q: string
 	selected: string[]
-	validatedOnly: boolean
 }
 
 const Filter = ({
-	options,
+	items,
 	onFilter,
 }: {
-	options: string[]
+	items: BodySlidePresetParsed[]
 	onFilter: (value: FilterValue) => void
 }) => {
 	const [selected, setSelected] = useState([])
+	const [options, setOptions] = useState<string[]>([])
 	const [q, setQ] = useState("")
-	const [validatedOnly, setValidatedOnly] = useState(false)
-	const [segmentedControlValue, setSegmentedControlValue] = useState("all")
 
 	useEffect(() => {
-		setValidatedOnly(segmentedControlValue === "valid")
-	}, [segmentedControlValue])
+		onFilter({ q, selected })
+	}, [onFilter, selected, q])
 
 	useEffect(() => {
-		onFilter({ q, selected, validatedOnly })
-	}, [onFilter, selected, q, validatedOnly])
+		setOptions(
+			items
+				.reduce((acc: string[], item) => {
+					if (typeof item.data === "string") {
+						return acc
+					}
+					for (const preset of item.data) {
+						for (const group of preset.groups) {
+							if (!acc.includes(group.name)) {
+								acc.push(group.name)
+							}
+						}
+					}
+
+					return acc
+				}, [])
+				.sort((a, b) => a.localeCompare(b)),
+		)
+	}, [items])
 
 	const onToggle = useCallback((value: string[]) => {
 		setSelected(value)
 	}, [])
 
 	return (
-		<>
-			<Group grow mb="md">
-				<MultiSelect
-					data={options}
-					value={selected}
-					onChange={onToggle}
-					searchable
-					clearable
-					placeholder="Groups"
-				/>
-				<Input
-					data-autofocus
-					value={q}
-					onChange={(e: ChangeEvent<HTMLInputElement>) => setQ(e.target.value)}
-					leftSection={<IconSearch size={16} />}
-					rightSectionPointerEvents="all"
-					placeholder="Search"
-					rightSection={
-						<CloseButton
-							aria-label="Clear input"
-							onClick={() => setQ("")}
-							style={{ display: q ? undefined : "none" }}
-						/>
-					}
-				/>
-			</Group>
-			<SegmentedControl
-				value={segmentedControlValue}
-				onChange={setSegmentedControlValue}
-				data={[
-					{ label: "All", value: "all" },
-					{ label: "Valid", value: "valid" },
-				]}
+		<Group grow mb="md">
+			<MultiSelect
+				data={options}
+				value={selected}
+				onChange={onToggle}
+				searchable
+				clearable
+				placeholder="Groups"
 			/>
-		</>
+			<Input
+				data-autofocus
+				value={q}
+				onChange={(e: ChangeEvent<HTMLInputElement>) => setQ(e.target.value)}
+				leftSection={<IconSearch size={16} />}
+				rightSectionPointerEvents="all"
+				placeholder="Search"
+				rightSection={
+					<CloseButton
+						aria-label="Clear input"
+						onClick={() => setQ("")}
+						style={{ display: q ? undefined : "none" }}
+					/>
+				}
+			/>
+		</Group>
 	)
 }
 
@@ -113,60 +118,133 @@ const PresetToggler = ({
 		onTogglePreset(preset)
 	}, [preset, onTogglePreset])
 
+	return <Checkbox checked={selected} onChange={onChange} />
+}
+
+const BodySlidePresetComponent = ({
+	preset,
+	selectedItems,
+	onTogglePreset,
+}: {
+	preset: BodySlidePreset
+	selectedItems: BodySlidePreset[]
+	onTogglePreset: (item: BodySlidePreset) => void
+}) => {
+	const groups = useMemo(() => {
+		return preset.groups
+			.map((group) => group.name)
+			.sort()
+			.join(", ")
+	}, [preset])
+
 	return (
-		<Checkbox
-			checked={selected}
-			onChange={onChange}
-			disabled={!!preset.errors.length}
-		/>
+		<Card>
+			<Group justify="space-between">
+				<Group>
+					<PresetToggler
+						preset={preset}
+						selectedPresets={selectedItems}
+						onTogglePreset={onTogglePreset}
+					/>
+					<Text size="sm">{preset.name}</Text>
+				</Group>
+				<Text size="xs" c="dimmed">
+					{groups}
+				</Text>
+			</Group>
+			<Box>
+				<Collapsable
+					title={
+						<Group>
+							<Text>BodyGen</Text>
+							{!preset.valid && <Text c="red">with errors</Text>}
+						</Group>
+					}
+					titleProps={{
+						mt: "md",
+					}}
+					iconProps={{
+						color: !preset.valid ? "red" : undefined,
+						size: "sm",
+					}}
+				>
+					<List size="xs">
+						{preset.errors.map((error, index) => (
+							// biome-ignore lint/suspicious/noArrayIndexKey: index
+							<List.Item key={index}>{error}</List.Item>
+						))}
+					</List>
+					<Code block>{preset.bodyGen}</Code>
+				</Collapsable>
+			</Box>
+		</Card>
+	)
+}
+
+const BodySlidePresetParsedComponent = ({
+	item,
+	selectedItems,
+	onTogglePreset,
+}: {
+	item: BodySlidePresetParsed
+	selectedItems: BodySlidePreset[]
+	onTogglePreset: (item: BodySlidePreset) => void
+}) => {
+	return (
+		<Box mt="md">
+			<Text size="xs">{item.filename}</Text>
+			{typeof item.data === "string" && (
+				<Text size="sm" c="dimmed" key={item.filename}>
+					{item.data}
+				</Text>
+			)}
+			{typeof item.data !== "string" &&
+				item.data.map((preset) => (
+					<BodySlidePresetComponent
+						key={preset.name}
+						preset={preset}
+						selectedItems={selectedItems}
+						onTogglePreset={onTogglePreset}
+					/>
+				))}
+		</Box>
 	)
 }
 
 const BodySlidePresets = ({
-	items,
 	onSubmit,
 	onCancel,
+	selectedPresets,
 }: {
-	items: BodySlidePresetParsed[]
 	onSubmit: (selected: BodySlidePreset[]) => void
 	onCancel: () => void
+	selectedPresets?: BodySlidePreset[]
 }) => {
-	const [filterOptions, setFilterOptions] = useState<string[]>([])
+	const { bodySlidePresetsParsed: items } = useData()
 	const [selectedItems, setSelectedItems] = useState<BodySlidePreset[]>([])
 	const [filteredItems, setFilteredItems] =
 		useState<BodySlidePresetParsed[]>(items)
 
 	useEffect(() => {
 		if (!items.length) {
-			setFilterOptions([])
-			setSelectedItems([])
-			setFilteredItems([])
+			setSelectedItems((prev) => (prev.length ? [] : prev))
+			setFilteredItems((prev) => (prev.length ? [] : prev))
 			return
 		}
 		setFilteredItems(items)
-		setFilterOptions(
-			items
-				.reduce((acc: string[], item) => {
-					if (typeof item.data === "string") {
-						return acc
-					}
-					for (const preset of item.data) {
-						for (const group of preset.groups) {
-							if (!acc.includes(group.name)) {
-								acc.push(group.name)
-							}
-						}
-					}
-
-					return acc
-				}, [])
-				.sort((a, b) => a.localeCompare(b)),
-		)
 	}, [items])
+
+	useEffect(() => {
+		if (!selectedPresets) {
+			setSelectedItems((prev) => (prev.length ? [] : prev))
+			return
+		}
+		setSelectedItems(selectedPresets)
+	}, [selectedPresets])
 
 	const onFilter = useCallback(
 		(value: FilterValue) => {
-			const { q, selected, validatedOnly } = value
+			const { q, selected } = value
 			const filtered = items
 				.map((preset) => {
 					if (typeof preset.data === "string") {
@@ -180,9 +258,6 @@ const BodySlidePresets = ({
 					return {
 						...preset,
 						data: preset.data.filter((item) => {
-							if (validatedOnly && !item.valid) {
-								return false
-							}
 							const matchItemNameQuery =
 								!q || item.name.toLowerCase().includes(q.toLowerCase())
 							if (!matchItemNameQuery) {
@@ -201,6 +276,20 @@ const BodySlidePresets = ({
 		[items],
 	)
 
+	const selectAll = useCallback(() => {
+		setSelectedItems(
+			filteredItems.reduce((acc: BodySlidePreset[], filteredItem) => {
+				if (typeof filteredItem.data === "string") return acc
+				acc.push(...filteredItem.data)
+				return acc
+			}, []),
+		)
+	}, [filteredItems])
+
+	const selectNone = useCallback(() => {
+		setSelectedItems([])
+	}, [])
+
 	const onTogglePreset = useCallback((preset: BodySlidePreset) => {
 		setSelectedItems((prev) => {
 			const exists = prev.find((p) => p.bodyGen === preset.bodyGen)
@@ -217,57 +306,22 @@ const BodySlidePresets = ({
 
 	return (
 		<>
-			<Text size="lg">BodySlide Presets</Text>
-			<Filter options={filterOptions} onFilter={onFilter} />
+			<Filter items={items} onFilter={onFilter} />
+			<Group>
+				<Button onClick={selectAll} size="compact-xs">
+					Select All
+				</Button>
+				<Button onClick={selectNone} size="compact-xs">
+					Select None
+				</Button>
+			</Group>
 			{filteredItems.map((item) => (
-				<Fragment key={item.filename}>
-					<Text size="xs">{item.filename}</Text>
-					{typeof item.data === "string" && (
-						<Text size="sm" c="dimmed" key={item.filename}>
-							{item.data}
-						</Text>
-					)}
-					{typeof item.data !== "string" &&
-						item.data.map((preset) => (
-							<Card key={preset.name}>
-								<Group justify="space-between">
-									<Group>
-										<PresetToggler
-											preset={preset}
-											selectedPresets={selectedItems}
-											onTogglePreset={onTogglePreset}
-										/>
-										<Text size="sm">{preset.name}</Text>
-									</Group>
-									<Select
-										data={preset.groups.map((group) => group.name)}
-										placeholder="Groups"
-										size="sm"
-									/>
-								</Group>
-								<Group>
-									<Collapsable
-										title={`BodyGen${!preset.valid ? ` with errors` : ""}`}
-										titleProps={{
-											mt: "md",
-										}}
-										iconProps={{
-											color: !preset.valid ? "red" : undefined,
-											size: "sm",
-										}}
-									>
-										<List size="xs">
-											{preset.errors.map((error, index) => (
-												// biome-ignore lint/suspicious/noArrayIndexKey: index
-												<List.Item key={index}>{error}</List.Item>
-											))}
-										</List>
-										<Code block>{preset.bodyGen}</Code>
-									</Collapsable>
-								</Group>
-							</Card>
-						))}
-				</Fragment>
+				<BodySlidePresetParsedComponent
+					key={item.filename}
+					item={item}
+					selectedItems={selectedItems}
+					onTogglePreset={onTogglePreset}
+				/>
 			))}
 			<Box pos="sticky" bottom={0} bg="var(--mantine-color-body)" py="md">
 				<Divider mb="md" />
