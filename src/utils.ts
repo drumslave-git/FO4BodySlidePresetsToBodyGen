@@ -15,8 +15,8 @@ import type {
 
 const toCRLF = (text: string) => text.replace(/\r?\n/g, "\r\n")
 
-const writeFileSync = (content: string, filePath: string) =>
-	fs.writeFileSync(toCRLF(content), filePath)
+const writeFileSync = (filePath: string, content: string) =>
+	fs.writeFileSync(filePath, toCRLF(content))
 
 export const validateTemplates = (content: string) => {
 	const lines = content.split(/\n\r?/)
