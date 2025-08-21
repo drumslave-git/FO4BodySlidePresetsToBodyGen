@@ -1,0 +1,34 @@
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  packageChange:
+    runs-on: ubuntu-latest
+    outputs:
+      package: ${{ steps.changes.outputs.package }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: changes
+      with:
+        filters: |
+          package:
+            - './package.json'
+
+  release:
+    permissions:
+      contents: write
+    runs-on: windows-latest
+    needs: packageChange
+    if: ${{ needs.packageChange.outputs.package == 'true' }}
+    steps:
+    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v4
+    - name: install, check and publish
+      run: |
+        npm ci
+        npm run biome:check
+        npm run publish
+#    - uses: martinbeentjes/npm-get-version-action@v1.3.1
