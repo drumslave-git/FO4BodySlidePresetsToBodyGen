@@ -9,10 +9,12 @@ export type ESM = {
 	path: string
 	filesStatus: {
 		templates: {
+			path: string
 			color: "green" | "grey" | "yellow"
 			text: string
 		}
 		morphs: {
+			path: string
 			color: "green" | "grey" | "yellow"
 			text: string
 		}

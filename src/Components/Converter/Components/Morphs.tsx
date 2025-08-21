@@ -122,6 +122,7 @@ const Morphs = ({
 	useEffect(() => {
 		if (!templatesRaw) return
 		parseTemplateRaw(templatesRaw, bodySlidePresetsParsed).then(setMorphs)
+		setTemplatesRaw("")
 	}, [templatesRaw, bodySlidePresetsParsed])
 
 	const onTemplatesEdit = useCallback(() => {
@@ -201,7 +202,7 @@ const Morphs = ({
 					<Button leftSection={<IconPlus />} onClick={onAddMorph}>
 						Add Morph
 					</Button>
-					<Button onClick={openTemplatesModal}>Edit Templates</Button>
+					<Button onClick={openTemplatesModal}>Paste Templates</Button>
 				</Group>
 			</Card>
 		</>

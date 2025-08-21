@@ -2,6 +2,7 @@ import { LoadingOverlay } from "@mantine/core"
 import {
 	createContext,
 	type ReactNode,
+	useCallback,
 	useContext,
 	useEffect,
 	useState,
@@ -13,11 +14,13 @@ import { useSharedState } from "./SharedStateProvider"
 type DataContextValue = {
 	ESMs: ESM[]
 	bodySlidePresetsParsed: BodySlidePresetParsed[]
+	validateESMs: () => void
 }
 
 const DataContext = createContext<DataContextValue>({
 	ESMs: [],
 	bodySlidePresetsParsed: [],
+	validateESMs: () => {},
 })
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
@@ -44,7 +47,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		})
 	}, [dataFolder])
 
-	useEffect(() => {
+	const validateESMs = useCallback(() => {
 		if (!dataFolder) {
 			setESMs((prev) => (prev.length ? [] : prev))
 			return
@@ -57,8 +60,14 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		).then(setESMs)
 	}, [dataFolder, templatesContent])
 
+	useEffect(() => {
+		validateESMs()
+	}, [validateESMs])
+
 	return (
-		<DataContext.Provider value={{ ESMs, bodySlidePresetsParsed }}>
+		<DataContext.Provider
+			value={{ ESMs, bodySlidePresetsParsed, validateESMs }}
+		>
 			<LoadingOverlay zIndex={1000} visible={loading} pos="fixed" />
 			{children}
 		</DataContext.Provider>

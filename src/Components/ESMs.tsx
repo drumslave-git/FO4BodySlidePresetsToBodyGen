@@ -1,4 +1,4 @@
-import { Badge, Card, Group, Text, Tooltip } from "@mantine/core"
+import { Card, Text } from "@mantine/core"
 import { useData } from "./DataProvider"
 
 const ESMs = () => {
@@ -19,22 +19,15 @@ const ESMs = () => {
 					withBorder
 					key={item.name}
 				>
-					<Group justify="space-between" mt="xs" mb="xs">
-						<Text fw={500}>{item.name}</Text>
-						<Group>
-							<Tooltip label={item.filesStatus.morphs.text}>
-								<Badge color={item.filesStatus.morphs.color}>morphs.ini</Badge>
-							</Tooltip>
-							<Tooltip label={item.filesStatus.templates.text}>
-								<Badge color={item.filesStatus.templates.color}>
-									templates.ini
-								</Badge>
-							</Tooltip>
-						</Group>
-					</Group>
+					<Text fw={500}>{item.name}</Text>
 					<Text size="sm" c="dimmed">
-						{item.path}
+						ESM: {item.path}
 					</Text>
+					{Object.entries(item.filesStatus).map(([key, value]) => (
+						<Text key={key} size="xs" c={value.color}>
+							{value.path} - {value.text}
+						</Text>
+					))}
 				</Card>
 			))}
 		</>

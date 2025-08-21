@@ -14,12 +14,14 @@ import { useCallback, useEffect, useState } from "react"
 import type { BodySlidePreset, NotificationData } from "../../types"
 import Collapsable from "../Collapsable"
 import { useConfig } from "../ConfigProvider"
+import { useData } from "../DataProvider"
 import { useSharedState } from "../SharedStateProvider"
 import BodySlidePresets from "./Components/BodySlidePresets"
 import Morphs from "./Components/Morphs"
 
 const Converter = () => {
 	const { dataFolder } = useConfig()
+	const { validateESMs } = useData()
 	const {
 		morphs,
 		setMorphs,
@@ -79,6 +81,7 @@ const Converter = () => {
 				text: `Successfully written .ini files to ${count} ESMs in ${outDir}`,
 			})
 			setTemplatesRaw("")
+			validateESMs()
 		} catch (error) {
 			console.error("Error while writing:", error)
 			setNotification({

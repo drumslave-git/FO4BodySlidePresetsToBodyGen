@@ -3,7 +3,7 @@ import path from "node:path"
 import { XMLParser } from "fast-xml-parser"
 import { zip } from "zip-a-folder"
 
-import { SLIDERS_RELATIVE_PATH } from "./consts"
+import { BODYGEN_RELATIVE_PATH, SLIDERS_RELATIVE_PATH } from "./consts"
 import type {
 	BodySlidePreset,
 	BodySlidePresetParsed,
@@ -35,6 +35,7 @@ export const validateTemplates = (content: string) => {
 }
 
 export const resolveESMs = (dataFolder: string): ESM[] => {
+	const overridesPath = path.resolve(dataFolder, ...BODYGEN_RELATIVE_PATH)
 	return fs
 		.readdirSync(dataFolder)
 		.filter((item) => item.endsWith(".esm"))
@@ -45,10 +46,12 @@ export const resolveESMs = (dataFolder: string): ESM[] => {
 				path: itemPath,
 				filesStatus: {
 					templates: {
+						path: path.resolve(overridesPath, item, "templates.ini"),
 						color: "grey",
 						text: "unknown",
 					},
 					morphs: {
+						path: path.resolve(overridesPath, item, "morphs.ini"),
 						color: "grey",
 						text: "unknown",
 					},
@@ -66,12 +69,11 @@ export const validateESMs = (dataFolder: string, content: string) => {
 			morphs: "",
 		}
 		for (const [key, value] of Object.entries(formattedData)) {
-			const filePath = path.resolve(esm.path, `${key}.ini`)
+			const filePath = esm.filesStatus[key as keyof typeof formattedData].path
 			if (fs.existsSync(filePath)) {
+				const content = fs.readFileSync(filePath).toString()
 				statuses[key as keyof typeof formattedData] =
-					fs.readFileSync(filePath).toString() === value
-						? "up-to-date"
-						: "will be updated"
+					content === toCRLF(value) ? "up-to-date" : "will be updated"
 			} else {
 				statuses[key as keyof typeof formattedData] = "will be created"
 			}
@@ -79,11 +81,14 @@ export const validateESMs = (dataFolder: string, content: string) => {
 		return {
 			...esm,
 			filesStatus: {
+				...esm.filesStatus,
 				templates: {
+					...esm.filesStatus.templates,
 					color: statuses.templates === "up-to-date" ? "green" : "yellow",
 					text: statuses.templates,
 				},
 				morphs: {
+					...esm.filesStatus.morphs,
 					color: statuses.morphs === "up-to-date" ? "green" : "yellow",
 					text: statuses.morphs,
 				},
