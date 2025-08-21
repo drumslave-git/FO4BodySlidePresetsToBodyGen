@@ -23,6 +23,18 @@ const config: ForgeConfig = {
 		new MakerRpm({}),
 		new MakerDeb({}),
 	],
+	publishers: [
+		{
+			name: "@electron-forge/publisher-github",
+			config: {
+				repository: {
+					owner: "drumslave-git",
+					name: "FO4BodySlidePresetsToBodyGen",
+				},
+				generateReleaseNotes: true,
+			},
+		},
+	],
 	plugins: [
 		new AutoUnpackNativesPlugin({}),
 		new WebpackPlugin({
