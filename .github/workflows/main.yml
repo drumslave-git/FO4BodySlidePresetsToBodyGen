@@ -27,6 +27,9 @@ jobs:
     - uses: actions/setup-node@v4
     - uses: actions/checkout@v4
     - name: install, check and publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm ci
         npm run biome:check
