@@ -171,6 +171,18 @@ app.whenReady().then(() => {
 	ipcMain.handle("templates:parse", (_event, content: string) =>
 		parseTemplates(content),
 	)
+	ipcMain.handle("templates:readDefault", () => {
+		const defaultTemplatesPath = path.resolve(
+			loadConfig().dataFolder,
+			...BODYGEN_RELATIVE_PATH,
+			"Fallout4.esm",
+			"templates.ini",
+		)
+		if (!fs.existsSync(defaultTemplatesPath)) {
+			return ""
+		}
+		return fs.readFileSync(defaultTemplatesPath).toString()
+	})
 	ipcMain.handle("templates:validate", (_event, content: string) => {
 		try {
 			validateTemplates(content)

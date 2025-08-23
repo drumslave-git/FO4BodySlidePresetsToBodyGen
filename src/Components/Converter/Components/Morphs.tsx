@@ -78,7 +78,7 @@ const Morphs = ({
 	setMorphs: Dispatch<SetStateAction<Morph[]>>
 	onSelectBodySlidePresets: (index: number) => void
 }) => {
-	const { bodySlidePresetsParsed } = useData()
+	const { bodySlidePresetsParsed, defaultTemplates } = useData()
 	const { templatesRaw, setTemplatesRaw } = useSharedState()
 	const [
 		showTemplatesModal,
@@ -118,6 +118,11 @@ const Morphs = ({
 		},
 		[setMorphs],
 	)
+
+	useEffect(() => {
+		if (!defaultTemplates) return
+		parseTemplateRaw(defaultTemplates, bodySlidePresetsParsed).then(setMorphs)
+	}, [defaultTemplates])
 
 	useEffect(() => {
 		if (!templatesRaw) return

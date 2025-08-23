@@ -10,8 +10,8 @@ import type {
 } from "./types"
 
 contextBridge.exposeInMainWorld("electronAPI", {
-	openTemplates: (from: string) =>
-		ipcRenderer.invoke("dialog:openTemplates", from),
+	readDefaultTemplates: (): Promise<string> =>
+		ipcRenderer.invoke("templates:readDefault"),
 	openDataFolder: (folder: string) =>
 		ipcRenderer.invoke("dialog:openDataFolder", folder),
 	loadConfig: (): Promise<Config> => ipcRenderer.invoke("loadConfig"),

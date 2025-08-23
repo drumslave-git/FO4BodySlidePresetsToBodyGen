@@ -15,18 +15,21 @@ type DataContextValue = {
 	ESMs: ESM[]
 	bodySlidePresetsParsed: BodySlidePresetParsed[]
 	validateESMs: () => void
+	defaultTemplates: string
 }
 
 const DataContext = createContext<DataContextValue>({
 	ESMs: [],
 	bodySlidePresetsParsed: [],
 	validateESMs: () => {},
+	defaultTemplates: "",
 })
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const { dataFolder } = useConfig()
 	const { templatesContent } = useSharedState()
 	const [loading, setLoading] = useState(true)
+	const [defaultTemplates, setDefaultTemplates] = useState("")
 	const [ESMs, setESMs] = useState<ESM[]>([])
 	const [bodySlidePresetsParsed, setBodySlidePresetsParsed] = useState<
 		BodySlidePresetParsed[]
@@ -37,14 +40,22 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		if (!dataFolder) {
 			setESMs((prev) => (prev.length ? [] : prev))
 			setBodySlidePresetsParsed((prev) => (prev.length ? [] : prev))
+			setDefaultTemplates("")
 			setLoading(false)
 			return
 		}
-		// @ts-expect-error
-		window.electronAPI.resolveBodySlidePresets(dataFolder).then((data) => {
-			setBodySlidePresetsParsed(data)
+		const load = async () => {
+			setBodySlidePresetsParsed(
+				// @ts-expect-error
+				await window.electronAPI.resolveBodySlidePresets(dataFolder),
+			)
+			setDefaultTemplates(
+				// @ts-expect-error
+				await window.electronAPI.readDefaultTemplates(),
+			)
 			setLoading(false)
-		})
+		}
+		void load()
 	}, [dataFolder])
 
 	const validateESMs = useCallback(() => {
@@ -66,7 +77,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 
 	return (
 		<DataContext.Provider
-			value={{ ESMs, bodySlidePresetsParsed, validateESMs }}
+			value={{ ESMs, bodySlidePresetsParsed, validateESMs, defaultTemplates }}
 		>
 			<LoadingOverlay zIndex={1000} visible={loading} pos="fixed" />
 			{children}
