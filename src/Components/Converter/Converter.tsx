@@ -20,7 +20,7 @@ import BodySlidePresets from "./Components/BodySlidePresets"
 import Morphs from "./Components/Morphs"
 
 const Converter = () => {
-	const { dataFolder } = useConfig()
+	const { dataFolder, outputFolder } = useConfig()
 	const { validateESMs } = useData()
 	const {
 		morphs,
@@ -95,6 +95,7 @@ const Converter = () => {
 	}, [readyToWrite, templatesContent])
 
 	const onZip = useCallback(async () => {
+		if (outputFolder === dataFolder) return
 		setLoading(true)
 		try {
 			// @ts-expect-error
@@ -144,9 +145,11 @@ const Converter = () => {
 				)}
 				<Paper p="md" shadow="xs" withBorder>
 					<Group mt="md">
-						<Button color="orange" onClick={onZip}>
-							Zip Output
-						</Button>
+						{dataFolder !== outputFolder && (
+							<Button color="orange" onClick={onZip}>
+								Zip Output
+							</Button>
+						)}
 						<Button color="orange" disabled={!readyToWrite} onClick={onWrite}>
 							Write
 						</Button>

@@ -11,6 +11,7 @@ import {
 	shell,
 } from "electron"
 import type { Location } from "react-router"
+import { name, version } from "../package.json"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
 // @ts-expect-error
 import icon from "./images/icon.png"
@@ -119,7 +120,9 @@ const createWindow = (): void => {
 	})
 
 	// and load the index.html of the app.
-	void mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY)
+	void mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY).then(() => {
+		mainWindow.setTitle(`${name} v${version}`)
+	})
 
 	// Open the DevTools.
 	!app.isPackaged && mainWindow.webContents.openDevTools()
@@ -192,17 +195,20 @@ app.whenReady().then(() => {
 		}
 	})
 	ipcMain.handle("format", (_event, content: string) => formatINIs(content))
-	ipcMain.handle("write", (_event, from: string, content: string) =>
-		write(
-			from,
-			path.resolve(
+	ipcMain.handle("write", (_event, from: string, content: string) => {
+		const config = loadConfig()
+		let outputFolder = config.outputFolder
+		if (outputFolder !== config.dataFolder) {
+			outputFolder = path.resolve(
 				loadConfig().outputFolder,
 				"BodyGen",
 				...BODYGEN_RELATIVE_PATH,
-			),
-			content,
-		),
-	)
+			)
+		} else {
+			outputFolder = path.resolve(outputFolder, ...BODYGEN_RELATIVE_PATH)
+		}
+		return write(from, outputFolder, content)
+	})
 	ipcMain.handle("ESM:resolve", (_events, from: string) => resolveESMs(from))
 	ipcMain.handle("ESM:validate", (_events, from: string, content: string) =>
 		validateESMs(from, content),
@@ -214,12 +220,15 @@ app.whenReady().then(() => {
 		path.resolve(...(args.length ? args : [APP_DIR])),
 	)
 	ipcMain.handle("zipOutput", async () => {
-		const out = path.resolve(loadConfig().outputFolder)
+		const config = loadConfig()
+		if (config.outputFolder === config.dataFolder) {
+			return "No need to zip, output folder is the same as data folder."
+		}
 		await zipFolder(
-			path.resolve(out, "BodyGen"),
-			path.resolve(out, "BodyGen.zip"),
+			path.resolve(config.outputFolder, "BodyGen"),
+			path.resolve(config.outputFolder, "BodyGen.zip"),
 		)
-		return path.resolve(out, "BodyGen.zip")
+		return path.resolve(config.outputFolder, "BodyGen.zip")
 	})
 
 	ipcMain.on("navigate", (_event, location: Location) =>
