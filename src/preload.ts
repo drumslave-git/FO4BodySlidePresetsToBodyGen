@@ -39,4 +39,5 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	pathResolve: (...args: any[]): Promise<string> =>
 		ipcRenderer.invoke("path:resolve", ...args),
 	navigate: (location: Location) => ipcRenderer.send("navigate", location),
+	openExternalUrl: (url: string) => ipcRenderer.send("openExternal", url),
 })

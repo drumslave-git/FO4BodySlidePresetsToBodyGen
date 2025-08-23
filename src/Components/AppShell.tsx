@@ -1,10 +1,12 @@
 import {
+	Button,
 	Container,
+	Group,
 	AppShell as MantineAppShell,
 	Paper,
 	Tabs,
 } from "@mantine/core"
-import { useEffect, useState } from "react"
+import { type MouseEvent, useCallback, useEffect, useState } from "react"
 import {
 	HashRouter,
 	Route,
@@ -35,13 +37,43 @@ const Header = () => {
 		window.electronAPI.navigate(location)
 	}, [location])
 
+	const onExternalLinkClick = useCallback(
+		(e: MouseEvent<HTMLButtonElement>) => {
+			// @ts-expect-error
+			window.electronAPI.openExternalUrl(e.currentTarget.dataset.href)
+		},
+		[],
+	)
+
 	return (
-		<Tabs value={activeTab} onChange={setActiveTab}>
-			<Tabs.List>
-				<Tabs.Tab value="/">Converter</Tabs.Tab>
-				<Tabs.Tab value="/settings">Settings</Tabs.Tab>
-			</Tabs.List>
-		</Tabs>
+		<Group justify="space-between">
+			<Tabs value={activeTab} onChange={setActiveTab}>
+				<Tabs.List>
+					<Tabs.Tab value="/">Converter</Tabs.Tab>
+					<Tabs.Tab value="/settings">Settings</Tabs.Tab>
+				</Tabs.List>
+			</Tabs>
+			<Group gap={0}>
+				<Button
+					variant="subtle"
+					color="gray"
+					size="xs"
+					data-href="https://github.com/drumslave-git/FO4BodySlidePresetsToBodyGen"
+					onClick={onExternalLinkClick}
+				>
+					GitHub
+				</Button>
+				<Button
+					variant="subtle"
+					color="orange"
+					size="xs"
+					data-href="https://www.nexusmods.com/fallout4/mods/96066"
+					onClick={onExternalLinkClick}
+				>
+					Nexus
+				</Button>
+			</Group>
+		</Group>
 	)
 }
 

@@ -8,6 +8,7 @@ import {
 	Menu,
 	nativeImage,
 	session,
+	shell,
 } from "electron"
 import type { Location } from "react-router"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
@@ -212,6 +213,7 @@ app.whenReady().then(() => {
 	ipcMain.on("navigate", (_event, location: Location) =>
 		handleNavigate(location),
 	)
+	ipcMain.on("openExternal", (_event, url: string) => shell.openExternal(url))
 
 	// On macOS it's common to re-create a window in the app when the
 	// dock icon is clicked and there are no other windows open.
