@@ -65,3 +65,13 @@ export type Slider = {
 export type ParsedTemplates = {
 	[key: string]: { name: string; value: string }[]
 }
+
+export enum BodyType {
+	maleBody = "MaleBody",
+	femaleBody = "FemaleBody",
+}
+
+export type BodyNIFFiles = {
+	[BodyType.maleBody]: string
+	[BodyType.femaleBody]: string
+}

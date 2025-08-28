@@ -1,3 +1,4 @@
+import path from "node:path"
 import { FuseV1Options, FuseVersion } from "@electron/fuses"
 import { MakerDeb } from "@electron-forge/maker-deb"
 import { MakerRpm } from "@electron-forge/maker-rpm"
@@ -7,6 +8,7 @@ import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-nati
 import { FusesPlugin } from "@electron-forge/plugin-fuses"
 import { WebpackPlugin } from "@electron-forge/plugin-webpack"
 import type { ForgeConfig } from "@electron-forge/shared-types"
+import fs from "fs-extra"
 
 import { mainConfig } from "./webpack.main.config"
 import { rendererConfig } from "./webpack.renderer.config"
@@ -15,8 +17,37 @@ const config: ForgeConfig = {
 	packagerConfig: {
 		asar: true,
 		icon: "./src/images/icon",
+		// move binaries to resources folder
+		extraResource: ["./src/NIF/dotnet/NifImporter/bin/Release/net9.0"],
 	},
-	rebuildConfig: {},
+	hooks: {
+		// copy "node_modules/electron-edge-js" and "node_modules/edge-cs" to resources folder
+		// postPackage: async (_forgeConfig, options) => {
+		// 	console.log("build_path", options.outputPaths)
+		// 	const outdir = options.outputPaths[0]
+		// 	console.log("outdir", outdir)
+		// 	// Get node_modules path
+		// 	const nodeModulesPath = path.join(outdir, "resources", "node_modules")
+		// 	const modulesToCopy = ["edge-cs", "electron-edge-js"]
+		// 	// loop-for
+		// 	for (const moduleName of modulesToCopy) {
+		// 		const sourcePath = path.join(__dirname, "node_modules", moduleName)
+		// 		const targetPath = path.join(nodeModulesPath, moduleName)
+		// 		console.log(
+		// 			`Copying ${moduleName} from:`,
+		// 			sourcePath,
+		// 			"to:",
+		// 			targetPath,
+		// 		)
+		// 		fs.copySync(sourcePath, targetPath)
+		// 	}
+		// 	console.log("All modules copied successfully!")
+		// },
+	},
+	rebuildConfig: {
+		// exclude any Node.js pre-build modules such as electron-edge-js from rebuild
+		onlyModules: [],
+	},
 	makers: [
 		new MakerSquirrel({}),
 		new MakerZIP({}, ["darwin"]),

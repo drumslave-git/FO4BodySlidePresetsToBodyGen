@@ -11,14 +11,17 @@ import {
 	shell,
 } from "electron"
 import type { Location } from "react-router"
+
 import { name, version } from "../package.json"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
 // @ts-expect-error
 import icon from "./images/icon.png"
+import readNif from "./NIF/nifImporter"
 import type { Config } from "./types"
 import {
 	formatINIs,
 	parseTemplates,
+	resolveBodyNIFs,
 	resolveBodySlidePresets,
 	resolveESMs,
 	validateESMs,
@@ -216,6 +219,12 @@ app.whenReady().then(() => {
 	ipcMain.handle("resolveBodySlidePresets", (_events, from: string) =>
 		resolveBodySlidePresets(from),
 	)
+	ipcMain.handle("resolveNIFs", (_events, from: string) =>
+		resolveBodyNIFs(from),
+	)
+	ipcMain.handle("nif:load", async (_event, nifPath: string) => {
+		return await readNif(nifPath)
+	})
 	ipcMain.handle("path:resolve", (_events, ...args) =>
 		path.resolve(...(args.length ? args : [APP_DIR])),
 	)

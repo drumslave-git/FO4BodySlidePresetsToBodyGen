@@ -7,15 +7,26 @@ import {
 	useEffect,
 	useState,
 } from "react"
-import type { BodySlidePresetParsed, ESM } from "../types"
+import {
+	type BodyNIFFiles,
+	type BodySlidePresetParsed,
+	BodyType,
+	type ESM,
+} from "../types"
 import { useConfig } from "./ConfigProvider"
 import { useSharedState } from "./SharedStateProvider"
 
 type DataContextValue = {
 	ESMs: ESM[]
 	bodySlidePresetsParsed: BodySlidePresetParsed[]
+	NIFs: BodyNIFFiles
 	validateESMs: () => void
 	defaultTemplates: string
+}
+
+const defaultNIFs: BodyNIFFiles = {
+	[BodyType.maleBody]: "",
+	[BodyType.femaleBody]: "",
 }
 
 const DataContext = createContext<DataContextValue>({
@@ -23,6 +34,7 @@ const DataContext = createContext<DataContextValue>({
 	bodySlidePresetsParsed: [],
 	validateESMs: () => {},
 	defaultTemplates: "",
+	NIFs: defaultNIFs,
 })
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
@@ -31,6 +43,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const [loading, setLoading] = useState(true)
 	const [defaultTemplates, setDefaultTemplates] = useState("")
 	const [ESMs, setESMs] = useState<ESM[]>([])
+	const [NIFs, setNIFs] = useState<BodyNIFFiles>(defaultNIFs)
 	const [bodySlidePresetsParsed, setBodySlidePresetsParsed] = useState<
 		BodySlidePresetParsed[]
 	>([])
@@ -40,6 +53,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		if (!dataFolder) {
 			setESMs((prev) => (prev.length ? [] : prev))
 			setBodySlidePresetsParsed((prev) => (prev.length ? [] : prev))
+			setNIFs(defaultNIFs)
 			setDefaultTemplates("")
 			setLoading(false)
 			return
@@ -52,6 +66,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 			setDefaultTemplates(
 				// @ts-expect-error
 				await window.electronAPI.readDefaultTemplates(),
+			)
+			setNIFs(
+				// @ts-expect-error
+				await window.electronAPI.resolveNIFs(dataFolder),
 			)
 			setLoading(false)
 		}
@@ -77,7 +95,13 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 
 	return (
 		<DataContext.Provider
-			value={{ ESMs, bodySlidePresetsParsed, validateESMs, defaultTemplates }}
+			value={{
+				ESMs,
+				bodySlidePresetsParsed,
+				NIFs,
+				validateESMs,
+				defaultTemplates,
+			}}
 		>
 			<LoadingOverlay zIndex={1000} visible={loading} pos="fixed" />
 			{children}

@@ -2,6 +2,7 @@ import { contextBridge, ipcRenderer } from "electron/renderer"
 import type { Location } from "react-router"
 
 import type {
+	BodyNIFFiles,
 	BodySlidePresetParsed,
 	Config,
 	ESM,
@@ -23,6 +24,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 		ipcRenderer.invoke("ESM:validate", from, content),
 	resolveBodySlidePresets: (from: string): Promise<BodySlidePresetParsed[]> =>
 		ipcRenderer.invoke("resolveBodySlidePresets", from),
+	resolveNIFs: (from: string): Promise<BodyNIFFiles> =>
+		ipcRenderer.invoke("resolveNIFs", from),
 	validateTemplates: (content: string): Promise<string> =>
 		ipcRenderer.invoke("templates:validate", content),
 	parseTemplates: (content: string): Promise<ParsedTemplates> =>
@@ -35,6 +38,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	): Promise<{ count: number; outDir: string }> =>
 		ipcRenderer.invoke("write", from, content),
 	zipOutput: (): Promise<string> => ipcRenderer.invoke("zipOutput"),
+	loadNIF: (nifPath: string): Promise<string> =>
+		ipcRenderer.invoke("nif:load", nifPath),
 	// biome-ignore lint/suspicious/noExplicitAny: path resolve
 	pathResolve: (...args: any[]): Promise<string> =>
 		ipcRenderer.invoke("path:resolve", ...args),

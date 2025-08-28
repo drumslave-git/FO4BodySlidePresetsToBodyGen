@@ -3,14 +3,20 @@ import path from "node:path"
 import { XMLParser } from "fast-xml-parser"
 import { zip } from "zip-a-folder"
 
-import { BODYGEN_RELATIVE_PATH, SLIDERS_RELATIVE_PATH } from "./consts"
-import type {
-	BodySlidePreset,
-	BodySlidePresetParsed,
-	ESM,
-	FormattedData,
-	ParsedTemplates,
-	Slider,
+import {
+	BODYGEN_RELATIVE_PATH,
+	MESHES_CHARACTER_ASSETS_RELATIVE_PATH,
+	SLIDERS_RELATIVE_PATH,
+} from "./consts"
+import {
+	type BodyNIFFiles,
+	type BodySlidePreset,
+	type BodySlidePresetParsed,
+	BodyType,
+	type ESM,
+	type FormattedData,
+	type ParsedTemplates,
+	type Slider,
 } from "./types"
 
 const toCRLF = (text: string) => text.replace(/\r?\n/g, "\r\n")
@@ -32,6 +38,23 @@ export const validateTemplates = (content: string) => {
 			`Morphs setting is empty in templates.ini:${morphsSettingIndex + 1}`,
 		)
 	}
+}
+
+export const resolveBodyNIFs = (dataFolder: string) => {
+	const results: BodyNIFFiles = {
+		[BodyType.maleBody]:
+			"not found, make sure you have the custom body installed",
+		[BodyType.femaleBody]:
+			"not found, make sure you have the custom body installed",
+	}
+	const dir = path.resolve(dataFolder, ...MESHES_CHARACTER_ASSETS_RELATIVE_PATH)
+	for (const body of Object.values(BodyType)) {
+		const filePath = path.resolve(dir, `${body}.nif`)
+		if (fs.existsSync(filePath)) {
+			results[body] = filePath
+		}
+	}
+	return results
 }
 
 export const resolveESMs = (dataFolder: string): ESM[] => {

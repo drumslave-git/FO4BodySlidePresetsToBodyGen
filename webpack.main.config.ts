@@ -16,4 +16,11 @@ export const mainConfig: Configuration = {
 	resolve: {
 		extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".json"],
 	},
+	externals: {
+		"electron-edge-js": "commonjs2 electron-edge-js",
+	},
+	node: {
+		__dirname: false,
+		__filename: false,
+	},
 }

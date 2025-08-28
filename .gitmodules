@@ -1,0 +1,9 @@
+[submodule "src/fo4-nif-viewer/deps/nifly"]
+	path = src/fo4-nif-viewer/deps/nifly
+	url = https://github.com/ousnius/nifly
+[submodule "src/fo4-nif-viewer/deps/tinygltf"]
+	path = src/fo4-nif-viewer/deps/tinygltf
+	url = https://github.com/syoyo/tinygltf
+[submodule "src/nif/third_party/nifly"]
+	path = src/nif/third_party/nifly
+	url = https://github.com/ousnius/nifly
