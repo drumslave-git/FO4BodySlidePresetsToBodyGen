@@ -9,6 +9,7 @@ const Model = ({ mesh }: { mesh: NifMesh }) => {
 	const geometry = useMemo(() => {
 		// @ts-expect-error
 		const result = new BufferGeometry()
+		if (!mesh) return result
 		result.setAttribute(
 			"position",
 			new Float32BufferAttribute(mesh.vertices.flat(), 3),
