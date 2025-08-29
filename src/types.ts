@@ -75,3 +75,10 @@ export type BodyNIFFiles = {
 	[BodyType.maleBody]: string
 	[BodyType.femaleBody]: string
 }
+
+export type NifMesh = {
+	vertices: number[]
+	normals: number[]
+	uvs: number[]
+	indices: number[]
+}
