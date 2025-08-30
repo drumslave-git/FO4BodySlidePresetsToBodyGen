@@ -17,6 +17,7 @@ import { BODYGEN_RELATIVE_PATH } from "./consts"
 // @ts-expect-error
 import icon from "./images/icon.png"
 import readNif from "./NIF/nifImporter"
+import { parseBodySlideTri } from "./TRI/TriReader"
 import type { Config } from "./types"
 import {
 	formatINIs,
@@ -223,7 +224,10 @@ app.whenReady().then(() => {
 		resolveBodyNIFs(from),
 	)
 	ipcMain.handle("nif:load", async (_event, nifPath: string) => {
-		return await readNif(nifPath)
+		return readNif(nifPath)
+	})
+	ipcMain.handle("tri:load", async (_event, triPath: string) => {
+		return parseBodySlideTri(triPath)
 	})
 	ipcMain.handle("path:resolve", (_events, ...args) =>
 		path.resolve(...(args.length ? args : [APP_DIR])),

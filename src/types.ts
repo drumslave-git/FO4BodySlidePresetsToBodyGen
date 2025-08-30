@@ -82,3 +82,24 @@ export type NifMesh = {
 	uvs: number[]
 	indices: number[]
 }
+
+export type TriHeader = {
+	magic: "PIRT"
+	version: number // 1
+	baseName: string // e.g., "FusionGirl"
+	channelCount: number
+}
+
+export type TriChannel = {
+	name: string
+	scale: number // multiply int16 deltas by this
+	numAffected: number
+	// Sparse: only vertices that move appear here
+	indices: Uint16Array // length = numAffected
+	deltas: Int16Array // length = numAffected * 3, order xyz per vertex
+}
+
+export type BodySlideTri = {
+	header: TriHeader
+	channels: TriChannel[]
+}

@@ -4,6 +4,7 @@ import type { Location } from "react-router"
 import type {
 	BodyNIFFiles,
 	BodySlidePresetParsed,
+	BodySlideTri,
 	Config,
 	ESM,
 	FormattedData,
@@ -40,6 +41,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	zipOutput: (): Promise<string> => ipcRenderer.invoke("zipOutput"),
 	loadNIF: (nifPath: string): Promise<string> =>
 		ipcRenderer.invoke("nif:load", nifPath),
+	loadTRI: (triPath: string): Promise<BodySlideTri> =>
+		ipcRenderer.invoke("tri:load", triPath),
 	// biome-ignore lint/suspicious/noExplicitAny: path resolve
 	pathResolve: (...args: any[]): Promise<string> =>
 		ipcRenderer.invoke("path:resolve", ...args),

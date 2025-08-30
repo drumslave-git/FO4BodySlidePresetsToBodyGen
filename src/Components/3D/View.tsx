@@ -1,33 +1,39 @@
 import { OrbitControls, PerspectiveCamera, Resize } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import { useEffect, useMemo, useState } from "react"
-import { BufferGeometry, Float32BufferAttribute } from "three"
+import * as THREE from "three"
 
-import type { NifMesh } from "../../types"
+import type { BodySlideTri, NifMesh } from "../../types"
 
-const Model = ({ mesh }: { mesh: NifMesh }) => {
+const Model = ({ mesh, tri }: { mesh: NifMesh; tri: BodySlideTri }) => {
 	const geometry = useMemo(() => {
+		if (!mesh || !tri) return null
+
 		// @ts-expect-error
-		const result = new BufferGeometry()
-		if (!mesh) return result
-		result.setAttribute(
+		const geo = new THREE.BufferGeometry()
+
+		geo.setAttribute(
 			"position",
-			new Float32BufferAttribute(mesh.vertices.flat(), 3),
+			new THREE.Float32BufferAttribute(mesh.vertices.flat(), 3),
 		)
-		result.setAttribute(
+
+		geo.setAttribute(
 			"normal",
-			new Float32BufferAttribute(mesh.normals.flat(), 3),
+			new THREE.Float32BufferAttribute(mesh.normals.flat(), 3),
 		)
-		result.setAttribute("uv", new Float32BufferAttribute(mesh.uvs.flat(), 2))
-		result.setIndex(mesh.indices)
-		result.center()
-		result.scale(1, 1, 1)
-		result.rotateX(-Math.PI / 2)
 
-		return result
-	}, [mesh])
+		new THREE.Float32BufferAttribute(mesh.uvs.flat(), 2)
 
-	if (!mesh) return null
+		geo.setIndex(mesh.indices)
+
+		geo.center()
+		geo.scale(1, 1, 1)
+		geo.rotateX(-Math.PI / 2)
+
+		return geo
+	}, [mesh, tri])
+
+	if (!geometry) return null
 
 	return (
 		<Resize height>
@@ -39,7 +45,9 @@ const Model = ({ mesh }: { mesh: NifMesh }) => {
 }
 
 const View = ({ nifPath }: { nifPath: string }) => {
-	const [nifMesh, setNifMesh] = useState<NifMesh | null>(null)
+	const [data, setData] = useState<{ nif: NifMesh; tri: BodySlideTri } | null>(
+		null,
+	)
 
 	useEffect(() => {
 		if (!nifPath) return
@@ -47,7 +55,12 @@ const View = ({ nifPath }: { nifPath: string }) => {
 			// @ts-expect-error
 			const meshData = await window.electronAPI.loadNIF(nifPath)
 			console.log(meshData.meshes)
-			setNifMesh(meshData?.meshes?.at(0) || [])
+			// @ts-expect-error
+			const triData = await window.electronAPI.loadTRI(
+				nifPath.replace(/\.nif$/i, ".tri"),
+			)
+			console.log("TRI data:", triData)
+			setData({ nif: meshData.meshes[0], tri: triData })
 		})()
 	}, [nifPath])
 
@@ -55,13 +68,18 @@ const View = ({ nifPath }: { nifPath: string }) => {
 		return <div>No NIF file provided.</div>
 	}
 
+	if (!data) {
+		return <div>Loading...</div>
+	}
+
 	return (
 		<Canvas style={{ width: "100%", height: "100%" }}>
 			<ambientLight intensity={0.5} />
-			<directionalLight position={[10, 10, 10]} />
+			<directionalLight position={[10, 10, -10]} />
+			<directionalLight position={[-10, 10, 10]} />
 			{/* Add 3D axes helper at model center */}
 			{/*<primitive object={new AxesHelper(1)} position={[0, 0, 0]} />*/}
-			<Model mesh={nifMesh} />
+			<Model mesh={data.nif} tri={data.tri} />
 			{/* Adds orbit and zoom controls targeting the model center */}
 			<PerspectiveCamera makeDefault position={[1, 0.5, -1]} fov={35} />
 			<OrbitControls makeDefault />
