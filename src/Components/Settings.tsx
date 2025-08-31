@@ -62,36 +62,32 @@ const Settings = () => {
 					Settings are saved in: {hint}
 				</Text>
 			</Paper>
-			<Paper p="md" shadow="xs" withBorder mt="md">
-				<Text>Male Body</Text>
-				<Text size="xs">
-					nif: {BodyType.maleBody}: {bodyFiles[BodyType.maleBody].nif}
-				</Text>
-				<Text size="xs">
-					tri: {BodyType.maleBody}: {bodyFiles[BodyType.maleBody].tri}
-				</Text>
-				<Box h={300}>
+			<Group mt="md">
+				<Paper
+					p="md"
+					shadow="xs"
+					withBorder
+					w="calc(50% - var(--group-gap) / 2"
+				>
+					<Text>Male Body</Text>
 					<View
 						nifPath={bodyFiles[BodyType.maleBody].nif}
 						triPath={bodyFiles[BodyType.maleBody].tri}
 					/>
-				</Box>
-			</Paper>
-			<Paper p="md" shadow="xs" withBorder mt="md">
-				<Text>Female Body</Text>
-				<Text size="xs">
-					nif: {BodyType.femaleBody}: {bodyFiles[BodyType.femaleBody].nif}
-				</Text>
-				<Text size="xs">
-					tri: {BodyType.femaleBody}: {bodyFiles[BodyType.femaleBody].tri}
-				</Text>
-				<Box h={300}>
+				</Paper>
+				<Paper
+					p="md"
+					shadow="xs"
+					withBorder
+					w="calc(50% - var(--group-gap) / 2"
+				>
+					<Text>Female Body</Text>
 					<View
 						nifPath={bodyFiles[BodyType.femaleBody].nif}
 						triPath={bodyFiles[BodyType.femaleBody].tri}
 					/>
-				</Box>
-			</Paper>
+				</Paper>
+			</Group>
 		</Container>
 	)
 }

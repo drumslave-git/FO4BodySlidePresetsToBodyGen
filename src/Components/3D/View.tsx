@@ -1,3 +1,4 @@
+import { AspectRatio } from "@mantine/core"
 import { OrbitControls, PerspectiveCamera, Resize } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import { useEffect, useMemo, useState } from "react"
@@ -133,16 +134,18 @@ const View = ({
 	}
 
 	return (
-		<Canvas style={{ width: "100%", height: "100%" }}>
-			<ambientLight intensity={0.5} />
-			<directionalLight position={[10, 10, -10]} />
-			<directionalLight position={[-10, 10, 10]} />
-			{/* Add 3D axes helper at model center */}
-			{/*<primitive object={new AxesHelper(1)} position={[0, 0, 0]} />*/}
-			<Model mesh={data.nif} tri={data.tri} sliders={sliders} />
-			<PerspectiveCamera makeDefault position={[1, 0.5, -1]} fov={35} />
-			<OrbitControls makeDefault />
-		</Canvas>
+		<AspectRatio ratio={1}>
+			<Canvas style={{ width: "100%", height: "100%" }}>
+				<ambientLight intensity={0.5} />
+				<directionalLight position={[10, 10, -10]} />
+				<directionalLight position={[-10, 10, 10]} />
+				{/* Add 3D axes helper at model center */}
+				{/*<primitive object={new AxesHelper(1)} position={[0, 0, 0]} />*/}
+				<Model mesh={data.nif} tri={data.tri} sliders={sliders} />
+				<PerspectiveCamera makeDefault position={[1, 0.5, -1]} fov={40} />
+				<OrbitControls makeDefault />
+			</Canvas>
+		</AspectRatio>
 	)
 }
 
