@@ -1,3 +1,4 @@
+import path from "node:path"
 import type { Configuration } from "webpack"
 import { plugins } from "./webpack.plugins"
 import { rules } from "./webpack.rules"
@@ -15,6 +16,9 @@ export const mainConfig: Configuration = {
 	plugins,
 	resolve: {
 		extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".json"],
+		alias: {
+			three: path.resolve(__dirname, "node_modules/three"),
+		},
 	},
 	externals: {
 		"electron-edge-js": "commonjs2 electron-edge-js",
