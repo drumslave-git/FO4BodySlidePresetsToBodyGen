@@ -1,5 +1,11 @@
 import { AspectRatio } from "@mantine/core"
-import { OrbitControls, PerspectiveCamera, Resize } from "@react-three/drei"
+import {
+	GizmoHelper,
+	GizmoViewport,
+	OrbitControls,
+	PerspectiveCamera,
+	Resize,
+} from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import { useEffect, useState } from "react"
 import { BufferGeometry, Float32BufferAttribute } from "three"
@@ -13,7 +19,6 @@ import type {
 } from "../../types"
 import { useData } from "../DataProvider"
 
-/** Quick index for O(1) morph lookup by name. */
 export function indexMorphs(tri: TriBodySlide): Map<string, TriMorphSparse> {
 	const m = new Map<string, TriMorphSparse>()
 	for (const morph of tri.morphs) m.set(morph.name, morph)
@@ -123,6 +128,15 @@ const View = ({
 				/>
 				<PerspectiveCamera makeDefault position={[1, 0.5, -1]} fov={40} />
 				<OrbitControls makeDefault />
+				<GizmoHelper
+					alignment="bottom-right" // widget alignment within scene
+					margin={[50, 50]} // widget margins (X, Y)
+				>
+					<GizmoViewport
+						axisColors={["red", "green", "blue"]}
+						labelColor="white"
+					/>
+				</GizmoHelper>
 			</Canvas>
 		</AspectRatio>
 	)
