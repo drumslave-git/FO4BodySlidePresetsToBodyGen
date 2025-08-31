@@ -1,3 +1,4 @@
+import { Resize } from "@react-three/drei"
 import { BufferGeometry, Float32BufferAttribute } from "three"
 
 import type {
