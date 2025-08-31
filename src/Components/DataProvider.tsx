@@ -8,7 +8,7 @@ import {
 	useState,
 } from "react"
 import {
-	type BodyNIFFiles,
+	type BodyFiles,
 	type BodySlidePresetParsed,
 	BodyType,
 	type ESM,
@@ -19,14 +19,20 @@ import { useSharedState } from "./SharedStateProvider"
 type DataContextValue = {
 	ESMs: ESM[]
 	bodySlidePresetsParsed: BodySlidePresetParsed[]
-	NIFs: BodyNIFFiles
+	bodyFiles: BodyFiles
 	validateESMs: () => void
 	defaultTemplates: string
 }
 
-const defaultNIFs: BodyNIFFiles = {
-	[BodyType.maleBody]: "",
-	[BodyType.femaleBody]: "",
+const defaultBodyFiles: BodyFiles = {
+	[BodyType.maleBody]: {
+		nif: "",
+		tri: "",
+	},
+	[BodyType.femaleBody]: {
+		nif: "",
+		tri: "",
+	},
 }
 
 const DataContext = createContext<DataContextValue>({
@@ -34,7 +40,7 @@ const DataContext = createContext<DataContextValue>({
 	bodySlidePresetsParsed: [],
 	validateESMs: () => {},
 	defaultTemplates: "",
-	NIFs: defaultNIFs,
+	bodyFiles: defaultBodyFiles,
 })
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
@@ -43,7 +49,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const [loading, setLoading] = useState(true)
 	const [defaultTemplates, setDefaultTemplates] = useState("")
 	const [ESMs, setESMs] = useState<ESM[]>([])
-	const [NIFs, setNIFs] = useState<BodyNIFFiles>(defaultNIFs)
+	const [bodyFiles, setBodyFiles] = useState<BodyFiles>(defaultBodyFiles)
 	const [bodySlidePresetsParsed, setBodySlidePresetsParsed] = useState<
 		BodySlidePresetParsed[]
 	>([])
@@ -53,7 +59,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		if (!dataFolder) {
 			setESMs((prev) => (prev.length ? [] : prev))
 			setBodySlidePresetsParsed((prev) => (prev.length ? [] : prev))
-			setNIFs(defaultNIFs)
+			setBodyFiles(defaultBodyFiles)
 			setDefaultTemplates("")
 			setLoading(false)
 			return
@@ -67,9 +73,9 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				// @ts-expect-error
 				await window.electronAPI.readDefaultTemplates(),
 			)
-			setNIFs(
+			setBodyFiles(
 				// @ts-expect-error
-				await window.electronAPI.resolveNIFs(dataFolder),
+				await window.electronAPI.resolveBodyFiles(dataFolder),
 			)
 			setLoading(false)
 		}
@@ -98,7 +104,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 			value={{
 				ESMs,
 				bodySlidePresetsParsed,
-				NIFs,
+				bodyFiles,
 				validateESMs,
 				defaultTemplates,
 			}}

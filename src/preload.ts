@@ -2,13 +2,13 @@ import { contextBridge, ipcRenderer } from "electron/renderer"
 import type { Location } from "react-router"
 
 import type {
-	BodyNIFFiles,
+	BodyFiles,
 	BodySlidePresetParsed,
-	BodySlideTri,
 	Config,
 	ESM,
 	FormattedData,
 	ParsedTemplates,
+	TriBodySlide,
 } from "./types"
 
 contextBridge.exposeInMainWorld("electronAPI", {
@@ -25,8 +25,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 		ipcRenderer.invoke("ESM:validate", from, content),
 	resolveBodySlidePresets: (from: string): Promise<BodySlidePresetParsed[]> =>
 		ipcRenderer.invoke("resolveBodySlidePresets", from),
-	resolveNIFs: (from: string): Promise<BodyNIFFiles> =>
-		ipcRenderer.invoke("resolveNIFs", from),
+	resolveBodyFiles: (from: string): Promise<BodyFiles> =>
+		ipcRenderer.invoke("resolveBodyFiles", from),
 	validateTemplates: (content: string): Promise<string> =>
 		ipcRenderer.invoke("templates:validate", content),
 	parseTemplates: (content: string): Promise<ParsedTemplates> =>
@@ -41,7 +41,7 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	zipOutput: (): Promise<string> => ipcRenderer.invoke("zipOutput"),
 	loadNIF: (nifPath: string): Promise<string> =>
 		ipcRenderer.invoke("nif:load", nifPath),
-	loadTRI: (triPath: string): Promise<BodySlideTri> =>
+	loadTRI: (triPath: string): Promise<TriBodySlide> =>
 		ipcRenderer.invoke("tri:load", triPath),
 	// biome-ignore lint/suspicious/noExplicitAny: path resolve
 	pathResolve: (...args: any[]): Promise<string> =>

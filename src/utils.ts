@@ -9,7 +9,7 @@ import {
 	SLIDERS_RELATIVE_PATH,
 } from "./consts"
 import {
-	type BodyNIFFiles,
+	type BodyFiles,
 	type BodySlidePreset,
 	type BodySlidePresetParsed,
 	BodyType,
@@ -40,18 +40,28 @@ export const validateTemplates = (content: string) => {
 	}
 }
 
-export const resolveBodyNIFs = (dataFolder: string) => {
-	const results: BodyNIFFiles = {
-		[BodyType.maleBody]:
-			"not found, make sure you have the custom body installed",
-		[BodyType.femaleBody]:
-			"not found, make sure you have the custom body installed",
+export const resolveBodyFiles = (dataFolder: string) => {
+	const defaultString =
+		"not found, make sure you have the custom body installed"
+	const results: BodyFiles = {
+		[BodyType.maleBody]: {
+			nif: defaultString,
+			tri: defaultString,
+		},
+		[BodyType.femaleBody]: {
+			nif: defaultString,
+			tri: defaultString,
+		},
 	}
 	const dir = path.resolve(dataFolder, ...MESHES_CHARACTER_ASSETS_RELATIVE_PATH)
 	for (const body of Object.values(BodyType)) {
-		const filePath = path.resolve(dir, `${body}.nif`)
-		if (fs.existsSync(filePath)) {
-			results[body] = filePath
+		const nifPath = path.resolve(dir, `${body}.nif`)
+		if (fs.existsSync(nifPath)) {
+			results[body].nif = nifPath
+		}
+		const triPath = path.resolve(dir, `${body}.tri`)
+		if (fs.existsSync(triPath)) {
+			results[body].tri = triPath
 		}
 	}
 	return results

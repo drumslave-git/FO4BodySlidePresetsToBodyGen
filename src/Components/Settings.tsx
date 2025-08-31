@@ -8,7 +8,7 @@ import { useData } from "./DataProvider"
 
 const Settings = () => {
 	const { dataFolder, outputFolder, loadConfig } = useConfig()
-	const { NIFs } = useData()
+	const { bodyFiles } = useData()
 	const [isPicking, setIsPicking] = useState<boolean>(false)
 	const [hint, setHint] = useState<string>("")
 
@@ -63,17 +63,33 @@ const Settings = () => {
 				</Text>
 			</Paper>
 			<Paper p="md" shadow="xs" withBorder mt="md">
+				<Text>Male Body</Text>
 				<Text size="xs">
-					{BodyType.maleBody}: {NIFs[BodyType.maleBody]}
+					nif: {BodyType.maleBody}: {bodyFiles[BodyType.maleBody].nif}
+				</Text>
+				<Text size="xs">
+					tri: {BodyType.maleBody}: {bodyFiles[BodyType.maleBody].tri}
 				</Text>
 				<Box h={300}>
-					<View nifPath={NIFs[BodyType.maleBody]} />
+					<View
+						nifPath={bodyFiles[BodyType.maleBody].nif}
+						triPath={bodyFiles[BodyType.maleBody].tri}
+					/>
 				</Box>
+			</Paper>
+			<Paper p="md" shadow="xs" withBorder mt="md">
+				<Text>Female Body</Text>
 				<Text size="xs">
-					{BodyType.femaleBody}: {NIFs[BodyType.femaleBody]}
+					nif: {BodyType.femaleBody}: {bodyFiles[BodyType.femaleBody].nif}
+				</Text>
+				<Text size="xs">
+					tri: {BodyType.femaleBody}: {bodyFiles[BodyType.femaleBody].tri}
 				</Text>
 				<Box h={300}>
-					<View nifPath={NIFs[BodyType.femaleBody]} />
+					<View
+						nifPath={bodyFiles[BodyType.femaleBody].nif}
+						triPath={bodyFiles[BodyType.femaleBody].tri}
+					/>
 				</Box>
 			</Paper>
 		</Container>
