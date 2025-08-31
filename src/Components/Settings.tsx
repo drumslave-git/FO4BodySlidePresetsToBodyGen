@@ -1,14 +1,13 @@
-import { Box, Button, Container, Group, Paper, Text } from "@mantine/core"
+import { Button, Container, Group, Paper, Text } from "@mantine/core"
 import { type MouseEvent, useCallback, useEffect, useState } from "react"
 import { BodyType } from "../types"
-import View from "./3D/View"
+import BodyMesh from "./3D/BodyMesh"
+import ThreeView from "./3D/ThreeView"
 
 import { useConfig } from "./ConfigProvider"
-import { useData } from "./DataProvider"
 
 const Settings = () => {
 	const { dataFolder, outputFolder, loadConfig } = useConfig()
-	const { bodyFiles } = useData()
 	const [isPicking, setIsPicking] = useState<boolean>(false)
 	const [hint, setHint] = useState<string>("")
 
@@ -70,7 +69,9 @@ const Settings = () => {
 					w="calc(50% - var(--group-gap) / 2"
 				>
 					<Text>Male Body</Text>
-					<View bodyType={BodyType.maleBody} />
+					<ThreeView>
+						<BodyMesh bodyType={BodyType.maleBody} />
+					</ThreeView>
 				</Paper>
 				<Paper
 					p="md"
@@ -79,7 +80,9 @@ const Settings = () => {
 					w="calc(50% - var(--group-gap) / 2"
 				>
 					<Text>Female Body</Text>
-					<View bodyType={BodyType.femaleBody} />
+					<ThreeView>
+						<BodyMesh bodyType={BodyType.femaleBody} />
+					</ThreeView>
 				</Paper>
 			</Group>
 		</Container>

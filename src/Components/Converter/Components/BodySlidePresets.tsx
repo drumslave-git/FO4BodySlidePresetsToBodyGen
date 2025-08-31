@@ -27,7 +27,7 @@ import {
 	type BodySlidePresetParsed,
 	BodyType,
 } from "../../../types"
-import View from "../../3D/View"
+import BodyMesh from "../../3D/BodyMesh"
 import Collapsable from "../../Collapsable"
 import { useData } from "../../DataProvider"
 
@@ -151,7 +151,7 @@ const BodySlidePresetComponent = ({
 				/>
 				<Text size="sm">{preset.name}</Text>
 			</Group>
-			<View bodyType={BodyType.femaleBody} sliders={preset.sliders} />
+			{/*<View bodyType={BodyType.femaleBody} sliders={preset.sliders} />*/}
 			<Spoiler
 				maxHeight={15}
 				showLabel={<Text size="xs">Show Groups</Text>}
