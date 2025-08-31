@@ -134,7 +134,6 @@ const BodySlidePresetComponent = ({
 	selectedItems: BodySlidePreset[]
 	onTogglePreset: (item: BodySlidePreset) => void
 }) => {
-	const { bodyFiles } = useData()
 	const groups = useMemo(() => {
 		return preset.groups
 			.map((group) => group.name)
@@ -152,6 +151,7 @@ const BodySlidePresetComponent = ({
 				/>
 				<Text size="sm">{preset.name}</Text>
 			</Group>
+			<View bodyType={BodyType.femaleBody} sliders={preset.sliders} />
 			<Spoiler
 				maxHeight={15}
 				showLabel={<Text size="xs">Show Groups</Text>}
