@@ -10,6 +10,7 @@ import {
 	Input,
 	List,
 	MultiSelect,
+	Spoiler,
 	Text,
 } from "@mantine/core"
 import { IconSearch } from "@tabler/icons-react"
@@ -137,19 +138,23 @@ const BodySlidePresetComponent = ({
 
 	return (
 		<Card>
-			<Group justify="space-between">
-				<Group>
-					<PresetToggler
-						preset={preset}
-						selectedPresets={selectedItems}
-						onTogglePreset={onTogglePreset}
-					/>
-					<Text size="sm">{preset.name}</Text>
-				</Group>
+			<Group>
+				<PresetToggler
+					preset={preset}
+					selectedPresets={selectedItems}
+					onTogglePreset={onTogglePreset}
+				/>
+				<Text size="sm">{preset.name}</Text>
+			</Group>
+			<Spoiler
+				maxHeight={15}
+				showLabel={<Text size="xs">Show Groups</Text>}
+				hideLabel={<Text size="xs">Hide</Text>}
+			>
 				<Text size="xs" c="dimmed">
 					{groups}
 				</Text>
-			</Group>
+			</Spoiler>
 			<Box>
 				<Collapsable
 					title={
