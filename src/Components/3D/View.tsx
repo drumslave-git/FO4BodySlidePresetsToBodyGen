@@ -1,15 +1,17 @@
 import { AspectRatio } from "@mantine/core"
 import { OrbitControls, PerspectiveCamera, Resize } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
-import { useEffect, useMemo, useState } from "react"
-import * as THREE from "three"
+import { useEffect, useState } from "react"
+import { BufferGeometry, Float32BufferAttribute } from "three"
 
 import type {
 	BodySlidePreset,
+	BodyType,
 	NifMesh,
 	TriBodySlide,
 	TriMorphSparse,
 } from "../../types"
+import { useData } from "../DataProvider"
 
 /** Quick index for O(1) morph lookup by name. */
 export function indexMorphs(tri: TriBodySlide): Map<string, TriMorphSparse> {
@@ -54,7 +56,7 @@ const Model = ({
 	tri: TriBodySlide
 	sliders: BodySlidePreset["sliders"]
 }) => {
-	const [geometry, setGeometry] = useState<THREE.BufferGeometry | null>(null)
+	const [geometry, setGeometry] = useState<BufferGeometry | null>(null)
 	useEffect(() => {
 		if (!mesh || !tri) {
 			setGeometry(null)
@@ -62,18 +64,18 @@ const Model = ({
 		}
 
 		// @ts-expect-error
-		const geo = new THREE.BufferGeometry()
+		const geo = new BufferGeometry()
 
 		const basePositions = new Float32Array(mesh.vertices.flat())
 		const morphed = applyBodySlideMorphs(basePositions, tri, sliders)
-		geo.setAttribute("position", new THREE.Float32BufferAttribute(morphed, 3))
+		geo.setAttribute("position", new Float32BufferAttribute(morphed, 3))
 
 		geo.setAttribute(
 			"normal",
-			new THREE.Float32BufferAttribute(mesh.normals.flat(), 3),
+			new Float32BufferAttribute(mesh.normals.flat(), 3),
 		)
 
-		geo.setAttribute("uv", new THREE.Float32BufferAttribute(mesh.uvs.flat(), 2))
+		geo.setAttribute("uv", new Float32BufferAttribute(mesh.uvs.flat(), 2))
 
 		geo.setIndex(mesh.indices)
 
@@ -96,42 +98,15 @@ const Model = ({
 }
 
 const View = ({
-	nifPath,
-	triPath,
+	bodyType,
 	sliders = [],
 }: {
-	nifPath: string
-	triPath: string
+	bodyType: BodyType
 	sliders?: BodySlidePreset["sliders"]
 }) => {
-	const [data, setData] = useState<{ nif: NifMesh; tri: TriBodySlide } | null>(
-		null,
-	)
+	const { bodies } = useData()
 
-	useEffect(() => {
-		if (!nifPath || !triPath) return
-		;(async () => {
-			// @ts-expect-error
-			const meshData = await window.electronAPI.loadNIF(nifPath)
-			console.log(meshData.meshes)
-			// @ts-expect-error
-			const triData = await window.electronAPI.loadTRI(triPath)
-			console.log("TRI data:", triData)
-			setData({ nif: meshData.meshes[0], tri: triData })
-		})()
-	}, [nifPath, triPath])
-
-	if (!nifPath) {
-		return <div>No NIF file provided.</div>
-	}
-
-	if (!triPath) {
-		return <div>No TRI file provided.</div>
-	}
-
-	if (!data) {
-		return <div>Loading...</div>
-	}
+	if (!bodies[bodyType].nif || !bodies[bodyType].tri) return null
 
 	return (
 		<AspectRatio ratio={1}>
@@ -141,7 +116,11 @@ const View = ({
 				<directionalLight position={[-10, 10, 10]} />
 				{/* Add 3D axes helper at model center */}
 				{/*<primitive object={new AxesHelper(1)} position={[0, 0, 0]} />*/}
-				<Model mesh={data.nif} tri={data.tri} sliders={sliders} />
+				<Model
+					mesh={bodies[bodyType].nif}
+					tri={bodies[bodyType].tri}
+					sliders={sliders}
+				/>
 				<PerspectiveCamera makeDefault position={[1, 0.5, -1]} fov={40} />
 				<OrbitControls makeDefault />
 			</Canvas>

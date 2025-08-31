@@ -8,6 +8,7 @@ import {
 	useState,
 } from "react"
 import {
+	type Bodies,
 	type BodyFiles,
 	type BodySlidePresetParsed,
 	BodyType,
@@ -20,6 +21,7 @@ type DataContextValue = {
 	ESMs: ESM[]
 	bodySlidePresetsParsed: BodySlidePresetParsed[]
 	bodyFiles: BodyFiles
+	bodies: Bodies
 	validateESMs: () => void
 	defaultTemplates: string
 }
@@ -35,12 +37,24 @@ const defaultBodyFiles: BodyFiles = {
 	},
 }
 
+const defaultBodies: Bodies = {
+	[BodyType.maleBody]: {
+		nif: null,
+		tri: null,
+	},
+	[BodyType.femaleBody]: {
+		nif: null,
+		tri: null,
+	},
+}
+
 const DataContext = createContext<DataContextValue>({
 	ESMs: [],
 	bodySlidePresetsParsed: [],
 	validateESMs: () => {},
 	defaultTemplates: "",
 	bodyFiles: defaultBodyFiles,
+	bodies: defaultBodies,
 })
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
@@ -50,6 +64,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const [defaultTemplates, setDefaultTemplates] = useState("")
 	const [ESMs, setESMs] = useState<ESM[]>([])
 	const [bodyFiles, setBodyFiles] = useState<BodyFiles>(defaultBodyFiles)
+	const [bodies, setBodies] = useState<Bodies>(defaultBodies)
 	const [bodySlidePresetsParsed, setBodySlidePresetsParsed] = useState<
 		BodySlidePresetParsed[]
 	>([])
@@ -99,12 +114,30 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		validateESMs()
 	}, [validateESMs])
 
+	useEffect(() => {
+		const loadBodies = async () => {
+			setLoading(true)
+			const bodies: Bodies = defaultBodies
+			for (const type of Object.values(BodyType)) {
+				if (!bodyFiles[type].nif || !bodyFiles[type].tri) continue
+				// @ts-expect-error
+				bodies[type].nif = await window.electronAPI.loadNIF(bodyFiles[type].nif)
+				// @ts-expect-error
+				bodies[type].tri = await window.electronAPI.loadTRI(bodyFiles[type].tri)
+			}
+			setBodies(bodies)
+			setLoading(false)
+		}
+		void loadBodies()
+	}, [bodyFiles])
+
 	return (
 		<DataContext.Provider
 			value={{
 				ESMs,
 				bodySlidePresetsParsed,
 				bodyFiles,
+				bodies,
 				validateESMs,
 				defaultTemplates,
 			}}

@@ -99,3 +99,14 @@ export type TriBodySlide = {
 	setName: string // e.g., CBBE / FusionGirl
 	morphs: TriMorphSparse[]
 }
+
+export type Bodies = {
+	[BodyType.maleBody]: {
+		nif: NifMesh | null
+		tri: TriBodySlide | null
+	}
+	[BodyType.femaleBody]: {
+		nif: NifMesh | null
+		tri: TriBodySlide | null
+	}
+}

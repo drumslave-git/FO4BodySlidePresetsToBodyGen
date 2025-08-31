@@ -70,10 +70,7 @@ const Settings = () => {
 					w="calc(50% - var(--group-gap) / 2"
 				>
 					<Text>Male Body</Text>
-					<View
-						nifPath={bodyFiles[BodyType.maleBody].nif}
-						triPath={bodyFiles[BodyType.maleBody].tri}
-					/>
+					<View bodyType={BodyType.maleBody} />
 				</Paper>
 				<Paper
 					p="md"
@@ -82,10 +79,7 @@ const Settings = () => {
 					w="calc(50% - var(--group-gap) / 2"
 				>
 					<Text>Female Body</Text>
-					<View
-						nifPath={bodyFiles[BodyType.femaleBody].nif}
-						triPath={bodyFiles[BodyType.femaleBody].tri}
-					/>
+					<View bodyType={BodyType.femaleBody} />
 				</Paper>
 			</Group>
 		</Container>

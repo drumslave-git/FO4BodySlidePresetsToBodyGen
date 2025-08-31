@@ -22,7 +22,12 @@ import {
 	useState,
 } from "react"
 
-import type { BodySlidePreset, BodySlidePresetParsed } from "../../../types"
+import {
+	type BodySlidePreset,
+	type BodySlidePresetParsed,
+	BodyType,
+} from "../../../types"
+import View from "../../3D/View"
 import Collapsable from "../../Collapsable"
 import { useData } from "../../DataProvider"
 
@@ -129,6 +134,7 @@ const BodySlidePresetComponent = ({
 	selectedItems: BodySlidePreset[]
 	onTogglePreset: (item: BodySlidePreset) => void
 }) => {
+	const { bodyFiles } = useData()
 	const groups = useMemo(() => {
 		return preset.groups
 			.map((group) => group.name)

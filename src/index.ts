@@ -224,7 +224,9 @@ app.whenReady().then(() => {
 		resolveBodyFiles(from),
 	)
 	ipcMain.handle("nif:load", async (_event, nifPath: string) => {
-		return readNif(nifPath)
+		const data = await readNif(nifPath)
+		// @ts-expect-error
+		return data?.meshes?.at(0) || null
 	})
 	ipcMain.handle("tri:load", async (_event, triPath: string) => {
 		return readTriFromFile(triPath)
