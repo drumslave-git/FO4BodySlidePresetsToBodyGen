@@ -60,7 +60,7 @@ export function readTriFromBuffer(buf: Buffer): TriBodySlide {
 		)
 	cur.skip(4)
 
-	const version = cur.u16()
+	const _version = cur.u16()
 	const setName = cur.strN(cur.u8())
 	const morphCount = cur.u16()
 
