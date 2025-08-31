@@ -79,7 +79,7 @@ const Model = ({
 		geo.center()
 		geo.scale(1, 1, 1)
 		geo.rotateX(-Math.PI / 2)
-		geo.computeVertexNormals()
+
 		setGeometry(geo)
 	}, [mesh, tri, sliders])
 
