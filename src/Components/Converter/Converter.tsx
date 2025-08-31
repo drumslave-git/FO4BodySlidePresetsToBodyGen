@@ -8,6 +8,7 @@ import {
 	Modal,
 	Notification,
 	Paper,
+	ScrollArea,
 } from "@mantine/core"
 import { useCallback, useEffect, useState } from "react"
 
@@ -126,6 +127,7 @@ const Converter = () => {
 				title="Select BodySlide Presets"
 				withCloseButton={false}
 				size="xl"
+				scrollAreaComponent={ScrollArea.Autosize}
 			>
 				<BodySlidePresets
 					onSubmit={onBodySlidePresetsSubmit}

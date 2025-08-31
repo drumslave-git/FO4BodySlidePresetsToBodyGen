@@ -5,7 +5,7 @@ import type { ReactNode } from "react"
 const ThreeView = ({ children }: { children: ReactNode }) => {
 	return (
 		<AspectRatio ratio={1}>
-			<View>
+			<View style={{ overflow: "hidden" }}>
 				<ambientLight intensity={0.5} />
 				<directionalLight position={[10, 10, -10]} />
 				<directionalLight position={[-10, 10, 10]} />

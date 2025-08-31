@@ -28,6 +28,8 @@ import {
 	BodyType,
 } from "../../../types"
 import BodyMesh from "../../3D/BodyMesh"
+import ThreeView from "../../3D/ThreeView"
+import ViewHost from "../../3D/ViewHost"
 import Collapsable from "../../Collapsable"
 import { useData } from "../../DataProvider"
 
@@ -151,41 +153,64 @@ const BodySlidePresetComponent = ({
 				/>
 				<Text size="sm">{preset.name}</Text>
 			</Group>
-			{/*<View bodyType={BodyType.femaleBody} sliders={preset.sliders} />*/}
-			<Spoiler
-				maxHeight={15}
-				showLabel={<Text size="xs">Show Groups</Text>}
-				hideLabel={<Text size="xs">Hide</Text>}
-			>
-				<Text size="xs" c="dimmed">
-					{groups}
-				</Text>
-			</Spoiler>
-			<Box>
-				<Collapsable
-					title={
-						<Group>
-							<Text>BodyGen</Text>
-							{!preset.valid && <Text c="red">with errors</Text>}
-						</Group>
-					}
-					titleProps={{
-						mt: "md",
-					}}
-					iconProps={{
-						color: !preset.valid ? "red" : undefined,
-						size: "sm",
-					}}
-				>
-					<List size="xs">
-						{preset.errors.map((error, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: index
-							<List.Item key={index}>{error}</List.Item>
-						))}
-					</List>
-					<Code block>{preset.bodyGen}</Code>
-				</Collapsable>
-			</Box>
+			<Group align="top">
+				<Box w="calc(50% - var(--group-gap) / 2">
+					{preset.gender === -1 && (
+						<Text size="xs" c="red">
+							Was not able to determine gender by morphs
+						</Text>
+					)}
+					{preset.gender === 0 && (
+						<ThreeView>
+							<BodyMesh bodyType={BodyType.maleBody} sliders={preset.sliders} />
+						</ThreeView>
+					)}
+					{preset.gender === 1 && (
+						<ThreeView>
+							<BodyMesh
+								bodyType={BodyType.femaleBody}
+								sliders={preset.sliders}
+							/>
+						</ThreeView>
+					)}
+				</Box>
+				<Box w="calc(50% - var(--group-gap) / 2">
+					<Spoiler
+						maxHeight={15}
+						showLabel={<Text size="xs">Show Groups</Text>}
+						hideLabel={<Text size="xs">Hide</Text>}
+					>
+						<Text size="xs" c="dimmed">
+							{groups}
+						</Text>
+					</Spoiler>
+					<Box>
+						<Collapsable
+							title={
+								<Group>
+									<Text>BodyGen</Text>
+									{!preset.valid && <Text c="red">with errors</Text>}
+								</Group>
+							}
+							titleProps={{
+								mt: "md",
+							}}
+							iconProps={{
+								color: !preset.valid ? "red" : undefined,
+								size: "sm",
+							}}
+						>
+							<List size="xs">
+								{preset.errors.map((error, index) => (
+									// biome-ignore lint/suspicious/noArrayIndexKey: index
+									<List.Item key={index}>{error}</List.Item>
+								))}
+							</List>
+							<Code block>{preset.bodyGen}</Code>
+						</Collapsable>
+					</Box>
+				</Box>
+			</Group>
 		</Card>
 	)
 }
@@ -332,6 +357,7 @@ const BodySlidePresets = ({
 					onTogglePreset={onTogglePreset}
 				/>
 			))}
+			<ViewHost />
 			<Box pos="sticky" bottom={0} bg="var(--mantine-color-body)" py="md">
 				<Divider mb="md" />
 				<Group>

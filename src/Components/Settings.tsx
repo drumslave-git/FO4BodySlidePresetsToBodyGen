@@ -1,8 +1,10 @@
 import { Button, Container, Group, Paper, Text } from "@mantine/core"
 import { type MouseEvent, useCallback, useEffect, useState } from "react"
+
 import { BodyType } from "../types"
 import BodyMesh from "./3D/BodyMesh"
 import ThreeView from "./3D/ThreeView"
+import ViewHost from "./3D/ViewHost"
 
 import { useConfig } from "./ConfigProvider"
 
@@ -36,6 +38,7 @@ const Settings = () => {
 
 	return (
 		<Container>
+			<ViewHost />
 			<Paper p="md" shadow="xs" withBorder>
 				<Group>
 					<Text>{dataFolder}</Text>

@@ -14,7 +14,6 @@ import {
 	useLocation,
 	useNavigate,
 } from "react-router"
-import ViewHost from "./3D/ViewHost"
 
 import { ConfigProvider, useConfig } from "./ConfigProvider"
 import Converter from "./Converter"
@@ -104,7 +103,6 @@ const AppShell = () => {
 								</Container>
 							</MantineAppShell.Main>
 						</MantineAppShell>
-						<ViewHost />
 					</DataProvider>
 				</SharedStateProvider>
 			</ConfigProvider>

@@ -242,6 +242,11 @@ export const validateSliders = (
 	const supportedSliders = resolveSliders(dataFolder)
 	const cleanedSliders = []
 	const errors = []
+	let gender: -1 | 0 | 1 = -1
+	const genderHits = {
+		0: 0,
+		1: 0,
+	}
 	for (const slider of sliders) {
 		const cleanedSlider = {
 			...slider,
@@ -265,9 +270,15 @@ export const validateSliders = (
 			)
 			cleanedSlider.value = supportedSlider.maximum
 		}
+		genderHits[supportedSlider.gender]++
 		cleanedSliders.push(cleanedSlider)
 	}
-	return { errors, cleanedSliders }
+	if (genderHits[0] > genderHits[1]) {
+		gender = 0
+	} else if (genderHits[1] > genderHits[0]) {
+		gender = 1
+	}
+	return { errors, cleanedSliders, gender }
 }
 
 export const resolveBodySlidePresets = (
@@ -312,12 +323,14 @@ export const resolveBodySlidePresets = (
 						bodyGen: "",
 						errors: [],
 						valid: true,
+						gender: -1,
 					}
 
-					const { errors, cleanedSliders } = validateSliders(
+					const { errors, cleanedSliders, gender } = validateSliders(
 						dataFolder,
 						item.sliders,
 					)
+					item.gender = gender
 					item.errors = errors
 					item.valid = item.errors.length === 0
 					item.bodyGen = cleanedSliders

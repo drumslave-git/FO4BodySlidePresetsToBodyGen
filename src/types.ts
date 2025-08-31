@@ -40,6 +40,7 @@ export type BodySlidePreset = {
 	bodyGen: string
 	errors: string[]
 	valid: boolean
+	gender: -1 | 0 | 1
 }
 
 export type BodySlidePresetParsed = {
@@ -59,7 +60,7 @@ export type Slider = {
 	minimum: number
 	maximum: number
 	interval: number
-	gender: number
+	gender: 0 | 1
 }
 
 export type ParsedTemplates = {
