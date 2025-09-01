@@ -1,7 +1,7 @@
 {
 	"name": "bodygenformattergui",
 	"productName": "bodygenformattergui",
-	"version": "1.2.15",
+	"version": "1.2.16",
 	"description": "Helps with bodygen",
 	"main": ".webpack/main",
 	"scripts": {
