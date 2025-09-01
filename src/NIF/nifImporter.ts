@@ -18,7 +18,7 @@ let baseNetAppPath = path.join(
 )
 
 if (__dirname.indexOf("app.asar") !== -1) {
-	baseNetAppPath = path.join(process.resourcesPath, "net8.0", "publish")
+	baseNetAppPath = path.join(process.resourcesPath, "publish")
 }
 
 process.env.EDGE_USE_CORECLR = "1" // required for .NET Core/.NET 5+
