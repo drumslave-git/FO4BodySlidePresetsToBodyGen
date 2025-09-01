@@ -1,7 +1,7 @@
 {
 	"name": "bodygenformattergui",
 	"productName": "bodygenformattergui",
-	"version": "1.2.4",
+	"version": "1.2.5",
 	"description": "Helps with bodygen",
 	"main": ".webpack/main",
 	"scripts": {
@@ -9,7 +9,7 @@
 		"package": "electron-forge package",
 		"make": "electron-forge make",
 		"publish": "electron-forge publish",
-		"dotnet:build": "dotnet publish ./src/NIF/dotnet/NifImporter -c Release --self-contained true",
+		"dotnet:build": "dotnet publish src/NIF/dotnet/NifImporter/NifImporter.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=false -p:PublishTrimmed=false -p:IncludeNativeLibrariesForSelfExtract=true",
 		"biome:lint": "biome lint",
 		"biome:lint:fix": "biome lint --write",
 		"biome:check": "biome check",

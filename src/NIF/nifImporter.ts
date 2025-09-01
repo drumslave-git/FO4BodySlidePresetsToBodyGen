@@ -14,12 +14,25 @@ let baseNetAppPath = path.join(
 	"bin",
 	"Release",
 	"net9.0",
+	"win-x64",
 	"publish",
 )
 
 if (__dirname.indexOf("app.asar") !== -1) {
-	baseNetAppPath = path.join(process.resourcesPath, "net9.0", "publish")
+	baseNetAppPath = path.join(
+		process.resourcesPath,
+		"net9.0",
+		"win-x64",
+		"publish",
+	)
 }
+
+process.env.EDGE_USE_CORECLR = "1" // required for .NET Core/.NET 5+
+// Optional but helps probing in packaged apps:
+process.env.DOTNET_ROOT = baseNetAppPath // hostfxr discovery
+process.env.DOTNET_BUNDLE_EXTRACT_BASE_DIR = baseNetAppPath // safety
+process.env.EDGE_APP_ROOT = baseNetAppPath // edge probing hint
+process.env.ASPNETCORE_ENVIRONMENT = "Production"
 
 const assemblyPath = path.resolve(baseNetAppPath, "NifImporter.dll")
 
