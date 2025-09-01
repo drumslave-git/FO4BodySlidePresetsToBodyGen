@@ -14,6 +14,7 @@ let baseNetAppPath = path.join(
 	"bin",
 	"Release",
 	"net8.0",
+	"win-x64",
 	"publish",
 )
 
