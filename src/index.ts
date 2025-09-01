@@ -1,3 +1,15 @@
+// biome-ignore assist/source/organizeImports: have to be first
+import log from "electron-log/main"
+log.initialize()
+
+process.on("uncaughtException", (err) => {
+	log.error("Uncaught exception:", err)
+})
+
+process.on("unhandledRejection", (reason, promise) => {
+	log.error("Unhandled rejection at:", promise, "reason:", reason)
+})
+
 import fs from "node:fs"
 import path from "node:path"
 import {
@@ -11,7 +23,6 @@ import {
 	shell,
 } from "electron"
 import type { Location } from "react-router"
-
 import { name, version } from "../package.json"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
 // @ts-expect-error
