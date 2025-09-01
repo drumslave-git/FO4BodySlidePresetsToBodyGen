@@ -1,8 +1,7 @@
 import path from "node:path"
-import edge from "electron-edge-js"
-
 import log from "../logger"
 
+// 1) Compute publish dir first
 let baseNetAppPath = path.join(
 	__dirname,
 	"..",
@@ -17,33 +16,33 @@ let baseNetAppPath = path.join(
 	"win-x64",
 	"publish",
 )
-
-if (__dirname.indexOf("app.asar") !== -1) {
+if (__dirname.includes("app.asar"))
 	baseNetAppPath = path.join(process.resourcesPath, "publish")
-}
 
-process.env.EDGE_USE_CORECLR = "1" // required for .NET Core/.NET 5+
-// Optional but helps probing in packaged apps:
-process.env.DOTNET_ROOT = baseNetAppPath // hostfxr discovery
-process.env.DOTNET_BUNDLE_EXTRACT_BASE_DIR = baseNetAppPath // safety
-process.env.EDGE_APP_ROOT = baseNetAppPath // edge probing hint
-process.env.ASPNETCORE_ENVIRONMENT = "Production"
+// 2) Set env **before** requiring electron-edge-js
+process.env.EDGE_USE_CORECLR = "1"
+process.env.EDGE_APP_ROOT = baseNetAppPath // where NifImporter.dll + hostfxr live
+
+// These often cause probing weirdness for self-contained apps. Don’t set them.
+delete process.env.DOTNET_ROOT
+delete process.env.DOTNET_BUNDLE_EXTRACT_BASE_DIR
+
+// 3) Now require edge (not import)
+const edge = require("electron-edge-js")
 
 const assemblyPath = path.resolve(baseNetAppPath, "NifImporter.dll")
-
 log.info("NifImporter assembly path:", assemblyPath)
 
-// describe the class and method to call
 const loadNif = edge.func({
 	assemblyFile: assemblyPath,
 	typeName: "NifReader",
 	methodName: "Invoke",
 })
 
-function readNif(filePath: string) {
+export default function readNif(filePath: string) {
 	return new Promise((resolve, reject) => {
 		log.info("Reading NIF file:", filePath)
-		loadNif({ filePath }, (error, result) => {
+		loadNif({ filePath }, (error: any, result: any) => {
 			if (error) {
 				log.error("Error reading NIF file:", error)
 				reject(error)
@@ -51,5 +50,3 @@ function readNif(filePath: string) {
 		})
 	})
 }
-
-export default readNif
