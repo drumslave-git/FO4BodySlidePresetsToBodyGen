@@ -14,4 +14,9 @@
   <ItemGroup>
     <PackageReference Include="Nifly" Version="0.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EdgeJs">
+      <HintPath>..\..\..\..\node_modules\electron-edge-js\lib\bootstrap\bin\Release\EdgeJs.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
