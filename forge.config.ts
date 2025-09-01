@@ -20,7 +20,7 @@ const config: ForgeConfig = {
 		// exclude edge-js modules from asar archive
 		ignore: ["node_modules/electron-edge-js", "node_modules/edge-cs"],
 		// move binaries to resources folder
-		extraResource: ["./src/NIF/dotnet/NifImporter/bin/Release/net8.0"],
+		extraResource: ["./src/NIF/dotnet/NifImporter/bin/Release/net8.0/publish"],
 	},
 	hooks: {
 		// copy "node_modules/electron-edge-js" and "node_modules/edge-cs" to resources folder
