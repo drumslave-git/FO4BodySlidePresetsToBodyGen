@@ -43,9 +43,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
 		ipcRenderer.invoke("nif:load", nifPath),
 	loadTRI: (triPath: string): Promise<TriBodySlide> =>
 		ipcRenderer.invoke("tri:load", triPath),
-	// biome-ignore lint/suspicious/noExplicitAny: path resolve
-	pathResolve: (...args: any[]): Promise<string> =>
-		ipcRenderer.invoke("path:resolve", ...args),
 	navigate: (location: Location) => ipcRenderer.send("navigate", location),
 	openExternalUrl: (url: string) => ipcRenderer.send("openExternal", url),
 })
