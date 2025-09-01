@@ -25,12 +25,16 @@ jobs:
     if: ${{ needs.packageChange.outputs.package == 'true' }}
     steps:
     - uses: actions/setup-node@v4
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
     - uses: actions/checkout@v4
-    - name: install and publish
+    - name: Install deps
+      run: npm ci
+    - name: Build .NET
+      run: npm run dotnet:build
+    - name: Publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        npm ci
-        npm run publish
-#    - uses: martinbeentjes/npm-get-version-action@v1.3.1
+      run: npm run publish
