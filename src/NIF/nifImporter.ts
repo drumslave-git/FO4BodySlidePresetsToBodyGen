@@ -13,7 +13,7 @@ let baseNetAppPath = path.join(
 	"NifImporter",
 	"bin",
 	"Release",
-	"net9.0",
+	"net8.0",
 	"win-x64",
 	"publish",
 )
@@ -21,7 +21,7 @@ let baseNetAppPath = path.join(
 if (__dirname.indexOf("app.asar") !== -1) {
 	baseNetAppPath = path.join(
 		process.resourcesPath,
-		"net9.0",
+		"net8.0",
 		"win-x64",
 		"publish",
 	)

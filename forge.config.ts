@@ -18,7 +18,7 @@ const config: ForgeConfig = {
 		asar: true,
 		icon: "./src/images/icon",
 		// move binaries to resources folder
-		extraResource: ["./src/NIF/dotnet/NifImporter/bin/Release/net9.0"],
+		extraResource: ["./src/NIF/dotnet/NifImporter/bin/Release/net8.0"],
 	},
 	hooks: {
 		// copy "node_modules/electron-edge-js" and "node_modules/edge-cs" to resources folder
