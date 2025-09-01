@@ -2,11 +2,7 @@ import path from "node:path"
 
 import edge from "electron-edge-js"
 
-// https://github.com/ScottJMarshall/electron-webpack-module-resolution
-// require("module").globalPaths.push(process.cwd() + "/node_modules")
-// const edge = require("electron-edge-js")
-
-const assemblyPath = path.join(
+let baseNetAppPath = path.join(
 	__dirname,
 	"..",
 	"..",
@@ -18,8 +14,13 @@ const assemblyPath = path.join(
 	"Release",
 	"net9.0",
 	"publish",
-	"NifImporter.dll",
 )
+
+if (__dirname.indexOf("app.asar") !== -1) {
+	baseNetAppPath = path.join(process.resourcesPath, "net9.0", "publish")
+}
+
+const assemblyPath = path.resolve(baseNetAppPath, "NifImporter.dll")
 
 console.log("NifImporter assembly path:", assemblyPath)
 

@@ -22,27 +22,27 @@ const config: ForgeConfig = {
 	},
 	hooks: {
 		// copy "node_modules/electron-edge-js" and "node_modules/edge-cs" to resources folder
-		// postPackage: async (_forgeConfig, options) => {
-		// 	console.log("build_path", options.outputPaths)
-		// 	const outdir = options.outputPaths[0]
-		// 	console.log("outdir", outdir)
-		// 	// Get node_modules path
-		// 	const nodeModulesPath = path.join(outdir, "resources", "node_modules")
-		// 	const modulesToCopy = ["edge-cs", "electron-edge-js"]
-		// 	// loop-for
-		// 	for (const moduleName of modulesToCopy) {
-		// 		const sourcePath = path.join(__dirname, "node_modules", moduleName)
-		// 		const targetPath = path.join(nodeModulesPath, moduleName)
-		// 		console.log(
-		// 			`Copying ${moduleName} from:`,
-		// 			sourcePath,
-		// 			"to:",
-		// 			targetPath,
-		// 		)
-		// 		fs.copySync(sourcePath, targetPath)
-		// 	}
-		// 	console.log("All modules copied successfully!")
-		// },
+		postPackage: async (_forgeConfig, options) => {
+			console.log("build_path", options.outputPaths)
+			const outdir = options.outputPaths[0]
+			console.log("outdir", outdir)
+			// Get node_modules path
+			const nodeModulesPath = path.join(outdir, "resources", "node_modules")
+			const modulesToCopy = ["edge-cs", "electron-edge-js"]
+			// loop-for
+			for (const moduleName of modulesToCopy) {
+				const sourcePath = path.join(__dirname, "node_modules", moduleName)
+				const targetPath = path.join(nodeModulesPath, moduleName)
+				console.log(
+					`Copying ${moduleName} from:`,
+					sourcePath,
+					"to:",
+					targetPath,
+				)
+				fs.copySync(sourcePath, targetPath)
+			}
+			console.log("All modules copied successfully!")
+		},
 	},
 	rebuildConfig: {
 		// exclude any Node.js pre-build modules such as electron-edge-js from rebuild
