@@ -4,6 +4,8 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.webpack" />
+      <excludeFolder url="file://$MODULE_DIR$/src/NIF/dotnet/NifImporter/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/src/NIF/dotnet/NifImporter/obj" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

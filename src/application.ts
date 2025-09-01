@@ -15,6 +15,7 @@ import { name, version } from "../package.json"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
 // @ts-expect-error
 import icon from "./images/icon.png"
+import log from "./logger"
 import readNif from "./NIF/nifImporter"
 import { readTriFromFile } from "./TRI/triReader"
 import type { Config } from "./types"
@@ -86,7 +87,7 @@ const loadConfig = (): Config => {
 		const configContent = fs.readFileSync(CONFIG_PATH)
 		config = JSON.parse(configContent.toString())
 	} catch (error) {
-		console.error("Error reading config file:", error)
+		log.error("Error reading config file:", error)
 	}
 
 	return defaultConfig(config)
@@ -100,7 +101,7 @@ const saveConfig = (data: Partial<Config>) => {
 			JSON.stringify({ ...config, ...data }, null, 2),
 		)
 	} catch (error) {
-		console.error("Error saving config file:", error)
+		log.error("Error saving config file:", error)
 	}
 }
 

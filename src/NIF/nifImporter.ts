@@ -1,6 +1,7 @@
 import path from "node:path"
-
 import edge from "electron-edge-js"
+
+import log from "../logger"
 
 let baseNetAppPath = path.join(
 	__dirname,
@@ -22,7 +23,7 @@ if (__dirname.indexOf("app.asar") !== -1) {
 
 const assemblyPath = path.resolve(baseNetAppPath, "NifImporter.dll")
 
-console.log("NifImporter assembly path:", assemblyPath)
+log.info("NifImporter assembly path:", assemblyPath)
 
 // describe the class and method to call
 const loadNif = edge.func({
@@ -32,12 +33,13 @@ const loadNif = edge.func({
 })
 
 function readNif(filePath: string) {
-	console.log("readNif called with filePath:", filePath)
 	return new Promise((resolve, reject) => {
-		console.log("Reading NIF file:", filePath)
+		log.info("Reading NIF file:", filePath)
 		loadNif({ filePath }, (error, result) => {
-			if (error) reject(error)
-			else resolve(result)
+			if (error) {
+				log.error("Error reading NIF file:", error)
+				reject(error)
+			} else resolve(result)
 		})
 	})
 }
