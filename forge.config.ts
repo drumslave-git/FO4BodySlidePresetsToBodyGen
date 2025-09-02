@@ -68,7 +68,7 @@ const config: ForgeConfig = {
 			config: {
 				repository: {
 					owner: "drumslave-git",
-					name: appName,
+					name: "FO4BodySlidePresetsToBodyGen",
 				},
 				generateReleaseNotes: true,
 			},
