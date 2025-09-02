@@ -1,20 +1,17 @@
 import path from "node:path"
 import { FuseV1Options, FuseVersion } from "@electron/fuses"
+import { MakerZIP } from "@electron-forge/maker-zip"
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives"
 import { FusesPlugin } from "@electron-forge/plugin-fuses"
 import { WebpackPlugin } from "@electron-forge/plugin-webpack"
 import type { ForgeConfig } from "@electron-forge/shared-types"
 import fs from "fs-extra"
 
-import MakerZIPCustom from "./maker-zip.custom"
-import { productName as appName } from "./package.json"
 import { mainConfig } from "./webpack.main.config"
 import { rendererConfig } from "./webpack.renderer.config"
 
 const config: ForgeConfig = {
-	outDir: `./out/${appName}/Tools`,
 	packagerConfig: {
-		name: appName,
 		asar: true,
 		icon: "./src/images/icon",
 		// exclude edge-js modules from asar archive
@@ -53,15 +50,7 @@ const config: ForgeConfig = {
 	rebuildConfig: {
 		onlyModules: ["better-sqlite3"],
 	},
-	makers: [
-		new MakerZIPCustom(
-			{
-				dir: path.resolve(__dirname, "out", appName),
-				makeDir: path.resolve(__dirname, "out"),
-			},
-			["win32"],
-		),
-	],
+	makers: [new MakerZIP({}, ["win32"])],
 	publishers: [
 		{
 			name: "@electron-forge/publisher-github",

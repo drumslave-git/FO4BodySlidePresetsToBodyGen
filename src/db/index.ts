@@ -37,6 +37,9 @@ const defaultConfig = (config: Config) => {
 	if (!defaults.outputFolder && defaults.dataFolder) {
 		defaults.outputFolder = defaults.dataFolder
 	}
+	if (!defaults.dataFolder) {
+		defaults.lastActiveLocation = "/settings"
+	}
 	return defaults
 }
 
