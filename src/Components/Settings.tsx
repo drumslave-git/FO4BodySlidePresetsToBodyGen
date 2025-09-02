@@ -11,12 +11,6 @@ import { useConfig } from "./ConfigProvider"
 const Settings = () => {
 	const { dataFolder, outputFolder, loadConfig } = useConfig()
 	const [isPicking, setIsPicking] = useState<boolean>(false)
-	const [hint, setHint] = useState<string>("")
-
-	useEffect(() => {
-		// @ts-expect-error
-		window.electronAPI.resolveConfigPath().then(setHint)
-	}, [])
 
 	const onPathSelection = useCallback(
 		async (e: MouseEvent<HTMLButtonElement>) => {
@@ -60,9 +54,6 @@ const Settings = () => {
 						Select Output Folder
 					</Button>
 				</Group>
-				<Text mt="md" c="dimmed">
-					Settings are saved in: {hint}
-				</Text>
 			</Paper>
 			<Group mt="md">
 				<Paper

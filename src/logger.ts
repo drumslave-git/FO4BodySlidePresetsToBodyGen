@@ -28,7 +28,7 @@ export async function errorAndQuit(
 			title,
 			message,
 			detail: `Logs location:\n${LOGS_DIR}`,
-			buttons: ["Open logs folder", "Quit"],
+			buttons: ["Open logs", "Quit"],
 			defaultId: 0,
 			cancelId: 1,
 			noLink: true,

@@ -11,14 +11,13 @@ import {
 	shell,
 } from "electron"
 import type { Location } from "react-router"
-import { name, version } from "../package.json"
+import { productName, version } from "../package.json"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
+import { applyMigrations, readConfig, writeConfig } from "./db"
 // @ts-expect-error
 import icon from "./images/icon.png"
-import log from "./logger"
 import readNif from "./NIF/nifImporter"
 import { readTriFromFile } from "./TRI/triReader"
-import type { Config } from "./types"
 import {
 	formatINIs,
 	parseTemplates,
@@ -67,44 +66,6 @@ const fileSystemFix = () => {
 }
 let mainWindow: BrowserWindow
 
-const CONFIG_PATH = path.join(app.getPath("userData"), "config.json")
-
-const defaultConfig = (config: Config) => {
-	const defaults = {
-		...config,
-	}
-	if (!defaults.outputFolder && defaults.dataFolder) {
-		defaults.outputFolder = defaults.dataFolder
-	}
-	return defaults
-}
-const loadConfig = (): Config => {
-	if (!fs.existsSync(CONFIG_PATH)) {
-		return {}
-	}
-	let config: Config = {}
-	try {
-		const configContent = fs.readFileSync(CONFIG_PATH)
-		config = JSON.parse(configContent.toString())
-	} catch (error) {
-		log.error("Error reading config file:", error)
-	}
-
-	return defaultConfig(config)
-}
-
-const saveConfig = (data: Partial<Config>) => {
-	try {
-		const config = loadConfig()
-		fs.writeFileSync(
-			CONFIG_PATH,
-			JSON.stringify({ ...config, ...data }, null, 2),
-		)
-	} catch (error) {
-		log.error("Error saving config file:", error)
-	}
-}
-
 const loadTemplates = (from: string) => {
 	return fs.readFileSync(from).toString()
 }
@@ -125,7 +86,7 @@ const createWindow = (): void => {
 
 	// and load the index.html of the app.
 	void mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY).then(() => {
-		mainWindow.setTitle(`${name} v${version}`)
+		mainWindow.setTitle(`${productName} v${version}`)
 	})
 
 	// Open the DevTools.
@@ -142,14 +103,12 @@ const openFileSystemDialog = async (
 ) => {
 	const { filePaths } = await dialog.showOpenDialog(options)
 	const filePath = filePaths?.[0]
-	saveConfig({ [folder]: filePath ? filePath : undefined })
-	return loadConfig()
+	writeConfig(folder, filePath ? filePath : "")
+	return readConfig()
 }
 
 const handleNavigate = (location: Location) => {
-	saveConfig({
-		lastActiveLocation: location.pathname,
-	})
+	writeConfig("lastActiveLocation", location.pathname)
 }
 
 // This method will be called when Electron has finished
@@ -157,6 +116,7 @@ const handleNavigate = (location: Location) => {
 // Some APIs can only be used after this event occurs.
 
 app.whenReady().then(() => {
+	applyMigrations()
 	createWindow()
 
 	ipcMain.handle(
@@ -170,8 +130,7 @@ app.whenReady().then(() => {
 				folder,
 			),
 	)
-	ipcMain.handle("loadConfig", loadConfig)
-	ipcMain.handle("resolveConfigPath", () => CONFIG_PATH)
+	ipcMain.handle("readConfig", readConfig)
 	ipcMain.handle("templates:load", (_event, from: string) =>
 		loadTemplates(from),
 	)
@@ -180,7 +139,7 @@ app.whenReady().then(() => {
 	)
 	ipcMain.handle("templates:readDefault", () => {
 		const defaultTemplatesPath = path.resolve(
-			loadConfig().dataFolder,
+			readConfig().dataFolder,
 			...BODYGEN_RELATIVE_PATH,
 			"Fallout4.esm",
 			"templates.ini",
@@ -200,11 +159,11 @@ app.whenReady().then(() => {
 	})
 	ipcMain.handle("format", (_event, content: string) => formatINIs(content))
 	ipcMain.handle("write", (_event, from: string, content: string) => {
-		const config = loadConfig()
+		const config = readConfig()
 		let outputFolder = config.outputFolder
 		if (outputFolder !== config.dataFolder) {
 			outputFolder = path.resolve(
-				loadConfig().outputFolder,
+				config.outputFolder,
 				"BodyGen",
 				...BODYGEN_RELATIVE_PATH,
 			)
@@ -232,7 +191,7 @@ app.whenReady().then(() => {
 		return readTriFromFile(triPath)
 	})
 	ipcMain.handle("zipOutput", async () => {
-		const config = loadConfig()
+		const config = readConfig()
 		if (config.outputFolder === config.dataFolder) {
 			return "No need to zip, output folder is the same as data folder."
 		}

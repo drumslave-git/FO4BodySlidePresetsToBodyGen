@@ -7,11 +7,9 @@ import type { ForgeConfig } from "@electron-forge/shared-types"
 import fs from "fs-extra"
 
 import MakerZIPCustom from "./maker-zip.custom"
-
+import { productName as appName } from "./package.json"
 import { mainConfig } from "./webpack.main.config"
 import { rendererConfig } from "./webpack.renderer.config"
-
-const appName = "FO4BodySlidePresetsToBodyGen"
 
 const config: ForgeConfig = {
 	outDir: `./out/${appName}/Tools`,
@@ -20,10 +18,11 @@ const config: ForgeConfig = {
 		asar: true,
 		icon: "./src/images/icon",
 		// exclude edge-js modules from asar archive
-		ignore: ["node_modules/electron-edge-js", "node_modules/edge-cs"],
+		// ignore: ["node_modules/electron-edge-js", "node_modules/edge-cs"],
 		// move binaries to resources folder
 		extraResource: [
 			"./src/NIF/dotnet/NifImporter/bin/Release/net8.0/win-x64/publish",
+			"./drizzle",
 		],
 	},
 	hooks: {
@@ -52,8 +51,7 @@ const config: ForgeConfig = {
 		},
 	},
 	rebuildConfig: {
-		// exclude any Node.js pre-build modules such as electron-edge-js from rebuild
-		onlyModules: [],
+		onlyModules: ["better-sqlite3"],
 	},
 	makers: [
 		new MakerZIPCustom(

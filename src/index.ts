@@ -6,11 +6,10 @@ process.on("uncaughtException", async (err) => {
 	await errorAndQuit("Uncaught Exception", err.message, err)
 })
 
-process.on("unhandledRejection", async (reason, promise) => {
+process.on("unhandledRejection", async (reason) => {
 	await errorAndQuit(
 		"Unhandled Rejection",
-		"An unhandled promise rejection occurred.",
-		promise,
+		`An unhandled promise rejection occurred.`,
 		reason,
 	)
 })

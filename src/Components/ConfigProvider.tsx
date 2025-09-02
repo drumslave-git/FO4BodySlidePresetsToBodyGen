@@ -25,7 +25,7 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
 	const loadConfig = useCallback(async () => {
 		setLoading(true)
 		// @ts-expect-error
-		window.electronAPI.loadConfig().then((config: Config) => {
+		window.electronAPI.readConfig().then((config: Config) => {
 			setConfig(config)
 			setLoading(false)
 		})

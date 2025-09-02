@@ -1,7 +1,7 @@
 {
 	"name": "bodygenformattergui",
-	"productName": "bodygenformattergui",
-	"version": "2.0.1",
+	"productName": "FO4BodyGenStudio",
+	"version": "2.0.2",
 	"description": "Helps with bodygen",
 	"main": ".webpack/main",
 	"scripts": {
@@ -13,7 +13,10 @@
 		"biome:lint": "biome lint",
 		"biome:lint:fix": "biome lint --write",
 		"biome:check": "biome check",
-		"biome:check:fix": "biome check --write"
+		"biome:check:fix": "biome check --write",
+		"drizzle:generate": "drizzle-kit generate",
+		"drizzle:push": "drizzle-kit push",
+		"drizzle:studio": "drizzle-kit studio"
 	},
 	"keywords": [],
 	"author": {
@@ -34,11 +37,13 @@
 		"@electron-forge/publisher-github": "^7.8.3",
 		"@electron/fuses": "^1.8.0",
 		"@tabler/icons-react": "^3.34.1",
+		"@types/better-sqlite3": "^7.6.13",
 		"@types/react": "^19.1.10",
 		"@types/react-dom": "^19.1.7",
 		"@types/three": "^0.179.0",
 		"@vercel/webpack-asset-relocator-loader": "^1.7.3",
 		"css-loader": "^6.11.0",
+		"drizzle-kit": "^0.31.4",
 		"electron": "37.3.0",
 		"file-loader": "^6.2.0",
 		"fork-ts-checker-webpack-plugin": "^7.3.0",
@@ -66,6 +71,8 @@
 		"@tiptap/pm": "^3.2.0",
 		"@tiptap/react": "^3.2.0",
 		"@tiptap/starter-kit": "^3.2.0",
+		"better-sqlite3": "^12.2.0",
+		"drizzle-orm": "^0.44.5",
 		"electron-edge-js": "^37.0.0",
 		"electron-log": "^5.4.3",
 		"electron-squirrel-startup": "^1.0.1",
