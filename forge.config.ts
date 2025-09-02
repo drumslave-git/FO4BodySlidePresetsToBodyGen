@@ -1,6 +1,5 @@
 import path from "node:path"
 import { FuseV1Options, FuseVersion } from "@electron/fuses"
-import { MakerZIP } from "@electron-forge/maker-zip"
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives"
 import { FusesPlugin } from "@electron-forge/plugin-fuses"
 import { WebpackPlugin } from "@electron-forge/plugin-webpack"
@@ -20,6 +19,8 @@ const config: ForgeConfig = {
 		name: appName,
 		asar: true,
 		icon: "./src/images/icon",
+		// exclude edge-js modules from asar archive
+		ignore: ["node_modules/electron-edge-js", "node_modules/edge-cs"],
 		// move binaries to resources folder
 		extraResource: [
 			"./src/NIF/dotnet/NifImporter/bin/Release/net8.0/win-x64/publish",
