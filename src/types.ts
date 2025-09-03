@@ -111,3 +111,8 @@ export type Bodies = {
 		tri: TriBodySlide | null
 	}
 }
+
+export type Morph = {
+	rules: string[]
+	presets: BodySlidePreset[]
+}

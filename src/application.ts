@@ -107,8 +107,8 @@ const openFileSystemDialog = async (
 	return readConfig()
 }
 
-const handleNavigate = (location: Location) => {
-	writeConfig("lastActiveLocation", location.pathname)
+const handleNavigate = (page: string) => {
+	writeConfig("lastActiveLocation", page)
 }
 
 // This method will be called when Electron has finished
@@ -202,9 +202,7 @@ app.whenReady().then(() => {
 		return path.resolve(config.outputFolder, "BodyGen.zip")
 	})
 
-	ipcMain.on("navigate", (_event, location: Location) =>
-		handleNavigate(location),
-	)
+	ipcMain.on("navigate", (_event, page: string) => handleNavigate(page))
 	ipcMain.on("openExternal", (_event, url: string) => shell.openExternal(url))
 
 	// On macOS it's common to re-create a window in the app when the

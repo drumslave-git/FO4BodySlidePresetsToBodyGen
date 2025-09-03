@@ -26,12 +26,12 @@ import {
 	type BodySlidePreset,
 	type BodySlidePresetParsed,
 	BodyType,
-} from "../../../types"
-import BodyMesh from "../../3D/BodyMesh"
-import ThreeView from "../../3D/ThreeView"
-import ViewHost from "../../3D/ViewHost"
-import Collapsable from "../../Collapsable"
-import { useData } from "../../DataProvider"
+} from "../../types"
+import BodyMesh from "../3D/BodyMesh"
+import ThreeView from "../3D/ThreeView"
+import ViewHost from "../3D/ViewHost"
+import Collapsable from "../Collapsable"
+import { useData } from "../DataProvider"
 
 export type FilterValue = {
 	q: string

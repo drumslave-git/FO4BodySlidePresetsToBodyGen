@@ -8,9 +8,9 @@ import {
 	useEffect,
 	useState,
 } from "react"
-import { useConfig } from "./ConfigProvider"
 
-import type { Morph } from "./Converter/Components/Morphs"
+import type { Morph } from "../types"
+import { useConfig } from "./ConfigProvider"
 
 type SharedStateContextValue = {
 	morphs: Morph[]

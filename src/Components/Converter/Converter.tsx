@@ -17,8 +17,8 @@ import Collapsable from "../Collapsable"
 import { useConfig } from "../ConfigProvider"
 import { useData } from "../DataProvider"
 import { useSharedState } from "../SharedStateProvider"
-import BodySlidePresets from "./Components/BodySlidePresets"
-import Morphs from "./Components/Morphs"
+import BodySlidePresets from "../Templates/BodySlidePresets"
+import Morphs from "./Morphs"
 
 const Converter = () => {
 	const { dataFolder, outputFolder } = useConfig()

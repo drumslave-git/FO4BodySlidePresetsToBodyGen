@@ -41,6 +41,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
 		ipcRenderer.invoke("nif:load", nifPath),
 	loadTRI: (triPath: string): Promise<TriBodySlide> =>
 		ipcRenderer.invoke("tri:load", triPath),
-	navigate: (location: Location) => ipcRenderer.send("navigate", location),
+	navigate: (page: string) => ipcRenderer.send("navigate", page),
 	openExternalUrl: (url: string) => ipcRenderer.send("openExternal", url),
 })

@@ -4,9 +4,14 @@ import {
 	Group,
 	AppShell as MantineAppShell,
 	Paper,
-	Tabs,
 } from "@mantine/core"
-import { type MouseEvent, useCallback, useEffect, useState } from "react"
+import {
+	type MouseEvent,
+	useCallback,
+	useEffect,
+	useRef,
+	useState,
+} from "react"
 import {
 	HashRouter,
 	Route,
@@ -21,20 +26,38 @@ import { DataProvider } from "./DataProvider"
 import ESMs from "./ESMs"
 import Settings from "./Settings"
 import { SharedStateProvider } from "./SharedStateProvider"
+import Templates from "./Templates"
+import Edit from "./Templates/Edit"
+import Import from "./Templates/Import"
+
+const Nav = [
+	{ label: "Converter", href: "/" },
+	{ label: "Templates", href: "/templates" },
+	{ label: "Settings", href: "/settings" },
+]
 
 const Header = () => {
 	const navigate = useNavigate()
 	const location = useLocation()
 	const { lastActiveLocation } = useConfig()
-	const [activeTab, setActiveTab] = useState(lastActiveLocation || "/")
+	const [activeTab, setActiveTab] = useState("/")
+	const initialLoad = useRef(true)
 
 	useEffect(() => {
-		navigate(activeTab)
-	}, [navigate, activeTab])
+		if (!initialLoad.current || !lastActiveLocation) {
+			return
+		}
+		initialLoad.current = false
+		navigate(lastActiveLocation)
+	}, [navigate, lastActiveLocation])
 
 	useEffect(() => {
+		const pathname = location.pathname.split("/")
+		let page = pathname.at(0) || pathname.at(1)
+		page = page ? `/${page}` : "/"
 		// @ts-expect-error
-		window.electronAPI.navigate(location)
+		window.electronAPI.navigate(page)
+		setActiveTab(page)
 	}, [location])
 
 	const onExternalLinkClick = useCallback(
@@ -45,14 +68,30 @@ const Header = () => {
 		[],
 	)
 
+	const onNavigate = useCallback(
+		(e: MouseEvent<HTMLButtonElement>) => {
+			const href = e.currentTarget.dataset.href
+			navigate(e.currentTarget.dataset.href)
+		},
+		[navigate],
+	)
+
 	return (
 		<Group justify="space-between">
-			<Tabs value={activeTab} onChange={setActiveTab}>
-				<Tabs.List>
-					<Tabs.Tab value="/">Converter</Tabs.Tab>
-					<Tabs.Tab value="/settings">Settings</Tabs.Tab>
-				</Tabs.List>
-			</Tabs>
+			<Group gap={0}>
+				{Nav.map((item) => (
+					<Button
+						key={item.href}
+						onClick={onNavigate}
+						variant="subtle"
+						color={activeTab === item.href ? "blue" : "gray"}
+						data-href={item.href}
+						radius={0}
+					>
+						{item.label}
+					</Button>
+				))}
+			</Group>
 			<Group gap={0}>
 				<Button
 					variant="subtle"
@@ -77,6 +116,21 @@ const Header = () => {
 	)
 }
 
+const ESMsBlock = () => {
+	const location = useLocation()
+
+	if (location.pathname !== "/settings" && location.pathname !== "/") {
+		return null
+	}
+	return (
+		<Container>
+			<Paper mt="md" p="md" shadow="xs" withBorder>
+				<ESMs />
+			</Paper>
+		</Container>
+	)
+}
+
 const AppShell = () => {
 	return (
 		<HashRouter>
@@ -95,12 +149,13 @@ const AppShell = () => {
 								<Routes>
 									<Route index element={<Converter />} />
 									<Route path="/settings" element={<Settings />} />
+									<Route path="/templates">
+										<Route index element={<Templates />} />
+										<Route path="new" element={<Edit />} />
+										<Route path="import" element={<Import />} />
+									</Route>
 								</Routes>
-								<Container>
-									<Paper mt="md" p="md" shadow="xs" withBorder>
-										<ESMs />
-									</Paper>
-								</Container>
+								<ESMsBlock />
 							</MantineAppShell.Main>
 						</MantineAppShell>
 					</DataProvider>

@@ -23,15 +23,11 @@ import {
 import type {
 	BodySlidePreset,
 	BodySlidePresetParsed,
+	Morph,
 	ParsedTemplates,
-} from "../../../types"
-import { useData } from "../../DataProvider"
-import { useSharedState } from "../../SharedStateProvider"
-
-export type Morph = {
-	rules: string[]
-	presets: BodySlidePreset[]
-}
+} from "../../types"
+import { useData } from "../DataProvider"
+import { useSharedState } from "../SharedStateProvider"
 
 const parseTemplateRaw = async (
 	text: string,

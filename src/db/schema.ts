@@ -6,3 +6,11 @@ export const config = table("config", {
 	key: t.text().primaryKey(),
 	value: t.text(),
 })
+
+export const templates = table("templates", {
+	id: t.integer("id").primaryKey({ autoIncrement: true }),
+	name: t.text(),
+	bodyGen: t.text(),
+	gender: t.integer(),
+	sourceXMLContentHash: t.text(),
+})
