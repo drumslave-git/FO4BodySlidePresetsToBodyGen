@@ -127,7 +127,12 @@ const Form = () => {
 	return (
 		<>
 			<ViewHost />
-			<Stack style={{ height: "95dvh", overflow: "hidden" }}>
+			<Stack
+				style={{
+					height: "calc(100dvh - var(--app-shell-padding) * 2)",
+					overflow: "hidden",
+				}}
+			>
 				<Text>
 					{id ? `Edit Template ID: ${template.name}` : "Create New Template"}
 				</Text>
