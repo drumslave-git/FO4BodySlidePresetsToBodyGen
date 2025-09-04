@@ -13,7 +13,7 @@ import {
 import type { Location } from "react-router"
 import { productName, version } from "../package.json"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
-import { applyMigrations, readConfig, writeConfig } from "./db"
+import { applyMigrations, readConfig, templatesDB, writeConfig } from "./db"
 // @ts-expect-error
 import icon from "./images/icon.png"
 import readNif from "./NIF/nifImporter"
@@ -201,6 +201,14 @@ app.whenReady().then(() => {
 		)
 		return path.resolve(config.outputFolder, "BodyGen.zip")
 	})
+
+	ipcMain.handle(
+		"templatesDB",
+		(_event, action: keyof typeof templatesDB, ...rest: any[]) => {
+			// @ts-expect-error
+			return templatesDB[action](...rest)
+		},
+	)
 
 	ipcMain.on("navigate", (_event, page: string) => handleNavigate(page))
 	ipcMain.on("openExternal", (_event, url: string) => shell.openExternal(url))

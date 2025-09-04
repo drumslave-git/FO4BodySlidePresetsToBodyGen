@@ -13,16 +13,16 @@ import {
 import { useCallback, useEffect, useState } from "react"
 
 import type { BodySlidePreset, NotificationData } from "../../types"
-import Collapsable from "../Collapsable"
+import BodySlidePresets from "../BodySlidePresets/List"
 import { useConfig } from "../ConfigProvider"
+import Collapsable from "../common/Collapsable"
 import { useData } from "../DataProvider"
 import { useSharedState } from "../SharedStateProvider"
-import BodySlidePresets from "../Templates/BodySlidePresets"
 import Morphs from "./Morphs"
 
 const Converter = () => {
 	const { dataFolder, outputFolder } = useConfig()
-	const { validateESMs } = useData()
+	const { validateESMs, bodySlidePresetsParsed } = useData()
 	const {
 		morphs,
 		setMorphs,
@@ -130,60 +130,59 @@ const Converter = () => {
 				scrollAreaComponent={ScrollArea.Autosize}
 			>
 				<BodySlidePresets
+					items={bodySlidePresetsParsed}
 					onSubmit={onBodySlidePresetsSubmit}
 					onCancel={bodySlidePresetsModalClose}
 					selectedPresets={morphs[editedMorphIndex]?.presets}
 				/>
 			</Modal>
-			<Container>
-				{notification && (
-					<Notification
-						color={notification.color}
-						title={notification.title}
-						onClose={() => setNotification(null)}
-					>
-						{notification.text}
-					</Notification>
-				)}
-				<Paper p="md" shadow="xs" withBorder>
-					<Group mt="md">
-						{dataFolder !== outputFolder && (
-							<Button color="orange" onClick={onZip}>
-								Zip Output
-							</Button>
-						)}
-						<Button color="orange" disabled={!readyToWrite} onClick={onWrite}>
-							Write
+			{notification && (
+				<Notification
+					color={notification.color}
+					title={notification.title}
+					onClose={() => setNotification(null)}
+				>
+					{notification.text}
+				</Notification>
+			)}
+			<Paper p="md" shadow="xs" withBorder>
+				<Group mt="md">
+					{dataFolder !== outputFolder && (
+						<Button color="orange" onClick={onZip}>
+							Zip Output
 						</Button>
-					</Group>
-				</Paper>
-				<Paper mt="md" p="md" shadow="xs" withBorder>
-					<Morphs
-						morphs={morphs}
-						setMorphs={setMorphs}
-						onSelectBodySlidePresets={bodySlidePresetsModalOpen}
-					/>
-					{validationError && (
-						<Alert color="red" title="Templates Error" mt="md">
-							{validationError}
-						</Alert>
 					)}
+					<Button color="orange" disabled={!readyToWrite} onClick={onWrite}>
+						Write
+					</Button>
+				</Group>
+			</Paper>
+			<Paper mt="md" p="md" shadow="xs" withBorder>
+				<Morphs
+					morphs={morphs}
+					setMorphs={setMorphs}
+					onSelectBodySlidePresets={bodySlidePresetsModalOpen}
+				/>
+				{validationError && (
+					<Alert color="red" title="Templates Error" mt="md">
+						{validationError}
+					</Alert>
+				)}
+			</Paper>
+			{templatesContent && (
+				<Paper mt="md" p="md" shadow="xs" withBorder>
+					<Collapsable title="templates.ini">
+						<Code block>{templatesContent}</Code>
+					</Collapsable>
 				</Paper>
-				{templatesContent && (
-					<Paper mt="md" p="md" shadow="xs" withBorder>
-						<Collapsable title="templates.ini">
-							<Code block>{templatesContent}</Code>
-						</Collapsable>
-					</Paper>
-				)}
-				{morphsContent && (
-					<Paper mt="md" p="md" shadow="xs" withBorder>
-						<Collapsable title="morphs.ini">
-							<Code block>{morphsContent}</Code>
-						</Collapsable>
-					</Paper>
-				)}
-			</Container>
+			)}
+			{morphsContent && (
+				<Paper mt="md" p="md" shadow="xs" withBorder>
+					<Collapsable title="morphs.ini">
+						<Code block>{morphsContent}</Code>
+					</Collapsable>
+				</Paper>
+			)}
 		</>
 	)
 }

@@ -1,5 +1,5 @@
 import { contextBridge, ipcRenderer } from "electron/renderer"
-import type { Location } from "react-router"
+import type { templatesDB } from "./db"
 
 import type {
 	BodyFiles,
@@ -43,4 +43,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
 		ipcRenderer.invoke("tri:load", triPath),
 	navigate: (page: string) => ipcRenderer.send("navigate", page),
 	openExternalUrl: (url: string) => ipcRenderer.send("openExternal", url),
+	templatesDB: (action: keyof typeof templatesDB, ...args: any[]) =>
+		ipcRenderer.invoke("templatesDB", action, ...args),
 })

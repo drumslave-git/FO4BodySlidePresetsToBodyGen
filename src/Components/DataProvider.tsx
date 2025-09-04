@@ -1,4 +1,3 @@
-import { LoadingOverlay } from "@mantine/core"
 import {
 	createContext,
 	type ReactNode,
@@ -15,6 +14,7 @@ import {
 	type ESM,
 } from "../types"
 import { useConfig } from "./ConfigProvider"
+import { useOverlay } from "./OverlayProvider"
 import { useSharedState } from "./SharedStateProvider"
 
 type DataContextValue = {
@@ -60,7 +60,7 @@ const DataContext = createContext<DataContextValue>({
 export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const { dataFolder } = useConfig()
 	const { templatesContent } = useSharedState()
-	const [loading, setLoading] = useState(true)
+	const { setIsLoading } = useOverlay()
 	const [defaultTemplates, setDefaultTemplates] = useState("")
 	const [ESMs, setESMs] = useState<ESM[]>([])
 	const [bodyFiles, setBodyFiles] = useState<BodyFiles>(defaultBodyFiles)
@@ -70,13 +70,13 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	>([])
 
 	useEffect(() => {
-		setLoading(true)
+		setIsLoading("Loading data...")
 		if (!dataFolder) {
 			setESMs((prev) => (prev.length ? [] : prev))
 			setBodySlidePresetsParsed((prev) => (prev.length ? [] : prev))
 			setBodyFiles(defaultBodyFiles)
 			setDefaultTemplates("")
-			setLoading(false)
+			setIsLoading(false)
 			return
 		}
 		const load = async () => {
@@ -92,10 +92,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				// @ts-expect-error
 				await window.electronAPI.resolveBodyFiles(dataFolder),
 			)
-			setLoading(false)
+			setIsLoading(false)
 		}
 		void load()
-	}, [dataFolder])
+	}, [dataFolder, setIsLoading])
 
 	const validateESMs = useCallback(() => {
 		if (!dataFolder) {
@@ -116,7 +116,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 
 	useEffect(() => {
 		const loadBodies = async () => {
-			setLoading(true)
+			setIsLoading("Loading body models...")
 			const bodies: Bodies = defaultBodies
 			for (const type of Object.values(BodyType)) {
 				if (!bodyFiles[type].nif || !bodyFiles[type].tri) continue
@@ -126,10 +126,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				bodies[type].tri = await window.electronAPI.loadTRI(bodyFiles[type].tri)
 			}
 			setBodies(bodies)
-			setLoading(false)
+			setIsLoading(false)
 		}
 		void loadBodies()
-	}, [bodyFiles])
+	}, [bodyFiles, setIsLoading])
 
 	return (
 		<DataContext.Provider
@@ -142,7 +142,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				defaultTemplates,
 			}}
 		>
-			<LoadingOverlay zIndex={1000} visible={loading} pos="fixed" />
 			{children}
 		</DataContext.Provider>
 	)

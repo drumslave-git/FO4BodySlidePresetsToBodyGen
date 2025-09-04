@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto"
 import fs from "node:fs"
 import path from "node:path"
 import { drizzle } from "drizzle-orm/better-sqlite3"
@@ -6,8 +7,13 @@ import { eq } from "drizzle-orm/sql/expressions/conditions"
 import { app } from "electron"
 
 import log from "../logger"
-import type { Config } from "../types"
-import { config } from "./schema"
+import {
+	type BodySlidePreset,
+	type BodySlidePresetParsed,
+	type Config,
+	ImportStatus,
+} from "../types"
+import { config, type NewTemplate, type Template, templates } from "./schema"
 
 const dataFolder = path.resolve(
 	app.getAppPath(),
@@ -43,7 +49,7 @@ const defaultConfig = (config: Config) => {
 	return defaults
 }
 
-const readConfig = () => {
+export const readConfig = () => {
 	const data = db
 		.select()
 		.from(config)
@@ -56,7 +62,7 @@ const readConfig = () => {
 	return defaultConfig(data)
 }
 
-const writeConfig = (key: string, value: string) => {
+export const writeConfig = (key: string, value: string) => {
 	const existing = db.select().from(config).where(eq(config.key, key)).get()
 	if (existing) {
 		db.update(config).set({ value }).where(eq(config.key, key)).run()
@@ -65,6 +71,95 @@ const writeConfig = (key: string, value: string) => {
 	}
 }
 
-export { readConfig, writeConfig }
+export const templatesDB = {
+	read: (id?: number) =>
+		id
+			? db.select().from(templates).where(eq(templates.id, id)).get()
+			: db.select().from(templates).all(),
+	create: (template: NewTemplate) =>
+		db.insert(templates).values(template).run(),
+	update: (id: number, template: Partial<Template>) =>
+		db.update(templates).set(template).where(eq(templates.id, id)).run(),
+	delete: (id: number) =>
+		db.delete(templates).where(eq(templates.id, id)).run(),
+	importedStatus: (sources: BodySlidePresetParsed[]) => {
+		return sources
+			.filter((source) => typeof source.data !== "string")
+			.map((source) => {
+				return {
+					...source,
+					data: (source.data as BodySlidePreset[]).map((preset) => {
+						const hash = createHash("sha256")
+						hash.update(fs.readFileSync(preset.filePath).toString())
+						let importStatus: ImportStatus = ImportStatus.notImported
+						const contentHash = hash.digest("hex")
+						const name = `${preset.name} from ${preset.filePath}`
+						const existing = db
+							.select()
+							.from(templates)
+							.where(eq(templates.sourceXMLContentHash, contentHash))
+							.get()
+						if (existing) {
+							importStatus = ImportStatus.imported
+						} else {
+							const needsUpdate = db
+								.select()
+								.from(templates)
+								.where(eq(templates.name, name))
+								.get()
+							if (needsUpdate) {
+								importStatus = ImportStatus.needsUpdate
+							}
+						}
+						return {
+							...preset,
+							importStatus,
+						}
+					}),
+				}
+			})
+	},
+	import: async (
+		source: BodySlidePreset,
+	): Promise<{ status: string; id: number }> => {
+		const hash = createHash("sha256")
+		hash.update(fs.readFileSync(source.filePath).toString())
+		const contentHash = hash.digest("hex")
+		const template: NewTemplate = {
+			name: `${source.name} from ${source.filePath}`,
+			bodyGen: source.bodyGen,
+			gender: source.gender,
+			sourceXMLContentHash: contentHash,
+		}
+		const existing = db
+			.select()
+			.from(templates)
+			.where(eq(templates.sourceXMLContentHash, contentHash))
+			.get()
+		if (existing) {
+			return { status: "exists", id: existing.id }
+		}
+		const needsUpdate = db
+			.select()
+			.from(templates)
+			.where(eq(templates.name, template.name))
+			.get()
+		if (needsUpdate) {
+			const updated = await db
+				.update(templates)
+				.set(template)
+				.where(eq(templates.id, needsUpdate.id))
+				.returning({
+					id: templates.id,
+				})
+			return { status: "updated", id: updated.at(0).id }
+		}
+		const result = await db.insert(templates).values(template).returning({
+			id: templates.id,
+		})
+
+		return { status: "created", id: result.at(0).id }
+	},
+}
 
 export default db

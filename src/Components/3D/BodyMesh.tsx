@@ -4,6 +4,7 @@ import { BufferGeometry, Float32BufferAttribute } from "three"
 import type {
 	BodySlidePreset,
 	BodyType,
+	MorphSlider,
 	NifMesh,
 	TriBodySlide,
 	TriMorphSparse,
@@ -19,12 +20,22 @@ export function indexMorphs(tri: TriBodySlide): Map<string, TriMorphSparse> {
 function applyBodySlideMorphs(
 	basePositions: Float32Array,
 	tri: TriBodySlide,
-	sliders: BodySlidePreset["sliders"],
+	sliders: MorphSlider[] | string,
 ): Float32Array {
 	const out = new Float32Array(basePositions)
 	const map = indexMorphs(tri)
 
-	for (const { name, value } of sliders) {
+	let slidersArray: MorphSlider[] = []
+	if (typeof sliders === "string") {
+		slidersArray = sliders.split(",").map((s) => {
+			const [name, value] = s.split("@")
+			return { name, value: Number(value) }
+		})
+	} else {
+		slidersArray = sliders
+	}
+
+	for (const { name, value } of slidersArray) {
 		if (!value) continue
 		const morph = map.get(name)
 		if (!morph) {
@@ -46,7 +57,7 @@ function applyBodySlideMorphs(
 const createGeometry = (
 	mesh: NifMesh,
 	tri: TriBodySlide,
-	sliders: BodySlidePreset["sliders"] = [],
+	sliders: BodySlidePreset["sliders"] | string = [],
 ) => {
 	if (!mesh || !tri) {
 		return null
@@ -77,7 +88,7 @@ const BodyMesh = ({
 	sliders = [],
 }: {
 	bodyType: BodyType
-	sliders?: BodySlidePreset["sliders"]
+	sliders?: BodySlidePreset["sliders"] | string
 }) => {
 	const { bodies } = useData()
 

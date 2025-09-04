@@ -7,10 +7,16 @@ import ThreeView from "./3D/ThreeView"
 import ViewHost from "./3D/ViewHost"
 
 import { useConfig } from "./ConfigProvider"
+import { useOverlay } from "./OverlayProvider"
 
 const Settings = () => {
 	const { dataFolder, outputFolder, loadConfig } = useConfig()
+	const { setIsLoading } = useOverlay()
 	const [isPicking, setIsPicking] = useState<boolean>(false)
+
+	useEffect(() => {
+		setIsLoading(isPicking ? "Picking folder..." : false)
+	}, [isPicking, setIsLoading])
 
 	const onPathSelection = useCallback(
 		async (e: MouseEvent<HTMLButtonElement>) => {
@@ -31,7 +37,7 @@ const Settings = () => {
 	)
 
 	return (
-		<Container>
+		<>
 			<ViewHost />
 			<Paper p="md" shadow="xs" withBorder>
 				<Group>
@@ -79,7 +85,7 @@ const Settings = () => {
 					</ThreeView>
 				</Paper>
 			</Group>
-		</Container>
+		</>
 	)
 }
 

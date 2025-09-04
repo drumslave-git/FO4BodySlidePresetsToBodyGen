@@ -2,7 +2,8 @@ import { AspectRatio } from "@mantine/core"
 import { Box, OrbitControls, PerspectiveCamera, View } from "@react-three/drei"
 import type { ReactNode } from "react"
 
-const ThreeView = ({ children }: { children: ReactNode }) => {
+const ThreeView = (props: { children: ReactNode; enableZoom?: boolean }) => {
+	const { children = [], enableZoom = false } = props
 	return (
 		<AspectRatio ratio={1}>
 			<View style={{ overflow: "hidden" }}>
@@ -13,7 +14,7 @@ const ThreeView = ({ children }: { children: ReactNode }) => {
 				{/*<primitive object={new AxesHelper(1)} position={[0, 0, 0]} />*/}
 				{children ? children : <Box material-color="hotpink" />}
 				<PerspectiveCamera makeDefault position={[1, 0.5, -1]} fov={40} />
-				<OrbitControls makeDefault />
+				<OrbitControls enableZoom={enableZoom} makeDefault />
 			</View>
 		</AspectRatio>
 	)

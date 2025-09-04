@@ -309,6 +309,7 @@ export const resolveBodySlidePresets = (
 					const item: BodySlidePreset = {
 						name: preset.name,
 						set: preset.set,
+						filePath,
 						groups: Array.isArray(preset.Group)
 							? // biome-ignore lint/suspicious/noExplicitAny: parsed xml
 								preset.Group.map((group: any) => ({

@@ -1,4 +1,3 @@
-import { LoadingOverlay } from "@mantine/core"
 import {
 	createContext,
 	type ReactNode,
@@ -9,6 +8,7 @@ import {
 } from "react"
 
 import type { Config } from "../types"
+import { useOverlay } from "./OverlayProvider"
 
 type ConfigContextValue = Config & {
 	loadConfig: () => Promise<void>
@@ -20,16 +20,16 @@ const ConfigContext = createContext<ConfigContextValue>({
 
 export const ConfigProvider = ({ children }: { children: ReactNode }) => {
 	const [config, setConfig] = useState<Config>({})
-	const [loading, setLoading] = useState(true)
+	const { setIsLoading } = useOverlay()
 
 	const loadConfig = useCallback(async () => {
-		setLoading(true)
+		setIsLoading("Loading configuration...")
 		// @ts-expect-error
 		window.electronAPI.readConfig().then((config: Config) => {
 			setConfig(config)
-			setLoading(false)
+			setIsLoading(false)
 		})
-	}, [])
+	}, [setIsLoading])
 
 	useEffect(() => {
 		void loadConfig()
@@ -42,11 +42,7 @@ export const ConfigProvider = ({ children }: { children: ReactNode }) => {
 				loadConfig,
 			}}
 		>
-			{loading ? (
-				<LoadingOverlay zIndex={1000} visible pos="fixed" />
-			) : (
-				children
-			)}
+			{children}
 		</ConfigContext.Provider>
 	)
 }

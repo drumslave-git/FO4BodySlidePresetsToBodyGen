@@ -26,17 +26,28 @@ export type FormattedData = {
 	morphs: string
 }
 
+export type Slider = {
+	name: string
+	morph: string
+	minimum: number
+	maximum: number
+	interval: number
+	gender: 0 | 1
+}
+
+export type MorphSlider = {
+	name: string
+	value: number
+}
+
 export type BodySlidePreset = {
 	name: string
 	set: string
+	filePath: string
 	groups: {
 		name: string
 	}[]
-	sliders: {
-		name: string
-		size: string
-		value: number
-	}[]
+	sliders: MorphSlider[]
 	bodyGen: string
 	errors: string[]
 	valid: boolean
@@ -52,15 +63,6 @@ export type NotificationData = {
 	color: "green" | "red" | "yellow"
 	title: string
 	text: string
-}
-
-export type Slider = {
-	name: string
-	morph: string
-	minimum: number
-	maximum: number
-	interval: number
-	gender: 0 | 1
 }
 
 export type ParsedTemplates = {
@@ -115,4 +117,10 @@ export type Bodies = {
 export type Morph = {
 	rules: string[]
 	presets: BodySlidePreset[]
+}
+
+export enum ImportStatus {
+	notImported = "not imported",
+	imported = "imported",
+	needsUpdate = "needs update",
 }
