@@ -215,7 +215,7 @@ export const write = (from: string, outDir: string, content: string) => {
 }
 
 export const resolveSliders = (dataFolder: string) => {
-	let results: Slider[] = []
+	let results: { 0: Slider[]; 1: Slider[] } = { 0: [], 1: [] }
 
 	const slidersDir = path.resolve(dataFolder, ...SLIDERS_RELATIVE_PATH)
 	if (!fs.existsSync(slidersDir)) return results
@@ -226,10 +226,15 @@ export const resolveSliders = (dataFolder: string) => {
 	for (const folder of folders) {
 		const slidersFilePath = path.resolve(slidersDir, folder, "sliders.json")
 		if (!fs.existsSync(slidersFilePath)) continue
-		results = [
-			...results,
-			...JSON.parse(fs.readFileSync(slidersFilePath).toString()),
-		]
+		const sliders: Slider[] = JSON.parse(
+			fs.readFileSync(slidersFilePath).toString(),
+		)
+		for (const slider of sliders) {
+			results = {
+				...results,
+				[slider.gender]: [...results[slider.gender], slider],
+			}
+		}
 	}
 
 	return results
@@ -251,9 +256,13 @@ export const validateSliders = (
 		const cleanedSlider = {
 			...slider,
 		}
-		const supportedSlider = supportedSliders.find(
-			(supportedSlider) => supportedSlider.morph === slider.name,
-		)
+		const supportedSlider =
+			supportedSliders[0].find(
+				(supportedSlider) => supportedSlider.morph === slider.name,
+			) ||
+			supportedSliders[1].find(
+				(supportedSlider) => supportedSlider.morph === slider.name,
+			)
 		if (!supportedSlider) {
 			errors.push(`Slider "${slider.name}" is not supported. Removed.`)
 			continue

@@ -12,6 +12,7 @@ import {
 	type BodySlidePresetParsed,
 	BodyType,
 	type ESM,
+	type Slider,
 } from "../types"
 import { useConfig } from "./ConfigProvider"
 import { useOverlay } from "./OverlayProvider"
@@ -24,6 +25,10 @@ type DataContextValue = {
 	bodies: Bodies
 	validateESMs: () => void
 	defaultTemplates: string
+	sliders: {
+		0: Slider[]
+		1: Slider[]
+	}
 }
 
 const defaultBodyFiles: BodyFiles = {
@@ -55,6 +60,7 @@ const DataContext = createContext<DataContextValue>({
 	defaultTemplates: "",
 	bodyFiles: defaultBodyFiles,
 	bodies: defaultBodies,
+	sliders: { 0: [], 1: [] },
 })
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
@@ -68,6 +74,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const [bodySlidePresetsParsed, setBodySlidePresetsParsed] = useState<
 		BodySlidePresetParsed[]
 	>([])
+	const [sliders, setSliders] = useState<DataContextValue["sliders"]>({
+		0: [],
+		1: [],
+	})
 
 	useEffect(() => {
 		setIsLoading("Loading data...")
@@ -76,6 +86,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 			setBodySlidePresetsParsed((prev) => (prev.length ? [] : prev))
 			setBodyFiles(defaultBodyFiles)
 			setDefaultTemplates("")
+			setSliders({
+				0: [],
+				1: [],
+			})
 			setIsLoading(false)
 			return
 		}
@@ -91,6 +105,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 			setBodyFiles(
 				// @ts-expect-error
 				await window.electronAPI.resolveBodyFiles(dataFolder),
+			)
+			setSliders(
+				// @ts-expect-error
+				await window.electronAPI.resolveSliders(),
 			)
 			setIsLoading(false)
 		}
@@ -140,6 +158,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				bodies,
 				validateESMs,
 				defaultTemplates,
+				sliders,
 			}}
 		>
 			{children}

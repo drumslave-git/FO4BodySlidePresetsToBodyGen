@@ -8,6 +8,7 @@ import type {
 	ESM,
 	FormattedData,
 	ParsedTemplates,
+	Slider,
 	TriBodySlide,
 } from "./types"
 
@@ -45,4 +46,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	openExternalUrl: (url: string) => ipcRenderer.send("openExternal", url),
 	templatesDB: (action: keyof typeof templatesDB, ...args: any[]) =>
 		ipcRenderer.invoke("templatesDB", action, ...args),
+	resolveSliders: (): Promise<{
+		0: Slider[]
+		1: Slider[]
+	}> => ipcRenderer.invoke("resolveSliders"),
 })

@@ -24,6 +24,7 @@ import {
 	resolveBodyFiles,
 	resolveBodySlidePresets,
 	resolveESMs,
+	resolveSliders,
 	validateESMs,
 	validateTemplates,
 	write,
@@ -131,6 +132,10 @@ app.whenReady().then(() => {
 			),
 	)
 	ipcMain.handle("readConfig", readConfig)
+	ipcMain.handle("resolveSliders", () => {
+		const config = readConfig()
+		return resolveSliders(config.dataFolder)
+	})
 	ipcMain.handle("templates:load", (_event, from: string) =>
 		loadTemplates(from),
 	)
