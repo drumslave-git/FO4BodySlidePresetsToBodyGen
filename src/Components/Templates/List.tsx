@@ -117,7 +117,9 @@ const List = () => {
 				{filteredTemplates.map((template) => (
 					<Paper key={template.id} shadow="xs" p="md" mb="sm" withBorder>
 						<Group align="center" mb="sm">
-							<Text>{template.name}</Text>
+							<Text lineClamp={2} title={template.name}>
+								{template.name}
+							</Text>
 							<Button size="xs" data-id={template.id} onClick={onEditClick}>
 								Edit
 							</Button>
@@ -130,7 +132,7 @@ const List = () => {
 								Delete
 							</Button>
 						</Group>
-						<ThreeView>
+						<ThreeView squire>
 							<BodyMesh
 								bodyType={
 									template.gender === 0
@@ -144,7 +146,6 @@ const List = () => {
 					</Paper>
 				))}
 			</SimpleGrid>
-			<ViewHost />
 		</>
 	)
 }

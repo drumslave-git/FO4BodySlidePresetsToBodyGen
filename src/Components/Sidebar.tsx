@@ -65,6 +65,9 @@ const NavigationItem = ({
 	const { Icon, children } = item
 	const isActive: boolean = useMemo(() => {
 		const href = item.href.replace("#", "")
+		if (activeTab === "/") {
+			return activeTab === href
+		}
 		return href.startsWith(activeTab) || activeTab === href
 	}, [item, activeTab])
 

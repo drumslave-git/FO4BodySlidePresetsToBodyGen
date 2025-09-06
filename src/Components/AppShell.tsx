@@ -1,42 +1,9 @@
-import {
-	Box,
-	Button,
-	Container,
-	em,
-	Group,
-	AppShell as MantineAppShell,
-	NavLink,
-	Paper,
-	Stack,
-} from "@mantine/core"
-import { useDisclosure, useMediaQuery } from "@mantine/hooks"
-import {
-	IconBrandGithub,
-	IconCircuitChangeover,
-	IconFileImport,
-	IconList,
-	IconMan,
-	IconPlaylistAdd,
-	IconSettings,
-} from "@tabler/icons-react"
-import {
-	ComponentProps,
-	JSX,
-	type MouseEvent,
-	useCallback,
-	useEffect,
-	useMemo,
-	useState,
-} from "react"
-import {
-	HashRouter,
-	Route,
-	Routes,
-	useLocation,
-	useNavigate,
-} from "react-router"
+import { AppShell as MantineAppShell, Paper } from "@mantine/core"
 
-import { ConfigProvider, useConfig } from "./ConfigProvider"
+import { HashRouter, Route, Routes, useLocation } from "react-router"
+import ViewHost from "./3D/ViewHost"
+
+import { ConfigProvider } from "./ConfigProvider"
 import Converter from "./Converter"
 import { DataProvider } from "./DataProvider"
 import ESMs from "./ESMs"
@@ -63,41 +30,44 @@ const ESMsBlock = () => {
 
 const AppShell = () => {
 	return (
-		<OverlayProvider>
-			<HashRouter>
-				<ConfigProvider>
-					<SharedStateProvider>
-						<DataProvider>
-							<MantineAppShell
-								padding="md"
-								withBorder={false}
-								navbar={{
-									width: { base: 50, sm: 200 },
-									breakpoint: "",
-								}}
-							>
-								<MantineAppShell.Navbar>
-									<Sidebar />
-								</MantineAppShell.Navbar>
-								<MantineAppShell.Main>
-									<Routes>
-										<Route index element={<Converter />} />
-										<Route path="/settings" element={<Settings />} />
-										<Route path="/templates">
-											<Route path="list" element={<List />} />
-											<Route path="new" element={<Form />} />
-											<Route path="edit/:id" element={<Form />} />
-											<Route path="import" element={<Import />} />
-										</Route>
-									</Routes>
-									<ESMsBlock />
-								</MantineAppShell.Main>
-							</MantineAppShell>
-						</DataProvider>
-					</SharedStateProvider>
-				</ConfigProvider>
-			</HashRouter>
-		</OverlayProvider>
+		<>
+			<ViewHost />
+			<OverlayProvider>
+				<HashRouter>
+					<ConfigProvider>
+						<SharedStateProvider>
+							<DataProvider>
+								<MantineAppShell
+									padding="md"
+									withBorder={false}
+									navbar={{
+										width: { base: 50, sm: 200 },
+										breakpoint: "",
+									}}
+								>
+									<MantineAppShell.Navbar>
+										<Sidebar />
+									</MantineAppShell.Navbar>
+									<MantineAppShell.Main>
+										<Routes>
+											<Route index element={<Converter />} />
+											<Route path="/settings" element={<Settings />} />
+											<Route path="/templates">
+												<Route path="list" element={<List />} />
+												<Route path="new" element={<Form />} />
+												<Route path="edit/:id" element={<Form />} />
+												<Route path="import" element={<Import />} />
+											</Route>
+										</Routes>
+										<ESMsBlock />
+									</MantineAppShell.Main>
+								</MantineAppShell>
+							</DataProvider>
+						</SharedStateProvider>
+					</ConfigProvider>
+				</HashRouter>
+			</OverlayProvider>
+		</>
 	)
 }
 

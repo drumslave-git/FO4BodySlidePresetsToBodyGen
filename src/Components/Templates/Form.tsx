@@ -126,7 +126,6 @@ const Form = () => {
 
 	return (
 		<>
-			<ViewHost />
 			<Stack
 				style={{
 					height: "calc(100dvh - var(--app-shell-padding) * 2)",
@@ -155,8 +154,8 @@ const Form = () => {
 					/>
 					<Text>Female</Text>
 				</Group>
-				<Group align="center" style={{ overflow: "hidden" }}>
-					<Paper flex={1} style={{ maxWidth: 600 }} withBorder>
+				<Group align="center" style={{ overflow: "hidden" }} flex={1}>
+					<Paper flex={1} h="100%" style={{ overflow: "hidden" }} withBorder>
 						<ThreeView enableZoom>
 							<BodyMesh
 								bodyType={

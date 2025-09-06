@@ -38,7 +38,6 @@ const Settings = () => {
 
 	return (
 		<>
-			<ViewHost />
 			<Paper p="md" shadow="xs" withBorder>
 				<Group>
 					<Text>{dataFolder}</Text>
@@ -69,7 +68,7 @@ const Settings = () => {
 					w="calc(50% - var(--group-gap) / 2"
 				>
 					<Text>Male Body</Text>
-					<ThreeView>
+					<ThreeView squire>
 						<BodyMesh bodyType={BodyType.maleBody} />
 					</ThreeView>
 				</Paper>
@@ -80,7 +79,7 @@ const Settings = () => {
 					w="calc(50% - var(--group-gap) / 2"
 				>
 					<Text>Female Body</Text>
-					<ThreeView>
+					<ThreeView squire>
 						<BodyMesh bodyType={BodyType.femaleBody} />
 					</ThreeView>
 				</Paper>

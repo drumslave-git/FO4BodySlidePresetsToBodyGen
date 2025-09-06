@@ -213,7 +213,6 @@ const List = ({
 					/>
 				))}
 			</Stack>
-			<ViewHost />
 			<Box pos="sticky" bottom={0} bg="var(--mantine-color-body)" py="md">
 				<Divider mb="md" />
 				<Group>
