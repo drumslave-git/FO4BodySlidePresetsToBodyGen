@@ -124,3 +124,14 @@ export enum ImportStatus {
 	imported = "imported",
 	needsUpdate = "needs update",
 }
+
+export type SliderCategory = {
+	filePath: string
+	name: string
+	sliders: {
+		name: string
+		displayName: string
+	}[]
+}
+
+export type CategorizedSlider = Slider & { displayName: string }

@@ -6,17 +6,21 @@ import { zip } from "zip-a-folder"
 import {
 	BODYGEN_RELATIVE_PATH,
 	MESHES_CHARACTER_ASSETS_RELATIVE_PATH,
+	SLIDERS_CATEGORIES_RELATIVE_PATH,
 	SLIDERS_RELATIVE_PATH,
 } from "./consts"
+import log from "./logger"
 import {
 	type BodyFiles,
 	type BodySlidePreset,
 	type BodySlidePresetParsed,
 	BodyType,
+	type CategorizedSlider,
 	type ESM,
 	type FormattedData,
 	type ParsedTemplates,
 	type Slider,
+	type SliderCategory,
 } from "./types"
 
 const toCRLF = (text: string) => text.replace(/\r?\n/g, "\r\n")
@@ -288,6 +292,73 @@ export const validateSliders = (
 		gender = 1
 	}
 	return { errors, cleanedSliders, gender }
+}
+
+export const resolveSliderCategories = (dataFolder: string) => {
+	const dir = path.resolve(dataFolder, ...SLIDERS_CATEGORIES_RELATIVE_PATH)
+	const parser = new XMLParser({
+		ignoreAttributes: false, // include attributes in result
+		attributeNamePrefix: "", // optional: no '@_' prefix
+		allowBooleanAttributes: true, // optional: support boolean attrs
+		trimValues: true, // optional: trim text nodes
+	})
+	return fs
+		.readdirSync(dir)
+		.filter((item) => item.endsWith(".xml"))
+		.reduce((acc: SliderCategory[], item) => {
+			const filePath = path.resolve(dir, item)
+			const content = fs.readFileSync(filePath)
+			try {
+				const parsed = parser.parse(content)
+				if (!parsed?.SliderCategories?.Category) {
+					log.warn(`No categories found in slider category file ${item}`)
+					return acc
+				}
+				for (const Category of parsed.SliderCategories.Category) {
+					acc.push({
+						filePath,
+						name: Category.name,
+						sliders: Category.Slider.map((slider: any) => ({
+							name: slider.name,
+							displayName: slider.displayname,
+						})),
+					})
+				}
+			} catch (error) {
+				log.error(`Failed to parse slider category file ${item}:`, error)
+			}
+			return acc
+		}, [])
+}
+
+export const resolveCategorisedSliders = (dataFolder: string) => {
+	const categories = resolveSliderCategories(dataFolder)
+	const sliders = resolveSliders(dataFolder)
+
+	type Acc2 = Record<string, CategorizedSlider[]>
+	type Acc = Record<0 | 1, Acc2>
+
+	return Object.entries(sliders).reduce((acc: Acc, [gender, sldrs]) => {
+		acc[Number(gender) as 0 | 1] = sldrs.reduce((acc2: Acc2, slider) => {
+			const category = categories.find((category) =>
+				category.sliders.find((s) => s.name === slider.morph),
+			)
+			const categoryName = category ? category.name : "Uncategorized"
+			const categorySlider = category?.sliders.find(
+				(s) => s.name === slider.morph,
+			)
+			const displayName = categorySlider
+				? categorySlider.displayName
+				: slider.morph
+			acc2[categoryName] = acc2[categoryName] || []
+			acc2[categoryName].push({
+				...slider,
+				displayName,
+			})
+			return acc2
+		}, {} as Acc2)
+		return acc
+	}, {} as Acc)
 }
 
 export const resolveBodySlidePresets = (

@@ -11,6 +11,7 @@ import {
 	type BodyFiles,
 	type BodySlidePresetParsed,
 	BodyType,
+	type CategorizedSlider,
 	type ESM,
 	type Slider,
 } from "../types"
@@ -28,6 +29,10 @@ type DataContextValue = {
 	sliders: {
 		0: Slider[]
 		1: Slider[]
+	}
+	categorizedSliders: {
+		0: Record<string, CategorizedSlider[]>
+		1: Record<string, CategorizedSlider[]>
 	}
 }
 
@@ -61,6 +66,7 @@ const DataContext = createContext<DataContextValue>({
 	bodyFiles: defaultBodyFiles,
 	bodies: defaultBodies,
 	sliders: { 0: [], 1: [] },
+	categorizedSliders: { 0: {}, 1: {} },
 })
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
@@ -78,6 +84,9 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		0: [],
 		1: [],
 	})
+	const [categorizedSliders, setCategorizedSliders] = useState<
+		DataContextValue["categorizedSliders"]
+	>({ 0: {}, 1: {} })
 
 	useEffect(() => {
 		setIsLoading("Loading data...")
@@ -90,6 +99,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				0: [],
 				1: [],
 			})
+			setCategorizedSliders({ 0: {}, 1: {} })
 			setIsLoading(false)
 			return
 		}
@@ -109,6 +119,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 			setSliders(
 				// @ts-expect-error
 				await window.electronAPI.resolveSliders(),
+			)
+			setCategorizedSliders(
+				// @ts-expect-error
+				await window.electronAPI.resolveCategorisedSliders(),
 			)
 			setIsLoading(false)
 		}
@@ -159,6 +173,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				validateESMs,
 				defaultTemplates,
 				sliders,
+				categorizedSliders,
 			}}
 		>
 			{children}

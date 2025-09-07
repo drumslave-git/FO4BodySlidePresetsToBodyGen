@@ -23,7 +23,7 @@ import {
 import { useParams } from "react-router"
 
 import type { Template } from "../../db/schema"
-import { BodyType, type MorphSlider, Slider } from "../../types"
+import { BodyType, type MorphSlider, type Slider } from "../../types"
 import BodyMesh from "../3D/BodyMesh"
 import ThreeView from "../3D/ThreeView"
 import ViewHost from "../3D/ViewHost"
@@ -46,9 +46,12 @@ const Sliders = ({
 	gender: 0 | 1
 	onChange: (v: string) => void
 }) => {
-	const { sliders: allSliders } = useData()
-	// const {} = useData()
-	const sliders: MorphSlider[] = useMemo(() => {
+	const { categorizedSliders } = useData()
+	const [activeTab, setActiveTab] = useState("")
+	useEffect(() => {
+		setActiveTab(Object.keys(categorizedSliders[gender]).at(0))
+	}, [categorizedSliders, gender])
+	const values: MorphSlider[] = useMemo(() => {
 		return bodyGen.split(",").map((slider) => {
 			const [name, value] = slider.split("@").map((s) => s.trim())
 			return { name, value: Number(value) }
@@ -57,43 +60,57 @@ const Sliders = ({
 	const onValueChange = useCallback(
 		(name: string, value: number) => {
 			const updatedSliders = [
-				...sliders.filter((s) => s.name !== name),
+				...values.filter((s) => s.name !== name),
 				{ name, value },
 			]
 				.map((slider) => `${slider.name}@${slider.value}`)
 				.join(",")
 			onChange(updatedSliders)
 		},
-		[onChange, sliders],
+		[onChange, values],
 	)
 	return (
-		<>
-			{allSliders[gender].map((slider) => {
-				const value = sliders.find((s) => s.name === slider.morph)?.value ?? 0
+		<Tabs value={activeTab} onChange={setActiveTab}>
+			<Tabs.List>
+				{Object.keys(categorizedSliders[gender]).map((groupName) => (
+					<Tabs.Tab key={groupName} value={groupName}>
+						{groupName}
+					</Tabs.Tab>
+				))}
+			</Tabs.List>
+			{Object.entries(categorizedSliders[gender]).map(
+				([groupName, sliders]) => (
+					<Tabs.Panel key={groupName} value={groupName}>
+						{sliders.map((slider) => {
+							const value =
+								values.find((s) => s.name === slider.morph)?.value ?? 0
 
-				return (
-					<Fragment key={slider.name}>
-						<Text size="xs">{slider.morph}</Text>
-						<Group>
-							<InputSlider
-								value={value}
-								onChange={(v: number) => onValueChange(slider.morph, v)}
-								min={slider.minimum}
-								max={slider.maximum}
-								step={slider.interval}
-								flex={1}
-							/>
-							<ActionIcon
-								onClick={() => onValueChange(slider.morph, 0)}
-								title="Reset to 0"
-							>
-								<IconRestore />
-							</ActionIcon>
-						</Group>
-					</Fragment>
-				)
-			})}
-		</>
+							return (
+								<Fragment key={slider.name}>
+									<Text size="xs">{slider.displayName}</Text>
+									<Group>
+										<InputSlider
+											value={value}
+											onChange={(v: number) => onValueChange(slider.morph, v)}
+											min={slider.minimum}
+											max={slider.maximum}
+											step={slider.interval}
+											flex={1}
+										/>
+										<ActionIcon
+											onClick={() => onValueChange(slider.morph, 0)}
+											title="Reset to 0"
+										>
+											<IconRestore />
+										</ActionIcon>
+									</Group>
+								</Fragment>
+							)
+						})}
+					</Tabs.Panel>
+				),
+			)}
+		</Tabs>
 	)
 }
 
@@ -125,88 +142,84 @@ const Form = () => {
 	)
 
 	return (
-		<>
-			<Stack
-				style={{
-					height: "calc(100dvh - var(--app-shell-padding) * 2)",
-					overflow: "hidden",
-				}}
-			>
-				<Text>
-					{id ? `Edit Template ID: ${template.name}` : "Create New Template"}
-				</Text>
-				<Input
-					autoFocus
-					value={template.name}
-					placeholder="Template Name"
-					onChange={(e: ChangeEvent<HTMLInputElement>) =>
-						onFieldChange("name", e.target.value)
+		<Stack
+			style={{
+				height: "calc(100dvh - var(--app-shell-padding) * 2)",
+				overflow: "hidden",
+			}}
+		>
+			<Text>
+				{id ? `Edit Template ID: ${template.name}` : "Create New Template"}
+			</Text>
+			<Input
+				autoFocus
+				value={template.name}
+				placeholder="Template Name"
+				onChange={(e: ChangeEvent<HTMLInputElement>) =>
+					onFieldChange("name", e.target.value)
+				}
+			/>
+			<Group>
+				<Text>Gender</Text>
+				<Text>Male</Text>
+				<Switch
+					checked={template.gender === 1}
+					onChange={(event: ChangeEvent<HTMLInputElement>) =>
+						onFieldChange("gender", event.currentTarget.checked ? 1 : 0)
 					}
 				/>
-				<Group>
-					<Text>Gender</Text>
-					<Text>Male</Text>
-					<Switch
-						checked={template.gender === 1}
-						onChange={(event: ChangeEvent<HTMLInputElement>) =>
-							onFieldChange("gender", event.currentTarget.checked ? 1 : 0)
-						}
-					/>
-					<Text>Female</Text>
-				</Group>
-				<Group align="center" style={{ overflow: "hidden" }} flex={1}>
-					<Paper flex={1} h="100%" style={{ overflow: "hidden" }} withBorder>
-						<ThreeView enableZoom>
-							<BodyMesh
-								bodyType={
-									template.gender === 0
-										? BodyType.maleBody
-										: BodyType.femaleBody
-								}
-								sliders={previewBodyGen}
-							/>
-						</ThreeView>
-					</Paper>
-					<Tabs
-						value={bodyGenTab}
-						onChange={setBodyGenTab}
-						flex={1}
-						style={{
-							maxHeight: "100%",
-							display: "flex",
-							flexDirection: "column",
-						}}
+				<Text>Female</Text>
+			</Group>
+			<Group align="center" style={{ overflow: "hidden" }} flex={1}>
+				<Paper flex={1} h="100%" style={{ overflow: "hidden" }} withBorder>
+					<ThreeView enableZoom>
+						<BodyMesh
+							bodyType={
+								template.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
+							}
+							sliders={previewBodyGen}
+						/>
+					</ThreeView>
+				</Paper>
+				<Tabs
+					value={bodyGenTab}
+					onChange={setBodyGenTab}
+					flex={1}
+					style={{
+						maxHeight: "100%",
+						display: "flex",
+						flexDirection: "column",
+					}}
+				>
+					<Tabs.List>
+						<Tabs.Tab value="sliders">Sliders</Tabs.Tab>
+						<Tabs.Tab value="raw">Raw</Tabs.Tab>
+					</Tabs.List>
+					<Tabs.Panel
+						value="sliders"
+						style={{ maxHeight: "100%", overflow: "auto" }}
 					>
-						<Tabs.List>
-							<Tabs.Tab value="sliders">Sliders</Tabs.Tab>
-							<Tabs.Tab value="raw">Raw</Tabs.Tab>
-						</Tabs.List>
-						<Tabs.Panel
-							value="sliders"
-							style={{ maxHeight: "100%", overflow: "auto" }}
-						>
-							<Sliders
-								bodyGen={template.bodyGen}
-								gender={template.gender as 0 | 1}
-								onChange={(v) => onFieldChange("bodyGen", v)}
-							/>
-						</Tabs.Panel>
-						<Tabs.Panel value="raw">
-							<Textarea
-								value={template.bodyGen}
-								resize="vertical"
-								placeholder="BodyGen String"
-								autosize
-								minRows={4}
-								onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
-									onFieldChange("bodyGen", e.target.value)
-								}
-							/>
-						</Tabs.Panel>
-					</Tabs>
-				</Group>
-			</Stack>
-		</>
+						<Sliders
+							bodyGen={template.bodyGen}
+							gender={template.gender as 0 | 1}
+							onChange={(v) => onFieldChange("bodyGen", v)}
+						/>
+					</Tabs.Panel>
+					<Tabs.Panel value="raw">
+						<Textarea
+							value={template.bodyGen}
+							resize="vertical"
+							placeholder="BodyGen String"
+							autosize
+							minRows={4}
+							onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+								onFieldChange("bodyGen", e.target.value)
+							}
+						/>
+					</Tabs.Panel>
+				</Tabs>
+			</Group>
+		</Stack>
 	)
 }
 

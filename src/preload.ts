@@ -9,6 +9,7 @@ import type {
 	FormattedData,
 	ParsedTemplates,
 	Slider,
+	SliderCategory,
 	TriBodySlide,
 } from "./types"
 
@@ -50,4 +51,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
 		0: Slider[]
 		1: Slider[]
 	}> => ipcRenderer.invoke("resolveSliders"),
+	resolveCategorisedSliders: (): Promise<any> =>
+		ipcRenderer.invoke("resolveCategorisedSliders"),
 })
