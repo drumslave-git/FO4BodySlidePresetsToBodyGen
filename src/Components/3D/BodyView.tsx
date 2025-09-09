@@ -54,7 +54,6 @@ function applyBodySlideMorphs(
 		if (!value) continue
 		const morph = map.get(name)
 		if (!morph) {
-			console.warn(`No morph found for slider "${name}"`)
 			continue
 		}
 
@@ -75,8 +74,6 @@ const createGeometry = (
 	sliders: BodySlidePreset["sliders"] | string = [],
 ) => {
 	if (!mesh || !tri) {
-		!mesh && console.warn("No mesh data provided")
-		!tri && console.warn("No tri data provided")
 		return null
 	}
 

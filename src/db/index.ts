@@ -84,6 +84,15 @@ export const templatesDB = {
 	},
 	delete: (id: number) =>
 		db.delete(templates).where(eq(templates.id, id)).run(),
+	duplicate: (id: number) => {
+		const template = templatesDB.read(id) as Template
+		if (!template) {
+			throw new Error(`Template with id ${id} not found`)
+		}
+		const { id: _id, name, ...rest } = template
+		const newName = `${name} Copy ${Date.now()}`
+		return templatesDB.create({ name: newName, ...rest })
+	},
 	importedStatus: (preset: BodySlidePreset) => {
 		const hash = createHash("sha256")
 		hash.update(fs.readFileSync(preset.filePath).toString())

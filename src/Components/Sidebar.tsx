@@ -65,10 +65,10 @@ const NavigationItem = ({
 	const { Icon, children } = item
 	const isActive: boolean = useMemo(() => {
 		const href = item.href.replace("#", "")
-		if (activeTab === "/") {
+		if (activeTab === "/" || href === "/") {
 			return activeTab === href
 		}
-		return href.startsWith(activeTab) || activeTab === href
+		return activeTab.startsWith(href) || activeTab === href
 	}, [item, activeTab])
 
 	return (
@@ -77,7 +77,7 @@ const NavigationItem = ({
 			onClick={children.length ? undefined : onNavigate}
 			variant="light"
 			active={isActive}
-			defaultOpened={isActive}
+			opened={isActive && !!children.length}
 			href={item.href}
 			label={isSmall ? undefined : item.label}
 			title={item.label}

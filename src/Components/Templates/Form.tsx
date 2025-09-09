@@ -87,7 +87,9 @@ const Sliders = ({
 
 							return (
 								<Fragment key={slider.name}>
-									<Text size="xs">{slider.displayName}</Text>
+									<Text size="xs">
+										{slider.displayName}: {value}
+									</Text>
 									<Group>
 										<InputSlider
 											value={value}
@@ -124,10 +126,15 @@ const Form = () => {
 	const [previewBodyGen, setPreviewBodyGen] = useState<string>(template.bodyGen)
 
 	useEffect(() => {
-		if (!id) return
-		// @ts-expect-error
-		window.electronAPI.templatesDB("read", id).then(setTemplate)
-	}, [id])
+		if (!id) {
+			setTemplate(defaultTemplate)
+		} else {
+			setIsLoading("Loading template...")
+			// @ts-expect-error
+			window.electronAPI.templatesDB("read", id).then(setTemplate)
+			setIsLoading(false)
+		}
+	}, [id, setIsLoading])
 
 	useEffect(() => {
 		if (previewTimeout) clearTimeout(previewTimeout)
@@ -142,6 +149,14 @@ const Form = () => {
 		},
 		[],
 	)
+
+	const onDelete = useCallback(async () => {
+		setIsLoading("Deleting template...")
+		// @ts-expect-error
+		await window.electronAPI.templatesDB("delete", id)
+		setIsLoading(false)
+		navigate("/templates/list")
+	}, [setIsLoading, navigate, id])
 
 	const onCancel = useCallback(() => {
 		navigate("/templates/list")
@@ -173,6 +188,11 @@ const Form = () => {
 					{id ? `Edit Template ID: ${template.name}` : "Create New Template"}
 				</Text>
 				<Button onClick={onSave}>Save</Button>
+				{id && (
+					<Button color="red" data-id={template.id} onClick={onDelete}>
+						Delete
+					</Button>
+				)}
 				<Button onClick={onCancel} color="secondary">
 					Cancel
 				</Button>

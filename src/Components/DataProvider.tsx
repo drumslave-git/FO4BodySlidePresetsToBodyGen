@@ -154,10 +154,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 			}
 			for (const type of Object.values(BodyType)) {
 				if (!bodyFiles[type].nif || !bodyFiles[type].tri) {
-					!bodyFiles[type].nif &&
-						console.warn(`Missing NIF file for ${type}`, bodyFiles)
-					!bodyFiles[type].tri &&
-						console.warn(`Missing TRI file for ${type}`, bodyFiles)
 					continue
 				}
 				// @ts-expect-error

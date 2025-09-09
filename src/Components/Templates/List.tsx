@@ -14,6 +14,7 @@ import type { Template } from "../../db/schema"
 import { BodyType } from "../../types"
 import BodyView from "../3D/BodyView"
 import SearchInput from "../common/SearchInput"
+import { useOverlay } from "../OverlayProvider"
 
 type Filters = {
 	gender: 1 | 0 | -1
@@ -60,11 +61,28 @@ const Filter = ({ onChange }: { onChange: (v: Filters) => void }) => {
 	)
 }
 
+const filterTemplates = (templates: Template[], filters: Filters) => {
+	return templates.filter((template) => {
+		let genderMatch = true
+		let qMatch = true
+		if (filters.gender > -1) {
+			genderMatch = template.gender === filters.gender
+		}
+		if (filters.q) {
+			qMatch = template.name.toLowerCase().includes(filters.q.toLowerCase())
+		}
+
+		return genderMatch && qMatch
+	})
+}
+
 const List = () => {
+	const { setIsLoading } = useOverlay()
 	const navigate = useNavigate()
 
 	const [templates, setTemplates] = useState<Template[]>([])
 	const [filteredTemplates, setFilteredTemplates] = useState<Template[]>([])
+	const [filters, setFilters] = useState<Filters>({ q: "", gender: -1 })
 
 	useEffect(() => {
 		// @ts-expect-error
@@ -72,8 +90,8 @@ const List = () => {
 	}, [])
 
 	useEffect(() => {
-		setFilteredTemplates(templates)
-	}, [templates])
+		setFilteredTemplates(filterTemplates(templates, filters))
+	}, [templates, filters])
 
 	const onEditClick = useCallback(
 		(e: MouseEvent<HTMLButtonElement>) => {
@@ -82,36 +100,36 @@ const List = () => {
 		[navigate],
 	)
 
-	const onDeleteClick = useCallback((e: MouseEvent<HTMLButtonElement>) => {
-		const id = Number(e.currentTarget.dataset.id)
-		if (!id) return
-		// @ts-expect-error
-		window.electronAPI.templatesDB("delete", id).then(() => {
+	const onDeleteClick = useCallback(
+		async (e: MouseEvent<HTMLButtonElement>) => {
+			setIsLoading("Deleting template...")
+			const id = Number(e.currentTarget.dataset.id)
+			// @ts-expect-error
+			await window.electronAPI.templatesDB("delete", id)
 			setTemplates((prev) => prev.filter((t) => t.id !== id))
-		})
-	}, [])
-
-	const onFilterChange = useCallback(
-		(filters: Filters) => {
-			setFilteredTemplates(
-				templates.filter((template) => {
-					let genderMatch = true
-					let qMatch = true
-					if (filters.gender > -1) {
-						genderMatch = template.gender === filters.gender
-					}
-					if (filters.q) {
-						qMatch = template.name
-							.toLowerCase()
-							.includes(filters.q.toLowerCase())
-					}
-
-					return genderMatch && qMatch
-				}),
-			)
+			setIsLoading(false)
 		},
-		[templates],
+		[setIsLoading],
 	)
+
+	const onDuplicateClick = useCallback(
+		async (e: MouseEvent<HTMLButtonElement>) => {
+			setIsLoading("Duplicating template...")
+			const id = Number(e.currentTarget.dataset.id)
+			// @ts-expect-error
+			const { lastInsertRowid } = await window.electronAPI.templatesDB(
+				"duplicate",
+				id,
+			)
+			setIsLoading(false)
+			navigate(`/templates/edit/${lastInsertRowid}`)
+		},
+		[setIsLoading, navigate],
+	)
+
+	const onFilterChange = useCallback((filters: Filters) => {
+		setFilters(filters)
+	}, [])
 
 	return (
 		<>
@@ -128,6 +146,13 @@ const List = () => {
 						<Group>
 							<Button size="xs" data-id={template.id} onClick={onEditClick}>
 								Edit
+							</Button>
+							<Button
+								size="xs"
+								data-id={template.id}
+								onClick={onDuplicateClick}
+							>
+								Duplicate
 							</Button>
 							<Button
 								size="xs"
