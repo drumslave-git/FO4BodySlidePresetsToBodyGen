@@ -1,8 +1,7 @@
 import { Box, Card, Code, Group, List, Spoiler, Text } from "@mantine/core"
 import { type JSX, useMemo } from "react"
 import { type BodySlidePreset, BodyType } from "../../types"
-import BodyMesh from "../3D/BodyMesh"
-import ThreeView from "../3D/ThreeView"
+import BodyView from "../3D/BodyView"
 import Collapsable from "../common/Collapsable"
 import PresetToggler, { type PresetTogglerProps } from "./PresetToggler"
 
@@ -43,18 +42,14 @@ const BodySlidePresetComponent = ({
 							Was not able to determine gender by morphs
 						</Text>
 					)}
-					{preset.gender === 0 && (
-						<ThreeView>
-							<BodyMesh bodyType={BodyType.maleBody} sliders={preset.sliders} />
-						</ThreeView>
-					)}
-					{preset.gender === 1 && (
-						<ThreeView>
-							<BodyMesh
-								bodyType={BodyType.femaleBody}
-								sliders={preset.sliders}
-							/>
-						</ThreeView>
+					{preset.gender !== -1 && (
+						<BodyView
+							bodyType={
+								preset.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
+							}
+							squire
+							sliders={preset.sliders}
+						/>
 					)}
 				</Box>
 				<Box w="calc(50% - var(--group-gap) / 2">

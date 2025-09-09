@@ -1,6 +1,6 @@
 import {
 	ActionIcon,
-	Box,
+	Button,
 	Group,
 	Input,
 	Slider as InputSlider,
@@ -20,20 +20,20 @@ import {
 	useMemo,
 	useState,
 } from "react"
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 
 import type { Template } from "../../db/schema"
-import { BodyType, type MorphSlider, type Slider } from "../../types"
-import BodyMesh from "../3D/BodyMesh"
-import ThreeView from "../3D/ThreeView"
-import ViewHost from "../3D/ViewHost"
+import { BodyType, type MorphSlider } from "../../types"
+import BodyView from "../3D/BodyView"
 import { useData } from "../DataProvider"
+import { useOverlay } from "../OverlayProvider"
 
 const defaultTemplate: Template = {
 	id: 0,
 	name: "",
 	bodyGen: "",
 	gender: 0,
+	source: "user",
 	sourceXMLContentHash: "",
 }
 
@@ -117,6 +117,8 @@ const Sliders = ({
 let previewTimeout: ReturnType<typeof setTimeout> = null
 const Form = () => {
 	const { id } = useParams()
+	const navigate = useNavigate()
+	const { setIsLoading, showNotification } = useOverlay()
 	const [template, setTemplate] = useState<Template>(defaultTemplate)
 	const [bodyGenTab, setBodyGenTab] = useState("sliders")
 	const [previewBodyGen, setPreviewBodyGen] = useState<string>(template.bodyGen)
@@ -141,6 +143,24 @@ const Form = () => {
 		[],
 	)
 
+	const onCancel = useCallback(() => {
+		navigate("/templates/list")
+	}, [navigate])
+
+	const onSave = useCallback(async () => {
+		setIsLoading("Saving template...")
+		// @ts-expect-error
+		id && (await window.electronAPI.templatesDB("update", id, template))
+		// @ts-expect-error
+		!id && (await window.electronAPI.templatesDB("create", template))
+		setIsLoading(false)
+		showNotification({
+			title: "Template saved",
+			text: `Template "${template.name}" has been saved successfully.`,
+			color: "green",
+		})
+	}, [id, setIsLoading, showNotification, template])
+
 	return (
 		<Stack
 			style={{
@@ -148,17 +168,28 @@ const Form = () => {
 				overflow: "hidden",
 			}}
 		>
-			<Text>
-				{id ? `Edit Template ID: ${template.name}` : "Create New Template"}
-			</Text>
-			<Input
-				autoFocus
-				value={template.name}
-				placeholder="Template Name"
-				onChange={(e: ChangeEvent<HTMLInputElement>) =>
-					onFieldChange("name", e.target.value)
-				}
-			/>
+			<Group>
+				<Text>
+					{id ? `Edit Template ID: ${template.name}` : "Create New Template"}
+				</Text>
+				<Button onClick={onSave}>Save</Button>
+				<Button onClick={onCancel} color="secondary">
+					Cancel
+				</Button>
+			</Group>
+			<Input.Wrapper label="Name">
+				<Input
+					autoFocus
+					value={template.name}
+					placeholder="Template Name"
+					onChange={(e: ChangeEvent<HTMLInputElement>) =>
+						onFieldChange("name", e.target.value)
+					}
+				/>
+			</Input.Wrapper>
+			<Input.Wrapper label="Source">
+				<Input value={template.source} readOnly />
+			</Input.Wrapper>
 			<Group>
 				<Text>Gender</Text>
 				<Text>Male</Text>
@@ -172,14 +203,13 @@ const Form = () => {
 			</Group>
 			<Group align="center" style={{ overflow: "hidden" }} flex={1}>
 				<Paper flex={1} h="100%" style={{ overflow: "hidden" }} withBorder>
-					<ThreeView enableZoom>
-						<BodyMesh
-							bodyType={
-								template.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
-							}
-							sliders={previewBodyGen}
-						/>
-					</ThreeView>
+					<BodyView
+						bodyType={
+							template.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
+						}
+						sliders={previewBodyGen}
+						enableZoom
+					/>
 				</Paper>
 				<Tabs
 					value={bodyGenTab}

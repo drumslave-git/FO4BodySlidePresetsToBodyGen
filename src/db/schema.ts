@@ -11,6 +11,7 @@ export const config = table("config", {
 export const templates = table("templates", {
 	id: t.integer("id").primaryKey({ autoIncrement: true }),
 	name: t.text(),
+	source: t.text(),
 	bodyGen: t.text(),
 	gender: t.integer(),
 	sourceXMLContentHash: t.text(),

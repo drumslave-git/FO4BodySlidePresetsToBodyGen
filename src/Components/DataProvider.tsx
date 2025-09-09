@@ -149,15 +149,29 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	useEffect(() => {
 		const loadBodies = async () => {
 			setIsLoading("Loading body models...")
-			const bodies: Bodies = defaultBodies
-			for (const type of Object.values(BodyType)) {
-				if (!bodyFiles[type].nif || !bodyFiles[type].tri) continue
-				// @ts-expect-error
-				bodies[type].nif = await window.electronAPI.loadNIF(bodyFiles[type].nif)
-				// @ts-expect-error
-				bodies[type].tri = await window.electronAPI.loadTRI(bodyFiles[type].tri)
+			const bodiesData: Bodies = {
+				...defaultBodies,
 			}
-			setBodies(bodies)
+			for (const type of Object.values(BodyType)) {
+				if (!bodyFiles[type].nif || !bodyFiles[type].tri) {
+					!bodyFiles[type].nif &&
+						console.warn(`Missing NIF file for ${type}`, bodyFiles)
+					!bodyFiles[type].tri &&
+						console.warn(`Missing TRI file for ${type}`, bodyFiles)
+					continue
+				}
+				// @ts-expect-error
+				bodiesData[type].nif = await window.electronAPI.loadNIF(
+					bodyFiles[type].nif,
+				)
+				console.info(`Loaded NIF for ${type}`, bodiesData[type].nif)
+				// @ts-expect-error
+				bodiesData[type].tri = await window.electronAPI.loadTRI(
+					bodyFiles[type].tri,
+				)
+				console.info(`Loaded TRI for ${type}`, bodiesData[type].tri)
+			}
+			setBodies(bodiesData)
 			setIsLoading(false)
 		}
 		void loadBodies()

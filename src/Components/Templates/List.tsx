@@ -2,7 +2,6 @@ import {
 	Button,
 	Chip,
 	Code,
-	Container,
 	Group,
 	Paper,
 	SimpleGrid,
@@ -13,9 +12,7 @@ import { useNavigate } from "react-router"
 
 import type { Template } from "../../db/schema"
 import { BodyType } from "../../types"
-import BodyMesh from "../3D/BodyMesh"
-import ThreeView from "../3D/ThreeView"
-import ViewHost from "../3D/ViewHost"
+import BodyView from "../3D/BodyView"
 import SearchInput from "../common/SearchInput"
 
 type Filters = {
@@ -85,6 +82,15 @@ const List = () => {
 		[navigate],
 	)
 
+	const onDeleteClick = useCallback((e: MouseEvent<HTMLButtonElement>) => {
+		const id = Number(e.currentTarget.dataset.id)
+		if (!id) return
+		// @ts-expect-error
+		window.electronAPI.templatesDB("delete", id).then(() => {
+			setTemplates((prev) => prev.filter((t) => t.id !== id))
+		})
+	}, [])
+
 	const onFilterChange = useCallback(
 		(filters: Filters) => {
 			setFilteredTemplates(
@@ -116,10 +122,10 @@ const List = () => {
 			<SimpleGrid cols={{ base: 1, sm: 2, md: 2, lg: 3 }}>
 				{filteredTemplates.map((template) => (
 					<Paper key={template.id} shadow="xs" p="md" mb="sm" withBorder>
-						<Group align="center" mb="sm">
-							<Text lineClamp={2} title={template.name}>
-								{template.name}
-							</Text>
+						<Text lineClamp={2} title={template.name}>
+							{template.name}
+						</Text>
+						<Group>
 							<Button size="xs" data-id={template.id} onClick={onEditClick}>
 								Edit
 							</Button>
@@ -127,21 +133,18 @@ const List = () => {
 								size="xs"
 								color="red"
 								data-id={template.id}
-								onClick={onEditClick}
+								onClick={onDeleteClick}
 							>
 								Delete
 							</Button>
 						</Group>
-						<ThreeView squire>
-							<BodyMesh
-								bodyType={
-									template.gender === 0
-										? BodyType.maleBody
-										: BodyType.femaleBody
-								}
-								sliders={template.bodyGen}
-							/>
-						</ThreeView>
+						<BodyView
+							bodyType={
+								template.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
+							}
+							squire
+							sliders={template.bodyGen}
+						/>
 						<Code block>{template.bodyGen}</Code>
 					</Paper>
 				))}

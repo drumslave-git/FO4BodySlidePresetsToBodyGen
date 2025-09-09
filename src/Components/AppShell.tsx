@@ -32,23 +32,23 @@ const AppShell = () => {
 	return (
 		<>
 			<ViewHost />
-			<OverlayProvider>
-				<HashRouter>
-					<ConfigProvider>
-						<SharedStateProvider>
-							<DataProvider>
-								<MantineAppShell
-									padding="md"
-									withBorder={false}
-									navbar={{
-										width: { base: 50, sm: 200 },
-										breakpoint: "",
-									}}
-								>
-									<MantineAppShell.Navbar>
-										<Sidebar />
-									</MantineAppShell.Navbar>
-									<MantineAppShell.Main>
+			<HashRouter>
+				<ConfigProvider>
+					<SharedStateProvider>
+						<DataProvider>
+							<MantineAppShell
+								padding="md"
+								withBorder={false}
+								navbar={{
+									width: { base: 50, sm: 200 },
+									breakpoint: "",
+								}}
+							>
+								<MantineAppShell.Navbar>
+									<Sidebar />
+								</MantineAppShell.Navbar>
+								<MantineAppShell.Main>
+									<OverlayProvider>
 										<Routes>
 											<Route index element={<Converter />} />
 											<Route path="/settings" element={<Settings />} />
@@ -60,13 +60,13 @@ const AppShell = () => {
 											</Route>
 										</Routes>
 										<ESMsBlock />
-									</MantineAppShell.Main>
-								</MantineAppShell>
-							</DataProvider>
-						</SharedStateProvider>
-					</ConfigProvider>
-				</HashRouter>
-			</OverlayProvider>
+									</OverlayProvider>
+								</MantineAppShell.Main>
+							</MantineAppShell>
+						</DataProvider>
+					</SharedStateProvider>
+				</ConfigProvider>
+			</HashRouter>
 		</>
 	)
 }

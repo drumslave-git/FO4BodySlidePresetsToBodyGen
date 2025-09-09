@@ -1,5 +1,20 @@
-import { Resize } from "@react-three/drei"
-import { BufferGeometry, Float32BufferAttribute } from "three"
+import { AspectRatio } from "@mantine/core"
+import {
+	OrbitControls,
+	PerspectiveCamera,
+	Resize,
+	View,
+} from "@react-three/drei"
+import {
+	Fragment,
+	type ReactNode,
+	Suspense,
+	useEffect,
+	useMemo,
+	useRef,
+} from "react"
+
+import { BufferGeometry, Float32BufferAttribute, type Mesh } from "three"
 
 import type {
 	BodySlidePreset,
@@ -60,6 +75,8 @@ const createGeometry = (
 	sliders: BodySlidePreset["sliders"] | string = [],
 ) => {
 	if (!mesh || !tri) {
+		!mesh && console.warn("No mesh data provided")
+		!tri && console.warn("No tri data provided")
 		return null
 	}
 
@@ -83,23 +100,7 @@ const createGeometry = (
 	return geo
 }
 
-const BodyMesh = ({
-	bodyType,
-	sliders = [],
-}: {
-	bodyType: BodyType
-	sliders?: BodySlidePreset["sliders"] | string
-}) => {
-	const { bodies } = useData()
-
-	if (!bodies[bodyType].nif || !bodies[bodyType].tri) return null
-
-	const geometry = createGeometry(
-		bodies[bodyType].nif,
-		bodies[bodyType].tri,
-		sliders,
-	)
-
+const BodyMesh = ({ geometry }: { geometry: BufferGeometry | null }) => {
 	if (!geometry) return null
 
 	return (
@@ -111,4 +112,59 @@ const BodyMesh = ({
 	)
 }
 
-export default BodyMesh
+const Scene = (props: { enableZoom?: boolean }) => {
+	const { enableZoom = false } = props
+	return (
+		<>
+			<ambientLight intensity={0.5} />
+			<directionalLight position={[10, 10, -10]} />
+			<directionalLight position={[-10, 10, 10]} />
+			{/* Add 3D axes helper at model center */}
+			{/*<primitive object={new AxesHelper(1)} position={[0, 0, 0]} />*/}
+			<PerspectiveCamera makeDefault position={[1, 0.5, -1]} fov={40} />
+			<OrbitControls
+				enableZoom={enableZoom}
+				// autoRotate
+				// autoRotateSpeed={1}
+				makeDefault
+			/>
+		</>
+	)
+}
+
+const BodyView = (props: {
+	bodyType: BodyType
+	sliders?: BodySlidePreset["sliders"] | string
+	enableZoom?: boolean
+	squire?: boolean
+}) => {
+	const { bodies } = useData()
+
+	const Wrapper = useMemo(() => {
+		if (!props.squire) return Fragment
+		return ({ children }: { children: ReactNode }) => (
+			<AspectRatio ratio={1}>{children}</AspectRatio>
+		)
+	}, [props])
+
+	const geometry = useMemo(() => {
+		return createGeometry(
+			bodies[props.bodyType].nif,
+			bodies[props.bodyType].tri,
+			props.sliders,
+		)
+	}, [bodies, props])
+
+	return (
+		<Wrapper>
+			<View style={{ overflow: "hidden", width: "100%", height: "100%" }}>
+				<Suspense fallback={null}>
+					<Scene enableZoom={props.enableZoom} />
+					<BodyMesh geometry={geometry} />
+				</Suspense>
+			</View>
+		</Wrapper>
+	)
+}
+
+export default BodyView

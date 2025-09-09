@@ -15,6 +15,13 @@
       "when": 1756847533116,
       "tag": "0001_thick_mephistopheles",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1757317807423,
+      "tag": "0002_mighty_grim_reaper",
+      "breakpoints": true
     }
   ]
 }

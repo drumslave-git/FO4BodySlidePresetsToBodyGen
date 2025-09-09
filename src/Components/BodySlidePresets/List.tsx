@@ -6,6 +6,7 @@ import {
 	Group,
 	Input,
 	MultiSelect,
+	SimpleGrid,
 	Stack,
 } from "@mantine/core"
 import { IconSearch } from "@tabler/icons-react"
@@ -90,6 +91,38 @@ const Filter = ({
 	)
 }
 
+const filterItems = (items: BodySlidePresetParsed[], value: FilterValue) => {
+	const { q, selected } = value
+	const filtered = items
+		.map((preset) => {
+			if (typeof preset.data === "string") {
+				return preset
+			}
+			const matchFilenameQuery =
+				!q || preset.filename.toLowerCase().includes(q.toLowerCase())
+			if (!matchFilenameQuery) {
+				return { ...preset, data: [] }
+			}
+			return {
+				...preset,
+				data: preset.data.filter((item) => {
+					const matchItemNameQuery =
+						!q || item.name.toLowerCase().includes(q.toLowerCase())
+					if (!matchItemNameQuery) {
+						return false
+					}
+					return (
+						selected.length === 0 ||
+						item.groups.some((group) => selected.includes(group.name))
+					)
+				}),
+			}
+		})
+		.filter((preset) => Array.isArray(preset.data) && preset.data.length)
+
+	return filtered
+}
+
 const List = ({
 	items,
 	onSubmit,
@@ -110,6 +143,10 @@ const List = ({
 	const [selectedItems, setSelectedItems] = useState<BodySlidePreset[]>([])
 	const [filteredItems, setFilteredItems] =
 		useState<BodySlidePresetParsed[]>(items)
+	const [filterValue, setFilterValue] = useState<FilterValue>({
+		q: "",
+		selected: [],
+	})
 
 	useEffect(() => {
 		if (!items.length) {
@@ -117,8 +154,8 @@ const List = ({
 			setFilteredItems((prev) => (prev.length ? [] : prev))
 			return
 		}
-		setFilteredItems(items)
-	}, [items])
+		setFilteredItems(filterItems(items, filterValue))
+	}, [items, filterValue])
 
 	useEffect(() => {
 		if (!selectedPresets) {
@@ -128,39 +165,9 @@ const List = ({
 		setSelectedItems(selectedPresets)
 	}, [selectedPresets])
 
-	const onFilter = useCallback(
-		(value: FilterValue) => {
-			const { q, selected } = value
-			const filtered = items
-				.map((preset) => {
-					if (typeof preset.data === "string") {
-						return preset
-					}
-					const matchFilenameQuery =
-						!q || preset.filename.toLowerCase().includes(q.toLowerCase())
-					if (!matchFilenameQuery) {
-						return { ...preset, data: [] }
-					}
-					return {
-						...preset,
-						data: preset.data.filter((item) => {
-							const matchItemNameQuery =
-								!q || item.name.toLowerCase().includes(q.toLowerCase())
-							if (!matchItemNameQuery) {
-								return false
-							}
-							return (
-								selected.length === 0 ||
-								item.groups.some((group) => selected.includes(group.name))
-							)
-						}),
-					}
-				})
-				.filter((preset) => Array.isArray(preset.data) && preset.data.length)
-			setFilteredItems(filtered)
-		},
-		[items],
-	)
+	const onFilter = useCallback((value: FilterValue) => {
+		setFilterValue(value)
+	}, [])
 
 	const selectAll = useCallback(() => {
 		setSelectedItems(
@@ -201,7 +208,7 @@ const List = ({
 					Select None
 				</Button>
 			</Group>
-			<Stack>
+			<SimpleGrid cols={{ base: 1, lg: 2 }}>
 				{filteredItems.map((item) => (
 					<ItemsComponent
 						key={item.filename}
@@ -212,8 +219,14 @@ const List = ({
 						TogglerComponent={TogglerComponent}
 					/>
 				))}
-			</Stack>
-			<Box pos="sticky" bottom={0} bg="var(--mantine-color-body)" py="md">
+			</SimpleGrid>
+			<Box
+				pos="sticky"
+				bottom={0}
+				bg="var(--mantine-color-body)"
+				py="md"
+				style={{ zIndex: 2 }}
+			>
 				<Divider mb="md" />
 				<Group>
 					<Button onClick={onSubmitSelected}>OK</Button>

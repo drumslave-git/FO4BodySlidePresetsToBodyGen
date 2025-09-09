@@ -2,9 +2,7 @@ import { Button, Container, Group, Paper, Text } from "@mantine/core"
 import { type MouseEvent, useCallback, useEffect, useState } from "react"
 
 import { BodyType } from "../types"
-import BodyMesh from "./3D/BodyMesh"
-import ThreeView from "./3D/ThreeView"
-import ViewHost from "./3D/ViewHost"
+import BodyView from "./3D/BodyView"
 
 import { useConfig } from "./ConfigProvider"
 import { useOverlay } from "./OverlayProvider"
@@ -68,9 +66,7 @@ const Settings = () => {
 					w="calc(50% - var(--group-gap) / 2"
 				>
 					<Text>Male Body</Text>
-					<ThreeView squire>
-						<BodyMesh bodyType={BodyType.maleBody} />
-					</ThreeView>
+					<BodyView bodyType={BodyType.maleBody} squire />
 				</Paper>
 				<Paper
 					p="md"
@@ -79,9 +75,7 @@ const Settings = () => {
 					w="calc(50% - var(--group-gap) / 2"
 				>
 					<Text>Female Body</Text>
-					<ThreeView squire>
-						<BodyMesh bodyType={BodyType.femaleBody} />
-					</ThreeView>
+					<BodyView bodyType={BodyType.femaleBody} squire />
 				</Paper>
 			</Group>
 		</>

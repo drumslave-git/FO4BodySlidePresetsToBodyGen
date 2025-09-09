@@ -58,7 +58,7 @@ const Import = () => {
 	const updateItems = useCallback(() => {
 		// @ts-expect-error
 		window.electronAPI
-			.templatesDB("importedStatus", bodySlidePresetsParsed)
+			.templatesDB("importedStatuses", bodySlidePresetsParsed)
 			.then(setItems)
 	}, [bodySlidePresetsParsed])
 
@@ -80,13 +80,11 @@ const Import = () => {
 	)
 
 	return (
-		<Container>
-			<BodySlidePresets
-				items={items}
-				onSubmit={onSubmit}
-				TogglerComponent={TogglerComponent}
-			/>
-		</Container>
+		<BodySlidePresets
+			items={items}
+			onSubmit={onSubmit}
+			TogglerComponent={TogglerComponent}
+		/>
 	)
 }
 

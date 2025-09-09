@@ -8,6 +8,7 @@ export default function ViewHost() {
 				position: "fixed",
 				inset: 0,
 				overflow: "hidden",
+				zIndex: 1,
 			}}
 			eventSource={document.body}
 		>

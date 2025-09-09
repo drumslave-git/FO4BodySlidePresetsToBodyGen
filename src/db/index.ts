@@ -3,7 +3,7 @@ import fs from "node:fs"
 import path from "node:path"
 import { drizzle } from "drizzle-orm/better-sqlite3"
 import { migrate } from "drizzle-orm/better-sqlite3/migrator"
-import { eq } from "drizzle-orm/sql/expressions/conditions"
+import { and, eq } from "drizzle-orm/sql/expressions/conditions"
 import { app } from "electron"
 
 import log from "../logger"
@@ -78,42 +78,55 @@ export const templatesDB = {
 			: db.select().from(templates).all(),
 	create: (template: NewTemplate) =>
 		db.insert(templates).values(template).run(),
-	update: (id: number, template: Partial<Template>) =>
-		db.update(templates).set(template).where(eq(templates.id, id)).run(),
+	update: (id: number, template: Partial<Template>) => {
+		const { id: _id, ...rest } = template // Prevent id from being updated
+		return db.update(templates).set(rest).where(eq(templates.id, id)).run()
+	},
 	delete: (id: number) =>
 		db.delete(templates).where(eq(templates.id, id)).run(),
-	importedStatus: (sources: BodySlidePresetParsed[]) => {
+	importedStatus: (preset: BodySlidePreset) => {
+		const hash = createHash("sha256")
+		hash.update(fs.readFileSync(preset.filePath).toString())
+		let importStatus: ImportStatus = ImportStatus.notImported
+		const contentHash = hash.digest("hex")
+		const sourceFileName = path.basename(preset.filePath)
+		let id = 0
+		const existing = db
+			.select()
+			.from(templates)
+			.where(eq(templates.sourceXMLContentHash, contentHash))
+			.get()
+		if (existing) {
+			importStatus = ImportStatus.imported
+			id = existing.id
+		} else {
+			const needsUpdate = db
+				.select()
+				.from(templates)
+				.where(
+					and(
+						eq(templates.name, preset.name),
+						eq(templates.source, sourceFileName),
+					),
+				)
+				.get()
+			if (needsUpdate) {
+				importStatus = ImportStatus.needsUpdate
+				id = needsUpdate.id
+			}
+		}
+		return { importStatus, id }
+	},
+	importedStatuses: (sources: BodySlidePresetParsed[]) => {
 		return sources
 			.filter((source) => typeof source.data !== "string")
 			.map((source) => {
 				return {
 					...source,
 					data: (source.data as BodySlidePreset[]).map((preset) => {
-						const hash = createHash("sha256")
-						hash.update(fs.readFileSync(preset.filePath).toString())
-						let importStatus: ImportStatus = ImportStatus.notImported
-						const contentHash = hash.digest("hex")
-						const name = `${preset.name} from ${preset.filePath}`
-						const existing = db
-							.select()
-							.from(templates)
-							.where(eq(templates.sourceXMLContentHash, contentHash))
-							.get()
-						if (existing) {
-							importStatus = ImportStatus.imported
-						} else {
-							const needsUpdate = db
-								.select()
-								.from(templates)
-								.where(eq(templates.name, name))
-								.get()
-							if (needsUpdate) {
-								importStatus = ImportStatus.needsUpdate
-							}
-						}
 						return {
 							...preset,
-							importStatus,
+							importStatus: templatesDB.importedStatus(preset).importStatus,
 						}
 					}),
 				}
@@ -125,30 +138,23 @@ export const templatesDB = {
 		const hash = createHash("sha256")
 		hash.update(fs.readFileSync(source.filePath).toString())
 		const contentHash = hash.digest("hex")
+		const sourceFileName = path.basename(source.filePath)
 		const template: NewTemplate = {
-			name: `${source.name} from ${source.filePath}`,
+			name: source.name,
+			source: sourceFileName,
 			bodyGen: source.bodyGen,
 			gender: source.gender,
 			sourceXMLContentHash: contentHash,
 		}
-		const existing = db
-			.select()
-			.from(templates)
-			.where(eq(templates.sourceXMLContentHash, contentHash))
-			.get()
-		if (existing) {
-			return { status: "exists", id: existing.id }
+		const { importStatus, id } = templatesDB.importedStatus(source)
+		if (importStatus === ImportStatus.imported) {
+			return { status: importStatus, id }
 		}
-		const needsUpdate = db
-			.select()
-			.from(templates)
-			.where(eq(templates.name, template.name))
-			.get()
-		if (needsUpdate) {
+		if (importStatus === ImportStatus.needsUpdate) {
 			const updated = await db
 				.update(templates)
 				.set(template)
-				.where(eq(templates.id, needsUpdate.id))
+				.where(eq(templates.id, id))
 				.returning({
 					id: templates.id,
 				})
