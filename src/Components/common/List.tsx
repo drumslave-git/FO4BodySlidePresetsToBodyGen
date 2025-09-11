@@ -1,4 +1,4 @@
-import { Button, Chip, Group, Paper, SimpleGrid, Text } from "@mantine/core"
+import { Button, Card, Group, Paper, SimpleGrid, Text } from "@mantine/core"
 import {
 	type FunctionComponent,
 	type MouseEvent,
@@ -7,13 +7,9 @@ import {
 	useState,
 } from "react"
 import { useNavigate } from "react-router"
+import type { BaseItem } from "../../types"
 import { useOverlay } from "../OverlayProvider"
 import SearchInput from "./SearchInput"
-
-type BaseItem = {
-	id: number
-	name: string
-}
 
 export type FilterComponentProps = {
 	onChange: (values: Record<string, any>) => void
@@ -130,28 +126,43 @@ const List = ({
 			{!items.length && <Text>No items found.</Text>}
 			<SimpleGrid cols={{ base: 1, sm: 2, md: 2, lg: 3 }}>
 				{filteredItems.map((item) => (
-					<Paper key={item.id} shadow="xs" p="md" mb="sm" withBorder>
+					<Card key={item.id} withBorder>
 						<Text lineClamp={2} title={item.name}>
 							{item.name}
 						</Text>
-						<Group>
-							<Button size="xs" data-id={item.id} onClick={onEditClick}>
-								Edit
-							</Button>
-							<Button size="xs" data-id={item.id} onClick={onDuplicateClick}>
-								Duplicate
-							</Button>
-							<Button
-								size="xs"
-								color="red"
-								data-id={item.id}
-								onClick={onDeleteClick}
-							>
-								Delete
-							</Button>
-						</Group>
-						<ItemComponent {...item} />
-					</Paper>
+						<Card.Section withBorder inheritPadding mt="sm">
+							<ItemComponent {...item} />
+						</Card.Section>
+						<Card.Section mt="sm" withBorder inheritPadding pb="sm">
+							<Group gap="sm">
+								<Button
+									size="xs"
+									data-id={item.id}
+									onClick={onEditClick}
+									flex={1}
+								>
+									Edit
+								</Button>
+								<Button
+									size="xs"
+									data-id={item.id}
+									onClick={onDuplicateClick}
+									flex={1}
+								>
+									Duplicate
+								</Button>
+								<Button
+									size="xs"
+									color="red"
+									data-id={item.id}
+									onClick={onDeleteClick}
+									flex={1}
+								>
+									Delete
+								</Button>
+							</Group>
+						</Card.Section>
+					</Card>
 				))}
 			</SimpleGrid>
 		</>

@@ -8,6 +8,7 @@ import Converter from "./Converter"
 import { DataProvider } from "./DataProvider"
 import ESMs from "./ESMs"
 import { OverlayProvider } from "./OverlayProvider"
+import RulesForm from "./Rules/Form"
 import RulesList from "./Rules/List"
 import Settings from "./Settings"
 import { SharedStateProvider } from "./SharedStateProvider"
@@ -61,9 +62,8 @@ const AppShell = () => {
 											</Route>
 											<Route path="/rules">
 												<Route path="list" element={<RulesList />} />
-												<Route path="new" element={<TemplatesForm />} />
-												<Route path="edit/:id" element={<TemplatesForm />} />
-												<Route path="import" element={<TemplatesImport />} />
+												<Route path="new" element={<RulesForm />} />
+												<Route path="edit/:id" element={<RulesForm />} />
 											</Route>
 										</Routes>
 										<ESMsBlock />

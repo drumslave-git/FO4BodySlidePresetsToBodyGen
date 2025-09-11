@@ -19,3 +19,23 @@ export const templates = table("templates", {
 
 export type Template = InferSelectModel<typeof templates>
 export type NewTemplate = InferInsertModel<typeof templates>
+
+export const singleRules = table("singleRules", {
+	id: t.integer("id").primaryKey({ autoIncrement: true }),
+	name: t.text(),
+	plugin: t.text(),
+	formId: t.text(),
+})
+
+export type SingleRule = InferSelectModel<typeof singleRules>
+export type NewSingleRule = InferInsertModel<typeof singleRules>
+
+export const multiRules = table("multiRules", {
+	id: t.integer("id").primaryKey({ autoIncrement: true }),
+	name: t.text(),
+	gender: t.text(),
+	race: t.text(),
+})
+
+export type MultiRule = InferSelectModel<typeof multiRules>
+export type NewMultiRule = InferInsertModel<typeof multiRules>

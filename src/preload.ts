@@ -1,5 +1,5 @@
 import { contextBridge, ipcRenderer } from "electron/renderer"
-import type { templatesDB } from "./db"
+import type { multiRulesDB, rulesDB, singleRulesDB, templatesDB } from "./db"
 
 import type {
 	BodyFiles,
@@ -9,7 +9,6 @@ import type {
 	FormattedData,
 	ParsedTemplates,
 	Slider,
-	SliderCategory,
 	TriBodySlide,
 } from "./types"
 
@@ -47,6 +46,12 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	openExternalUrl: (url: string) => ipcRenderer.send("openExternal", url),
 	templatesDB: (action: keyof typeof templatesDB, ...args: any[]) =>
 		ipcRenderer.invoke("templatesDB", action, ...args),
+	singleRulesDB: (action: keyof typeof singleRulesDB, ...args: any[]) =>
+		ipcRenderer.invoke("singleRulesDB", action, ...args),
+	multiRulesDB: (action: keyof typeof multiRulesDB, ...args: any[]) =>
+		ipcRenderer.invoke("multiRulesDB", action, ...args),
+	rulesDB: (action: keyof typeof rulesDB, ...args: any[]) =>
+		ipcRenderer.invoke("rulesDB", action, ...args),
 	resolveSliders: (): Promise<{
 		0: Slider[]
 		1: Slider[]

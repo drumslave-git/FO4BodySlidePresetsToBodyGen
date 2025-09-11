@@ -1,11 +1,9 @@
 import {
 	ActionIcon,
-	Button,
 	Group,
 	Input,
 	Slider as InputSlider,
 	Paper,
-	Stack,
 	Switch,
 	Tabs,
 	Text,
@@ -20,13 +18,12 @@ import {
 	useMemo,
 	useState,
 } from "react"
-import { useNavigate, useParams } from "react-router"
 
 import type { Template } from "../../db/schema"
 import { BodyType, type MorphSlider } from "../../types"
 import BodyView from "../3D/BodyView"
+import Form from "../common/Form"
 import { useData } from "../DataProvider"
-import { useOverlay } from "../OverlayProvider"
 
 const defaultTemplate: Template = {
 	id: 0,
@@ -116,97 +113,13 @@ const Sliders = ({
 	)
 }
 
-let previewTimeout: ReturnType<typeof setTimeout> = null
-const Form = () => {
-	const { id } = useParams()
-	const navigate = useNavigate()
-	const { setIsLoading, showNotification } = useOverlay()
-	const [template, setTemplate] = useState<Template>(defaultTemplate)
+const FieldsComponent = (props) => {
+	const { item: template, onFieldChange } = props
+
 	const [bodyGenTab, setBodyGenTab] = useState("sliders")
-	const [previewBodyGen, setPreviewBodyGen] = useState<string>(template.bodyGen)
-
-	useEffect(() => {
-		if (!id) {
-			setTemplate(defaultTemplate)
-		} else {
-			setIsLoading("Loading template...")
-			// @ts-expect-error
-			window.electronAPI.templatesDB("read", id).then(setTemplate)
-			setIsLoading(false)
-		}
-	}, [id, setIsLoading])
-
-	useEffect(() => {
-		if (previewTimeout) clearTimeout(previewTimeout)
-		previewTimeout = setTimeout(() => {
-			setPreviewBodyGen(template.bodyGen)
-		}, 300)
-	}, [template.bodyGen])
-
-	const onFieldChange = useCallback(
-		(field: keyof Template, value: string | number) => {
-			setTemplate((prev) => ({ ...prev, [field]: value }))
-		},
-		[],
-	)
-
-	const onDelete = useCallback(async () => {
-		setIsLoading("Deleting template...")
-		// @ts-expect-error
-		await window.electronAPI.templatesDB("delete", id)
-		setIsLoading(false)
-		navigate("/templates/list")
-	}, [setIsLoading, navigate, id])
-
-	const onCancel = useCallback(() => {
-		navigate("/templates/list")
-	}, [navigate])
-
-	const onSave = useCallback(async () => {
-		setIsLoading("Saving template...")
-		// @ts-expect-error
-		id && (await window.electronAPI.templatesDB("update", id, template))
-		// @ts-expect-error
-		!id && (await window.electronAPI.templatesDB("create", template))
-		setIsLoading(false)
-		showNotification({
-			title: "Template saved",
-			text: `Template "${template.name}" has been saved successfully.`,
-			color: "green",
-		})
-	}, [id, setIsLoading, showNotification, template])
 
 	return (
-		<Stack
-			style={{
-				height: "calc(100dvh - var(--app-shell-padding) * 2)",
-				overflow: "hidden",
-			}}
-		>
-			<Group>
-				<Text>
-					{id ? `Edit Template ID: ${template.name}` : "Create New Template"}
-				</Text>
-				<Button onClick={onSave}>Save</Button>
-				{id && (
-					<Button color="red" data-id={template.id} onClick={onDelete}>
-						Delete
-					</Button>
-				)}
-				<Button onClick={onCancel} color="secondary">
-					Cancel
-				</Button>
-			</Group>
-			<Input.Wrapper label="Name">
-				<Input
-					autoFocus
-					value={template.name}
-					placeholder="Template Name"
-					onChange={(e: ChangeEvent<HTMLInputElement>) =>
-						onFieldChange("name", e.target.value)
-					}
-				/>
-			</Input.Wrapper>
+		<>
 			<Input.Wrapper label="Source">
 				<Input value={template.source} readOnly />
 			</Input.Wrapper>
@@ -227,7 +140,7 @@ const Form = () => {
 						bodyType={
 							template.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
 						}
-						sliders={previewBodyGen}
+						sliders={template.bodyGen}
 						enableZoom
 					/>
 				</Paper>
@@ -269,8 +182,19 @@ const Form = () => {
 					</Tabs.Panel>
 				</Tabs>
 			</Group>
-		</Stack>
+		</>
 	)
 }
 
-export default Form
+const TemplatesForm = () => {
+	return (
+		<Form
+			db="templatesDB"
+			rootUri="templates"
+			defaultValues={defaultTemplate}
+			FieldsComponent={FieldsComponent}
+		/>
+	)
+}
+
+export default TemplatesForm

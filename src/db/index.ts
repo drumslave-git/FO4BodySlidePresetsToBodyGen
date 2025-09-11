@@ -1,9 +1,15 @@
 import { createHash } from "node:crypto"
 import fs from "node:fs"
 import path from "node:path"
+import type {
+	InferInsertModel,
+	InferSelectModel,
+	TableConfig,
+} from "drizzle-orm"
 import { drizzle } from "drizzle-orm/better-sqlite3"
 import { migrate } from "drizzle-orm/better-sqlite3/migrator"
 import { and, eq } from "drizzle-orm/sql/expressions/conditions"
+import type { AnySQLiteColumn, SQLiteTable } from "drizzle-orm/sqlite-core"
 import { app } from "electron"
 
 import log from "../logger"
@@ -13,7 +19,15 @@ import {
 	type Config,
 	ImportStatus,
 } from "../types"
-import { config, type NewTemplate, type Template, templates } from "./schema"
+import {
+	config,
+	type MultiRule,
+	multiRules,
+	type NewTemplate,
+	type SingleRule,
+	singleRules,
+	templates,
+} from "./schema"
 
 const dataFolder = path.resolve(
 	app.getAppPath(),
@@ -71,28 +85,42 @@ export const writeConfig = (key: string, value: string) => {
 	}
 }
 
-export const templatesDB = {
-	read: (id?: number) =>
-		id
-			? db.select().from(templates).where(eq(templates.id, id)).get()
-			: db.select().from(templates).all(),
-	create: (template: NewTemplate) =>
-		db.insert(templates).values(template).run(),
-	update: (id: number, template: Partial<Template>) => {
-		const { id: _id, ...rest } = template // Prevent id from being updated
-		return db.update(templates).set(rest).where(eq(templates.id, id)).run()
+const commonDB = <
+	TTable extends SQLiteTable<TableConfig>,
+	TRow = InferSelectModel<TTable>,
+	TNew = InferInsertModel<TTable>,
+>(
+	table: TTable,
+) => ({
+	read: (id?: TRow["id"]) =>
+		id !== undefined
+			? (db.select().from(table).where(eq(table.id, id)).get() as
+					| TRow
+					| undefined)
+			: (db.select().from(table).all() as TRow[]),
+
+	create: (row: TNew) => db.insert(table).values(row).run(),
+
+	update: (id: TRow["id"], row: Partial<TRow>) => {
+		const { id: _id, ...rest } = row
+		return db.update(table).set(rest).where(eq(table.id, id)).run()
 	},
-	delete: (id: number) =>
-		db.delete(templates).where(eq(templates.id, id)).run(),
-	duplicate: (id: number) => {
-		const template = templatesDB.read(id) as Template
-		if (!template) {
-			throw new Error(`Template with id ${id} not found`)
-		}
-		const { id: _id, name, ...rest } = template
+
+	delete: (id: TRow["id"]) => db.delete(table).where(eq(table.id, id)).run(),
+
+	duplicate: (id: TRow["id"]) => {
+		const item = db.select().from(table).where(eq(table.id, id)).get() as TRow
+		const { id: _id, name, ...rest } = item
 		const newName = `${name} Copy ${Date.now()}`
-		return templatesDB.create({ name: newName, ...rest })
+		return db
+			.insert(table)
+			.values({ ...rest, name: newName } as unknown as TNew)
+			.run()
 	},
+})
+
+export const templatesDB = {
+	...commonDB(templates),
 	importedStatus: (preset: BodySlidePreset) => {
 		const hash = createHash("sha256")
 		hash.update(fs.readFileSync(preset.filePath).toString())
@@ -174,6 +202,33 @@ export const templatesDB = {
 		})
 
 		return { status: "created", id: result.at(0).id }
+	},
+}
+
+export const singleRulesDB = commonDB(singleRules)
+
+export const multiRulesDB = commonDB(multiRules)
+
+export const rulesDB = {
+	type: (id: number) => {
+		const single = db
+			.select()
+			.from(singleRules)
+			.where(eq(singleRules.id, id))
+			.get()
+		if (single) return "single"
+		const multi = db
+			.select()
+			.from(multiRules)
+			.where(eq(multiRules.id, id))
+			.get()
+		if (multi) return "multi"
+		return null
+	},
+	read: () => {
+		const singles = singleRulesDB.read() as SingleRule[]
+		const multis = multiRulesDB.read() as MultiRule[]
+		return [...singles, ...multis].sort((a, b) => a.name.localeCompare(b.name))
 	},
 }
 

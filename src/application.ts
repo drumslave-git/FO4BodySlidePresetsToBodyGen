@@ -10,10 +10,17 @@ import {
 	session,
 	shell,
 } from "electron"
-import type { Location } from "react-router"
 import { productName, version } from "../package.json"
 import { BODYGEN_RELATIVE_PATH } from "./consts"
-import { applyMigrations, readConfig, templatesDB, writeConfig } from "./db"
+import {
+	applyMigrations,
+	multiRulesDB,
+	readConfig,
+	rulesDB,
+	singleRulesDB,
+	templatesDB,
+	writeConfig,
+} from "./db"
 // @ts-expect-error
 import icon from "./images/icon.png"
 import readNif from "./NIF/nifImporter"
@@ -217,6 +224,27 @@ app.whenReady().then(() => {
 		(_event, action: keyof typeof templatesDB, ...rest: any[]) => {
 			// @ts-expect-error
 			return templatesDB[action](...rest)
+		},
+	)
+	ipcMain.handle(
+		"singleRulesDB",
+		(_event, action: keyof typeof singleRulesDB, ...rest: any[]) => {
+			// @ts-expect-error
+			return singleRulesDB[action](...rest)
+		},
+	)
+	ipcMain.handle(
+		"multiRulesDB",
+		(_event, action: keyof typeof multiRulesDB, ...rest: any[]) => {
+			// @ts-expect-error
+			return multiRulesDB[action](...rest)
+		},
+	)
+	ipcMain.handle(
+		"rulesDB",
+		(_event, action: keyof typeof rulesDB, ...rest: any[]) => {
+			// @ts-expect-error
+			return rulesDB[action](...rest)
 		},
 	)
 

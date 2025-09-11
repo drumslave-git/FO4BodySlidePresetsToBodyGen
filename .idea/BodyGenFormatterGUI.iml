@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.webpack" />
       <excludeFolder url="file://$MODULE_DIR$/src/NIF/dotnet/NifImporter/bin" />
       <excludeFolder url="file://$MODULE_DIR$/src/NIF/dotnet/NifImporter/obj" />
+      <excludeFolder url="file://$MODULE_DIR$/data" />
+      <excludeFolder url="file://$MODULE_DIR$/drizzle" />
+      <excludeFolder url="file://$MODULE_DIR$/logs" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
