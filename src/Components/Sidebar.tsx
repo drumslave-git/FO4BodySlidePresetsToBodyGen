@@ -29,6 +29,20 @@ type NavItem = {
 const Nav: NavItem[] = [
 	{ label: "Converter", href: "/", Icon: IconCircuitChangeover, children: [] },
 	{
+		label: "Rules",
+		href: "#/rules",
+		Icon: IconCircuitChangeover,
+		children: [
+			{ label: "List", href: "/rules/list", Icon: IconList, children: [] },
+			{
+				label: "New",
+				href: "/rules/new",
+				Icon: IconPlaylistAdd,
+				children: [],
+			},
+		],
+	},
+	{
 		label: "Templates",
 		href: "#/templates",
 		Icon: IconMan,
@@ -63,6 +77,9 @@ const NavigationItem = ({
 	onNavigate: (e: MouseEvent<HTMLAnchorElement>) => void
 }) => {
 	const { Icon, children } = item
+
+	const [isOpened, setIsOpened] = useState(false)
+
 	const isActive: boolean = useMemo(() => {
 		const href = item.href.replace("#", "")
 		if (activeTab === "/" || href === "/") {
@@ -71,13 +88,24 @@ const NavigationItem = ({
 		return activeTab.startsWith(href) || activeTab === href
 	}, [item, activeTab])
 
+	useEffect(() => {
+		if (isActive && children.length) {
+			setIsOpened(true)
+		}
+	}, [isActive, children])
+
+	const onChange = useCallback((opened: boolean) => {
+		setIsOpened(opened)
+	}, [])
+
 	return (
 		<NavLink
 			key={item.href}
 			onClick={children.length ? undefined : onNavigate}
 			variant="light"
 			active={isActive}
-			opened={isActive && !!children.length}
+			opened={isOpened}
+			onChange={onChange}
 			href={item.href}
 			label={isSmall ? undefined : item.label}
 			title={item.label}

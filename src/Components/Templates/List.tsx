@@ -1,181 +1,78 @@
-import {
-	Button,
-	Chip,
-	Code,
-	Group,
-	Paper,
-	SimpleGrid,
-	Text,
-} from "@mantine/core"
-import { type MouseEvent, useCallback, useEffect, useState } from "react"
-import { useNavigate } from "react-router"
+import { Chip, Code, Group, Paper } from "@mantine/core"
+import { useEffect, useState } from "react"
 
 import type { Template } from "../../db/schema"
 import { BodyType } from "../../types"
 import BodyView from "../3D/BodyView"
-import SearchInput from "../common/SearchInput"
-import { useOverlay } from "../OverlayProvider"
+import List, { type FilterComponentProps } from "../common/List"
 
-type Filters = {
-	gender: 1 | 0 | -1
-	q: string
-}
-
-const Filter = ({ onChange }: { onChange: (v: Filters) => void }) => {
+const FiltersComponent = ({ onChange }: FilterComponentProps) => {
 	const [genderMale, setGenderMale] = useState(true)
 	const [genderFemale, setGenderFemale] = useState(true)
-	const [q, setQ] = useState("")
 
 	useEffect(() => {
-		const filters: Filters = {
-			gender: -1,
-			q,
-		}
+		let gender = -1
 		if (genderMale && genderFemale) {
-			filters.gender = -1
+			gender = -1
 		} else if (genderMale) {
-			filters.gender = 0
+			gender = 0
 		} else if (genderFemale) {
-			filters.gender = 1
+			gender = 1
 		}
-		onChange(filters)
-	}, [q, genderMale, genderFemale, onChange])
+		onChange({ gender })
+	}, [genderMale, genderFemale, onChange])
 
 	return (
 		<Paper shadow="xs" p="md" mb="sm" withBorder>
-			<Group justify="space-between">
-				<Group>
-					<Chip checked={genderMale} onChange={() => setGenderMale((v) => !v)}>
-						Male
-					</Chip>
-					<Chip
-						checked={genderFemale}
-						onChange={() => setGenderFemale((v) => !v)}
-					>
-						Female
-					</Chip>
-				</Group>
-				<SearchInput value={q} onChange={setQ} />
+			<Group>
+				<Chip checked={genderMale} onChange={() => setGenderMale((v) => !v)}>
+					Male
+				</Chip>
+				<Chip
+					checked={genderFemale}
+					onChange={() => setGenderFemale((v) => !v)}
+				>
+					Female
+				</Chip>
 			</Group>
 		</Paper>
 	)
 }
 
-const filterTemplates = (templates: Template[], filters: Filters) => {
-	return templates.filter((template) => {
-		let genderMatch = true
-		let qMatch = true
-		if (filters.gender > -1) {
-			genderMatch = template.gender === filters.gender
-		}
-		if (filters.q) {
-			qMatch = template.name.toLowerCase().includes(filters.q.toLowerCase())
-		}
+const filterTemplate = (template: Template, filters: { gender: number }) => {
+	let genderMatch = true
+	if (filters.gender > -1) {
+		genderMatch = template.gender === filters.gender
+	}
 
-		return genderMatch && qMatch
-	})
+	return genderMatch
 }
 
-const List = () => {
-	const { setIsLoading } = useOverlay()
-	const navigate = useNavigate()
-
-	const [templates, setTemplates] = useState<Template[]>([])
-	const [filteredTemplates, setFilteredTemplates] = useState<Template[]>([])
-	const [filters, setFilters] = useState<Filters>({ q: "", gender: -1 })
-
-	useEffect(() => {
-		// @ts-expect-error
-		window.electronAPI.templatesDB("read").then(setTemplates)
-	}, [])
-
-	useEffect(() => {
-		setFilteredTemplates(filterTemplates(templates, filters))
-	}, [templates, filters])
-
-	const onEditClick = useCallback(
-		(e: MouseEvent<HTMLButtonElement>) => {
-			navigate(`/templates/edit/${e.currentTarget.dataset.id}`)
-		},
-		[navigate],
-	)
-
-	const onDeleteClick = useCallback(
-		async (e: MouseEvent<HTMLButtonElement>) => {
-			setIsLoading("Deleting template...")
-			const id = Number(e.currentTarget.dataset.id)
-			// @ts-expect-error
-			await window.electronAPI.templatesDB("delete", id)
-			setTemplates((prev) => prev.filter((t) => t.id !== id))
-			setIsLoading(false)
-		},
-		[setIsLoading],
-	)
-
-	const onDuplicateClick = useCallback(
-		async (e: MouseEvent<HTMLButtonElement>) => {
-			setIsLoading("Duplicating template...")
-			const id = Number(e.currentTarget.dataset.id)
-			// @ts-expect-error
-			const { lastInsertRowid } = await window.electronAPI.templatesDB(
-				"duplicate",
-				id,
-			)
-			setIsLoading(false)
-			navigate(`/templates/edit/${lastInsertRowid}`)
-		},
-		[setIsLoading, navigate],
-	)
-
-	const onFilterChange = useCallback((filters: Filters) => {
-		setFilters(filters)
-	}, [])
-
+const TemplateComponent = (template: Template) => {
 	return (
 		<>
-			{templates.length === 0 && (
-				<Text>No templates found. Create one or import!</Text>
-			)}
-			{templates.length > 0 && <Filter onChange={onFilterChange} />}
-			<SimpleGrid cols={{ base: 1, sm: 2, md: 2, lg: 3 }}>
-				{filteredTemplates.map((template) => (
-					<Paper key={template.id} shadow="xs" p="md" mb="sm" withBorder>
-						<Text lineClamp={2} title={template.name}>
-							{template.name}
-						</Text>
-						<Group>
-							<Button size="xs" data-id={template.id} onClick={onEditClick}>
-								Edit
-							</Button>
-							<Button
-								size="xs"
-								data-id={template.id}
-								onClick={onDuplicateClick}
-							>
-								Duplicate
-							</Button>
-							<Button
-								size="xs"
-								color="red"
-								data-id={template.id}
-								onClick={onDeleteClick}
-							>
-								Delete
-							</Button>
-						</Group>
-						<BodyView
-							bodyType={
-								template.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
-							}
-							squire
-							sliders={template.bodyGen}
-						/>
-						<Code block>{template.bodyGen}</Code>
-					</Paper>
-				))}
-			</SimpleGrid>
+			<BodyView
+				bodyType={
+					template.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
+				}
+				squire
+				sliders={template.bodyGen}
+			/>
+			<Code block>{template.bodyGen}</Code>
 		</>
 	)
 }
 
-export default List
+const TemplatesList = () => {
+	return (
+		<List
+			ItemComponent={TemplateComponent}
+			rootUri="templates"
+			db="templatesDB"
+			FiltersComponent={FiltersComponent}
+			filterFn={filterTemplate}
+		/>
+	)
+}
+
+export default TemplatesList

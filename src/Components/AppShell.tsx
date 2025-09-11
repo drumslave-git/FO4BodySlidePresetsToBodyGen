@@ -8,12 +8,13 @@ import Converter from "./Converter"
 import { DataProvider } from "./DataProvider"
 import ESMs from "./ESMs"
 import { OverlayProvider } from "./OverlayProvider"
+import RulesList from "./Rules/List"
 import Settings from "./Settings"
 import { SharedStateProvider } from "./SharedStateProvider"
 import Sidebar from "./Sidebar"
-import Form from "./Templates/Form"
-import Import from "./Templates/Import"
-import List from "./Templates/List"
+import TemplatesForm from "./Templates/Form"
+import TemplatesImport from "./Templates/Import"
+import TemplatesList from "./Templates/List"
 
 const ESMsBlock = () => {
 	const location = useLocation()
@@ -53,10 +54,16 @@ const AppShell = () => {
 											<Route index element={<Converter />} />
 											<Route path="/settings" element={<Settings />} />
 											<Route path="/templates">
-												<Route path="list" element={<List />} />
-												<Route path="new" element={<Form />} />
-												<Route path="edit/:id" element={<Form />} />
-												<Route path="import" element={<Import />} />
+												<Route path="list" element={<TemplatesList />} />
+												<Route path="new" element={<TemplatesForm />} />
+												<Route path="edit/:id" element={<TemplatesForm />} />
+												<Route path="import" element={<TemplatesImport />} />
+											</Route>
+											<Route path="/rules">
+												<Route path="list" element={<RulesList />} />
+												<Route path="new" element={<TemplatesForm />} />
+												<Route path="edit/:id" element={<TemplatesForm />} />
+												<Route path="import" element={<TemplatesImport />} />
 											</Route>
 										</Routes>
 										<ESMsBlock />
