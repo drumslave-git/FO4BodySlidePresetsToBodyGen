@@ -11,6 +11,11 @@ import { useNavigate, useParams } from "react-router"
 import type { BaseItem } from "../../types"
 import { useOverlay } from "../OverlayProvider"
 
+type FieldsComponentProps = {
+	item: BaseItem
+	onFieldChange: (key: string, value: any) => void
+}
+
 const defaultItem: BaseItem = {
 	id: 0,
 	name: "",
@@ -25,7 +30,7 @@ const Form = ({
 	db: string
 	rootUri: string
 	defaultValues: Record<string, any>
-	FieldsComponent: FunctionComponent
+	FieldsComponent: FunctionComponent<FieldsComponentProps>
 }) => {
 	const { id } = useParams()
 	const navigate = useNavigate()
