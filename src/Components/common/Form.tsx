@@ -11,7 +11,7 @@ import { useNavigate, useParams } from "react-router"
 import type { BaseItem } from "../../types"
 import { useOverlay } from "../OverlayProvider"
 
-type FieldsComponentProps = {
+export type FieldsComponentProps = {
 	item: BaseItem
 	onFieldChange: (key: string, value: any) => void
 }
