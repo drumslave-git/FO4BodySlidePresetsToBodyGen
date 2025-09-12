@@ -18,7 +18,9 @@ import {
 	type CategorizedSlider,
 	type ESM,
 	type FormattedData,
+	type NPCFormIdData,
 	type ParsedTemplates,
+	type RaceFormIdData,
 	type Slider,
 	type SliderCategory,
 } from "./types"
@@ -437,4 +439,51 @@ export const resolveBodySlidePresets = (
 
 export const zipFolder = async (source: string, destination: string) => {
 	await zip(source, destination)
+}
+
+const resolveFormIDs = (
+	from: string,
+	columns: string[],
+	filterFN: (item: Record<string, string>) => boolean,
+) => {
+	if (!fs.existsSync(from)) return []
+	return fs
+		.readdirSync(from)
+		.filter((item) => item.endsWith(".csv"))
+		.reduce((acc: Record<string, string>[], file) => {
+			const content = fs.readFileSync(path.resolve(from, file)).toString()
+			const lines = content.split(/\r?\n/)
+			const items = lines
+				.reduce((acc2: Record<string, string>[], line) => {
+					const values = line.split(";").map((part) => part.trim())
+					const item = columns.reduce(
+						(obj: Record<string, string>, col, index) => {
+							obj[col] = values[index]
+							return obj
+						},
+						{},
+					)
+					acc2.push(item)
+					return acc2
+				}, [])
+				.filter(filterFN)
+			acc.push(...items)
+			return acc
+		}, [])
+}
+
+export const resolveNPCsFormIDs = (from: string) => {
+	return resolveFormIDs(
+		from,
+		["plugin", "formId", "signature", "editorID", "name"],
+		(item: NPCFormIdData) => item.signature === "NPC_" && !!item.name,
+	) as NPCFormIdData[]
+}
+
+export const resolveRacesFormIDs = (from: string) => {
+	return resolveFormIDs(
+		from,
+		["plugin", "formId", "editorID", "name"],
+		(item: RaceFormIdData) => !!item.name && !!item.editorID,
+	) as RaceFormIdData[]
 }

@@ -1,7 +1,9 @@
-import { Input, Tabs } from "@mantine/core"
-import { type ChangeEvent, Fragment, useState } from "react"
+import { Input, Select, Tabs, Text } from "@mantine/core"
+import { type ChangeEvent, useEffect, useMemo, useState } from "react"
+import { useParams } from "react-router"
 import type { MultiRule, SingleRule } from "../../db/schema"
 import Form from "../common/Form"
+import { useData } from "../DataProvider"
 
 const singleRuleDefaultValues: SingleRule = {
 	id: 0,
@@ -13,7 +15,7 @@ const singleRuleDefaultValues: SingleRule = {
 const MultiRuleDefaultValues: MultiRule = {
 	id: 0,
 	name: "",
-	gender: "",
+	gender: "Female",
 	race: "",
 }
 
@@ -24,18 +26,45 @@ const SingleRuleFormFields = ({
 	item: SingleRule
 	onFieldChange: (key: string, value: any) => void
 }) => {
+	const { ESMs, NPCs } = useData()
+
+	const [selectedFormID, setSelectedFormID] = useState<string | null>(null)
+
+	const preview = useMemo(() => {
+		return [item.plugin, item.formId].filter(Boolean).join(" | ")
+	}, [item])
+
+	const pluginFormIDs = useMemo(() => {
+		if (!item.plugin) return []
+		return NPCs.filter((npc) => item.plugin === npc.plugin).map((npc) => ({
+			value: npc.formId,
+			label: `${npc.editorID} - ${npc.name}`,
+		}))
+	}, [item.plugin, NPCs])
+
+	useEffect(() => {
+		if (!selectedFormID) return
+		onFieldChange("formId", selectedFormID)
+	}, [onFieldChange, selectedFormID])
+
+	useEffect(() => {
+		setSelectedFormID(
+			pluginFormIDs.find((f) => f.value === item.formId)?.value || null,
+		)
+	}, [item.formId, pluginFormIDs])
+
 	return (
 		<>
-			<Input.Wrapper label="Plugin" required>
-				<Input
-					value={item.plugin}
-					onChange={(e: ChangeEvent<HTMLInputElement>) =>
-						onFieldChange("plugin", e.target.value)
-					}
-					placeholder="Plugin"
-					required
-				/>
-			</Input.Wrapper>
+			<Text>{preview}</Text>
+			<Select
+				label="Plugin"
+				placeholder="Plugin"
+				data={ESMs.map((e) => e.name)}
+				value={item.plugin}
+				onChange={(v: string) => onFieldChange("plugin", v)}
+				required
+				searchable
+			/>
 			<Input.Wrapper label="FormID" required>
 				<Input
 					value={item.formId}
@@ -46,6 +75,14 @@ const SingleRuleFormFields = ({
 					required
 				/>
 			</Input.Wrapper>
+			{pluginFormIDs.length > 0 && (
+				<Select
+					data={pluginFormIDs}
+					value={selectedFormID}
+					onChange={setSelectedFormID}
+					searchable
+				/>
+			)}
 		</>
 	)
 }
@@ -57,18 +94,42 @@ const MultiRuleFormFields = ({
 	item: MultiRule
 	onFieldChange: (key: string, value: any) => void
 }) => {
+	const { races } = useData()
+	const [selectedRace, setSelectedRace] = useState<string | null>(null)
+
+	const raceOptions = useMemo(() => {
+		return races.map((r) => ({
+			value: r.editorID,
+			label: `${r.plugin} - ${r.editorID} - ${r.name}`,
+		}))
+	}, [races])
+
+	const preview = useMemo(() => {
+		return ["All", item.gender, item.race].filter(Boolean).join(" | ")
+	}, [item])
+
+	useEffect(() => {
+		if (!selectedRace) return
+		onFieldChange("race", selectedRace)
+	}, [onFieldChange, selectedRace])
+
+	useEffect(() => {
+		setSelectedRace(
+			raceOptions.find((r) => r.value === item.race)?.value || null,
+		)
+	}, [item.race, raceOptions])
+
 	return (
 		<>
-			<Input.Wrapper label="Gender" required>
-				<Input
-					value={item.gender}
-					onChange={(e: ChangeEvent<HTMLInputElement>) =>
-						onFieldChange("gender", e.target.value)
-					}
-					placeholder="Gender"
-					required
-				/>
-			</Input.Wrapper>
+			<Text>{preview}</Text>
+			<Select
+				label="Gender"
+				placeholder="Gender"
+				data={["Male", "Female"]}
+				onChange={(v: string) => onFieldChange("gender", v)}
+				value={item.gender}
+				required
+			/>
 			<Input.Wrapper label="Race" required>
 				<Input
 					value={item.race}
@@ -79,18 +140,37 @@ const MultiRuleFormFields = ({
 					required
 				/>
 			</Input.Wrapper>
+			<Select
+				data={raceOptions}
+				value={selectedRace}
+				onChange={setSelectedRace}
+				searchable
+				label="Races from ESMs"
+			/>
 		</>
 	)
 }
 
 const RulesForm = () => {
-	const [ruleType, setRuleType] = useState("single")
+	const { id } = useParams()
+	const [ruleType, setRuleType] = useState(undefined)
+
+	useEffect(() => {
+		if (!id) {
+			setRuleType("single")
+			return
+		}
+		// @ts-expect-error
+		window.electronAPI.rulesDB("type", id).then(setRuleType)
+	}, [id])
+
+	if (ruleType === undefined) return <Text>Loading...</Text>
 
 	return (
 		<Tabs value={ruleType} onChange={setRuleType}>
 			<Tabs.List mb="md">
-				<Tabs.Tab value="single">Single Rule</Tabs.Tab>
-				<Tabs.Tab value="multi">Composite Rule</Tabs.Tab>
+				<Tabs.Tab value="single">Single NFC Rule</Tabs.Tab>
+				<Tabs.Tab value="multi">Multi NPC Rule</Tabs.Tab>
 			</Tabs.List>
 			<Tabs.Panel value="single">
 				<Form

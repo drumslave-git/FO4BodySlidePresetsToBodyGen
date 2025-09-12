@@ -79,6 +79,8 @@ const Form = ({
 		})
 	}, [db, id, setIsLoading, showNotification, item])
 
+	if (!item) return <Text>Loading...</Text>
+
 	return (
 		<Stack
 			style={{

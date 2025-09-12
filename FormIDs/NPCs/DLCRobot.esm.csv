@@ -1,0 +1,233 @@
+DLCRobot.esm;00011079;NPC_;DLC01CompWorkbenchBot;Automatron
+DLCRobot.esm;00010F5F;NPC_;DLC01LvlBotRaiderSentryAmbushAhab;Ahab
+DLCRobot.esm;00010E13;NPC_;DLC01_WorkshopTurretSpotlightBoss;Spotlight - Wall-Mounted
+DLCRobot.esm;00010C9F;NPC_;DLC01RobotCompanionBleepCDummy;BleepC Dummy Voice Bot
+DLCRobot.esm;00010C9E;NPC_;DLC01RobotCompanionBleepBDummy;BleepB Dummy Voice Bot
+DLCRobot.esm;00010C9D;NPC_;DLC01RobotCompanionBleepADummy;BleepA Dummy Voice Bot
+DLCRobot.esm;000109DE;NPC_;DLC01RECampSC01_LvlMerchant;Trader
+DLCRobot.esm;000109D4;NPC_;DLC01RECampSC01_LvlMerchantGuard;Caravan Guard
+DLCRobot.esm;000109D3;NPC_;DLC01REObjectSC01_LvlScavenger;
+DLCRobot.esm;000109C8;NPC_;DLC01RETravelSC02_LvlMechSentryEither;
+DLCRobot.esm;000109C7;NPC_;DLC01LvlMechRoboBrain_Aggro1536;
+DLCRobot.esm;000109C4;NPC_;DLC01LvlMechMrHandyMelee_Aggro1536;
+DLCRobot.esm;000109C3;NPC_;DLC01LvlRoboBrain_Aggro1536;
+DLCRobot.esm;000108B0;NPC_;DLC01AudioTemplatePlayersCompanion;
+DLCRobot.esm;0001075A;NPC_;DLC01LvlMechEyeBot_NonHostileRadio;
+DLCRobot.esm;000103C8;NPC_;EncSentryBot01TemplateCOPY0001;Sentry Bot
+DLCRobot.esm;000102AC;NPC_;DLC01_LvlTurretBubbleRobots;
+DLCRobot.esm;000101B8;NPC_;DLC01LvlMechBot_Random_NoSentry_Aggro1536;
+DLCRobot.esm;000101B7;NPC_;DLC01LvlMechBot_Random_NoSentry;
+DLCRobot.esm;000101B6;NPC_;DLC01LvlBotRaiderBot_Random_NoSentry;
+DLCRobot.esm;000101B4;NPC_;DLC01LvlMechBot_Random_Aggro1536;
+DLCRobot.esm;000101B3;NPC_;DLC01LvlBotRaiderMelee_Aggro1536;Rust Devil
+DLCRobot.esm;000101B2;NPC_;DLC01LvlBotRaiderBot_Random_NoSentry_Aggro1536;
+DLCRobot.esm;000101B1;NPC_;DLC01LvlBotRaider_Aggro1536;
+DLCRobot.esm;000101B0;NPC_;DLC01LvlMechProtectron_Aggro1536;
+DLCRobot.esm;000101AF;NPC_;DLC01LvlMechMrHandy_Aggro1536;
+DLCRobot.esm;000101AE;NPC_;DLC01LvlMechEyeBot_HostileRadio_Aggro1536;
+DLCRobot.esm;0000FF0E;NPC_;DLC01Caravan_Hurtz;Hurtz
+DLCRobot.esm;0000FF0C;NPC_;DLC01Caravan_Porter;Porter
+DLCRobot.esm;0000FF0A;NPC_;DLC01Caravan_Turing;Turing
+DLCRobot.esm;0000FF08;NPC_;DLC01Caravan_Shades;Shades
+DLCRobot.esm;0000FF04;NPC_;DLC01Caravan_Liza;Liza
+DLCRobot.esm;0000FF01;NPC_;DLC01Caravan_Zoe;Zoe
+DLCRobot.esm;0000FEFD;NPC_;DLC01Caravan_Jackson;Jackson
+DLCRobot.esm;0000FE92;NPC_;DLC01Raider_HolotapeOnly_Jagger;Jagger
+DLCRobot.esm;0000FD5A;NPC_;DLC01Ada;Ada
+DLCRobot.esm;0000F9EB;NPC_;DLC01EncRoboBrain01NoHead;
+DLCRobot.esm;0000F917;NPC_;DLC01LvlFeralGhoulAmbushNoArmor;
+DLCRobot.esm;0000F8FB;NPC_;DLC01LvlMechProtectron_NoHeavy;
+DLCRobot.esm;0000F8A9;NPC_;DLC01Lair_HolotapeOnly_ElevatorAnnouncer;Announcer
+DLCRobot.esm;0000F619;NPC_;DLC01BleepVoiceC;Bleep Voice
+DLCRobot.esm;0000F47C;NPC_;DLC01RobotCompanionSentryBotDummy;Sentry Bot Dummy Voice Bot
+DLCRobot.esm;0000F47B;NPC_;DLC01RobotCompanionAssaultronDummy;Assaultron Dummy Voice Bot
+DLCRobot.esm;0000E6CF;NPC_;DLC01LvlBotRaiderMelee;Rust Devil
+DLCRobot.esm;0000E6C7;NPC_;DLC01EncMechSentry04;Quantum Tankbot
+DLCRobot.esm;0000E6C6;NPC_;DLC01EncMechSentry03;Cybermech Tankbot
+DLCRobot.esm;0000E6C5;NPC_;DLC01EncMechRoboBrain04;Quantum Robobrain
+DLCRobot.esm;0000E6C4;NPC_;DLC01EncMechRoboBrain03;Cybermech Robobrain
+DLCRobot.esm;0000E6C3;NPC_;DLC01EncMechRoboBrain02;Integrated Robobrain
+DLCRobot.esm;0000E6C2;NPC_;DLC01EncMechProtectron04;Quantum Junkbot
+DLCRobot.esm;0000E6C1;NPC_;DLC01EncMechProtectron03;Cybermech Junkbot
+DLCRobot.esm;0000E6C0;NPC_;DLC01EncMechAssaultron04;Quantum Scrapbot
+DLCRobot.esm;0000E6BF;NPC_;DLC01EncBotRaiderSentry04;Sentry Bot Reaper
+DLCRobot.esm;0000E6BE;NPC_;DLC01EncBotRaiderSentry03;Sentry Bot Butcher
+DLCRobot.esm;0000E6BB;NPC_;DLC01EncBotRaiderProtectron04;Protectron Golem
+DLCRobot.esm;0000E6BA;NPC_;DLC01EncBotRaiderProtectron03;Protectron Basilisk
+DLCRobot.esm;0000E6AF;NPC_;DLC01EncBotRaiderMrHandy04;Mr. Handy Annihilator
+DLCRobot.esm;0000E6AE;NPC_;DLC01EncBotRaiderMrHandy03;Mr. Handy War Machine
+DLCRobot.esm;0000E6AD;NPC_;DLC01EncBotRaiderAssaultron04;Assaultron Gorgon
+DLCRobot.esm;0000E6AC;NPC_;DLC01EncBotRaiderAssaultron03;Assaultron Hag
+DLCRobot.esm;0000E6AB;NPC_;DLC01EncMechMrHandy04;Quantum Swarmbot
+DLCRobot.esm;0000E399;NPC_;DLC01LvlBotRaider_FemaleBoss;Rust Devil
+DLCRobot.esm;0000D3D6;NPC_;DLC01_LvlTurretTripodRobot;
+DLCRobot.esm;0000CA9F;NPC_;DLC01Sparks_EncSparksBaseTemplate;TrashBot
+DLCRobot.esm;0000C571;NPC_;xxx;Unstable Assaultron
+DLCRobot.esm;0000B857;NPC_;DLC01RobotCompanionMaleProcessedDummy;Male Dummy Voice Bot
+DLCRobot.esm;0000B856;NPC_;DLC01RobotCompanionFemaleProcessedDummy;Male Dummy Voice Bot
+DLCRobot.esm;0000B853;NPC_;DLC01LvlMechEyeBot_NonHostileNoRadio;
+DLCRobot.esm;0000B852;NPC_;DLC01LvlMechEyeBot_HostileNoRadio;
+DLCRobot.esm;0000B7F6;NPC_;DLC01LvlMechProtectronPodMelee;
+DLCRobot.esm;0000B213;NPC_;DLC01BleepVoiceB;Bleep Voice
+DLCRobot.esm;0000B212;NPC_;DLC01BleepVoiceA;Bleep Voice
+DLCRobot.esm;0000B177;NPC_;DLC01LvlMechSentryLightningGunAggro1500;
+DLCRobot.esm;0000AABE;NPC_;DLC01LvlMechProtectronPod;
+DLCRobot.esm;0000A5F0;NPC_;DLC01Lair_HolotapeOnly_AniseCiroletti;Anise Ciroletti
+DLCRobot.esm;0000A5EF;NPC_;DLC01Lair_HolotapeOnly_ThomasHarkin;Thomas Harkin
+DLCRobot.esm;0000A5EE;NPC_;DLC01Lair_HolotapeOnly_TonyDelano;Tony Delano
+DLCRobot.esm;0000A1AA;NPC_;DLC01LvlMechSentryAmbush;
+DLCRobot.esm;0000A16A;NPC_;DLC01LvlMechAssaultronAmbush;
+DLCRobot.esm;00008B82;NPC_;DLC01_EncTurretBubble01Mechanist_EMPTY;Mechanist Turret
+DLCRobot.esm;00008B27;NPC_;DLC01_LvlTurretBubbleMechanist;
+DLCRobot.esm;00008B25;NPC_;DLC01_EncTurretBubble01Mechanist;Tesla Turret
+DLCRobot.esm;00008ACF;NPC_;DLC01JezebelVoice;Jezebel's Voice
+DLCRobot.esm;000087AB;NPC_;DLC01Lair_OverlookProtectron01;
+DLCRobot.esm;000087AA;NPC_;DLC01Lair_OverlookProtectron02;
+DLCRobot.esm;000087A9;NPC_;DLC01Lair_DeconHallProtectron02;
+DLCRobot.esm;000087A8;NPC_;DLC01Lair_DeconHallProtectron01;
+DLCRobot.esm;00008196;NPC_;DLC01LvlBotRaiderSentryAmbush;
+DLCRobot.esm;00008072;NPC_;EyeBotAmbush;
+DLCRobot.esm;00008068;NPC_;SandBoxEyeBot;
+DLCRobot.esm;0000788C;NPC_;DLC01MBattle_LvlMechTrashbot_Handy02;
+DLCRobot.esm;0000788B;NPC_;DLC01MBattle_LvlMechTrashbot_Handy01;
+DLCRobot.esm;0000788A;NPC_;DLC01MBattle_LvlMechTrashbot_Assaultron;
+DLCRobot.esm;00007889;NPC_;DLC01MBattle_LvlMechTrashbot_Protectron;
+DLCRobot.esm;00007888;NPC_;DLC01MBattle_LvlMechTrashbot_Eyebot;
+DLCRobot.esm;00007887;NPC_;DLC01MBattle_LvlMechTrashbot_Any_NoEyebot;
+DLCRobot.esm;00007886;NPC_;DLC01MBattle_LvlMechTrashbot_Any;
+DLCRobot.esm;0000787D;NPC_;DLC01MBattle_EncTrashbotHandy01;Trashbot
+DLCRobot.esm;0000787C;NPC_;DLC01MBattle_EncTrashbotHandy02;Trashbot
+DLCRobot.esm;0000787B;NPC_;DLC01MBattle_EncInitialProtectron01;TrashBot
+DLCRobot.esm;00007866;NPC_;DLC01MBattle_EncTrashbotEyebot;Trashbot
+DLCRobot.esm;00007865;NPC_;DLC01MBattle_EncTrashbotAssaultron;Trashbot
+DLCRobot.esm;0000784D;NPC_;DLC01MBattle_EncTrashbotProtectron;Trashbot
+DLCRobot.esm;00007844;NPC_;DLC01MBattle_LvlMechSentryMelee;
+DLCRobot.esm;00007843;NPC_;DLC01MBattle_LvlMechSentryTurret;
+DLCRobot.esm;0000783E;NPC_;DLC01MBattle_EncMechSentryTurret;TurretBot
+DLCRobot.esm;00007837;NPC_;DLC01MBattle_EncMechSentryMelee;DuelBot
+DLCRobot.esm;00007506;NPC_;LvlRaiderRobotAll;
+DLCRobot.esm;00007439;NPC_;DLC01_LvlRaider_RobotArmor;
+DLCRobot.esm;0000707B;NPC_;DLC01EncBotRaiderSentry02;Sentry Bot Carnage
+DLCRobot.esm;00007079;NPC_;DLC01EncBotRaiderProtectron02;Doom Protectron
+DLCRobot.esm;00007078;NPC_;DLC01EncBotRaiderMrHandy02;Mr. Handy Destroyer
+DLCRobot.esm;00007077;NPC_;DLC01EncBotRaiderAssaultron02;Assaultron Succubus
+DLCRobot.esm;00007076;NPC_;DLC01MQ05SceneEyeBot;
+DLCRobot.esm;00005054;NPC_;DLC01LvlBotRaiderMrHandy;
+DLCRobot.esm;00005053;NPC_;DLC01LvlBotRaiderProtectron;
+DLCRobot.esm;00005052;NPC_;DLC01LvlBotRaiderSentry;
+DLCRobot.esm;00005051;NPC_;DLC01LvlBotRaiderAssaultron;
+DLCRobot.esm;00005050;NPC_;DLC01LvlBotRaider;
+DLCRobot.esm;00004F0F;NPC_;DLC01EncMechProtectron01Heavy;
+DLCRobot.esm;00004E06;NPC_;DLC01EncAssaultron_Mix;Assaultron
+DLCRobot.esm;0000444F;NPC_;DLC01LvlMechRoboBrain;
+DLCRobot.esm;0000444D;NPC_;DLC01EncMechRoboBrain01Template;Servomech Robobrain
+DLCRobot.esm;00004387;NPC_;DLC01LvlBotRaiderBot_Random;
+DLCRobot.esm;00004386;NPC_;DLC01LvlBotRaiderMixed;Rust Devil
+DLCRobot.esm;00003EFF;NPC_;DLC01LvlMechEyeBotResourceScanner;
+DLCRobot.esm;000036CB;NPC_;DLC01LvlMechAssaultronMelee;
+DLCRobot.esm;000036CA;NPC_;DLC01LvlMechAssaultron;
+DLCRobot.esm;00003640;NPC_;DLC01EncMechEyeBot02;Cybermech Eyebot
+DLCRobot.esm;0000363F;NPC_;DLC01EncMechEyeBot01Template;Servomech Eyebot
+DLCRobot.esm;00003569;NPC_;DLC01LvlMechBotHeavyAggro1500;
+DLCRobot.esm;00002A9F;NPC_;DLC01EncMechEyeBot01Dummy;Servomech Eyebot
+DLCRobot.esm;00002964;NPC_;DLC01EncMechSentry01Dummy;Weapon Dummy
+DLCRobot.esm;00002963;NPC_;DLC01EncMechMrHandy01Dummy;Weapon Dummy
+DLCRobot.esm;00002926;NPC_;DLC01EncBotRaiderProtectron04Legendary;Legendary Protectron Golem
+DLCRobot.esm;00002925;NPC_;DLC01EncBotRaiderProtectron03Legendary;Legendary Protectron Basilisk
+DLCRobot.esm;00002924;NPC_;DLC01EncBotRaiderProtectron02Legendary;Legendary Doom Protectron
+DLCRobot.esm;00002923;NPC_;DLC01EncBotRaiderProtectron01Legendary;Legendary Protectron Scourge
+DLCRobot.esm;00002922;NPC_;DLC01EncBotRaiderProtectron01aLegendary;Legendary Protectron
+DLCRobot.esm;00002920;NPC_;DLC01EncBotRaiderMrHandy04Legendary;Legendary Mr. Handy Annihilator
+DLCRobot.esm;0000291F;NPC_;DLC01EncBotRaiderMrHandy03Legendary;Legendary Mr. Handy War Machine
+DLCRobot.esm;0000291E;NPC_;DLC01EncBotRaiderMrHandy02Legendary;Legendary Mr. Handy Destroyer
+DLCRobot.esm;0000291D;NPC_;DLC01EncBotRaiderMrHandy01Legendary;Legendary Mr. Handy Dominator
+DLCRobot.esm;0000291C;NPC_;DLC01EncBotRaiderMrHandy01aLegendary;Legendary Mr. Handy Wrecker
+DLCRobot.esm;000028B4;NPC_;DLC01EncMechAssaultron04Legendary;Legendary Quantum Scrapbot
+DLCRobot.esm;000028B3;NPC_;DLC01EncMechAssaultron03Legendary;Legendary Cybermech Scrapbot
+DLCRobot.esm;000028B2;NPC_;DLC01EncMechAssaultron02Legendary;Legendary Integrated Scrapbot
+DLCRobot.esm;000028B1;NPC_;DLC01EncMechAssaultron01Legendary;Legendary Servomech Scrapbot
+DLCRobot.esm;000028B0;NPC_;DLC01EncMechAssaultron01aLegendary;Legendary Scrapbot
+DLCRobot.esm;000028AE;NPC_;DLC01EncMechSentry04Legendary;Legendary Quantum Tankbot
+DLCRobot.esm;000028AD;NPC_;DLC01EncMechSentry03Legendary;Legendary Cybermech Tankbot
+DLCRobot.esm;000028AC;NPC_;DLC01EncMechSentry02Legendary;Legendary Integrated Tankbot
+DLCRobot.esm;000028AB;NPC_;DLC01EncMechSentry01Legendary;Legendary Servomech Tankbot
+DLCRobot.esm;000028AA;NPC_;DLC01EncMechSentry01aLegendary;Legendary Tankbot
+DLCRobot.esm;000028A9;NPC_;DLC01EncMechRoboBrain04Legendary;Legendary Quantum Robobrain
+DLCRobot.esm;000028A7;NPC_;DLC01EncMechRoboBrain03Legendary;Legendary Cybermech Robobrain
+DLCRobot.esm;0000288E;NPC_;DLC01EncMechRoboBrain02Legendary;Legendary Integrated Robobrain
+DLCRobot.esm;0000288B;NPC_;DLC01EncMechRoboBrain01Legendary;Legendary Servomech Robobrain
+DLCRobot.esm;00002887;NPC_;DLC01EncMechRoboBrain01aLegendary;Legendary Robobrain
+DLCRobot.esm;0000287E;NPC_;DLC01AudioTemplateRobobrain;AudioTemplateSentryBot
+DLCRobot.esm;00002868;NPC_;DLC01EncMechProtectron01HeavyLegendary;Legendary Junkbot
+DLCRobot.esm;00002861;NPC_;DLC01EncMechProtectron04Legendary;Legendary Quantum Junkbot
+DLCRobot.esm;0000285E;NPC_;DLC01EncMechProtectron03Legendary;Legendary Cybermech Junkbot
+DLCRobot.esm;0000285D;NPC_;DLC01EncMechProtectron02Legendary;Legendary Integrated Junkbot
+DLCRobot.esm;0000285C;NPC_;DLC01EncMechProtectron01Legendary;Legendary Servomech Junkbot
+DLCRobot.esm;0000285B;NPC_;DLC01EncMechProtectron01aLegendary;Legendary Junkbot
+DLCRobot.esm;0000285A;NPC_;DLC01EncMechMrHandy01aLegendary;Legendary Swarmbot
+DLCRobot.esm;00002858;NPC_;DLC01EncMechMrHandy04Legendary;Legendary Quantum Swarmbot
+DLCRobot.esm;00002857;NPC_;DLC01EncMechMrHandy03Legendary;Legendary Cybermech Swarmbot
+DLCRobot.esm;00002855;NPC_;DLC01EncMechMrHandy02Legendary;Legendary Integrated Swarmbot
+DLCRobot.esm;00002853;NPC_;DLC01EncMechMrHandy01Legendary;Legendary Servomech Swarmbot
+DLCRobot.esm;00002803;NPC_;DLC01EncMechAssaultron03;Cybermech Scrapbot
+DLCRobot.esm;00002802;NPC_;DLC01EncMechProtectron01Template;Servomech Junkbot
+DLCRobot.esm;00002801;NPC_;DLC01EncMechSentry02;Integrated Tankbot
+DLCRobot.esm;00002800;NPC_;DLC01EncMechSentry01Melee;
+DLCRobot.esm;000027FF;NPC_;DLC01EncMechAssaultron01Melee;
+DLCRobot.esm;000027FE;NPC_;DLC01EncMechProtectron01Melee;
+DLCRobot.esm;000027FD;NPC_;DLC01EncMechMrHandy03Melee;
+DLCRobot.esm;000027FC;NPC_;DLC01EncMechMrHandy02Melee;
+DLCRobot.esm;000027FB;NPC_;DLC01EncMechMrHandy01Melee;
+DLCRobot.esm;000027F7;NPC_;DLC01LvlMechProtectronMelee;
+DLCRobot.esm;000027F6;NPC_;DLC01LvlMechMrHandyMelee;
+DLCRobot.esm;000027F5;NPC_;DLC01LvlMechSentryMelee;
+DLCRobot.esm;000026F5;NPC_;DLC01EncMechMrHandy03;Cybermech Swarmbot
+DLCRobot.esm;000026F4;NPC_;DLC01EncMechMrHandy02;Integrated Swarmbot
+DLCRobot.esm;000026EF;NPC_;DLC01EncMechMrHandy01Template;Servomech Swarmbot
+DLCRobot.esm;000026EE;NPC_;DLC01LvlMechSentry;
+DLCRobot.esm;000026ED;NPC_;DLC01LvlMechProtectron;
+DLCRobot.esm;000026EC;NPC_;DLC01LvlMechMrHandy;
+DLCRobot.esm;00002658;NPC_;DLC01_WorkshopTurretSpotlight;Spotlight - Wall-Mounted
+DLCRobot.esm;0000247D;NPC_;DLC01LvlRobobrain;
+DLCRobot.esm;00002454;NPC_;DLC01EncBotRaiderSentry01Template;Sentry Bot Lament
+DLCRobot.esm;0000244C;NPC_;DLC01EncBotRaiderProtectron01Template;Protectron Scourge
+DLCRobot.esm;00002444;NPC_;DLC01EncBotRaiderAssaultron01Template;Assaultron Demon
+DLCRobot.esm;0000243C;NPC_;DLC01EncBotRaiderMrHandy01Template;Mr. Handy Dominator
+DLCRobot.esm;00001EFC;NPC_;DLC01LvlMechBot_Random;
+DLCRobot.esm;00001EFA;NPC_;DLC01EncMechMrHandy_Random;
+DLCRobot.esm;00001EF9;NPC_;DLC01EncMechAssaultron_Random;
+DLCRobot.esm;00001EF8;NPC_;DLC01EncMechSentry_Random;
+DLCRobot.esm;00001EF7;NPC_;DLC01EncMechProtectron_Random;
+DLCRobot.esm;00001EED;NPC_;DLC01LvlCompWorkbenchBot;
+DLCRobot.esm;00001EEA;NPC_;DLC01_EncRaider06Legendary;Legendary Rust Devil
+DLCRobot.esm;00001EE8;NPC_;DLC01_EncRaider05Legendary;Legendary Rust Devil
+DLCRobot.esm;00001EA6;NPC_;DLC01_EncRaider04Legendary;Legendary Rust Devil
+DLCRobot.esm;00001E72;NPC_;DLC01_EncRaider03Legendary;Legendary Rust Devil
+DLCRobot.esm;00001E65;NPC_;DLC01_EncRaider02b;
+DLCRobot.esm;00001E53;NPC_;DLC01_EncRaider02;
+DLCRobot.esm;00001E52;NPC_;DLC01_EncRaider01Template;
+DLCRobot.esm;00001DAC;NPC_;DLC01Sparks;Sparks
+DLCRobot.esm;00001A83;NPC_;DLC01LvlMechBot;
+DLCRobot.esm;00001A80;NPC_;DLC01EncMechSentry01Template;Servomech Tankbot
+DLCRobot.esm;00001A7F;NPC_;DLC01EncMechProtectron02;Integrated Junkbot
+DLCRobot.esm;00001A7E;NPC_;DLC01EncMechAssaultron02;Integrated Scrapbot
+DLCRobot.esm;00001A7D;NPC_;DLC01EncMechAssaultron01Template;Servomech Scrapbot
+DLCRobot.esm;000014F4;NPC_;DLC01RobotCompanionFemaleDummy;Male Dummy Voice Bot
+DLCRobot.esm;000014F3;NPC_;DLC01RobotCompanionMaleDummy;Male Dummy Voice Bot
+DLCRobot.esm;00001121;NPC_;DLC01EncRoboBrain01Template;Robobrain
+DLCRobot.esm;0000109E;NPC_;DLC01EncBotRaiderSentry01a;Sentry Bot Ripper
+DLCRobot.esm;0000109C;NPC_;DLC01EncBotRaiderProtectron01a;Protectron Devil
+DLCRobot.esm;0000104B;NPC_;DLC01EncMechSentry01a;Tankbot
+DLCRobot.esm;00001041;NPC_;DLC01EncMechRoboBrain01a;Robobrain
+DLCRobot.esm;00001025;NPC_;DLC01EncMechProtectron01a;Junkbot
+DLCRobot.esm;0000101D;NPC_;DLC01EncMechMrHandy01a;Swarmbot
+DLCRobot.esm;00000FFF;NPC_;DLC01EncMechAssaultron01a;Scrapbot
+DLCRobot.esm;00000EBD;NPC_;DLC01EncBotRaiderMrHandy01a;Mr. Handy Wrecker
+DLCRobot.esm;00000EB9;NPC_;DLC01EncBotRaiderAssaultron01a;Assaultron Devil
+DLCRobot.esm;000008D8;NPC_;DLC01EncBotRaider01Template;Rust Devil
+DLCRobot.esm;000008B2;NPC_;DLC01Mechanist;Isabel Cruz
+DLCRobot.esm;0000089A;NPC_;DLC01LvlMechEyeBot_HostileRadio;
+DLCRobot.esm;00000899;NPC_;DLC01MechanistRadioVoice;The Mechanist
+DLCRobot.esm;00000891;NPC_;DLC01LvlSentryBotAggro1500;
+DLCRobot.esm;00000882;NPC_;DLC01LvlProtectronFireman;
+DLCRobot.esm;000179FF;NPC_;Codsworth;Codsworth

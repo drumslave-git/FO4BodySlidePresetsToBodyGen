@@ -1,5 +1,5 @@
 import { Chip, Group, Paper, Text } from "@mantine/core"
-import { Fragment, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import type { MultiRule, SingleRule } from "../../db/schema"
 import List, { type FilterComponentProps } from "../common/List"
 

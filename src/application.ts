@@ -32,6 +32,8 @@ import {
 	resolveBodySlidePresets,
 	resolveCategorisedSliders,
 	resolveESMs,
+	resolveNPCsFormIDs,
+	resolveRacesFormIDs,
 	resolveSliders,
 	validateESMs,
 	validateTemplates,
@@ -198,6 +200,26 @@ app.whenReady().then(() => {
 	)
 	ipcMain.handle("resolveBodyFiles", (_events, from: string) =>
 		resolveBodyFiles(from),
+	)
+	ipcMain.handle("resolveNPCs", () =>
+		resolveNPCsFormIDs(
+			path.resolve(
+				app.getAppPath(),
+				app.isPackaged ? ".." : "",
+				"FormIDs",
+				"NPCs",
+			),
+		),
+	)
+	ipcMain.handle("resolveRaces", () =>
+		resolveRacesFormIDs(
+			path.resolve(
+				app.getAppPath(),
+				app.isPackaged ? ".." : "",
+				"FormIDs",
+				"Races",
+			),
+		),
 	)
 	ipcMain.handle("nif:load", async (_event, nifPath: string) => {
 		const data = await readNif(nifPath)

@@ -1,0 +1,110 @@
+Fallout4.esm;002261A4;SynthGen2RaceValentine;Gen 2 Synth
+Fallout4.esm;00187AF9;RaiderDogRace;
+Fallout4.esm;000A96BF;FeralGhoulGlowingRace;Feral Ghoul
+Fallout4.esm;001A6D64;TurretWorkshopRace;Workshop Turret
+Fallout4.esm;00184C4D;AlienRace;
+Fallout4.esm;00166729;HumanRaceSubGraphData;Human
+Fallout4.esm;0011EB96;GhoulChildRace;Human
+Fallout4.esm;0011D83F;HumanChildRace;Human
+Fallout4.esm;0010BD65;SynthGen2Race;Gen 2 Synth
+Fallout4.esm;00108019;LibertyPrimeRace;Liberty Prime
+Fallout4.esm;000E12A6;MirelurkQueenRace;Mirelurk Queen
+Fallout4.esm;000EAFB6;GhoulRace;Ghoul
+Fallout4.esm;000E8D09;SynthGen1Race;Gen 1 Synth
+Fallout4.esm;000DFB33;ProtectronRace;Protectron
+Fallout4.esm;000D9804;GorillaRace;Gorilla
+Fallout4.esm;000D8417;AssaultronRace;Assaultron
+Fallout4.esm;000D77E3;VertibirdRace;Vertibird
+Fallout4.esm;000C9ACF;CatRace;Cat
+Fallout4.esm;000BB7D9;SupermutantBehemothRace;Behemoth
+Fallout4.esm;000B7F91;MirelurkKingRace;MirelurkKing
+Fallout4.esm;000B28D3;TurretBubbleRace;Bubble Turret
+Fallout4.esm;000B1F08;TurretTripodRace;Tripod Turret
+Fallout4.esm;000AE0B7;SentryBotRace;SentryBot
+Fallout4.esm;000A563A;EyeBotRace;EyeBot
+Fallout4.esm;000A0F2F;YaoGuaiRace;Yao Guai
+Fallout4.esm;00090C33;FEVHoundRace;Molerat
+Fallout4.esm;00064C60;MirelurkHunterRace;MirelurkHunter
+Fallout4.esm;0001A009;SuperMutantRace;
+Fallout4.esm;0007ED1D;RadStagRace;Radstag
+Fallout4.esm;0006B4EC;FeralGhoulRace;Feral Ghoul
+Fallout4.esm;000636AB;RadScorpionRace;RadScorpion
+Fallout4.esm;0005FBB1;StingwingRace;Stingwing
+Fallout4.esm;00029463;BloatflyRace;Bloatfly
+Fallout4.esm;0002047E;BrahminRace;Brahmin
+Fallout4.esm;0004716C;RadRoachRace;RadRoach
+Fallout4.esm;0001D810;MoleratRace;Molerat
+Fallout4.esm;0001D698;DogmeatRace;
+Fallout4.esm;0001D31E;PowerArmorRace;PowerArmor
+Fallout4.esm;00013746;HumanRace;Human
+Fallout4.esm;00000019;DefaultRace;Default
+Fallout4.esm;0001DB4A;DeathclawRace;Deathclaw
+Fallout4.esm;0002456D;BloodbugRace;Bloodbug
+Fallout4.esm;00023FFC;MirelurkRace;Mirelurk
+Fallout4.esm;0003578A;ViciousDogRace;
+Fallout4.esm;000359F4;HandyRace;MrHandy
+DLCRobot.esm;0100EA09;DLC01PowerArmorRaceAdditiveSubGraphData;PowerArmor
+DLCRobot.esm;0100D5FB;DLC01HandyAdditiveSubgraphRace;MrHandy
+DLCRobot.esm;01004E05;DLC01AssaultronRaceAdditiveSubgraphRace;
+DLCRobot.esm;01003DEB;DLC01EyeBotRaceAdditiveSubgraphRace;EyeBot
+DLCRobot.esm;01002804;DLC01WorkshopWallLight;Spotlight
+DLCRobot.esm;010027B9;DLC01HandyCreateABotRace;MrHandy
+DLCRobot.esm;01001F14;DLC01HumanRaceAdditiveSubGraphData;Default
+DLCRobot.esm;01001129;DLC01RoboBrainRace;Robobrain
+DLCworkshop01.esm;01000C05;DLC02HandyRace;MrHandy
+DLCworkshop01.esm;01000BF7;DLC02AssaultronRaceAdditiveSubgraphRace;Assaultron
+DLCworkshop01.esm;01000A8E;DLC02MirelurkKingRace;MirelurkKing
+DLCworkshop01.esm;01000A8D;DLC02MirelurkHunterRace;MirelurkHunter
+DLCworkshop01.esm;01000A64;DLC02StingwingRace;Stingwing
+DLCworkshop01.esm;01000A63;DLC02RadRoachRace;RadRoach
+DLCworkshop01.esm;01000A62;DLC02BloodbugRace;Bloodbug
+DLCworkshop01.esm;01000A61;DLC02BloatflyRace;Bloatfly
+DLCworkshop01.esm;01000A5F;DLC02YaoGuaiRace;Yao Guai
+DLCworkshop01.esm;01000A5D;DLC02RadStagRace;Radstag
+DLCworkshop01.esm;01000A5C;DLC02RadScorpionRace;RadScorpion
+DLCworkshop01.esm;01000A5B;DLC02MirelurkRace;Mirelurk
+DLCworkshop01.esm;01000A56;DLC02GorillaRace;Gorilla
+DLCworkshop01.esm;01000A54;DLC02FeralGhoulRace;Feral Ghoul
+DLCworkshop01.esm;01000A52;DLC02BrahminRace;Brahmin
+DLCworkshop01.esm;01000CD0;DLC02HumanRaceSubGraphData;Human
+DLCworkshop01.esm;01000C82;DLC02FEVHoundRace;Molerat
+DLCworkshop01.esm;01000C7F;DLC02MoleratRace;Molerat
+DLCworkshop01.esm;01000C7D;DLC02RaiderDogRace;
+DLCworkshop01.esm;01000C7C;DLC02ViciousDogRace;
+DLCworkshop01.esm;01000C79;DLC02CatRace;Cat
+DLCworkshop01.esm;01000C78;DLC02DeathclawRace;Deathclaw
+DLCworkshop01.esm;01000C75;DLC02SupermutantRaceAdditive;
+DLCCoast.esm;0104E28E;DLC03_GulperSmallRace;Gulper
+DLCCoast.esm;01042EBB;DLC03_SynthGen2RaceDiMa;Gen 2 Synth
+DLCCoast.esm;0103FD66;DLC03_RadChickenRace;
+DLCCoast.esm;0103DDDE;DLC03_RadRabbitRace;
+DLCCoast.esm;0103D077;DLC03_MutatedWolfRace;
+DLCCoast.esm;0103CF1E;DLC03StingwingRace;Stingwing
+DLCCoast.esm;01033E79;DLC03RoboBrainRace;RoboBrain
+DLCCoast.esm;0102E010;DLC03VRDataRetrieverRace;Indexer
+DLCCoast.esm;0102BEE6;DLC03PowerArmorRaceAdditiveSubgraphData;PowerArmor
+DLCCoast.esm;010247C1;DLC03_GulperRace;Gulper
+DLCCoast.esm;010180A8;DLC03_HermitCrabRace;
+DLCCoast.esm;01014174;DLC03_FogCrawlerRace;
+DLCCoast.esm;0100FEEA;DLC03_AnglerRace;Angler
+DLCCoast.esm;0100C6A7;DLC03HumanRaceAdditiveSubgraphData;Human
+DLCCoast.esm;01009591;DLC03VRDefenderTurretRace;Bubble Turret
+DLCworkshop02.esm;01000AC9;DLC05HumanRaceAdditiveSubgraphData;Human
+DLCworkshop02.esm;010008AB;DLC05ArmorRackRace;Human
+DLCworkshop03.esm;010055BA;HumanRaceSubGraphDataAdditiveDLC06;
+DLCNukaWorld.esm;0104CBCE;DLC04GorillaRace;Gorilla
+DLCNukaWorld.esm;0103E565;DLC04_DeathclawAdditiveSupgraphRace;Deathclaw
+DLCNukaWorld.esm;0103E562;DeathclawRaceCOPY0000;Deathclaw
+DLCNukaWorld.esm;0103637A;DLC04_GatorclawRace;Gatorclaw
+DLCNukaWorld.esm;01033169;DLC04_StingwingRace;Stingwing
+DLCNukaWorld.esm;01023435;DLC04_BrahmiluffRace;Brahmin
+DLCNukaWorld.esm;0101A283;DLC04PowerArmorRaceAdditiveSubGraphData;PowerArmor
+DLCNukaWorld.esm;01019126;DLC04_AnimatronicAlienRace;Bubble Turret
+DLCNukaWorld.esm;0100EFF4;TestDLC04AnimatronicHumanRace;Human
+DLCNukaWorld.esm;0100D329;DLC04DeathclawRaceQuantum;Deathclaw
+DLCNukaWorld.esm;0100CE5E;DLC04_RadAntRace;Ant
+DLCNukaWorld.esm;0100C606;DLC04_RadRatRace;Rad-Rat
+DLCNukaWorld.esm;0100B028;DLC04_SwarmRace;Swarm
+DLCNukaWorld.esm;0100AAFE;DLC04_CaveCricketRace;Cave Cricket
+DLCNukaWorld.esm;0100A6C3;DLC04_HumanRaceSubgraphDataAdditive;
+DLCNukaWorld.esm;0100A1A6;DLC04_BloodwormRace;Bloodworm

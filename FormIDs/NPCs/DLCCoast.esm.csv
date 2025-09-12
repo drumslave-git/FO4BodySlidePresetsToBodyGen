@@ -1,0 +1,376 @@
+DLCCoast.esm;0005D758;NPC_;DLC03AudioTemplateWolf;
+DLCCoast.esm;0005D706;NPC_;DLC03AudioTemplateHermitCrab;
+DLCCoast.esm;0005D6D7;NPC_;DLC03_EncMirelurk04;Glowing Mirelurk
+DLCCoast.esm;0005D6D6;NPC_;DLC03_EncMirelurk01;Mirelurk
+DLCCoast.esm;0005D6D5;NPC_;DLC03_EncMirelurk03;Mirelurk Killclaw
+DLCCoast.esm;0005D6D4;NPC_;DLC03_EncMirelurk02;Mirelurk Razorclaw
+DLCCoast.esm;0005D6D3;NPC_;DLC03_EncMirelurk00;Softshell Mirelurk
+DLCCoast.esm;0005D656;NPC_;DLC03AudioTemplateVRDataAttacker;AudioTemplateMirelurkling
+DLCCoast.esm;0005770E;NPC_;DLC03_V118LvlProtectron;
+DLCCoast.esm;0005727C;NPC_;DLC03MQ06_LvlGulper;
+DLCCoast.esm;00056F64;NPC_;DLC03AudioTemplateAngler;AudioTemplateSentryBot
+DLCCoast.esm;00056C6C;NPC_;DLC03_LvlTrapperDog;
+DLCCoast.esm;00056A3F;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Patroller_NoSleep;
+DLCCoast.esm;000568CE;NPC_;DLC03LvlTrapperWoodsFatman;
+DLCCoast.esm;000568CB;NPC_;DLC03LvlTrapperCoastFatMan;
+DLCCoast.esm;00054451;NPC_;DLC03AudioTemplateGulper;
+DLCCoast.esm;0005420B;NPC_;DLC03_ADV08_BehemothGrun;Grun
+DLCCoast.esm;00054202;NPC_;DLC03_Loot_CorpseSynthRefugeeFemale;Synth Refugee
+DLCCoast.esm;00054201;NPC_;DLC03_Loot_CorpseSynthRefugeeMale;Synth Refugee
+DLCCoast.esm;000515AB;NPC_;DLC03AudioTemplateVRDataRetriever;AudioTemplateMirelurkling
+DLCCoast.esm;000509D5;NPC_;DLC03_EncRadChickenTrapper;Rad Chicken
+DLCCoast.esm;0004FF6E;NPC_;DLC03CoA_LvlChildrenofAtom_ZealotTemplate;Child of Atom Zealot
+DLCCoast.esm;0004FAA5;NPC_;DLC03_LvlHermitCrabAmbush;
+DLCCoast.esm;0004FAA4;NPC_;DLC03LvlTrapperCoast_AcadiaM01female;
+DLCCoast.esm;0004F10F;NPC_;DLC03AcadiaSynthRefugeeF03;Synth Refugee
+DLCCoast.esm;0004F10E;NPC_;DLC03AcadiaSynthRefugeeF02;Synth Refugee
+DLCCoast.esm;0004F10D;NPC_;DLC03AcadiaSynthRefugeeF01;Synth Refugee
+DLCCoast.esm;0004F10C;NPC_;DLC03AcadiaSynthRefugeeM02;Synth Refugee
+DLCCoast.esm;0004F10B;NPC_;DLC03AcadiaSynthRefugeeM03;Synth Refugee
+DLCCoast.esm;0004F10A;NPC_;DLC03AcadiaSynthRefugeeM01;Synth Refugee
+DLCCoast.esm;0004F109;NPC_;DLC03AcadiaSynthRefugeeTemplate;Synth Refugee
+DLCCoast.esm;0004E718;NPC_;DLC03_Vault118_HolotapeOverseer;Overseer
+DLCCoast.esm;0004E6DF;NPC_;DLC03_LvlFeralGhoulAggro1536;
+DLCCoast.esm;0004E6DE;NPC_;DLC03_LvlFeralGhoulAggro1024;
+DLCCoast.esm;0004E6DA;NPC_;DLC03AtomM01_EncGulper02;Ghostly Creature
+DLCCoast.esm;0004E6D9;NPC_;DLC03AtomM01_EncGulper03;Ghostly Creature
+DLCCoast.esm;0004DF70;NPC_;ADV002_RadioVoice;
+DLCCoast.esm;0004DC07;NPC_;DLC03Vertibird;Vertibird
+DLCCoast.esm;0004D216;NPC_;DLC03POI04_Loot_CorpseFeralGhoul01;Nathaniel Gibbons
+DLCCoast.esm;0004D213;NPC_;DLC03POI04_LvlFeralGhoulGlowingOne;Patrick Gibbons
+DLCCoast.esm;0004D211;NPC_;DLC03POI04_LvlFeralGhoul03;Frederick Gibbons
+DLCCoast.esm;0004D20F;NPC_;DLC03POI04_LvlFeralGhoul02;Victoria Gibbons
+DLCCoast.esm;0004D20D;NPC_;DLC03POI04_LvlFeralGhoul01;Steven Gibbons
+DLCCoast.esm;0004D1B5;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Patroller_SubInterior;
+DLCCoast.esm;0004BA67;NPC_;DLC03_ADV017_Duke;Duke
+DLCCoast.esm;0004BA66;NPC_;DLC03_ADV017_MutantWolf;Mutant Wolf
+DLCCoast.esm;0004BA65;NPC_;DLC03_ADV017_FEVHound;Mutant Hound
+DLCCoast.esm;0004BA64;NPC_;DLC03_ADV017_Dog;Junkyard Dog
+DLCCoast.esm;0004B9C5;NPC_;DLC03AudioTemplateFogCrawler;AudioTemplateSentryBot
+DLCCoast.esm;0004B9C4;NPC_;DLC03AudioTemplateRobotRobobrain;AudioTemplateSentryBot
+DLCCoast.esm;0004B34F;NPC_;DLC03_LvlHermitCrab;
+DLCCoast.esm;0004AB93;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Prayer_M01;Child of Atom
+DLCCoast.esm;00049CB8;NPC_;DLC03FarHarborS02Malcolm;Malcolm
+DLCCoast.esm;00048E8F;NPC_;DLC03WorkshopNPCVisitorsCenter02;
+DLCCoast.esm;00048E8E;NPC_;DLC03WorkshopNPCVisitorsCenter01;
+DLCCoast.esm;00048C08;NPC_;DLC03MQ02_LvlMirelurkHunter;
+DLCCoast.esm;00048BB3;NPC_;DLC03EncTrapper06Legendary;Legendary Ruthless Trapper
+DLCCoast.esm;00048BB2;NPC_;DLC03EncTrapper05Legendary;Legendary Relentless Trapper
+DLCCoast.esm;00048BB1;NPC_;DLC03EncTrapper04Legendary;Legendary Grim Trapper
+DLCCoast.esm;00048BB0;NPC_;DLC03EncTrapper03Legendary;Legendary Stalking Trapper
+DLCCoast.esm;00048BAF;NPC_;DLC03EncTrapper02Legendary;Legendary Scrounging Trapper
+DLCCoast.esm;00048BAE;NPC_;DLC03EncTrapper01Legendary;Legendary Trapper
+DLCCoast.esm;00048ABE;NPC_;DLC03FarHarborS03RedDeath;Red Death
+DLCCoast.esm;00046768;NPC_;DLC03CoA_LvlChildrenofAtom_Ext_Patroller;
+DLCCoast.esm;00046767;NPC_;DLC03CoA_LvlChildrenofAtom_Ext_StandingGuard_NoSleep;
+DLCCoast.esm;00046020;NPC_;DLC03EncWorkshopNPCStatsSpellsTemplate;Settler
+DLCCoast.esm;00045FDA;NPC_;DLC03MacheteMike;Machete Mike
+DLCCoast.esm;00045E9F;NPC_;DLC03_V118_MrWhiskers;Scruffy
+DLCCoast.esm;00045DA9;NPC_;DLC03CoA_LvlChildrenofAtom_Ext_HolySite;Child of Atom
+DLCCoast.esm;00044BB8;NPC_;DLC03_Vault118_Chef;Sebastion
+DLCCoast.esm;00044BB6;NPC_;DLC03_Vault118_Penny;Penny
+DLCCoast.esm;00044BA5;NPC_;DLC03_Vault118_GiftstoreBot;Rupert
+DLCCoast.esm;0004417D;NPC_;DLC03_EncHermitCrabSpawn;Hermit Crab Hatchling
+DLCCoast.esm;00043FBF;NPC_;DLC03MQ06_LvlAngler;
+DLCCoast.esm;00043B0B;NPC_;DLC03_Vault118_Barbara;Jasper
+DLCCoast.esm;00043AF3;NPC_;DLC03_LvlTurretBubbleV118;
+DLCCoast.esm;00043861;NPC_;DLC03MQ02Fight_Survivor03;Survivor
+DLCCoast.esm;00043860;NPC_;DLC03MQ02Fight_Survivor01;Survivor
+DLCCoast.esm;0004385F;NPC_;DLC03MQ02Fight_Survivor02;Survivor
+DLCCoast.esm;0004385E;NPC_;DLC03Survivor;Zachary
+DLCCoast.esm;0004385B;NPC_;DLC03MQ02Fight_JaredGresham;Jared Gresham
+DLCCoast.esm;0004358F;NPC_;DLC03_LvlFeralGhoulAggro800;
+DLCCoast.esm;0004358E;NPC_;DLC03_LvlMirelurkCrabAggro800;
+DLCCoast.esm;0004358D;NPC_;DLC03_LvlFeralGhoulAggro512;
+DLCCoast.esm;00042E62;NPC_;DLC03WorkshopNPCEchoLake03;
+DLCCoast.esm;00042E61;NPC_;DLC03WorkshopNPCEchoLake02;
+DLCCoast.esm;00042E60;NPC_;DLC03WorkshopNPCEchoLake01;
+DLCCoast.esm;00042E5D;NPC_;DLC03WorkshopNPCDaltonFarm02;
+DLCCoast.esm;00042E5C;NPC_;DLC03WorkshopNPCDaltonFarm01;
+DLCCoast.esm;00040DD8;NPC_;DLC03MQ06_LvlFogCrawler;
+DLCCoast.esm;00040D70;NPC_;DLC03_LvlAnglerAggro1500;
+DLCCoast.esm;00040D6F;NPC_;DLC03_LvlAnglerAggro1200;
+DLCCoast.esm;00040D6E;NPC_;DLC03_LvlAnglerAggro512;
+DLCCoast.esm;00040D6D;NPC_;DLC03_LvlAnglerAggro800;
+DLCCoast.esm;00040C30;NPC_;DLC03_EncHermitCrab04;Savage Hermit Crab
+DLCCoast.esm;00040C2F;NPC_;DLC03_EncHermitCrab03;Glowing Hermit Crab
+DLCCoast.esm;00040C2E;NPC_;DLC03_EncHermitCrab02;Alpha Hermit Crab
+DLCCoast.esm;00040C2D;NPC_;DLC03_EncHermitCrab05;Albino Hermit Crab
+DLCCoast.esm;00040AAE;NPC_;DLC03WorkshopRadiantOwned05FogCrawler;Shipbreaker
+DLCCoast.esm;000409B5;NPC_;DLC03_LvlAnglerAmbush;
+DLCCoast.esm;000408F3;NPC_;DLC03LvlTrapperWoodsMeleeAggro_1024;
+DLCCoast.esm;000408F2;NPC_;DLC03LvlTrapperWoodsSemiAndBolt_Aggro1024;
+DLCCoast.esm;000408F1;NPC_;DLC03LvlTrapperWoodsRifle_Aggro1024;
+DLCCoast.esm;0003FE2C;NPC_;DLC03_EncGulper04AmbushLegendary;Legendary Gulper Devourer
+DLCCoast.esm;0003FE2B;NPC_;DLC03_EncGulper03AmbushLegendary;Legendary Glowing Gulper
+DLCCoast.esm;0003FE2A;NPC_;DLC03_EncGulper02AmbushLegendary;Legendary Gulper
+DLCCoast.esm;0003FE29;NPC_;DLC03_EncGulper01AmbushLegendary;Legendary Gulper Newt
+DLCCoast.esm;0003FE28;NPC_;DLC03_EncGulper04Legendary;Legendary Gulper Devourer
+DLCCoast.esm;0003FE27;NPC_;DLC03_EncGulper03Legendary;Legendary Glowing Gulper
+DLCCoast.esm;0003FE26;NPC_;DLC03_EncGulper02Legendary;Legendary Gulper
+DLCCoast.esm;0003FE25;NPC_;DLC03_EncGulper01Legendary;Legendary Gulper Newt
+DLCCoast.esm;0003FD6A;NPC_;DLC03_EncRadChicken;Rad Chicken
+DLCCoast.esm;0003DDE2;NPC_;DLC03_EncRadRabbit;Rad Rabbit
+DLCCoast.esm;0003DC9E;NPC_;DLC03LvlTrapperWoodsRifle_Aggro1500;
+DLCCoast.esm;0003DC9D;NPC_;DLC03LvlTrapperWoodsRifle_Aggro2048;
+DLCCoast.esm;0003DC9C;NPC_;DLC03LvlTrapperWoodsAuto_Aggro1500;
+DLCCoast.esm;0003DC9B;NPC_;DLC03LvlTrapperCoastSemiAndBolt_Aggro1500;
+DLCCoast.esm;0003DC9A;NPC_;DLC03LvlTrapperCoastMelee_Aggro1500;
+DLCCoast.esm;0003D448;NPC_;DLC03_LvlMirelurkHunterAmbush;
+DLCCoast.esm;0003D2B2;NPC_;DLC03_EncWolf05Legendary;Legendary Glowing Wolf
+DLCCoast.esm;0003D2B1;NPC_;DLC03_EncWolf05;Glowing Wolf
+DLCCoast.esm;0003A37C;NPC_;DLC03MQ06a_FailureGuardM01;Child of Atom Zealot
+DLCCoast.esm;0003A36B;NPC_;DLC03CoA_LvlChildrenofAtom_CommandGuard_NoSleep_F01;Child of Atom Zealot
+DLCCoast.esm;00039DE6;NPC_;ADV007_LvlSupermutantMinigunBoss;
+DLCCoast.esm;00038E7F;NPC_;DLC03_LvlMirelurkKingAmbushWater;
+DLCCoast.esm;00038E27;NPC_;DLC03_LvlGulperAmbush;
+DLCCoast.esm;00038D07;NPC_;DLC03_RobobrainPathTest;
+DLCCoast.esm;00038B33;NPC_;DLC03_Vault118_GildaBroscoe_Prewar;Gilda Broscoe
+DLCCoast.esm;00038B32;NPC_;DLC03_Vault118_KeithMcKinney_Prewar;Keith McKinney
+DLCCoast.esm;00038B31;NPC_;DLC03_Vault118_SantiagoAvida_Prewar;Santiago Avida
+DLCCoast.esm;00038B30;NPC_;DLC03_Vault118_JuliannaRiggs_Prewar;Julianna Riggs
+DLCCoast.esm;00038B2F;NPC_;DLC03_Vault118_BertRiggs_Prewar;Bert Riggs
+DLCCoast.esm;00038B2E;NPC_;DLC03_Vault118_SpencerLords_Prewar;Spencer Lords
+DLCCoast.esm;00038B2D;NPC_;DLC03_Vault118_EzraParker_Prewar;Ezra Parker
+DLCCoast.esm;0003748E;NPC_;DLC03MQ06aConfessorMartinVoiceOnly;Confessor Martin
+DLCCoast.esm;0003675F;NPC_;DLC03LvlTrapperCoast;
+DLCCoast.esm;00033E7A;NPC_;DLC03_Robobrain;DLC03 RoboBrain
+DLCCoast.esm;000338EE;NPC_;DLC03_Vault118_Receptionist;Maxwell
+DLCCoast.esm;000338ED;NPC_;DLC03_Vault118_Concierge;Concierge
+DLCCoast.esm;00032C50;NPC_;DLC03MQ06FrannyVoiceOnly;Franny
+DLCCoast.esm;00032509;NPC_;DLC03_Vault118_HandyPearl;Pearl
+DLCCoast.esm;000316BE;NPC_;ADV016_BraunHuskyCorpse;Braun
+DLCCoast.esm;000316BD;NPC_;ADV016_RowanHuskyCorpse;Rowan
+DLCCoast.esm;000316BC;NPC_;ADV016_LukeHuskyCorpse;Luke
+DLCCoast.esm;000316BB;NPC_;ADV016_BrayHuskyCorpse;Bray Husky
+DLCCoast.esm;0003111B;NPC_;DLC03_LvlDeathclawAmbush;
+DLCCoast.esm;0003111A;NPC_;DLC03_LvlDeathclaw;
+DLCCoast.esm;00031119;NPC_;DLC03_LvlMirelurkQueen;
+DLCCoast.esm;00031118;NPC_;DLC03_LvlMirelurkKing;
+DLCCoast.esm;00031117;NPC_;DLC03_LvlMirelurkHunter;
+DLCCoast.esm;000305BC;NPC_;DLC03BoSKnightCaptainLarsen;Knight-Captain Larsen
+DLCCoast.esm;0002F3F6;NPC_;DLC03InstituteMoseley;William Moseley
+DLCCoast.esm;0002F1C8;NPC_;DLC03FarHarborFF01HolotapeActor;Unknown Speaker
+DLCCoast.esm;0002E126;NPC_;ADV015_LvlTrapperCoastBoss;Bilge
+DLCCoast.esm;0002E00D;NPC_;DLC03VRVRVoice;System
+DLCCoast.esm;0002C661;NPC_;DLC03_ADV017_Gracie;Gracie
+DLCCoast.esm;0002C660;NPC_;DLC03_ADV017_EriksonsDogsTemplate;Mishka
+DLCCoast.esm;0002C65C;NPC_;DLC03_ADV017_Mishka;Mishka
+DLCCoast.esm;0002C352;NPC_;DLC03_ADV019_MarkWilson;Mark
+DLCCoast.esm;0002C351;NPC_;DLC03_ADV014_Levi;Levi
+DLCCoast.esm;00027F70;NPC_;DLC03_LvlTurretTripodTrapper;
+DLCCoast.esm;00027F5D;NPC_;DLC03_ADV004_Douglas;Douglas
+DLCCoast.esm;00027ECA;NPC_;DLC03_Loot_CorpseTrapperMale05;Trapper
+DLCCoast.esm;00027EC9;NPC_;DLC03_Loot_CorpseTrapperMale04;Trapper
+DLCCoast.esm;00027EC8;NPC_;DLC03_Loot_CorpseTrapperMale03;Trapper
+DLCCoast.esm;00027EC7;NPC_;DLC03_Loot_CorpseTrapperMale02;Trapper
+DLCCoast.esm;00027EC6;NPC_;DLC03_Loot_CorpseTrapperMale01;Trapper
+DLCCoast.esm;00027E97;NPC_;TESTDLC03LvlTurretTripodTrapper;
+DLCCoast.esm;000279BF;NPC_;DLC03ADV022LvlTurretBubble;
+DLCCoast.esm;00027943;NPC_;DLC03LvlTrapperWoodsBoss;
+DLCCoast.esm;0002793D;NPC_;DLC03_EncGulper04;Gulper Devourer
+DLCCoast.esm;0002793C;NPC_;DLC03_EncGulper03;Glowing Gulper
+DLCCoast.esm;0002793B;NPC_;DLC03_EncGulper02;Gulper
+DLCCoast.esm;0002793A;NPC_;DLC03_LvlGulper;
+DLCCoast.esm;000269DD;NPC_;DLC03LvlTrapperCoastBoss_AcadiaM01Male02;
+DLCCoast.esm;000269DC;NPC_;DLC03LvlTrapperCoastBoss;
+DLCCoast.esm;000269C8;NPC_;DLC03AtomM01_FogCrawler03;Ghostly Fog Crawler
+DLCCoast.esm;000269BE;NPC_;DLC03AtomM01_FogCrawler;Ghostly Fog Crawler
+DLCCoast.esm;000269AD;NPC_;DLC03AtomM01_GlowingRadstag;Ghostly Radstag
+DLCCoast.esm;000247C4;NPC_;DLC03_EncGulper01Template;Young Gulper
+DLCCoast.esm;00024168;NPC_;DLC03_EncBloodrageMirelurk00;BloodRage Mirelurk
+DLCCoast.esm;00023B24;NPC_;DLC03FarHarborFF02_CorpseHowardDunbar;Howard Dunbar
+DLCCoast.esm;00023AC9;NPC_;DLC03_LvlMirelurkCrabBoss;
+DLCCoast.esm;00023AC8;NPC_;DLC03_LvlMirelurkCrabAmbush;
+DLCCoast.esm;00023AC4;NPC_;DLC03_EncMirelurk05AmbushLegendary;Legendary Bloodrage Mirelurk
+DLCCoast.esm;00023AC3;NPC_;DLC03_EncMirelurk05Legendary;Legendary Bloodrage Mirelurk
+DLCCoast.esm;00023AC1;NPC_;DLC03_EncMirelurk05;Bloodrage Mirelurk
+DLCCoast.esm;000225E4;NPC_;DLC03MQ06a_HCGuard02;
+DLCCoast.esm;000225E2;NPC_;DLC03MQ06a_HCGuard01;Child of Atom Zealot
+DLCCoast.esm;00022532;NPC_;DLC03LvlTrapperCoastRifle;
+DLCCoast.esm;00022530;NPC_;DLC03LvlTrapperWoodsRifle;
+DLCCoast.esm;00021762;NPC_;DLC03_LvlYaoGuai;
+DLCCoast.esm;00021760;NPC_;DLC03_EncYaoGuai02aLegendary;Legendary Irradiated Yao Guai
+DLCCoast.esm;0002175F;NPC_;DLC03_EncYaoGuai01aLegendary;Legendary Yao Guai Ghoul
+DLCCoast.esm;0002175D;NPC_;DLC03_EncYaoGuai01a;Yao Guai Ghoul
+DLCCoast.esm;0002175C;NPC_;DLC03_EncYaoGuai02a;Irradiated Yao Guai
+DLCCoast.esm;0002175A;NPC_;DLC03Cole;Cole
+DLCCoast.esm;000212AB;NPC_;DLC03MQ06a_HighConfessorSynth;High Confessor Tektus
+DLCCoast.esm;00020C4A;NPC_;DLC03LvlTrapperWoodsMelee;
+DLCCoast.esm;00020C49;NPC_;DLC03LvlTrapperCoastMelee;
+DLCCoast.esm;00020C46;NPC_;DLC03LvlTrapperWoodsAuto;
+DLCCoast.esm;00020C45;NPC_;DLC03LvlTrapperCoastAuto;
+DLCCoast.esm;000207E3;NPC_;DLC03_LvlMirelurkCrab;
+DLCCoast.esm;00020631;NPC_;DLC03_Vault118_ReinhartVII;Reinhart VII
+DLCCoast.esm;00020630;NPC_;DLC03_Vault118_SpencerLords;Spencer Lords
+DLCCoast.esm;0002062F;NPC_;DLC03_Vault118_BertRiggs;Bert Riggs
+DLCCoast.esm;0002062E;NPC_;DLC03_Vault118_JuliannaRiggs;Julianna Riggs
+DLCCoast.esm;0002062D;NPC_;DLC03_Vault118_KeithMcKinney;Keith McKinney
+DLCCoast.esm;0002062C;NPC_;DLC03_Vault118_GildaBroscoe;Gilda Broscoe
+DLCCoast.esm;0002062B;NPC_;DLC03_Vault118_EzraParker;Ezra Parker
+DLCCoast.esm;00020620;NPC_;DLC03_Vault118_SantiagoAvida;Santiago Avida
+DLCCoast.esm;00020405;NPC_;DLC03RailroadContact;Boxer
+DLCCoast.esm;0001FAD8;NPC_;DLC03MQ06CaptainWabashVoiceOnly;Captain Arnold Wabash
+DLCCoast.esm;0001FAD6;NPC_;DLC03MQ04ComputerSystemVoiceOnly;System Voice
+DLCCoast.esm;0001FA9C;NPC_;DLC03_LvlFeralGhoulBoss;
+DLCCoast.esm;0001FA9B;NPC_;DLC03_LvlFeralGhoulAmbush;
+DLCCoast.esm;0001FA9A;NPC_;DLC03_LvlFeralGhoul;
+DLCCoast.esm;0001FA95;NPC_;DLC03_encFeralGhoul03AmbushLegendary;Legendary Fog Ghoul
+DLCCoast.esm;0001FA94;NPC_;DLC03_encFeralGhoul03Legendary;Legendary Fog Ghoul
+DLCCoast.esm;0001E710;NPC_;DLC03VRDataRetriever05;Indexer
+DLCCoast.esm;0001E70F;NPC_;DLC03VRDataRetriever04;Indexer
+DLCCoast.esm;0001E70E;NPC_;DLC03VRAttacker05;Sentry
+DLCCoast.esm;0001E70D;NPC_;DLC03VRAttacker04;Sentry
+DLCCoast.esm;0001D168;NPC_;DLC03VRAttacker03;Sentry
+DLCCoast.esm;0001D166;NPC_;DLC03VRDataRetriever03;Indexer
+DLCCoast.esm;0001CC05;NPC_;DLC03VRDataRetriever02;Indexer
+DLCCoast.esm;0001CC04;NPC_;DLC03VRAttacker02;Sentry
+DLCCoast.esm;0001C85F;NPC_;DLC03_encFeralGhoul03;Fog Ghoul
+DLCCoast.esm;0001C5D1;NPC_;DLC03_ADV017_Erikson;Erickson
+DLCCoast.esm;0001B0BF;NPC_;DLC03AtomM02_SisterGwyneth;Sister Gwyneth
+DLCCoast.esm;0001AC3B;NPC_;DLC03MQ06_WindFarm_LvlAssaultron;Assaultron
+DLCCoast.esm;0001A210;NPC_;DLC03MQ02ChildAtom;Child of Atom
+DLCCoast.esm;000180AA;NPC_;DLC03_EncHermitCrab01Template;Giant Hermit Crab
+DLCCoast.esm;00018050;NPC_;DLC03_NucleusCountdownVoice;System Voice
+DLCCoast.esm;00016A00;NPC_;DLC03LvlTrapperCoast_AcadiaM01Male;
+DLCCoast.esm;00016666;NPC_;DLC03_ECTLvlFeralGhoulBossAmbush;
+DLCCoast.esm;00014456;NPC_;DLC03_EncFogCrawler05Legendary;Legendary Enraged Fog Crawler
+DLCCoast.esm;00014455;NPC_;DLC03_EncFogCrawler05;Enraged Fog Crawler
+DLCCoast.esm;000140F8;NPC_;DLC03_LvlWolf;
+DLCCoast.esm;000140F5;NPC_;DLC03_EncWolf04Legendary;Legendary Rabid Wolf
+DLCCoast.esm;000140F4;NPC_;DLC03_EncWolf03Legendary;Legendary Albino Wolf
+DLCCoast.esm;000140F3;NPC_;DLC03_EncWolf01Legendary;Legendary Vicious Wolf
+DLCCoast.esm;000140F2;NPC_;DLC03_EncWolf02Legendary;Legendary Feral Wolf
+DLCCoast.esm;000140F0;NPC_;DLC03_EncWolf02;Feral Wolf
+DLCCoast.esm;000140EF;NPC_;DLC03_EncWolf01Template;Vicious Wolf
+DLCCoast.esm;000140EE;NPC_;DLC03_EncWolf03;Grey Wolf
+DLCCoast.esm;000140ED;NPC_;DLC03_EncWolf04;Rabid Wolf
+DLCCoast.esm;00013F7A;NPC_;DLC03_EncRadstag06_Legendary;Legendary Devolved Radstag
+DLCCoast.esm;00013F79;NPC_;DLC03_EncRadstag04b_Legendary;Legendary Devolved Radstag Doe
+DLCCoast.esm;00013F78;NPC_;DLC03_EncRadstag03b_Legendary;Legendary Erratic Radstag
+DLCCoast.esm;00013F77;NPC_;DLC03_EncRadstag02b_Legendary;Legendary Erratic Radstag Doe
+DLCCoast.esm;00013F76;NPC_;DLC03_LvlRadStag;
+DLCCoast.esm;00013F75;NPC_;DLC03_EncRadstag02b;Erratic Radstag Doe
+DLCCoast.esm;00013F74;NPC_;DLC03_EncRadstag03b;Erratic Radstag
+DLCCoast.esm;00013F72;NPC_;DLC03_EncRadstag04b;Devolved Radstag Doe
+DLCCoast.esm;00013F71;NPC_;DLC03_EncRadstag06;Devolved Radstag
+DLCCoast.esm;0001055A;NPC_;DLC03EncWorkshopNPCMaleEvenToned04;
+DLCCoast.esm;00010559;NPC_;DLC03EncWorkshopNPCMaleMaine02;
+DLCCoast.esm;00010558;NPC_;DLC03EncWorkshopNPCMaleEvenToned02;
+DLCCoast.esm;00010557;NPC_;DLC03EncWorkshopNPCFemaleEvenToned06;
+DLCCoast.esm;00010556;NPC_;DLC03EncWorkshopNPCFemaleEvenToned04;
+DLCCoast.esm;00010555;NPC_;DLC03EncWorkshopNPCFemaleEvenToned02;
+DLCCoast.esm;00010554;NPC_;DLC03EncWorkshopNPCMaleEvenToned03;
+DLCCoast.esm;00010553;NPC_;DLC03EncWorkshopNPCMaleEvenToned01;
+DLCCoast.esm;00010552;NPC_;DLC03EncWorkshopNPCFemaleEvenToned05;
+DLCCoast.esm;00010551;NPC_;DLC03EncWorkshopNPCFemaleEvenToned01;
+DLCCoast.esm;0001054F;NPC_;DLC03EncWorkshopNPCMaleMaine01;
+DLCCoast.esm;0001054E;NPC_;DLC03EncWorkshopNPCFemaleEvenToned03;
+DLCCoast.esm;0001054D;NPC_;DLC03WorkshopNPC;Settler
+DLCCoast.esm;0000F116;NPC_;DLC03FarHarborM01Witness;Dottie
+DLCCoast.esm;0000F10B;NPC_;DLC03FarHarborM01MirelurkQueen;Legendary Mirelurk Queen
+DLCCoast.esm;0000AFDB;NPC_;DLC03CoA_AtomM01_MotherOfTheFog;Ghostly Figure
+DLCCoast.esm;0000AAF8;NPC_;DLC03UncleKen;Uncle Ken
+DLCCoast.esm;0000A2D4;NPC_;DLC03_LvlFogCrawler;
+DLCCoast.esm;0000A2D1;NPC_;DLC03_EncFogCrawler04Legendary;Legendary Diseased Fog Crawler
+DLCCoast.esm;0000A2D0;NPC_;DLC03_EncFogCrawler03Legendary;Legendary Skulking Fog Crawler
+DLCCoast.esm;0000A2CF;NPC_;DLC03_EncFogCrawler02Legendary;Legendary Glowing Fog Crawler
+DLCCoast.esm;0000A2CE;NPC_;DLC03_EncFogCrawler01Legendary;Legendary Fog Crawler
+DLCCoast.esm;0000A2CD;NPC_;DLC03_EncFogCrawler04;Pale Fog Crawler
+DLCCoast.esm;0000A2CC;NPC_;DLC03_EncFogCrawler03;Skulking Fog Crawler
+DLCCoast.esm;0000A2CB;NPC_;DLC03_EncFogCrawler02;Glowing Fog Crawler
+DLCCoast.esm;0000A2CA;NPC_;DLC03_EncFogCrawler01Template;Fog Crawler
+DLCCoast.esm;00009593;NPC_;DLC03VRDefender01;Defense Construct
+DLCCoast.esm;00009590;NPC_;DLC03_LvlAngler;
+DLCCoast.esm;0000958E;NPC_;DLC03_EncAngler04Legendary;Legendary Venomous Angler
+DLCCoast.esm;0000958D;NPC_;DLC03_EncAngler03Legendary;Legendary Albino Angler
+DLCCoast.esm;0000958C;NPC_;DLC03_EncAngler02Legendary;Legendary Glowing Angler
+DLCCoast.esm;00009588;NPC_;DLC03_EncAngler01Legendary;Legendary Lantern Angler
+DLCCoast.esm;00009586;NPC_;DLC03_EncAngler04;Venomous Angler
+DLCCoast.esm;00009585;NPC_;DLC03_EncAngler03;Albino Angler
+DLCCoast.esm;00009584;NPC_;DLC03_EncAngler02;Glowing Angler
+DLCCoast.esm;00009583;NPC_;DLC03_EncAngler01Template;Angler
+DLCCoast.esm;00009146;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Maintenance_Sermon_M02;Child of Atom
+DLCCoast.esm;00009145;NPC_;DLC03CoA_LvlChildrenofAtom_Int_StandingGuard_NoSleep_M02;Child of Atom Zealot
+DLCCoast.esm;00009144;NPC_;DLC03CoA_LvlChildrenofAtom_Int_StandingGuard_NoSleep_F01;Child of Atom Zealot
+DLCCoast.esm;00009143;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Patroller_Sermon_M01;Child of Atom Zealot
+DLCCoast.esm;00009140;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Patroller_Sermon_F02;Child of Atom Zealot
+DLCCoast.esm;00008A16;NPC_;DLC03CatLastPlank;Tink
+DLCCoast.esm;000082C7;NPC_;DLC03CoA_SisterAubert;Sister Aubert
+DLCCoast.esm;00006E5B;NPC_;DLC03_CompanionOldLongfellow;Old Longfellow
+DLCCoast.esm;00005CC5;NPC_;DLC03FarHarborLastPlankM02Drinker;Harborman
+DLCCoast.esm;00005CC4;NPC_;DLC03FarHarborLastPlankM01Drinker;Harborman
+DLCCoast.esm;00005CC3;NPC_;DLC03FarHarborLastPlankF02Drinker;Harborwoman
+DLCCoast.esm;00005CC2;NPC_;DLC03FarHarborLastPlankF01Waitress;Debby
+DLCCoast.esm;00005CC1;NPC_;DLC03FarHarborResidentF05Wanderer;Harborwoman
+DLCCoast.esm;00005CC0;NPC_;DLC03FarHarborResidentF04Shopper;Harborwoman
+DLCCoast.esm;00005CBF;NPC_;DLC03FarHarborResidentF03DregsResting;Harborwoman
+DLCCoast.esm;00005CBE;NPC_;DLC03FarHarborResidentF02Fisherwoman;Fisherman
+DLCCoast.esm;00005CBD;NPC_;DLC03FarHarborResidentF01DregsHobo;Harborwoman
+DLCCoast.esm;00005CBC;NPC_;DLC03FarHarborResidentM07Wanderer;Harborman
+DLCCoast.esm;00005CBB;NPC_;DLC03FarHarborResidentM06CaptainCrony;Harborman
+DLCCoast.esm;00005CBA;NPC_;DLC03FarHarborResidentM05Waiter;Harborman
+DLCCoast.esm;00005CB9;NPC_;DLC03FarHarborResidentM04Fisherman;Fisherman
+DLCCoast.esm;00005CB8;NPC_;DLC03FarHarborResidentM03DregsPier;Harborman
+DLCCoast.esm;00005CB7;NPC_;DLC03FarHarborResidentM02DregsHobo;Harborman
+DLCCoast.esm;00005CA4;NPC_;DLC03FarHarborResidentM01Thief;Harborman
+DLCCoast.esm;00005CA3;NPC_;DLC03FarHarborResidentTemplate;Harborman
+DLCCoast.esm;00005C9F;NPC_;DLC03Mitch;Mitch
+DLCCoast.esm;00005C9D;NPC_;DLC03AndreMichaud;Andre Michaud
+DLCCoast.esm;00005C9B;NPC_;DLC03Brooks;Brooks
+DLCCoast.esm;00005C99;NPC_;DLC03AllenLee;Allen Lee
+DLCCoast.esm;00005C97;NPC_;DLC03TeddyWright;Teddy Wright
+DLCCoast.esm;00005C95;NPC_;DLC03CassieDalton;Cassie Dalton
+DLCCoast.esm;00005C93;NPC_;DLC03SandraLee;Sandra Lee
+DLCCoast.esm;00005C91;NPC_;DLC03Mariner;The Mariner
+DLCCoast.esm;00005C85;NPC_;DLC03Tony;Tony
+DLCCoast.esm;00005C83;NPC_;DLC03SmallBertha;Small Bertha
+DLCCoast.esm;00005C80;NPC_;DLC03CaptainAvery;Captain Avery
+DLCCoast.esm;00004D24;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Maintenance_Sermon_F01;Child of Atom
+DLCCoast.esm;00004D21;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Patroller_Sermon;
+DLCCoast.esm;00004D04;NPC_;DLC03CoA_LvlChildrenofAtom_Entrance_Female;Child of Atom
+DLCCoast.esm;00004D03;NPC_;DLC03CoA_LvlChildrenofAtom_Entrance_Male;Child of Atom
+DLCCoast.esm;00004CFC;NPC_;DLC03CoA_LvlChildrenofAtom_EntrancePatrol_NoSleep_F01;Child of Atom Zealot
+DLCCoast.esm;00004CF6;NPC_;DLC03CoA_LvlChildrenofAtom_EntranceGuard_NoSleep_M01;Child of Atom Zealot
+DLCCoast.esm;000049EC;NPC_;ADV002_LvlFeralGhoul;
+DLCCoast.esm;00004642;NPC_;DLC03Jule;Jule
+DLCCoast.esm;00004641;NPC_;DLC03Naveen;Naveen
+DLCCoast.esm;00004640;NPC_;DLC03Cog;Cog
+DLCCoast.esm;0000463F;NPC_;DLC03Dejen;Dejen
+DLCCoast.esm;0000463E;NPC_;DLC03Aster;Aster
+DLCCoast.esm;0000463C;NPC_;DLC03Faraday;Faraday
+DLCCoast.esm;0000463B;NPC_;DLC03Miranda;Miranda
+DLCCoast.esm;0000463A;NPC_;DLC03Chase;Chase
+DLCCoast.esm;00004639;NPC_;DLC03DiMA;DiMA
+DLCCoast.esm;000044C3;NPC_;DLC03CoA_LvlChildrenofAtom_InteriorGuard_Template;Child of Atom Zealot
+DLCCoast.esm;000044AA;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Maintenance;
+DLCCoast.esm;000044A9;NPC_;DLC03CoA_LvlChildrenofAtom_Int_StandingGuard_NoSleep;
+DLCCoast.esm;000044A8;NPC_;DLC03CoA_LvlChildrenofAtom_Int_Patroller;
+DLCCoast.esm;0000447F;NPC_;DLC03CoA_LvlChildrenofAtom;
+DLCCoast.esm;00004471;NPC_;DLC03CoA_BrotherKane;Brother Kane
+DLCCoast.esm;0000446F;NPC_;DLC03CoA_BrotherDevin;Brother Devin
+DLCCoast.esm;0000446D;NPC_;DLC03CoA_SisterMai;Sister Mai
+DLCCoast.esm;0000446B;NPC_;DLC03CoA_Archemist;The Archemist
+DLCCoast.esm;00004469;NPC_;DLC03CoA_ZealotTheil;Zealot Theil
+DLCCoast.esm;00004467;NPC_;DLC03CoA_ZealotWare;Zealot Ware
+DLCCoast.esm;00004465;NPC_;DLC03CoA_GrandZealotRichter;Grand Zealot Richter
+DLCCoast.esm;00004464;NPC_;DLC03CoA_HighConfessorTektus;High Confessor Tektus
+DLCCoast.esm;00003ECA;NPC_;DLC03KasumiNakano;Kasumi Nakano
+DLCCoast.esm;0000386F;NPC_;DLC03VRDataRetriever01;Indexer
+DLCCoast.esm;0000385E;NPC_;DLC03VRAttacker01;Sentry
+DLCCoast.esm;00002DBD;NPC_;DLC03EncTrapper06;Ruthless Trapper
+DLCCoast.esm;00002DBC;NPC_;DLC03EncTrapper05;Relentless Trapper
+DLCCoast.esm;00002DBB;NPC_;DLC03EncTrapper04;Grim Trapper
+DLCCoast.esm;00002DBA;NPC_;DLC03EncTrapper03;Stalking Trapper
+DLCCoast.esm;00002DB9;NPC_;DLC03EncTrapper02;Scrounging Trapper
+DLCCoast.esm;00002DB7;NPC_;DLC03EncTrapper01Template;Trapper
+DLCCoast.esm;00002DB0;NPC_;DLC03encTrapperFaceM05;
+DLCCoast.esm;00002DAF;NPC_;DLC03encTrapperFaceM04;
+DLCCoast.esm;00002DAE;NPC_;DLC03encTrapperFaceM03;
+DLCCoast.esm;00002DAD;NPC_;DLC03encTrapperFaceM02;
+DLCCoast.esm;00002DAC;NPC_;DLC03encTrapperFaceM01;
+DLCCoast.esm;00002DAA;NPC_;DLC03LvlTrapperCoastSemiAndBolt;
+DLCCoast.esm;00002DA9;NPC_;DLC03LvlTrapperWoodsSemiAndBolt;
+DLCCoast.esm;0000220D;NPC_;DLC03MrsNakano;Rei Nakano
+DLCCoast.esm;00002162;NPC_;DLC03MrNakano;Kenji Nakano
+DLCCoast.esm;0013426D;NPC_;CoABrotherOgden;Brother Ogden

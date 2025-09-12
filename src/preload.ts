@@ -7,7 +7,9 @@ import type {
 	Config,
 	ESM,
 	FormattedData,
+	NPCFormIdData,
 	ParsedTemplates,
+	RaceFormIdData,
 	Slider,
 	TriBodySlide,
 } from "./types"
@@ -58,4 +60,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	}> => ipcRenderer.invoke("resolveSliders"),
 	resolveCategorisedSliders: (): Promise<any> =>
 		ipcRenderer.invoke("resolveCategorisedSliders"),
+	resolveNPCs: (): Promise<NPCFormIdData[]> =>
+		ipcRenderer.invoke("resolveNPCs"),
+	resolveRaces: (): Promise<RaceFormIdData[]> =>
+		ipcRenderer.invoke("resolveRaces"),
 })

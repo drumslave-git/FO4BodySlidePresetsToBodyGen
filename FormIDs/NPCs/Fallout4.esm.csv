@@ -1,0 +1,3015 @@
+Fallout4.esm;0024A381;NPC_;VRWorkshopShared_WorkshopNPC;Virtual Settler
+Fallout4.esm;0024A380;NPC_;VRWorkshopShared_LvlSMBehemoth;
+Fallout4.esm;0024A37F;NPC_;VRWorkshopShared_LvlSynthCourser;
+Fallout4.esm;0024A37E;NPC_;VRWorkshopShared_LvlSynth;
+Fallout4.esm;0024A37D;NPC_;VRWorkshopShared_encAlien;Alien
+Fallout4.esm;0024A37C;NPC_;VRWorkshopShared_LvlRaiderMixed;
+Fallout4.esm;0024A37B;NPC_;VRWorkshopShared_LvlSupermutantMixed;
+Fallout4.esm;0024A37A;NPC_;VRWorkshopShared_LvlGunner;
+Fallout4.esm;0024A0A6;NPC_;LvlTurretTripodMountedNotRandom;
+Fallout4.esm;0024A0A4;NPC_;LvlTurretTripodNotRandom;
+Fallout4.esm;0024A037;NPC_;EncMinutemenFaceM06b;Settler
+Fallout4.esm;0024A036;NPC_;EncMinutemenFaceM05b;Settler
+Fallout4.esm;0024A035;NPC_;EncMinutemenFaceM04b;Settler
+Fallout4.esm;0024A034;NPC_;EncMinutemenFaceM03b;Settler
+Fallout4.esm;0024A033;NPC_;EncMinutemenFaceM02b;Settler
+Fallout4.esm;0024A032;NPC_;EncMinutemenFaceM01b;Settler
+Fallout4.esm;0024A031;NPC_;EncMinutemenFaceF03b;Settler
+Fallout4.esm;0024A030;NPC_;encMinutemenFaceF02b;Settler
+Fallout4.esm;0024A02F;NPC_;EncMinutemenFaceF01b;Settler
+Fallout4.esm;0024A02E;NPC_;EncWorkshopNPCMaleGuard04b;
+Fallout4.esm;0024A02D;NPC_;EncWorkshopNPCMaleGuard03b;
+Fallout4.esm;0024A02C;NPC_;EncWorkshopNPCMaleGuard02b;
+Fallout4.esm;0024A02B;NPC_;EncWorkshopNPCMaleGuard01b;
+Fallout4.esm;0024A02A;NPC_;EncWorkshopNPCMaleFarmer09b;
+Fallout4.esm;0024A029;NPC_;EncWorkshopNPCMaleFarmer08b;
+Fallout4.esm;0024A028;NPC_;EncWorkshopNPCMaleFarmer07b;
+Fallout4.esm;0024A027;NPC_;EncWorkshopNPCMaleFarmer06b;
+Fallout4.esm;0024A026;NPC_;EncWorkshopNPCMaleFarmer05b;
+Fallout4.esm;0024A025;NPC_;EncWorkshopNPCMaleFarmer04b;
+Fallout4.esm;0024A024;NPC_;EncWorkshopNPCMaleFarmer03b;
+Fallout4.esm;0024A023;NPC_;EncWorkshopNPCMaleFarmer02b;
+Fallout4.esm;0024A022;NPC_;EncWorkshopNPCMaleFarmer01b;Settler
+Fallout4.esm;0024A021;NPC_;EncWorkshopNPCFemaleGuard04b;
+Fallout4.esm;0024A020;NPC_;EncWorkshopNPCFemaleGuard03b;
+Fallout4.esm;0024A01F;NPC_;EncWorkshopNPCFemaleGuard02b;
+Fallout4.esm;0024A01E;NPC_;EncWorkshopNPCFemaleGuard01b;
+Fallout4.esm;0024A01D;NPC_;EncWorkshopNPCFemaleFarmer09b;
+Fallout4.esm;0024A01C;NPC_;EncWorkshopNPCFemaleFarmer08b;
+Fallout4.esm;0024A01B;NPC_;EncWorkshopNPCFemaleFarmer07b;
+Fallout4.esm;0024A01A;NPC_;EncWorkshopNPCFemaleFarmer06b;
+Fallout4.esm;0024A019;NPC_;EncWorkshopNPCFemaleFarmer05b;
+Fallout4.esm;0024A018;NPC_;EncWorkshopNPCFemaleFarmer04b;
+Fallout4.esm;0024A017;NPC_;EncWorkshopNPCFemaleFarmer03b;
+Fallout4.esm;0024A016;NPC_;EncWorkshopNPCFemaleFarmer02b;
+Fallout4.esm;0024A015;NPC_;EncWorkshopNPCFemaleFarmer01b;
+Fallout4.esm;00249B03;NPC_;EncSentryBot04AmbushLegendary;Legendary Annihilator Sentry Bot Mk.II
+Fallout4.esm;00249B02;NPC_;EncSentryBot03AmbushLegendary;Legendary Annihilator Sentry Bot
+Fallout4.esm;00249B01;NPC_;EncSentryBot02AmbushLegendary;Legendary Siege Breaker Sentry Bot
+Fallout4.esm;00249B00;NPC_;EncSentryBot01AmbushLegendary;Legendary Sentry Bot
+Fallout4.esm;00249AFE;NPC_;EncSentryBot04Legendary;Legendary Annihilator Sentry Bot Mk.II
+Fallout4.esm;00249AFD;NPC_;EncSentryBot03Legendary;Legendary Annihilator Sentry Bot
+Fallout4.esm;00249AFC;NPC_;EncSentryBot02Legendary;Legendary Siege Breaker Sentry Bot
+Fallout4.esm;00249AFB;NPC_;EncSentryBot01Legendary;Legendary Sentry Bot
+Fallout4.esm;00249AF7;NPC_;EncProtectron03Legendary;Legendary Protectron Guardian
+Fallout4.esm;00249AF6;NPC_;EncProtectron02Legendary;Legendary Protectron Watcher
+Fallout4.esm;00249AF1;NPC_;encMrGutsy04Legendary;Legendary Colonel Gutsy
+Fallout4.esm;00249AF0;NPC_;encMrGutsy03Legendary;Legendary Major Gutsy
+Fallout4.esm;00249AEF;NPC_;encMrGutsy02Legendary;Legendary Lieutenant Gutsy
+Fallout4.esm;00249AEE;NPC_;encMrGutsy01Legendary;Legendary Mr. Gutsy
+Fallout4.esm;00249AED;NPC_;EncAssaultron03Legendary;Legendary Assaultron Dominator
+Fallout4.esm;00249AEC;NPC_;EncAssaultron02Legendary;Legendary Assaultron Invader
+Fallout4.esm;00249AEB;NPC_;EncAssaultron01Legendary;Legendary Assaultron
+Fallout4.esm;00249AE9;NPC_;EncBoSSoldier09PowerArmorLegendary;Brotherhood Star Paladin
+Fallout4.esm;00249AE8;NPC_;EncBoSSoldier08PowerArmorLegendary;Legendary Brotherhood Paladin-Commander
+Fallout4.esm;00249AE7;NPC_;EncBoSSoldier07PowerArmorLegendary;Legendary Brotherhood Paladin
+Fallout4.esm;00249AE6;NPC_;EncBoSSoldier06PowerArmorLegendary;Legendary Brotherhood Knight-Commander
+Fallout4.esm;00249AE5;NPC_;EncBoSSoldier05PowerArmorLegendary;Legendary Brotherhood Knight-Captain
+Fallout4.esm;00249AE4;NPC_;EncBoSSoldier04PowerArmorLegendary;Legendary Brotherhood Knight-Sergeant
+Fallout4.esm;00249AE3;NPC_;EncBoSSoldier03PowerArmorLegendary;Legendary Brotherhood Knight
+Fallout4.esm;00249AE1;NPC_;EncBoSSoldier09Legendary;Brotherhood Star Paladin
+Fallout4.esm;00249AE0;NPC_;EncBoSSoldier08Legendary;Legendary Brotherhood Paladin-Commander
+Fallout4.esm;00249ADF;NPC_;EncBoSSoldier07Legendary;Legendary Brotherhood Paladin
+Fallout4.esm;00249ADE;NPC_;EncBoSSoldier06Legendary;Legendary Brotherhood Knight-Commander
+Fallout4.esm;00249ADD;NPC_;EncBoSSoldier05Legendary;Legendary Brotherhood Knight-Captain
+Fallout4.esm;00249ADC;NPC_;EncBoSSoldier04Legendary;Legendary Brotherhood Knight-Sergeant
+Fallout4.esm;00249ADB;NPC_;EncBoSSoldier03Legendary;Legendary Brotherhood Knight
+Fallout4.esm;00249ADA;NPC_;EncBoSSoldier02Legendary;Legendary Brotherhood Aspirant
+Fallout4.esm;00249A1F;NPC_;EncSynth08AmbushLegendary;Legendary Synth Eradicator
+Fallout4.esm;00249A1E;NPC_;EncSynth07AmbushLegendary;Legendary Synth Stormer
+Fallout4.esm;00249A1D;NPC_;EncSynth06AmbushLegendary;Legendary Synth Assaulter
+Fallout4.esm;00249A1C;NPC_;EncSynth05AmbushLegendary;Legendary Synth Trooper
+Fallout4.esm;00249A1B;NPC_;EncSynth04AmbushLegendary;Legendary Synth Seeker
+Fallout4.esm;00249A1A;NPC_;EncSynth03AmbushLegendary;Legendary Synth Patroller
+Fallout4.esm;00249A19;NPC_;EncSynth02AmbushLegendary;Legendary Synth Strider
+Fallout4.esm;00249A18;NPC_;EncSynth01AmbushLegendary;
+Fallout4.esm;00249A0B;NPC_;EncStingwing05AmbushLegendary;Legendary Stingwing Chaser
+Fallout4.esm;00249A0A;NPC_;EncStingwing04AmbushLegendary;Legendary Glowing Stingwing
+Fallout4.esm;00249A09;NPC_;EncStingwing03AmbushLegendary;Legendary Stingwing Skimmer
+Fallout4.esm;00249A08;NPC_;EncStingwing02AmbushLegendary;Legendary Stingwing Darter
+Fallout4.esm;00249A07;NPC_;EncStingwing01AmbushLegendary;Legendary Stingwing
+Fallout4.esm;00249A05;NPC_;EncRadscorpion07AmbushLegendary;Legendary Deathskull Radscorpion
+Fallout4.esm;00249A04;NPC_;EncRadscorpion06AmbushLegendary;Legendary Radscorpion Predator
+Fallout4.esm;00249A03;NPC_;EncRadscorpion05AmbushLegendary;Legendary Radscorpion Stalker
+Fallout4.esm;00249A02;NPC_;EncRadscorpion04AmbushLegendary;Legendary Albino Radscorpion
+Fallout4.esm;00249A01;NPC_;EncRadscorpion03AmbushLegendary;Legendary Glowing Radscorpion
+Fallout4.esm;00249A00;NPC_;EncRadscorpion02AmbushLegendary;Legendary Radscorpion Hunter
+Fallout4.esm;002499FF;NPC_;EncRadscorpion01AmbushLegendary;Legendary Radscorpion
+Fallout4.esm;002499FE;NPC_;EncMutantHound02AmbushLegendary;Glowing Mutant Hound
+Fallout4.esm;002499FD;NPC_;EncMutantHound02Legendary;Glowing Mutant Hound
+Fallout4.esm;002499FB;NPC_;EncMolerat04AmbushLegendary;Legendary Mole Rat Brood Mother
+Fallout4.esm;002499FA;NPC_;EncMolerat03AmbushLegendary;Legendary Glowing Mole Rat
+Fallout4.esm;002499F9;NPC_;EncMolerat02AmbushLegendary;Legendary Rabid Mole Rat
+Fallout4.esm;002499F6;NPC_;EncMirelurkKing03AmbushLegendary;Legendary Glowing Mirelurk King
+Fallout4.esm;002499F5;NPC_;EncMirelurkKing02AmbushLegendary;Legendary Mirelurk Deep King
+Fallout4.esm;002499F4;NPC_;EncMirelurkKing01AmbushLegendary;Legendary Mirelurk King
+Fallout4.esm;002499F3;NPC_;EncMirelurkHunter03AmbushLegendary;Legendary Albino Mirelurk Hunter
+Fallout4.esm;002499F2;NPC_;EncMirelurkHunter02AmbushLegendary;Legendary Glowing Mirelurk Hunter
+Fallout4.esm;002499F1;NPC_;EncMirelurkHunter01AmbushLegendary;Legendary Mirelurk Hunter
+Fallout4.esm;002499EF;NPC_;EncMirelurk04AmbushLegendary;Legendary Glowing Mirelurk
+Fallout4.esm;002499EE;NPC_;EncMirelurk03AmbushLegendary;Legendary Mirelurk Killclaw
+Fallout4.esm;002499ED;NPC_;EncMirelurk02AmbushLegendary;Legendary Mirelurk Razorclaw
+Fallout4.esm;002499EC;NPC_;EncMirelurk01AmbushLegendary;Legendary Mirelurk
+Fallout4.esm;002499E5;NPC_;encFeralGhoulGlowing03AmbushLegendary;Legendary Bloated Glowing One
+Fallout4.esm;002499E4;NPC_;encFeralGhoulGlowing02AmbushLegendary;Legendary Putrid Glowing One
+Fallout4.esm;002499E3;NPC_;encFeralGhoulGlowing01AmbushLegendary;Legendary Glowing One
+Fallout4.esm;002499E2;NPC_;encFeralGhoul08AmbushLegendary;Legendary Charred Feral Ghoul
+Fallout4.esm;002499E1;NPC_;encFeralGhoul07AmbushLegendary;Legendary Rotting Feral Ghoul
+Fallout4.esm;002499E0;NPC_;encFeralGhoul06AmbushLegendary;Legendary Gangrenous Feral Ghoul
+Fallout4.esm;002499DF;NPC_;encFeralGhoul05AmbushLegendary;Legendary Withered Feral Ghoul
+Fallout4.esm;002499DE;NPC_;encFeralGhoul04AmbushLegendary;Legendary Feral Ghoul Reaver
+Fallout4.esm;002499DD;NPC_;encFeralGhoul03AmbushLegendary;Legendary Feral Ghoul Stalker
+Fallout4.esm;002499DC;NPC_;encFeralGhoul02AmbushLegendary;Legendary Feral Ghoul Roamer
+Fallout4.esm;002499DA;NPC_;EncDeathclaw08AmbushLegendary;Legendary Mythic Deathclaw
+Fallout4.esm;002499D9;NPC_;EncDeathclaw07AmbushLegendary;Legendary Chameleon Deathclaw
+Fallout4.esm;002499D8;NPC_;EncDeathclaw06AmbushLegendary;Legendary Albino Deathclaw
+Fallout4.esm;002499D7;NPC_;EncDeathclaw05AmbushLegendary;Legendary Savage Deathclaw
+Fallout4.esm;002499D6;NPC_;EncDeathclaw04AmbushLegendary;Legendary Deathclaw Matriarch
+Fallout4.esm;002499D5;NPC_;EncDeathclaw03AmbushLegendary;Legendary Glowing Deathclaw
+Fallout4.esm;002499D4;NPC_;EncDeathclaw01AmbushLegendary;Legendary Deathclaw
+Fallout4.esm;002499D3;NPC_;EncDeathclaw02AmbushLegendary;Legendary Alpha Deathclaw
+Fallout4.esm;002499D1;NPC_;EncBloodbug06AmbushLegendary;Legendary Vampiric Bloodbug
+Fallout4.esm;002499D0;NPC_;EncBloodbug05AmbushLegendary;Legendary Glowing Bloodbug
+Fallout4.esm;002499CF;NPC_;EncBloodbug04AmbushLegendary;Legendary Infected Bloodbug
+Fallout4.esm;002499CE;NPC_;EncBloodbug03AmbushLegendary;Legendary Red Widow Bloodbug
+Fallout4.esm;002499CD;NPC_;EncBloodbug02AmbushLegendary;Legendary Bloodbug
+Fallout4.esm;002499CB;NPC_;EncBloatfly04AmbushLegendary;Legendary Glowing Bloatfly
+Fallout4.esm;002499CA;NPC_;EncBloatfly03AmbushLegendary;Legendary Festering Bloatfly
+Fallout4.esm;002499C9;NPC_;EncBloatfly02AmbushLegendary;Legendary Black Bloatfly
+Fallout4.esm;002499C8;NPC_;LvlMutantHoundLegendary;
+Fallout4.esm;002499C6;NPC_;LvlAssaultronLegendary;
+Fallout4.esm;002499C4;NPC_;EncRadRoachAmbushLegendary;Legendary Radroach
+Fallout4.esm;002499C3;NPC_;LvlSynthAmbushLegendary;
+Fallout4.esm;002499C2;NPC_;LvlSupermutantRifleAmbushLegendary;
+Fallout4.esm;002499C1;NPC_;LvlStingwingAmbushLegendary;
+Fallout4.esm;002499C0;NPC_;LvlRadscorpionAmbushLegendary;
+Fallout4.esm;002499BF;NPC_;LvlMoleratAmbushLegendary;
+Fallout4.esm;002499BE;NPC_;LvlMirelurkKingAmbushLegendary;
+Fallout4.esm;002499BD;NPC_;LvlMirelurkHunterAmbushLegendary;
+Fallout4.esm;002499BC;NPC_;LvlMirelurkCrabAmbushLegendary;
+Fallout4.esm;002499BB;NPC_;LvlFeralGhoulAmbushLegendary;
+Fallout4.esm;002499BA;NPC_;LvlFeralGhoulGlowingOneAmbushLegendary;
+Fallout4.esm;002499B9;NPC_;LvlDeathclawAmbushLegendary;
+Fallout4.esm;002499B8;NPC_;LvlBloodbugAmbushLegendary;
+Fallout4.esm;002499B7;NPC_;LvlBloatflyAmbushLegendary;
+Fallout4.esm;002499B4;NPC_;LvlMrGutsyLegendary;
+Fallout4.esm;0024965E;NPC_;LvlVertibirdOrbitGunner;
+Fallout4.esm;0024944E;NPC_;LvlSynthCourserNoTeleport_Institute;
+Fallout4.esm;00248618;NPC_;POIRoachKing;Regi Blattaria
+Fallout4.esm;002485DF;NPC_;DN133LvlMirelurkQueenAmbushWater;
+Fallout4.esm;002483E8;NPC_;EncSuperMutant03MinigunBoss;
+Fallout4.esm;002483E7;NPC_;EncSuperMutant09MinigunBoss;
+Fallout4.esm;002483E6;NPC_;EncSuperMutant08MinigunBoss;
+Fallout4.esm;002483E5;NPC_;EncSuperMutant07MinigunBoss;
+Fallout4.esm;002483E4;NPC_;EncSuperMutant06MinigunBoss;
+Fallout4.esm;002483E3;NPC_;EncSuperMutant05MinigunBoss;
+Fallout4.esm;002483E2;NPC_;EncSuperMutant04MinigunBoss;
+Fallout4.esm;002483E1;NPC_;EncSuperMutantTemplateMinigunBoss;
+Fallout4.esm;00248270;NPC_;DN017_EncSynthVoice01;Synth Strider
+Fallout4.esm;0024826F;NPC_;DN017_LvlSynthAuto;
+Fallout4.esm;0024826E;NPC_;DN017_LvlSynthPistol;
+Fallout4.esm;00247984;NPC_;EncStingwing_LootCorpse;Stingwing Darter
+Fallout4.esm;00247981;NPC_;EncBloatfly_LootCorpse;Black Bloatfly
+Fallout4.esm;00247557;NPC_;EncSynthBossTemplate;Synth Strider
+Fallout4.esm;00247553;NPC_;EncGunnerBossTemplate;Gunner
+Fallout4.esm;0024754C;NPC_;EncSuperMutantTemplateBoss;Super Mutant
+Fallout4.esm;0024754B;NPC_;EncSuperMutantTemplateAutoBoss;
+Fallout4.esm;00246BF1;NPC_;MQ101PlayerSpouseFemale_NameOnly;Nora
+Fallout4.esm;00246BF0;NPC_;MQ101PlayerSpouseMale_NameOnly;Nate
+Fallout4.esm;00246977;NPC_;EncSynthInstituteVoice03;Synth Strider
+Fallout4.esm;00246976;NPC_;EncSynthInstituteVoice02;Synth Strider
+Fallout4.esm;00246975;NPC_;EncSynthInstituteVoice01;Synth Strider
+Fallout4.esm;00245938;NPC_;LvlMoleratAmbushDelayed;
+Fallout4.esm;00240C22;NPC_;AudioTemplateMinutemen;Minuteman
+Fallout4.esm;00240C21;NPC_;AudioTemplateSynthGen1;Synth
+Fallout4.esm;002404B6;NPC_;EncTriggerman07Legendary;Legendary Triggerman
+Fallout4.esm;002404B5;NPC_;EncTriggerman06Legendary;Legendary Triggerman
+Fallout4.esm;002404B4;NPC_;EncTriggerman05Legendary;Legendary Triggerman
+Fallout4.esm;002404B3;NPC_;EncTriggerman04Legendary;Legendary Triggerman
+Fallout4.esm;002404B2;NPC_;EncTriggerman03Legendary;Legendary Triggerman
+Fallout4.esm;00240109;NPC_;RECheckpoint_LvlBoSSoldier_Defender_PowerArmor_Auto;
+Fallout4.esm;00240108;NPC_;RECheckpoint_LvlBoSScribeField_Defender;
+Fallout4.esm;00240107;NPC_;RECheckpoint_LvlBoSSoldier_Defender_CombatArmor_Auto;
+Fallout4.esm;00240106;NPC_;RECheckpoint_LvlBoSSoldier_Defender_CombatArmor_Semi;
+Fallout4.esm;00240105;NPC_;RECheckpoint_LvlBoSSoldier_Defender_PowerArmor_BigGun;
+Fallout4.esm;0023F74A;NPC_;LvlSynth_Institute_AllArmor_Melee;
+Fallout4.esm;0023F749;NPC_;LvlSynth_Institute_AllArmor_Pistol;
+Fallout4.esm;0023F748;NPC_;LvlSynth_Institute_AllArmor_Rifle;
+Fallout4.esm;0023F747;NPC_;LvlSynth_Institute_AllArmor_Auto;
+Fallout4.esm;0023F3E9;NPC_;DN091_LvlGlowingOneBoss;Wayne Gorski
+Fallout4.esm;0023E76D;NPC_;KendallEncSynth01;Synth
+Fallout4.esm;0023E75A;NPC_;REAssaultSpeaker_LvlCourser;
+Fallout4.esm;0023E759;NPC_;REAssaultSpeaker_LvlSynth02;
+Fallout4.esm;0023E758;NPC_;REAssaultSpeaker_LvlBoSSoldier;
+Fallout4.esm;0023E757;NPC_;REAssaultSpeaker_LvlMinuteman;
+Fallout4.esm;0023D8D2;NPC_;LvlBoSSoldier_MixedArmor_MixedWeapon;
+Fallout4.esm;0023D8CD;NPC_;EncGunner01MeleeTemplate;Gunner
+Fallout4.esm;0023D8CC;NPC_;EncGunner01AutoTemplate;Gunner
+Fallout4.esm;0023D8CB;NPC_;LvlGunnerMixed;
+Fallout4.esm;0023D8C9;NPC_;EncRaider01PowerArmorTemplate;
+Fallout4.esm;0023D8C7;NPC_;EncRaider01MissileTemplate;
+Fallout4.esm;0023D8C6;NPC_;LvlRaiderMixed;
+Fallout4.esm;0023D8C4;NPC_;LvlSupermutantMixed;
+Fallout4.esm;0023CD7A;NPC_;RECheckpoint_LvlRRagent_PostQuestDefender;
+Fallout4.esm;0023CACA;NPC_;RR301LvlSynthTeleport;
+Fallout4.esm;0023B857;NPC_;POIJS011EncHouseCat;House Cat
+Fallout4.esm;0023B856;NPC_;POIJS011Merchant;Trader
+Fallout4.esm;0023AF94;NPC_;DN009_LvlGunner_GunnersMale01;
+Fallout4.esm;0023AF93;NPC_;DN009_LvlGunner_GunnersMale02;
+Fallout4.esm;00239FB2;NPC_;LvlSMBehemoth_LevelGated;
+Fallout4.esm;00239FB1;NPC_;LvlMirelurkQueen_LevelGated;
+Fallout4.esm;00239FB0;NPC_;LvlDeathclaw_LevelGated;
+Fallout4.esm;00239F54;NPC_;LvlSentryBot_Gunner_LevelGated;
+Fallout4.esm;00239F52;NPC_;LvlSentryBot_LevelGated;
+Fallout4.esm;002391B5;NPC_;DebugJPRacialCommentsValentine;Racial Commentor Valentine
+Fallout4.esm;00238CD9;NPC_;LvlSupermutantSuiciderAggro1200;
+Fallout4.esm;002385A3;NPC_;EncTurretTripodMounted04;Machinegun Turret Mk VII
+Fallout4.esm;002385A2;NPC_;EncTurretTripodMounted03;Machinegun Turret Mk V
+Fallout4.esm;002385A1;NPC_;EncTurretStandingCart04;Machinegun Turret Mk VII
+Fallout4.esm;002385A0;NPC_;EncTurretStandingCart03;Machinegun Turret Mk V
+Fallout4.esm;0023859F;NPC_;EncTurretStandingCart02;Machinegun Turret Mk III
+Fallout4.esm;0023859E;NPC_;EncTurretTripodMounted02;Machinegun Turret Mk III
+Fallout4.esm;00237D7B;NPC_;DO_NOT_PLACE_FillAttackSecondsFromAnimation_WeaponHolder_Human;
+Fallout4.esm;00237B67;NPC_;EncWorkshopNPCFemaleFarmer09;
+Fallout4.esm;00237B66;NPC_;EncWorkshopNPCMaleFarmer09;
+Fallout4.esm;0023228E;NPC_;PresetMale17;PresetMale17
+Fallout4.esm;0023228D;NPC_;PresetMale16;PresetMale16
+Fallout4.esm;0023228C;NPC_;PresetMale15;PresetMale15
+Fallout4.esm;0023228B;NPC_;PresetMale14;PresetMale14
+Fallout4.esm;0023134F;NPC_;PresetFemale20;PresetFemale2
+Fallout4.esm;0023134E;NPC_;PresetFemale19;PresetFemale2
+Fallout4.esm;0023134D;NPC_;PresetFemale18;PresetFemale2
+Fallout4.esm;0023134C;NPC_;PresetFemale17;PresetFemale17
+Fallout4.esm;0023134B;NPC_;PresetFemale16;PresetFemale16
+Fallout4.esm;0023134A;NPC_;PresetFemale15;PresetFemale15
+Fallout4.esm;00231349;NPC_;PresetFemale14;PresetFemale14
+Fallout4.esm;00231348;NPC_;PresetFemale13;PresetFemale13
+Fallout4.esm;00231346;NPC_;PresetFemale11;PresetFemale11
+Fallout4.esm;00230793;NPC_;EncGuardDogTemplate;Attack Dog
+Fallout4.esm;0022F1D4;NPC_;DN033_LvlRaiderGrenade;
+Fallout4.esm;0022F1D3;NPC_;DN033_LvlRaiderAuto;
+Fallout4.esm;0022F1D2;NPC_;DN033_LvlRaider_MaleVoice02;
+Fallout4.esm;0022F1D1;NPC_;DN033_LvlRaiderBoltAction;
+Fallout4.esm;0022F1CF;NPC_;DN033_LvlRaider_MaleVoice01;
+Fallout4.esm;0022F105;NPC_;Prydwen_LvlBoSSoldier_PAArmor_Guard_Maxson;
+Fallout4.esm;0022D9F0;NPC_;LvlGunnerFatman;
+Fallout4.esm;0022D9DE;NPC_;LvlRaiderFatman;
+Fallout4.esm;0022CDFB;NPC_;LvlAssaultronGunner;
+Fallout4.esm;0022CDF9;NPC_;EncAssaultron03Gunner;Gunner Assaultron Dominator
+Fallout4.esm;0022CDF8;NPC_;EncAssaultron02Gunner;Gunner Assaultron Invader
+Fallout4.esm;0022CDF7;NPC_;EncAssaultron01Gunner;Gunner Assaultron
+Fallout4.esm;0022CDF6;NPC_;EncSentryBot04Gunner;Gunner Annihilator Sentry Bot Mk.II
+Fallout4.esm;0022CDF5;NPC_;EncSentryBot03Gunner;Gunner Annihilator Sentry Bot
+Fallout4.esm;0022CDF4;NPC_;EncSentryBot02Gunner;Gunner Siege Breaker Sentry Bot
+Fallout4.esm;0022CDF3;NPC_;EncSentryBot01Gunner;Gunner Sentry Bot
+Fallout4.esm;0022B62F;NPC_;LvlGunnerNoLegendary;
+Fallout4.esm;0022B62E;NPC_;LvlRaiderNoLegendary;
+Fallout4.esm;0022B62D;NPC_;LvlFeralGhoulNoLegendary;
+Fallout4.esm;0022B59D;NPC_;WorkshopTurretLaserHeavy;Heavy Laser Turret
+Fallout4.esm;0022B295;NPC_;CambridgeDrifterGhoul;Father Gabe
+Fallout4.esm;0022B18D;NPC_;WorkshopTurretSpotlight;Spotlight
+Fallout4.esm;0022B184;NPC_;WorkshopTurretMissileLauncher;Missile Turret
+Fallout4.esm;0022B183;NPC_;WorkshopTurretShotgun;Shotgun Turret
+Fallout4.esm;00228BE8;NPC_;DN136_LvlMinuteman;
+Fallout4.esm;00228BE7;NPC_;DN136_LvlRRagent;
+Fallout4.esm;00228BE6;NPC_;DN136_LvlBoSSoldier_CombatArmor_Semi;
+Fallout4.esm;00228BE5;NPC_;DN136_LvlBoSSoldier_PowerArmor_Semi;
+Fallout4.esm;00227ED2;NPC_;POIDL030_Bethany;Bethany
+Fallout4.esm;00225B6A;NPC_;PresetFemale7;PresetFemale7
+Fallout4.esm;00225B69;NPC_;PresetFemale8;PresetFemale8
+Fallout4.esm;00225B68;NPC_;PresetFemale9;PresetFemale9
+Fallout4.esm;00225B67;NPC_;PresetFemale10;PresetFemale10
+Fallout4.esm;00225B64;NPC_;LvlRaiderPowerArmorFatman;
+Fallout4.esm;002259DE;NPC_;DNFinancial07_LvlTurretBubbleNeutral;
+Fallout4.esm;00222C7A;NPC_;DN136_InstituteScientistFemaleSRBUA;
+Fallout4.esm;00222C79;NPC_;DN136_InstituteScientistMaleSRBUA;
+Fallout4.esm;00222C72;NPC_;DN136_InstituteScientistFemaleRoboticsUA;
+Fallout4.esm;00222C71;NPC_;DN136_InstituteScientistMaleRoboticsUA;
+Fallout4.esm;00222C6D;NPC_;DN136_InstituteScientistMaleAdvSystemsUA;
+Fallout4.esm;00222C69;NPC_;DN136_InstituteScientistFemaleAdvSystemsUA;
+Fallout4.esm;002223F8;NPC_;MQ302BoSSoldier02;
+Fallout4.esm;002223F7;NPC_;MQ302BoSSoldier01;
+Fallout4.esm;002216CD;NPC_;encMrGutsy01CombatRifle;Mr. Gutsy
+Fallout4.esm;002216CC;NPC_;encMrGutsy01Laser;Mr. Gutsy
+Fallout4.esm;00221253;NPC_;BoSR04Scribe;Brotherhood Scribe
+Fallout4.esm;0021DDBF;NPC_;encMrGutsy04Gunner;Gunner Colonel Gutsy
+Fallout4.esm;0021DDBE;NPC_;encMrGutsy03Gunner;Gunner Major Gutsy
+Fallout4.esm;0021DDBD;NPC_;encMrGutsy02Gunner;Gunner Lt. Gutsy
+Fallout4.esm;0021DDBB;NPC_;encMrGutsy01Gunner;Gunner Mr. Gutsy
+Fallout4.esm;0021DDB7;NPC_;EncBoSSoldier09;Brotherhood Star Paladin
+Fallout4.esm;0021C984;NPC_;HolotapeCommonGroundskeeperVoice;
+Fallout4.esm;0021A2AB;NPC_;trailerMutantHeavy;
+Fallout4.esm;00218F15;NPC_;MS13Photo_PaulPembroke;
+Fallout4.esm;00218F14;NPC_;MS13Photo_MalcolmLatimer;
+Fallout4.esm;00217AA3;NPC_;MS13Photo_HenryCooke;
+Fallout4.esm;00217AA0;NPC_;MQ302Minuteman02;
+Fallout4.esm;00217A9F;NPC_;MQ302Minuteman01;
+Fallout4.esm;00216358;NPC_;EncSentryBot04;Annihilator Sentry Bot Mk.II
+Fallout4.esm;00216357;NPC_;EncSentryBot03;Annihilator Sentry Bot
+Fallout4.esm;0021624D;NPC_;V81SecurityTraitsMale02;
+Fallout4.esm;0021624C;NPC_;V81SecurityTraitsMale01;
+Fallout4.esm;0021624B;NPC_;V81SecurityTraitsFemale02;
+Fallout4.esm;0021624A;NPC_;V81SecurityTraitsFemale01;
+Fallout4.esm;00216249;NPC_;V81CitizenTraitsMale04;
+Fallout4.esm;00216248;NPC_;V81CitizenTraitsMale03;
+Fallout4.esm;00216247;NPC_;V81CitizenTraitsMale02;
+Fallout4.esm;00216246;NPC_;V81CitizenTraitsMale01;
+Fallout4.esm;00216245;NPC_;V81CitizenTraitsFemale04;
+Fallout4.esm;00216244;NPC_;V81CitizenTraitsFemale03;
+Fallout4.esm;00216243;NPC_;V81CitizenTraitsFemale02;
+Fallout4.esm;00216242;NPC_;V81CitizenTraitsFemale01;
+Fallout4.esm;00216241;NPC_;V81CitizenTemplate;Resident
+Fallout4.esm;00215CE1;NPC_;CovenantSecurityFaceM04;Settler
+Fallout4.esm;00215CE0;NPC_;CovenantSecurityFaceM03;Settler
+Fallout4.esm;00215CDF;NPC_;CovenantSecurityFaceM02;Settler
+Fallout4.esm;00215CDE;NPC_;CovenantSecurityFaceM01;Settler
+Fallout4.esm;00215CD2;NPC_;LvLForged_Boss;Forged Leader
+Fallout4.esm;00214B6B;NPC_;POISC22_Ghoul02;
+Fallout4.esm;00214B6A;NPC_;POISC22_Ghoul01;
+Fallout4.esm;0021464D;NPC_;REAssault_LvlSynthCourser_NoTeleport_Aggro1536;
+Fallout4.esm;0021464C;NPC_;REAssaultSC06_LvlProtectronAggro;
+Fallout4.esm;0021464B;NPC_;REAssaultSC06_LvlScavenger;
+Fallout4.esm;00213F53;NPC_;EncChildrenOfAtom05;Child of Atom Reborn
+Fallout4.esm;002129A6;NPC_;KHRaiderMeleeNoWeap;
+Fallout4.esm;002129A4;NPC_;KendallRaiderNoWeap;
+Fallout4.esm;0020F489;NPC_;EncGunner00;Gunner
+Fallout4.esm;0020ED0B;NPC_;ParsonsGuard03;Mercenary
+Fallout4.esm;0020ED0A;NPC_;ParsonsGuard04;Mercenary
+Fallout4.esm;0020ED09;NPC_;ParsonsGuard02;Mercenary
+Fallout4.esm;0020ED08;NPC_;ParsonsGuard01;Mercenary
+Fallout4.esm;0020ED06;NPC_;LvlForgedGrenadier_Burned;
+Fallout4.esm;0020ED05;NPC_;LvlForgedFlamerAggro_Burned;
+Fallout4.esm;0020ED04;NPC_;LvlForgedFlamer_Burned;
+Fallout4.esm;0020ED03;NPC_;LvlForged_Burned;
+Fallout4.esm;0020EABD;NPC_;LvlViciousDogAlphaAggro1100;
+Fallout4.esm;0020EABC;NPC_;LvlViciousDogAggro1100;
+Fallout4.esm;0020EA68;NPC_;EncBoSTraitsSoldierMale06;Brotherhood Soldier Initiate
+Fallout4.esm;0020EA67;NPC_;EncBoSTraitsSoldierMale05;Brotherhood Soldier Initiate
+Fallout4.esm;0020EA66;NPC_;EncBoSTraitsSoldierFemale03;Brotherhood Soldier Initiate
+Fallout4.esm;0020CE37;NPC_;MQ101KelloggScene_PlayerDuplicate;
+Fallout4.esm;0020AEE8;NPC_;EncSynthCourser08;
+Fallout4.esm;0020AEE7;NPC_;EncSynthCourser07;
+Fallout4.esm;0020AEE6;NPC_;EncSynthCourser06;
+Fallout4.esm;0020AEE5;NPC_;EncSynthCourser05;
+Fallout4.esm;0020AEE3;NPC_;EncSynthCourser04;
+Fallout4.esm;0020AEE2;NPC_;EncSynthCourser03;
+Fallout4.esm;0020AEE1;NPC_;EncSynthCourser02;
+Fallout4.esm;0020A57B;NPC_;Loot_CorpseSettlerMale_Empty;Settler
+Fallout4.esm;0020A57A;NPC_;Loot_CorpseTraderMale_Empty;Trader
+Fallout4.esm;0020A579;NPC_;Loot_CorpseTraderFemale_Empty;
+Fallout4.esm;0020A578;NPC_;Loot_CorpseSettlerFemale_Empty;
+Fallout4.esm;0020A577;NPC_;Loot_CorpseMinutemanMale_Empty;Minuteman
+Fallout4.esm;0020A221;NPC_;HolotapeJunkjetTechnicianVoice;
+Fallout4.esm;002075EB;NPC_;DN108_LvlRaiderBossGhoul;Slough
+Fallout4.esm;0020619C;NPC_;POISC21_Hunter;Hunter
+Fallout4.esm;00206173;NPC_;POISC21_EleanorDog;Teddy
+Fallout4.esm;0020615B;NPC_;LvlSMBehemoth_Aggro2048;
+Fallout4.esm;0020447A;NPC_;KendallCorpseSettlerMale;Railroad Agent
+Fallout4.esm;00204479;NPC_;KendallCorpseSettlerFemale;Railroad Agent
+Fallout4.esm;001FE6AB;NPC_;EncChildrenOfAtomFaceM05;Child of Atom
+Fallout4.esm;001FE6AA;NPC_;EncChildrenOfAtomFaceF03;
+Fallout4.esm;001FE6A9;NPC_;EncChildrenOfAtomFaceF02;
+Fallout4.esm;001FE6A8;NPC_;EncChildrenOfAtomFaceM04;Child of Atom
+Fallout4.esm;001FE6A7;NPC_;EncChildrenOfAtomFaceM03;Child of Atom
+Fallout4.esm;001FE6A6;NPC_;EncChildrenOfAtomFaceM02;Child of Atom
+Fallout4.esm;001FE6A5;NPC_;EncChildrenOfAtomFaceM01;Child of Atom
+Fallout4.esm;001FDE69;NPC_;LvlMoleratBoss;
+Fallout4.esm;001FB1FF;NPC_;Loot_CorpseChildrenOfAtomMale02;Child of Atom
+Fallout4.esm;001FB1EC;NPC_;POIMR01_LvlRaiderDog03;Alissa
+Fallout4.esm;001FB1EB;NPC_;POIMR01_LvlRaiderDog02;Kate
+Fallout4.esm;001FB1E9;NPC_;POIMR01_LvlRaiderDog01;Kyle
+Fallout4.esm;001FB1E7;NPC_;POIMR01Loot_CorpseSettlerMale;Evan O'Dood
+Fallout4.esm;001FA2D9;NPC_;HostileAnyTemplate;
+Fallout4.esm;001FA2D8;NPC_;HostileRangedTemplate;
+Fallout4.esm;001FA2C6;NPC_;HostileMeleeTemplate;
+Fallout4.esm;001F8A72;NPC_;POISC13_DeadYoungYaoGuai;Young Yao Guai
+Fallout4.esm;001F6B2B;NPC_;InstituteSynthMaintenance_SRB;
+Fallout4.esm;001F6B23;NPC_;InstituteSynthMaintenance_BioSci;
+Fallout4.esm;001F6B07;NPC_;EncBoSSoldier08;Brotherhood Paladin-Commander
+Fallout4.esm;001F6B06;NPC_;EncBoSSoldier07;Brotherhood Paladin
+Fallout4.esm;001F6B05;NPC_;EncBoSSoldier06;Brotherhood Knight-Commander
+Fallout4.esm;001F418A;NPC_;EncSuperMutantVoice03;
+Fallout4.esm;001F4189;NPC_;EncSuperMutantVoice02;
+Fallout4.esm;001F4188;NPC_;EncSuperMutantVoice01;
+Fallout4.esm;001F4181;NPC_;Loot_CorpseBoSScribeEngineer;
+Fallout4.esm;001F4180;NPC_;Loot_CorpseBoSScribeScience;
+Fallout4.esm;001F417F;NPC_;Loot_CorpseBoSSoldier_CombatArmor_Missile;
+Fallout4.esm;001F417E;NPC_;Loot_CorpseBoSSoldier_CombatArmor_Semi;
+Fallout4.esm;001F417D;NPC_;Loot_CorpseBoSSoldier_CombatArmor_Auto;
+Fallout4.esm;001F417C;NPC_;Loot_CorpseBoSScribeField;
+Fallout4.esm;001F2555;NPC_;MS16LvlTriggermanUnaggressiveMeleeGhoulOnly;
+Fallout4.esm;001F2554;NPC_;MS16LvlTriggermanUnaggressive;
+Fallout4.esm;001F252B;NPC_;InstituteCourserPatroller2_Institute;
+Fallout4.esm;001F22F4;NPC_;POISC_Fisherman;Fisherman
+Fallout4.esm;001F22F3;NPC_;POISC_Moonshiner;Moonshiner
+Fallout4.esm;001F075A;NPC_;LvlTurretTripodGunner_Aggro1024;
+Fallout4.esm;001F0719;NPC_;Mq101Newscaster;Newscaster
+Fallout4.esm;001EE912;NPC_;InstituteScientistMale03;Institute Scientist
+Fallout4.esm;001EE910;NPC_;InstituteScientistFemale03;Institute Scientist
+Fallout4.esm;001ECF5B;NPC_;DN133LvlMirelurkHunterAmbush;
+Fallout4.esm;001EC1F7;NPC_;DN133LvlMirelurkCombined;
+Fallout4.esm;001EB9A7;NPC_;LvlSynthCourserNoTeleport;
+Fallout4.esm;001EA899;NPC_;encGunnerFaceF04;
+Fallout4.esm;001EA898;NPC_;encGunnerFaceF03;
+Fallout4.esm;001EA897;NPC_;encGunnerFaceM09;
+Fallout4.esm;001EA896;NPC_;encGunnerFaceM08;
+Fallout4.esm;001EA895;NPC_;encGunnerFaceM07;
+Fallout4.esm;001EA894;NPC_;encGunnerFaceM06;
+Fallout4.esm;001EA893;NPC_;encGunnerFaceM05;
+Fallout4.esm;001E9922;NPC_;MQ101FenceNPCM05;Neighbor
+Fallout4.esm;001E9921;NPC_;MQ101FenceNPCF04;Neighbor
+Fallout4.esm;001E991E;NPC_;MQ101FenceNPCF03;Neighbor
+Fallout4.esm;001E991D;NPC_;MQ101FenceNPCM04;Neighbor
+Fallout4.esm;001E991A;NPC_;MQ101FenceNPCM03;Neighbor
+Fallout4.esm;001E9917;NPC_;MQ101FenceNPCF02;Neighbor
+Fallout4.esm;001E9916;NPC_;MQ101FenceNPCM02;Neighbor
+Fallout4.esm;001E9913;NPC_;MQ101FenceNPCF01;Neighbor
+Fallout4.esm;001E990C;NPC_;MQ101FenceNPCM01;Neighbor
+Fallout4.esm;001E810E;NPC_;POIRJ11_Leonard;Leonard Moore
+Fallout4.esm;001E742B;NPC_;EncRaider02bMelee;
+Fallout4.esm;001E742A;NPC_;EncRaider02bGrenade;
+Fallout4.esm;001E7429;NPC_;EncRaider02b;Raider Psycho
+Fallout4.esm;001E73F4;NPC_;PresetMale13;PresetMale13
+Fallout4.esm;001E73BF;NPC_;DNPrime_LvlSMBehemothNoPairedKill;
+Fallout4.esm;001E61E4;NPC_;EncProtectronPolice01;Police Protectron
+Fallout4.esm;001E61E3;NPC_;EncProtectronMedic01;Protectron
+Fallout4.esm;001E61E2;NPC_;LvlProtectronConstruction_Hostile;
+Fallout4.esm;001E61E1;NPC_;LvlProtectronFireman_Hostile;
+Fallout4.esm;001E61E0;NPC_;EncProtectronFireman01;Protectron
+Fallout4.esm;001E5F63;NPC_;LvlRaiderNoHelmet;
+Fallout4.esm;001E4385;NPC_;DN136_ShutdownLvlSynth_Institute;
+Fallout4.esm;001E2E6D;NPC_;POIJSLvlRaiderBossAggro512;
+Fallout4.esm;001E2D7C;NPC_;VoiceOnly_MagnoliaMuffledReverb;Magnolia
+Fallout4.esm;001E2D7A;NPC_;VoiceOnly_MagnoliaNormalReverb;Magnolia
+Fallout4.esm;001E23A7;NPC_;EncRaiderDog04Vicious;
+Fallout4.esm;001E23A6;NPC_;EncRaiderDog03Vicious;
+Fallout4.esm;001E23A5;NPC_;EncRaiderDog02Vicious;
+Fallout4.esm;001E23A4;NPC_;EncRaiderDog01Vicious;
+Fallout4.esm;001E23A2;NPC_;POISC08_LvlYaoGuai;
+Fallout4.esm;001E203D;NPC_;DN136_RR_InstituteSynthGen3Male02;Rebel Synth
+Fallout4.esm;001E203C;NPC_;DN136_RR_InstituteSynthGen3Male01;Rebel Synth
+Fallout4.esm;001E203B;NPC_;DN136_RR_InstituteSynthGen3Female02;Rebel Synth
+Fallout4.esm;001E203A;NPC_;DN136_RR_InstituteSynthGen3Female01;Rebel Synth
+Fallout4.esm;001E1F43;NPC_;POISC06_Eleanor;Eleanor
+Fallout4.esm;001E1D73;NPC_;encSynthGen2InstBlack;Synth
+Fallout4.esm;001E079C;NPC_;EncTriggermanGhoulFaceM05;Triggerman
+Fallout4.esm;001E079B;NPC_;EncTriggermanGhoulFaceM04;Triggerman
+Fallout4.esm;001E079A;NPC_;EncTriggermanGhoulFaceM03;Triggerman
+Fallout4.esm;001E0799;NPC_;EncTriggermanGhoulFaceM02;Triggerman
+Fallout4.esm;001E0798;NPC_;EncTriggermanGhoulFaceM01;Triggerman
+Fallout4.esm;001E0797;NPC_;EncTriggermanFaceM05;Triggerman
+Fallout4.esm;001E0796;NPC_;EncTriggermanFaceM04;Triggerman
+Fallout4.esm;001E0795;NPC_;EncTriggermanFaceM03;Triggerman
+Fallout4.esm;001E0794;NPC_;EncTriggermanFaceM02;Triggerman
+Fallout4.esm;001E0793;NPC_;EncTriggermanFaceM01;Triggerman
+Fallout4.esm;001DFE17;NPC_;LvlMrHandy_SawHostile;
+Fallout4.esm;001DFE16;NPC_;LvlMrHandy_FlamerHostile;
+Fallout4.esm;001DFE15;NPC_;LvlMrHandy_StandardHostile;
+Fallout4.esm;001DFE14;NPC_;DN146_LvlProtectronQuest;
+Fallout4.esm;001DFE13;NPC_;LvlMrHandy_RandomHostile;
+Fallout4.esm;001DE593;NPC_;RR302LvlBoSSoldier_PowerArmor_BigGun_Grenade;
+Fallout4.esm;001DE50C;NPC_;LvlBloodbugAggro1200;
+Fallout4.esm;001D9AD5;NPC_;DNPrime_LvlSMBehemoth;
+Fallout4.esm;001D8E1A;NPC_;encRaiderFaceF05;
+Fallout4.esm;001D8E19;NPC_;encRaiderFaceF04;
+Fallout4.esm;001D88B5;NPC_;DN136_InstituteScientistMaleRedRelay;
+Fallout4.esm;001D88B4;NPC_;DN136_InstituteScientistFemaleRedRelay;
+Fallout4.esm;001D88B3;NPC_;DN136_InstituteScientistFemaleBlueRelay;
+Fallout4.esm;001D77A0;NPC_;EncProtectronConstruction01;Utility Protectron
+Fallout4.esm;001D58EC;NPC_;BHExtBOSSoldier_PowerArmorSemi;
+Fallout4.esm;001D58EB;NPC_;BHExtBOSSoldier_PowerArmorMissile;
+Fallout4.esm;001D58EA;NPC_;BHExtBOSSoldier_PowerArmorBigGun;
+Fallout4.esm;001D55F6;NPC_;LvlTurretStandingCartRaider_Aggro1536;
+Fallout4.esm;001D4CBC;NPC_;DNPrime_LvlBoSSoldier_CombatArmor_Auto02;
+Fallout4.esm;001D4CBB;NPC_;DNPrime_LvlBoSSoldier_PowerArmor_BigGun02;
+Fallout4.esm;001D4CBA;NPC_;DNPrime_LvlBoSSoldier_PowerArmor_Missile02;
+Fallout4.esm;001D4CB7;NPC_;DNPrime_LvlBoSSoldier_CombatArmor_Auto01;
+Fallout4.esm;001D4CB6;NPC_;DNPrime_LvlBoSSoldier_PowerArmor_BigGun01;
+Fallout4.esm;001D4CB5;NPC_;DNPrime_LvlBoSSoldier_PowerArmor_Missile01;
+Fallout4.esm;001D4A17;NPC_;DN170_LvlRaiderBossPowerArmor_Minigun;
+Fallout4.esm;001D475F;NPC_;DN062Loot_CorpseFeralGhoulPink05;
+Fallout4.esm;001D475E;NPC_;DN062_FeralGhoul02pink;Feral Ghoul
+Fallout4.esm;001D475D;NPC_;DN062Loot_CorpseFeralGhoulPink02;
+Fallout4.esm;001D475C;NPC_;DN062LvlFeralGhoulPinkAggro800;
+Fallout4.esm;001D475B;NPC_;DN062_FeralGhoul07pink;Feral Ghoul
+Fallout4.esm;001D475A;NPC_;DN062LvlFeralGhoulPink;
+Fallout4.esm;001D4758;NPC_;DN062_FeralGhoul05pink;Feral Ghoul
+Fallout4.esm;001D4757;NPC_;DN062_FeralGhoul06pink;Feral Ghoul
+Fallout4.esm;001D4756;NPC_;DN062_FeralGhoul04pink;Feral Ghoul
+Fallout4.esm;001D4755;NPC_;DN062LvlFeralGhoulPinkAmbush;
+Fallout4.esm;001D4387;NPC_;DN136_InstituteScientistFemaleBioScienceUA;
+Fallout4.esm;001D4386;NPC_;DN136_InstituteScientistMaleBioScienceUA;
+Fallout4.esm;001D4385;NPC_;DN136_InstituteScientistMaleBioScience;
+Fallout4.esm;001D4384;NPC_;DN136_InstituteScientistFemaleBioScience;
+Fallout4.esm;001D4383;NPC_;DN136_InstituteScientistFemaleBlue;
+Fallout4.esm;001D2C29;NPC_;DN136_LvlSentryBotAmbushAssaultRifles;
+Fallout4.esm;001D2743;NPC_;MinutemenDog;Guard Dog
+Fallout4.esm;001D2439;NPC_;Loot_DeadRaiderFemale01;
+Fallout4.esm;001D1F4A;NPC_;GoodneighborDrifterF08GhoulThirdRail;
+Fallout4.esm;001D1F48;NPC_;GoodneighborDrifterM07ThirdRail;
+Fallout4.esm;001D1F46;NPC_;GoodneighborDrifterF07ThirdRail;
+Fallout4.esm;001D1A57;NPC_;FEVLabSupermutant;
+Fallout4.esm;001D16B4;NPC_;LvlScavengerAggro768;Scavenger
+Fallout4.esm;001D168F;NPC_;POICat;Cat
+Fallout4.esm;001CFB5A;NPC_;HolotapeCITArcjetExec01;
+Fallout4.esm;001CFB59;NPC_;HolotapeCITAdmin02;
+Fallout4.esm;001CFB58;NPC_;HolotapeCITAdmin01;
+Fallout4.esm;001CFB57;NPC_;HolotapeCITProfessor01;
+Fallout4.esm;001CFB56;NPC_;HolotapeCITStudent03;
+Fallout4.esm;001CFB55;NPC_;HolotapeCITStudent02;
+Fallout4.esm;001CFB54;NPC_;HolotapeCITStudent01;
+Fallout4.esm;001CFB53;NPC_;HolotapeInstituteVoiceActor03;
+Fallout4.esm;001CFB19;NPC_;MQ302InstituteBoss03;A-2018
+Fallout4.esm;001CFB18;NPC_;MQ302InstituteBoss02;Z4K-97B
+Fallout4.esm;001CFB17;NPC_;MQ302InstituteBoss01;XPN-20A
+Fallout4.esm;001CFB13;NPC_;LvlAssaultronStealth;
+Fallout4.esm;001CF4B3;NPC_;InstituteHolotapeVoiceActor03;
+Fallout4.esm;001CF298;NPC_;EncRaiderDog04;
+Fallout4.esm;001CF297;NPC_;EncRaiderDog03;
+Fallout4.esm;001CF296;NPC_;EncRaiderDog02;
+Fallout4.esm;001CF28C;NPC_;EncRaiderDogTemplate;Attack Dog
+Fallout4.esm;001CF010;NPC_;MQ101VaultTecElevatorGuard02;Vault-Tec Security
+Fallout4.esm;001CF00F;NPC_;MQ101VaultTecSecurity04;Vault-Tec Security
+Fallout4.esm;001CF00E;NPC_;MQ101VaultTecSecurity03;Vault-Tec Security
+Fallout4.esm;001CF00D;NPC_;MQ101VaultTecSecurity02;Vault-Tec Security
+Fallout4.esm;001CC89F;NPC_;InstituteCourserSandboxConcourse;
+Fallout4.esm;001CC89E;NPC_;InstituteCourserPatroller1_Institute;
+Fallout4.esm;001CC494;NPC_;DN124_LvlRaiderUnarmed;
+Fallout4.esm;001CC465;NPC_;LvlMrHandy_Flamer_Gunner_Aggro2048;
+Fallout4.esm;001CC464;NPC_;LvlMrGutsy_GunnerAggro2048;
+Fallout4.esm;001CC463;NPC_;LvlGunnerSniperAggro2048;
+Fallout4.esm;001CC462;NPC_;LvlGunnerShotgunAggro2048;
+Fallout4.esm;001CC461;NPC_;LvlGunnerSemiAutoAggro2048;
+Fallout4.esm;001CC460;NPC_;LvlGunnerRobotAssaultronAggro2048;
+Fallout4.esm;001CC45F;NPC_;LvlGunnerRobotAll_Aggro2048;
+Fallout4.esm;001CC45E;NPC_;LvlGunnerRobotAll_Aggro1024;
+Fallout4.esm;001CC45D;NPC_;LvlGunnerMeleeAggro2048;
+Fallout4.esm;001CC45C;NPC_;LvlGunnerBossAggro2048;Gunner Captain
+Fallout4.esm;001CC45B;NPC_;LvlGunnerBoss_PowerArmorAggro2048;
+Fallout4.esm;001CC45A;NPC_;LvlGunnerAutoAggro2048;
+Fallout4.esm;001CC459;NPC_;LvlGunnerAggro2048;
+Fallout4.esm;001CB6F1;NPC_;DN053_LvlProtectron_VirgilFaction;
+Fallout4.esm;001CB6EC;NPC_;DN053LvlTurretTripod_VirgilFaction;
+Fallout4.esm;001CB270;NPC_;DN119LvlScavenger;
+Fallout4.esm;001CA8C7;NPC_;LvlFeralGhoulBossAmbush;
+Fallout4.esm;001C9E4E;NPC_;LvlSynth_Institute_Patroller;
+Fallout4.esm;001C9E4C;NPC_;LvlSynth_SRB_Guard;
+Fallout4.esm;001C98E8;NPC_;FurnitureTesterFemale;Furniture Tester
+Fallout4.esm;001C88AB;NPC_;POIWastelanderMale03;
+Fallout4.esm;001C88AA;NPC_;POIWastelanderMale02;
+Fallout4.esm;001C88A9;NPC_;POIWastelanderFemale03;
+Fallout4.esm;001C88A8;NPC_;POIWastelanderFemale02;
+Fallout4.esm;001C88A7;NPC_;POIWastelanderFemale01;
+Fallout4.esm;001C88A6;NPC_;POIWastelanderTemplate00;Wastelander
+Fallout4.esm;001C88A5;NPC_;POIWastelanderMale01;
+Fallout4.esm;001C87CD;NPC_;UnarmedWeaponStingwing;Unarmed Weapon Stingwing
+Fallout4.esm;001C87CC;NPC_;UnarmedWeaponHuman;Unarmed Weapon Human
+Fallout4.esm;001C7754;NPC_;LvlSynthMeleeAggro768;
+Fallout4.esm;001C7753;NPC_;LvlSynthAutoAggro768;
+Fallout4.esm;001C7752;NPC_;LvlSynthBossAggro768;
+Fallout4.esm;001C7751;NPC_;LvlSynthPistolAggro768;
+Fallout4.esm;001C64A6;NPC_;LvlGunnerBossAggro1024;Gunner Captain
+Fallout4.esm;001C6434;NPC_;InstituteScientistFemaleRed;
+Fallout4.esm;001C5AA2;NPC_;LvlAssaultron_Unaggressive;
+Fallout4.esm;001C5A37;NPC_;EncProtectronSubway;Protectron Steward
+Fallout4.esm;001C4E6F;NPC_;InstituteScientistMaleRed;
+Fallout4.esm;001C4E6E;NPC_;InstituteScientistFemaleBlue;
+Fallout4.esm;001C4E5A;NPC_;InstituteSynthMaintenance;
+Fallout4.esm;001C492F;NPC_;MS07_MartyCorpse;Marty Bullfinch
+Fallout4.esm;001C404D;NPC_;HolotapeInstituteVoiceActor02;
+Fallout4.esm;001C4037;NPC_;REMerchant05;Trader
+Fallout4.esm;001C4033;NPC_;LvlMerchant;Trader
+Fallout4.esm;001C3FF7;NPC_;HolotapeInstituteVoiceActor01;
+Fallout4.esm;001C3AED;NPC_;DN147_WaldenPondSpeakerBox;
+Fallout4.esm;001C33EE;NPC_;BoS201_LvlBoSVertibirdPilot;
+Fallout4.esm;001C27AC;NPC_;InstituteCourserSRB_Institute;
+Fallout4.esm;001C2698;NPC_;LvlScavengerFemale;
+Fallout4.esm;001C2697;NPC_;LvlScavengerMale;
+Fallout4.esm;001C2694;NPC_;EncWorkshopNPCMaleGuard04;
+Fallout4.esm;001C2693;NPC_;EncWorkshopNPCMaleGuard03;
+Fallout4.esm;001C2692;NPC_;EncWorkshopNPCMaleFarmer08;
+Fallout4.esm;001C2691;NPC_;EncWorkshopNPCMaleFarmer07;
+Fallout4.esm;001C2690;NPC_;EncWorkshopNPCMaleFarmer06;
+Fallout4.esm;001C268F;NPC_;EncWorkshopNPCMaleFarmer05;
+Fallout4.esm;001C268E;NPC_;EncWorkshopNPCFemaleGuard04;
+Fallout4.esm;001C268D;NPC_;EncWorkshopNPCFemaleGuard03;
+Fallout4.esm;001C268C;NPC_;EncWorkshopNPCFemaleFarmer08;
+Fallout4.esm;001C268B;NPC_;EncWorkshopNPCFemaleFarmer07;
+Fallout4.esm;001C268A;NPC_;EncWorkshopNPCFemaleFarmer06;
+Fallout4.esm;001C2689;NPC_;EncWorkshopNPCFemaleFarmer05;
+Fallout4.esm;001C246B;NPC_;EncAssaultron03;Assaultron Dominator
+Fallout4.esm;001C2288;NPC_;LvlProtectronPolice;
+Fallout4.esm;001C2287;NPC_;LvlProtectronMedic;
+Fallout4.esm;001C2286;NPC_;LvlProtectronFireman;
+Fallout4.esm;001C227A;NPC_;LvlProtectronConstruction;
+Fallout4.esm;001C1416;NPC_;MQ203MemoryE_Kelloggtest;Me
+Fallout4.esm;001C0380;NPC_;DN150_BonnieTournquist;Bonnie
+Fallout4.esm;001BF702;NPC_;HolotapeActorDrChandrich;Doctor Chandrich
+Fallout4.esm;001BF700;NPC_;HolotapeActorArcJetTechnician02;Technician Janowski
+Fallout4.esm;001BF6FB;NPC_;HolotapeActorKarlOslow;Karl Oslow
+Fallout4.esm;001BF6FA;NPC_;HolotapeActorPrescottSoldier;SS Prescott Soldier
+Fallout4.esm;001BF6F9;NPC_;HolotapeActorArcJetTechnician01;Technician Rand
+Fallout4.esm;001BF6F8;NPC_;HolotapeActorFortStrongSoldier;Captain Dunleavy
+Fallout4.esm;001BF0C5;NPC_;LvlMinuteman_LaserMusket;
+Fallout4.esm;001BF0C4;NPC_;LvlMinuteman_Auto;
+Fallout4.esm;001BF0C3;NPC_;LvlMinuteman_NonAuto;
+Fallout4.esm;001BF0C1;NPC_;EncMinutemen08;
+Fallout4.esm;001BF0C0;NPC_;EncMinutemen07;
+Fallout4.esm;001BF0BF;NPC_;EncMinutemen06;
+Fallout4.esm;001BF0BE;NPC_;EncMinutemen05;
+Fallout4.esm;001BF0BD;NPC_;EncMinutemen04;
+Fallout4.esm;001BF0BC;NPC_;EncMinutemen03;
+Fallout4.esm;001BF0BB;NPC_;EncMinutemen02;
+Fallout4.esm;001BF0B7;NPC_;EncMinutemen01Template;Minuteman
+Fallout4.esm;001BF0B3;NPC_;EncMinutemenFaceM06;Settler
+Fallout4.esm;001BF0B2;NPC_;EncMinutemenFaceM05;Settler
+Fallout4.esm;001BF0B1;NPC_;EncMinutemenFaceM04;Settler
+Fallout4.esm;001BF0B0;NPC_;EncMinutemenFaceM03;Settler
+Fallout4.esm;001BF0AF;NPC_;EncMinutemenFaceM02;Settler
+Fallout4.esm;001BF0AE;NPC_;EncMinutemenFaceM01;Settler
+Fallout4.esm;001BF0AD;NPC_;EncMinutemenFaceF03;Settler
+Fallout4.esm;001BF0AC;NPC_;encMinutemenFaceF02;Settler
+Fallout4.esm;001BF0AB;NPC_;EncMinutemenFaceF01;Settler
+Fallout4.esm;001BEACB;NPC_;DN051_LvlGlowingOneAmbush;
+Fallout4.esm;001BE92B;NPC_;MS04_LvlRaiderMelee_Kendra;
+Fallout4.esm;001BE92A;NPC_;MS04_LvlRaiderAuto_Kendra;
+Fallout4.esm;001BE929;NPC_;MS04_LvlRaiderRevolver_Kendra;
+Fallout4.esm;001BE407;NPC_;CovenantCat;Dora
+Fallout4.esm;001BD531;NPC_;LvlBoSScribeScience_Aggro1536;
+Fallout4.esm;001BD530;NPC_;LvlBoSSoldier_CombatArmor_Missile_Aggro1800;
+Fallout4.esm;001BD52F;NPC_;LvlBoSScribeScience_Aggro1800;
+Fallout4.esm;001BD51B;NPC_;LvlBoSSoldier_PowerArmor_BigGun_Aggro1536;
+Fallout4.esm;001BCEA4;NPC_;encGunnerFaceF02;
+Fallout4.esm;001BCEA3;NPC_;encGunnerFaceM04;
+Fallout4.esm;001BCEA2;NPC_;encGunnerFaceM03;
+Fallout4.esm;001BCEA1;NPC_;ParsonsFaceM02;Mercenary
+Fallout4.esm;001BCEA0;NPC_;ParsonsGuardCorpse01;Mercenary
+Fallout4.esm;001BCE9F;NPC_;ParsonsFaceM03;Mercenary
+Fallout4.esm;001BCE9E;NPC_;encFeralGhoul08Legendary;Legendary Charred Feral Ghoul
+Fallout4.esm;001BBFF9;NPC_;BHExtBoSVertibirdPilot;
+Fallout4.esm;001BBEAB;NPC_;LvlRadRoachNOSCALE;
+Fallout4.esm;001BBEAA;NPC_;EncRadRoachGlowingNOSCALE;
+Fallout4.esm;001BBEA9;NPC_;EncRadRoachNOSCALE;
+Fallout4.esm;001BBCC0;NPC_;EncChildrenOfAtom04;Child of Atom Zealot
+Fallout4.esm;001BBCBF;NPC_;EncChildrenOfAtom03;Child of Atom Preacher
+Fallout4.esm;001BBCBE;NPC_;EncChildrenOfAtom02;Child of Atom Cultist
+Fallout4.esm;001BBCBB;NPC_;EncChildrenOfAtom01Template;Child of Atom
+Fallout4.esm;001BBCAA;NPC_;DN165_LvlFeralGhoulChargerExterior;
+Fallout4.esm;001BBCA1;NPC_;DmndBrahmin;
+Fallout4.esm;001BB215;NPC_;DN160_LvlFeralGhoulAggro800Ext;
+Fallout4.esm;001BA3DD;NPC_;LvlTurretStandingCartRaider;
+Fallout4.esm;001B9EB3;NPC_;RailroadTiconGenericSynthF01;Synth
+Fallout4.esm;001B9EAF;NPC_;RailroadTiconGenericM01;
+Fallout4.esm;001B9EAE;NPC_;RailroadTiconGenericF01;
+Fallout4.esm;001B9C21;NPC_;BHExtVertibirdOrbit;
+Fallout4.esm;001B9C18;NPC_;BHExtSynthTeleport;
+Fallout4.esm;001B829C;NPC_;EncMirelurkSpawnHatchlingAmbush;Mirelurk Hatchling
+Fallout4.esm;001B829B;NPC_;EncMirelurkSpawn01Ambush;Mirelurk Spawn
+Fallout4.esm;001B5ECC;NPC_;BoS100Fight_LvlFeralGhoulBoss;
+Fallout4.esm;001B50C9;NPC_;DN103_LvlTurretTripodRaider;
+Fallout4.esm;001B502C;NPC_;InstituteScientistMaleSRB;
+Fallout4.esm;001B502B;NPC_;InstituteScientistMaleRobotics;
+Fallout4.esm;001B502A;NPC_;InstituteScientistMaleBioScience;
+Fallout4.esm;001B5029;NPC_;InstituteScientistMaleAdvSys;
+Fallout4.esm;001B5028;NPC_;InstituteScientistFemaleSRB;
+Fallout4.esm;001B5027;NPC_;InstituteScientistFemaleBioScience;
+Fallout4.esm;001B5026;NPC_;InstituteScientistFemaleAdvSys;
+Fallout4.esm;001B5024;NPC_;InstituteScientistFemaleRobotics;
+Fallout4.esm;001B4AA1;NPC_;LvlTurretBubbleRobots;
+Fallout4.esm;001B4A51;NPC_;DN146_LvlRaiderQuestSpeakerFemale;
+Fallout4.esm;001B4A50;NPC_;DN146_LvlRaiderQuestSpeakerMale;
+Fallout4.esm;001B498C;NPC_;LvlRaiderMeleeAggro1024;
+Fallout4.esm;001B48AB;NPC_;DN158LvlFeralGhoulGlowingOneAmbush;First Mate
+Fallout4.esm;001B48AA;NPC_;DN158LvlFeralGhoulAggro800;Crewman
+Fallout4.esm;001B48A9;NPC_;DN158LvlFeralGhoulAggro512;Crewman
+Fallout4.esm;001B48A8;NPC_;DN158LvlFeralGhoul;Crewman
+Fallout4.esm;001B446D;NPC_;LvlVertibirdFastTravelRailroad;
+Fallout4.esm;001B446C;NPC_;LvlVertibirdFastTravelMinutemen;
+Fallout4.esm;001B446B;NPC_;LvlRailroadVertibirdPilot;Pilot
+Fallout4.esm;001B34DF;NPC_;LvlMinutemenVertibirdPilot;Pilot
+Fallout4.esm;001B34D0;NPC_;LvlSynth_Institute_Legendary;
+Fallout4.esm;001B2E18;NPC_;DN170_LvlScavenger;
+Fallout4.esm;001B2C1B;NPC_;RESceneKMK10Deathclaw01;
+Fallout4.esm;001B19C8;NPC_;GoodneighborDrifterF06;
+Fallout4.esm;001B18EA;NPC_;MS04_LvlTurretTripodKendra;
+Fallout4.esm;001B06EC;NPC_;REAssault_LvlSynth_Institute_Teleport_Superbarrel;
+Fallout4.esm;001B06EB;NPC_;REAssault_LvlSynth_Institute_Teleport_Rifle;
+Fallout4.esm;001B06EA;NPC_;REAssault_LvlSynth_Institute_Teleport_Pistol;
+Fallout4.esm;001B06E9;NPC_;REAssault_LvlSynth_Institute_Teleport_Melee;
+Fallout4.esm;001B06E8;NPC_;REAssault_LvlSynth_Institute_Teleport;
+Fallout4.esm;001B06E7;NPC_;REAssault_LvlSynth_Institute_Teleport_Auto;
+Fallout4.esm;001B06E6;NPC_;REAssault_LvlSynthCourser_Teleport;
+Fallout4.esm;001B01D8;NPC_;RESceneRJ02_Postman;Settler
+Fallout4.esm;001B01C7;NPC_;DN015FeralGhoulAmbush_Bergman;
+Fallout4.esm;001B007F;NPC_;MS16SecurityProtectron;
+Fallout4.esm;001AF072;NPC_;LvlSupermutantSuiciderAggro1536;
+Fallout4.esm;001AF071;NPC_;REAssault_LvlGunnerShotgunAggro1536;
+Fallout4.esm;001AF070;NPC_;REAssault_LvlGunnerSemiAutoAggro1536;
+Fallout4.esm;001AF06F;NPC_;REAssault_LvlGunnerAggro1536;
+Fallout4.esm;001AF06E;NPC_;REAssault_LvlGunnerMeleeAggro1536;
+Fallout4.esm;001AF06D;NPC_;LvlRaiderDog_Aggro1536;
+Fallout4.esm;001AF06C;NPC_;LvlRaiderDog;
+Fallout4.esm;001AF06B;NPC_;LvlGunnerRobotAll_Aggro1536;
+Fallout4.esm;001AF06A;NPC_;LvlRaiderMeleeAggro1536;
+Fallout4.esm;001AF069;NPC_;LvlRaiderAutoAggro1536;
+Fallout4.esm;001AEEDB;NPC_;REAssault_LvlSynthCourser_Teleport_Aggro1536;
+Fallout4.esm;001AEED9;NPC_;REAssault_LvlSynth_Institute_Teleport_Superbarrel_Aggro1536;
+Fallout4.esm;001AEED8;NPC_;REAssault_LvlSynth_Institute_Teleport_Rifle_Aggro1536;
+Fallout4.esm;001AEED7;NPC_;REAssault_LvlSynth_Institute_Teleport_Pistol_Aggro1536;
+Fallout4.esm;001AEED6;NPC_;REAssault_LvlSynth_Institute_Teleport_Melee_Aggro1536;
+Fallout4.esm;001AEED5;NPC_;REAssault_LvlSynth_Institute_Teleport_Aggro1536;
+Fallout4.esm;001AEED4;NPC_;REAssault_LvlSynth_Institute_Teleport_Auto_Aggro1536;
+Fallout4.esm;001AEE91;NPC_;REAssault_LvlSynth_Institute_Pistol_Aggro1536;
+Fallout4.esm;001AEE90;NPC_;REAssault_LvlSynth_Institute_Auto_Aggro1536;
+Fallout4.esm;001AEE8F;NPC_;REAssault_LvlSynth_Institute_Superbarrel_Aggro1536;
+Fallout4.esm;001AEE8E;NPC_;REAssault_LvlSynth_Institute_Aggro1536;
+Fallout4.esm;001AEE8D;NPC_;REAssault_LvlSynth_Institute_Rifle_Aggro1536;
+Fallout4.esm;001AEE8C;NPC_;REAssault_LvlSynth_Institute_Melee_Aggro1536;
+Fallout4.esm;001AE852;NPC_;REAssault_LvlMinutemanFemale;
+Fallout4.esm;001AE851;NPC_;REAssault_LvlMinutemanMale;
+Fallout4.esm;001AE850;NPC_;LvlBoSScribe_Aggro1536;
+Fallout4.esm;001AE394;NPC_;LvlRaiderBoltActionGhoul;
+Fallout4.esm;001AE393;NPC_;LvlRaiderRevolverGhoul;
+Fallout4.esm;001AE392;NPC_;LvlRaiderBossGhoul;
+Fallout4.esm;001AE391;NPC_;LvlRaiderMeleeGhoul;
+Fallout4.esm;001AE390;NPC_;LvlRaiderAutoGhoul;
+Fallout4.esm;001AE38F;NPC_;LvlRaiderGhoul;
+Fallout4.esm;001AE38D;NPC_;encRaiderGhoulFaceF02;
+Fallout4.esm;001AE38C;NPC_;encRaiderGhoulFaceF01;
+Fallout4.esm;001AE38B;NPC_;encRaiderGhoulFaceM04;
+Fallout4.esm;001AE38A;NPC_;encRaiderGhoulFaceM03;
+Fallout4.esm;001AE389;NPC_;encRaiderGhoulFaceM02;
+Fallout4.esm;001AE388;NPC_;encRaiderGhoulFaceM01;
+Fallout4.esm;001AE267;NPC_;V81SecurityF03T2Residence;
+Fallout4.esm;001AE11C;NPC_;REObject_VertibirdKMK02Pilot;
+Fallout4.esm;001AE11B;NPC_;REVertibirdOrbit;
+Fallout4.esm;001ADB52;NPC_;BrotherhoodDog;Guard Dog
+Fallout4.esm;001ADA21;NPC_;EncHouseCat_Cottage;
+Fallout4.esm;001AD87B;NPC_;DN103_LvlRaiderBoss;Cutty
+Fallout4.esm;001AD4D2;NPC_;Prydwen_LvlBoSScribe_Science01_Exam;
+Fallout4.esm;001AD495;NPC_;REObjectRJ03_Mac;Mac
+Fallout4.esm;001AC87B;NPC_;V81_Rachel;Rachel
+Fallout4.esm;001AC7C4;NPC_;RETravelSC03_PrestonGarveyImpersonator;Preston Garvey Impersonator
+Fallout4.esm;001AC74B;NPC_;REObjectRJ02_FarmerG;Settler
+Fallout4.esm;001AC74A;NPC_;REObjectRJ02_FarmerF;Settler
+Fallout4.esm;001AC749;NPC_;REObjectRJ02_FarmerM;Settler
+Fallout4.esm;001AC748;NPC_;REObjectRJ02_Preacher;Preacher
+Fallout4.esm;001AC746;NPC_;REAssaultRJ01_LvlMirelurkQueen;
+Fallout4.esm;001AC745;NPC_;LvlGunnerRobotAll;
+Fallout4.esm;001AC744;NPC_;REAssaultRJ01_LvlGunnerRobot;
+Fallout4.esm;001AC743;NPC_;REAssaultRJ01_LvlGunnerPA;
+Fallout4.esm;001AC742;NPC_;REAssaultRJ01_LvlGunner;
+Fallout4.esm;001AC741;NPC_;REAssaultRJ01_LvlSMBehemoth;
+Fallout4.esm;001AC6DC;NPC_;ScienceCenter_LvlMrHandy;
+Fallout4.esm;001AC6D5;NPC_;DN015LootFeralGhoulNoArmor;Feral Ghoul Reaver
+Fallout4.esm;001AC6D4;NPC_;DN015FeralGhoulAggro800;
+Fallout4.esm;001AC6D3;NPC_;DN015FeralGhoulAggro512;
+Fallout4.esm;001AC6D2;NPC_;DN015FeralGhoulAmbush;
+Fallout4.esm;001AC5A8;NPC_;V81ChildF01;Child
+Fallout4.esm;001AC51E;NPC_;StorytimeSimonVoiceNPC;Storytime Simon
+Fallout4.esm;001AC337;NPC_;BoSAirport_LvlBoSScribe_Science_NoSleep;
+Fallout4.esm;001AC246;NPC_;REChokepointRJ01_LvlGunnerAggressiveMale;
+Fallout4.esm;001AC145;NPC_;BoSPoliceStation_EncBoSFieldScribe03_Scene;Brotherhood Senior Scribe
+Fallout4.esm;001AC144;NPC_;BoSPoliceStation_EncBoSSoldier02_PAArmor_Scene;Brotherhood Knight
+Fallout4.esm;001AC0CD;NPC_;InstituteSynthNewGen3;Synth
+Fallout4.esm;001AC0C9;NPC_;InstituteSynthRoboticsHelper;Synth
+Fallout4.esm;001AC031;NPC_;BoSGenericHolotape04Actor;Scribe Naceri
+Fallout4.esm;001AC030;NPC_;BoSGenericHolotape02Actor;Initiate Dresden
+Fallout4.esm;001AC02E;NPC_;BoSGenericHolotape03Actor;Knight Wagner
+Fallout4.esm;001ABFDD;NPC_;RelayTowerAutomatedActor;
+Fallout4.esm;001ABFBF;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_Auto_VBPatrol;
+Fallout4.esm;001ABFB8;NPC_;DNBostonCommon_Bradford;Richard Bradford
+Fallout4.esm;001ABE5F;NPC_;LvlGunnerBoss_PowerArmorAggro1024;
+Fallout4.esm;001ABE5E;NPC_;LvlGunnerRobotAssaultronAggro1024;
+Fallout4.esm;001ABE5D;NPC_;LvlGunnerAggro1024;
+Fallout4.esm;001ABA7A;NPC_;BoS201_LvlBoSScribeField;
+Fallout4.esm;001ABA79;NPC_;BoS201_LvlBoSSoldier_CombatArmor_Auto04;
+Fallout4.esm;001AB2EE;NPC_;LvlGunnerRobotAssaultron;
+Fallout4.esm;001AB2EB;NPC_;REProtectron;
+Fallout4.esm;001AB2EA;NPC_;LvlGunnerAggro512;
+Fallout4.esm;001AB2E5;NPC_;RETravelRJ01_Scav03;
+Fallout4.esm;001AB2E4;NPC_;RETravelRJ01_Scav02;
+Fallout4.esm;001AB278;NPC_;RelayTowerAnnouncerActor;Announcer
+Fallout4.esm;001AADFA;NPC_;AudioTemplateMirelurkling;AudioTemplateMirelurkling
+Fallout4.esm;001AAB16;NPC_;femghoul;femghoul
+Fallout4.esm;001A97FB;NPC_;RETravelRJ01_SkrapRat;Skrap Rat
+Fallout4.esm;001A97FA;NPC_;RETravelRJ01_Scav;
+Fallout4.esm;001A967F;NPC_;RECampRJ03_Mikey;Mikey
+Fallout4.esm;001A967E;NPC_;RECampRJ03_Moss;Moss
+Fallout4.esm;001A9612;NPC_;REMerchant04;Chems Vendor
+Fallout4.esm;001A9510;NPC_;RETravelJS02_EscapedSynth;Timothy
+Fallout4.esm;001A886D;NPC_;DN147_Raider03;Whiplash
+Fallout4.esm;001A854F;NPC_;EncTurretBubble02Laser;
+Fallout4.esm;001A854E;NPC_;EncTurretBubble03MachineGun3shot;Machine Gun Turret
+Fallout4.esm;001A854D;NPC_;EncTurretBubble04Laser3shot;
+Fallout4.esm;001A7D7E;NPC_;LvlTurretTripodMountedRaider;
+Fallout4.esm;001A7C2A;NPC_;EncSynthGen2Lost;Synth
+Fallout4.esm;001A7C0C;NPC_;LvlBloatflyAggro1200;
+Fallout4.esm;001A7BEA;NPC_;BoS101POI_LvlViciousDogAlpha;
+Fallout4.esm;001A7BE9;NPC_;BoS101POI_LvlViciousDog;
+Fallout4.esm;001A7BBE;NPC_;BoS101POI_Merchant;Merchant
+Fallout4.esm;001A7BBC;NPC_;BoS101POI_CaravanGuard02;Caravan Guard
+Fallout4.esm;001A77C6;NPC_;RECampRJ02_Clinton;Clinton
+Fallout4.esm;001A77C2;NPC_;RECampRJ02_Charlie;Charlie
+Fallout4.esm;001A7770;NPC_;DN107_McDonnall;McDonnall
+Fallout4.esm;001A776F;NPC_;DN107_Reise;Reise
+Fallout4.esm;001A776E;NPC_;DN107_Perry;Perry
+Fallout4.esm;001A7762;NPC_;BoS101POI_CaravanGuard01;Caravan Guard
+Fallout4.esm;001A775F;NPC_;BoS101POI_EncBrahminPack;
+Fallout4.esm;001A76A6;NPC_;dn147_RaiderBoss;Walter
+Fallout4.esm;001A76A3;NPC_;DN147_Raider02;Bear
+Fallout4.esm;001A76A2;NPC_;DN147_Raider01;Tweez
+Fallout4.esm;001A734A;NPC_;DN031LvlRaider;Berserk Raider
+Fallout4.esm;001A7348;NPC_;DN031LvlRaiderLorenzoRoom;
+Fallout4.esm;001A7347;NPC_;DN031LvlRaiderBoss;Lefty
+Fallout4.esm;001A7346;NPC_;LvlRaiderBossMaleUnagressive;
+Fallout4.esm;001A7345;NPC_;LvlRaiderBossFemaleUnagressive;
+Fallout4.esm;001A72CD;NPC_;QuarantineDoorAnnouncer;Announcer
+Fallout4.esm;001A72B0;NPC_;LvlHostileRanged;
+Fallout4.esm;001A72AB;NPC_;LvlHostileBoss;
+Fallout4.esm;001A72A1;NPC_;LvlHostile;
+Fallout4.esm;001A710F;NPC_;DN052_GunnerBoss;Captain Wes
+Fallout4.esm;001A710E;NPC_;DN052_GunnerMiniBoss01;Cruz
+Fallout4.esm;001A710D;NPC_;DN052_GunnerMiniBoss02;Ryder
+Fallout4.esm;001A679F;NPC_;DN109_QuincyGunnerBossTemplate;Van Cleef
+Fallout4.esm;001A679E;NPC_;DN109_QuincyGunnerBossClint;Clint
+Fallout4.esm;001A679C;NPC_;DN109_QuincyGunnerBossBaker;Baker
+Fallout4.esm;001A679A;NPC_;DN109_QuincyGunnerBossTessa;Tessa
+Fallout4.esm;001A5CF0;NPC_;AudioTemplateDogRaider;AudioTemplateDogRaider
+Fallout4.esm;001A5860;NPC_;DN132_Gerald;Male Voice
+Fallout4.esm;001A5856;NPC_;DN132_CorpseMargaret;Margaret Sutton
+Fallout4.esm;001A5855;NPC_;DN132_CorpseRussell;Russell Sutton
+Fallout4.esm;001A5369;NPC_;LvlTurretTripodMountedGunner;
+Fallout4.esm;001A4E82;NPC_;RR302LvlBoSSoldier_PowerArmor_Missile;
+Fallout4.esm;001A4E81;NPC_;RR302LvlBoSSoldier_CombatArmor_Semi;
+Fallout4.esm;001A4E5C;NPC_;DN040LvlRaiderBoss;Red Tourette
+Fallout4.esm;001A3031;NPC_;RERaiderScavenger;
+Fallout4.esm;001A0A4F;NPC_;REBrahminForSale;
+Fallout4.esm;001A0A4D;NPC_;REBrahminVendor;Kelly
+Fallout4.esm;001A0422;NPC_;DeaconAtGoodneighbor;Drifter
+Fallout4.esm;001A041E;NPC_;DeaconAtMemoryDen;Drifter
+Fallout4.esm;001A041A;NPC_;DeaconAtDiamondCity;Diamond City Security
+Fallout4.esm;001A0413;NPC_;DeaconAtBunkerHill;Caravan Worker
+Fallout4.esm;001A03F9;NPC_;EncSynth08;Synth Eradicator
+Fallout4.esm;001A03F8;NPC_;EncSynth07;Synth Stormer
+Fallout4.esm;001A03F7;NPC_;EncSynth06;Synth Assaulter
+Fallout4.esm;001A03F6;NPC_;EncSynth05;Synth Trooper
+Fallout4.esm;001A03F5;NPC_;EncSynth04;Synth Seeker
+Fallout4.esm;001A03F4;NPC_;EncSynth03;Synth Patroller
+Fallout4.esm;001A035C;NPC_;encSynthGen2Inst;Synth
+Fallout4.esm;001A0094;NPC_;EmogeneCabotYoung;
+Fallout4.esm;001A0067;NPC_;EncTurretTripod04Explosive;Machinegun Turret Mk VII
+Fallout4.esm;001A0066;NPC_;EncTurretTripod03Incendiary;Machinegun Turret Mk V
+Fallout4.esm;001A0065;NPC_;EncTurretTripod02;Machinegun Turret Mk III
+Fallout4.esm;0019FF4D;NPC_;DN028_LvlRaiderMinigun;
+Fallout4.esm;0019FCC4;NPC_;LvlCovenantHQSecurityWithKey;Compound Guard
+Fallout4.esm;0019F6DA;NPC_;DN127Loot_CorpseSettlerMale;Randy
+Fallout4.esm;0019EFBD;NPC_;EncPrewarCultist06;
+Fallout4.esm;0019EFBC;NPC_;EncPrewarCultist05;
+Fallout4.esm;0019EFBB;NPC_;EncPrewarCultist04;
+Fallout4.esm;0019EFBA;NPC_;EncPrewarCultist03;
+Fallout4.esm;0019EFB9;NPC_;EncPrewarCultist02;
+Fallout4.esm;0019EF97;NPC_;EncTriggerman03;
+Fallout4.esm;0019EF96;NPC_;EncTriggerman02;
+Fallout4.esm;0019EE79;NPC_;MQ101VaultTecScientistF03_cryo;Vault-Tec Doctor
+Fallout4.esm;0019EE2A;NPC_;LvlSentryBotAggro512;
+Fallout4.esm;0019EE29;NPC_;LvlSentryBotAggro800;
+Fallout4.esm;0019EE28;NPC_;LvlSentryBotAmbushAssaultRifles;
+Fallout4.esm;0019EE27;NPC_;LvlSentryBotAmbushInstitute;
+Fallout4.esm;0019EC2F;NPC_;DN079_LvlTurretTripod;
+Fallout4.esm;0019EAFB;NPC_;BoSAirport_LvlBoSScribe_Engineer_Gantry01;
+Fallout4.esm;0019E967;NPC_;EncMirelurk00;Softshell Mirelurk
+Fallout4.esm;0019DE87;NPC_;RR303GasbagScribe;Brotherhood Senior Scribe
+Fallout4.esm;0019DDD9;NPC_;LvlMirelurkAll;
+Fallout4.esm;0019D334;NPC_;DN050LvlMrHandy_Random;
+Fallout4.esm;0019D2EB;NPC_;HolotapeActorTheControlPeters;Peters
+Fallout4.esm;0019D2E7;NPC_;HolotapeActorLadiesAuxJennie;Jennie
+Fallout4.esm;0019D2E2;NPC_;HolotapeActorLadiesAuxGemma;Gemma
+Fallout4.esm;0019D2E1;NPC_;HolotapeActorLadiesAuxSue;Sue
+Fallout4.esm;0019D2E0;NPC_;HolotapeActorLadiesAuxBecka;Becka
+Fallout4.esm;0019CD12;NPC_;MQ101UniformSoldierPilot;Pilot
+Fallout4.esm;0019CC03;NPC_;BoSAirport_LvlBoSScribe_VertibirdEngineer_NoSleep;
+Fallout4.esm;0019CBF2;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_Auto_AirportScene01;
+Fallout4.esm;0019CBF1;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_Auto_AirportScene02;
+Fallout4.esm;0019CBF0;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_Auto_Patrol_Range;
+Fallout4.esm;0019CBEE;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_Auto_Patrol_RangeScene;
+Fallout4.esm;0019CBD9;NPC_;BoSAirport_LvlBoSScribe_Engineer_Entryway;
+Fallout4.esm;0019C5A1;NPC_;LvlRaiderBossFemale;
+Fallout4.esm;0019C5A0;NPC_;LvlRaiderBossMale;
+Fallout4.esm;0019ADA8;NPC_;encRRAgentFaceM02;Railroad Agent
+Fallout4.esm;0019AD9B;NPC_;encRRAgentFaceF02;Railroad Agent
+Fallout4.esm;0019AD7B;NPC_;encRRAgentFaceM01;Railroad Agent
+Fallout4.esm;0019AD60;NPC_;encRRAgentFaceF01;Railroad Agent
+Fallout4.esm;0019A7F2;NPC_;WorkshopTurretLaser;Laser Turret
+Fallout4.esm;0019A784;NPC_;DN028_LvlRaiderBossRoom;
+Fallout4.esm;0019A783;NPC_;DN028_LvlRaiderMeleeBossRoom;
+Fallout4.esm;0019A781;NPC_;DN028_LvlTurretTripodBossRoom;
+Fallout4.esm;00198B77;NPC_;MQ101NeighborMale03Respawner;Neighbor
+Fallout4.esm;00198B76;NPC_;MQ101NeighborFemale03Respawner;Neighbor
+Fallout4.esm;001974EB;NPC_;MQ101UniformSoldier03;Officer
+Fallout4.esm;001974E9;NPC_;MQ101PowerArmorSoldierWithLaser;Soldier
+Fallout4.esm;001974E5;NPC_;MQ101VaultTecElevatorGuard01;Vault-Tec Security
+Fallout4.esm;00196628;NPC_;RR302LvlBoSSoldier_PowerArmor_BigGun;
+Fallout4.esm;00196627;NPC_;RR302LvlBoSSoldier_PowerArmor_Auto;
+Fallout4.esm;0019632B;NPC_;Prydwen_EncBoSSoldier02_PAArmor_Guard_PATest;Brotherhood Knight
+Fallout4.esm;0019632A;NPC_;Prydwen_LvlBoSSoldier_CombatArmor_Semi_PA;Brotherhood Initiate
+Fallout4.esm;00195650;NPC_;LvlSupermutantMissileAggro1536;
+Fallout4.esm;001946B0;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_RangeSceneOfficer;Brotherhood Knight-Captain
+Fallout4.esm;0019469D;NPC_;BoSAirport_LvlBoSSoldier_PowerArmor_BigGun_Guard_Range01;
+Fallout4.esm;0019469B;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_Auto_PatrolPrimeSide;
+Fallout4.esm;00194696;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_Auto_Patrol;
+Fallout4.esm;00194693;NPC_;BoSAirport_LvlBoSSoldier_PowerArmor_BigGun_Patroller02;
+Fallout4.esm;00194688;NPC_;BoSAirport_LvlBoSSoldier_CombatArmor_Auto_Guard_Range;
+Fallout4.esm;00194671;NPC_;BoSAirport_LvlBoSSoldier_PowerArmor_BigGun_Guard;
+Fallout4.esm;00194334;NPC_;REDogVendor;Gene
+Fallout4.esm;00193B44;NPC_;GSRJ03_RadioVoice;
+Fallout4.esm;00192356;NPC_;WorkshopVendorBar01;Ron Staples
+Fallout4.esm;001922A3;NPC_;DN150_WayneTournquist;Wayne
+Fallout4.esm;001922A2;NPC_;DN150_MichaelTournquist;Michael
+Fallout4.esm;0019229E;NPC_;DN150_DavidTournquist;David
+Fallout4.esm;0019086E;NPC_;LvlBoSScribeField_Aggro1536;
+Fallout4.esm;00190866;NPC_;LvlBoSScribeEngineer_Aggro1536;
+Fallout4.esm;0019084D;NPC_;LvlBoSSoldier_CombatArmor_Missile_Aggro1536;
+Fallout4.esm;0019084C;NPC_;LvlBoSSoldier_PowerArmor_Semi_Aggro1536;
+Fallout4.esm;0019084B;NPC_;LvlBoSSoldier_CombatArmor_Auto_Aggro1536;
+Fallout4.esm;001905EF;NPC_;RECampLC01Fred01;Fred
+Fallout4.esm;001905EE;NPC_;RECampLC01Angie;Angie
+Fallout4.esm;001905ED;NPC_;RECampLC01Jules;Jules
+Fallout4.esm;0018FA29;NPC_;GlowingSeaPOIDB01Pilot01;Pilot
+Fallout4.esm;0018F2E8;NPC_;DN041_Protectron02;
+Fallout4.esm;0018F2E7;NPC_;DN041_Protectron01;
+Fallout4.esm;0018F160;NPC_;DN041_Holotape01Actor;Buzensky
+Fallout4.esm;0018EB4E;NPC_;BoS100Fight_LvlFeralGhoulGlowingOne;
+Fallout4.esm;0018EB30;NPC_;DN160_LvlFeralGhoulAmbush;
+Fallout4.esm;0018EB2F;NPC_;DN160_LvlFeralGhoulGlowingOne;
+Fallout4.esm;0018E8FB;NPC_;RelayTowerSupermutantActor;
+Fallout4.esm;0018E8F2;NPC_;RelayTowerHumanFemaleActor;
+Fallout4.esm;0018E38E;NPC_;DN028_PAAnnouncer;Announcer
+Fallout4.esm;0018DFA4;NPC_;LvlRadStagDoe;
+Fallout4.esm;0018BB2A;NPC_;BoSEncMolerat;Mole Rat
+Fallout4.esm;0018BA31;NPC_;DN042FenwayPhantom;Fens Phantom
+Fallout4.esm;0018B5FB;NPC_;PresetMale4;PresetMale4
+Fallout4.esm;0018B5F9;NPC_;PresetMale2;PresetMale2
+Fallout4.esm;0018B5F8;NPC_;PresetMale1;PresetMale1
+Fallout4.esm;0018B5F7;NPC_;PresetFemale1;PresetFemale1
+Fallout4.esm;0018B5F6;NPC_;PresetFemale2;PresetFemale2
+Fallout4.esm;0018B5F5;NPC_;PresetFemale3;PresetFemale3
+Fallout4.esm;0018B5F4;NPC_;PresetFemale4;PresetFemale4
+Fallout4.esm;0018B5F3;NPC_;PresetFemale5;PresetFemale5
+Fallout4.esm;0018B106;NPC_;REObjectCT01_Deathclaw;
+Fallout4.esm;0018AFB1;NPC_;EncMirelurkSpawnQueen;
+Fallout4.esm;0018AF90;NPC_;WorkshopVendorDoctor01;Doc Anderson
+Fallout4.esm;0018AED2;NPC_;DN011LvlProtectron;
+Fallout4.esm;0018A8CF;NPC_;MQ101VaultTecScientistM04_cryo;Vault-Tec Doctor
+Fallout4.esm;0018A8CE;NPC_;MQ101VaultTecScientistM05_cryo;Vault-Tec Doctor
+Fallout4.esm;0018A6D5;NPC_;REChokepointCT02_Guard02;Lexa
+Fallout4.esm;0018A6D4;NPC_;REChokepointCT02_Guard01;Simon
+Fallout4.esm;0018A6D1;NPC_;REChokepointCT02_Merchant;Stash
+Fallout4.esm;00188AA7;NPC_;MysteriousStrangerActor;Mysterious Stranger
+Fallout4.esm;00187CFD;NPC_;DNPrime_LvlVertibird;
+Fallout4.esm;00187A00;NPC_;RETraveCT08_EyeBot;
+Fallout4.esm;00187738;NPC_;LvlFeralGhoulAggro1536_NoInterrupts;
+Fallout4.esm;00187537;NPC_;LvlTurretTripodMFFG07;
+Fallout4.esm;00186F6B;NPC_;LvlSupermutantAutoAggro1024;
+Fallout4.esm;00186F6A;NPC_;LvlGunnerMeleeAggro1024;
+Fallout4.esm;00186F69;NPC_;LvlAssaultron_1024;
+Fallout4.esm;00186F68;NPC_;LvlProtectronHostile_Aggro768;
+Fallout4.esm;00186F38;NPC_;LvlMrHandy_Flamer_Gunner_Aggro1024;
+Fallout4.esm;00186F33;NPC_;LvlMrHandy_Standard_Gunner_1024;
+Fallout4.esm;00186F21;NPC_;EncBrahmin_Gunner;
+Fallout4.esm;00186EB3;NPC_;LvlSentryBotAmbush;
+Fallout4.esm;00186E81;NPC_;LvlMutantHoundAggro800;
+Fallout4.esm;00186E01;NPC_;LvlProtectron_Hostile;
+Fallout4.esm;00186973;NPC_;MS04SmilingKateFlunkies;Sinjin's Gang
+Fallout4.esm;00186972;NPC_;MS04NorthyFlunkies;Bodyguard
+Fallout4.esm;001860A7;NPC_;REObjectKMK04GlowingCreature;
+Fallout4.esm;00185EF1;NPC_;RETravelCT04_YaoGuai;
+Fallout4.esm;00185526;NPC_;LvlProtectronRaider_Aggro878;
+Fallout4.esm;00185038;NPC_;RadioDiamondCitySSProtectron;Protectron
+Fallout4.esm;00184C51;NPC_;encAlien;Alien
+Fallout4.esm;00184AB1;NPC_;GoodneighborDrifterM05DeadBody;
+Fallout4.esm;00184766;NPC_;LvlGunnerLegendary;
+Fallout4.esm;00184764;NPC_;EncGunner09Legendary;Legendary Gunner
+Fallout4.esm;00184763;NPC_;EncGunner08Legendary;Legendary Gunner
+Fallout4.esm;00184762;NPC_;EncGunner07Legendary;Legendary Gunner
+Fallout4.esm;00184761;NPC_;EncGunner06Legendary;Legendary Gunner
+Fallout4.esm;00184760;NPC_;EncGunner05Legendary;Legendary Gunner
+Fallout4.esm;0018475D;NPC_;EncGunner04Legendary;Legendary Gunner
+Fallout4.esm;0018475A;NPC_;EncGunner03legendary;Legendary Gunner
+Fallout4.esm;00184759;NPC_;EncGunner02Legendary;Legendary Gunner
+Fallout4.esm;00184758;NPC_;EncGunner01Legendary;Legendary Gunner
+Fallout4.esm;00184757;NPC_;LvlRaiderLegendary;
+Fallout4.esm;00184755;NPC_;EncRaider06Legendary;Legendary Raider
+Fallout4.esm;00184754;NPC_;EncRaider05Legendary;Legendary Raider
+Fallout4.esm;00184753;NPC_;EncRaider04Legendary;Legendary Raider
+Fallout4.esm;00184752;NPC_;EncRaider03Legendary;Legendary Raider
+Fallout4.esm;00184751;NPC_;LvlSynthLegendary;
+Fallout4.esm;0018474F;NPC_;EncSynth08Legendary;Legendary Synth Eradicator
+Fallout4.esm;0018474E;NPC_;EncSynth07Legendary;Legendary Synth Stormer
+Fallout4.esm;00184731;NPC_;EncSynth06Legendary;Legendary Synth Assaulter
+Fallout4.esm;0018472F;NPC_;EncSynth05Legendary;Legendary Synth Trooper
+Fallout4.esm;00184705;NPC_;EncSynth04Legendary;Legendary Synth Seeker
+Fallout4.esm;001846E0;NPC_;EncSynth03Legendary;Legendary Synth Patroller
+Fallout4.esm;001846DE;NPC_;EncSynth02Legendary;Legendary Synth Strider
+Fallout4.esm;001846DC;NPC_;EncSynth01Legendary;
+Fallout4.esm;001846DB;NPC_;LvlMoleratLegendary;
+Fallout4.esm;001846D9;NPC_;EncMolerat04Legendary;Legendary Mole Rat Brood Mother
+Fallout4.esm;001846D8;NPC_;EncMolerat03Legendary;Legendary Glowing Mole Rat
+Fallout4.esm;001846D7;NPC_;EncMolerat02Legendary;Legendary Rabid Mole Rat
+Fallout4.esm;001846D6;NPC_;EncYaoGuai06Legendary;Legendary Dusky Yao Guai
+Fallout4.esm;001846D5;NPC_;EncYaoGuai05Legendary;Legendary Rabid Yao Guai
+Fallout4.esm;001846D4;NPC_;EncYaoGuai04Legendary;Legendary Albino Yao Guai
+Fallout4.esm;001846CB;NPC_;EncCurieRobot;Curie
+Fallout4.esm;001846B2;NPC_;MisterTims;Mister Tims
+Fallout4.esm;001845F2;NPC_;EncYaoGuai03Legendary;Legendary Glowing Yao Guai
+Fallout4.esm;0018458C;NPC_;EncYaoGuai02Legendary;Legendary Shaggy Yao Guai
+Fallout4.esm;0018458B;NPC_;EncYaoGuai01Legendary;Legendary Yao Guai
+Fallout4.esm;0018458A;NPC_;LvlRadStagLegendary;
+Fallout4.esm;00184582;NPC_;EncRadstag05Legendary;Legendary Glowing Radstag
+Fallout4.esm;00184580;NPC_;EncRadstag04Legendary;Legendary Rabid Radstag
+Fallout4.esm;0018457E;NPC_;EncRadstag03Legendary;Legendary Albino Radstag
+Fallout4.esm;00184527;NPC_;EncRadstag02Legendary;Legendary Radstag
+Fallout4.esm;00184526;NPC_;LvlViciousDogLegendary;
+Fallout4.esm;00184524;NPC_;EncViciousDog06Legendary;Legendary Glowing Mongrel
+Fallout4.esm;00184523;NPC_;EncViciousDog05Legendary;Legendary Rabid Mongrel
+Fallout4.esm;00184522;NPC_;EncViciousDog04Legendary;Legendary Albino Mongrel
+Fallout4.esm;00184521;NPC_;EncViciousDog03Legendary;Legendary Feral Mongrel
+Fallout4.esm;00184520;NPC_;EncViciousDog02Legendary;Legendary Vicious Mongrel
+Fallout4.esm;0018451C;NPC_;LvlStingwingLegendary;
+Fallout4.esm;0018451A;NPC_;EncStingwing05Legendary;Legendary Stingwing Chaser
+Fallout4.esm;001844C6;NPC_;EncStingwing04Legendary;Legendary Glowing Stingwing
+Fallout4.esm;001844C5;NPC_;EncStingwing03Legendary;Legendary Stingwing Skimmer
+Fallout4.esm;001844C4;NPC_;EncStingwing02Legendary;Legendary Stingwing Darter
+Fallout4.esm;001844A6;NPC_;ShaunChildHologram;Shaun
+Fallout4.esm;001844A5;NPC_;EncStingwing01Legendary;Legendary Stingwing
+Fallout4.esm;0018448D;NPC_;RETravelCT03_SentryBot;Gus
+Fallout4.esm;0018448C;NPC_;RETravelCT03_Merchant;Kat
+Fallout4.esm;00183F2C;NPC_;Prydwen_EncBoSSoldier02_PAArmor_FlightDeck_Guard;Brotherhood Knight
+Fallout4.esm;00183F2A;NPC_;RECheckpoint_LvlSynthDefenderTeleport;
+Fallout4.esm;00183F29;NPC_;RECheckpoint_LvlSynthDefender_Institute_Superbarrel;
+Fallout4.esm;00183F28;NPC_;RECheckpoint_LvlSynthDefender_Institute_Rifle;
+Fallout4.esm;00183F27;NPC_;RECheckpoint_LvlSynthDefender_Institute_Boss;Synth Leader
+Fallout4.esm;00183F26;NPC_;RECheckpoint_LvlSynthDefender_Institute_Auto;
+Fallout4.esm;00183F25;NPC_;RECheckpoint_LvlSynthDefender_Institute;
+Fallout4.esm;00183342;NPC_;BoS202_LvlVertibird;
+Fallout4.esm;0018330A;NPC_;EncRRAgent06;Railroad Agent
+Fallout4.esm;00183309;NPC_;EncRRAgent05;Railroad Agent
+Fallout4.esm;00183308;NPC_;EncRRAgent04;Railroad Agent
+Fallout4.esm;00183307;NPC_;EncRRAgent03;Railroad Agent
+Fallout4.esm;00183306;NPC_;EncRRAgent02;Railroad Agent
+Fallout4.esm;001832FF;NPC_;encViciousDogAlpha01;Alpha Wild Mongrel
+Fallout4.esm;001832FE;NPC_;encViciousDogAlpha06;Alpha Glowing Mongrel
+Fallout4.esm;001832FD;NPC_;encViciousDogAlpha05;Alpha Rabid Mongrel
+Fallout4.esm;001832FC;NPC_;encViciousDogAlpha04;Alpha Albino Mongrel
+Fallout4.esm;001832FB;NPC_;encViciousDogAlpha03;Alpha Feral Mongrel
+Fallout4.esm;001832F8;NPC_;EncMolerat04;Mole Rat Brood Mother
+Fallout4.esm;001832F7;NPC_;EncMolerat03;Glowing Mole Rat
+Fallout4.esm;001832F6;NPC_;EncMolerat02;Rabid Mole Rat
+Fallout4.esm;00182DF3;NPC_;DN060_HestersAnnouncer;Hester's Announcer
+Fallout4.esm;00182A3E;NPC_;DN160_LvlFeralGhoulCharger;
+Fallout4.esm;001814F2;NPC_;InstituteSynthMiscVendor;Synth
+Fallout4.esm;001812F4;NPC_;Prydwen_EncBoSPilot03_BridgeMale;Brotherhood Lancer-Knight
+Fallout4.esm;0017FCE9;NPC_;EncRRAgent01Template;Railroad Agent
+Fallout4.esm;0017FCE8;NPC_;LvlRRagent;
+Fallout4.esm;0017E796;NPC_;RESceneLC01Accusor;Art
+Fallout4.esm;0017E78C;NPC_;RESceneLC01Accused;Art
+Fallout4.esm;0017E725;NPC_;LvlBloodbugLegendary;
+Fallout4.esm;0017E723;NPC_;EncBloodbug06Legendary;Legendary Vampiric Bloodbug
+Fallout4.esm;0017E722;NPC_;EncBloodbug05Legendary;Legendary Glowing Bloodbug
+Fallout4.esm;0017E721;NPC_;EncBloodbug04Legendary;Legendary Infected Bloodbug
+Fallout4.esm;0017E720;NPC_;EncBloodbug03Legendary;Legendary Red Widow Bloodbug
+Fallout4.esm;0017E71F;NPC_;EncBloodbug02Legendary;Legendary Bloodbug
+Fallout4.esm;0017E719;NPC_;LvlDeathclawLegendary;
+Fallout4.esm;0017E718;NPC_;EncDeathclaw08Legendary;Legendary Mythic Deathclaw
+Fallout4.esm;0017E717;NPC_;EncDeathclaw07Legendary;Legendary Chameleon Deathclaw
+Fallout4.esm;0017E716;NPC_;EncDeathclaw06Legendary;Legendary Albino Deathclaw
+Fallout4.esm;0017E70E;NPC_;EncDeathclaw05Legendary;Legendary Savage Deathclaw
+Fallout4.esm;0017E70D;NPC_;EncDeathclaw04Legendary;Legendary Deathclaw Matriarch
+Fallout4.esm;0017E70C;NPC_;EncDeathclaw03Legendary;Legendary Glowing Deathclaw
+Fallout4.esm;0017E70B;NPC_;EncDeathclaw02Legendary;Legendary Alpha Deathclaw
+Fallout4.esm;0017E707;NPC_;EncDeathclaw01Legendary;Legendary Deathclaw
+Fallout4.esm;0017E706;NPC_;LvlRadscorpionLegendary;
+Fallout4.esm;0017E704;NPC_;EncRadscorpion07Legendary;Legendary Deathskull Radscorpion
+Fallout4.esm;0017E703;NPC_;EncRadscorpion06Legendary;Legendary Radscorpion Predator
+Fallout4.esm;0017E702;NPC_;EncRadscorpion05Legendary;Legendary Radscorpion Stalker
+Fallout4.esm;0017E701;NPC_;EncRadscorpion03Legendary;Legendary Glowing Radscorpion
+Fallout4.esm;0017E700;NPC_;EncRadscorpion04Legendary;Legendary Albino Radscorpion
+Fallout4.esm;0017E6FF;NPC_;EncRadscorpion02Legendary;Legendary Radscorpion Hunter
+Fallout4.esm;0017E6FE;NPC_;EncRadscorpion01Legendary;Legendary Radscorpion
+Fallout4.esm;0017E6FD;NPC_;DN015FeralGhoulNoArmor;
+Fallout4.esm;0017E6FB;NPC_;encFeralGhoul04NoArmor;
+Fallout4.esm;0017E6FA;NPC_;LvlSupermutantAllRangedLegendary;
+Fallout4.esm;0017E6F9;NPC_;LvlSupermutantAutoLegendary;
+Fallout4.esm;0017E6F6;NPC_;LvlSupermutantRifleLegendary;
+Fallout4.esm;0017E6F5;NPC_;EncSuperMutant09AutoLegendary;
+Fallout4.esm;0017E6F4;NPC_;EncSuperMutant09RifleLegendary;Legendary Super Mutant Warlord
+Fallout4.esm;0017E6F3;NPC_;EncSuperMutant08AutoLegendary;
+Fallout4.esm;0017E6F2;NPC_;EncSuperMutant08RifleLegendary;Legendary Super Mutant Primus
+Fallout4.esm;0017E6F1;NPC_;EncSuperMutant07AutoLegendary;
+Fallout4.esm;0017E6F0;NPC_;EncSuperMutant07RifleLegendary;Legendary Super Mutant Overlord
+Fallout4.esm;0017E6EE;NPC_;EncSuperMutant06AutoLegendary;
+Fallout4.esm;0017E6ED;NPC_;EncSuperMutant06RifleLegendary;Legendary Super Mutant Master
+Fallout4.esm;0017E6EC;NPC_;EncSuperMutant03AutoLegendary;
+Fallout4.esm;0017E6EB;NPC_;EncSuperMutant03RifleLegendary;Legendary Super Mutant Brute
+Fallout4.esm;0017E6EA;NPC_;EncSuperMutant05AutoLegendary;
+Fallout4.esm;0017E6E9;NPC_;EncSuperMutant05RifleLegendary;Legendary Super Mutant Butcher
+Fallout4.esm;0017E6E8;NPC_;EncSuperMutant04AutoLegendary;
+Fallout4.esm;0017E6E7;NPC_;EncSuperMutant04RifleLegendary;Legendary Super Mutant Enforcer
+Fallout4.esm;0017E6E6;NPC_;EncSuperMutant02AutoLegendary;
+Fallout4.esm;0017E6E5;NPC_;EncSuperMutant02RifleLegendary;Legendary Super Mutant Skirmisher
+Fallout4.esm;0017E6E4;NPC_;LvlMirelurkAllBoss;
+Fallout4.esm;0017E6E1;NPC_;LvlMirelurkKingBoss;
+Fallout4.esm;0017E6E0;NPC_;LvlMirelurkKingLegendary;
+Fallout4.esm;0017E6DE;NPC_;EncMirelurkKing03Legendary;Legendary Glowing Mirelurk King
+Fallout4.esm;0017E6DD;NPC_;EncMirelurkKing02Legendary;Legendary Mirelurk Deep King
+Fallout4.esm;0017E6DC;NPC_;EncMirelurkKing01Legendary;Legendary Mirelurk King
+Fallout4.esm;0017E6DB;NPC_;LvlMirelurkHunterBoss;
+Fallout4.esm;0017E6DA;NPC_;LvlMirelurkHunterLegendary;
+Fallout4.esm;0017E6D8;NPC_;EncMirelurkHunter03Legendary;Legendary Albino Mirelurk Hunter
+Fallout4.esm;0017E6D7;NPC_;EncMirelurkHunter01Legendary;Legendary Mirelurk Hunter
+Fallout4.esm;0017E6D6;NPC_;EncMirelurkHunter02Legendary;Legendary Glowing Mirelurk Hunter
+Fallout4.esm;0017E6D5;NPC_;LvlMirelurkCrabLegendary;
+Fallout4.esm;0017E6D3;NPC_;EncMirelurk01Legendary;Legendary Mirelurk
+Fallout4.esm;0017E6D2;NPC_;EncMirelurk04Legendary;Legendary Glowing Mirelurk
+Fallout4.esm;0017E6D1;NPC_;EncMirelurk03Legendary;Legendary Mirelurk Killclaw
+Fallout4.esm;0017E6D0;NPC_;EncMirelurk02Legendary;Legendary Mirelurk Razorclaw
+Fallout4.esm;0017E6CF;NPC_;LvlBloatflyLegendary;
+Fallout4.esm;0017E6CD;NPC_;EncBloatfly04Legendary;Legendary Glowing Bloatfly
+Fallout4.esm;0017E6CC;NPC_;EncBloatfly03Legendary;Legendary Festering Bloatfly
+Fallout4.esm;0017E6CB;NPC_;EncBloatfly02Legendary;Legendary Black Bloatfly
+Fallout4.esm;0017D889;NPC_;DiamondCityMinutemenEnvoyF01;
+Fallout4.esm;0017D888;NPC_;DiamondCityMinutemenEnvoyM01;
+Fallout4.esm;0017D882;NPC_;DiamondCityBoSEnvoyM01;Brotherhood Scribe
+Fallout4.esm;0017D881;NPC_;DiamondCityBoSEnvoyF01;Brotherhood Knight
+Fallout4.esm;0017D87C;NPC_;DiamondCitySynthEnvoy;
+Fallout4.esm;0017D6B6;NPC_;EncBoSTraitsSoldierMale04;Brotherhood Soldier Initiate
+Fallout4.esm;0017D6B5;NPC_;EncBoSTraitsSoldierMale03;Brotherhood Soldier Initiate
+Fallout4.esm;0017D6B3;NPC_;EncBoSTraitsSoldierFemale02;Brotherhood Soldier Initiate
+Fallout4.esm;0017D6B2;NPC_;EncBoSTraitsSoldierFemale01;Brotherhood Soldier Initiate
+Fallout4.esm;0017D6B1;NPC_;EncBoSTraitsSoldierMale02;Brotherhood Soldier Initiate
+Fallout4.esm;0017D6B0;NPC_;EncBoSTraitsSoldierMale01;Brotherhood Soldier Initiate
+Fallout4.esm;0017CA16;NPC_;Inst307CourserTeleport;Institute Courser
+Fallout4.esm;0017ACA2;NPC_;CaptiveSettler_FemaleOld;
+Fallout4.esm;0017AC98;NPC_;CaptiveSettler_MaleOld;
+Fallout4.esm;0017AC91;NPC_;CaptiveSettler_MaleBoston;
+Fallout4.esm;0017AC88;NPC_;CaptiveSettler_FemaleBoston;
+Fallout4.esm;0017AC7D;NPC_;CaptiveSettler_FemaleGhoul;
+Fallout4.esm;0017ABA2;NPC_;CaptiveSettler_MaleGhoul;
+Fallout4.esm;0017AB9A;NPC_;CaptiveSettler_FemaleRough;
+Fallout4.esm;0017AB92;NPC_;CaptiveSettler_MaleRough;
+Fallout4.esm;0017AB89;NPC_;CaptiveSettler_FemaleEvenToned;
+Fallout4.esm;0017AB7A;NPC_;CaptiveSettler_MaleEvenToned;
+Fallout4.esm;0017A579;NPC_;Inst307_LvlBoSSoldier_PowerArmor_Auto_Generator3Guard;
+Fallout4.esm;0017A518;NPC_;LvlBoSSoldier_PowerArmor_BigGun_Aggro1800;
+Fallout4.esm;00179F56;NPC_;MQ101VaultTecScientistM07;Vault-Tec Staff
+Fallout4.esm;00179CD9;NPC_;LvlTurretTripodBoS_Aggro1800;
+Fallout4.esm;00179CD8;NPC_;LvlBoSSoldier_CombatArmor_Semi_Aggro1536;
+Fallout4.esm;00179CD7;NPC_;LvlBoSSoldier_PowerArmor_Auto_Aggro1536;
+Fallout4.esm;00179C6C;NPC_;Loot_CorpseRobotSentryBot01;Sentry Bot
+Fallout4.esm;00179C6B;NPC_;Loot_CorpseRobotProtectron01;Protectron
+Fallout4.esm;00179C6A;NPC_;Loot_CorpseRobotMrHandy01;Mr Handy
+Fallout4.esm;00179C69;NPC_;Loot_CorpseRobotMrGutsy01;Mr. Gutsy
+Fallout4.esm;00179C68;NPC_;Loot_CorpseRobotEyeBot01;EyeBot
+Fallout4.esm;00179C67;NPC_;Loot_CorpseRobotAssaultron01;Assaultron
+Fallout4.esm;00179C66;NPC_;Loot_CorpseBaseRobotMrGutsy;
+Fallout4.esm;00179C65;NPC_;Loot_CorpseBaseRobotEyeBot;EyeBot
+Fallout4.esm;00179C64;NPC_;Loot_CorpseBaseRobotMrHandy;Mr Handy
+Fallout4.esm;00179C63;NPC_;Loot_CorpseBaseRobotProtectron;Protectron
+Fallout4.esm;00179C62;NPC_;Loot_CorpseBaseRobotSentryBot;Sentry Bot
+Fallout4.esm;00179C61;NPC_;Loot_CorpseBaseRobotAssaultron;Assaultron
+Fallout4.esm;001796A0;NPC_;MQ101VaultTecScientistF02;Vault-Tec Staff
+Fallout4.esm;00179569;NPC_;Inst307_LvlGorilla;
+Fallout4.esm;00178F08;NPC_;CaptiveSettler_Base;Settler
+Fallout4.esm;0017850B;NPC_;LvlBoSSoldier_CombatArmor_Semi_Aggro2048;
+Fallout4.esm;001784D2;NPC_;Inst307_LvlBoSScribeEngineer_Scout;
+Fallout4.esm;001784CF;NPC_;Inst307_LvlBoSSoldier_CombatArmor_Auto_Scout;
+Fallout4.esm;001784CD;NPC_;Inst307_LvlBoSScribeField_Scout;
+Fallout4.esm;001784CA;NPC_;Inst307_LvlBoSSoldier_PowerArmor_Auto_Scout;
+Fallout4.esm;001784C9;NPC_;Inst307_LvlBoSSoldier_CombatArmor_Semi_Scout;
+Fallout4.esm;00178453;NPC_;LvlTurretTripodBoS_Aggro2048;
+Fallout4.esm;00178452;NPC_;LvlBoSSoldier_PowerArmor_Semi_Aggro2048;
+Fallout4.esm;00178451;NPC_;LvlBoSSoldier_PowerArmor_Missile_Aggro2048;
+Fallout4.esm;00178450;NPC_;LvlBoSSoldier_PowerArmor_BigGun_Aggro2048;
+Fallout4.esm;0017844F;NPC_;LvlBoSSoldier_PowerArmor_Auto_Aggro2048;
+Fallout4.esm;0017844E;NPC_;LvlBoSScribe_Aggro2048;
+Fallout4.esm;0017844D;NPC_;LvlBoSScribeEngineer_Aggro2048;
+Fallout4.esm;0017844C;NPC_;LvlBoSScribeField_Aggro2048;
+Fallout4.esm;0017844B;NPC_;LvlBoSScribeScience_Aggro2048;
+Fallout4.esm;0017844A;NPC_;LvlBoSSoldier_CombatArmor_Auto_Aggro2048;
+Fallout4.esm;00178449;NPC_;LvlBoSSoldier_CombatArmor_Missile_Aggro2048;
+Fallout4.esm;00177DF8;NPC_;MQ101VaultTecScientistM01;Overseer
+Fallout4.esm;00176E05;NPC_;DiamondCityResidentM09Quest10;
+Fallout4.esm;00176E04;NPC_;DiamondCityResidentF08Quest10;
+Fallout4.esm;00176DCA;NPC_;EncMirelurkSpawn01;Mirelurk Spawn
+Fallout4.esm;00176337;NPC_;WorkshopDog;Junkyard Dog
+Fallout4.esm;00176336;NPC_;WorkshopGorilla;
+Fallout4.esm;001761B1;NPC_;Prydwen_LvlBoSScribe_Engineer_MessHall;
+Fallout4.esm;00176197;NPC_;EncSynth01_Inst_MissileTemplate;
+Fallout4.esm;00176195;NPC_;Inst307Fight_LvlSynth_Institute_Missile;
+Fallout4.esm;00176162;NPC_;LvlGorilla;
+Fallout4.esm;00176140;NPC_;Inst307Fight_LvlSynthVirus;Synth Virus
+Fallout4.esm;0017610B;NPC_;DebugJPVendor;Vendor
+Fallout4.esm;00176060;NPC_;DebugJPCurieChatWithNPCActor;Doctor Type
+Fallout4.esm;00175F2B;NPC_;Inst307_LvlBoSVertibirdPilotScout;
+Fallout4.esm;00175F2A;NPC_;Inst307_LvlVertibirdScout;
+Fallout4.esm;00175B76;NPC_;DebugJPCurieScanActor;Medically Interesting Person
+Fallout4.esm;00175093;NPC_;Prydwen_EncBoSSoldier02_PAArmor_EntryScene;Brotherhood Knight
+Fallout4.esm;00175092;NPC_;Prydwen_EncBoSSoldier04_EntryScene;Brotherhood Knight-Captain
+Fallout4.esm;00174DEE;NPC_;Inst307_LvlProtectronBoSTower_512;
+Fallout4.esm;0017412F;NPC_;MQ104MobsterTaunter;Dino
+Fallout4.esm;0017404C;NPC_;LvlTurretTripodBoS;
+Fallout4.esm;0016FF51;NPC_;MS07c_KeypadVoice;Keypad Voice
+Fallout4.esm;0016FC29;NPC_;LvlRaider_Classic;
+Fallout4.esm;0016D40E;NPC_;MS05B_Loot_CorpseGunnerMale_Basic;Gunner
+Fallout4.esm;0016CDBB;NPC_;AudioTemplateMirelurkQueen;AudioTemplateMirelurk
+Fallout4.esm;0016CA44;NPC_;LvlRadRoach;
+Fallout4.esm;0016CA42;NPC_;EncRadRoachGlowing;Glowing Radroach
+Fallout4.esm;0016CA41;NPC_;EncRadRoachLegendary;Legendary Radroach
+Fallout4.esm;0016C3BD;NPC_;LvlMoleratBombAggro;
+Fallout4.esm;0016BACF;NPC_;LvlBoSScribeField;
+Fallout4.esm;0016BACE;NPC_;LvlBoSScribeScience;
+Fallout4.esm;0016BACD;NPC_;LvlBoSScribeEngineer;
+Fallout4.esm;0016ADB0;NPC_;RETravelJS01Gruel;Gruel
+Fallout4.esm;0016A65E;NPC_;DN101_LvlRaiderBoss;Slab
+Fallout4.esm;0016A06E;NPC_;InstituteSynthFoodVendor;Synth
+Fallout4.esm;001696BB;NPC_;MS05b_LvlDeathclawAmbush;
+Fallout4.esm;0016962D;NPC_;EncMirelurkSpawnHatchling;Mirelurk Hatchling
+Fallout4.esm;00168B89;NPC_;VirgilHuman;Virgil
+Fallout4.esm;001685F9;NPC_;MS05_Loot_CorpseReward;Gunner
+Fallout4.esm;001685F5;NPC_;MS05_PvtHartCorpse;Private Hart
+Fallout4.esm;001685F4;NPC_;MS05_SgtLeeCorpse;Sergeant Lee
+Fallout4.esm;001685F3;NPC_;MS05_JefferiesCorpse;Major Jefferies
+Fallout4.esm;001685E7;NPC_;MS05_Loot_CorpseGunnerMale;Gunner
+Fallout4.esm;001685E1;NPC_;MS05_Jefferies;Major Jefferies
+Fallout4.esm;001685E0;NPC_;MS05_PvtHart;Private Hart
+Fallout4.esm;001685DF;NPC_;MS05_SgtLee;Sergeant Lee
+Fallout4.esm;001681D2;NPC_;LvlSynth_Institute_SuperbarrelAggro512;
+Fallout4.esm;001681D1;NPC_;LvlSynth_Institute_Superbarrel;
+Fallout4.esm;001681D0;NPC_;LvlSynth_Institute_Rifle;
+Fallout4.esm;001681CF;NPC_;LvlSynth_Institute_Pistol;
+Fallout4.esm;001681CE;NPC_;LvlSynth_Institute_MeleeAggro512;
+Fallout4.esm;001681CD;NPC_;LvlSynth_Institute_Melee;
+Fallout4.esm;001681CC;NPC_;LvlSynth_Institute_BossAggro512;
+Fallout4.esm;001681CB;NPC_;LvlSynth_Institute_Boss;Synth Leader
+Fallout4.esm;001681CA;NPC_;LvlSynth_Institute_AutoAggro512;
+Fallout4.esm;001681C9;NPC_;LvlSynth_Institute_Auto;
+Fallout4.esm;001681C8;NPC_;LvlSynth_Institute_Aggro512;
+Fallout4.esm;001681C7;NPC_;LvlSynth_Institute;
+Fallout4.esm;001681C6;NPC_;EncSynth01_Inst_SuperbarrelTemplate;
+Fallout4.esm;001681C5;NPC_;EncSynth01_Inst_RifleTemplate;
+Fallout4.esm;001681C4;NPC_;EncSynth01_Inst_PistolTemplate;
+Fallout4.esm;001681C3;NPC_;EncSynth01_Inst_MeleeTemplate;
+Fallout4.esm;001681C1;NPC_;EncSynth01_Inst_LaserTemplate;
+Fallout4.esm;001681C0;NPC_;EncSynth01_Inst_AutoTemplate;
+Fallout4.esm;001681BF;NPC_;EncSynth01SuperbarrelTemplate;
+Fallout4.esm;001681BE;NPC_;EncSynth01PistolTemplate;
+Fallout4.esm;001681BD;NPC_;EncSynth01LaserTemplate;
+Fallout4.esm;001681BB;NPC_;EncSynth01RifleTemplate;
+Fallout4.esm;001681BA;NPC_;EncSynth01AutoTemplate;
+Fallout4.esm;00167FB5;NPC_;LvlInstituteRefugee;
+Fallout4.esm;00165790;NPC_;encFeralGhoul03;Feral Ghoul Stalker
+Fallout4.esm;001655D4;NPC_;LvlSynthRifle;
+Fallout4.esm;00165576;NPC_;LvlFeralGhoulGlowingOneLegendary;
+Fallout4.esm;0016556D;NPC_;encFeralGhoulGlowing03Legendary;Legendary Bloated Glowing One
+Fallout4.esm;0016556C;NPC_;encFeralGhoulGlowing02Legendary;Legendary Putrid Glowing One
+Fallout4.esm;0016556B;NPC_;encFeralGhoulGlowing01Legendary;Legendary Glowing One
+Fallout4.esm;0016556A;NPC_;LvlFeralGhoulLegendary;
+Fallout4.esm;00165566;NPC_;encFeralGhoul07Legendary;Legendary Rotting Feral Ghoul
+Fallout4.esm;00165565;NPC_;encFeralGhoul06Legendary;Legendary Gangrenous Feral Ghoul
+Fallout4.esm;00165564;NPC_;encFeralGhoul05Legendary;Legendary Withered Feral Ghoul
+Fallout4.esm;00165563;NPC_;encFeralGhoul04Legendary;Legendary Feral Ghoul Reaver
+Fallout4.esm;00165562;NPC_;encFeralGhoul03Legendary;Legendary Feral Ghoul Stalker
+Fallout4.esm;00165561;NPC_;encFeralGhoul02Legendary;Legendary Feral Ghoul Roamer
+Fallout4.esm;001648EF;NPC_;DN157LvlMirelurkHunterRaiderFriendly;
+Fallout4.esm;001648EE;NPC_;DN157LvlMirelurkRaiderFriendly;
+Fallout4.esm;001647C6;NPC_;EncCurieSynth;Curie
+Fallout4.esm;001647C4;NPC_;CurieQCaretaker;Caretaker
+Fallout4.esm;001644BC;NPC_;AudioTemplateMirelurkHunter;
+Fallout4.esm;00163EAB;NPC_;EncSMBehemoth01NoAggro;Behemoth
+Fallout4.esm;001628EE;NPC_;LvlSynthCourser;
+Fallout4.esm;00162781;NPC_;Loot_CorpseDN068MinutemanFemale;Emma
+Fallout4.esm;0016277E;NPC_;DN068_Emma;Emma
+Fallout4.esm;00162779;NPC_;DN068_Josh;Josh
+Fallout4.esm;00160B3B;NPC_;DN144LvlDeathclaw;
+Fallout4.esm;001603C8;NPC_;BunkerHillBrahmin;Brahmin
+Fallout4.esm;00160161;NPC_;LvlBoSSoldier_PowerArmor_BigGun;
+Fallout4.esm;00160160;NPC_;LvlBoSSoldier_PowerArmor_Missile;
+Fallout4.esm;0016015F;NPC_;LvlBoSSoldier_PowerArmor_Auto;
+Fallout4.esm;0016015E;NPC_;LvlBoSSoldier_CombatArmor_Missile;
+Fallout4.esm;0016015D;NPC_;LvlBoSSoldier_CombatArmor_Auto;
+Fallout4.esm;0016015C;NPC_;EncBoS_CombatArmor_Missile_Template;Brotherhood Soldier Template
+Fallout4.esm;0016015B;NPC_;EncBoS_PowerArmor_Missile_Template;Brotherhood Soldier Template
+Fallout4.esm;0016015A;NPC_;EncBoS_PowerArmor_BigGun_Template;Brotherhood Soldier Template
+Fallout4.esm;00160159;NPC_;EncBoS_PowerArmor_Auto_Template;Brotherhood Soldier Template
+Fallout4.esm;00160158;NPC_;EncBoS_CombatArmor_Auto_Template;Brotherhood Soldier Template
+Fallout4.esm;0016014D;NPC_;EncBoS_CombatArmor_Semi_Template;Brotherhood Soldier Template
+Fallout4.esm;0016014C;NPC_;EncBoS_PowerArmor_Semi_Template;Brotherhood Soldier Template
+Fallout4.esm;0015F03C;NPC_;EncSynth02Template;Synth Strider
+Fallout4.esm;0015EF6B;NPC_;RR201TunnelRebelsFemale;Synth
+Fallout4.esm;0015EF6A;NPC_;RR201TunnelRebelsMale;Synth
+Fallout4.esm;0015E983;NPC_;InstituteSynthGen3Male02;Synth
+Fallout4.esm;0015E982;NPC_;InstituteSynthGen3Female02;Synth
+Fallout4.esm;0015E922;NPC_;MQ101VaultTecScientistF01;Vault-Tec Doctor
+Fallout4.esm;0015E64C;NPC_;EncEyeBotBoS;EyeBot
+Fallout4.esm;0015E647;NPC_;EncEyeBotMM;EyeBot
+Fallout4.esm;0015E003;NPC_;Prydwen_EncBoSScribe02_Engineer_NoSleep;Brotherhood Scribe
+Fallout4.esm;0015E001;NPC_;Prydwen_EncBoSSoldier03_CombatArmorSemi_Squires;Brotherhood Knight-Sergeant
+Fallout4.esm;0015DFFF;NPC_;Prydwen_EncBoSFieldScribe03;Brotherhood Senior Scribe
+Fallout4.esm;0015DFFA;NPC_;Prydwen_EncBoSPilot03_BridgeFemale;Brotherhood Lancer-Knight
+Fallout4.esm;0015DFF4;NPC_;Prydwen_EncBoSSoldier03_NoArmor01_Barracks;Brotherhood Knight-Sergeant
+Fallout4.esm;0015DE73;NPC_;FFGoodneighbor08Sammy;Sammy
+Fallout4.esm;0015DE70;NPC_;GoodneighborGuardGhoulOnly;Neighborhood Watch
+Fallout4.esm;0015DE6F;NPC_;GoodneighborGuardHumanOnly;Neighborhood Watch
+Fallout4.esm;0015DCE2;NPC_;TheaterDrifterSlim;Slim
+Fallout4.esm;0015DC95;NPC_;TheaterDrifterDogShug;Shug
+Fallout4.esm;0015D4D3;NPC_;LvlGunnerAutoAggro1024;
+Fallout4.esm;0015D4D2;NPC_;LvlGunnerSemiAutoAggro1024;
+Fallout4.esm;0015CD3A;NPC_;TheaterDrifterDogRuby;Ruby
+Fallout4.esm;0015CD2A;NPC_;TheaterDrifterDando;Dando
+Fallout4.esm;0015BDD8;NPC_;LvlMrGutsy_GunnerAggro1024;
+Fallout4.esm;0015BDD7;NPC_;LvlGunnerSniperAggro1024;
+Fallout4.esm;0015BDD3;NPC_;LvlGunnerShotgunAggro1024b;
+Fallout4.esm;0015BDD1;NPC_;LvlGunnerShotgun;
+Fallout4.esm;0015B545;NPC_;InstituteSynthGen3Female01;Synth
+Fallout4.esm;0015B542;NPC_;InstituteSynthGen3Male01;Synth
+Fallout4.esm;0015B0BC;NPC_;RR201MessengerSynth;Synth
+Fallout4.esm;0015A1D9;NPC_;MQ101MrsCallahan;Mrs. Callahan
+Fallout4.esm;0015A1D8;NPC_;MQ101MrCallahan;Mr. Callahan
+Fallout4.esm;00157C9A;NPC_;LvlMrHandy_Standard;
+Fallout4.esm;00157C5F;NPC_;EncMrHandy;Mr Handy
+Fallout4.esm;00157AA8;NPC_;DN049_LvlMrHandy_Bowling_Lane;Lane
+Fallout4.esm;00157AA7;NPC_;DN049_LvlMrHandy_Bowling_Strike;Strike
+Fallout4.esm;00157AA6;NPC_;DN049_LvlMrHandy_Bowling_Kingpin;Kingpin
+Fallout4.esm;00157AA5;NPC_;DN049_LvlMrHandy_Bowling_Split;Split
+Fallout4.esm;00156A28;NPC_;Farm06FemaleOld;Settler
+Fallout4.esm;00156A27;NPC_;Farm06MaleOld;Settler
+Fallout4.esm;00156A23;NPC_;Farm05FemaleChild;Settler
+Fallout4.esm;00156A21;NPC_;Farm05MaleChild;Settler
+Fallout4.esm;00156A20;NPC_;Farm05MaleRough;Settler
+Fallout4.esm;00156A1D;NPC_;Farm04MaleEvenToned;Settler
+Fallout4.esm;00156A1C;NPC_;Farm04MaleOld;Settler
+Fallout4.esm;00156A18;NPC_;Farm03FemaleEvenToned;Settler
+Fallout4.esm;00156A17;NPC_;Farm03FemaleRough;Settler
+Fallout4.esm;00156A13;NPC_;Farm02MaleChild;Settler
+Fallout4.esm;00156A12;NPC_;Farm02FemaleBoston;Settler
+Fallout4.esm;00156A0F;NPC_;Farm01FemaleEvenToned;Settler
+Fallout4.esm;00156A0E;NPC_;Farm02MaleRough;Settler
+Fallout4.esm;00156A0D;NPC_;Farm01MaleEvenToned;Settler
+Fallout4.esm;001552C5;NPC_;Prydwen_EncHouseCat;Emmett
+Fallout4.esm;001552C4;NPC_;BoS_LvlMrGutsy;Brotherhood Mr Gutsy
+Fallout4.esm;001552C3;NPC_;BoS201_LvlBoSScribeScience;
+Fallout4.esm;001552C1;NPC_;BoS201_LvlBoSSoldier_NoArmor_Guard;
+Fallout4.esm;001552C0;NPC_;BoS201_LvlBoSSoldier_PowerArmor_Guard;
+Fallout4.esm;001552BF;NPC_;BoS201_LvlBoSScribeEngineer;
+Fallout4.esm;001552BE;NPC_;BoS201_LvlBoSSoldier_CombatArmor_Auto;
+Fallout4.esm;00155252;NPC_;Farm01MaleBoston;Settler
+Fallout4.esm;001538CE;NPC_;Prydwen_LvlBoSScribe_Engineer_Bridge;
+Fallout4.esm;0015384F;NPC_;V81_CalvinWhitaker;Calvin
+Fallout4.esm;0015384E;NPC_;V81_ScottEdwards;Officer Edwards
+Fallout4.esm;00153809;NPC_;Prydwen_LvlBoSScribe_Science_Template;
+Fallout4.esm;00153808;NPC_;Prydwen_LvlBoSScribe_Engineer_Template;
+Fallout4.esm;00153807;NPC_;Prydwen_LvlBoSSoldier_CombatArmor_Semi_Template;
+Fallout4.esm;00153413;NPC_;LvlSynthTeleport_Manual;
+Fallout4.esm;001533A7;NPC_;LvlRaiderPowerArmor;
+Fallout4.esm;00153391;NPC_;LvlRaiderBossPowerArmor;
+Fallout4.esm;00153341;NPC_;LiamBinetCorpse;Liam Binet
+Fallout4.esm;001526F3;NPC_;Prydwen_LvlBoSSoldier_PAArmor_Guard_PAScene;
+Fallout4.esm;001526F1;NPC_;Prydwen_LvlBoSScribe_Engineer_PAScene;
+Fallout4.esm;001526E9;NPC_;Prydwen_LvlBoSScribe_Engineer_LabScene;
+Fallout4.esm;001526DC;NPC_;Prydwen_LvlBoSVertibirdPilot_BarracksScene;
+Fallout4.esm;001526D8;NPC_;Prydwen_LvlBoSScribe_Engineer_BarracksScene;
+Fallout4.esm;001526AA;NPC_;Prydwen_LvlBoSVertibirdPilot_MessHall;
+Fallout4.esm;001526A6;NPC_;Prydwen_BoSMessOfficer;Brotherhood Mess Officer
+Fallout4.esm;00152695;NPC_;Prydwen_LvlBoSSoldier_PAArmor_Patrol;
+Fallout4.esm;0015268C;NPC_;Prydwen_LvlBoSScribe_EngineerBarracks;
+Fallout4.esm;0015122B;NPC_;BosSuperMutantLab;Super Mutant
+Fallout4.esm;001511D6;NPC_;BoSSynthLab;Synth
+Fallout4.esm;00150787;NPC_;Prydwen_LvlBoSSquire03;
+Fallout4.esm;00150786;NPC_;Prydwen_LvlBoSScribe_Engineer_NoSleep;
+Fallout4.esm;0014FD8E;NPC_;DN084_LvlProtectron;
+Fallout4.esm;0014FC40;NPC_;LvlRaider_MaleAggressive;
+Fallout4.esm;0014FC3D;NPC_;REHancockFriend;Dolly Madison
+Fallout4.esm;0014EEDF;NPC_;DN084_LvlSentryBot;
+Fallout4.esm;0014EED9;NPC_;DN084_LvlTurretBubbleMassFusion;
+Fallout4.esm;0014EECE;NPC_;DN084_LvlAssaultron;
+Fallout4.esm;0014EB53;NPC_;Prydwen_LvlBoSScribe_EngineerPatrol01;
+Fallout4.esm;0014EB51;NPC_;Prydwen_LvlBoSSoldier_CombatArmor_Semi_NoSleep;
+Fallout4.esm;0014EB48;NPC_;Prydwen_LvlBoSScribe_Science02;
+Fallout4.esm;0014EB46;NPC_;Prydwen_LvlBoSScribe_Engineer02;
+Fallout4.esm;0014EB45;NPC_;Prydwen_LvlBoSScribe_Engineer01;
+Fallout4.esm;0014EB27;NPC_;Prydwen_LvlBoSSquire01;
+Fallout4.esm;0014EAFD;NPC_;Prydwen_LvlBoSScribe02;
+Fallout4.esm;0014EAF1;NPC_;Prydwen_LvlBoSSquire02;
+Fallout4.esm;0014EAE2;NPC_;Prydwen_LvlBoSScribe01;
+Fallout4.esm;0014E124;NPC_;DN070_LvlProtectron_Hostile;
+Fallout4.esm;0014DCF8;NPC_;REPrestonFriend;Ben Gibson
+Fallout4.esm;0014DCF2;NPC_;REPrisoner;Settler
+Fallout4.esm;0014DCEA;NPC_;RECorpseGhoul03;Settler
+Fallout4.esm;0014DCE9;NPC_;RECorpseGhoul02;Settler
+Fallout4.esm;0014DCE8;NPC_;RECorpseGhoul01;Settler
+Fallout4.esm;0014D172;NPC_;MS16SonyaBotMkII;Sonya Mk. II
+Fallout4.esm;0014CEAB;NPC_;REFarmerFemale;Settler
+Fallout4.esm;0014CEAA;NPC_;REFarmerMale;Settler
+Fallout4.esm;0014CEA9;NPC_;WorkshopNPCFemale;Settler
+Fallout4.esm;0014CEA8;NPC_;WorkshopNPCMale;Settler
+Fallout4.esm;0014CEA2;NPC_;REMantaMan;Manta Man
+Fallout4.esm;0014CE9E;NPC_;REAssaultKMK05Sniper;Absalom
+Fallout4.esm;0014BF69;NPC_;FFDiamondCity12Kyle;Kyle
+Fallout4.esm;0014BF66;NPC_;FFDiamondCity12Riley;Riley
+Fallout4.esm;0014AE58;NPC_;LvlSupermutantSuicider;Super Mutant Suicider
+Fallout4.esm;00149CA1;NPC_;EncRaider06Melee;
+Fallout4.esm;00149CA0;NPC_;EncRaider06Grenade;
+Fallout4.esm;00149C9F;NPC_;EncRaider06;Raider Veteran
+Fallout4.esm;00149C9E;NPC_;AnimTurretBubbleLaserTemplate02;Laser Turret
+Fallout4.esm;00148B8D;NPC_;RR303Scabbard;Scabbard
+Fallout4.esm;00148B76;NPC_;BrendanVolkert;Brendan Volkert
+Fallout4.esm;00148B75;NPC_;NathanFilmore;Nathan Filmore
+Fallout4.esm;00148B74;NPC_;QuentinFilmore;Quentin Filmore
+Fallout4.esm;00148B73;NPC_;JuliaThompson;Julia Thompson
+Fallout4.esm;00148B72;NPC_;AliceThompson;Alice Thompson
+Fallout4.esm;00148B71;NPC_;JanetThompson;Janet Thompson
+Fallout4.esm;0014890C;NPC_;REVault81CitizenPrisoner;Vault 81 Resident
+Fallout4.esm;0014890B;NPC_;LvlRaiderAggressive;
+Fallout4.esm;00147D51;NPC_;MS07b_MartyBullfinch;Marty Bullfinch
+Fallout4.esm;00147389;NPC_;LvlSupermutantNoBerserk;
+Fallout4.esm;00146CE2;NPC_;encMrGutsy04;Colonel Gutsy
+Fallout4.esm;00146CE1;NPC_;encMrGutsy03;Major Gutsy
+Fallout4.esm;00146CE0;NPC_;encMrGutsy02;Lieutenant Gutsy
+Fallout4.esm;00146CDF;NPC_;encMrGutsy01Template;Mr. Gutsy
+Fallout4.esm;0014661A;NPC_;RESceneKMK_MQ202Kellogg;
+Fallout4.esm;0014640E;NPC_;MQ302SynthWorker;Synth
+Fallout4.esm;00146168;NPC_;EncSynthVoice03;Synth Strider
+Fallout4.esm;00146167;NPC_;EncSynthVoice02;Synth Strider
+Fallout4.esm;00146161;NPC_;EncSynthVoice01;Synth Strider
+Fallout4.esm;00146150;NPC_;EncSuperMutantTemplateSniper;Super Mutant
+Fallout4.esm;00146140;NPC_;MercerStationFreedGen3Female02;Synth
+Fallout4.esm;001456F7;NPC_;DiamondCitySecuritySchoolhouse01Bat;
+Fallout4.esm;00145037;NPC_;DN062PrincipalVoice;Principal Hudson
+Fallout4.esm;00144FA8;NPC_;LvlEyeBotNoRadio;
+Fallout4.esm;00144ECB;NPC_;DN070_Alyssa;Mayor Alyssa Park
+Fallout4.esm;001443D8;NPC_;AudioTemplateRadscorpion;AudioTemplateMirelurk
+Fallout4.esm;001440D6;NPC_;LvlTurretTripodChildrenOfAtom;
+Fallout4.esm;0014404A;NPC_;DN166LvlRobotBoss;Atom's Wrath
+Fallout4.esm;00144048;NPC_;DN166LvlTurretTripod;
+Fallout4.esm;00143AD8;NPC_;DiamondCitySecurityGate01;
+Fallout4.esm;001437F6;NPC_;EncYaoGuai06;Dusky Yao Guai
+Fallout4.esm;001437F5;NPC_;EncYaoGuai05;Rabid Yao Guai
+Fallout4.esm;001437F4;NPC_;EncYaoGuai04;Albino Yao Guai
+Fallout4.esm;001437F3;NPC_;EncYaoGuai03;Glowing Yao Guai
+Fallout4.esm;001437F2;NPC_;EncYaoGuai02;Shaggy Yao Guai
+Fallout4.esm;001423BE;NPC_;EncStingwing05;Stingwing Chaser
+Fallout4.esm;001423BD;NPC_;EncStingwing04;Glowing Stingwing
+Fallout4.esm;001423BC;NPC_;EncStingwing03;Stingwing Skimmer
+Fallout4.esm;001423BB;NPC_;EncStingwing02;Stingwing Darter
+Fallout4.esm;001423B8;NPC_;EncBloodbug06;Vampiric Bloodbug
+Fallout4.esm;001423B7;NPC_;EncBloodbug05;Glowing Bloodbug
+Fallout4.esm;001423B6;NPC_;EncBloodbug04;Infected Bloodbug
+Fallout4.esm;001423B5;NPC_;EncBloodbug03;Red Widow Bloodbug
+Fallout4.esm;001423B4;NPC_;EncBloodbug02;Bloodbug
+Fallout4.esm;001423B2;NPC_;EncBloatfly04;Glowing Bloatfly
+Fallout4.esm;001423B1;NPC_;EncBloatfly03;Festering Bloatfly
+Fallout4.esm;001423B0;NPC_;EncBloatfly02;Black Bloatfly
+Fallout4.esm;001423AD;NPC_;EncDeathclaw08;Mythic Deathclaw
+Fallout4.esm;001423AC;NPC_;EncDeathclaw07;Chameleon Deathclaw
+Fallout4.esm;001423AB;NPC_;EncDeathclaw06;Albino Deathclaw
+Fallout4.esm;001423AA;NPC_;EncDeathclaw05;Savage Deathclaw
+Fallout4.esm;001423A9;NPC_;EncDeathclaw04;Deathclaw Matriarch
+Fallout4.esm;001423A8;NPC_;EncDeathclaw03;Glowing Deathclaw
+Fallout4.esm;001423A7;NPC_;EncDeathclaw02;Alpha Deathclaw
+Fallout4.esm;0014239C;NPC_;EncSuperMutant09Missile;
+Fallout4.esm;0014239B;NPC_;EncSuperMutant09Minigun;
+Fallout4.esm;0014239A;NPC_;EncSuperMutant09Melee;
+Fallout4.esm;00142399;NPC_;EncSuperMutant09Grenade;
+Fallout4.esm;00142398;NPC_;EncSuperMutant09Auto;
+Fallout4.esm;00142397;NPC_;EncSuperMutant09Rifle;Super Mutant Warlord
+Fallout4.esm;00142396;NPC_;EncSuperMutant08Missile;
+Fallout4.esm;00142395;NPC_;EncSuperMutant08Minigun;
+Fallout4.esm;00142394;NPC_;EncSuperMutant08Melee;
+Fallout4.esm;00142393;NPC_;EncSuperMutant08Grenade;
+Fallout4.esm;00142392;NPC_;EncSuperMutant08Auto;
+Fallout4.esm;00142391;NPC_;EncSuperMutant08Rifle;Super Mutant Primus
+Fallout4.esm;00142390;NPC_;EncSuperMutant07Missile;
+Fallout4.esm;0014238F;NPC_;EncSuperMutant07Minigun;
+Fallout4.esm;0014238E;NPC_;EncSuperMutant07Melee;
+Fallout4.esm;0014238D;NPC_;EncSuperMutant07Grenade;
+Fallout4.esm;0014238C;NPC_;EncSuperMutant07Auto;
+Fallout4.esm;0014238B;NPC_;EncSuperMutant07Rifle;Super Mutant Overlord
+Fallout4.esm;00142388;NPC_;LvlMirelurkInterior;
+Fallout4.esm;00142385;NPC_;EncMirelurkKing03;Glowing Mirelurk King
+Fallout4.esm;00142384;NPC_;EncMirelurkHunter03;Albino Mirelurk Hunter
+Fallout4.esm;00142383;NPC_;EncMirelurk04;Glowing Mirelurk
+Fallout4.esm;00142382;NPC_;EncMirelurkKing02;Mirelurk Deep King
+Fallout4.esm;00142381;NPC_;EncMirelurkHunter02;Glowing Mirelurk Hunter
+Fallout4.esm;00142380;NPC_;EncMirelurk03;Mirelurk Killclaw
+Fallout4.esm;0014237F;NPC_;EncMirelurk02;Mirelurk Razorclaw
+Fallout4.esm;00140894;NPC_;DN033_Management;Management
+Fallout4.esm;00140892;NPC_;DN033_TimShoots;Tim Shoots
+Fallout4.esm;00140872;NPC_;DN033_Bedlam;Bedlam
+Fallout4.esm;0014055E;NPC_;EncBrahminPack;Pack Brahmin
+Fallout4.esm;001404D8;NPC_;DiamondCitySecurityOfficeAlwaysSandbox01;
+Fallout4.esm;0013FE2C;NPC_;EarlSterling;Earl Sterling
+Fallout4.esm;0013FDF9;NPC_;DiamondCityResidentM03DugoutInteriorBar;
+Fallout4.esm;0013FDF8;NPC_;DiamondCityResidentM04DugoutInteriorBar;
+Fallout4.esm;0013FDF3;NPC_;DiamondCityResidentF02DugoutInterior;
+Fallout4.esm;0013C4A6;NPC_;DiamondCityResidentM01DugoutInterior;
+Fallout4.esm;0013C4A2;NPC_;DiamondCityResidentF01DugoutInterior;
+Fallout4.esm;0013BF29;NPC_;DN033_Hugo;Hugo
+Fallout4.esm;0013BDA9;NPC_;CZ_PatronMelee_MaleRough;
+Fallout4.esm;0013BDA8;NPC_;CZ_PatronMelee_FemaleRough;
+Fallout4.esm;0013BDA7;NPC_;CZ_PatronMelee_RaiderMale02;
+Fallout4.esm;0013BDA6;NPC_;CZ_PatronMelee_RaiderMale01;
+Fallout4.esm;0013AD54;NPC_;DmndSchoolhouseCat;Toro
+Fallout4.esm;001388D0;NPC_;CZ_PatronMale_Bystander;
+Fallout4.esm;00137B36;NPC_;DN101_Loot_CorpseRaiderMale01_Note;Raider
+Fallout4.esm;0013643E;NPC_;DN015_LvlTurretBubbleOffice;
+Fallout4.esm;0013643D;NPC_;DN015_LvlTurretBubbleLab;
+Fallout4.esm;001363E5;NPC_;LvlTurretTripodInstitute;
+Fallout4.esm;00136336;NPC_;InstM03LvlSynth;
+Fallout4.esm;00136252;NPC_;LvlViciousDogAlpha;
+Fallout4.esm;00136251;NPC_;encViciousDogAlpha02;Alpha Vicious Mongrel
+Fallout4.esm;001357C6;NPC_;CZ_Security_Scene;
+Fallout4.esm;00134273;NPC_;EncSentryBot01ShoulderLauncher;
+Fallout4.esm;0013426F;NPC_;CoABrotherWard;Brother Ward
+Fallout4.esm;0013426E;NPC_;CoASisterLayla;Sister Layla
+Fallout4.esm;0013426D;NPC_;CoABrotherOgden;Brother Ogden
+Fallout4.esm;0013426C;NPC_;CoASisterVerena;Sister Verena
+Fallout4.esm;00133EDC;NPC_;DN121BossRoom_LvlForgedMelee;Forged
+Fallout4.esm;00133EDB;NPC_;DN121BossRoom_LvlForgedGrenadier;Forged
+Fallout4.esm;00133EDA;NPC_;DN121BossRoom_LvlForgedFlamer;Forged
+Fallout4.esm;00133EB6;NPC_;PrisonerSettlerFemale;
+Fallout4.esm;00133EB5;NPC_;PrisonerSettlerMale;Settler
+Fallout4.esm;001338EE;NPC_;V81ChildM01;Child
+Fallout4.esm;001337F2;NPC_;BoSLibertyPrime;Liberty Prime
+Fallout4.esm;0013350F;NPC_;CaravanLucasBrahmin;Ol' Girl
+Fallout4.esm;0013350E;NPC_;CaravanLucasGuard02;Caravan Guard
+Fallout4.esm;0013350D;NPC_;CaravanLucasGuard01;Caravan Guard
+Fallout4.esm;00133509;NPC_;CaravanCricketGuard02;Caravan Guard
+Fallout4.esm;00133508;NPC_;CaravanCricketGuard01;Caravan Guard
+Fallout4.esm;00133507;NPC_;CaravanCricketBrahmin;Spot
+Fallout4.esm;00133505;NPC_;CaravanCarlaBrahmin;Brahmin
+Fallout4.esm;001324DC;NPC_;EncViciousDog06;Glowing Mongrel
+Fallout4.esm;001324DB;NPC_;EncViciousDog05;Rabid Mongrel
+Fallout4.esm;001324DA;NPC_;EncViciousDog04;Albino Mongrel
+Fallout4.esm;001324D9;NPC_;EncViciousDog03;Feral Mongrel
+Fallout4.esm;001324D8;NPC_;EncViciousDog02;Vicious Mongrel
+Fallout4.esm;00132251;NPC_;V81CitizenM03T3Atrium;
+Fallout4.esm;0013105B;NPC_;LvlForgedGrenadier;Forged
+Fallout4.esm;00131056;NPC_;LvlForgedMelee;Forged
+Fallout4.esm;0013104B;NPC_;LvlForgedFlamer;Forged
+Fallout4.esm;0013101C;NPC_;LvlForged;Forged
+Fallout4.esm;00131019;NPC_;DN121Slag;Slag
+Fallout4.esm;00130B86;NPC_;CaravanDWGuard02;Caravan Guard
+Fallout4.esm;00130B85;NPC_;CaravanDWGuard01;Caravan Guard
+Fallout4.esm;00130B81;NPC_;CaravanDWBrahmin;Idiot
+Fallout4.esm;00130B78;NPC_;LucasMiller;Lucas Miller
+Fallout4.esm;001309E2;NPC_;LvlTurretBubbleGunner1500;
+Fallout4.esm;0013073B;NPC_;LvlTurretBubbleGunner;
+Fallout4.esm;001304C6;NPC_;DN027_TheodoreCroupCorpse;Theodore Croup
+Fallout4.esm;0012FCCE;NPC_;Cricket;Cricket
+Fallout4.esm;0012FCCB;NPC_;DocWeathers;Doc Weathers
+Fallout4.esm;0012F5FA;NPC_;EncSentryBotAmbushAssaultRifles;
+Fallout4.esm;0012F042;NPC_;DN023LvlSupermutantMelee;
+Fallout4.esm;0012F041;NPC_;DN023LvlSupermutant;
+Fallout4.esm;0012F03F;NPC_;DN023LvlSupermutantBoss;
+Fallout4.esm;0012F003;NPC_;Virgil_VoiceOnly;Virgil
+Fallout4.esm;0012DB4C;NPC_;CoABrotherFoster;Brother Foster
+Fallout4.esm;0012DB4A;NPC_;CoABrotherGriffith;Brother Griffith
+Fallout4.esm;0012DB48;NPC_;CoAMotherIsolde;Mother Isolde
+Fallout4.esm;0012D279;NPC_;DN045_SceneSupermutant;
+Fallout4.esm;0012C046;NPC_;DN133SentryBotAmbush;Sarge
+Fallout4.esm;0012BC97;NPC_;EncBoSPilotTemplate;Brotherhood Soldier Template
+Fallout4.esm;0012BC96;NPC_;EncBoSPilot05;Brotherhood Lancer-Captain
+Fallout4.esm;0012BC95;NPC_;EncBoSPilot04;Brotherhood Lancer-Sergeant
+Fallout4.esm;0012BC94;NPC_;EncBoSPilot03;Brotherhood Lancer-Knight
+Fallout4.esm;0012BC93;NPC_;EncBoSPilot02;Brotherhood Lancer
+Fallout4.esm;0012BC92;NPC_;EncBoSPilot01;Brotherhood Lancer-Initiate
+Fallout4.esm;0012BADB;NPC_;LvlMirelurkKingAmbushMud;
+Fallout4.esm;0012BAB7;NPC_;LvlMirelurkKingAggro1024;
+Fallout4.esm;0012B980;NPC_;DiamondCitySecurityMarket01Bat;
+Fallout4.esm;0012B97E;NPC_;LvlSMBehemoth;
+Fallout4.esm;0012B97C;NPC_;EncSMBehemoth04;Ancient Behemoth
+Fallout4.esm;0012B97B;NPC_;EncSMBehemoth03;Epic Behemoth
+Fallout4.esm;0012B97A;NPC_;EncSMBehemoth02;Glowing Behemoth
+Fallout4.esm;0012AC16;NPC_;DN136_InstituteScientistFemale_Reactor;
+Fallout4.esm;0012AC15;NPC_;DN136_InstituteScientistMale_Reactor;
+Fallout4.esm;00129949;NPC_;DebugRaider1000;
+Fallout4.esm;00129313;NPC_;DN136_InstituteScientistFemale;
+Fallout4.esm;00129312;NPC_;DN136_InstituteScientistMale;
+Fallout4.esm;00128CEE;NPC_;MS04AJBodyguard;Bodyguard
+Fallout4.esm;00128C5A;NPC_;OldManBilly;OldManBilly
+Fallout4.esm;00128875;NPC_;LvlSupermutantMissileAggro1200;
+Fallout4.esm;00128874;NPC_;LvlSupermutantAutoAggro1200;
+Fallout4.esm;001284FF;NPC_;LvlSupermutantRifleAggro1200;
+Fallout4.esm;0012822B;NPC_;DN083_MirelurkQueen;
+Fallout4.esm;00128212;NPC_;DN083_EncTurretTripodMounted;Barney's Turret
+Fallout4.esm;00127592;NPC_;DN123_LvlRaiderBossAggro1024;
+Fallout4.esm;0012758F;NPC_;DN123_NessMercenaryTemplate;Gunner Mercenary
+Fallout4.esm;0012758D;NPC_;DN123_LvlRaiderAutoAggro1024;
+Fallout4.esm;001271FE;NPC_;EncTurretBubble01LaserBlue;
+Fallout4.esm;001262DA;NPC_;DN028_LvlRaiderBoss;Bosco
+Fallout4.esm;00125D2D;NPC_;DN136_InstituteCourser;
+Fallout4.esm;0012544A;NPC_;FFBK03PrisonerMale;Caravan Prisoner
+Fallout4.esm;00125449;NPC_;FFBK03PrisonerFemale;Caravan Prisoner
+Fallout4.esm;00124769;NPC_;LvlTurretStandingCartGunner;
+Fallout4.esm;00124768;NPC_;LvlTurretStandingCart;
+Fallout4.esm;001243FF;NPC_;DN083_StartMirelurk;
+Fallout4.esm;001243D1;NPC_;LvlMinutemanWorkshopFemale;Minuteman
+Fallout4.esm;001243D0;NPC_;LvlMinutemanWorkshopMale;Minuteman
+Fallout4.esm;001243CF;NPC_;LvlMinutemanFemale;
+Fallout4.esm;001243CE;NPC_;LvlMinutemanMale;
+Fallout4.esm;001243C5;NPC_;MS09Mission01Courier;Courier
+Fallout4.esm;001242AC;NPC_;LvlTurretTripodGunner;
+Fallout4.esm;00123B6E;NPC_;DN136_LibertyPrime;
+Fallout4.esm;001236A4;NPC_;LvlRaiderBoltActionAggro1536;
+Fallout4.esm;00122434;NPC_;xxOLDEncSentryBot2AssaultRifles;Sentry Bot
+Fallout4.esm;0012240D;NPC_;EncMutantHound02;Glowing Mutant Hound
+Fallout4.esm;001221B0;NPC_;V81CitizenM07T4Residence;
+Fallout4.esm;0012217C;NPC_;V81CitizenM06T1Residence;
+Fallout4.esm;00122143;NPC_;V81CitizenF06T3Residence;
+Fallout4.esm;0012213D;NPC_;V81CitizenF05T4Hallway;
+Fallout4.esm;00121D52;NPC_;EncAssaultron01Template;Assaultron
+Fallout4.esm;00121D50;NPC_;EncProtectron03;Protectron Guardian
+Fallout4.esm;00121D4F;NPC_;EncProtectron02;Protectron Watcher
+Fallout4.esm;00121D4E;NPC_;LvlProtectronRaider;
+Fallout4.esm;00121D06;NPC_;EncSentryBotAmbushInstitute;
+Fallout4.esm;001209FB;NPC_;LvlRaiderRevolverAggro1024;
+Fallout4.esm;0011F99A;NPC_;MQ101MrsSumner;Neighbor
+Fallout4.esm;0011F999;NPC_;MQ101MrSumner;Neighbor
+Fallout4.esm;0011EA52;NPC_;LvlTurretTripodMountedInstitute;
+Fallout4.esm;0011EA4F;NPC_;LvlTurretBubbleInstitute;
+Fallout4.esm;0011E7B5;NPC_;MQ101ElevatorOperator;Vault-Tec Security
+Fallout4.esm;0011E794;NPC_;MQ101MrRussell;Mr. Russell
+Fallout4.esm;0011E792;NPC_;MQ101ElevatorEscort;Vault-Tec Security
+Fallout4.esm;0011E78E;NPC_;MQ101MrWhitfield;Mr. Whitfield
+Fallout4.esm;0011E78D;NPC_;MQ101MrsWhitfield;Mrs. Whitfield
+Fallout4.esm;0011E357;NPC_;MQ101NeighborFemale09;Neighbor
+Fallout4.esm;0011E356;NPC_;MQ101NeighborFemale08;Neighbor
+Fallout4.esm;0011E355;NPC_;MQ101MrSmith;Mr. Smith
+Fallout4.esm;0011D83E;NPC_;MQ101UniformSoldierPointer02;Soldier
+Fallout4.esm;0011D83C;NPC_;MQ101UniformSoldierPointer01;Soldier
+Fallout4.esm;0011ABAE;NPC_;DN006_LvlRaiderBrawler02;
+Fallout4.esm;0011ABAB;NPC_;DN006_LvlRaider02;
+Fallout4.esm;0011A2F8;NPC_;LvlGoodneighborTriggermanWarehouseGhoul;
+Fallout4.esm;0011A2F7;NPC_;LvlGoodneighborTriggermanWarehouseHumanMelee;
+Fallout4.esm;0011A2F5;NPC_;LvlGoodneighborTriggermanWarehouse;
+Fallout4.esm;0011A2F0;NPC_;LvlGoodneighborTriggermanGuardSelf;
+Fallout4.esm;0011A109;NPC_;LvlDeathclawAmbush;
+Fallout4.esm;00119BB2;NPC_;encSynthGen201;Synth
+Fallout4.esm;00118ED6;NPC_;CZ_CombatantLVL;Combatant
+Fallout4.esm;00118E94;NPC_;CZ_RuleBreakerFemale;Raider
+Fallout4.esm;00118E93;NPC_;CZ_RuleBreakerMale;
+Fallout4.esm;00118ADB;NPC_;DN154_MarleneGlass;Marlene Glass
+Fallout4.esm;00118ADA;NPC_;DN154_CherylGlass;Cheryl Glass
+Fallout4.esm;001184E1;NPC_;LvlMirelurkQueenAmbushWater;
+Fallout4.esm;001184DF;NPC_;LvlMirelurkQueen;
+Fallout4.esm;0011809F;NPC_;DN006_LvlRaiderRevolver;
+Fallout4.esm;0011809E;NPC_;DN006_LvlRaider01;
+Fallout4.esm;0011809D;NPC_;DN006_LvlRaiderBrawler01;
+Fallout4.esm;00117D85;NPC_;LvlSupermutantMinigunBoss;
+Fallout4.esm;00116DC0;NPC_;LvlTurretBubbleBoS550;
+Fallout4.esm;00116DBF;NPC_;LvlTurretBubbleBoS;
+Fallout4.esm;0011686A;NPC_;DN054AtomCatPowerArmor_Duke;Duke
+Fallout4.esm;0011685A;NPC_;DN054AtomCat02;Bluejay
+Fallout4.esm;001167A8;NPC_;WorkshopTurretTripodMounted;Heavy Machinegun Turret
+Fallout4.esm;001167A5;NPC_;WorkshopNPCGuard;Settler
+Fallout4.esm;001166A0;NPC_;encFeralGhoul08;Charred Feral Ghoul
+Fallout4.esm;0011669F;NPC_;encFeralGhoulGlowing02;Putrid Glowing One
+Fallout4.esm;0011669E;NPC_;encFeralGhoul06;Gangrenous Feral Ghoul
+Fallout4.esm;0011669D;NPC_;encFeralGhoul02;Feral Ghoul Roamer
+Fallout4.esm;00116668;NPC_;LvlTurretTripodMounted;
+Fallout4.esm;001164F7;NPC_;DN054AtomCat_Roxy;Roxy
+Fallout4.esm;001164F6;NPC_;DN054AtomCatPowerArmor_JohnnyD;Johnny D.
+Fallout4.esm;00116002;NPC_;EncTurretStandingCart01Template;
+Fallout4.esm;00115EAE;NPC_;LvlRaiderMeleeMale02;
+Fallout4.esm;00115EAD;NPC_;LvlRaiderMeleeMale01;
+Fallout4.esm;00115EA8;NPC_;EncRadscorpion07;Deathskull Radscorpion
+Fallout4.esm;00115EA7;NPC_;EncRadscorpion06;Radscorpion Predator
+Fallout4.esm;00115EA6;NPC_;EncRadscorpion05;Radscorpion Stalker
+Fallout4.esm;00115EA5;NPC_;EncRadscorpion04;Albino Radscorpion
+Fallout4.esm;00115EA0;NPC_;GoodneighborDrifterM06GhoulThirdRail;
+Fallout4.esm;00115E9E;NPC_;GoodneighborDrifterF05ThirdRail;
+Fallout4.esm;00115E9B;NPC_;GoodneighborDrifterM05ThirdRail;
+Fallout4.esm;00115CFC;NPC_;GoodneighborGuardPatroller;Neighborhood Watch
+Fallout4.esm;00115CF1;NPC_;GoodneighborDrifterM04Ghoul;
+Fallout4.esm;00115B50;NPC_;EncLibertyPrimeFollower;Liberty Prime
+Fallout4.esm;00115A8F;NPC_;EncRadstag05;Glowing Radstag
+Fallout4.esm;00115A8E;NPC_;EncRadstag04;Rabid Radstag
+Fallout4.esm;00115A8D;NPC_;EncRadstag03;Albino Radstag
+Fallout4.esm;00115A8C;NPC_;EncRadstag00Template;Radstag Yearling
+Fallout4.esm;00115A8B;NPC_;EncRadstag01;Radstag Doe
+Fallout4.esm;001154FE;NPC_;DN146_LvlRaiderMeleeQuest;
+Fallout4.esm;001154FB;NPC_;DN146_LvlRaidergrenadeQuest;
+Fallout4.esm;001154F2;NPC_;DN146_LvlRaiderRevolverQuest;
+Fallout4.esm;001154F0;NPC_;DN146_LvlTurretStandingQuest;
+Fallout4.esm;001154EB;NPC_;DN146_LvlDrHandySawsQuest;Nurse Handy
+Fallout4.esm;001154DE;NPC_;DN146_LvlDrHandyRandomQuest;Nurse Handy
+Fallout4.esm;001154DB;NPC_;DN146_LvlRaiderQuest;
+Fallout4.esm;001154B4;NPC_;DN146_LvlProtectron;
+Fallout4.esm;001154AB;NPC_;DN146_LvlDrHandySaws;Nurse Handy
+Fallout4.esm;001153F0;NPC_;EncTurretTripodMounted01Template;
+Fallout4.esm;00114A66;NPC_;WorkshopCaravanBrahmin;
+Fallout4.esm;00114A65;NPC_;WorkshopBrahmin;
+Fallout4.esm;00113991;NPC_;DN150_SupermutantBoss;Hammer
+Fallout4.esm;001136FE;NPC_;DN029LvlTurretStanding;
+Fallout4.esm;00113527;NPC_;LvlTurretBubble1500;
+Fallout4.esm;0011334D;NPC_;EncWorkshopNPCFemaleGuard01;
+Fallout4.esm;0011334C;NPC_;EncWorkshopNPCFemaleGuard02;
+Fallout4.esm;0011334B;NPC_;EncWorkshopNPCMaleGuard02;
+Fallout4.esm;0011334A;NPC_;EncWorkshopNPCMaleGuard01Template;
+Fallout4.esm;00113349;NPC_;EncWorkshopNPCFemaleFarmer04;
+Fallout4.esm;00113348;NPC_;EncWorkshopNPCFemaleFarmer03;
+Fallout4.esm;00113347;NPC_;EncWorkshopNPCFemaleFarmer02;
+Fallout4.esm;00113346;NPC_;EncWorkshopNPCFemaleFarmer01;
+Fallout4.esm;00113345;NPC_;EncWorkshopNPCMaleFarmer04;
+Fallout4.esm;00113344;NPC_;EncWorkshopNPCMaleFarmer03;
+Fallout4.esm;00113343;NPC_;EncWorkshopNPCMaleFarmer02;
+Fallout4.esm;00113340;NPC_;EncWorkshopNPCMaleFarmer01Template;Settler
+Fallout4.esm;00112D8E;NPC_;DN070_RadioJamaicaPlainAnnouncer;Security System
+Fallout4.esm;00112D1D;NPC_;RadioAirportAnnouncer;Announcer
+Fallout4.esm;001128A4;NPC_;Eve;Eve
+Fallout4.esm;001126E2;NPC_;V81CitizenM02T2Atrium;
+Fallout4.esm;001126E1;NPC_;V81CitizenF03T3Atrium;
+Fallout4.esm;00111F72;NPC_;V81CitizenM01T1Atrium;
+Fallout4.esm;00111F60;NPC_;V81CitizenF02T2Residence;
+Fallout4.esm;00111F5D;NPC_;V81CitizenF01T1Atrium;
+Fallout4.esm;00111F46;NPC_;CZ_PatronFemale;
+Fallout4.esm;00111EB8;NPC_;EncSuperMutant01NoAggro;
+Fallout4.esm;00111EB6;NPC_;EncMirelurk01NoAggro;
+Fallout4.esm;00111815;NPC_;DN070_Hadrian;Hadrian
+Fallout4.esm;00111328;NPC_;LvlTurretTripodSuperMutant;
+Fallout4.esm;00111327;NPC_;LvlTurretTripodRaider;
+Fallout4.esm;00111326;NPC_;LvlTurretBubbleRaider;
+Fallout4.esm;00111320;NPC_;EncTurretBubbleLaserTemplate;Laser Turret
+Fallout4.esm;0011131C;NPC_;EncTurretTripod01Template;Machinegun Turret Mk I
+Fallout4.esm;001110F9;NPC_;DN138LvlStingwingAggro1024;
+Fallout4.esm;00110303;NPC_;LvlVertibirdOrbit;
+Fallout4.esm;00110300;NPC_;LvlVertibird;
+Fallout4.esm;00110047;NPC_;LvlRaider_MaleVoice02;
+Fallout4.esm;00110046;NPC_;LvlRaider_MaleVoice01;
+Fallout4.esm;00110045;NPC_;EncRaiderVoiceFemale01;Raider
+Fallout4.esm;00110044;NPC_;EncRaiderVoiceMale02;Raider
+Fallout4.esm;00110043;NPC_;EncRaiderVoiceMale01;Raider
+Fallout4.esm;00110041;NPC_;LvlGunnerMelee;
+Fallout4.esm;0010FA73;NPC_;RR301X927;X9-27
+Fallout4.esm;0010E98F;NPC_;LvlSupermutantAutoAggro1536;
+Fallout4.esm;0010E98E;NPC_;LvlSupermutantRifleAggro1536;
+Fallout4.esm;0010D572;NPC_;LvlBoSVertibirdPilot;
+Fallout4.esm;0010D567;NPC_;WorkshopVendorArmor01;The Scribe
+Fallout4.esm;0010D4E4;NPC_;GoodneighborDrifterF03GhoulStatehouse;
+Fallout4.esm;0010D4E2;NPC_;GoodneighborDrifterF04StateHouse;
+Fallout4.esm;0010D4DF;NPC_;GoodneighborDrifterM04StateHouse;
+Fallout4.esm;0010D4D9;NPC_;GoodneighborDrifterM03StateHouse;
+Fallout4.esm;0010C7FF;NPC_;LvlBloodbugIntAggro1024;
+Fallout4.esm;0010C64F;NPC_;GoodneighborHotelWorkerF01;Hotel Worker
+Fallout4.esm;0010C64D;NPC_;EncSuperMutantTemplateSuicider;
+Fallout4.esm;0010C4FA;NPC_;RR301InstituteCourser;Institute Courser
+Fallout4.esm;0010C4F5;NPC_;RR301LvlSynth;
+Fallout4.esm;0010C413;NPC_;EncSuperMutant02Missile;SuperMutant Skirmisher
+Fallout4.esm;0010C411;NPC_;LvlSupermutantMissile;
+Fallout4.esm;0010C410;NPC_;EncSuperMutant06Missile;
+Fallout4.esm;0010C40F;NPC_;EncSuperMutant05Missile;
+Fallout4.esm;0010C40E;NPC_;EncSuperMutant04Missile;
+Fallout4.esm;0010C40C;NPC_;EncSuperMutantTemplateMissile;
+Fallout4.esm;0010C40B;NPC_;EncSuperMutant03Missile;
+Fallout4.esm;0010C04E;NPC_;GoodneighborDrifterF01MemoryDen;
+Fallout4.esm;00109488;NPC_;EncVertibird01Template;Vertibird
+Fallout4.esm;0010924D;NPC_;LvlSupermutantMinigun;
+Fallout4.esm;0010924B;NPC_;EncSuperMutant06Minigun;
+Fallout4.esm;0010924A;NPC_;EncSuperMutant05Minigun;
+Fallout4.esm;00109249;NPC_;EncSuperMutant04Minigun;
+Fallout4.esm;00109247;NPC_;EncSuperMutantTemplateMinigun;
+Fallout4.esm;00109246;NPC_;EncSuperMutant03Minigun;
+Fallout4.esm;001091EF;NPC_;DN116MilitaryBot;Combat Sentry Prototype MKIV
+Fallout4.esm;00108B23;NPC_;CZ_Handler;Handler
+Fallout4.esm;00108B1E;NPC_;CZ_Security;Raider
+Fallout4.esm;001089DE;NPC_;LvlMirelurkCrabAggro1024;
+Fallout4.esm;00108994;NPC_;LvlMirelurkCrabAggro1280;
+Fallout4.esm;001081AA;NPC_;RR101FakeSmith;Colonel Smith
+Fallout4.esm;001081A9;NPC_;RR101FakeGage;General Gage
+Fallout4.esm;001081A4;NPC_;RR101TourBot;Tour Bot
+Fallout4.esm;00108157;NPC_;DN138LvlTurretStanding;
+Fallout4.esm;00108017;NPC_;EncLibertyPrime;Liberty Prime
+Fallout4.esm;00107AE9;NPC_;FarmCatAbernathy;Maisie
+Fallout4.esm;00107AC3;NPC_;BoSRailroadAttackKnight;Brotherhood Knight
+Fallout4.esm;001079B2;NPC_;DN059_Tad;Tad
+Fallout4.esm;001079B1;NPC_;DN059_Erris;
+Fallout4.esm;001079AF;NPC_;DN059_Ricca;Ricca
+Fallout4.esm;00107797;NPC_;DN110RunawayGirlHolotape;Runaway Girl
+Fallout4.esm;00107712;NPC_;DN138SullyAsRaider;Sully Mathis
+Fallout4.esm;001073FC;NPC_;DN138Sully;Sully Mathis
+Fallout4.esm;00106CA2;NPC_;MS01BulletMinion;
+Fallout4.esm;00106BF4;NPC_;DN149_AssistantManagerHandy;Assistant Manager Handy
+Fallout4.esm;00106BF3;NPC_;DN149_LvlProtectron;
+Fallout4.esm;00106BF1;NPC_;DN149_LvlMrHandy;
+Fallout4.esm;00106B0B;NPC_;LvlMrHandy_Saw;
+Fallout4.esm;00106B0A;NPC_;LvlMrHandy_withFlamer;
+Fallout4.esm;00106B09;NPC_;EncProtectron01Template;Protectron
+Fallout4.esm;00106B07;NPC_;LvlProtectron;
+Fallout4.esm;00106A08;NPC_;Simone;Simone
+Fallout4.esm;00106A04;NPC_;Wolfgang;Wolfgang
+Fallout4.esm;001069FE;NPC_;Patrick;Patrick
+Fallout4.esm;001069FC;NPC_;Trudy;Trudy
+Fallout4.esm;001069A6;NPC_;CZ_CaitCombatant;
+Fallout4.esm;0010267F;NPC_;LvlTriggermanUnaggressiveGhoulOnly;
+Fallout4.esm;0010226A;NPC_;LvlTriggermanMeleeGhoulOnly;
+Fallout4.esm;001015B1;NPC_;DN011Dalen;Dalen
+Fallout4.esm;0010104A;NPC_;LvlStingwingAggro2200;
+Fallout4.esm;00101049;NPC_;LvlBloatflyAggro1024;
+Fallout4.esm;00101021;NPC_;LvlBloodbugAggro768;
+Fallout4.esm;00100D99;NPC_;DN011ProtectronNEW;Protectron
+Fallout4.esm;00100020;NPC_;LvlBloodbugIntAmbush;
+Fallout4.esm;0010001F;NPC_;LvlBloodbugIntAggro650;
+Fallout4.esm;000FFF9C;NPC_;RadioHalluciGenMainframeAnnouncer;HalluciGen Mainframe
+Fallout4.esm;000FFF8E;NPC_;DN102_LvlGunnersFemale_Amnesiac;
+Fallout4.esm;000FFF69;NPC_;DN102_CoweringGunner;
+Fallout4.esm;000FF991;NPC_;MQ101Vertibird;Vertibird
+Fallout4.esm;000FF406;NPC_;DN011LvlTurretStanding;
+Fallout4.esm;000FEB5B;NPC_;DN001_LvlRaider;
+Fallout4.esm;000FEB4F;NPC_;DN001_EncTurretMounted;
+Fallout4.esm;000FDEE2;NPC_;GraygardenWorker03;Mr Handy
+Fallout4.esm;000FDEE1;NPC_;GraygardenWorker02;Mr Handy
+Fallout4.esm;000FDD54;NPC_;DN049_LvlMrHandy;
+Fallout4.esm;000FDA96;NPC_;RR102CorpseFrancisODell;Francis O'Dell
+Fallout4.esm;000FDA94;NPC_;RR102CorpseBeatriceBell;Beatrice Bell
+Fallout4.esm;000FDA92;NPC_;RR102CorpseSlyNicholas;Sly Nicholas
+Fallout4.esm;000FDA91;NPC_;RR102CorpseMsBoom;Ms. Boom
+Fallout4.esm;000FDA90;NPC_;RR102CorpseSnowbird;Songbird
+Fallout4.esm;000FDA8F;NPC_;RR102CorpseRoger;Roger
+Fallout4.esm;000FDA8E;NPC_;RR102CorpseMaven;Maven
+Fallout4.esm;000FDA8D;NPC_;RR102CorpseMrMathers;Mr. Mathers
+Fallout4.esm;000FDA8C;NPC_;RR102CorpseKellyK;Kelly K.
+Fallout4.esm;000FDA8B;NPC_;RR102CorpseTommyWhispers;Tommy Whispers
+Fallout4.esm;000FD4C0;NPC_;DN049_LvlMrHandyGreeter;Greeter
+Fallout4.esm;000FD4BD;NPC_;DN049_LvlMrGutsySecurity;Guard Gutsy
+Fallout4.esm;000FD3AE;NPC_;encGunnerFaceM02;
+Fallout4.esm;000FD3AD;NPC_;encGunnerFaceM01;
+Fallout4.esm;000FD3AC;NPC_;encGunnerFaceF01;
+Fallout4.esm;000FD3AB;NPC_;LvlRaiderMissileLauncher;
+Fallout4.esm;000FD3A8;NPC_;EncGunnerHighWeapTemplate;Gunner
+Fallout4.esm;000FD3A6;NPC_;encRaiderFaceF03;
+Fallout4.esm;000FD3A5;NPC_;encRaiderFaceF02;
+Fallout4.esm;000FD3A4;NPC_;encRaiderFaceF01;
+Fallout4.esm;000FD3A2;NPC_;EncGunner04;Gunner Sergeant
+Fallout4.esm;000FD3A1;NPC_;EncGunner03;Gunner Corporal
+Fallout4.esm;000FD3A0;NPC_;EncGunner02;Gunner Private
+Fallout4.esm;000FD39B;NPC_;EncGunner01Template;Gunner
+Fallout4.esm;000FCDEF;NPC_;DN025_LvlTurretStanding;
+Fallout4.esm;000FCB0F;NPC_;MQ203CryoResident06;
+Fallout4.esm;000FCB0E;NPC_;MQ203CryoResident04;
+Fallout4.esm;000FCB0D;NPC_;MQ203CryoResident01;
+Fallout4.esm;000FCB0C;NPC_;MQ203CryoResident02;
+Fallout4.esm;000FCB0B;NPC_;MQ203CryoResident03;
+Fallout4.esm;000FC875;NPC_;AudioTemplateSuperMutantBehemoth;
+Fallout4.esm;000FB990;NPC_;DN051_LvlFeralGhoulAmbush;
+Fallout4.esm;000FB232;NPC_;BHExtBOSSoldier;
+Fallout4.esm;000FB22E;NPC_;BHExtBOSSoldier_PowerArmorAuto;
+Fallout4.esm;000FABCE;NPC_;LvlMirelurkKingAmbushWater;
+Fallout4.esm;000FABCD;NPC_;LvlMirelurkKing;
+Fallout4.esm;000FA89F;NPC_;LvlMoleratBomb;
+Fallout4.esm;000FA7F5;NPC_;WorkerSlog3;
+Fallout4.esm;000FA341;NPC_;AudioTemplateGorilla;AudioTemplateMirelurk
+Fallout4.esm;000F933B;NPC_;Dn047Worker01;Chem Lab Worker
+Fallout4.esm;000F8F29;NPC_;WorkerSlog2;
+Fallout4.esm;000F8F28;NPC_;WorkerSlog1;Worker
+Fallout4.esm;000F8617;NPC_;LvlSentryBot;
+Fallout4.esm;000F798D;NPC_;Inst302SynthGen1;
+Fallout4.esm;000F7930;NPC_;EncBHIntBOSSoldier_PowerArmor;
+Fallout4.esm;000F790A;NPC_;DN152WickedTim;Tim Flynn
+Fallout4.esm;000F7589;NPC_;LvlSupermutantGrenade;
+Fallout4.esm;000F7587;NPC_;EncSuperMutant06Grenade;
+Fallout4.esm;000F7586;NPC_;EncSuperMutant05Grenade;
+Fallout4.esm;000F7585;NPC_;EncSuperMutant04Grenade;
+Fallout4.esm;000F7584;NPC_;EncSuperMutant03Grenade;
+Fallout4.esm;000F7583;NPC_;EncSuperMutant02Grenade;
+Fallout4.esm;000F7582;NPC_;EncSuperMutant01Grenade;
+Fallout4.esm;000F7581;NPC_;EncSuperMutantTemplateGrenade;
+Fallout4.esm;000F757E;NPC_;LvlRaiderGrenade;
+Fallout4.esm;000F757C;NPC_;EncRaider05Grenade;
+Fallout4.esm;000F757B;NPC_;EncRaider04Grenade;
+Fallout4.esm;000F757A;NPC_;EncRaider03Grenade;
+Fallout4.esm;000F7579;NPC_;EncRaider02Grenade;
+Fallout4.esm;000F7578;NPC_;EncRaider01Grenade;
+Fallout4.esm;000F73B8;NPC_;DN044_Dale;Dale
+Fallout4.esm;000F73B7;NPC_;DN044_Sheila;Sheila
+Fallout4.esm;000F6CE9;NPC_;LvlBoSSoldierVertibirdGunner;
+Fallout4.esm;000F61C0;NPC_;Inst302BoSPowerArmorFrontGate;
+Fallout4.esm;000F61BE;NPC_;Inst302RRMercFrontGate;Railroad Heavy
+Fallout4.esm;000F61BA;NPC_;EncSecurityDiamondCityM02;
+Fallout4.esm;000F61B5;NPC_;DiamondCitySecurityMayorAlways;
+Fallout4.esm;000F5D81;NPC_;InstituteSynthGen1;
+Fallout4.esm;000F480D;NPC_;DN125_RadioVoice;
+Fallout4.esm;000F4805;NPC_;EncBHIntTurret;
+Fallout4.esm;000F4801;NPC_;EncBHIntBOSSoldier;
+Fallout4.esm;000F4485;NPC_;LvlRaiderBossUnagressive;
+Fallout4.esm;000F36E4;NPC_;MS17Blythe;Blythe
+Fallout4.esm;000F36E3;NPC_;MS17Subject12;Subject 12
+Fallout4.esm;000F2B91;NPC_;LvlFeralGhoulGlowingOneAmbush;
+Fallout4.esm;000F246A;NPC_;MS17DoctorPatricia;Doctor Patricia
+Fallout4.esm;000F1497;NPC_;GraygardenWorker01;Mr Handy
+Fallout4.esm;000F1494;NPC_;SupervisorGreene;Supervisor Greene
+Fallout4.esm;000F1492;NPC_;SupervisorBrown;Supervisor Brown
+Fallout4.esm;000F12B0;NPC_;DrinkingBuddyProtectron;Buddy
+Fallout4.esm;000F0C5B;NPC_;MS17RobotSurgeon;Mr. Handy
+Fallout4.esm;000EFC4C;NPC_;Inst302RRMerc;Railroad Heavy
+Fallout4.esm;000EFBBC;NPC_;DN035_Roboracers_BobsYourUncle;Bob's Your Uncle
+Fallout4.esm;000EFBBB;NPC_;DN035_Roboracers_TinMan;Tin Man
+Fallout4.esm;000EFBBA;NPC_;DN035_Roboracers_FusionsFolly;Fusion's Folly
+Fallout4.esm;000EFBB9;NPC_;DN035_Roboracers_BostonBlaster;The Boston Blaster
+Fallout4.esm;000EFBB8;NPC_;DN035_Roboracers_LadyLovelace;Lady Lovelace
+Fallout4.esm;000EFBB7;NPC_;DN035_Roboracers_PieceOJunk;Piece o' Junk
+Fallout4.esm;000EFBB6;NPC_;DN035_Roboracers_IronMaiden;Iron Maiden
+Fallout4.esm;000EFBB5;NPC_;DN035_Roboracers_AtomicDreamz;Atomic Dreamz
+Fallout4.esm;000EFBB4;NPC_;LvlEyeBot;
+Fallout4.esm;000EFBB3;NPC_;Inst302BoSPowerArmor;
+Fallout4.esm;000EFB8D;NPC_;LvlRaiderAggro1536;
+Fallout4.esm;000EFB83;NPC_;LvlRaiderRevolverAggro1200;
+Fallout4.esm;000EFB71;NPC_;LvlRaiderAutoAggro1200;
+Fallout4.esm;000EFB6F;NPC_;LvlRaiderMeleeAggro800;
+Fallout4.esm;000EFB5E;NPC_;LvlRaiderBoltActionAggro1200;
+Fallout4.esm;000EF3FA;NPC_;DN035_Roboracers_Template;
+Fallout4.esm;000EF3F5;NPC_;DN035_Roboracers_OlRusty;Ol' Rusty
+Fallout4.esm;000EF3F2;NPC_;LvlAssaultron;
+Fallout4.esm;000EF222;NPC_;Inst302X418;X4-18
+Fallout4.esm;000EEF4B;NPC_;LvlHostileMelee;
+Fallout4.esm;000EEEFF;NPC_;MS10LvlSupermutantMelee;
+Fallout4.esm;000EEEFE;NPC_;MS10LvlSupermutantAuto;
+Fallout4.esm;000EEEFD;NPC_;MS10LvlSupermutantRifle;
+Fallout4.esm;000EECAF;NPC_;MS17OldFisherman;Fisherman
+Fallout4.esm;000EEB1F;NPC_;LvlSupermutantRifleAggro1024;
+Fallout4.esm;000EDE29;NPC_;InstR04Synth;Captured Synth
+Fallout4.esm;000EDCDB;NPC_;EncSuperMutant06Melee;
+Fallout4.esm;000EDCDA;NPC_;EncSuperMutant05Melee;
+Fallout4.esm;000EDCD9;NPC_;EncSuperMutant04Melee;
+Fallout4.esm;000EDCD8;NPC_;EncSuperMutant03Melee;
+Fallout4.esm;000EDCD7;NPC_;EncSuperMutant02Melee;
+Fallout4.esm;000EDCD6;NPC_;EncSuperMutant01Melee;
+Fallout4.esm;000EDCD5;NPC_;EncSuperMutant06Auto;
+Fallout4.esm;000EDCD4;NPC_;EncSuperMutant05Auto;
+Fallout4.esm;000EDCD3;NPC_;EncSuperMutant04Auto;
+Fallout4.esm;000EDCD2;NPC_;EncSuperMutant03Auto;
+Fallout4.esm;000EDCD1;NPC_;EncSuperMutant02Auto;
+Fallout4.esm;000EDCD0;NPC_;EncSuperMutantTemplateMelee;
+Fallout4.esm;000EDCCF;NPC_;EncSuperMutant01Auto;
+Fallout4.esm;000EDCCB;NPC_;EncSuperMutant06Rifle;Super Mutant Master
+Fallout4.esm;000EDCCA;NPC_;EncSuperMutant05Rifle;Super Mutant Butcher
+Fallout4.esm;000EDCC9;NPC_;EncSuperMutant04Rifle;Super Mutant Enforcer
+Fallout4.esm;000EDCC8;NPC_;EncSuperMutant03Rifle;Super Mutant Brute
+Fallout4.esm;000EDCC7;NPC_;EncSuperMutant02Rifle;Super Mutant Skirmisher
+Fallout4.esm;000EDCC6;NPC_;EncSuperMutant01Rifle;
+Fallout4.esm;000ED665;NPC_;MS14Gouger;Gouger
+Fallout4.esm;000ED4C7;NPC_;MS17CovenantTurret;Heavy Machinegun Turret
+Fallout4.esm;000EC841;NPC_;ElevatorAnnouncer;Announcer
+Fallout4.esm;000EBDFC;NPC_;LvlBloatflyAggro768;
+Fallout4.esm;000EB312;NPC_;EncRaider05Melee;
+Fallout4.esm;000EB311;NPC_;EncRaider04Melee;
+Fallout4.esm;000EB310;NPC_;EncRaider03Melee;
+Fallout4.esm;000EB30F;NPC_;EncRaider02Melee;
+Fallout4.esm;000EAC9D;NPC_;DN049_LvlMrHandy_Bowling;
+Fallout4.esm;000E935C;NPC_;DN049_LvlMrHandy_Bowling_Spare;Spare
+Fallout4.esm;000E934D;NPC_;DN049_LvlMrHandy_Bowling_Tenpin;Tenpin
+Fallout4.esm;000E92AB;NPC_;DN049_LvlMrHandy_Diner_Cook;Cook Handy
+Fallout4.esm;000E92AA;NPC_;DN049_LvlMrHandy_Diner_Waitron;Waitron
+Fallout4.esm;000E9294;NPC_;DN049_LvlMrGutsy;
+Fallout4.esm;000E9293;NPC_;LvlMrGutsy;
+Fallout4.esm;000E8E69;NPC_;DN049_LvlMrGutsy_Outlet;
+Fallout4.esm;000E8E68;NPC_;DN049_LvlMrHandy_Outlet;
+Fallout4.esm;000E8D63;NPC_;InstR01Synth;Synth Scavenger
+Fallout4.esm;000E8D51;NPC_;DN049_LvlMrHandy_Outlet_Sprocket;Sprocket
+Fallout4.esm;000E8D4B;NPC_;DN049_LvlMrHandy_Fallons_Reg;Reg
+Fallout4.esm;000E8D16;NPC_;EncSynthGen1Face5;
+Fallout4.esm;000E8D15;NPC_;EncSynthGen1Face4;
+Fallout4.esm;000E8D14;NPC_;EncSynthGen1Face3;
+Fallout4.esm;000E8D13;NPC_;EncSynthGen1Face2;
+Fallout4.esm;000E7B6C;NPC_;DN049_LvlMrHandy_Bake_Torte;Torte
+Fallout4.esm;000E7B5B;NPC_;DN049_LvlMrHandy_Bake_Crisp;Crisp
+Fallout4.esm;000E7AFC;NPC_;DN049_LvlMrHandy_Slo_Bean;Bean
+Fallout4.esm;000E7737;NPC_;EncSynth01MeleeTemplate;
+Fallout4.esm;000E6F76;NPC_;RadioSubwayAnnouncer;Announcer
+Fallout4.esm;000E6EE2;NPC_;DN146_LvlDrHandyRandomA;Nurse Handy
+Fallout4.esm;000E6D89;NPC_;DN020_LvlSupermutantBoss;Vikter
+Fallout4.esm;000E6B41;NPC_;EncSynthGen1Template;Synth
+Fallout4.esm;000E5A6C;NPC_;LvlSupermutantBossAggro1536;
+Fallout4.esm;000E5249;NPC_;DN049_LvlMrHandy_Mad_Danny;Danny
+Fallout4.esm;000E5248;NPC_;DN049_LvlMrHandy_Mad_Mack;Mack
+Fallout4.esm;000E5246;NPC_;DN049_LvlMrHandy_Mad_Champ;The Champ
+Fallout4.esm;000E5245;NPC_;LvlMrHandy_Random;
+Fallout4.esm;000E4771;NPC_;BoS101_ArcJetComputerSystem;Arcjet Mainframe
+Fallout4.esm;000E3748;NPC_;Inst301LvlRaiderGuard;
+Fallout4.esm;000E2C91;NPC_;Derek;Derek
+Fallout4.esm;000E2134;NPC_;Intercom_Pulowski;
+Fallout4.esm;000E20FD;NPC_;Inst301SynthBoss;Gabriel
+Fallout4.esm;000E1D27;NPC_;MS04ShellyTiller;Shelly Tiller
+Fallout4.esm;000E1AF4;NPC_;LvlTriggermanUnaggressiveHumanOnlyPistol;
+Fallout4.esm;000E136D;NPC_;LvlSupermutantMeleeAggro512;
+Fallout4.esm;000E12AB;NPC_;EncMirelurkQueen;Mirelurk Queen
+Fallout4.esm;000E0B5D;NPC_;RadioEyebotAnnouncer;Announcer
+Fallout4.esm;000DFFBF;NPC_;Dn145EncTurretMounted;Turret
+Fallout4.esm;000DFB39;NPC_;AudioTemplateAssaultron;AudioTemplateAssaultron
+Fallout4.esm;000DF64A;NPC_;EncAssaultronSoloAnimModTest;Assaultron
+Fallout4.esm;000DF319;NPC_;Inst307CourserFinal;
+Fallout4.esm;000DED59;NPC_;LvlTurretTripod;
+Fallout4.esm;000DED2B;NPC_;MS04AJ;AJ
+Fallout4.esm;000DED25;NPC_;MS04RadioJerry;Jerry
+Fallout4.esm;000DE96A;NPC_;LvlFeralGhoulAggro1024;
+Fallout4.esm;000DE969;NPC_;LvlGunner;
+Fallout4.esm;000DE968;NPC_;LvlGunnerMissileLauncher;
+Fallout4.esm;000DE967;NPC_;LvlGunner_GunnersMale02;
+Fallout4.esm;000DE966;NPC_;LvlGunner_GunnersMale01;
+Fallout4.esm;000DE965;NPC_;LvlGunnerAuto;
+Fallout4.esm;000DE964;NPC_;LvlGunnerSemiAuto;
+Fallout4.esm;000DE963;NPC_;LvlGunner_GunnersFemale01;
+Fallout4.esm;000DDEFC;NPC_;AudioTemplateVertibird;
+Fallout4.esm;000DDB99;NPC_;MQ101NeighborMale07;Neighbor
+Fallout4.esm;000DDB97;NPC_;MQ101NeighborFemale07;Neighbor
+Fallout4.esm;000DCDF6;NPC_;LvlSynthAggro512;
+Fallout4.esm;000DCDF5;NPC_;LvlSynthPistolAggro512;
+Fallout4.esm;000DCDF4;NPC_;LvlSynthMeleeAggro512;
+Fallout4.esm;000DCDF3;NPC_;LvlSynthAutoAggro512;
+Fallout4.esm;000DCDF2;NPC_;LvlSynthSuperbarrelAggro512;
+Fallout4.esm;000DCDF1;NPC_;LvlSynthBossAggro512;
+Fallout4.esm;000DCDEC;NPC_;LvlSynthPistol;
+Fallout4.esm;000DCDEB;NPC_;LvlSynthSuperbarrel;
+Fallout4.esm;000DCDEA;NPC_;LvlSynthAuto;
+Fallout4.esm;000DC936;NPC_;Carla;Trashcan Carla
+Fallout4.esm;000DB762;NPC_;LvlSynthMelee;
+Fallout4.esm;000DB683;NPC_;BoSKnightKeane;Knight Keane
+Fallout4.esm;000DB3B1;NPC_;LvlBloodbugInt;
+Fallout4.esm;000DB0B5;NPC_;LvlMoleratAmbushMS19;
+Fallout4.esm;000DB0B4;NPC_;MS19MoleratM;Mole Rat
+Fallout4.esm;000DB0A5;NPC_;LvlMoleratMS19;Vault 81 Lab Mole Rat
+Fallout4.esm;000D9809;NPC_;EncGorilla;Gorilla
+Fallout4.esm;000D97F7;NPC_;LvlTurretBubble;
+Fallout4.esm;000D97F6;NPC_;DN017_LvlTurretTurretSequence;
+Fallout4.esm;000D911B;NPC_;LvlFeralGhoulBossAggro800;
+Fallout4.esm;000D8F7D;NPC_;AudioTemplateProtectron;
+Fallout4.esm;000D8E1A;NPC_;AudioTemplateMirelurkKing;Mirelurk King
+Fallout4.esm;000D84E8;NPC_;MQ203MemoryH_Shaun;
+Fallout4.esm;000D84DF;NPC_;MQ203MemoryH_Courser;Institute Courser
+Fallout4.esm;000D84DC;NPC_;MQ203MemoryH_Kellogg;Me
+Fallout4.esm;000D84C6;NPC_;RailroadSynthGenericTemplate00;Escaping Synth
+Fallout4.esm;000D84C5;NPC_;RailroadRunnerGenericTemplate00;Railroad Agent
+Fallout4.esm;000D84A7;NPC_;MQ203MemoryG_Scientist;Institute Scientist
+Fallout4.esm;000D84A5;NPC_;MQ203MemoryG_Kellogg;Me
+Fallout4.esm;000D8418;NPC_;EncAssaultron02;Assaultron Invader
+Fallout4.esm;000D811A;NPC_;LvlMutantHoundAggro1024;
+Fallout4.esm;000D8119;NPC_;LvlSupermutantAggro1024;
+Fallout4.esm;000D8117;NPC_;LvlSupermutantAggro1536;
+Fallout4.esm;000D76CD;NPC_;MQ203MemoryE_Synth03;
+Fallout4.esm;000D76CC;NPC_;MQ203MemoryE_Synth02;
+Fallout4.esm;000D76C9;NPC_;MQ203MemoryE_Synth01;
+Fallout4.esm;000D76C7;NPC_;MQ203MemoryE_Scientist;Institute Agent
+Fallout4.esm;000D76C2;NPC_;MQ203MemoryE_Kellogg;Me
+Fallout4.esm;000D700F;NPC_;DN165_LvlFeralGhoul_Runner;
+Fallout4.esm;000D6FD4;NPC_;LvlFeralGhoulAggro1536;
+Fallout4.esm;000D6053;NPC_;Inst302Z322;Z3-22
+Fallout4.esm;000D6051;NPC_;Inst302Y915;Y9-15
+Fallout4.esm;000D604F;NPC_;Inst302F633;F6-33
+Fallout4.esm;000D6049;NPC_;Inst302B257;B2-57
+Fallout4.esm;000D5C32;NPC_;MQ203MemoryD_Bartender;Bartender
+Fallout4.esm;000D5C31;NPC_;MQ203MemoryD_NPC02;Wastelander
+Fallout4.esm;000D5C30;NPC_;MQ203MemoryD_NPC01;Wastelander
+Fallout4.esm;000D5BF2;NPC_;MQ203MemoryD_Kellogg;Me
+Fallout4.esm;000D5BE1;NPC_;MQ203MemoryC_Kellogg;Me
+Fallout4.esm;000D5224;NPC_;DN129_DrFeelgood;Professor Goodfeels
+Fallout4.esm;000D4CB5;NPC_;MQ203MemoryB_Sarah;Sarah
+Fallout4.esm;000D4CB2;NPC_;MQ203MemoryB_Kellogg;Me
+Fallout4.esm;000D4AD0;NPC_;MQ203MemoryA_Dad;Dad
+Fallout4.esm;000D40AF;NPC_;RR201TunnelGuard;Guard
+Fallout4.esm;000D3FD1;NPC_;EncTriggerman07;
+Fallout4.esm;000D3FCF;NPC_;EncTriggerman06;
+Fallout4.esm;000D3FCA;NPC_;EncTriggerman05;
+Fallout4.esm;000D3FC9;NPC_;EncTriggerman04;
+Fallout4.esm;000D3C9C;NPC_;MQ203MemoryA_Mom;Mom
+Fallout4.esm;000D3C53;NPC_;DN024_LvlRaiderBoss;Jared
+Fallout4.esm;000D39F6;NPC_;LvlRaider_Female;
+Fallout4.esm;000D39F3;NPC_;LvlRaider_Male;
+Fallout4.esm;000D39EF;NPC_;LvlFeralGhoulGlowingOne;
+Fallout4.esm;000D39ED;NPC_;Loot_CorpseFeralGhoul03Glowing;
+Fallout4.esm;000D39EC;NPC_;Loot_CorpseFeralGhoul05;
+Fallout4.esm;000D39EB;NPC_;Loot_CorpseFeralGhoul04;
+Fallout4.esm;000D39EA;NPC_;Loot_CorpseFeralGhoul02;
+Fallout4.esm;000D39E9;NPC_;Loot_CorpseFeralGhoul01;
+Fallout4.esm;000D3896;NPC_;MQ101NeighborFemale06;Neighbor
+Fallout4.esm;000D3895;NPC_;MQ101NeighborMale06;Neighbor
+Fallout4.esm;000D3892;NPC_;MQ101VaultTecScientistM06;Vault-Tec Doctor
+Fallout4.esm;000D388C;NPC_;MQ101NeighborFemale05;Neighbor
+Fallout4.esm;000D388B;NPC_;MQ101NeighborMale05;Neighbor
+Fallout4.esm;000D34F4;NPC_;MQ101VaultTecScientistM05;Vault-Tec Staff
+Fallout4.esm;000D34F3;NPC_;MQ101VaultTecScientistM04;Vault-Tec Scientist
+Fallout4.esm;000D2BE4;NPC_;MQ101UniformSoldier02;Soldier
+Fallout4.esm;000D2BDB;NPC_;MQ101NeighborFemale02;Neighbor
+Fallout4.esm;000D2BDA;NPC_;MQ101NeighborMale02;Neighbor
+Fallout4.esm;000D2BD7;NPC_;MQ101NeighborFemale01;Neighbor
+Fallout4.esm;000D2BD6;NPC_;MQ101NeighborMale01;Neighbor
+Fallout4.esm;000D29F9;NPC_;G9-81;G9-81
+Fallout4.esm;000D29F8;NPC_;Z1-14;Z1-14
+Fallout4.esm;000D228A;NPC_;LvlSupermutantRifle;
+Fallout4.esm;000D2289;NPC_;LvlSupermutantAuto;
+Fallout4.esm;000D1057;NPC_;SubLvlRaiderOffDefBalanced;
+Fallout4.esm;000D1056;NPC_;SubLvlRaiderDefenseHigh;
+Fallout4.esm;000D1055;NPC_;SubLvlRaiderOffenseHigh;
+Fallout4.esm;000D0E2B;NPC_;dn083_LvlRaider;Raider
+Fallout4.esm;000D0E2A;NPC_;DN082_LvlTurretTripodRaider;
+Fallout4.esm;000D0500;NPC_;RadioHalluciGenDemoAnnouncer;HalluciGen Mainframe
+Fallout4.esm;000D04F5;NPC_;LvlRaiderRevolverAggro768;
+Fallout4.esm;000D0143;NPC_;CZ_SecurityExterior;
+Fallout4.esm;000CFB4A;NPC_;EncSentryBot02;Siege Breaker Sentry Bot
+Fallout4.esm;000CF919;NPC_;MQ101InstAgentFemale;Mysterious Figure
+Fallout4.esm;000CF918;NPC_;MQ101InstAgentMale;Mysterious Figure
+Fallout4.esm;000CF917;NPC_;MQ101Kellogg;Mysterious Figure
+Fallout4.esm;000CF6DA;NPC_;DN035_EagerErnie;Eager Ernie
+Fallout4.esm;000CF6CB;NPC_;LvlRaiderRevolverAggro1536;
+Fallout4.esm;000CF6C8;NPC_;DN035_LvlTriggermanPistol_Aggro768;
+Fallout4.esm;000CF6C7;NPC_;DN035_LvlTriggerman_Aggro768;
+Fallout4.esm;000CE988;NPC_;LvlRaiderRevolver;
+Fallout4.esm;000CE987;NPC_;LvlRaiderBoltAction;
+Fallout4.esm;000CE986;NPC_;LvlRaiderAuto;
+Fallout4.esm;000CE985;NPC_;EncGunner01;Gunner Conscript
+Fallout4.esm;000CBF4F;NPC_;DN048SupermutantWatcherBoss;The Watcher
+Fallout4.esm;000CB1DA;NPC_;MQ101VaultTecSecurity01;Vault-Tec Security
+Fallout4.esm;000CB1D5;NPC_;MQ101VaultTecScientistM03;Vault-Tec Staff
+Fallout4.esm;000CB1D3;NPC_;MQ101VaultTecScientistM02;Vault-Tec Staff
+Fallout4.esm;000CB1BB;NPC_;MQ101VaultTecGreeter;Vault-Tec Security
+Fallout4.esm;000CB1B8;NPC_;MQ101ListCheckerSoldier;Officer
+Fallout4.esm;000CB1A6;NPC_;MQ101UniformSoldier01;Soldier
+Fallout4.esm;000CB1A5;NPC_;MQ101NeighborMale;Neighbor
+Fallout4.esm;000CAB94;NPC_;DN123_LvlRaiderBoltActionAggro1024;
+Fallout4.esm;000CAB90;NPC_;DN123SkylanesPilot02;Pilot
+Fallout4.esm;000CAB8F;NPC_;DN123SkylanesPilot01;Pilot
+Fallout4.esm;000C9AD3;NPC_;EncHouseCat;House Cat
+Fallout4.esm;000C9AC5;NPC_;InstituteScientistFemale;Institute Scientist
+Fallout4.esm;000C9AC3;NPC_;InstituteScientistMale;Institute Scientist
+Fallout4.esm;000C97C7;NPC_;CambridgeDeadNewsie;Richard
+Fallout4.esm;000C895F;NPC_;MS16SonyaBot;Sonya
+Fallout4.esm;000C8949;NPC_;MS16Worker02;Tunnel Worker
+Fallout4.esm;000C868D;NPC_;LvlBoSSquire;
+Fallout4.esm;000C868B;NPC_;EncBoSSquireTemplate;Brotherhood Squire Template
+Fallout4.esm;000C868A;NPC_;EncBoSSquire01;Brotherhood Squire
+Fallout4.esm;000C5194;NPC_;EncPrewarCultistBoss02NEW;Brother Simon
+Fallout4.esm;000C5193;NPC_;EncPrewarCultistBoss03NEW;Brother James
+Fallout4.esm;000C5192;NPC_;EncPrewarCultistBoss02;Brother Matthew
+Fallout4.esm;000C5191;NPC_;EncPrewarCultistBoss01;Brother Andrew
+Fallout4.esm;000C4EDE;NPC_;LvlMirelurkHunterAggro1200Delayed;
+Fallout4.esm;000C4ED3;NPC_;LvlMirelurkHunterAggro512Delayed;
+Fallout4.esm;000C4EBD;NPC_;LvlMirelurkHunterAggro1200;
+Fallout4.esm;000C4EBC;NPC_;LvlMirelurkHunterAggro800;
+Fallout4.esm;000C4EBB;NPC_;LvlMirelurkHunterAggro512;
+Fallout4.esm;000C3C53;NPC_;CambridgeDrifterFem;Drifter
+Fallout4.esm;000C392B;NPC_;BoSKnightRylan;Knight Rylan
+Fallout4.esm;000C317C;NPC_;MQ101RosaSon;Neighbor
+Fallout4.esm;000BF965;NPC_;RailroadHQGenericM01Evening;
+Fallout4.esm;000BF963;NPC_;RailroadHQGenericF01Evening;
+Fallout4.esm;000BEBA4;NPC_;AudioTemplateYaoGuai;AudioTemplateBloodbug
+Fallout4.esm;000BEBA2;NPC_;LvlPrewarCultistGuard;Missionary
+Fallout4.esm;000BE956;NPC_;Thomas;Brother Thomas
+Fallout4.esm;000BE184;NPC_;EncSynthCourser01Template;Institute Courser
+Fallout4.esm;000BDE10;NPC_;MQ101MrsWashington;Neighbor
+Fallout4.esm;000BDE0F;NPC_;MQ101MrWashington;Neighbor
+Fallout4.esm;000BDE09;NPC_;MQ101MrsDonoghue;Mrs. Donoghue
+Fallout4.esm;000BDE07;NPC_;MQ101MrDonoghue;Mr. Donoghue
+Fallout4.esm;000BDE03;NPC_;MQ101MrsParker;Neighbor
+Fallout4.esm;000BDE01;NPC_;MQ101MrParker;Neighbor
+Fallout4.esm;000BDDFD;NPC_;MQ101MrsAble;Mrs. Able
+Fallout4.esm;000BDDFB;NPC_;MQ101MrAble;Mr. Able
+Fallout4.esm;000BDDF8;NPC_;MQ101Rosa;Neighbor
+Fallout4.esm;000BD787;NPC_;DN154_MarcWilson;Marc Wilson
+Fallout4.esm;000BC22E;NPC_;CabotHouseSentryBot;SentryBot
+Fallout4.esm;000BC21A;NPC_;CabotHouseGardener;
+Fallout4.esm;000BBF86;NPC_;EncPrewarCultist01;Initiate
+Fallout4.esm;000BBF85;NPC_;LvlPrewarCultistBoss;
+Fallout4.esm;000BBF84;NPC_;LvlPrewarCultist;Initiate
+Fallout4.esm;000BBF7E;NPC_;MQ101PowerArmorSoldierMale;Soldier
+Fallout4.esm;000BBEE6;NPC_;CompanionX6-88;X6-88
+Fallout4.esm;000BB874;NPC_;LvlMinuteman;
+Fallout4.esm;000BB873;NPC_;LvlMinutemanWorkshop;Minuteman
+Fallout4.esm;000BB7DD;NPC_;EncSMBehemoth01Template;Behemoth
+Fallout4.esm;000BB1F9;NPC_;DN054Eyebot;Peepers
+Fallout4.esm;000BAF8C;NPC_;DN133MinutemanGeneral;General McGann
+Fallout4.esm;000BACC2;NPC_;LvlMoleratDN119;
+Fallout4.esm;000BA779;NPC_;DN102_LvlGunnerSemiAuto_LabDemo1TestSubject;
+Fallout4.esm;000BA628;NPC_;InstM03_Gorilla;
+Fallout4.esm;000BA509;NPC_;MQ101TVAnchorman_VoiceOnly;TV
+Fallout4.esm;000BA086;NPC_;InstM03SynthGuard;
+Fallout4.esm;000B7F95;NPC_;EncMirelurkKing01;Mirelurk King
+Fallout4.esm;000B7ED3;NPC_;LvlFeralGhoulGlowingOneAggro1024;
+Fallout4.esm;000B7EAA;NPC_;LvlMutantHoundAggro1536;
+Fallout4.esm;000B6E0E;NPC_;AudioTemplateSentryBot;AudioTemplateSentryBot
+Fallout4.esm;000B4686;NPC_;DN102_LvlGunnerUnarmed;
+Fallout4.esm;000B40C6;NPC_;EncSentryBotAggro800;
+Fallout4.esm;000B40C0;NPC_;EncSentryBotAggro512;
+Fallout4.esm;000B40B5;NPC_;EncSentryBotAmbush;
+Fallout4.esm;000B3EC7;NPC_;Caretaker;Caretaker
+Fallout4.esm;000B3D7E;NPC_;LvlYaoGuai;
+Fallout4.esm;000B35BD;NPC_;BoSM01_PaladinBrandis_Postquest;
+Fallout4.esm;000B3432;NPC_;AudioTemplateDogFEVHound;AudioTemplateDogFEVHound
+Fallout4.esm;000B32E2;NPC_;DN133LvlMirelurkAggroDelayed;
+Fallout4.esm;000B3036;NPC_;WorkshopTurretTripod;Machinegun Turret
+Fallout4.esm;000B2FD7;NPC_;BoS301BrotherHenri;Brother Henri
+Fallout4.esm;000B2FC7;NPC_;ProfessorScara;Professor Scara
+Fallout4.esm;000B2BF2;NPC_;EncRaiderDog01;
+Fallout4.esm;000B28D7;NPC_;EncTurretBubble01MachineGun;Machine Gun Turret
+Fallout4.esm;000B26F0;NPC_;BoSKnightLucia;Knight Lucia
+Fallout4.esm;000B26EF;NPC_;BoSKnightGavil;Knight Sergeant Gavil
+Fallout4.esm;000B26EE;NPC_;BoSInitiateClarke;Initiate Clarke
+Fallout4.esm;000B26ED;NPC_;RRR01bDeadBlackbird;Blackbird
+Fallout4.esm;000B21F0;NPC_;LvlTriggermanGhoulOnly;
+Fallout4.esm;000B21EF;NPC_;LvlTriggermanHumanOnlyPistol;
+Fallout4.esm;000B21E9;NPC_;LvlTriggermanUnaggressive;
+Fallout4.esm;000B1F76;NPC_;LvlMirelurkCrabAggro700;
+Fallout4.esm;000B1E28;NPC_;BoSM01_KnightAstlin;Knight Astlin
+Fallout4.esm;000B1DB5;NPC_;BoSM01_ScribeFaris;Scribe Faris
+Fallout4.esm;000B1DB3;NPC_;BoSM01_KnightVarham;Knight Varham
+Fallout4.esm;000B1DAF;NPC_;BoSM01_PaladinBrandis;Paladin Brandis
+Fallout4.esm;000B105B;NPC_;DN140_LvlRaiderBossFemale;Ack-Ack
+Fallout4.esm;000B100F;NPC_;MS19MoleratBoss;Mole Rat Brood Mother
+Fallout4.esm;000B0FC9;NPC_;Min02Minuteman2;
+Fallout4.esm;000B0FC4;NPC_;Min02Minuteman1;
+Fallout4.esm;000B0ED3;NPC_;DN029DefenseProtectron;
+Fallout4.esm;000AF901;NPC_;RECheckpoint_LvlRadscorpion;
+Fallout4.esm;000AF900;NPC_;RECheckpoint_LvlYaoGuai;
+Fallout4.esm;000AF8FF;NPC_;RECheckpoint_LvlFeralGhoul;
+Fallout4.esm;000AF8FE;NPC_;RECheckpoint_LvlFeralGhoulGlowingOne;
+Fallout4.esm;000AF8FD;NPC_;RECheckpoint_LvlFeralGhoulBoss;
+Fallout4.esm;000AF8FC;NPC_;RECheckpoint_LvlMutantHound;
+Fallout4.esm;000AF8FB;NPC_;RECheckpoint_LvlSupermutantAuto;
+Fallout4.esm;000AF8FA;NPC_;RECheckpoint_LvlSupermutantMelee;
+Fallout4.esm;000AF8F8;NPC_;RECheckpoint_LvlSupermutantMinigunBoss;
+Fallout4.esm;000AF8F7;NPC_;RECheckpoint_LvlDeathclaw_Aggro1800;
+Fallout4.esm;000AF883;NPC_;RECheckpoint_LvlRaiderMelee;
+Fallout4.esm;000AF882;NPC_;RECheckpoint_LvlRaiderBoltAction;
+Fallout4.esm;000AF881;NPC_;RECheckpoint_LvlRaider_PowerArmor;
+Fallout4.esm;000AF880;NPC_;RECheckpoint_LvlRaiderBoss;
+Fallout4.esm;000AF87F;NPC_;RECheckpoint_LvlRaiderAuto;
+Fallout4.esm;000AF87E;NPC_;RECheckpoint_LvlRaider;
+Fallout4.esm;000AEFC5;NPC_;LvlTriggermanMelee;
+Fallout4.esm;000AEC44;NPC_;LvlMirelurkHunterAmbush;
+Fallout4.esm;000AEC43;NPC_;LvlMirelurkHunterAggro1670;
+Fallout4.esm;000AEC41;NPC_;LvlMirelurkHunter;
+Fallout4.esm;000AE8DC;NPC_;LvlRadscorpionAmbush;
+Fallout4.esm;000AE7E9;NPC_;AudioTemplateEyebot;AudioTemplateBloodbug
+Fallout4.esm;000AE158;NPC_;DN063_LvlRaiderBoss;Scutter
+Fallout4.esm;000AE157;NPC_;DN137_LvlRaiderBoss;Gaff
+Fallout4.esm;000AE156;NPC_;DN159_LvlRaiderBoss;Clutch
+Fallout4.esm;000AE154;NPC_;DN168_LvlRaiderBoss;Boomer
+Fallout4.esm;000AE153;NPC_;DN113_LvlRaiderBoss;Cinder
+Fallout4.esm;000AE14C;NPC_;DN058_LvlRaiderBossMale;Demo
+Fallout4.esm;000AE146;NPC_;DN076_LvlRaiderBoss;Wire
+Fallout4.esm;000AE145;NPC_;DN003_LvlRaiderBoss;Chancer
+Fallout4.esm;000AE143;NPC_;DN082_LvlRaiderBoss;Helter Skelter
+Fallout4.esm;000AE13F;NPC_;DN001_LvlRaiderBoss;Sparta
+Fallout4.esm;000AE0BB;NPC_;EncSentryBot01Template;Sentry Bot
+Fallout4.esm;000ADE0C;NPC_;AudioTemplateBloatFly;AudioTemplateBloatFly
+Fallout4.esm;000AD486;NPC_;V81CitizenM05T2Entry;
+Fallout4.esm;000AD3A2;NPC_;Loot_DeadRaider01;
+Fallout4.esm;000AC522;NPC_;RECheckpoint_LvlGunner;
+Fallout4.esm;000AC521;NPC_;RECheckpoint_LvlGunnerAuto;
+Fallout4.esm;000AC520;NPC_;RECheckpoint_LvlGunnerBoss;Gunner Commander
+Fallout4.esm;000AC51F;NPC_;RECheckpoint_LvlGunnerSemiAuto;
+Fallout4.esm;000AC51E;NPC_;RECheckpoint_LvlGunnerSniper;
+Fallout4.esm;000AC51D;NPC_;RECheckpoint_LvlMrGutsy_Gunner;
+Fallout4.esm;000AC519;NPC_;RECheckpoint_LvlBoSScribeField;
+Fallout4.esm;000AC515;NPC_;RECheckpoint_LvlRRagent_PostQuest;
+Fallout4.esm;000AC514;NPC_;RECheckpoint_LvlMinuteman_PostQuest;
+Fallout4.esm;000AC507;NPC_;RECheckpoint_LvlSynthCourser;
+Fallout4.esm;000AC4F1;NPC_;RECheckpoint_LvlBoSSoldier_CombatArmor_Semi;
+Fallout4.esm;000AC4F0;NPC_;RECheckpoint_LvlBoSSoldier_CombatArmor_Auto;
+Fallout4.esm;000AC4DB;NPC_;RECheckpoint_LvlSynth_Boss;Synth Leader
+Fallout4.esm;000AC4DA;NPC_;RECheckpoint_LvlSynth_Rifle;
+Fallout4.esm;000AC4D9;NPC_;RECheckpoint_LvlSynth_Superbarrel;
+Fallout4.esm;000AC4D8;NPC_;RECheckpoint_LvlBoSSoldier_PowerArmor_Auto;
+Fallout4.esm;000AC4D6;NPC_;RECheckpoint_LvlBoSSoldier_PowerArmor_BigGun;
+Fallout4.esm;000AC4D5;NPC_;RECheckpoint_LvlSynth;
+Fallout4.esm;000ABF9E;NPC_;MQ101VaultTecRep;Vault-Tec Rep
+Fallout4.esm;000AB578;NPC_;ShaunBabyVoiceOnly;Shaun
+Fallout4.esm;000AB414;NPC_;V81CitizenM04T3Entry;
+Fallout4.esm;000AB412;NPC_;V81SecurityM04T2Entry;
+Fallout4.esm;000AB3DA;NPC_;V81_NeilFreund;Neil
+Fallout4.esm;000AB3D8;NPC_;V81_MirandaSong;Miranda
+Fallout4.esm;000AB3C2;NPC_;V81CitizenF04T1Entry;
+Fallout4.esm;000AA78E;NPC_;MinutemenRadioAnnouncer;Minuteman
+Fallout4.esm;000AA763;NPC_;MQ101PrewarCodsworth;Codsworth
+Fallout4.esm;000AA52C;NPC_;IsaacKarlinAnimTest;Isaac Karlin
+Fallout4.esm;000A93D7;NPC_;BoSDeckScribe04;Deck Scribe
+Fallout4.esm;000A93D6;NPC_;BoSDeckScribe03;Deck Scribe
+Fallout4.esm;000A93D5;NPC_;BoSDeckScribe02;Deck Scribe
+Fallout4.esm;000A93D4;NPC_;BoSDeckScribe01;Deck Scribe
+Fallout4.esm;000A82E4;NPC_;LiamBinet;Liam Binet
+Fallout4.esm;000A7D35;NPC_;MQ101PlayerSpouseFemale;
+Fallout4.esm;000A7D34;NPC_;MQ101PlayerSpouseMale;
+Fallout4.esm;000A563F;NPC_;EncEyeBot;EyeBot
+Fallout4.esm;000A2EB5;NPC_;DN015_GlowingOneAmbush;
+Fallout4.esm;000A291F;NPC_;MS11Bosun;Bosun
+Fallout4.esm;000A1607;NPC_;MS11Navigator;Mr. Navigator
+Fallout4.esm;000A1604;NPC_;MS11GenericMidshipman;Midshipman
+Fallout4.esm;000A1601;NPC_;MS11FirstMate;First Mate
+Fallout4.esm;000A1471;NPC_;EncSuperMutantTemplateAuto;
+Fallout4.esm;000A13C5;NPC_;LvlFeralGhoulAggro512;
+Fallout4.esm;000A1217;NPC_;CedricHopton;Cedric Hopton
+Fallout4.esm;000A0F33;NPC_;EncYaoGuai01Template;Yao Guai
+Fallout4.esm;000A0EEE;NPC_;encFeralGhoulGlowing03;Bloated Glowing One
+Fallout4.esm;000A0EE8;NPC_;GS_FeralGhoul05glowingSeaClothed;Alt Feral Ghoul Glowing Sea
+Fallout4.esm;000A0E3B;NPC_;Loot_CorpseTraderFemale;
+Fallout4.esm;000A0E3A;NPC_;Loot_CorpseTraderMale;Trader
+Fallout4.esm;000A0E39;NPC_;Loot_CorpseGunnerFemale;
+Fallout4.esm;000A0E38;NPC_;Loot_CorpseGunnerMale;Gunner
+Fallout4.esm;000A0E37;NPC_;Loot_CorpseChildrenOfAtomFemale;
+Fallout4.esm;000A0E36;NPC_;Loot_CorpseChildrenOfAtomMale;Child of Atom
+Fallout4.esm;000A0E35;NPC_;Loot_CorpseMinutemanFemale;
+Fallout4.esm;000A0E34;NPC_;Loot_CorpseMinutemanMale;Minuteman
+Fallout4.esm;000A0E33;NPC_;Loot_CorpseSettlerFemale;
+Fallout4.esm;000A0E32;NPC_;Loot_CorpseSettlerMale;Settler
+Fallout4.esm;000A0E31;NPC_;Loot_CorpseRaiderFemale01;
+Fallout4.esm;000A0E30;NPC_;Loot_CorpseRaiderMale01;Raider
+Fallout4.esm;000A0E2F;NPC_;Loot_CorpseBase;Corpse
+Fallout4.esm;000A077E;NPC_;GS_FeralGhoul05glowingSea;Alt Feral Ghoul Glowing Sea
+Fallout4.esm;0009DCBC;NPC_;AudioTemplateRadStag;Brahmin
+Fallout4.esm;0009C8F7;NPC_;DebugShootingRangeNPC;
+Fallout4.esm;0009C666;NPC_;ParsonsGuardCorpse;
+Fallout4.esm;0009BEF7;NPC_;DN146_LvlDrHandySawsBoss;Dr. Handy, M.D.
+Fallout4.esm;0009BC6C;NPC_;Kellogg;Kellogg
+Fallout4.esm;0009A680;NPC_;DoctorAmari;Doctor Amari
+Fallout4.esm;000995A6;NPC_;AudioTemplateBrahmin;Brahmin
+Fallout4.esm;0009902E;NPC_;LvlViciousDogAggro512;
+Fallout4.esm;0009902D;NPC_;LvlViciousDogAlphaAggro512;
+Fallout4.esm;00098363;NPC_;DN015_BackupRobot;
+Fallout4.esm;00098175;NPC_;AudioTemplateFeralGhoul;AudioTemplateFeralGhoul
+Fallout4.esm;00098083;NPC_;CZ_PatronMale;
+Fallout4.esm;00098056;NPC_;CZ_Patches;Patches
+Fallout4.esm;00097CC5;NPC_;EncTriggermanTemplateMelee;Triggerman
+Fallout4.esm;00097CC4;NPC_;LvlGoodneighborTriggermanWarehouseMelee;
+Fallout4.esm;00097CC3;NPC_;LvlGoodneighborTriggermanWarehousePistol;
+Fallout4.esm;000975FD;NPC_;DNFinancial_Opal;Opal
+Fallout4.esm;000975DD;NPC_;LvlSynth_Institute_Internal;
+Fallout4.esm;0009733D;NPC_;Loot_CorpseRaiderFemale05;
+Fallout4.esm;0009733C;NPC_;Loot_CorpseRaiderFemale04;
+Fallout4.esm;0009733B;NPC_;Loot_CorpseRaiderFemale03;
+Fallout4.esm;0009733A;NPC_;Loot_CorpseRaiderFemale02;
+Fallout4.esm;00097339;NPC_;Loot_CorpseRaiderMale05;Raider
+Fallout4.esm;00097336;NPC_;Loot_CorpseRaiderMale04;Raider
+Fallout4.esm;00097335;NPC_;Loot_CorpseRaiderMale03;Raider
+Fallout4.esm;00097332;NPC_;Loot_CorpseRaiderMale02;Raider
+Fallout4.esm;000971B9;NPC_;LvlRadRoachAggro350;
+Fallout4.esm;00097188;NPC_;DNFinancial_LvlTurretTripodOpal;
+Fallout4.esm;00097185;NPC_;LvlSupermutantGrenadeAggro1200;
+Fallout4.esm;000969D9;NPC_;MQ104Darla;Darla
+Fallout4.esm;000969C6;NPC_;EddieWinter;Eddie Winter
+Fallout4.esm;00096629;NPC_;DN079MrHandy;Cannery Robot
+Fallout4.esm;0009647D;NPC_;LvlTriggermanPistol;
+Fallout4.esm;0009647C;NPC_;EncTriggermanTemplatePistol;Triggerman
+Fallout4.esm;00095E88;NPC_;V81SecurityM03T2Residence;
+Fallout4.esm;00095E86;NPC_;V81SecurityM02T2Office;
+Fallout4.esm;00095E85;NPC_;V81SecurityM01T1Atrium;
+Fallout4.esm;000948B3;NPC_;LvlMutantHound;
+Fallout4.esm;00093BC4;NPC_;LvlSentryBot_Gunner;
+Fallout4.esm;00093BC3;NPC_;LvlMrGutsy_Gunner;
+Fallout4.esm;00093191;NPC_;LvlSynthAmbushSuperBarrel;
+Fallout4.esm;00093190;NPC_;LvlSynthAmbushRifle;
+Fallout4.esm;0009318F;NPC_;LvlSynthAmbushPistol;
+Fallout4.esm;0009318E;NPC_;LvlSynthAmbushMelee;
+Fallout4.esm;0009318D;NPC_;LvlSynthAmbushBoss;
+Fallout4.esm;0009318C;NPC_;LvlSynthAmbushAuto;
+Fallout4.esm;0009317E;NPC_;LvlSynthAmbush;
+Fallout4.esm;00091C87;NPC_;DiamondCityResidentF07Chapel;
+Fallout4.esm;00091C86;NPC_;DiamondCityResidentM08Chapel;
+Fallout4.esm;00091894;NPC_;BoS100Fight_LvlFeralGhoul;
+Fallout4.esm;000913E2;NPC_;DN011TempTurret;Turret
+Fallout4.esm;0009138B;NPC_;MS11Lookout;Lookout
+Fallout4.esm;00090E57;NPC_;LvlRadStag;
+Fallout4.esm;00090C37;NPC_;EncMutantHound01;Mutant Hound
+Fallout4.esm;0009085F;NPC_;DN011CuratorGivens;Curator Givens
+Fallout4.esm;0009084C;NPC_;LvlChildrenofAtomFemale;
+Fallout4.esm;0009084B;NPC_;LvlChildrenofAtomMale;
+Fallout4.esm;0008CCEA;NPC_;DN072_LvlGlowingOne;
+Fallout4.esm;0008CCDC;NPC_;DN072_LvlChildrenofAtomBoss;
+Fallout4.esm;0008CA3C;NPC_;EncRadstag02;Radstag
+Fallout4.esm;0008C9DC;NPC_;MS11GenericMercenary;Mercenary
+Fallout4.esm;0008C9D9;NPC_;MS11GenericScavenger;Scavenger
+Fallout4.esm;0008C409;NPC_;DN088_SylviaCooper;Sylvia Cooper
+Fallout4.esm;0008C408;NPC_;DN088_JacquelineSpencer;Jacqueline Spencer
+Fallout4.esm;0008C407;NPC_;DN088_PerryOwens;Perry
+Fallout4.esm;0008C406;NPC_;DN088_GeraldSpencer;Gerald Spencer
+Fallout4.esm;0008C400;NPC_;DN088_BertStrickland;Bert Strickland
+Fallout4.esm;0008C3FF;NPC_;DN088_Kellogg;Male Voice
+Fallout4.esm;0008BE47;NPC_;DebugJPMrHandyVeryAggressive;
+Fallout4.esm;0008B812;NPC_;DN160_ScavengerTemplate;
+Fallout4.esm;0008B810;NPC_;DN160_Scavenger03;
+Fallout4.esm;0008B80F;NPC_;DN160_Scavenger02;
+Fallout4.esm;0008B6F5;NPC_;MS13ThugPhoto;
+Fallout4.esm;000890C1;NPC_;Deezer;Deezer
+Fallout4.esm;00088F14;NPC_;LvlSupermutantMelee;
+Fallout4.esm;00088742;NPC_;GoodneighborGuard;Neighborhood Watch
+Fallout4.esm;00087AA0;NPC_;DN132_CorpseMary;Mary Sutton
+Fallout4.esm;000859DD;NPC_;EncChildrenOfAtomM02;
+Fallout4.esm;000854CD;NPC_;CZ_LvlTurretTripod;
+Fallout4.esm;00084D4E;NPC_;LvlFeralGhoulAggro800;
+Fallout4.esm;00084912;NPC_;LvlFeralGhoulAmbush;
+Fallout4.esm;000843E6;NPC_;ParkerQuinn;Parker Quinn
+Fallout4.esm;0008401A;NPC_;LvlMirelurkCrabAmbush;
+Fallout4.esm;00083FB4;NPC_;MQ104SkinnyMalone;Skinny Malone
+Fallout4.esm;00083AD6;NPC_;LvlTriggerman;
+Fallout4.esm;00083AD2;NPC_;EncTriggerman01;
+Fallout4.esm;00083ACF;NPC_;EncTriggermanTemplate00;Triggerman
+Fallout4.esm;00083901;NPC_;MS13Thug;Triggerman
+Fallout4.esm;0007ED09;NPC_;encFeralGhoul04;Feral Ghoul Reaver
+Fallout4.esm;0007ED08;NPC_;encFeralGhoul05;Withered Feral Ghoul
+Fallout4.esm;0007ED07;NPC_;encFeralGhoul07;Rotting Feral Ghoul
+Fallout4.esm;0007E60F;NPC_;AudioTemplateStingwing;AudioTemplateStingwing
+Fallout4.esm;0007E5ED;NPC_;LvlBloatflyAggro1500;
+Fallout4.esm;0007E5E5;NPC_;LvlStingwingAggro1500;
+Fallout4.esm;0007E2C3;NPC_;LvlBloodbugAggro1500;
+Fallout4.esm;0007D4F6;NPC_;Junkyard;Junkyard
+Fallout4.esm;0007D2A3;NPC_;LvlBloodbugAggro650;
+Fallout4.esm;0007D28F;NPC_;LvlMirelurkCrabAggro1670;
+Fallout4.esm;0007D285;NPC_;LvlRadRoachAggro880;
+Fallout4.esm;0007CEBC;NPC_;LvlMoleratAggro512;
+Fallout4.esm;0007CEA8;NPC_;LvlBloatflyAggro512;
+Fallout4.esm;0007CD78;NPC_;HighRise;High Rise
+Fallout4.esm;0007CB5F;NPC_;LvlStingwingAmbush;
+Fallout4.esm;0007BB24;NPC_;AudioTemplateMolerat;AudioTemplateDogmeat
+Fallout4.esm;0007BB0E;NPC_;LvlStingwingAggro1024;
+Fallout4.esm;0007BB0D;NPC_;LvlStingwing;
+Fallout4.esm;0007B620;NPC_;LvlRaider_Handmade_MG;
+Fallout4.esm;00079585;NPC_;TSWallace;T. S. Wallace
+Fallout4.esm;00079304;NPC_;DebugJPCitizen;Resident
+Fallout4.esm;00079249;NPC_;CompanionCait;Cait
+Fallout4.esm;000789C6;NPC_;encRaiderFaceM09;
+Fallout4.esm;000780B3;NPC_;FaceRaiderC;
+Fallout4.esm;00077D39;NPC_;DN034_LvlRaiderMelee;
+Fallout4.esm;00077D38;NPC_;DN034_LvlRaider;
+Fallout4.esm;00077D36;NPC_;DN034_LvlRaiderBoss;Judge Zeller
+Fallout4.esm;00077D21;NPC_;LvlBoSSoldier_PowerArmor_Semi;
+Fallout4.esm;00076A0B;NPC_;EncBoSScribeTemplate;Brotherhood Scribe Template
+Fallout4.esm;00076A0A;NPC_;EncBoSSoldierTemplate;Brotherhood Soldier Template
+Fallout4.esm;00076A05;NPC_;LvlBoSScribe;
+Fallout4.esm;00076A01;NPC_;EncBoSScribe03;Brotherhood Senior Scribe
+Fallout4.esm;00076A00;NPC_;EncBoSScribe02;Brotherhood Scribe
+Fallout4.esm;000769FF;NPC_;EncBoSScribe01;Brotherhood Scribe Initiate
+Fallout4.esm;000769FE;NPC_;EncBoSSoldier01;Brotherhood Initiate
+Fallout4.esm;000769FD;NPC_;EncBoSSoldier05;Brotherhood Knight-Captain
+Fallout4.esm;000769FC;NPC_;EncBoSSoldier04;Brotherhood Knight-Sergeant
+Fallout4.esm;000769FB;NPC_;EncBoSSoldier03;Brotherhood Knight
+Fallout4.esm;000769FA;NPC_;EncBoSSoldier02;Brotherhood Aspirant
+Fallout4.esm;000758B2;NPC_;EncRaider05;Raider Survivalist
+Fallout4.esm;000758B1;NPC_;EncRaider04;Raider Waster
+Fallout4.esm;000758B0;NPC_;EncRaider03;Raider Scavver
+Fallout4.esm;000758AF;NPC_;EncRaider02;Raider Scum
+Fallout4.esm;000758AD;NPC_;encFeralGhoul01Template;Feral Ghoul
+Fallout4.esm;00075345;NPC_;LvlGunnerBoss;Gunner Commander
+Fallout4.esm;00075344;NPC_;LvlChildrenofAtomBoss;
+Fallout4.esm;00075343;NPC_;LvlFeralGhoulBoss;
+Fallout4.esm;00075342;NPC_;LvlSynthBoss;Synth Leader
+Fallout4.esm;00075341;NPC_;LvlSupermutantBoss;
+Fallout4.esm;00075340;NPC_;LvlRobotBoss;Robot Boss
+Fallout4.esm;0007533F;NPC_;LvlMirelurkCrabBoss;
+Fallout4.esm;0007533E;NPC_;LvlRaiderBoss;
+Fallout4.esm;0007533C;NPC_;LvlBoSSoldier_CombatArmor_Semi;
+Fallout4.esm;0007533A;NPC_;LvlSynth;
+Fallout4.esm;00075339;NPC_;LvlRobot;Robot
+Fallout4.esm;00075338;NPC_;LvlDeathclaw;
+Fallout4.esm;00075337;NPC_;LvlFeralGhoul;
+Fallout4.esm;00075335;NPC_;LvlSupermutantAllRanged;
+Fallout4.esm;00074795;NPC_;LvlCovenantHQSecurity;Compound Guard
+Fallout4.esm;00073235;NPC_;Loot_CorpseDN068MinutemanMale;Josh
+Fallout4.esm;00072A08;NPC_;RickyDalton;Ricky Dalton
+Fallout4.esm;000726C8;NPC_;InstCompVoiceNPC;Institute Computer
+Fallout4.esm;0007226C;NPC_;DN096LvlTurretTripodMounted;
+Fallout4.esm;0007050B;NPC_;LvlGunnerSniper;
+Fallout4.esm;0007050A;NPC_;EncGunner09;Gunner Brigadier
+Fallout4.esm;00070509;NPC_;EncGunner08;Gunner Colonel
+Fallout4.esm;00070508;NPC_;EncGunner07;Gunner Major
+Fallout4.esm;00070507;NPC_;EncGunner06;Gunner Captain
+Fallout4.esm;00070506;NPC_;EncGunner05;Gunner Lieutenant
+Fallout4.esm;0006C507;NPC_;EncBrahminClarabell;Clarabell
+Fallout4.esm;0006BA9B;NPC_;DN123_LvlRaiderMeleeAggro1024;
+Fallout4.esm;0006B503;NPC_;Virgil;Virgil
+Fallout4.esm;0006B4D3;NPC_;BlakeAbernathy;Blake Abernathy
+Fallout4.esm;0006B4D2;NPC_;LucyAbernathy;Lucy Abernathy
+Fallout4.esm;0006B4D1;NPC_;ConnieAbernathy;Connie Abernathy
+Fallout4.esm;0006AEDF;NPC_;DN138GuardMelee;
+Fallout4.esm;0006AB99;NPC_;DN123_LvlRaiderRevolverAggro1024;
+Fallout4.esm;0006A32A;NPC_;DN010_GuardNPC;
+Fallout4.esm;0006A329;NPC_;DN010_MayorWifeNPC;
+Fallout4.esm;0006A328;NPC_;DN010_MayorNPC;
+Fallout4.esm;0006954B;NPC_;MQ203TravisMilesMUSIC;
+Fallout4.esm;000693F8;NPC_;LvlTurretBubbleRobots950;
+Fallout4.esm;000678CE;NPC_;DrummerBoy;Drummer Boy
+Fallout4.esm;00066BC9;NPC_;DN160_Scavenger01;
+Fallout4.esm;000668D5;NPC_;DN131_Mikail;Mikail
+Fallout4.esm;00066644;NPC_;EncSynthGen1TraitsTemplate;Synth
+Fallout4.esm;00064C5E;NPC_;EncMirelurkHunter01;Mirelurk Hunter
+Fallout4.esm;000642B9;NPC_;BoSScribeNeriah;Senior Scribe Neriah
+Fallout4.esm;000642B8;NPC_;BoSElderMaxson;Elder Maxson
+Fallout4.esm;000642B6;NPC_;BoSProctorQuinlan;Proctor Quinlan
+Fallout4.esm;000642B5;NPC_;BoSProctorIngram;Proctor Ingram
+Fallout4.esm;000642B4;NPC_;BoSProctorTeagan;Proctor Teagan
+Fallout4.esm;000642B3;NPC_;BoSKnightCaptainCade;Knight-Captain Cade
+Fallout4.esm;000642B2;NPC_;BoSLancerCaptainKells;Lancer Captain Kells
+Fallout4.esm;00064124;NPC_;encRaiderFaceM03;
+Fallout4.esm;00064122;NPC_;encRaiderFaceM04;
+Fallout4.esm;00063EA0;NPC_;EncSynth01;Synth
+Fallout4.esm;000636C2;NPC_;POICorpseMale;Corpse
+Fallout4.esm;000636AA;NPC_;EncRadscorpion01Template;Radscorpion
+Fallout4.esm;00063563;NPC_;CovenantGenericM01;
+Fallout4.esm;00063562;NPC_;CovenantGenericF01;
+Fallout4.esm;00063561;NPC_;CovenantGenericTemplate00;Settler
+Fallout4.esm;00063520;NPC_;DN142_InterviewSubject3;Soup Can Harry
+Fallout4.esm;0006351F;NPC_;DN142_InterviewSubject2;Kimberly
+Fallout4.esm;0006351C;NPC_;DN142_InterviewSubject1;Benjamin
+Fallout4.esm;0006350D;NPC_;DN142_VaultTecInterviewer;Interviewer
+Fallout4.esm;00061BE9;NPC_;RailroadHQGenericF01;
+Fallout4.esm;00061BE8;NPC_;RailroadHQGenericM01;
+Fallout4.esm;00061BE7;NPC_;RailroadHQGenericTemplate00;Railroad Agent
+Fallout4.esm;000614FA;NPC_;EncSynthGen1Face1;
+Fallout4.esm;00060CA5;NPC_;POIDrugUserCorpse;Corpse
+Fallout4.esm;0005FEFD;NPC_;H2-22;H2-22
+Fallout4.esm;0005FEF4;NPC_;RR102_LvlTurretTripod;
+Fallout4.esm;0005FEEF;NPC_;Dn047Worker04;Chem Lab Worker
+Fallout4.esm;0005FEED;NPC_;Dn047Worker03;Chem Lab Worker
+Fallout4.esm;0005FEDF;NPC_;Dn047Worker02;Chem Lab Worker
+Fallout4.esm;0005FD71;NPC_;BunkerHillWorkerM02;
+Fallout4.esm;0005FD70;NPC_;BunkerHillWorkerF02;
+Fallout4.esm;0005FD57;NPC_;BunkerHillWorkerF01;
+Fallout4.esm;0005FD56;NPC_;BunkerHillWorkerM01;
+Fallout4.esm;0005FD55;NPC_;BunkerHillWorkerTemplate;Caravan Worker
+Fallout4.esm;0005FD2E;NPC_;TonySavoldi;Tony Savoldi
+Fallout4.esm;0005FBB3;NPC_;EncStingwing01Template;Stingwing
+Fallout4.esm;0005F4C5;NPC_;LvlTurretBubbleGunner1024;
+Fallout4.esm;0005F483;NPC_;DN084_LvlGunnerAuto_AggroExt;
+Fallout4.esm;0005F482;NPC_;DN084_LvlGunnerGun_AggroExt;
+Fallout4.esm;0005E9D8;NPC_;REChokepointRJ01_LvlGunnerAggressive;
+Fallout4.esm;0005E714;NPC_;InstituteWorkerTemplate;Institute Worker
+Fallout4.esm;0005E712;NPC_;InstituteDivisionHeadTemplate;Institute Division Head
+Fallout4.esm;0005E70F;NPC_;InstituteLabCoatTemplate;Institute Scientist
+Fallout4.esm;0005E63F;NPC_;MadisonLi;Madison Li
+Fallout4.esm;0005E564;NPC_;AlanaSecord;Alana Secord
+Fallout4.esm;0005E563;NPC_;JustinAyo;Justin Ayo
+Fallout4.esm;0005E562;NPC_;RosalindOrman;Rosalind Orman
+Fallout4.esm;0005E561;NPC_;EvanWatson;Evan Watson
+Fallout4.esm;0005E560;NPC_;AlanBinet;Alan Binet
+Fallout4.esm;0005E55F;NPC_;MaxLoken;Max Loken
+Fallout4.esm;0005E55E;NPC_;DeanVolkert;Dean Volkert
+Fallout4.esm;0005E55D;NPC_;IsaacKarlin;Isaac Karlin
+Fallout4.esm;0005E55C;NPC_;ClaytonHoldren;Clayton Holdren
+Fallout4.esm;0005E55B;NPC_;NewtonOberly;Newton Oberly
+Fallout4.esm;0005E55A;NPC_;EnricoThompson;Enrico Thompson
+Fallout4.esm;0005E559;NPC_;LawrenceHiggs;Lawrence Higgs
+Fallout4.esm;0005E557;NPC_;AllieFilmore;Allie Filmore
+Fallout4.esm;0005E547;NPC_;DN070_ExplorerBase;Jamaica Plain Explorer
+Fallout4.esm;0005E545;NPC_;DN070_Tanya;Tanya Standish
+Fallout4.esm;0005E541;NPC_;DN070_Ken;Ken Standish
+Fallout4.esm;0005E540;NPC_;DN070_Luke;Luke Silverhand
+Fallout4.esm;0005E53F;NPC_;DN070_Carl;Carl Everett
+Fallout4.esm;0005DE40;NPC_;BoSKnightRhys;Knight Rhys
+Fallout4.esm;0005DE3F;NPC_;BoSScribeHaylen;Scribe Haylen
+Fallout4.esm;0005DB93;NPC_;REFarmerNoScript;
+Fallout4.esm;0005BCA7;NPC_;EncVertibird04;
+Fallout4.esm;0005BCA6;NPC_;EncVertibird02;
+Fallout4.esm;0005BCA5;NPC_;EncVertibird03;
+Fallout4.esm;0005B305;NPC_;RETravelCC01_LvlViciousDog;
+Fallout4.esm;0005B1A2;NPC_;DN070_Sal;Sal
+Fallout4.esm;0005A9C1;NPC_;LvlMirelurkCrab;
+Fallout4.esm;0005A7A1;NPC_;PresetMale7;PresetMale7
+Fallout4.esm;0005A79F;NPC_;PresetMale8;PresetMale8
+Fallout4.esm;0005A795;NPC_;PresetMale9;PresetMale9
+Fallout4.esm;0005A793;NPC_;PresetMale10;PresetMale10
+Fallout4.esm;0005A791;NPC_;PresetMale11;PresetMale11
+Fallout4.esm;0005A772;NPC_;PresetMale12;PresetMale12
+Fallout4.esm;00059AB7;NPC_;DN017_LvlSynthEngineCoreAssault;
+Fallout4.esm;00058260;NPC_;DiamondCityResidentM04Market;
+Fallout4.esm;0005824A;NPC_;DiamondCityResidentWorkerM01;Resident
+Fallout4.esm;000581B5;NPC_;V81_AustinEngilll;Austin Engill
+Fallout4.esm;000576D1;NPC_;PresetMale6;PresetMale6
+Fallout4.esm;000570C3;NPC_;ShaunChild;Shaun
+Fallout4.esm;00056DDC;NPC_;MS16Worker01;Tunnel Worker
+Fallout4.esm;00056DD4;NPC_;MikeDaly;Mike Daly
+Fallout4.esm;00056D03;NPC_;DN033_MinerNPCMale03;
+Fallout4.esm;00056D02;NPC_;DN033_MinerNPCMale02;
+Fallout4.esm;00056D01;NPC_;DN033_MinerNPCMale01;
+Fallout4.esm;00056B7C;NPC_;DN131_LvlSMBehemothSwan;Swan
+Fallout4.esm;00056988;NPC_;RR303HijackedVertibird;
+Fallout4.esm;0005691D;NPC_;LvlVertibirdFastTravel;
+Fallout4.esm;000566BC;NPC_;MQMomVoice;Nora
+Fallout4.esm;000566BB;NPC_;MQDadVoice;Nate
+Fallout4.esm;0005668D;NPC_;DmndHouseCat;
+Fallout4.esm;0005660E;NPC_;DiamondCitySchoolChildF01;Erin Reische
+Fallout4.esm;0005660D;NPC_;DiamondCitySchoolChildM02;Phil Wallace
+Fallout4.esm;00055EA7;NPC_;CaptainWidmark;Captain Widmark
+Fallout4.esm;000553C5;NPC_;BoSPrimeScribe05;Prime Scribe
+Fallout4.esm;00055380;NPC_;LvlRadRoachAggro512;
+Fallout4.esm;00055375;NPC_;BoSPrimeScribe04;Prime Scribe
+Fallout4.esm;00055374;NPC_;BoSPrimeScribe03;Prime Scribe
+Fallout4.esm;00055373;NPC_;BoSPrimeScribe02;Prime Scribe
+Fallout4.esm;00055372;NPC_;BoSPrimeScribe01;Prime Scribe
+Fallout4.esm;00054B0E;NPC_;MS17Manny;Manny
+Fallout4.esm;000544CB;NPC_;LvlRadRoachAmbush;
+Fallout4.esm;000537E2;NPC_;MS17PennyFitzgerald;Penny Fitzgerald
+Fallout4.esm;00052174;NPC_;MS16Mel;Mel
+Fallout4.esm;00052157;NPC_;MS16Casey;Casey
+Fallout4.esm;00051E91;NPC_;DN061_LvlGunnerBoss;Captain Bridget
+Fallout4.esm;00051E5C;NPC_;DN121PrisonerSettlerFemale;
+Fallout4.esm;00051E54;NPC_;DN121PrisonerSettlerMale;Settler
+Fallout4.esm;00051D4B;NPC_;LvlBloodbugAmbush;
+Fallout4.esm;00050DC9;NPC_;LvlSynthTeleport;
+Fallout4.esm;00050D4B;NPC_;LvlTurretTripodForged;
+Fallout4.esm;00050C93;NPC_;PlayerJJ01;
+Fallout4.esm;00050845;NPC_;LvlMoleratAggro512Delayed;
+Fallout4.esm;0004F48F;NPC_;V81SecurityF02T1Atrium;
+Fallout4.esm;0004F48D;NPC_;V81SecurityF01T1Entry;
+Fallout4.esm;0004F48B;NPC_;V81SecurityTemplate;Vault Security
+Fallout4.esm;0004F38F;NPC_;RR303DeckOfficer;Brotherhood Scribe
+Fallout4.esm;0004F04B;NPC_;GoodneighborDrifterF03;
+Fallout4.esm;0004F049;NPC_;GoodneighborDrifterM02;
+Fallout4.esm;0004F047;NPC_;GoodneighborDrifterM03Ghoul;
+Fallout4.esm;0004EFEC;NPC_;Z2-47;Z2-47
+Fallout4.esm;0004EFE2;NPC_;K1-98;K1-98
+Fallout4.esm;0004E39E;NPC_;MS11Davies;Davies
+Fallout4.esm;0004D6AD;NPC_;MS11Raider01MG;
+Fallout4.esm;0004D472;NPC_;DN083_BarneyRook;Barney Rook
+Fallout4.esm;0004CE40;NPC_;LvlGunnerBoss_PowerArmor;
+Fallout4.esm;0004B36D;NPC_;DN123_NessMercenary02;
+Fallout4.esm;0004B36C;NPC_;DN123_NessMercenary01;
+Fallout4.esm;0004B369;NPC_;DN123_Ness;Ness
+Fallout4.esm;0004B28E;NPC_;ParsonsGuardCaptain;Maria
+Fallout4.esm;0004B240;NPC_;Scarlett;Scarlett
+Fallout4.esm;0004B0BF;NPC_;DN006_LvlRaiderBoss;Tower Tom
+Fallout4.esm;0004AF28;NPC_;FaceRaiderB;
+Fallout4.esm;0004AF27;NPC_;FaceRaiderA;
+Fallout4.esm;0004AF26;NPC_;encRaiderFaceM08;
+Fallout4.esm;0004AF25;NPC_;encRaiderFaceM07;
+Fallout4.esm;0004AF24;NPC_;encRaiderFaceM06;
+Fallout4.esm;0004AF23;NPC_;encRaiderFaceM05;
+Fallout4.esm;0004AF22;NPC_;encRaiderFaceM02;
+Fallout4.esm;0004AF21;NPC_;encRaiderFaceM01;
+Fallout4.esm;0004AD4D;NPC_;DN101Pickman;Pickman
+Fallout4.esm;0004AB6C;NPC_;MS05_Loot_CorpseGunnerMale01;Gunner
+Fallout4.esm;0004AA05;NPC_;DN033_ChamberNPCFemale02;
+Fallout4.esm;0004AA04;NPC_;DN033_ChamberNPCFemale01;
+Fallout4.esm;0004AA03;NPC_;DN033_ChamberNPCMale04;
+Fallout4.esm;0004AA02;NPC_;DN033_ChamberNPCMale03;
+Fallout4.esm;0004AA01;NPC_;DN033_ChamberNPCMale02;
+Fallout4.esm;0004A9F1;NPC_;DN033_ChamberNPCMale01;
+Fallout4.esm;0004A517;NPC_;MQ203MemoryA_Kellogg;Me
+Fallout4.esm;0004A101;NPC_;MS04Kendra;Kendra
+Fallout4.esm;0004982C;NPC_;DN157Ghoul07;
+Fallout4.esm;0004982A;NPC_;DN157Ghoul06Melee;
+Fallout4.esm;00049828;NPC_;DN157Ghoul05Melee;
+Fallout4.esm;0004863B;NPC_;DN054AtomCat_Bluejay;Bluejay
+Fallout4.esm;00048622;NPC_;DN054Zeke;Zeke
+Fallout4.esm;0004818D;NPC_;DN157GhoulBoss;Rags
+Fallout4.esm;00048186;NPC_;DN157Ghoul04;
+Fallout4.esm;0004813B;NPC_;DN157Ghoul02;
+Fallout4.esm;0004813A;NPC_;DN157Ghoul01;
+Fallout4.esm;00048139;NPC_;DN157Ghoul03;
+Fallout4.esm;000480FD;NPC_;AudioTemplateRadRoach;AudioTemplateBloodbug
+Fallout4.esm;00047EC5;NPC_;LorenzoCabot;Lorenzo Cabot
+Fallout4.esm;00047EC0;NPC_;EdwardDeegan;Edward Deegan
+Fallout4.esm;00047EBF;NPC_;WilhelminaCabot;Wilhelmina Cabot
+Fallout4.esm;00047EBE;NPC_;EmogeneCabotOld;Emogene Cabot
+Fallout4.esm;00047EB7;NPC_;JackCabot;Jack Cabot
+Fallout4.esm;0004764B;NPC_;RESceneJSDN077Guard;Mercenary
+Fallout4.esm;00047649;NPC_;RESceneJSDN077Merchant;Fred O'Connell
+Fallout4.esm;0004763B;NPC_;RETravelCC01_ScaredFarmer;Farmer
+Fallout4.esm;000475DF;NPC_;EncRadRoach;Radroach
+Fallout4.esm;000471B4;NPC_;MS04SinjinGhoul;Sinjin
+Fallout4.esm;00047162;NPC_;EncRaider01Melee;
+Fallout4.esm;00046D0C;NPC_;DN049_LvlMrGutsy_Director;The Director
+Fallout4.esm;00046630;NPC_;RETravelJB01_LvlMoleratFlee;
+Fallout4.esm;0004628F;NPC_;DN094_MrHandy;Oceanological Instructor
+Fallout4.esm;00045AD3;NPC_;PAM;P.A.M.
+Fallout4.esm;00045AD1;NPC_;Desdemona;Desdemona
+Fallout4.esm;00045ACF;NPC_;Glory;Glory
+Fallout4.esm;00045ACD;NPC_;DoctorCarrington;Doctor Carrington
+Fallout4.esm;00045ACB;NPC_;TinkerTom;Tinker Tom
+Fallout4.esm;00045AC9;NPC_;CompanionDeacon;Deacon
+Fallout4.esm;00045798;NPC_;DN050SuspectBot;Suspect Bot
+Fallout4.esm;00045700;NPC_;MS04SinjinRightHand;Avery
+Fallout4.esm;000456FD;NPC_;MS04Sinjin;Sinjin
+Fallout4.esm;000456F6;NPC_;MS04Northy;Northy
+Fallout4.esm;000456F2;NPC_;MS04SmilingKate;Smiling Kate
+Fallout4.esm;00044A7F;NPC_;LvlTriggermanUnaggressiveMeleeGhoulOnly;
+Fallout4.esm;00044129;NPC_;EncBoSTraitsSquireFemale01;Brotherhood Squire Template
+Fallout4.esm;00044127;NPC_;EncBoSTraitsSquireMale01;Brotherhood Squire Template
+Fallout4.esm;00043F26;NPC_;LvlMirelurkCrabBossAmbush;
+Fallout4.esm;00043B10;NPC_;DN001_BADTFLRaider02;
+Fallout4.esm;00043B0F;NPC_;DN001_BADTFLRaider01;
+Fallout4.esm;00043389;NPC_;MS14Bull;Bull
+Fallout4.esm;00043216;NPC_;DN067_RoryRigwell;Rory Rigwell
+Fallout4.esm;00042DDC;NPC_;MS13AmbushGuard;Triggerman
+Fallout4.esm;0003FEC8;NPC_;MS04WayneDelancy;Wayne Delancy
+Fallout4.esm;0003FE41;NPC_;Trish;Trish
+Fallout4.esm;0003FA64;NPC_;DL03Raider01Rifle;
+Fallout4.esm;0003FA5E;NPC_;LvlEyeBotDmndCitySecurity;
+Fallout4.esm;0003F2EA;NPC_;MS10Boss;Fist
+Fallout4.esm;0003F23D;NPC_;AbrahamFinch;Abraham Finch
+Fallout4.esm;0003F23C;NPC_;RogerWarwick;Roger Warwick
+Fallout4.esm;0003F23B;NPC_;Deirdre;Deirdre
+Fallout4.esm;0003F23A;NPC_;Holly;Holly
+Fallout4.esm;0003F239;NPC_;Jones;Jones
+Fallout4.esm;0003F238;NPC_;BillSutton;Bill Sutton
+Fallout4.esm;0003F237;NPC_;WallyWarwick;Wally Warwick
+Fallout4.esm;0003F236;NPC_;JuneWarwick;June Warwick
+Fallout4.esm;0003F235;NPC_;JaneyWarwick;Janey Warwick
+Fallout4.esm;0003F234;NPC_;Wiseman;Wiseman
+Fallout4.esm;0003F22D;NPC_;JakeFinch;Jake Finch
+Fallout4.esm;0003F22C;NPC_;AbigailFinch;Abigail Finch
+Fallout4.esm;0003F22B;NPC_;DanielFinch;Daniel Finch
+Fallout4.esm;0003EFF2;NPC_;TraderRylee;Trader Rylee
+Fallout4.esm;0003E25C;NPC_;LvlBloatflyUnaggressive;
+Fallout4.esm;0003DF76;NPC_;DN007_Dutchman;Dutchman
+Fallout4.esm;0003DF75;NPC_;DN007_Helena;Helena
+Fallout4.esm;0003DF73;NPC_;DN007_A951;A9-51
+Fallout4.esm;0003D834;NPC_;TheodoreCollins;Theodore Collins
+Fallout4.esm;0003D766;NPC_;AudioTemplateDogmeat;AudioTemplateDogmeat
+Fallout4.esm;0003D646;NPC_;REMerchant02Guard;Gunner Mercenary
+Fallout4.esm;0003D638;NPC_;REMerchant02;Dreth
+Fallout4.esm;0003D630;NPC_;REAssaultSC06_LvlMrGutsyAggro;
+Fallout4.esm;0003D62F;NPC_;REAssaultSC06_MrHandy;
+Fallout4.esm;0003D62A;NPC_;REAssaultSC05_LvlFarmer;
+Fallout4.esm;0003D629;NPC_;REAssaultSC05_LvlViciousDogAggro;
+Fallout4.esm;0003D628;NPC_;LvlViciousDog;
+Fallout4.esm;0003D19A;NPC_;RadioDiamondCitySSPoliceOfficer;Police Officer
+Fallout4.esm;0003D199;NPC_;RadioDiamondCitySSPoliceChief;Police Chief
+Fallout4.esm;0003D196;NPC_;RadioInstitutePatrol1;Institute Patrol 1
+Fallout4.esm;0003D195;NPC_;RadioInstituteAxis;Institute Control
+Fallout4.esm;0003D029;NPC_;RailroadGenericSynthF01;Synth
+Fallout4.esm;0003C62E;NPC_;RelayTowerHumanMaleActor;
+Fallout4.esm;0003C43C;NPC_;RR302LvlBosAssaultLeader;
+Fallout4.esm;0003BDB9;NPC_;MQ102CryoCorpse12;Cindy Cofran
+Fallout4.esm;0003BDB7;NPC_;MQ102CryoCorpse11;Mrs. Cofran
+Fallout4.esm;0003BDB5;NPC_;MQ102CryoCorpse10;Mr. Cofran
+Fallout4.esm;0003BDB3;NPC_;MQ102CryoCorpse09;Mr. DiPietro
+Fallout4.esm;0003BDB1;NPC_;MQ102CryoCorpse08;
+Fallout4.esm;0003BDAF;NPC_;MQ102CryoCorpse07;
+Fallout4.esm;0003B553;NPC_;REAssaultSC04_LvlScavengerAggro;
+Fallout4.esm;0003B552;NPC_;REAssaultSC04_LvlRaiderAggro;
+Fallout4.esm;0003B2BF;NPC_;DN048_BlindMutant;Dead Eye
+Fallout4.esm;0003B2A7;NPC_;AudioTemplateDogVicious;AudioTemplateDogVicious
+Fallout4.esm;0003ADC8;NPC_;MandyStiles;Mandy Stiles
+Fallout4.esm;0003ADC4;NPC_;Ironsides;Ironsides
+Fallout4.esm;0003AC45;NPC_;REChokepointSC02_MrGutsy;
+Fallout4.esm;0003AC44;NPC_;REChokepointSC03_Farmer;Farmer
+Fallout4.esm;0003A5EB;NPC_;REChokepointSC01_LvlRaiderAggressive;
+Fallout4.esm;0003A5E5;NPC_;BoS302LvlProtectron;
+Fallout4.esm;0003A56D;NPC_;BoS302LvlTurretBubble;
+Fallout4.esm;0003A458;NPC_;RonnieShaw;Ronnie Shaw
+Fallout4.esm;00039FD3;NPC_;JacobOrden;Jacob Orden
+Fallout4.esm;00039FD1;NPC_;TaliaMcGovern;Talia McGovern
+Fallout4.esm;00039FCF;NPC_;TedHuntley;Ted Huntley
+Fallout4.esm;00039FCD;NPC_;BrianFitzgerald;Brian Fitzgerald
+Fallout4.esm;00039FCB;NPC_;OldManStockton;Old Man Stockton
+Fallout4.esm;00039FC8;NPC_;AmeliaStockton;Amelia Stockton
+Fallout4.esm;00039FC5;NPC_;HonestDan;Honest Dan
+Fallout4.esm;000399DD;NPC_;HenryCooke;Henry Cooke
+Fallout4.esm;000393C9;NPC_;LvlBloatflyAmbush;
+Fallout4.esm;00037056;NPC_;Swanson;Swanson
+Fallout4.esm;00037055;NPC_;RoslynChambers;Dr. Roslyn Chambers
+Fallout4.esm;00037005;NPC_;AudioTemplateMrHandy;AudioTemplateBloodbug
+Fallout4.esm;00036FE7;NPC_;RadioDiamondCitySSFahey;Fat Fahey
+Fallout4.esm;00036FE6;NPC_;RadioDiamondCitySSMistress;Mistress of Mysterious
+Fallout4.esm;00036FE5;NPC_;RadioDiamondCitySSThug2;Male Thug
+Fallout4.esm;00036FE4;NPC_;RadioDiamondCitySSThug1;Female Thug
+Fallout4.esm;00036FE3;NPC_;RadioDiamondCitySSMurphy;Mayor Murphy
+Fallout4.esm;00036FE2;NPC_;RadioDiamondCitySSAnnouncer;Silver Shroud Announcer
+Fallout4.esm;00036FE1;NPC_;RadioDiamondCitySSShroud;Silver Shroud
+Fallout4.esm;00036D6F;NPC_;AnneHargraves;Anne Hargraves
+Fallout4.esm;00036D6E;NPC_;GeorgeCooper;George Cooper
+Fallout4.esm;00036D6A;NPC_;RexGoodman;Rex Goodman
+Fallout4.esm;000361C1;NPC_;DN088_MirelurkAmbush;
+Fallout4.esm;000357D7;NPC_;DN088_2ndGenSynthBase;Gen 2 Synth
+Fallout4.esm;00035760;NPC_;DN057LvlRaiderHoldPosLinkCustom01;
+Fallout4.esm;0003575C;NPC_;DN057LvlRaider;
+Fallout4.esm;00034680;NPC_;GunnerBarnes;Barnes
+Fallout4.esm;0003467F;NPC_;GunnerWinlock;Winlock
+Fallout4.esm;000342CF;NPC_;REScavenger01;
+Fallout4.esm;000342CA;NPC_;LvlMoleratAmbush;
+Fallout4.esm;000342C9;NPC_;LvlMolerat;
+Fallout4.esm;000342C4;NPC_;DN040Arnie;Arnie
+Fallout4.esm;00033F49;NPC_;AudioTemplateMirelurk;AudioTemplateMirelurk
+Fallout4.esm;000335C2;NPC_;ConfessorAdalia;Confessor Adalia
+Fallout4.esm;00033585;NPC_;Finn;Finn
+Fallout4.esm;0003320A;NPC_;LvlBloatfly;
+Fallout4.esm;000327B6;NPC_;CaptainZao;Captain Zao
+Fallout4.esm;000327B5;NPC_;DonnyKowalsky;Donny Kowalski
+Fallout4.esm;0003255F;NPC_;FurnitureTester;Furniture Tester
+Fallout4.esm;000324E9;NPC_;DN138GuardRanged;
+Fallout4.esm;000320D2;NPC_;RR302RRAgent;Railroad Agent
+Fallout4.esm;000320CE;NPC_;RR302LvlBoSStationLeader;Head Knight
+Fallout4.esm;000320A1;NPC_;AudioTemplateDeathclaw;AudioTemplateBloodbug
+Fallout4.esm;0003204D;NPC_;LvlRadscorpionUnaggressive;
+Fallout4.esm;00031FB3;NPC_;VaultTecRepGoodneighbor;Vault-Tec Rep
+Fallout4.esm;0003183A;NPC_;EncRaider01Template;Raider
+Fallout4.esm;00030D6E;NPC_;DN062RaiderHoldPosition;
+Fallout4.esm;00030D6A;NPC_;DN062LvlRaiderHoldPositionCombat;
+Fallout4.esm;00030D65;NPC_;DN062LvlRaiderHoldPositionNoncombat;
+Fallout4.esm;00030BA6;NPC_;REScene03Dog;Wounded Dog
+Fallout4.esm;000308E3;NPC_;AudioTemplateBloodbug;AudioTemplateBloodbug
+Fallout4.esm;00030683;NPC_;DN062LvlRaider_TestAggroRadius;
+Fallout4.esm;0002FD9D;NPC_;MS08Computer;Game Master 3000 mk II
+Fallout4.esm;0002FB88;NPC_;LvlChildrenofAtom;
+Fallout4.esm;0002FB86;NPC_;EncChildrenOfAtomFaceF01;
+Fallout4.esm;0002FB85;NPC_;EncChildrenOfAtomM01;
+Fallout4.esm;0002FB83;NPC_;EncChildrenOfAtomTemplate00;Child of Atom
+Fallout4.esm;0002F824;NPC_;EncBrahminRosie;Rosie
+Fallout4.esm;0002F61C;NPC_;REMisterGutsy01;
+Fallout4.esm;0002F5FC;NPC_;REMerchantGuard;Mercenary
+Fallout4.esm;0002F2A6;NPC_;WorkshopVendorWeapons01;Smiling Larry
+Fallout4.esm;0002E007;NPC_;RERaiderAggroRadius;
+Fallout4.esm;0002DFFF;NPC_;REFarmer;Settler
+Fallout4.esm;0002CB2E;NPC_;DN058LvlRaiderFemale;
+Fallout4.esm;0002C986;NPC_;DN092_WaveRaiderList;
+Fallout4.esm;0002C969;NPC_;DN092AmbushDeathclaw;Deathclaw
+Fallout4.esm;0002BEFB;NPC_;LvlRaiderMeleeAggro1200;
+Fallout4.esm;0002BEFA;NPC_;LvlRaiderAggro1200;
+Fallout4.esm;0002BEEA;NPC_;RETreasureHuntSC02Junkie;Junkie
+Fallout4.esm;0002BEE9;NPC_;LvlScavenger;Scavenger
+Fallout4.esm;0002BE9E;NPC_;REScavenger04;
+Fallout4.esm;0002BE9C;NPC_;REScavenger03;
+Fallout4.esm;0002BE9B;NPC_;REScavenger02;
+Fallout4.esm;0002AAB1;NPC_;BradFinnegan;Brad Finnegan
+Fallout4.esm;0002A8A6;NPC_;Vault81SecurityEscort;
+Fallout4.esm;0002A83D;NPC_;CarolPeabody;Carol Peabody
+Fallout4.esm;0002A83C;NPC_;MattPeabody;Matt Peabody
+Fallout4.esm;0002A835;NPC_;V81_Ashes;Ashes
+Fallout4.esm;0002A833;NPC_;V81_GwenMcNamara;Overseer
+Fallout4.esm;0002A830;NPC_;V81_ErinCombes;Erin Combes
+Fallout4.esm;0002A82F;NPC_;V81_HoltCombes;Holt Combes
+Fallout4.esm;0002A82D;NPC_;V81_OldRusty;Old Rusty
+Fallout4.esm;0002A82A;NPC_;V81_TinaDeLuca;Tina De Luca
+Fallout4.esm;0002A829;NPC_;V81_BobbyDeLuca;Bobby De Luca
+Fallout4.esm;0002A827;NPC_;V81_KatherinePinn;Katy
+Fallout4.esm;0002A825;NPC_;V81_PriscillaPenske;Dr. Penske
+Fallout4.esm;0002A823;NPC_;Rachel;Rachel
+Fallout4.esm;0002A821;NPC_;V81_JacobForsythe;Dr. Jacob Forsythe
+Fallout4.esm;0002A81E;NPC_;V81_MariaSummerset;Maria Summerset
+Fallout4.esm;0002A81D;NPC_;V81_MarkSummerset;Mark Summerset
+Fallout4.esm;0002A81B;NPC_;V81_Horatio;Horatio
+Fallout4.esm;0002A819;NPC_;V81_AlexisCombes;Alexis Combes
+Fallout4.esm;0002A699;NPC_;LvlTurretTripodMountedDmndCitySecurity;
+Fallout4.esm;0002A664;NPC_;LvlForgedAggro;
+Fallout4.esm;0002A663;NPC_;LvlForgedGrenadierAggro;
+Fallout4.esm;0002A662;NPC_;LvlForgedFlamerAggro;
+Fallout4.esm;0002A4E5;NPC_;LvlForgedMeleeAggro;
+Fallout4.esm;0002A19A;NPC_;shaun;Father
+Fallout4.esm;0002A0FE;NPC_;DN015_CleanRoomVoiceType;Vault Computer
+Fallout4.esm;000295A1;NPC_;CaravanGuardTemplate;Caravan Guard
+Fallout4.esm;000295A0;NPC_;EncYaoGuai00;Stunted Yao Guai
+Fallout4.esm;00029469;NPC_;EncBloatfly01Template;Bloatfly
+Fallout4.esm;00028FD4;NPC_;GhoulBaseTEMP;Ghoul
+Fallout4.esm;00028FAE;NPC_;DN015_Director;Director
+Fallout4.esm;00028FAC;NPC_;DN015_Robot;Molly
+Fallout4.esm;00028ED5;NPC_;DiamondCitySecurityWall01;
+Fallout4.esm;00028DB4;NPC_;Bullet;Bullet
+Fallout4.esm;0002898B;NPC_;LvlRaider;
+Fallout4.esm;0002866E;NPC_;LvlBloodbug;
+Fallout4.esm;00028669;NPC_;EncBloodbug01Template;Bloodbug Hatchling
+Fallout4.esm;00028630;NPC_;Billy;Billy
+Fallout4.esm;00027686;NPC_;CompanionCurie;
+Fallout4.esm;00027684;NPC_;MS16BobbiNoNose;Bobbi No-Nose
+Fallout4.esm;00027683;NPC_;BoSPaladinDanse;Paladin Danse
+Fallout4.esm;00027682;NPC_;CompanionStrong;Strong
+Fallout4.esm;0002740E;NPC_;CompanionMacCready;MacCready
+Fallout4.esm;00026F44;NPC_;MQ102CryoCorpse06;
+Fallout4.esm;00026F3D;NPC_;MQ102CryoCorpse03;
+Fallout4.esm;00026F39;NPC_;MQ102CryoCorpse04;
+Fallout4.esm;00026F38;NPC_;MQ102CryoCorpse02;
+Fallout4.esm;00026F37;NPC_;MQ102CryoCorpse01;
+Fallout4.esm;00026F36;NPC_;MQ102PlayerSpouseCorpseFemale;
+Fallout4.esm;00026F0A;NPC_;MQ102PlayerSpouseCorpseMale;
+Fallout4.esm;00026ED6;NPC_;Widmer;Professor Widmer
+Fallout4.esm;000267C5;NPC_;LvlSupermutantMeleeAggro1200;
+Fallout4.esm;000267C4;NPC_;LvlFeralGhoulAggro1200;
+Fallout4.esm;000267C3;NPC_;LvlFeralGhoulBoss1200;
+Fallout4.esm;000267C2;NPC_;LvlMutantHoundAggro1200;
+Fallout4.esm;000267C1;NPC_;LvlSupermutantAggro1200;
+Fallout4.esm;000267C0;NPC_;LvlSupermutantBossAggro1200;
+Fallout4.esm;00026315;NPC_;DN120_MrHandy;Sandy Coves Attendant
+Fallout4.esm;000260FA;NPC_;AO_TestNPC;
+Fallout4.esm;000260DF;NPC_;DiamondCitySchoolChildM03;Gavin Everitts
+Fallout4.esm;000254EE;NPC_;ArlenGlass;Arlen Glass
+Fallout4.esm;00024002;NPC_;EncMirelurk01Template;Mirelurk
+Fallout4.esm;000237DA;NPC_;DiamondCityResidentM07Alley;
+Fallout4.esm;000237D0;NPC_;DiamondCityResidentM01DugoutExterior;
+Fallout4.esm;000237C5;NPC_;DiamondCityResidentF03TentArea;
+Fallout4.esm;00023751;NPC_;EddieLipkis;Eddie Lipkis
+Fallout4.esm;00023347;NPC_;GoodneighborDrifterF02Ghoul;
+Fallout4.esm;00023346;NPC_;GoodneighborDrifterF01;
+Fallout4.esm;00023328;NPC_;GoodneighborDrifterM01;
+Fallout4.esm;0002331F;NPC_;GoodneighborDrifterTemplate00;Drifter
+Fallout4.esm;00022952;NPC_;Daisy;Daisy
+Fallout4.esm;000228CE;NPC_;Kleo;KL-E-0
+Fallout4.esm;000228AA;NPC_;KentConnolly;Kent Connolly
+Fallout4.esm;000228A5;NPC_;Irma;Irma
+Fallout4.esm;000226E2;NPC_;Marowski;Marowski
+Fallout4.esm;000226DF;NPC_;StanSlavin;Stan Slavin
+Fallout4.esm;000226DC;NPC_;ClairHutchins;Clair Hutchins
+Fallout4.esm;000226D9;NPC_;FredAllen;Fred Allen
+Fallout4.esm;0002268C;NPC_;Ham;Ham
+Fallout4.esm;0002268A;NPC_;Magnolia;Magnolia
+Fallout4.esm;00022687;NPC_;WhitechapelCharlie;Whitechapel Charlie
+Fallout4.esm;00022616;NPC_;Fahrenheit;Fahrenheit
+Fallout4.esm;00022613;NPC_;Hancock;Hancock
+Fallout4.esm;000222A2;NPC_;ElliePerkins;Ellie Perkins
+Fallout4.esm;000219B0;NPC_;PhyllisDaily;Phyllis Daily
+Fallout4.esm;000212D3;NPC_;DN092_IntercomMaleBritish01;
+Fallout4.esm;000212D2;NPC_;DN092_IntercomFemale01;
+Fallout4.esm;000212D1;NPC_;DN092_IntercomMale02;
+Fallout4.esm;000212D0;NPC_;DN092_IntercomMale01;
+Fallout4.esm;00020D91;NPC_;ChiefEngineerSato;Chief Engineer Sato
+Fallout4.esm;00020BCC;NPC_;encFeralGhoulGlowing01;Glowing One
+Fallout4.esm;00020B8E;NPC_;DoctorSun;Doctor Sun
+Fallout4.esm;00020B88;NPC_;LvlRadscorpion;
+Fallout4.esm;00020B86;NPC_;EncRadscorpion03;Glowing Radscorpion
+Fallout4.esm;00020B85;NPC_;EncRadscorpion02;Radscorpion Hunter
+Fallout4.esm;00020A47;NPC_;SupervisorWhite;Supervisor White
+Fallout4.esm;0002074C;NPC_;TommyLonegan;Tommy Lonegan
+Fallout4.esm;00020749;NPC_;Arena_Combatant_01;Raider
+Fallout4.esm;00020593;NPC_;WorkshopNPC;Settler
+Fallout4.esm;00020480;NPC_;EncBrahminTemplate;Brahmin
+Fallout4.esm;00020015;NPC_;RR301LvlTurretTripodMountedInstitute;
+Fallout4.esm;0002000B;NPC_;RR301LvlSynthMissile;
+Fallout4.esm;0001F985;NPC_;DN020_PrincipalTanner;Principal Tanner
+Fallout4.esm;0001F984;NPC_;DN020_RustyBurton;Rusty
+Fallout4.esm;0001EE7A;NPC_;VaultVoiceNPC;Vault Computer
+Fallout4.esm;0001DB56;NPC_;DN054Rowdy;Rowdy
+Fallout4.esm;0001DB4C;NPC_;EncDeathclaw01Template;Deathclaw
+Fallout4.esm;0001D966;NPC_;EncMolerat01Template;Mole Rat
+Fallout4.esm;0001D323;NPC_;MQ102MinuteMan;Minuteman
+Fallout4.esm;0001D1DC;NPC_;DN122_ScrapPalace_Boss;
+Fallout4.esm;0001D15C;NPC_;dogmeat;Dog
+Fallout4.esm;0001D15A;NPC_;EncViciousDog01Template;Wild Mongrel
+Fallout4.esm;0001CA71;NPC_;DN131_Kath;Kath
+Fallout4.esm;0001A29D;NPC_;LvlTurretBubbleNoAggro;
+Fallout4.esm;0001A255;NPC_;RufusRubins;Rufus Rubins
+Fallout4.esm;0001A00C;NPC_;EncSuperMutantTemplate;Super Mutant
+Fallout4.esm;00019FDC;NPC_;MarcyLong;Marcy Long
+Fallout4.esm;00019FDB;NPC_;JunLong;Jun Long
+Fallout4.esm;00019FDA;NPC_;Sturges;Sturges
+Fallout4.esm;00019FD9;NPC_;PrestonGarvey;Preston Garvey
+Fallout4.esm;00019FD8;NPC_;MamaMurphy;Mama Murphy
+Fallout4.esm;00019BF3;NPC_;JackCabotOld;
+Fallout4.esm;00019983;NPC_;JoeSavoldi;Joe Savoldi
+Fallout4.esm;0001997F;NPC_;Meg;Meg
+Fallout4.esm;0001997A;NPC_;Kay;Kay
+Fallout4.esm;00019978;NPC_;Deb;Deb
+Fallout4.esm;0001995C;NPC_;Kessler;Kessler
+Fallout4.esm;000197CC;NPC_;LvlSecurityDiamondCityExterior;
+Fallout4.esm;00019567;NPC_;EncRaider01Boss;Raider Veteran
+Fallout4.esm;00019562;NPC_;LvlRaiderMelee;
+Fallout4.esm;000190BF;NPC_;DannySullivan;Danny Sullivan
+Fallout4.esm;00017AD3;NPC_;LvlRaiderUnaggressive;
+Fallout4.esm;000179FF;NPC_;Codsworth;Codsworth
+Fallout4.esm;00005817;NPC_;DiamondCityNoodlePatronTemplate00;Resident
+Fallout4.esm;00004E0B;NPC_;DiamondCityResidentM03Market;
+Fallout4.esm;00004DF9;NPC_;DiamondCityResidentF06Market;
+Fallout4.esm;00004DF8;NPC_;DiamondCityResidentM02Market;
+Fallout4.esm;00004DEC;NPC_;DiamondCityResidentF01NoodleMarket;
+Fallout4.esm;0000365F;NPC_;DiamondCityResidentF01ReadPaper;
+Fallout4.esm;0000365E;NPC_;DiamondCityResidentM01ReadPaper;
+Fallout4.esm;0000365D;NPC_;DiamondCityResidentTemplate00;Resident
+Fallout4.esm;00003005;NPC_;NinaRodriguez;Nina Rodriguez
+Fallout4.esm;00002F70;NPC_;DiamondCitySecurityOfficeAlways01;
+Fallout4.esm;00002F6F;NPC_;DiamondCitySecurityUpper01;
+Fallout4.esm;00002F6C;NPC_;DiamondCitySecurityLower01;
+Fallout4.esm;00002F69;NPC_;LvlSecurityDiamondCity;
+Fallout4.esm;00002F66;NPC_;EncSecurityDiamondCityM01;
+Fallout4.esm;00002F63;NPC_;EncSecurityDiamondCityTemplate00;Diamond City Security
+Fallout4.esm;00002F28;NPC_;Abbot;Abbot
+Fallout4.esm;00002F26;NPC_;TravisMiles;Travis Miles
+Fallout4.esm;00002F24;NPC_;CompanionNickValentine;Nick Valentine
+Fallout4.esm;00002F22;NPC_;Wellingham;Wellingham
+Fallout4.esm;00002F20;NPC_;Natalie;Nat
+Fallout4.esm;00002F1E;NPC_;CompanionPiper;Piper
+Fallout4.esm;00002F1C;NPC_;Hawthorne;Hawthorne
+Fallout4.esm;00002F1A;NPC_;Eustace;Eustace
+Fallout4.esm;00002F18;NPC_;DarcyPembroke;Darcy Pembroke
+Fallout4.esm;00002F15;NPC_;PetePembroke;Pete Pembroke
+Fallout4.esm;00002F14;NPC_;PaulPembroke;Paul Pembroke
+Fallout4.esm;00002F12;NPC_;NelsonLatimer;Nelson Latimer
+Fallout4.esm;00002F10;NPC_;MalcolmLatimer;Malcom Latimer
+Fallout4.esm;00002F0E;NPC_;AnnCodman;Ann Codman
+Fallout4.esm;00002F0C;NPC_;ClarenceCodman;Clarence Codman
+Fallout4.esm;00002F0A;NPC_;Geneva;Geneva
+Fallout4.esm;00002F08;NPC_;MayorMcDonough;Mayor McDonough
+Fallout4.esm;00002F06;NPC_;Sheffield;Sheffield
+Fallout4.esm;00002F02;NPC_;ShengKawolski;Sheng Kawolski
+Fallout4.esm;00002F00;NPC_;Colette;Colette
+Fallout4.esm;00002EFE;NPC_;YefimBobrov;Yefim Bobrov
+Fallout4.esm;00002EFC;NPC_;VadimBobrov;Vadim Bobrov
+Fallout4.esm;00002EFA;NPC_;PastorClements;Pastor Clements
+Fallout4.esm;00002EF8;NPC_;DoctorDuff;Doctor Duff
+Fallout4.esm;00002EF6;NPC_;MisterZwicky;Mister Zwicky
+Fallout4.esm;00002EF4;NPC_;MissEdna;Miss Edna
+Fallout4.esm;00002CDA;NPC_;Takahashi;Takahashi
+Fallout4.esm;00002CD6;NPC_;DocCrocker;Doc Crocker
+Fallout4.esm;00002CD4;NPC_;Polly;Polly
+Fallout4.esm;00002CCF;NPC_;Cathy;Cathy
+Fallout4.esm;00002CCB;NPC_;John;John
+Fallout4.esm;00002CC6;NPC_;BeckyFallon;Becky Fallon
+Fallout4.esm;00002CC1;NPC_;Percy;Percy
+Fallout4.esm;00002CBF;NPC_;Myrna;Myrna
+Fallout4.esm;00002CBB;NPC_;Solomon;Solomon
+Fallout4.esm;00002CB7;NPC_;ArturoRodriguez;Arturo Rodriguez
+Fallout4.esm;00002CB2;NPC_;MoeCronin;Moe Cronin
+Fallout4.esm;0000080C;NPC_;HardCoreLvlBugs;
+Fallout4.esm;0000080B;NPC_;HardCoreLvlWildlife;
+Fallout4.esm;00000007;NPC_;Player;

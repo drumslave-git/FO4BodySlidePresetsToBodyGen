@@ -140,3 +140,18 @@ export type BaseItem = {
 	id: number
 	name: string
 }
+
+export type NPCFormIdData = {
+	plugin: string
+	formId: string
+	signature: string
+	editorID: string
+	name: string
+}
+
+export type RaceFormIdData = {
+	plugin: string
+	formId: string
+	editorID: string
+	name: string
+}

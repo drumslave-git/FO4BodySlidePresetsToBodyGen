@@ -13,6 +13,8 @@ import {
 	BodyType,
 	type CategorizedSlider,
 	type ESM,
+	type NPCFormIdData,
+	type RaceFormIdData,
 	type Slider,
 } from "../types"
 import { useConfig } from "./ConfigProvider"
@@ -34,6 +36,8 @@ type DataContextValue = {
 		0: Record<string, CategorizedSlider[]>
 		1: Record<string, CategorizedSlider[]>
 	}
+	NPCs: NPCFormIdData[]
+	races: RaceFormIdData[]
 }
 
 const defaultBodyFiles: BodyFiles = {
@@ -67,6 +71,8 @@ const DataContext = createContext<DataContextValue>({
 	bodies: defaultBodies,
 	sliders: { 0: [], 1: [] },
 	categorizedSliders: { 0: {}, 1: {} },
+	NPCs: [],
+	races: [],
 })
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
@@ -87,6 +93,8 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const [categorizedSliders, setCategorizedSliders] = useState<
 		DataContextValue["categorizedSliders"]
 	>({ 0: {}, 1: {} })
+	const [NPCs, setNPCs] = useState<NPCFormIdData[]>([])
+	const [races, setRaces] = useState<RaceFormIdData[]>([])
 
 	useEffect(() => {
 		setIsLoading("Loading data...")
@@ -128,6 +136,13 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		}
 		void load()
 	}, [dataFolder, setIsLoading])
+
+	useEffect(() => {
+		// @ts-expect-error
+		window.electronAPI.resolveNPCs().then(setNPCs)
+		// @ts-expect-error
+		window.electronAPI.resolveRaces().then(setRaces)
+	}, [])
 
 	const validateESMs = useCallback(() => {
 		if (!dataFolder) {
@@ -184,6 +199,8 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				defaultTemplates,
 				sliders,
 				categorizedSliders,
+				NPCs,
+				races,
 			}}
 		>
 			{children}

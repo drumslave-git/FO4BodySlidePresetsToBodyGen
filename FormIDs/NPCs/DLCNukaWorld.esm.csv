@@ -1,0 +1,691 @@
+DLCNukaWorld.esm;00056F4E;NPC_;DLC04_EncRaider09PackLegendary;Legendary Pack
+DLCNukaWorld.esm;00056F4D;NPC_;DLC04_EncRaider08PackLegendary;Legendary Pack
+DLCNukaWorld.esm;00056F4C;NPC_;DLC04_EncRaider07PackLegendary;Legendary Pack
+DLCNukaWorld.esm;00056F4B;NPC_;DLC04_EncRaider06PackLegendary;Legendary Pack
+DLCNukaWorld.esm;00056F4A;NPC_;DLC04_EncRaider05PackLegendary;Legendary Pack
+DLCNukaWorld.esm;00056F49;NPC_;DLC04_EncRaider04PackLegendary;Legendary Pack
+DLCNukaWorld.esm;00056F48;NPC_;DLC04_EncRaider03PackLegendary;Legendary Pack
+DLCNukaWorld.esm;00056F47;NPC_;DLC04_EncRaider09DiscipleLegendary;Legendary Disciple
+DLCNukaWorld.esm;00056F46;NPC_;DLC04_EncRaider08DiscipleLegendary;Legendary Disciple
+DLCNukaWorld.esm;00056F45;NPC_;DLC04_EncRaider07DiscipleLegendary;Legendary Disciple
+DLCNukaWorld.esm;00056F44;NPC_;DLC04_EncRaider06DiscipleLegendary;Legendary Disciple
+DLCNukaWorld.esm;00056F43;NPC_;DLC04_EncRaider05DiscipleLegendary;Legendary Disciple
+DLCNukaWorld.esm;00056F42;NPC_;DLC04_EncRaider04DiscipleLegendary;Legendary Disciple
+DLCNukaWorld.esm;00056F41;NPC_;DLC04_EncRaider03DiscipleLegendary;Legendary Disciple
+DLCNukaWorld.esm;00056F40;NPC_;DLC04_EncRaider09OperatorLegendary;Legendary Operator
+DLCNukaWorld.esm;00056F3F;NPC_;DLC04_EncRaider08OperatorLegendary;Legendary Operator
+DLCNukaWorld.esm;00056F3E;NPC_;DLC04_EncRaider07OperatorLegendary;Legendary Operator
+DLCNukaWorld.esm;00056F3D;NPC_;DLC04_EncRaider06OperatorLegendary;Legendary Operator
+DLCNukaWorld.esm;00056F3C;NPC_;DLC04_EncRaider05OperatorLegendary;Legendary Operator
+DLCNukaWorld.esm;00056F3B;NPC_;DLC04_EncRaider04OperatorLegendary;Legendary Operator
+DLCNukaWorld.esm;00056F3A;NPC_;DLC04_EncRaider03OperatorLegendary;Legendary Operator
+DLCNukaWorld.esm;00056D36;NPC_;DLC04EncBrahmiluffMarket;Brahmiluff
+DLCNukaWorld.esm;00056D35;NPC_;DLC04LvlBrahmiluffMarket;
+DLCNukaWorld.esm;00056520;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxM02Out;
+DLCNukaWorld.esm;0005651F;NPC_;DLC04_LvlGang_Pack_VassalChangeLoc;
+DLCNukaWorld.esm;0005651E;NPC_;DLC04_LvlGang_Disciple_VassalChangeLoc;
+DLCNukaWorld.esm;0005651D;NPC_;DLC04_LvlGang_Operator_VassalChangeLoc;
+DLCNukaWorld.esm;000562A4;NPC_;DLC04PackAmphitheaterCaptiveM04;Pack Captive
+DLCNukaWorld.esm;000562A0;NPC_;DLC04PackAmphitheaterCaptiveF03;Pack Captive
+DLCNukaWorld.esm;0005629C;NPC_;DLC04_LvlGang_Pack_BackstageSandboxM08;
+DLCNukaWorld.esm;0005629A;NPC_;DLC04_LvlGang_Pack_BackstageSandboxM07;
+DLCNukaWorld.esm;00056298;NPC_;DLC04_LvlGang_Pack_BackStageSandboxF04;
+DLCNukaWorld.esm;00056291;NPC_;DLC04PackBackStageCat02;Pack Cat
+DLCNukaWorld.esm;0005628F;NPC_;DLC04PackBackStageDog05;Pack Dog
+DLCNukaWorld.esm;0005628A;NPC_;DLC04_LvlGang_Pack_BackstageSandboxM06;
+DLCNukaWorld.esm;000561B3;NPC_;DLC04_LvlGang_Pack_BackstageSandboxM05;
+DLCNukaWorld.esm;000561B1;NPC_;DLC04PackBackstageCaptive02;Pack Captive
+DLCNukaWorld.esm;000561AF;NPC_;DLC04PackBackstageCaptive01;Pack Captive
+DLCNukaWorld.esm;000561A5;NPC_;DLC04PackBackStageMoleRat02;Pack Mole Rat
+DLCNukaWorld.esm;000561A3;NPC_;DLC04_LvlGang_Pack_BackStageSandboxF03;
+DLCNukaWorld.esm;00056190;NPC_;DLC04LvlNukatron_Hostile;
+DLCNukaWorld.esm;000560E6;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxDog06;Pack Dog
+DLCNukaWorld.esm;000560E4;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxF02Out;
+DLCNukaWorld.esm;000560E2;NPC_;DLC04PackAmphitheaterMoleRat01;Pack Mole Rat
+DLCNukaWorld.esm;000560E1;NPC_;DLC04PackFightsCaptiveFemale01;Pack Captive
+DLCNukaWorld.esm;000560E0;NPC_;DLC04PackFightsCaptiveMale02;Pack Captive
+DLCNukaWorld.esm;000560DF;NPC_;DLC04PackFightsCaptiveMale01;Pack Captive
+DLCNukaWorld.esm;0005606B;NPC_;DLC04PackFightsDog;Pack Dog
+DLCNukaWorld.esm;0005606A;NPC_;DLC04PackFightsMirelurk;Pack Mirelurk
+DLCNukaWorld.esm;00056069;NPC_;DLC04PackFightsMoleRat;Pack Mole Rat
+DLCNukaWorld.esm;00056068;NPC_;DLC04PackFightsGhoulrilla;Pack Ghoulrilla
+DLCNukaWorld.esm;00056067;NPC_;DLC04PackFightsViciousDog;Pack Dog
+DLCNukaWorld.esm;00056064;NPC_;DLC04PackAmphitheaterCat01;Pack Cat
+DLCNukaWorld.esm;0005605D;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxDog05;Pack Dog
+DLCNukaWorld.esm;00056050;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxDog04;Pack Dog
+DLCNukaWorld.esm;00056046;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxDog03;Pack Dog
+DLCNukaWorld.esm;00056044;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxDog02;Pack Dog
+DLCNukaWorld.esm;0005602C;NPC_;DLC04_LvlGang_Pack_AmphitheaterPatrolM07;
+DLCNukaWorld.esm;0005602A;NPC_;DLC04_LvlGang_Disciple_FizztopPatrolM04;
+DLCNukaWorld.esm;00055C15;NPC_;DLC04Grandchester_LvlProtectronGunner;Gunner Protectron
+DLCNukaWorld.esm;00055BFC;NPC_;DLC04GrandchesterHandy;Gunner Mr Handy
+DLCNukaWorld.esm;00055BFA;NPC_;DLC04GrandchesterProtectronChef;Gunner Protectron Chef
+DLCNukaWorld.esm;00055A2D;NPC_;DLC04_lvlBloodwormAggro512;
+DLCNukaWorld.esm;000555F6;NPC_;DLC04_LvlGang_Pack_HubSandbox_SS5_M;
+DLCNukaWorld.esm;000555F5;NPC_;DLC04_LvlGang_Pack_HubSandbox_F;
+DLCNukaWorld.esm;000541AC;NPC_;DLC04LvlMisterHandy_Mister_Hostile;
+DLCNukaWorld.esm;000541AB;NPC_;DLC04LvlMisterHandy_Laser_Hostile;
+DLCNukaWorld.esm;00053C76;NPC_;DLC04_LvlGang_Operator_CafeSandbox_M;
+DLCNukaWorld.esm;00053C75;NPC_;DLC04_LvlGang_Disciple_CafeSandbox_F;
+DLCNukaWorld.esm;0005388A;NPC_;DLC04_LvlRadRatAmbush;
+DLCNukaWorld.esm;00053699;NPC_;LvlMirelurkHunterAggro1024;
+DLCNukaWorld.esm;00052720;NPC_;DLC04_EncHouseCat03;House Cat
+DLCNukaWorld.esm;000525AE;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxF04;
+DLCNukaWorld.esm;000525AC;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxF03;
+DLCNukaWorld.esm;000525AA;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxM06;
+DLCNukaWorld.esm;000525A8;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxM05;
+DLCNukaWorld.esm;000525A1;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxM04;
+DLCNukaWorld.esm;0005259F;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxM03;
+DLCNukaWorld.esm;00052598;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxDog01;Pack Dog
+DLCNukaWorld.esm;00052596;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxM02In;
+DLCNukaWorld.esm;00052594;NPC_;DLC04_LvlGang_Pack_AmphitheaterSandboxF02In;
+DLCNukaWorld.esm;0005258F;NPC_;DLC04PackAmphitheaterRadstag;Pack Gazelle
+DLCNukaWorld.esm;00051E90;NPC_;DLC04PackAmphitheaterCaptiveF02;Pack Captive
+DLCNukaWorld.esm;00051E8F;NPC_;DLC04PackAmphitheaterCaptiveF01;Pack Captive
+DLCNukaWorld.esm;00051E8E;NPC_;DLC04PackAmphitheaterCaptiveM03;Pack Captive
+DLCNukaWorld.esm;00051E8D;NPC_;DLC04PackAmphitheaterCaptiveM02;Pack Captive
+DLCNukaWorld.esm;00051E8B;NPC_;DLC04PackAmphitheaterCaptiveM01;Pack Captive
+DLCNukaWorld.esm;00051E7E;NPC_;DLC04PackAmphitheaterGhoulrilla01;Pack Ghoulrilla
+DLCNukaWorld.esm;00051E77;NPC_;DLC04_LvlGang_Pack_AmphitheaterShooterM01;
+DLCNukaWorld.esm;00051E6F;NPC_;DLC04_LvlGang_Pack_AmphitheaterShooterF01;
+DLCNukaWorld.esm;00051E2B;NPC_;DLC04PackYaoGuai01;Pack Yao Guai
+DLCNukaWorld.esm;00051C9E;NPC_;DLC04PackBackStageDog03;Pack Dog
+DLCNukaWorld.esm;00051C9C;NPC_;DLC04PackBackStageDog02;Pack Dog
+DLCNukaWorld.esm;00051C4B;NPC_;DLC04PackBackStageDog04;Pack Dog
+DLCNukaWorld.esm;00051C48;NPC_;DLC04_LvlGang_Pack_BackStagePatrolF02;
+DLCNukaWorld.esm;00051C3E;NPC_;DLC04_LvlGang_Pack_BackStageSitM04;
+DLCNukaWorld.esm;00051C33;NPC_;DLC04PackBackStageMoleRatSick;Pack Mole Rat
+DLCNukaWorld.esm;00051C27;NPC_;DLC04PackBackStageCat01;Pack Cat
+DLCNukaWorld.esm;00051C21;NPC_;DLC04PackBackStageDog01;Pack Dog
+DLCNukaWorld.esm;000518EF;NPC_;DLC04_LvlGang_Pack_BackStageSandboxM03;
+DLCNukaWorld.esm;000518EE;NPC_;DLC04_LvlGang_Pack_BackStageSandboxM02;
+DLCNukaWorld.esm;000518E7;NPC_;DLC04_LvlGang_Pack_BackStageSandboxF01;
+DLCNukaWorld.esm;000518E6;NPC_;DLC04_LvlGang_Pack_BackStageSandboxM01;
+DLCNukaWorld.esm;00051786;NPC_;DLC04_LvlGang_Operator_HubEat_F;
+DLCNukaWorld.esm;00051784;NPC_;DLC04WastelandTravelerMale01Eat;Wasteland Traveler
+DLCNukaWorld.esm;00051780;NPC_;DLC04_LvlGang_Pack_HubSmoker_F;
+DLCNukaWorld.esm;0005164A;NPC_;DLC04_LvlGang_Disciple_HubSmoker_F;
+DLCNukaWorld.esm;00051418;NPC_;DLC04_LvlGang_Disciple_FizztopSandboxM03;
+DLCNukaWorld.esm;000503E3;NPC_;DLC04_LvlGang_Operator_ParlorPatrolM05;
+DLCNukaWorld.esm;000503C7;NPC_;DLC04_LvlGang_Operator_ParlorPatrolM04;
+DLCNukaWorld.esm;000503C0;NPC_;DLC04_LvlGang_Operator_ParlorShooterF04;
+DLCNukaWorld.esm;00050398;NPC_;DLC04_LvlGang_Operator_ParlorSandboxM03;
+DLCNukaWorld.esm;00050391;NPC_;DLC04_LvlGang_Operator_ParlorSandboxM02;
+DLCNukaWorld.esm;0005038E;NPC_;DLC04_LvlGang_Operator_ParlorSandboxM01;
+DLCNukaWorld.esm;0005038D;NPC_;DLC04_LvlGang_Operator_ParlorSandboxF03;
+DLCNukaWorld.esm;00050294;NPC_;DLC04_LvlGunnerBossTornin;Gunner Commander
+DLCNukaWorld.esm;0005007D;NPC_;DLC04_LvlTurretStandingCartRaider_Disciples;
+DLCNukaWorld.esm;0005007C;NPC_;DLC04_LvlTurretStandingCartRaider_Pack;
+DLCNukaWorld.esm;0005007B;NPC_;DLC04_LvlTurretStandingCartRaider_Operators;
+DLCNukaWorld.esm;0004D9D4;NPC_;DLC04_LvlGang_Disciple_FizztopPatrolF08;
+DLCNukaWorld.esm;0004D9D2;NPC_;DLC04_LvlGang_Disciple_FizztopPatrolF07;
+DLCNukaWorld.esm;0004D9D1;NPC_;DLC04_LvlGang_Disciple_FizztopPatrolF06;
+DLCNukaWorld.esm;0004D9D0;NPC_;DLC04_LvlGang_Disciple_FizztopSandboxM02;
+DLCNukaWorld.esm;0004D9CF;NPC_;DLC04_LvlGang_Disciple_FizztopPatrolF05;
+DLCNukaWorld.esm;0004D9CE;NPC_;DLC04_LvlGang_Disciple_FizztopSandboxM01;
+DLCNukaWorld.esm;0004D9CD;NPC_;DLC04_LvlGang_Disciple_FizztopSandboxF04;
+DLCNukaWorld.esm;0004D9CC;NPC_;DLC04_LvlGang_Disciple_FizztopSandboxF03;
+DLCNukaWorld.esm;0004D9CB;NPC_;DLC04_LvlGang_Disciple_FizztopSandboxF02;
+DLCNukaWorld.esm;0004D9CA;NPC_;DLC04_LvlGang_Disciple_FizztopSandboxF01;
+DLCNukaWorld.esm;0004D400;NPC_;DLC04_LvlGang_Pack_HubGuard_SS5_M;
+DLCNukaWorld.esm;0004D3FB;NPC_;DLC04_LvlGang_Operator_HubShooter_F;
+DLCNukaWorld.esm;0004C757;NPC_;DLC04_EncHouseCat02;House Cat
+DLCNukaWorld.esm;0004C0BD;NPC_;DLC04_CorpseFeralGhoul01_SA;Robin
+DLCNukaWorld.esm;0004C0BC;NPC_;DLC04_CorpseFeralGhoul04_SA;
+DLCNukaWorld.esm;0004C0BB;NPC_;DLC04_CorpseFeralGhoul03_SA;Rabbit
+DLCNukaWorld.esm;0004C0BA;NPC_;DLC04_CorpseFeralGhoul02_SA;Chipmunk
+DLCNukaWorld.esm;0004C0AE;NPC_;DLC04FizztopPrisoner01;Prisoner
+DLCNukaWorld.esm;0004C0AD;NPC_;DLC04FizztopPrisoner02;Prisoner
+DLCNukaWorld.esm;0004BEFD;NPC_;DLC04_EncTurretBubbleSpaceLaserBlue;
+DLCNukaWorld.esm;0004BD1B;NPC_;DLC04_PoiCatKatana;Katana
+DLCNukaWorld.esm;0004BD1A;NPC_;DLC04_PoiCatLuna;Luna
+DLCNukaWorld.esm;0004BCDB;NPC_;DLC04_VOICEONLY_MaleRough;Settler
+DLCNukaWorld.esm;0004BCDA;NPC_;DLC04_VOICEONLY_FemaleRough;
+DLCNukaWorld.esm;0004BC88;NPC_;DLC04EncTurretBubble06;
+DLCNukaWorld.esm;0004BC87;NPC_;DLC04EncTurretBubble05;
+DLCNukaWorld.esm;0004BC85;NPC_;DLC04_EncAnimatronicAlien05;
+DLCNukaWorld.esm;0004BC84;NPC_;DLC04EncSpaceAssaultron05;Novatron Eliminator
+DLCNukaWorld.esm;0004BC83;NPC_;DLC04EncSpaceAssaultron04;Novatron Initiator
+DLCNukaWorld.esm;0004BC82;NPC_;DLC04EncSpaceProtectron05;Galactron Sentinel
+DLCNukaWorld.esm;0004BC81;NPC_;DLC04EncSpaceProtectron04;Galactron Defender
+DLCNukaWorld.esm;0004BC80;NPC_;DLC04EncNukatron05;Nukatron Sentinel
+DLCNukaWorld.esm;0004BC7F;NPC_;DLC04EncNukatron04;Nukatron Defender
+DLCNukaWorld.esm;0004B658;NPC_;DLC04_LvlGang_Operator_HubScavenge_M;
+DLCNukaWorld.esm;0004B54E;NPC_;DLC04_LvlGang_Disciple_HubSandbox_F2;
+DLCNukaWorld.esm;0004AC35;NPC_;DLC04Evan;Evan
+DLCNukaWorld.esm;0004AA30;NPC_;DLC04RESceneCT10PackBoss;
+DLCNukaWorld.esm;0004AA2F;NPC_;DLC04RESceneCT10OperatorBoss;
+DLCNukaWorld.esm;0004AA2E;NPC_;DLC04RESceneCT10DiscipleBoss;
+DLCNukaWorld.esm;0004A8E2;NPC_;DLC04_encGangPackFaceM08;
+DLCNukaWorld.esm;0004A8E1;NPC_;DLC04_encGangPackFaceM07;
+DLCNukaWorld.esm;0004A8E0;NPC_;DLC04_encGangPackFaceM06;
+DLCNukaWorld.esm;0004A8DF;NPC_;DLC04_encGangPackFaceM05;
+DLCNukaWorld.esm;0004A8DE;NPC_;DLC04_encGangPackFaceF04;
+DLCNukaWorld.esm;0004A8DD;NPC_;DLC04_encGangPackFaceF03;
+DLCNukaWorld.esm;0004A8DC;NPC_;DLC04_encGangOperatorFaceM08;
+DLCNukaWorld.esm;0004A8DB;NPC_;DLC04_encGangOperatorFaceM07;
+DLCNukaWorld.esm;0004A8DA;NPC_;DLC04_encGangOperatorFaceM06;
+DLCNukaWorld.esm;0004A8D9;NPC_;DLC04_encGangOperatorFaceM05;
+DLCNukaWorld.esm;0004A8D8;NPC_;DLC04_encGangOperatorFaceF04;
+DLCNukaWorld.esm;0004A8D7;NPC_;DLC04_encGangOperatorFaceF03;
+DLCNukaWorld.esm;0004A8D6;NPC_;DLC04_encGangDiscipleFaceM04;
+DLCNukaWorld.esm;0004A8D5;NPC_;DLC04_encGangDiscipleFaceM03;
+DLCNukaWorld.esm;0004A8D4;NPC_;DLC04_encGangDiscipleFaceF08;
+DLCNukaWorld.esm;0004A8D3;NPC_;DLC04_encGangDiscipleFaceF07;
+DLCNukaWorld.esm;0004A8D2;NPC_;DLC04_encGangDiscipleFaceF06;
+DLCNukaWorld.esm;0004A8D1;NPC_;DLC04_encGangDiscipleFaceF05;
+DLCNukaWorld.esm;0004A69D;NPC_;DLC04_PackScenes_IntroSceneActor_Male;
+DLCNukaWorld.esm;0004A698;NPC_;DLC04_LvlGang_Pack_Male;
+DLCNukaWorld.esm;0004A65E;NPC_;DLC04Caleb_Holotape;Caleb
+DLCNukaWorld.esm;0004A515;NPC_;DLC04HolotapeScenePackFemale01;Raider Man
+DLCNukaWorld.esm;0004A514;NPC_;DLC04HolotapeScenePackMale02;Raider Man
+DLCNukaWorld.esm;0004A513;NPC_;DLC04HolotapeScenePackMale01;Raider Man
+DLCNukaWorld.esm;0004A048;NPC_;DLC04GalacticZoneOnly_LvlAssaultron;
+DLCNukaWorld.esm;0004A047;NPC_;DLC04LvlTurretBubbleBlue;
+DLCNukaWorld.esm;0004A046;NPC_;DLC04LvlTurretBubbleRed;
+DLCNukaWorld.esm;0004A045;NPC_;DLC04LvlNukaEyebot;
+DLCNukaWorld.esm;0004A044;NPC_;DLC04GalacticZoneOnly_LvlNukatron;
+DLCNukaWorld.esm;0004A043;NPC_;DLC04GalacticZoneOnly_LvlMisterHandy_Flamer;
+DLCNukaWorld.esm;0004A042;NPC_;DLC04GalacticZoneOnly_LvlMisterHandy_Laser;
+DLCNukaWorld.esm;0004A041;NPC_;DLC04GalacticZoneOnly_LvlMisterHandy_Mister;
+DLCNukaWorld.esm;0004A040;NPC_;DLC04GalacticZoneOnly_LvlMisterHandy_Saw;
+DLCNukaWorld.esm;0004A03F;NPC_;DLC04GalacticZoneOnly_LvlProtectronConstruction;
+DLCNukaWorld.esm;0004A03E;NPC_;DLC04GalacticZoneOnly_LvlProtectronPolice;
+DLCNukaWorld.esm;0004A03D;NPC_;DLC04GalacticZoneOnly_LvlProtectronMedic;
+DLCNukaWorld.esm;0004A03C;NPC_;DLC04GalacticZoneOnly_LvlProtectronFireman;
+DLCNukaWorld.esm;0004A03B;NPC_;DLC04GalacticZoneOnly_LvlProtectron;
+DLCNukaWorld.esm;0004A03A;NPC_;DLC04GalacticZoneOnly_LvlAnimatronicAlien;
+DLCNukaWorld.esm;0004A039;NPC_;DLC04LvlSpaceEyebot;
+DLCNukaWorld.esm;0004A038;NPC_;DLC04GalacticZoneOnly_LvlSpaceSentryBot;
+DLCNukaWorld.esm;0004A037;NPC_;DLC04GalacticZoneOnly_LvlSpaceProtectron;
+DLCNukaWorld.esm;0004A036;NPC_;DLC04GalacticZoneOnly_LvlSpaceMrHandy;
+DLCNukaWorld.esm;0004A035;NPC_;DLC04GalacticZoneOnly_LvlSpaceMrGutsy;
+DLCNukaWorld.esm;0004A034;NPC_;DLC04GalacticZoneOnly_LvlSpaceAssaultron;
+DLCNukaWorld.esm;0004A012;NPC_;DLC04_Operator_MQ02PreIntroScene;Operator
+DLCNukaWorld.esm;000489B0;NPC_;DLC04EvelynBlackHOLOTAPEONLY;Evelyn Black
+DLCNukaWorld.esm;000489AE;NPC_;DLC04MagsBlackYoungHOLOTAPEONLY;Mags Black
+DLCNukaWorld.esm;000489AC;NPC_;DLC04_OperatorsTapeEightDiscipleFemale02HOLOTAPEONLY;Test Subject
+DLCNukaWorld.esm;00048933;NPC_;DLC04workshopAudioDummyFemaleOld;Settler
+DLCNukaWorld.esm;00048932;NPC_;DLC04workshopAudioDummyMaleOld;Settler
+DLCNukaWorld.esm;00047587;NPC_;DLC04ColaCarsCrowd_LvlGang_Pack_Dog;
+DLCNukaWorld.esm;00047585;NPC_;DLC04_LvlGang_Pack_Dog;Pack Dog
+DLCNukaWorld.esm;00047304;NPC_;DLC04CorporalDowney_Holotape;Corporal Downey
+DLCNukaWorld.esm;00047303;NPC_;DLC04SergeantLanier_Holotape;Sergeant Lanier
+DLCNukaWorld.esm;00047302;NPC_;DLC04Maja_Holotape;Maja Adams
+DLCNukaWorld.esm;00047301;NPC_;DLC04Dusty_Holotape;Dustin Polanski
+DLCNukaWorld.esm;00047300;NPC_;DLC04Emerson_Holotape;Emerson Gates
+DLCNukaWorld.esm;000472FF;NPC_;DLC04Mark_Holotape;Mark Falcone
+DLCNukaWorld.esm;000472FE;NPC_;DLC04Luis_Holotape;Luis Batemen
+DLCNukaWorld.esm;000472FD;NPC_;DLC04Kristy_Holotape;Kristy Green
+DLCNukaWorld.esm;000472FC;NPC_;DLC04Jesse_Holotape;Jesse McDaniel
+DLCNukaWorld.esm;00046F8F;NPC_;DLC04_EncRadRat01Template_SmallNormalLegendary;Legendary Rad-Rat Pup
+DLCNukaWorld.esm;00046F8E;NPC_;DLC04_EncRadRat07_LargeMajorGlowingLegendary;Legendary Plagued Rad-Rat
+DLCNukaWorld.esm;00046F8D;NPC_;DLC04_EncRadRat06_LargeMajorLegendary;Legendary Infected Rad-Rat
+DLCNukaWorld.esm;00046F8C;NPC_;DLC04_EncRadRat05_LargeMildLegendary;Legendary Mangy Rad-Rat
+DLCNukaWorld.esm;00046F8B;NPC_;DLC04_EncRadRat04_SmallMajorLegendary;Legendary Infected Rad-Rat Pup
+DLCNukaWorld.esm;00046F8A;NPC_;DLC04_EncRadRat03_LargeNormalLegendary;Legendary Rad-Rat
+DLCNukaWorld.esm;00046F89;NPC_;DLC04_EncRadRat02_SmallMildLegendary;Legendary Mangy Rad-Rat Pup
+DLCNukaWorld.esm;00046CF9;NPC_;DLC04_DRG_BloodwormQueen;Bloodworm Queen
+DLCNukaWorld.esm;00044D63;NPC_;DLC04Braxton_Holotape;General Braxton
+DLCNukaWorld.esm;00044D61;NPC_;DLC04Bradberton_Holotape;John-Caleb Bradberton
+DLCNukaWorld.esm;00044C93;NPC_;DLC04_LvlGang_Pack_HubFollow_M;
+DLCNukaWorld.esm;00044C8F;NPC_;DLC04_LvlGang_Pack_HubSandbox_M;
+DLCNukaWorld.esm;00044C8D;NPC_;DLC04_LvlGang_Operator_HubPatrolFollow_M;
+DLCNukaWorld.esm;00044C8A;NPC_;DLC04_LvlGang_Operator_HubSandbox_M;
+DLCNukaWorld.esm;00044C87;NPC_;DLC04_LvlGang_Operator_HubSandbox_F;
+DLCNukaWorld.esm;00044A25;NPC_;DLC04TraderMaleSandbox01;Trader
+DLCNukaWorld.esm;00044A23;NPC_;DLC04_LvlGang_Disciple_HubStand_F_02;
+DLCNukaWorld.esm;00044A13;NPC_;DLC04_LvlGang_Disciple_HubSandbox_F;
+DLCNukaWorld.esm;00044848;NPC_;DLC04ColaCarsCrowd_LvlGang_Operator;
+DLCNukaWorld.esm;00044847;NPC_;DLC04ColaCarsCrowd_LvlGang_Disciple;
+DLCNukaWorld.esm;00044844;NPC_;DLC04ColaCarsCrowd_LvlGang_Pack;
+DLCNukaWorld.esm;00043BC7;NPC_;DLC04Victor_Holotape;Victor
+DLCNukaWorld.esm;00043BC4;NPC_;DLC04Sanchez_Holotape;Sanchez
+DLCNukaWorld.esm;00043BC1;NPC_;DLC04Sam_Holotape;Sam
+DLCNukaWorld.esm;00043BC0;NPC_;DLC04Kate_Holotape;Kate
+DLCNukaWorld.esm;00043B15;NPC_;DLC04PackScentGrenade_LvlGatorClaw;
+DLCNukaWorld.esm;000439EA;NPC_;DLC04Robin_Holotape;Robin
+DLCNukaWorld.esm;000439E9;NPC_;DLC04Rabbit_Holotape;Rabbit
+DLCNukaWorld.esm;000439E8;NPC_;DLC04Chipmunk_Holotape;Chipmunk
+DLCNukaWorld.esm;000431BE;NPC_;DLC04_DRG_ProtectronSheriff02;Sheriff Eagle
+DLCNukaWorld.esm;000431BD;NPC_;DLC04_DRG_ProtectronSheriff01;Sheriff Hawk
+DLCNukaWorld.esm;00042EDD;NPC_;DLC04POISC11_EncYaoGuai;Young Yao Guai
+DLCNukaWorld.esm;00042EB3;NPC_;DLC04POISC09Dog;Hunting Dog
+DLCNukaWorld.esm;00042EAD;NPC_;LvlDeathclawAggro2048;
+DLCNukaWorld.esm;00042E7D;NPC_;DLC04McDermotGhoul_Holotape;McDermot
+DLCNukaWorld.esm;00042B50;NPC_;DLC04POISC07_KaliDunmore;Kali Dunmore
+DLCNukaWorld.esm;00042B4C;NPC_;DLC04POISC07_MoniqueDunmore;Monique Dunmore
+DLCNukaWorld.esm;00042B47;NPC_;DLC04POISC07_BrettDunmore;Brett Dunmore
+DLCNukaWorld.esm;000418D0;NPC_;DLC04_EncRaider03DiscipleM;Disciple Scavver
+DLCNukaWorld.esm;000418CF;NPC_;DLC04_EncRaider03DiscipleF;Disciple Scavver
+DLCNukaWorld.esm;000418CE;NPC_;DLC04_LvlGang_DiscipleF;
+DLCNukaWorld.esm;000418CD;NPC_;DLC04_LvlGang_DiscipleM;
+DLCNukaWorld.esm;000418BC;NPC_;DLC04AudioTemplateRadrat;AudioTemplateRadrat
+DLCNukaWorld.esm;000417DE;NPC_;DLC04_KK_TunnelGhoul;Painted Ghoul
+DLCNukaWorld.esm;000417AF;NPC_;DLC04_KK_Rachel;Rachel
+DLCNukaWorld.esm;000415FE;NPC_;DLC04DelWalsh_Holotape;Del Walsh
+DLCNukaWorld.esm;0003F97C;NPC_;DLC04_lvlRadAntAmbush;
+DLCNukaWorld.esm;0003F97B;NPC_;DLC04_lvlSwarmAmbush;
+DLCNukaWorld.esm;0003F948;NPC_;DLC04GageIntercom;Gage
+DLCNukaWorld.esm;0003F93E;NPC_;DLC04_EncSwarmGlowing01AmbushLegendary;
+DLCNukaWorld.esm;0003F93D;NPC_;DLC04_EncSwarm02AmbushLegendary;
+DLCNukaWorld.esm;0003F93C;NPC_;DLC04_EncSwarmGlowing01Legendary;Legendary Flying Glowing Ant Swarm
+DLCNukaWorld.esm;0003F93B;NPC_;DLC04_EncSwarm02Legendary;Legendary Flying Soldier Ant Swarm
+DLCNukaWorld.esm;0003F93A;NPC_;DLC04_EncSwarm01TemplateAmbushLegendary;
+DLCNukaWorld.esm;0003F939;NPC_;DLC04_EncSwarm01TemplateLegendary;Legendary Flying Ant Swarm
+DLCNukaWorld.esm;0003F8DF;NPC_;DLC04LvlMinutemanAttackers;
+DLCNukaWorld.esm;0003F8D5;NPC_;DLC04Bennell_Holotape;Bennell
+DLCNukaWorld.esm;0003F8D4;NPC_;DLC04Medford_Holotape;Medford
+DLCNukaWorld.esm;0003F8D0;NPC_;DLC04Leavitt_Holotape;Kate Leavitt
+DLCNukaWorld.esm;0003F8CF;NPC_;DLC04Meacham_Holotape;Meacham
+DLCNukaWorld.esm;0003F83B;NPC_;DLC04Clark_Holotape;Clark
+DLCNukaWorld.esm;0003F6F0;NPC_;DLC04_lvlGatorClaw_Ambush;
+DLCNukaWorld.esm;0003F6C1;NPC_;DLC04GalacticZoneOnly_LvlSpaceEyebot;
+DLCNukaWorld.esm;0003F684;NPC_;DLC04LvlSpaceProtectron_Gauntlet;
+DLCNukaWorld.esm;0003E62F;NPC_;DLC04GalacticZoneOnly_LvlTurretBubbleBlue;
+DLCNukaWorld.esm;0003E58B;NPC_;DLC04_EncCaveCricket01TemplateLegendary;Legendary Cave Cricket
+DLCNukaWorld.esm;0003E3A4;NPC_;DLC04_EncRadAnt09LargeGlowingAmbushLegendary;
+DLCNukaWorld.esm;0003E3A3;NPC_;DLC04_EncRadAnt06MediumGlowingAmbushLegendary;
+DLCNukaWorld.esm;0003E3A2;NPC_;DLC04_EncRadAnt03SmallGlowingAmbushLegendary;
+DLCNukaWorld.esm;0003E3A1;NPC_;DLC04_EncRadAnt09LargeGlowingLegendary;Legendary Overgrown Glowing Ant
+DLCNukaWorld.esm;0003E3A0;NPC_;DLC04_EncRadAnt06MediumGlowingLegendary;Legendary Glowing Ant
+DLCNukaWorld.esm;0003E39F;NPC_;DLC04_EncRadAnt03SmallGlowingLegendary;Legendary Small Glowing Ant
+DLCNukaWorld.esm;0003E39E;NPC_;DLC04_EncRadAnt08LargeRedAmbushLegendary;
+DLCNukaWorld.esm;0003E39D;NPC_;DLC04_EncRadAnt05MediumRedAmbushLegendary;
+DLCNukaWorld.esm;0003E39C;NPC_;DLC04_EncRadAnt02SmallRedAmbushLegendary;
+DLCNukaWorld.esm;0003E39B;NPC_;DLC04_EncRadAnt08LargeRedLegendary;Legendary Overgrown Soldier Ant
+DLCNukaWorld.esm;0003E39A;NPC_;DLC04_EncRadAnt05MediumRedLegendary;Legendary Soldier Ant
+DLCNukaWorld.esm;0003E399;NPC_;DLC04_EncRadAnt02SmallRedLegendary;Legendary Small Soldier Ant
+DLCNukaWorld.esm;0003DB54;NPC_;DLC04Gauntlet_LvlGang_Operators_Potshots;
+DLCNukaWorld.esm;0003DB53;NPC_;DLC04Gauntlet_LvlGang_Pack_Potshots;
+DLCNukaWorld.esm;0003DB52;NPC_;DLC04Gauntlet_LvlRadRoachAmbushLegendary;
+DLCNukaWorld.esm;0003DB51;NPC_;DLC04Gauntlet_LvlRadRoachAmbush;
+DLCNukaWorld.esm;0003DAED;NPC_;DLC04MarketBrahmin;
+DLCNukaWorld.esm;0003DA89;NPC_;DLC04_lvlNukalurkAll;
+DLCNukaWorld.esm;0003D67A;NPC_;DLC04_lvlNukalurkAmbush;
+DLCNukaWorld.esm;0003D661;NPC_;DLC04_lvlNukalurkQueenAmbush;
+DLCNukaWorld.esm;0003D660;NPC_;DLC04_lvlNukalurkKingAmbushWater;
+DLCNukaWorld.esm;0003D65F;NPC_;DLC04_lvlNukalurkKing;
+DLCNukaWorld.esm;0003D65E;NPC_;DLC04_lvlNukalurkHunterAmbush;
+DLCNukaWorld.esm;0003D65D;NPC_;DLC04_lvlNukalurkHunter;
+DLCNukaWorld.esm;0003D65C;NPC_;DLC04LvlNukalurkHunterAmbush;
+DLCNukaWorld.esm;0003C5EC;NPC_;DLC04_lvlRadGorilla_SAQuest;
+DLCNukaWorld.esm;0003C5EB;NPC_;DLC04_lvlRadGorillaKing_SAQuest;
+DLCNukaWorld.esm;0003B9CF;NPC_;DLC04Hein_Holotape;Dr. Hein
+DLCNukaWorld.esm;0003B9CE;NPC_;DLC04SafariDrMcDermot;Dr. McDermot
+DLCNukaWorld.esm;0003B8A6;NPC_;DLC04_EncRadRat07_LargeMajorGlowing;Plagued Rad-Rat
+DLCNukaWorld.esm;0003B57D;NPC_;DLC04_EncSwarmGlowing01;Flying Glowing Ant Swarm
+DLCNukaWorld.esm;0003B512;NPC_;DLC04_EncCaveCricketBlack;Cave Cricket Black
+DLCNukaWorld.esm;0003A4F7;NPC_;DLC04AudioTemplateSwarm;AudioTemplateBloatFly
+DLCNukaWorld.esm;000394E6;NPC_;DLC04_EncCaveCricketGlowing01Legendary;Legendary Glowing Cave Cricket
+DLCNukaWorld.esm;000394E4;NPC_;DLC04_EncCaveCricket03Legendary;Legendary Cave Cricket Piercer
+DLCNukaWorld.esm;000394E3;NPC_;DLC04_EncCaveCricket02Legendary;Legendary Cave Cricket Hunter
+DLCNukaWorld.esm;000392A6;NPC_;DLC04GalacticZoneOnly_LvlTurretBubbleRed;
+DLCNukaWorld.esm;00038513;NPC_;DLC04_LvlRaiderBoss_Sabine;Sabine
+DLCNukaWorld.esm;00038512;NPC_;DLC04_LvlBoSSoldier_PowerArmor_Rogue;Rogue Knight
+DLCNukaWorld.esm;00038511;NPC_;DLC04_LvlSupermutantBoss_Rage;Rage
+DLCNukaWorld.esm;00038510;NPC_;DLC04_LvlGunnerBoss_PowerArmor_Bear;Commander Bear
+DLCNukaWorld.esm;0003850F;NPC_;DLC04_LvlGunner_Sabot;Sabot
+DLCNukaWorld.esm;0003850E;NPC_;DLC04_LvlRaider_PowerArmor_Wretch;Wretch
+DLCNukaWorld.esm;0003842B;NPC_;DLC04_EncBloodworm07AmbushLegendary;
+DLCNukaWorld.esm;0003842A;NPC_;DLC04_EncBloodworm06AmbushLegendary;
+DLCNukaWorld.esm;00038429;NPC_;DLC04_EncBloodworm05AmbushLegendary;
+DLCNukaWorld.esm;00038428;NPC_;DLC04_EncBloodworm05Legendary;Legendary Glowing Bloodworm Larva
+DLCNukaWorld.esm;00038427;NPC_;DLC04_EncBloodworm07Legendary;Legendary Glowing Bloodworm
+DLCNukaWorld.esm;00038426;NPC_;DLC04_EncBloodworm06Legendary;Legendary Venomous Bloodworm
+DLCNukaWorld.esm;00038425;NPC_;DLC04_EncBloodworm04Legendary;Legendary Bloodworm
+DLCNukaWorld.esm;00038424;NPC_;DLC04_EncBloodworm03Legendary;Legendary Venomous Bloodworm Larva
+DLCNukaWorld.esm;00038423;NPC_;DLC04_EncBloodworm04AmbushLegendary;
+DLCNukaWorld.esm;00038422;NPC_;DLC04_EncBloodworm03AmbushLegendary;
+DLCNukaWorld.esm;00038421;NPC_;DLC04_EncBloodworm02AmbushLegendary;
+DLCNukaWorld.esm;00038420;NPC_;DLC04_EncBloodworm02Legendary;Legendary Bloodworm Larva
+DLCNukaWorld.esm;0003841D;NPC_;DLC04GZNukaGalaxy_NukaGirlAnnouncerWithStatic_DO_NOT_RECORD;Nuka-Girl
+DLCNukaWorld.esm;0003841C;NPC_;DLC04GZNukaGalaxy_MaleAnnouncerWithStatic_DO_NOT_RECORD;Announcer
+DLCNukaWorld.esm;00036379;NPC_;DLC04_AudioTemplateGatorclaw;AudioTemplateBloodbug
+DLCNukaWorld.esm;00035FA3;NPC_;DLC04BottlingPlantAnnouncer_AudioOnly;Announcement
+DLCNukaWorld.esm;000350C5;NPC_;DLC04MQ01GauntletCorpse_Crag;Crag
+DLCNukaWorld.esm;000346D2;NPC_;DLC04EncNukalurkKingAmbushWater;Nukalurk King
+DLCNukaWorld.esm;00034665;NPC_;DLC04_LvlFeralGhoulAmbush;
+DLCNukaWorld.esm;00034631;NPC_;DLC04EncNukalurkSpawnQueen;
+DLCNukaWorld.esm;000337CA;NPC_;DLC04SafariCito;Cito
+DLCNukaWorld.esm;00032FBA;NPC_;DLC04GalacticZoneOnly_LvlSpaceProtectronLure;
+DLCNukaWorld.esm;00032F58;NPC_;DLC04EncSpaceMrHandy01Template;Mr Handy Greeter
+DLCNukaWorld.esm;00032F57;NPC_;DLC04LvlSpaceMrHandy;
+DLCNukaWorld.esm;00032F51;NPC_;DLC04GZ_Tiana03;
+DLCNukaWorld.esm;00032F50;NPC_;DLC04GZ_Tiana02;
+DLCNukaWorld.esm;00032F4F;NPC_;DLC04GZ_Tiana01;
+DLCNukaWorld.esm;000329B1;NPC_;DLC04GalacticZoneOnly_LvlEyebotSandboxer;
+DLCNukaWorld.esm;0003299F;NPC_;DLC04LvlMisterHandy_Mister;
+DLCNukaWorld.esm;0003299E;NPC_;DLC04LvlMisterHandy_Laser;
+DLCNukaWorld.esm;0003299D;NPC_;DLC04LvlMisterHandy_Saw;
+DLCNukaWorld.esm;00032998;NPC_;DLC04LvlMisterHandy_Flamer;
+DLCNukaWorld.esm;0003298D;NPC_;DLC04GalacticZoneOnly_LvlNukaEyebot;
+DLCNukaWorld.esm;0003290A;NPC_;DLC04LvlSpaceProtectron;
+DLCNukaWorld.esm;00032908;NPC_;DLC04EncSpaceProtectron03;Galactron Guardian
+DLCNukaWorld.esm;00032907;NPC_;DLC04EncSpaceProtectron02;Galactron Watcher
+DLCNukaWorld.esm;00032904;NPC_;DLC04EncMisterHandy01Saw;Mr Frothy
+DLCNukaWorld.esm;00032903;NPC_;DLC04EncMisterHandy01Flamer;Mr Frothy
+DLCNukaWorld.esm;00032902;NPC_;DLC04EncMisterHandy01Laser;Mr Frothy
+DLCNukaWorld.esm;00032900;NPC_;DLC04EncSpaceSentryBot03Shoulder;Space Sentry Annihilator
+DLCNukaWorld.esm;000328FF;NPC_;DLC04EncSpaceSentryBot02Shoulder;Space Sentry Breaker
+DLCNukaWorld.esm;000328FE;NPC_;DLC04EncSpaceSentryBot01Shoulder;Space Sentry
+DLCNukaWorld.esm;000328FD;NPC_;DLC04EncSpaceSentryBot04Shoulder;
+DLCNukaWorld.esm;00032827;NPC_;DLC04GalacticZoneOnly_LvlProtectronLasers;
+DLCNukaWorld.esm;000324AC;NPC_;DLC04GalacticZoneOnly_LvlEyeBotPatroller;
+DLCNukaWorld.esm;00032349;NPC_;DLC04_RQ_LvlScavengerFemale;
+DLCNukaWorld.esm;00032348;NPC_;DLC04_RQ_LvlScavengerMale;
+DLCNukaWorld.esm;0003198C;NPC_;DLC04GZ_Kendell;Kendell Alston
+DLCNukaWorld.esm;000316A9;NPC_;DLC04_LvlTurretTripodKiddieKingdom;
+DLCNukaWorld.esm;0003123E;NPC_;DLC04Fritsch;Fritsch
+DLCNukaWorld.esm;00030D6F;NPC_;DLC04_VoiceType_PackMale01;
+DLCNukaWorld.esm;0002F913;NPC_;DLC04Gauntlet_LvlProtectronNoLegendary;
+DLCNukaWorld.esm;0002F8E5;NPC_;DLC04MQ01GauntletCorpse_PvtTyler;Private Tyler
+DLCNukaWorld.esm;0002F8B2;NPC_;DLC04MQ01GauntletCorpse_SgtMarcksCorpseHolotape;Sergeant Marcks
+DLCNukaWorld.esm;0002F8B1;NPC_;DLC04MQ01GauntletCorpse_Ophelia;Ophelia
+DLCNukaWorld.esm;0002F8B0;NPC_;DLC04MQ01GauntletCorpse_Lucky;Lucky
+DLCNukaWorld.esm;0002F89D;NPC_;DLC04MQ01GauntletCorpse_Anise;Anise
+DLCNukaWorld.esm;0002F888;NPC_;DLC04MQ01GauntletCorpse_IanCorpseHolotape;Ian
+DLCNukaWorld.esm;0002EBB2;NPC_;DLC04AudioTemplateCricket;AudioTemplateBloatFly
+DLCNukaWorld.esm;0002EB7F;NPC_;DLC04LvlNukalurkAmbush;
+DLCNukaWorld.esm;0002E80D;NPC_;DLC04_EncRaider09Pack;Pack Butcher
+DLCNukaWorld.esm;0002E80C;NPC_;DLC04_EncRaider09Operator;Operator Butcher
+DLCNukaWorld.esm;0002E80B;NPC_;DLC04_EncRaider08Pack;Pack Tormentor
+DLCNukaWorld.esm;0002E80A;NPC_;DLC04_EncRaider08Operator;Operator Tormentor
+DLCNukaWorld.esm;0002E809;NPC_;DLC04_EncRaider07Pack;Pack Pillager
+DLCNukaWorld.esm;0002E808;NPC_;DLC04_EncRaider07Operator;Operator Pillager
+DLCNukaWorld.esm;0002E807;NPC_;DLC04_EncRaider06Pack;Pack Veteran
+DLCNukaWorld.esm;0002E806;NPC_;DLC04_EncRaider06Operator;Operator Veteran
+DLCNukaWorld.esm;0002E805;NPC_;DLC04_EncRaider05Pack;Pack Survivalist
+DLCNukaWorld.esm;0002E804;NPC_;DLC04_EncRaider05Operator;Operator Survivalist
+DLCNukaWorld.esm;0002E803;NPC_;DLC04_EncRaider04Pack;Pack Waster
+DLCNukaWorld.esm;0002E802;NPC_;DLC04_EncRaider04Operator;Operator Waster
+DLCNukaWorld.esm;0002E801;NPC_;DLC04_EncRaider03Pack;Pack Scavver
+DLCNukaWorld.esm;0002E800;NPC_;DLC04_EncRaider03Operator;Operator Scavver
+DLCNukaWorld.esm;0002E7FF;NPC_;DLC04_EncRaider06Disciple;Disciple Veteran
+DLCNukaWorld.esm;0002E7FE;NPC_;DLC04_EncRaider05Disciple;Disciple Survivalist
+DLCNukaWorld.esm;0002E7FD;NPC_;DLC04_EncRaider04Disciple;Disciple Waster
+DLCNukaWorld.esm;0002E7FC;NPC_;DLC04_EncRaider03Disciple;Disciple Scavver
+DLCNukaWorld.esm;0002E7F6;NPC_;DLC04_EncRaider09Grenade;
+DLCNukaWorld.esm;0002E7F5;NPC_;DLC04_EncRaider08Grenade;
+DLCNukaWorld.esm;0002E7F4;NPC_;DLC04_EncRaider07Grenade;
+DLCNukaWorld.esm;0002E7F3;NPC_;DLC04_EncRaider09Legendary;Legendary Raider
+DLCNukaWorld.esm;0002E7F2;NPC_;DLC04_EncRaider08Legendary;Legendary Raider
+DLCNukaWorld.esm;0002E7F1;NPC_;DLC04_EncRaider07Legendary;Legendary Raider
+DLCNukaWorld.esm;0002E7F0;NPC_;DLC04_EncRaider09Melee;
+DLCNukaWorld.esm;0002E7EF;NPC_;DLC04_EncRaider08Melee;
+DLCNukaWorld.esm;0002E7EE;NPC_;DLC04_EncRaider07Melee;
+DLCNukaWorld.esm;0002E7ED;NPC_;DLC04_EncRaider09Disciple;Disciple Butcher
+DLCNukaWorld.esm;0002E7EC;NPC_;DLC04_EncRaider08Disciple;Disciple Tormentor
+DLCNukaWorld.esm;0002E7EB;NPC_;DLC04_EncRaider07Disciple;Disciple Pillager
+DLCNukaWorld.esm;0002E268;NPC_;DLC04GauntletCorpse_Argus;Argus
+DLCNukaWorld.esm;0002DE9D;NPC_;DLC04Gauntlet_LvlGang_Disciple_Potshots;
+DLCNukaWorld.esm;0002DBFD;NPC_;DLC04MQ01GauntletCorpse_Corin;Corin
+DLCNukaWorld.esm;0002DA6C;NPC_;DLC04MQ01GauntletCorpse_Sykes;Sykes
+DLCNukaWorld.esm;0002AEF9;NPC_;DLC04AudioTemplateBloodworm;AudioTemplateBloatFly
+DLCNukaWorld.esm;00029BD0;NPC_;DLC04_LvlGang_Disciple_HubPatrol_F02;
+DLCNukaWorld.esm;000293F7;NPC_;DLC04GalacticZoneOnly_LvlProtectron_Techbot;Galactron Technician
+DLCNukaWorld.esm;000293EE;NPC_;DLC04GalacticZoneOnly_LvlProtectron_Usherbot;Galactron Usher
+DLCNukaWorld.esm;000293EB;NPC_;DLC04GalacticZoneOnly_LvlMrHandy_WaiterHandy;Mr Frothy Waiter
+DLCNukaWorld.esm;000293E2;NPC_;DLC04GalacticZoneOnly_LvlMrHandy_ChefHandy;Mr Frothy Chef
+DLCNukaWorld.esm;000293DD;NPC_;DLC04GalacticZoneOnly_Theater_Startender;Startender
+DLCNukaWorld.esm;0002621A;NPC_;DLC04TraderMale02;Trader
+DLCNukaWorld.esm;00026219;NPC_;DLC04TraderMale01;Trader
+DLCNukaWorld.esm;00026218;NPC_;DLC04TraderFemale02;Trader
+DLCNukaWorld.esm;00026216;NPC_;DLC04TraderFemale01;Trader
+DLCNukaWorld.esm;00026203;NPC_;DLC04WastelandTravelerFemale01Eat;Wasteland Traveler
+DLCNukaWorld.esm;00026202;NPC_;DLC04WastelandTravelerFemale02;Wasteland Traveler
+DLCNukaWorld.esm;00026201;NPC_;DLC04WastelandTravelerMale02;Wasteland Traveler
+DLCNukaWorld.esm;00026200;NPC_;DLC04WastelandTravelerFemale01;Wasteland Traveler
+DLCNukaWorld.esm;00025F69;NPC_;DLC04WastelandTravelerMale01;Wasteland Traveler
+DLCNukaWorld.esm;00025F63;NPC_;DLC04_LvlGang_Pack_HubEat_M;
+DLCNukaWorld.esm;00025F62;NPC_;DLC04_LvlGang_Operator_HubEat_M;
+DLCNukaWorld.esm;00025F61;NPC_;DLC04_LvlGang_Disciple_HubEat_F;
+DLCNukaWorld.esm;00025F4D;NPC_;DLC04_LvlGang_Disciple_HubStand_F;
+DLCNukaWorld.esm;00025F4C;NPC_;DLC04_LvlGang_Disciple_HubPatrol_F;
+DLCNukaWorld.esm;00025F3F;NPC_;DLC04_LvlGang_Operator_HubStand_M;
+DLCNukaWorld.esm;00025F3E;NPC_;DLC04_LvlGang_Operator_HubPatrol_M;
+DLCNukaWorld.esm;00025F3D;NPC_;DLC04_LvlGang_Operator_HubStand_F;
+DLCNukaWorld.esm;00025F3C;NPC_;DLC04_LvlGang_Operator_HubPatrol_F;
+DLCNukaWorld.esm;00025F39;NPC_;DLC04_LvlGang_Pack_HubStand_M;
+DLCNukaWorld.esm;00025F2F;NPC_;DLC04_LvlGang_Pack_HubPatrol_F;
+DLCNukaWorld.esm;00025F2E;NPC_;DLC04_LvlGang_Pack_HubPatrol_M;
+DLCNukaWorld.esm;00025F2B;NPC_;DLC04_LvlGang_Pack_HubGuard_F;
+DLCNukaWorld.esm;00025F2A;NPC_;DLC04_LvlGang_Pack_HubGuard_M;
+DLCNukaWorld.esm;00025F29;NPC_;DLC04_LvlGang_Operator_HubGuard_F;
+DLCNukaWorld.esm;00025F28;NPC_;DLC04_LvlGang_Operator_HubGuard_M;
+DLCNukaWorld.esm;00025F11;NPC_;DLC04_LvlGang_Disciple_HubGuard_F;
+DLCNukaWorld.esm;00025B14;NPC_;DLC04PackScentGrenade_LvlBloodbug;
+DLCNukaWorld.esm;00025B13;NPC_;DLC04PackScentGrenade_LvlDeathclaw;
+DLCNukaWorld.esm;00025B12;NPC_;DLC04PackScentGrenade_LvlYaoGuai;
+DLCNukaWorld.esm;00025B11;NPC_;DLC04PackScentGrenade_LvlViciousDog;
+DLCNukaWorld.esm;0002552E;NPC_;DLC04_Loot_CorpseTraderTemplate;Trader
+DLCNukaWorld.esm;0002552D;NPC_;DLC04_Loot_CorpseTraderMale03;
+DLCNukaWorld.esm;0002552C;NPC_;DLC04_Loot_CorpseTraderFemale03;
+DLCNukaWorld.esm;0002552B;NPC_;DLC04_Loot_CorpseTraderMale_Empty;
+DLCNukaWorld.esm;0002552A;NPC_;DLC04_Loot_CorpseTraderFemale_Empty;
+DLCNukaWorld.esm;00025529;NPC_;DLC04_Loot_CorpseTraderMale02;
+DLCNukaWorld.esm;00025528;NPC_;DLC04_Loot_CorpseTraderFemale02;
+DLCNukaWorld.esm;00025527;NPC_;DLC04_Loot_CorpseTraderMale01;
+DLCNukaWorld.esm;00025526;NPC_;DLC04_Loot_CorpseTraderFemale01;
+DLCNukaWorld.esm;0002439E;NPC_;DLC04HolotapeSceneOperatorFemale;Raider Woman
+DLCNukaWorld.esm;0002439D;NPC_;DLC04HolotapeSceneOperatorMale;Raider Man
+DLCNukaWorld.esm;00023437;NPC_;DLC04LvlBrahmiluff;
+DLCNukaWorld.esm;00023433;NPC_;DLC04_lvlGatorClawAlbino;
+DLCNukaWorld.esm;00023432;NPC_;DLC04_lvlGatorClaw;
+DLCNukaWorld.esm;00023431;NPC_;DLC04_lvlRadGazelle;
+DLCNukaWorld.esm;00023430;NPC_;DLC04_lvlRadGorillaKing;
+DLCNukaWorld.esm;0002342F;NPC_;DLC04_lvlRadGorilla;
+DLCNukaWorld.esm;00021D62;NPC_;DLC04_LvlGang_Operator_ParlorSandboxF01;
+DLCNukaWorld.esm;00020A26;NPC_;DLC04CaravanKatelynBrahmin;Brahmin
+DLCNukaWorld.esm;000209CD;NPC_;DLC04LvlAnimatronicAlien;
+DLCNukaWorld.esm;000209CC;NPC_;DLC04_EncAnimatronicAlien04Explosive;
+DLCNukaWorld.esm;000209CB;NPC_;DLC04_EncAnimatronicAlien03;
+DLCNukaWorld.esm;000209C9;NPC_;DLC04_EncAnimatronicAlien02;
+DLCNukaWorld.esm;000209C8;NPC_;DLC04_EncAnimatronicAlien01Template;Animatronic Alien
+DLCNukaWorld.esm;000201F1;NPC_;DLC04_EncBloodworm07_LargeGlowing;Glowing Bloodworm
+DLCNukaWorld.esm;000201F0;NPC_;DLC04_EncBloodworm06_LargeVenomous;Venomous Bloodworm
+DLCNukaWorld.esm;000201EF;NPC_;DLC04_EncBloodworm04_Large;Bloodworm
+DLCNukaWorld.esm;000201EE;NPC_;DLC04_EncRadRat06_LargeMajor;Infected Rad-Rat
+DLCNukaWorld.esm;000201ED;NPC_;DLC04_EncRadRat05_LargeMild;Mangy Rad-Rat
+DLCNukaWorld.esm;000201EC;NPC_;DLC04_EncRadRat03_LargeNormal;Rad-Rat
+DLCNukaWorld.esm;000201EB;NPC_;DLC04_EncRadAnt09LargeGlowing;Overgrown Glowing Ant
+DLCNukaWorld.esm;000201EA;NPC_;DLC04_EncRadAnt08LargeRed;Overgrown Soldier Ant
+DLCNukaWorld.esm;000201E9;NPC_;DLC04_EncRadAnt07Large;Overgrown Forager Ant
+DLCNukaWorld.esm;000201E8;NPC_;DLC04_EncRadAnt06MediumGlowing;Glowing Ant
+DLCNukaWorld.esm;000201E7;NPC_;DLC04_EncRadAnt05MediumRed;Soldier Ant
+DLCNukaWorld.esm;000201E6;NPC_;DLC04_EncRadAnt04Medium;Forager Ant
+DLCNukaWorld.esm;000201E5;NPC_;DLC04_EncCaveCricketGlowing01;Glowing Cave Cricket
+DLCNukaWorld.esm;000201E1;NPC_;DLC04_EncRadRat04_SmallMajor;Infected Rad-Rat Pup
+DLCNukaWorld.esm;000201E0;NPC_;DLC04_EncRadAnt;Small Forager Ant
+DLCNukaWorld.esm;000201DF;NPC_;DLC04_EncRadAnt02SmallRed;Small Soldier Ant
+DLCNukaWorld.esm;000201DE;NPC_;DLC04_EncRadAnt03SmallGlowing;Small Glowing Ant
+DLCNukaWorld.esm;000201DC;NPC_;DLC04_EncCaveCricket03;Cave Cricket Piercer
+DLCNukaWorld.esm;000201DB;NPC_;DLC04_EncBloodworm05_Glowing;Glowing Bloodworm Larva
+DLCNukaWorld.esm;000201DA;NPC_;DLC04_EncBloodworm03_Venomous;Venomous Bloodworm Larva
+DLCNukaWorld.esm;0001FAF8;NPC_;DLC04LvlSpaceAssaultron;
+DLCNukaWorld.esm;0001FAF7;NPC_;DLC04EncSpaceAssaultron03;Novatron Dominator
+DLCNukaWorld.esm;0001FAF6;NPC_;DLC04EncSpaceAssaultron02;Novatron Invader
+DLCNukaWorld.esm;0001FAF4;NPC_;DLC04LvlSpaceMrGutsy;
+DLCNukaWorld.esm;0001FAF3;NPC_;DLC04EncSpaceMrGutsy04;Captain Astro-Gutsy
+DLCNukaWorld.esm;0001FAF2;NPC_;DLC04EncSpaceMrGutsy03;Commander Astro-Gutsy
+DLCNukaWorld.esm;0001FAF1;NPC_;DLC04EncSpaceMrGutsy02;Lieutenant Astro-Gutsy
+DLCNukaWorld.esm;0001FAC3;NPC_;DLC04GZNukaGalaxy_FemaleAnnouncer;Announcer
+DLCNukaWorld.esm;0001FAB1;NPC_;DLC04EncBrahmiluffPack;Pack Brahmiluff
+DLCNukaWorld.esm;0001FA9E;NPC_;DLC04EncSpaceMrGutsy01Template;Cadet Astro-Gutsy
+DLCNukaWorld.esm;0001FA9D;NPC_;DLC04EncSpaceProtectron01Template;Galactron
+DLCNukaWorld.esm;0001F9FA;NPC_;DLC04_RQ_LvlSynth_Boss;
+DLCNukaWorld.esm;0001F9F9;NPC_;DLC04_RQ_LvlSynth;
+DLCNukaWorld.esm;0001F9F8;NPC_;DLC04_RQ_LvlSupermutant_Boss;
+DLCNukaWorld.esm;0001F9F7;NPC_;DLC04_RQ_LvlSupermutant;
+DLCNukaWorld.esm;0001F9F6;NPC_;DLC04_RQ_LvlRailroad_Boss;
+DLCNukaWorld.esm;0001F9F5;NPC_;DLC04_RQ_LvlMinuteman_Boss;
+DLCNukaWorld.esm;0001F9F4;NPC_;DLC04_RQ_LvlRailroad;
+DLCNukaWorld.esm;0001F9F3;NPC_;DLC04_RQ_LvlMinuteman;
+DLCNukaWorld.esm;0001F9F2;NPC_;DLC04_RQ_LvlBoS_Boss;
+DLCNukaWorld.esm;0001F9F1;NPC_;DLC04_RQ_LvlBoS;
+DLCNukaWorld.esm;0001F9F0;NPC_;DLC04_RQ_LvlRaider_Boss;
+DLCNukaWorld.esm;0001F9EF;NPC_;DLC04_RQ_LvlGunner_Boss;
+DLCNukaWorld.esm;0001F9EE;NPC_;DLC04_RQ_LvlRaider;
+DLCNukaWorld.esm;0001F9ED;NPC_;DLC04_RQ_LvlGunner;
+DLCNukaWorld.esm;0001F5FE;NPC_;DLC04LvlSpaceSentryBot;
+DLCNukaWorld.esm;0001F5FD;NPC_;DLC04EncSpaceSentryBot04;Space Sentry Obliterator
+DLCNukaWorld.esm;0001F5FC;NPC_;DLC04EncSpaceSentryBot03;Space Sentry Annihilator
+DLCNukaWorld.esm;0001F5FB;NPC_;DLC04EncSpaceSentryBot02;Space Sentry Breaker
+DLCNukaWorld.esm;0001F5F9;NPC_;DLC04LvlNukatron;
+DLCNukaWorld.esm;0001F5F8;NPC_;DLC04EncNukatron03;Nukatron Guardian
+DLCNukaWorld.esm;0001F5F7;NPC_;DLC04EncNukatron02;Nukatron Watcher
+DLCNukaWorld.esm;0001F49C;NPC_;DLC04_lvlNukalurk;
+DLCNukaWorld.esm;0001F1DF;NPC_;DLC04_LvlFeralGhoul;
+DLCNukaWorld.esm;0001EE33;NPC_;DLC04GZNukaGalaxy_NukaGirlAnnouncer;Nuka-Girl
+DLCNukaWorld.esm;0001EE32;NPC_;DLC04ElevatorAnnouncer;Announcer
+DLCNukaWorld.esm;0001EE31;NPC_;DLC04GZNukaGalaxy_MaleAnnouncer;Announcer
+DLCNukaWorld.esm;0001E850;NPC_;DLC04_lvlBloodwormAmbush;
+DLCNukaWorld.esm;0001E3B4;NPC_;DLC04KeithDawkins;Keith Dawkins
+DLCNukaWorld.esm;0001E3B3;NPC_;DLC04ChipMorse;Chip Morse
+DLCNukaWorld.esm;0001CB7C;NPC_;DLC04Maddox;Maddox
+DLCNukaWorld.esm;0001CB7A;NPC_;DLC04AaronCorbett;Aaron Corbett
+DLCNukaWorld.esm;0001CB79;NPC_;DLC04KatelynAlden;Katelyn Alden
+DLCNukaWorld.esm;0001CB76;NPC_;DLC04LaurenPlummer;Lauren Plummer
+DLCNukaWorld.esm;0001CB74;NPC_;DLC04ShelbieChase;Shelbie Chase
+DLCNukaWorld.esm;0001CB65;NPC_;DLC04MackenzieBridgeman;Mackenzie Bridgeman
+DLCNukaWorld.esm;0001B00B;NPC_;DLC04MQ04_LvlRaiderPowerArmorSinnerGang;Sinner's Raider
+DLCNukaWorld.esm;0001B00A;NPC_;DLC04MQ04_LvlRaiderSinnerGang;Sinner's Raider
+DLCNukaWorld.esm;0001B008;NPC_;DLC04MQ04LvlRaiderBossSinner;Sinner
+DLCNukaWorld.esm;0001A5C2;NPC_;DLC04EncNira;N.I.R.A.
+DLCNukaWorld.esm;0001A28B;NPC_;DLC04MQ00Kaylor;Commander Kaylor
+DLCNukaWorld.esm;00019E88;NPC_;DLC04_encClownGhoul07;Charred Painted Ghoul
+DLCNukaWorld.esm;00019E7F;NPC_;DLC04_EncClownGhoul04;Painted Ghoul
+DLCNukaWorld.esm;000194CD;NPC_;DLC04_encRaiderPackTemplate;
+DLCNukaWorld.esm;000194CC;NPC_;DLC04_encRaiderOperatorTemplate;
+DLCNukaWorld.esm;000194CB;NPC_;DLC04_encRaiderDiscipleTemplate;
+DLCNukaWorld.esm;000192F3;NPC_;DLC04workshopAudioDummy;Settler
+DLCNukaWorld.esm;0001763B;NPC_;DLC04Oswald;Oswald the Outrageous
+DLCNukaWorld.esm;000170C4;NPC_;DLC04EncSpaceAssaultron01Template;Novatron
+DLCNukaWorld.esm;000170C2;NPC_;DLC04EncSpaceSentryBot01Template;Space Sentry
+DLCNukaWorld.esm;000163F7;NPC_;DLC04NukaParkAnnouncerVoice;Announcer
+DLCNukaWorld.esm;00015AA3;NPC_;DLC04MQ00RadioBottleVoice;Bottle
+DLCNukaWorld.esm;000145DD;NPC_;DLC04Zachariah;Zachariah
+DLCNukaWorld.esm;000145DC;NPC_;DLC04_MS03_Protectron;Ticket Taker
+DLCNukaWorld.esm;000145DA;NPC_;DLC04_MS03_Lucy;Girl
+DLCNukaWorld.esm;0001443C;NPC_;DLC04RECampCT04Peter;Peter
+DLCNukaWorld.esm;0001443B;NPC_;DLC04RECampCT04Chelsea;Chelsea
+DLCNukaWorld.esm;0001443A;NPC_;DLC04RECampCT04Cora;Cora
+DLCNukaWorld.esm;000143D8;NPC_;DLC04WorkshopPackSpokesperson;Pack Member
+DLCNukaWorld.esm;000143D7;NPC_;DLC04WorkshopOperatorSpokesperson;Operator
+DLCNukaWorld.esm;000143D6;NPC_;DLC04WorkshopDiscipleSpokesperson;Disciple
+DLCNukaWorld.esm;00013A43;NPC_;DLC04SierraPetrovita;Sierra Petrovita
+DLCNukaWorld.esm;000138F4;NPC_;DLC04_EncRadRat02_SmallMild;Mangy Rad-Rat Pup
+DLCNukaWorld.esm;000138F2;NPC_;DLC04_lvlRadRat;
+DLCNukaWorld.esm;000138E8;NPC_;DLC04_lvlRadAnt;
+DLCNukaWorld.esm;000138C2;NPC_;DLC04_lvlSwarm;
+DLCNukaWorld.esm;000138BA;NPC_;DLC04_EncSwarm02;Flying Soldier Ant Swarm
+DLCNukaWorld.esm;000138B9;NPC_;DLC04_EncCaveCricket02;Cave Cricket Hunter
+DLCNukaWorld.esm;000138B8;NPC_;DLC04_EncCaveCricket01Template;Cave Cricket
+DLCNukaWorld.esm;000138B7;NPC_;DLC04_EncBloodworm02;Bloodworm Larva
+DLCNukaWorld.esm;000138B6;NPC_;DLC04_EncBloodworm01Template;Bloodworm Larva
+DLCNukaWorld.esm;0001384C;NPC_;DLC04RETravelCT01Prisoner02;Prisoner
+DLCNukaWorld.esm;0001384B;NPC_;DLC04RETravelCT01Prisoner01;Prisoner
+DLCNukaWorld.esm;0001234E;NPC_;DLC04EncNukalurkKing01;Nukalurk King
+DLCNukaWorld.esm;0001234D;NPC_;DLC04EncNukalurkHunter01;Nukalurk Hunter
+DLCNukaWorld.esm;0001234C;NPC_;DLC04EncNukalurk01Template;Nukalurk
+DLCNukaWorld.esm;0001234B;NPC_;DLC04EncNukalurkQueen;Nukalurk Queen
+DLCNukaWorld.esm;0001234A;NPC_;DLC04EncNukalurkSpawn01;Nukalurk Spawn
+DLCNukaWorld.esm;00011A8C;NPC_;DLC04RESceneCT03Victim02;Settler
+DLCNukaWorld.esm;00011A8B;NPC_;DLC04RESceneCT03Victim01;Settler
+DLCNukaWorld.esm;00011111;NPC_;DLC04RESceneCT02WeylanCorpseHolotape;Weylan
+DLCNukaWorld.esm;0001109D;NPC_;DLC04_LvlGang_Pack_PowerArmor;
+DLCNukaWorld.esm;0001109C;NPC_;DLC04_LvlGang_Operator_PowerArmor;
+DLCNukaWorld.esm;0001109B;NPC_;DLC04_LvlGang_Disciple_PowerArmor;
+DLCNukaWorld.esm;0001109A;NPC_;DLC04_LvlGang_Pack_Melee;
+DLCNukaWorld.esm;00011099;NPC_;DLC04_LvlGang_Operator_Melee;
+DLCNukaWorld.esm;00011098;NPC_;DLC04_LvlGang_Disciple_Melee;
+DLCNukaWorld.esm;00011097;NPC_;DLC04_LvlGang_Pack_Boss;
+DLCNukaWorld.esm;00011096;NPC_;DLC04_LvlGang_Operator_Boss;
+DLCNukaWorld.esm;00011095;NPC_;DLC04_LvlGang_Disciple_Boss;
+DLCNukaWorld.esm;00011094;NPC_;DLC04_LvlGang_Pack_Auto;
+DLCNukaWorld.esm;00011093;NPC_;DLC04_LvlGang_Operator_Auto;
+DLCNukaWorld.esm;00011092;NPC_;DLC04_LvlGang_Disciple_Auto;
+DLCNukaWorld.esm;00011091;NPC_;DLC04_LvlGang_Pack;
+DLCNukaWorld.esm;00011090;NPC_;DLC04_LvlGang_Operator;
+DLCNukaWorld.esm;0001108F;NPC_;DLC04_LvlGang_Disciple;
+DLCNukaWorld.esm;0001108B;NPC_;DLC04_encGangDiscipleFaceF04;
+DLCNukaWorld.esm;0001108A;NPC_;DLC04_encGangPackFaceM04;
+DLCNukaWorld.esm;00011089;NPC_;DLC04_encGangPackFaceM03;
+DLCNukaWorld.esm;00011088;NPC_;DLC04_encGangPackFaceM02;
+DLCNukaWorld.esm;00011087;NPC_;DLC04_encGangPackFaceM01;
+DLCNukaWorld.esm;00011086;NPC_;DLC04_encGangPackFaceF02;
+DLCNukaWorld.esm;00011085;NPC_;DLC04_encGangPackFaceF01;
+DLCNukaWorld.esm;00011084;NPC_;DLC04_encGangOperatorFaceM04;
+DLCNukaWorld.esm;00011083;NPC_;DLC04_encGangOperatorFaceM03;
+DLCNukaWorld.esm;00011082;NPC_;DLC04_encGangOperatorFaceM02;
+DLCNukaWorld.esm;00011081;NPC_;DLC04_encGangOperatorFaceM01;
+DLCNukaWorld.esm;00011080;NPC_;DLC04_encGangOperatorFaceF02;
+DLCNukaWorld.esm;0001107F;NPC_;DLC04_encGangOperatorFaceF01;
+DLCNukaWorld.esm;0001107E;NPC_;DLC04_encGangDiscipleFaceF03;
+DLCNukaWorld.esm;0001107D;NPC_;DLC04_encGangDiscipleFaceM02;
+DLCNukaWorld.esm;0001107C;NPC_;DLC04_encGangDiscipleFaceM01;
+DLCNukaWorld.esm;0001107B;NPC_;DLC04_encGangDiscipleFaceF02;
+DLCNukaWorld.esm;0001107A;NPC_;DLC04_encGangDiscipleFaceF01;
+DLCNukaWorld.esm;00010F0D;NPC_;DLC04EncMisterHandy01Mister;Mr Frothy
+DLCNukaWorld.esm;00010E54;NPC_;DLC04LvlRaiderRadiantDiscipleSpokesman;
+DLCNukaWorld.esm;00010E53;NPC_;DLC04LvlRaiderRadiantPackSpokeman;
+DLCNukaWorld.esm;00010E52;NPC_;DLC04LvlRaiderRadiantOperatorSpokesman;
+DLCNukaWorld.esm;00010E51;NPC_;DLC04LizzieWyath;Lizzie Wyath
+DLCNukaWorld.esm;0000F436;NPC_;DLC04Mason;Mason
+DLCNukaWorld.esm;0000EFF2;NPC_;DLC04EncNukatron01Template;Nukatron
+DLCNukaWorld.esm;0000EFF0;NPC_;DLC04_encGatorclawAlbino;Albino Gatorclaw
+DLCNukaWorld.esm;0000DBDF;NPC_;DLC04Shank;Shank
+DLCNukaWorld.esm;0000DBDE;NPC_;DLC04LvlMinutemanRadiant;
+DLCNukaWorld.esm;0000DBDD;NPC_;DLC04LvlMilitiaRadiant;Hired Gun
+DLCNukaWorld.esm;0000DBDC;NPC_;DLC04LvlRaiderRadiantPack;
+DLCNukaWorld.esm;0000DBDB;NPC_;DLC04LvlRaiderRadiantOperator;
+DLCNukaWorld.esm;0000DBDA;NPC_;DLC04LvlRaiderRadiantTemplate;
+DLCNukaWorld.esm;0000DBD9;NPC_;DLC04LvlRaiderRadiantDisciple;
+DLCNukaWorld.esm;0000D884;NPC_;DLC04_DRG_DocPhosphate;Doc Phosphate
+DLCNukaWorld.esm;0000D883;NPC_;DLC04_DRG_GiddyupKid;The Giddyup Kid
+DLCNukaWorld.esm;0000D882;NPC_;DLC04_DRG_OneEyedIke;One-Eyed Ike
+DLCNukaWorld.esm;0000D881;NPC_;DLC04_DRG_ProtectronSheriffTemplate01;Protectron Sheriff
+DLCNukaWorld.esm;0000D875;NPC_;DLC04_DRG_TerryTanakaCorpse;Terry Tanaka
+DLCNukaWorld.esm;0000D874;NPC_;DLC04_DRG_RickyBraxtonCorpse;Ricky Braxton
+DLCNukaWorld.esm;0000D873;NPC_;DLC04_DRG_SamTellerCorpse;Sam Teller
+DLCNukaWorld.esm;0000D3ED;NPC_;DLC04WilliamBlack;William Black
+DLCNukaWorld.esm;0000D3EB;NPC_;DLC04MagsBlack;Mags Black
+DLCNukaWorld.esm;0000D35B;NPC_;DLC04_encRadGazelle;Gazelle
+DLCNukaWorld.esm;0000D357;NPC_;DLC04_encGatorclaw;Gatorclaw
+DLCNukaWorld.esm;0000D354;NPC_;DLC04_encRadGorillaKing;Ghoulrilla King
+DLCNukaWorld.esm;0000D353;NPC_;DLC04EncBrahmiluff03;Brahmiluff Longhorn
+DLCNukaWorld.esm;0000D352;NPC_;DLC04EncBrahmiluff02;Brahmiluff
+DLCNukaWorld.esm;0000D34A;NPC_;DLC04EncBrahmiluff01Template;Brahmiluff Shorthorn
+DLCNukaWorld.esm;0000D347;NPC_;DLC04_encRadGorilla;Ghoulrilla
+DLCNukaWorld.esm;0000D325;NPC_;DLC04EncDeathclawQuantum;Quantum Deathclaw
+DLCNukaWorld.esm;0000CE60;NPC_;DLC04_EncRadAnt01Template;Small Forager Ant
+DLCNukaWorld.esm;0000CC99;NPC_;DLC04_TulaSpinney;Tula Spinney
+DLCNukaWorld.esm;0000CC98;NPC_;DLC04_MauriceTurner;Maurice Turner
+DLCNukaWorld.esm;0000CC97;NPC_;DLC04_Cleansed;Cleansed
+DLCNukaWorld.esm;0000CC96;NPC_;DLC04_RolandaHoops;Rolanda Hooper
+DLCNukaWorld.esm;0000CC94;NPC_;DLC04_PhilRoller;Phil Roller
+DLCNukaWorld.esm;0000CC90;NPC_;DLC04_DaraHubbell;Dara Hubbell
+DLCNukaWorld.esm;0000C609;NPC_;DLC04_EncRadRat01Template_SmallNormal;Rad-Rat Pup
+DLCNukaWorld.esm;0000BE4C;NPC_;DLC04WorkshopPack;Pack Member
+DLCNukaWorld.esm;0000BE4B;NPC_;DLC04WorkshopOperator;Operator
+DLCNukaWorld.esm;0000B02C;NPC_;DLC04_EncSwarm01Template;Flying Ant Swarm
+DLCNukaWorld.esm;0000AB02;NPC_;DLC04_lvlCaveCricket;
+DLCNukaWorld.esm;0000A5B2;NPC_;DLC04RaiderRadioAnnouncer;RedEye
+DLCNukaWorld.esm;0000A50A;NPC_;DLC04OverbossColter;Overboss Colter
+DLCNukaWorld.esm;0000A4E7;NPC_;DLC04Savoy;Savoy
+DLCNukaWorld.esm;0000A4E6;NPC_;DLC04Dixie;Dixie
+DLCNukaWorld.esm;0000A4E2;NPC_;DLC04Nisha;Nisha
+DLCNukaWorld.esm;0000A1A7;NPC_;DLC04_lvlBloodworm;
+DLCNukaWorld.esm;0000881D;NPC_;DLC04Gage;Porter Gage
+DLCNukaWorld.esm;00007D5C;NPC_;DLC04MQ00RadioAnnouncerVoice;Announcer
+DLCNukaWorld.esm;00007D59;NPC_;DLC04Harvey;Harvey
+DLCNukaWorld.esm;00007D01;NPC_;DLC04EncWorkshopRaiderCMale02;
+DLCNukaWorld.esm;00007D00;NPC_;DLC04EncWorkshopRaiderCMale01;
+DLCNukaWorld.esm;00007CFF;NPC_;DLC04EncWorkshopRaiderCFemale01;
+DLCNukaWorld.esm;00007CFE;NPC_;DLC04EncWorkshopRaiderBMale02;
+DLCNukaWorld.esm;00007CFD;NPC_;DLC04EncWorkshopRaiderBFemale01;
+DLCNukaWorld.esm;00007CF0;NPC_;DLC04EncWorkshopRaiderAFemale01;
+DLCNukaWorld.esm;00007CEF;NPC_;DLC04EncWorkshopRaiderBMale01;
+DLCNukaWorld.esm;00007CED;NPC_;DLC04EncWorkshopRaiderAMale02;
+DLCNukaWorld.esm;00007CEC;NPC_;DLC04EncWorkshopRaiderAMale01Template;Raider
+DLCNukaWorld.esm;00007CEA;NPC_;DLC04WorkshopDisciple;Disciple

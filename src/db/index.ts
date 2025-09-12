@@ -92,23 +92,29 @@ const commonDB = <
 >(
 	table: TTable,
 ) => ({
-	read: (id?: TRow["id"]) =>
+	read: (id?: number) =>
 		id !== undefined
 			? (db.select().from(table).where(eq(table.id, id)).get() as
 					| TRow
 					| undefined)
 			: (db.select().from(table).all() as TRow[]),
 
-	create: (row: TNew) => db.insert(table).values(row).run(),
-
-	update: (id: TRow["id"], row: Partial<TRow>) => {
+	create: (row: TNew) => {
 		const { id: _id, ...rest } = row
-		return db.update(table).set(rest).where(eq(table.id, id)).run()
+		return db.insert(table).values(rest).run()
 	},
 
-	delete: (id: TRow["id"]) => db.delete(table).where(eq(table.id, id)).run(),
+	update: (id: number, row: Partial<TRow>) => {
+		const { id: _id, ...rest } = row
+		return db
+			.update(table)
+			.set(rest as unknown as Partial<TRow>)
+			.where(eq(table.id, id))
+			.run()
+	},
+	delete: (id: number) => db.delete(table).where(eq(table.id, id)).run(),
 
-	duplicate: (id: TRow["id"]) => {
+	duplicate: (id: number) => {
 		const item = db.select().from(table).where(eq(table.id, id)).get() as TRow
 		const { id: _id, name, ...rest } = item
 		const newName = `${name} Copy ${Date.now()}`
@@ -229,6 +235,14 @@ export const rulesDB = {
 		const singles = singleRulesDB.read() as SingleRule[]
 		const multis = multiRulesDB.read() as MultiRule[]
 		return [...singles, ...multis].sort((a, b) => a.name.localeCompare(b.name))
+	},
+	delete: (id: number) => {
+		const type = rulesDB.type(id)
+		if (type === "single") {
+			return singleRulesDB.delete(id)
+		} else if (type === "multi") {
+			return multiRulesDB.delete(id)
+		}
 	},
 }
 
