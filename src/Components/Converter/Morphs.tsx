@@ -19,6 +19,7 @@ import {
 	type SetStateAction,
 	useCallback,
 	useEffect,
+	useMemo,
 	useRef,
 	useState,
 } from "react"
@@ -119,6 +120,11 @@ const Morphs = ({
 		[setMorphs],
 	)
 
+	const selectedRules = useMemo(
+		() => morphs.flatMap((morph) => morph.rules),
+		[morphs],
+	)
+
 	useEffect(() => {
 		if (!defaultTemplates) return
 		parseTemplateRaw(defaultTemplates, bodySlidePresetsParsed).then(setMorphs)
@@ -174,7 +180,7 @@ const Morphs = ({
 										data={rules.map((r) => ({
 											value: r.formatted,
 											label: r.name,
-											disabled: morph.rules.includes(r.formatted),
+											disabled: selectedRules.includes(r.formatted),
 										}))}
 										value={rule}
 										onChange={(v: string) => onRuleChange(index, ruleIndex, v)}
