@@ -259,6 +259,7 @@ const Sliders = ({
 		setActiveTab(Object.keys(categorizedSliders[gender]).at(0))
 	}, [categorizedSliders, gender])
 	const values: MorphSlider[] = useMemo(() => {
+		if (!bodyGen) return []
 		return bodyGen.split(",").map((slider) => {
 			const [name, value] = slider.split("@").map((s) => s.trim())
 			return { name, value: Number(value) }
@@ -345,9 +346,10 @@ const FieldsComponent = (props: FieldsComponentProps) => {
 				<Text>Male</Text>
 				<Switch
 					checked={template.gender === 1}
-					onChange={(event: ChangeEvent<HTMLInputElement>) =>
+					onChange={(event: ChangeEvent<HTMLInputElement>) => {
 						onFieldChange("gender", event.currentTarget.checked ? 1 : 0)
-					}
+						onFieldChange("bodyGen", "")
+					}}
 				/>
 				<Text>Female</Text>
 			</Group>

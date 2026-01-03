@@ -29,6 +29,7 @@ export const singleRules = table("singleRules", {
 
 export type SingleRule = InferSelectModel<typeof singleRules>
 export type NewSingleRule = InferInsertModel<typeof singleRules>
+export type Rule = (SingleRule | MultiRule) & { formatted: string }
 
 export const multiRules = table("multiRules", {
 	id: t.integer("id").primaryKey({ autoIncrement: true }),

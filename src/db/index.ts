@@ -9,7 +9,7 @@ import type {
 import { drizzle } from "drizzle-orm/better-sqlite3"
 import { migrate } from "drizzle-orm/better-sqlite3/migrator"
 import { and, eq } from "drizzle-orm/sql/expressions/conditions"
-import type { AnySQLiteColumn, SQLiteTable } from "drizzle-orm/sqlite-core"
+import type { SQLiteTable } from "drizzle-orm/sqlite-core"
 import { app } from "electron"
 
 import log from "../logger"
@@ -24,6 +24,7 @@ import {
 	type MultiRule,
 	multiRules,
 	type NewTemplate,
+	type Rule,
 	type SingleRule,
 	singleRules,
 	templates,
@@ -231,9 +232,15 @@ export const rulesDB = {
 		if (multi) return "multi"
 		return null
 	},
-	read: () => {
-		const singles = singleRulesDB.read() as SingleRule[]
-		const multis = multiRulesDB.read() as MultiRule[]
+	read: (): Rule[] => {
+		const singles = (singleRulesDB.read() as SingleRule[]).map((rule) => ({
+			...rule,
+			formatted: `${rule.plugin}|${rule.formId}`,
+		}))
+		const multis = (multiRulesDB.read() as MultiRule[]).map((rule) => ({
+			...rule,
+			formatted: `All|${rule.gender}|${rule.race}`,
+		}))
 		return [...singles, ...multis].sort((a, b) => a.name.localeCompare(b.name))
 	},
 	delete: (id: number) => {
@@ -242,6 +249,14 @@ export const rulesDB = {
 			return singleRulesDB.delete(id)
 		} else if (type === "multi") {
 			return multiRulesDB.delete(id)
+		}
+	},
+	duplicate: (id: number) => {
+		const type = rulesDB.type(id)
+		if (type === "single") {
+			return singleRulesDB.duplicate(id)
+		} else if (type === "multi") {
+			return multiRulesDB.duplicate(id)
 		}
 	},
 }

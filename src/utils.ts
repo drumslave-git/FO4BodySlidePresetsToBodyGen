@@ -232,6 +232,7 @@ export const resolveSliders = (dataFolder: string) => {
 	for (const folder of folders) {
 		const slidersFilePath = path.resolve(slidersDir, folder, "sliders.json")
 		if (!fs.existsSync(slidersFilePath)) continue
+		log.info(`Loading sliders from ${slidersFilePath}`)
 		const sliders: Slider[] = JSON.parse(
 			fs.readFileSync(slidersFilePath).toString(),
 		)

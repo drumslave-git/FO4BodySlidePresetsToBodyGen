@@ -7,6 +7,7 @@ import {
 	Group,
 	Input,
 	Modal,
+	Select,
 	Stack,
 	Textarea,
 } from "@mantine/core"
@@ -19,7 +20,9 @@ import {
 	useCallback,
 	useEffect,
 	useRef,
+	useState,
 } from "react"
+import { MultiRule, type Rule, SingleRule } from "../../db/schema"
 import type {
 	BodySlidePreset,
 	BodySlidePresetParsed,
@@ -80,6 +83,7 @@ const Morphs = ({
 		showTemplatesModal,
 		{ open: openTemplatesModal, close: closeTemplatesModal },
 	] = useDisclosure(false)
+	const [rules, setRules] = useState<Rule[]>([])
 
 	const templatesRef = useRef<HTMLTextAreaElement>(null)
 
@@ -126,6 +130,11 @@ const Morphs = ({
 		setTemplatesRaw("")
 	}, [templatesRaw, bodySlidePresetsParsed])
 
+	useEffect(() => {
+		// @ts-expect-error
+		window.electronAPI.rulesDB("read").then(setRules)
+	}, [])
+
 	const onTemplatesEdit = useCallback(() => {
 		if (!templatesRef.current) return
 		const text = templatesRef.current.value
@@ -161,13 +170,16 @@ const Morphs = ({
 							{morph.rules.map((rule, ruleIndex) => (
 								// biome-ignore lint/suspicious/noArrayIndexKey: index
 								<Group key={ruleIndex} wrap="nowrap">
-									<Input
+									<Select
+										data={rules.map((r) => ({
+											value: r.formatted,
+											label: r.name,
+											disabled: morph.rules.includes(r.formatted),
+										}))}
 										value={rule}
-										placeholder="Rule"
-										w="100%"
-										onChange={(e: ChangeEvent<HTMLInputElement>) =>
-											onRuleChange(index, ruleIndex, e.target.value)
-										}
+										onChange={(v: string) => onRuleChange(index, ruleIndex, v)}
+										searchable
+										label={rule}
 									/>
 									<ActionIcon
 										onClick={() => onRuleChange(index, ruleIndex, undefined)}
