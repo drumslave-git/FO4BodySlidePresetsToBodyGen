@@ -1,14 +1,16 @@
-import { Button, Container, Group, Paper, Text } from "@mantine/core"
+import { Button, Group, Paper, Text } from "@mantine/core"
 import { type MouseEvent, useCallback, useEffect, useState } from "react"
 
 import { BodyType } from "../types"
 import BodyView from "./3D/BodyView"
 
 import { useConfig } from "./ConfigProvider"
+import { useData } from "./DataProvider"
 import { useOverlay } from "./OverlayProvider"
 
 const Settings = () => {
 	const { dataFolder, outputFolder, loadConfig } = useConfig()
+	const { bodyFiles } = useData()
 	const { setIsLoading } = useOverlay()
 	const [isPicking, setIsPicking] = useState<boolean>(false)
 

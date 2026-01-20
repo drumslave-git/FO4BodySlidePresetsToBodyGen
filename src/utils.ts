@@ -299,6 +299,7 @@ export const validateSliders = (
 
 export const resolveSliderCategories = (dataFolder: string) => {
 	const dir = path.resolve(dataFolder, ...SLIDERS_CATEGORIES_RELATIVE_PATH)
+	if (!fs.existsSync(dir)) return []
 	const parser = new XMLParser({
 		ignoreAttributes: false, // include attributes in result
 		attributeNamePrefix: "", // optional: no '@_' prefix

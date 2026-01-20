@@ -85,6 +85,9 @@ export function readTriFromBuffer(buf: Buffer): TriBodySlide {
 }
 
 export function readTriFromFile(filePath: string): TriBodySlide {
+	if (!fs.existsSync(filePath)) {
+		throw new Error(`File not found: ${filePath}`)
+	}
 	const buf = fs.readFileSync(filePath)
 	return readTriFromBuffer(buf)
 }
