@@ -11,6 +11,7 @@ import RulesForm from "./Rules/Form"
 import RulesList from "./Rules/List"
 import Settings from "./Settings"
 import { SharedStateProvider } from "./SharedStateProvider"
+import Sliders from "./Sliders"
 import Sidebar from "./Sidebar"
 
 const ESMsBlock = () => {
@@ -20,9 +21,14 @@ const ESMsBlock = () => {
 		return null
 	}
 	return (
-		<Paper mt="md" p="md" shadow="xs" withBorder>
-			<ESMs />
-		</Paper>
+		<>
+			<Paper mt="md" p="md" shadow="xs" withBorder>
+				<ESMs />
+			</Paper>
+			<Paper mt="md" p="md" shadow="xs" withBorder>
+				<Sliders />
+			</Paper>
+		</>
 	)
 }
 

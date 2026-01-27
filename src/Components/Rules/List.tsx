@@ -1,5 +1,5 @@
 import { Chip, Group, Paper, Text } from "@mantine/core"
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import type { MultiRule, SingleRule } from "../../db/schema"
 import List, { type FilterComponentProps } from "../common/List"
 
@@ -53,10 +53,11 @@ const FiltersComponent = ({ onChange }: FilterComponentProps) => {
 const ComputedRuleComponent = (item: SingleRule | MultiRule) => {
 	const single = item as SingleRule
 	const multi = item as MultiRule
+
 	return (
 		<Text>
-			{!single.plugin && `All | `}
-			{single.plugin || multi.gender} | {single.formId || multi.race}
+			{multi.race && `Multi Rule`}
+			{single.plugin && `Single Rule`}
 		</Text>
 	)
 }

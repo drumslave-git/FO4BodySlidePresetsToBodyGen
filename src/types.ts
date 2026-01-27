@@ -33,6 +33,7 @@ export type Slider = {
 	maximum: number
 	interval: number
 	gender: 0 | 1
+	sourcePath: string
 }
 
 export type MorphSlider = {

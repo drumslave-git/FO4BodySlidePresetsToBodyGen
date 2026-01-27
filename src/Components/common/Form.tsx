@@ -26,11 +26,13 @@ const Form = <TItem extends BaseItem>({
 	rootUri,
 	defaultValues,
 	FieldsComponent,
+	readOnly,
 }: {
 	db: string
 	rootUri: string
 	defaultValues: TItem
 	FieldsComponent: FunctionComponent<FieldsComponentProps<TItem>>
+	readOnly?: boolean
 }) => {
 	const { id } = useParams()
 	const navigate = useNavigate()
@@ -111,6 +113,7 @@ const Form = <TItem extends BaseItem>({
 						onFieldChange("name", e.target.value)
 					}
 					required
+					readOnly={readOnly}
 				/>
 			</Input.Wrapper>
 			<FieldsComponent item={item} onFieldChange={onFieldChange} />

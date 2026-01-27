@@ -208,7 +208,10 @@ export const resolveSliders = (dataFolder: string) => {
 		log.info(`Loading sliders from ${slidersFilePath}`)
 		const sliders: Slider[] = JSON.parse(
 			fs.readFileSync(slidersFilePath).toString(),
-		)
+		).map((slider: Slider) => ({
+			...slider,
+			sourcePath: slidersFilePath,
+		}))
 		for (const slider of sliders) {
 			results = {
 				...results,

@@ -30,10 +30,6 @@ const SingleRuleFormFields = ({
 
 	const [selectedFormID, setSelectedFormID] = useState<string | null>(null)
 
-	const preview = useMemo(() => {
-		return [item.plugin, item.formId].filter(Boolean).join(" | ")
-	}, [item])
-
 	const pluginFormIDs = useMemo(() => {
 		if (!item.plugin) return []
 		return NPCs.filter((npc) => item.plugin === npc.plugin).map((npc) => ({
@@ -41,6 +37,16 @@ const SingleRuleFormFields = ({
 			label: `${npc.editorID} - ${npc.name}`,
 		}))
 	}, [item.plugin, NPCs])
+
+	const preview = useMemo(() => {
+		return [
+			item.plugin,
+			item.formId,
+			NPCs.find((npc) => npc.formId === item.formId)?.name,
+		]
+			.filter(Boolean)
+			.join(" | ")
+	}, [item, NPCs])
 
 	useEffect(() => {
 		if (!selectedFormID) return
@@ -53,9 +59,12 @@ const SingleRuleFormFields = ({
 		)
 	}, [item.formId, pluginFormIDs])
 
+	useEffect(() => {
+		onFieldChange("name", preview)
+	}, [preview, onFieldChange])
+
 	return (
 		<>
-			<Text>{preview}</Text>
 			<Select
 				label="Plugin"
 				placeholder="Plugin"
@@ -98,10 +107,20 @@ const MultiRuleFormFields = ({
 	const [selectedRace, setSelectedRace] = useState<string | null>(null)
 
 	const raceOptions = useMemo(() => {
-		return races.map((r) => ({
-			value: r.editorID,
-			label: `${r.plugin} - ${r.editorID} - ${r.name}`,
-		}))
+		return races
+			.map((r) => ({
+				value: r.editorID,
+				label: `${r.plugin} - ${r.editorID} - ${r.name}`,
+			}))
+			.reduce(
+				(acc, option) => {
+					if (!acc.find((o) => o.value === option.value)) {
+						acc.push(option)
+					}
+					return acc
+				},
+				[] as { value: string; label: string }[],
+			)
 	}, [races])
 
 	const preview = useMemo(() => {
@@ -119,9 +138,12 @@ const MultiRuleFormFields = ({
 		)
 	}, [item.race, raceOptions])
 
+	useEffect(() => {
+		onFieldChange("name", preview)
+	}, [preview, onFieldChange])
+
 	return (
 		<>
-			<Text>{preview}</Text>
 			<Select
 				label="Gender"
 				placeholder="Gender"
@@ -183,6 +205,7 @@ const RulesForm = () => {
 					rootUri="rules"
 					defaultValues={singleRuleDefaultValues}
 					FieldsComponent={SingleRuleFormFields}
+					readOnly
 				/>
 			</Tabs.Panel>
 			<Tabs.Panel value="multi">
@@ -191,6 +214,7 @@ const RulesForm = () => {
 					rootUri="rules"
 					defaultValues={MultiRuleDefaultValues}
 					FieldsComponent={MultiRuleFormFields}
+					readOnly
 				/>
 			</Tabs.Panel>
 		</Tabs>
