@@ -1,0 +1,17 @@
+{
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"lib": ["ES2020"],
+		"types": ["node", "electron"],
+		"outDir": "dist/main",
+		"allowJs": false
+	},
+	"include": ["src/**/*"],
+	"exclude": [
+		"node_modules",
+		"src/Components",
+		"src/renderer.ts",
+		"src/App.tsx"
+	]
+}

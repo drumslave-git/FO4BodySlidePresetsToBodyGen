@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"moduleResolution": "node",
+		"strict": true,
+		"composite": true,
+		"noImplicitAny": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true
+	}
+}
