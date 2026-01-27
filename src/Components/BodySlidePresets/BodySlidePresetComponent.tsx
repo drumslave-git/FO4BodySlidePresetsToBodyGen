@@ -1,14 +1,13 @@
 import { Box, Card, Code, Group, List, Spoiler, Text } from "@mantine/core"
 import { type JSX, useMemo } from "react"
 import { type BodySlidePreset, BodyType } from "../../types"
-import BodyView from "../3D/BodyView"
 import Collapsable from "../common/Collapsable"
 import PresetToggler, { type PresetTogglerProps } from "./PresetToggler"
 
 export type BodySlidePresetComponentProps = {
 	preset: BodySlidePreset
 	selectedItems: BodySlidePreset[]
-	onTogglePreset: (item: BodySlidePreset) => void
+	onTogglePreset?: (item: BodySlidePreset) => void
 	TogglerComponent: (props: PresetTogglerProps) => JSX.Element
 }
 
@@ -28,67 +27,50 @@ const BodySlidePresetComponent = ({
 	return (
 		<Card>
 			<Group>
-				<TogglerComponent
-					preset={preset}
-					selectedPresets={selectedItems}
-					onTogglePreset={onTogglePreset}
-				/>
+				{onTogglePreset && (
+					<TogglerComponent
+						preset={preset}
+						selectedPresets={selectedItems}
+						onTogglePreset={onTogglePreset}
+					/>
+				)}
+
 				<Text size="sm">{preset.name}</Text>
 			</Group>
-			<Group align="top">
-				<Box w="calc(50% - var(--group-gap) / 2">
-					{preset.gender === -1 && (
-						<Text size="xs" c="red">
-							Was not able to determine gender by morphs
-						</Text>
-					)}
-					{preset.gender !== -1 && (
-						<BodyView
-							bodyType={
-								preset.gender === 0 ? BodyType.maleBody : BodyType.femaleBody
-							}
-							squire
-							sliders={preset.sliders}
-						/>
-					)}
-				</Box>
-				<Box w="calc(50% - var(--group-gap) / 2">
-					<Spoiler
-						maxHeight={15}
-						showLabel={<Text size="xs">Show Groups</Text>}
-						hideLabel={<Text size="xs">Hide</Text>}
-					>
-						<Text size="xs" c="dimmed">
-							{groups}
-						</Text>
-					</Spoiler>
-					<Box>
-						<Collapsable
-							title={
-								<Group>
-									<Text>BodyGen</Text>
-									{!preset.valid && <Text c="red">with errors</Text>}
-								</Group>
-							}
-							titleProps={{
-								mt: "md",
-							}}
-							iconProps={{
-								color: !preset.valid ? "red" : undefined,
-								size: "sm",
-							}}
-						>
-							<List size="xs">
-								{preset.errors.map((error, index) => (
-									// biome-ignore lint/suspicious/noArrayIndexKey: index
-									<List.Item key={index}>{error}</List.Item>
-								))}
-							</List>
-							<Code block>{preset.bodyGen}</Code>
-						</Collapsable>
-					</Box>
-				</Box>
-			</Group>
+			<Spoiler
+				maxHeight={15}
+				showLabel={<Text size="xs">Show Groups</Text>}
+				hideLabel={<Text size="xs">Hide</Text>}
+			>
+				<Text size="xs" c="dimmed">
+					{groups}
+				</Text>
+			</Spoiler>
+			<Box>
+				<Collapsable
+					title={
+						<Group>
+							<Text>BodyGen</Text>
+							{!preset.valid && <Text c="red">with errors</Text>}
+						</Group>
+					}
+					titleProps={{
+						mt: "md",
+					}}
+					iconProps={{
+						color: !preset.valid ? "red" : undefined,
+						size: "sm",
+					}}
+				>
+					<List size="xs">
+						{preset.errors.map((error, index) => (
+							// biome-ignore lint/suspicious/noArrayIndexKey: index
+							<List.Item key={index}>{error}</List.Item>
+						))}
+					</List>
+					<Code block>{preset.bodyGen}</Code>
+				</Collapsable>
+			</Box>
 		</Card>
 	)
 }

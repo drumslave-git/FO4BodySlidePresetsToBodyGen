@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto"
 import fs from "node:fs"
 import path from "node:path"
 import type {
@@ -8,26 +7,19 @@ import type {
 } from "drizzle-orm"
 import { drizzle } from "drizzle-orm/better-sqlite3"
 import { migrate } from "drizzle-orm/better-sqlite3/migrator"
-import { and, eq } from "drizzle-orm/sql/expressions/conditions"
+import { eq } from "drizzle-orm/sql/expressions/conditions"
 import type { SQLiteTable } from "drizzle-orm/sqlite-core"
 import { app } from "electron"
 
 import log from "../logger"
-import {
-	type BodySlidePreset,
-	type BodySlidePresetParsed,
-	type Config,
-	ImportStatus,
-} from "../types"
+import type { Config } from "../types"
 import {
 	config,
 	type MultiRule,
 	multiRules,
-	type NewTemplate,
 	type Rule,
 	type SingleRule,
 	singleRules,
-	templates,
 } from "./schema"
 
 const dataFolder = path.resolve(
@@ -125,92 +117,6 @@ const commonDB = <
 			.run()
 	},
 })
-
-export const templatesDB = {
-	...commonDB(templates),
-	importedStatus: (preset: BodySlidePreset) => {
-		const hash = createHash("sha256")
-		hash.update(fs.readFileSync(preset.filePath).toString())
-		let importStatus: ImportStatus = ImportStatus.notImported
-		const contentHash = hash.digest("hex")
-		const sourceFileName = path.basename(preset.filePath)
-		let id = 0
-		const existing = db
-			.select()
-			.from(templates)
-			.where(eq(templates.sourceXMLContentHash, contentHash))
-			.get()
-		if (existing) {
-			importStatus = ImportStatus.imported
-			id = existing.id
-		} else {
-			const needsUpdate = db
-				.select()
-				.from(templates)
-				.where(
-					and(
-						eq(templates.name, preset.name),
-						eq(templates.source, sourceFileName),
-					),
-				)
-				.get()
-			if (needsUpdate) {
-				importStatus = ImportStatus.needsUpdate
-				id = needsUpdate.id
-			}
-		}
-		return { importStatus, id }
-	},
-	importedStatuses: (sources: BodySlidePresetParsed[]) => {
-		return sources
-			.filter((source) => typeof source.data !== "string")
-			.map((source) => {
-				return {
-					...source,
-					data: (source.data as BodySlidePreset[]).map((preset) => {
-						return {
-							...preset,
-							importStatus: templatesDB.importedStatus(preset).importStatus,
-						}
-					}),
-				}
-			})
-	},
-	import: async (
-		source: BodySlidePreset,
-	): Promise<{ status: string; id: number }> => {
-		const hash = createHash("sha256")
-		hash.update(fs.readFileSync(source.filePath).toString())
-		const contentHash = hash.digest("hex")
-		const sourceFileName = path.basename(source.filePath)
-		const template: NewTemplate = {
-			name: source.name,
-			source: sourceFileName,
-			bodyGen: source.bodyGen,
-			gender: source.gender,
-			sourceXMLContentHash: contentHash,
-		}
-		const { importStatus, id } = templatesDB.importedStatus(source)
-		if (importStatus === ImportStatus.imported) {
-			return { status: importStatus, id }
-		}
-		if (importStatus === ImportStatus.needsUpdate) {
-			const updated = await db
-				.update(templates)
-				.set(template)
-				.where(eq(templates.id, id))
-				.returning({
-					id: templates.id,
-				})
-			return { status: "updated", id: updated.at(0).id }
-		}
-		const result = await db.insert(templates).values(template).returning({
-			id: templates.id,
-		})
-
-		return { status: "created", id: result.at(0).id }
-	},
-}
 
 export const singleRulesDB = commonDB(singleRules)
 

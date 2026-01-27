@@ -9,7 +9,7 @@ import PresetToggler, { type PresetTogglerProps } from "./PresetToggler"
 export type BodySlidePresetParsedComponentProps = {
 	item: BodySlidePresetParsed
 	selectedItems: BodySlidePreset[]
-	onTogglePreset: (item: BodySlidePreset) => void
+	onTogglePreset?: (item: BodySlidePreset) => void
 	ItemComponent?: (props: BodySlidePresetComponentProps) => JSX.Element
 	TogglerComponent?: (props: PresetTogglerProps) => JSX.Element
 }

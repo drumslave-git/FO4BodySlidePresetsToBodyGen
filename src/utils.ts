@@ -46,33 +46,6 @@ export const validateTemplates = (content: string) => {
 	}
 }
 
-export const resolveBodyFiles = (dataFolder: string) => {
-	const defaultString =
-		"not found, make sure you have the custom body installed"
-	const results: BodyFiles = {
-		[BodyType.maleBody]: {
-			nif: defaultString,
-			tri: defaultString,
-		},
-		[BodyType.femaleBody]: {
-			nif: defaultString,
-			tri: defaultString,
-		},
-	}
-	const dir = path.resolve(dataFolder, ...MESHES_CHARACTER_ASSETS_RELATIVE_PATH)
-	for (const body of Object.values(BodyType)) {
-		const nifPath = path.resolve(dir, `${body}.nif`)
-		if (fs.existsSync(nifPath)) {
-			results[body].nif = nifPath
-		}
-		const triPath = path.resolve(dir, `${body}.tri`)
-		if (fs.existsSync(triPath)) {
-			results[body].tri = triPath
-		}
-	}
-	return results
-}
-
 export const resolveESMs = (dataFolder: string): ESM[] => {
 	const overridesPath = path.resolve(dataFolder, ...BODYGEN_RELATIVE_PATH)
 	return fs

@@ -1,8 +1,7 @@
 import { contextBridge, ipcRenderer } from "electron/renderer"
-import type { multiRulesDB, rulesDB, singleRulesDB, templatesDB } from "./db"
+import type { multiRulesDB, rulesDB, singleRulesDB } from "./db"
 
 import type {
-	BodyFiles,
 	BodySlidePresetParsed,
 	Config,
 	ESM,
@@ -26,8 +25,6 @@ contextBridge.exposeInMainWorld("electronAPI", {
 		ipcRenderer.invoke("ESM:validate", from, content),
 	resolveBodySlidePresets: (from: string): Promise<BodySlidePresetParsed[]> =>
 		ipcRenderer.invoke("resolveBodySlidePresets", from),
-	resolveBodyFiles: (from: string): Promise<BodyFiles> =>
-		ipcRenderer.invoke("resolveBodyFiles", from),
 	validateTemplates: (content: string): Promise<string> =>
 		ipcRenderer.invoke("templates:validate", content),
 	parseTemplates: (content: string): Promise<ParsedTemplates> =>
@@ -40,14 +37,8 @@ contextBridge.exposeInMainWorld("electronAPI", {
 	): Promise<{ count: number; outDir: string }> =>
 		ipcRenderer.invoke("write", from, content),
 	zipOutput: (): Promise<string> => ipcRenderer.invoke("zipOutput"),
-	loadNIF: (nifPath: string): Promise<string> =>
-		ipcRenderer.invoke("nif:load", nifPath),
-	loadTRI: (triPath: string): Promise<TriBodySlide> =>
-		ipcRenderer.invoke("tri:load", triPath),
 	navigate: (page: string) => ipcRenderer.send("navigate", page),
 	openExternalUrl: (url: string) => ipcRenderer.send("openExternal", url),
-	templatesDB: (action: keyof typeof templatesDB, ...args: any[]) =>
-		ipcRenderer.invoke("templatesDB", action, ...args),
 	singleRulesDB: (action: keyof typeof singleRulesDB, ...args: any[]) =>
 		ipcRenderer.invoke("singleRulesDB", action, ...args),
 	multiRulesDB: (action: keyof typeof multiRulesDB, ...args: any[]) =>

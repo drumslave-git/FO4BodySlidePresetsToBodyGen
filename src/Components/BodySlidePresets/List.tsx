@@ -1,28 +1,16 @@
 import {
 	Box,
 	Button,
-	CloseButton,
 	Divider,
 	Group,
-	Input,
 	MultiSelect,
 	SimpleGrid,
-	Stack,
 } from "@mantine/core"
-import { IconSearch } from "@tabler/icons-react"
-import {
-	type ChangeEvent,
-	Component,
-	type JSX,
-	ReactNode,
-	useCallback,
-	useEffect,
-	useState,
-} from "react"
+import { type JSX, useCallback, useEffect, useState } from "react"
 
 import type { BodySlidePreset, BodySlidePresetParsed } from "../../types"
-import ViewHost from "../3D/ViewHost"
 import SearchInput from "../common/SearchInput"
+import { useData } from "../DataProvider"
 import BodySlidePresetComponent, {
 	type BodySlidePresetComponentProps,
 } from "./BodySlidePresetComponent"
@@ -124,7 +112,6 @@ const filterItems = (items: BodySlidePresetParsed[], value: FilterValue) => {
 }
 
 const List = ({
-	items,
 	onSubmit,
 	onCancel,
 	selectedPresets,
@@ -132,14 +119,14 @@ const List = ({
 	ItemComponent = BodySlidePresetComponent,
 	TogglerComponent = PresetToggler,
 }: {
-	items: BodySlidePresetParsed[]
-	onSubmit: (selected: BodySlidePreset[]) => void
+	onSubmit?: (selected: BodySlidePreset[]) => void
 	onCancel?: () => void
 	selectedPresets?: BodySlidePreset[]
 	ItemsComponent?: (props: BodySlidePresetParsedComponentProps) => JSX.Element
 	ItemComponent?: (props: BodySlidePresetComponentProps) => JSX.Element
 	TogglerComponent?: (props: PresetTogglerProps) => JSX.Element
 }) => {
+	const { bodySlidePresetsParsed: items } = useData()
 	const [selectedItems, setSelectedItems] = useState<BodySlidePreset[]>([])
 	const [filteredItems, setFilteredItems] =
 		useState<BodySlidePresetParsed[]>(items)
@@ -200,43 +187,47 @@ const List = ({
 	return (
 		<>
 			<Filter items={items} onFilter={onFilter} />
-			<Group>
-				<Button onClick={selectAll} size="compact-xs">
-					Select All
-				</Button>
-				<Button onClick={selectNone} size="compact-xs">
-					Select None
-				</Button>
-			</Group>
+			{onSubmit && (
+				<Group>
+					<Button onClick={selectAll} size="compact-xs">
+						Select All
+					</Button>
+					<Button onClick={selectNone} size="compact-xs">
+						Select None
+					</Button>
+				</Group>
+			)}
 			<SimpleGrid cols={{ base: 1, lg: 2 }}>
 				{filteredItems.map((item) => (
 					<ItemsComponent
 						key={item.filename}
 						item={item}
 						selectedItems={selectedItems}
-						onTogglePreset={onTogglePreset}
+						onTogglePreset={onSubmit ? onTogglePreset : undefined}
 						ItemComponent={ItemComponent}
 						TogglerComponent={TogglerComponent}
 					/>
 				))}
 			</SimpleGrid>
-			<Box
-				pos="sticky"
-				bottom={0}
-				bg="var(--mantine-color-body)"
-				py="md"
-				style={{ zIndex: 2 }}
-			>
-				<Divider mb="md" />
-				<Group>
-					<Button onClick={onSubmitSelected}>OK</Button>
-					{onCancel && (
-						<Button variant="outline" onClick={onCancel}>
-							Cancel
-						</Button>
-					)}
-				</Group>
-			</Box>
+			{onSubmit && (
+				<Box
+					pos="sticky"
+					bottom={0}
+					bg="var(--mantine-color-body)"
+					py="md"
+					style={{ zIndex: 2 }}
+				>
+					<Divider mb="md" />
+					<Group>
+						<Button onClick={onSubmitSelected}>OK</Button>
+						{onCancel && (
+							<Button variant="outline" onClick={onCancel}>
+								Cancel
+							</Button>
+						)}
+					</Group>
+				</Box>
+			)}
 		</>
 	)
 }

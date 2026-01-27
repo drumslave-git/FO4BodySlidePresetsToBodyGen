@@ -9,7 +9,6 @@
 		"package": "electron-forge package",
 		"make": "electron-forge make",
 		"publish": "electron-forge publish",
-		"dotnet:build": "dotnet publish src/NIF/dotnet/NifImporter/NifImporter.sln",
 		"biome:lint": "biome lint",
 		"biome:lint:fix": "biome lint --write",
 		"biome:check": "biome check",

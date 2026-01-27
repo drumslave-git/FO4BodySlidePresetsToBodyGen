@@ -3,9 +3,8 @@ import { useMediaQuery } from "@mantine/hooks"
 import {
 	IconBrandGithub,
 	IconCircuitChangeover,
-	IconFileImport,
 	IconList,
-	IconMan,
+	type IconMan,
 	IconPlaylistAdd,
 	IconSettings,
 } from "@tabler/icons-react"
@@ -29,6 +28,12 @@ type NavItem = {
 const Nav: NavItem[] = [
 	{ label: "Converter", href: "/", Icon: IconCircuitChangeover, children: [] },
 	{
+		label: "Presets",
+		href: "/presets",
+		Icon: IconCircuitChangeover,
+		children: [],
+	},
+	{
 		label: "Rules",
 		href: "#/rules",
 		Icon: IconCircuitChangeover,
@@ -38,26 +43,6 @@ const Nav: NavItem[] = [
 				label: "New",
 				href: "/rules/new",
 				Icon: IconPlaylistAdd,
-				children: [],
-			},
-		],
-	},
-	{
-		label: "Templates",
-		href: "#/templates",
-		Icon: IconMan,
-		children: [
-			{ label: "List", href: "/templates/list", Icon: IconList, children: [] },
-			{
-				label: "New",
-				href: "/templates/new",
-				Icon: IconPlaylistAdd,
-				children: [],
-			},
-			{
-				label: "Import",
-				href: "/templates/import",
-				Icon: IconFileImport,
 				children: [],
 			},
 		],
@@ -153,9 +138,17 @@ const Navigation = ({
 const Sidebar = () => {
 	const navigate = useNavigate()
 	const location = useLocation()
-	const { lastActiveLocation } = useConfig()
+	const { lastActiveLocation, dataFolder, outputFolder } = useConfig()
 	const isSmall = useMediaQuery(`(max-width: ${em(750)})`)
 	const [activeTab, setActiveTab] = useState(lastActiveLocation || "/")
+
+	const noSettings = !dataFolder || !outputFolder
+
+	useEffect(() => {
+		if (noSettings) {
+			navigate("/settings")
+		}
+	}, [noSettings, navigate])
 
 	useEffect(() => {
 		// @ts-expect-error

@@ -8,18 +8,6 @@ export const config = table("config", {
 	value: t.text(),
 })
 
-export const templates = table("templates", {
-	id: t.integer("id").primaryKey({ autoIncrement: true }),
-	name: t.text(),
-	source: t.text(),
-	bodyGen: t.text(),
-	gender: t.integer(),
-	sourceXMLContentHash: t.text(),
-})
-
-export type Template = InferSelectModel<typeof templates>
-export type NewTemplate = InferInsertModel<typeof templates>
-
 export const singleRules = table("singleRules", {
 	id: t.integer("id").primaryKey({ autoIncrement: true }),
 	name: t.text(),

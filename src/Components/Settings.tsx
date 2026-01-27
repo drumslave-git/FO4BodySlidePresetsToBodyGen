@@ -1,16 +1,11 @@
 import { Button, Group, Paper, Text } from "@mantine/core"
 import { type MouseEvent, useCallback, useEffect, useState } from "react"
 
-import { BodyType } from "../types"
-import BodyView from "./3D/BodyView"
-
 import { useConfig } from "./ConfigProvider"
-import { useData } from "./DataProvider"
 import { useOverlay } from "./OverlayProvider"
 
 const Settings = () => {
 	const { dataFolder, outputFolder, loadConfig } = useConfig()
-	const { bodyFiles } = useData()
 	const { setIsLoading } = useOverlay()
 	const [isPicking, setIsPicking] = useState<boolean>(false)
 
@@ -37,50 +32,28 @@ const Settings = () => {
 	)
 
 	return (
-		<>
-			<Paper p="md" shadow="xs" withBorder>
-				<Group>
-					<Text>{dataFolder}</Text>
-					<Button
-						disabled={isPicking}
-						data-folder="dataFolder"
-						onClick={onPathSelection}
-					>
-						Select Data Folder
-					</Button>
-				</Group>
-				<Group mt="md">
-					<Text>{outputFolder}</Text>
-					<Button
-						disabled={isPicking}
-						data-folder="outputFolder"
-						onClick={onPathSelection}
-					>
-						Select Output Folder
-					</Button>
-				</Group>
-			</Paper>
-			<Group mt="md">
-				<Paper
-					p="md"
-					shadow="xs"
-					withBorder
-					w="calc(50% - var(--group-gap) / 2"
+		<Paper p="md" shadow="xs" withBorder>
+			<Group>
+				<Text>{dataFolder}</Text>
+				<Button
+					disabled={isPicking}
+					data-folder="dataFolder"
+					onClick={onPathSelection}
 				>
-					<Text>Male Body</Text>
-					<BodyView bodyType={BodyType.maleBody} squire />
-				</Paper>
-				<Paper
-					p="md"
-					shadow="xs"
-					withBorder
-					w="calc(50% - var(--group-gap) / 2"
-				>
-					<Text>Female Body</Text>
-					<BodyView bodyType={BodyType.femaleBody} squire />
-				</Paper>
+					Select Data Folder
+				</Button>
 			</Group>
-		</>
+			<Group mt="md">
+				<Text>{outputFolder}</Text>
+				<Button
+					disabled={isPicking}
+					data-folder="outputFolder"
+					onClick={onPathSelection}
+				>
+					Select Output Folder
+				</Button>
+			</Group>
+		</Paper>
 	)
 }
 

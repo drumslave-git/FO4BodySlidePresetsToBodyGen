@@ -6,16 +6,13 @@ import {
 	useEffect,
 	useState,
 } from "react"
-import {
-	type Bodies,
-	type BodyFiles,
-	type BodySlidePresetParsed,
-	BodyType,
-	type CategorizedSlider,
-	type ESM,
-	type NPCFormIdData,
-	type RaceFormIdData,
-	type Slider,
+import type {
+	BodySlidePresetParsed,
+	CategorizedSlider,
+	ESM,
+	NPCFormIdData,
+	RaceFormIdData,
+	Slider,
 } from "../types"
 import { useConfig } from "./ConfigProvider"
 import { useOverlay } from "./OverlayProvider"
@@ -24,8 +21,6 @@ import { useSharedState } from "./SharedStateProvider"
 type DataContextValue = {
 	ESMs: ESM[]
 	bodySlidePresetsParsed: BodySlidePresetParsed[]
-	bodyFiles: BodyFiles
-	bodies: Bodies
 	validateESMs: () => void
 	defaultTemplates: string
 	sliders: {
@@ -40,35 +35,11 @@ type DataContextValue = {
 	races: RaceFormIdData[]
 }
 
-const defaultBodyFiles: BodyFiles = {
-	[BodyType.maleBody]: {
-		nif: "",
-		tri: "",
-	},
-	[BodyType.femaleBody]: {
-		nif: "",
-		tri: "",
-	},
-}
-
-const defaultBodies: Bodies = {
-	[BodyType.maleBody]: {
-		nif: null,
-		tri: null,
-	},
-	[BodyType.femaleBody]: {
-		nif: null,
-		tri: null,
-	},
-}
-
 const DataContext = createContext<DataContextValue>({
 	ESMs: [],
 	bodySlidePresetsParsed: [],
 	validateESMs: () => {},
 	defaultTemplates: "",
-	bodyFiles: defaultBodyFiles,
-	bodies: defaultBodies,
 	sliders: { 0: [], 1: [] },
 	categorizedSliders: { 0: {}, 1: {} },
 	NPCs: [],
@@ -81,8 +52,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const { setIsLoading } = useOverlay()
 	const [defaultTemplates, setDefaultTemplates] = useState("")
 	const [ESMs, setESMs] = useState<ESM[]>([])
-	const [bodyFiles, setBodyFiles] = useState<BodyFiles>(defaultBodyFiles)
-	const [bodies, setBodies] = useState<Bodies>(defaultBodies)
 	const [bodySlidePresetsParsed, setBodySlidePresetsParsed] = useState<
 		BodySlidePresetParsed[]
 	>([])
@@ -101,7 +70,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		if (!dataFolder) {
 			setESMs((prev) => (prev.length ? [] : prev))
 			setBodySlidePresetsParsed((prev) => (prev.length ? [] : prev))
-			setBodyFiles(defaultBodyFiles)
 			setDefaultTemplates("")
 			setSliders({
 				0: [],
@@ -119,10 +87,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 			setDefaultTemplates(
 				// @ts-expect-error
 				await window.electronAPI.readDefaultTemplates(),
-			)
-			setBodyFiles(
-				// @ts-expect-error
-				await window.electronAPI.resolveBodyFiles(dataFolder),
 			)
 			setSliders(
 				// @ts-expect-error
@@ -161,40 +125,11 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 		validateESMs()
 	}, [validateESMs])
 
-	useEffect(() => {
-		const loadBodies = async () => {
-			setIsLoading("Loading body models...")
-			const bodiesData: Bodies = {
-				...defaultBodies,
-			}
-			for (const type of Object.values(BodyType)) {
-				if (!bodyFiles[type].nif || !bodyFiles[type].tri) {
-					continue
-				}
-				// @ts-expect-error
-				bodiesData[type].nif = await window.electronAPI.loadNIF(
-					bodyFiles[type].nif,
-				)
-				console.info(`Loaded NIF for ${type}`, bodiesData[type].nif)
-				// @ts-expect-error
-				bodiesData[type].tri = await window.electronAPI.loadTRI(
-					bodyFiles[type].tri,
-				)
-				console.info(`Loaded TRI for ${type}`, bodiesData[type].tri)
-			}
-			setBodies(bodiesData)
-			setIsLoading(false)
-		}
-		void loadBodies()
-	}, [bodyFiles, setIsLoading])
-
 	return (
 		<DataContext.Provider
 			value={{
 				ESMs,
 				bodySlidePresetsParsed,
-				bodyFiles,
-				bodies,
 				validateESMs,
 				defaultTemplates,
 				sliders,

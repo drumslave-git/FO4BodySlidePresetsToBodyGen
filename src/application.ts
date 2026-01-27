@@ -18,17 +18,13 @@ import {
 	readConfig,
 	rulesDB,
 	singleRulesDB,
-	templatesDB,
 	writeConfig,
 } from "./db"
 // @ts-expect-error
 import icon from "./images/icon.png"
-import readNif from "./NIF/nifImporter"
-import { readTriFromFile } from "./TRI/triReader"
 import {
 	formatINIs,
 	parseTemplates,
-	resolveBodyFiles,
 	resolveBodySlidePresets,
 	resolveCategorisedSliders,
 	resolveESMs,
@@ -198,9 +194,7 @@ app.whenReady().then(() => {
 	ipcMain.handle("resolveBodySlidePresets", (_events, from: string) =>
 		resolveBodySlidePresets(from),
 	)
-	ipcMain.handle("resolveBodyFiles", (_events, from: string) =>
-		resolveBodyFiles(from),
-	)
+
 	ipcMain.handle("resolveNPCs", () =>
 		resolveNPCsFormIDs(
 			path.resolve(
@@ -221,14 +215,7 @@ app.whenReady().then(() => {
 			),
 		),
 	)
-	ipcMain.handle("nif:load", async (_event, nifPath: string) => {
-		const data = await readNif(nifPath)
-		// @ts-expect-error
-		return data?.meshes?.at(0) || null
-	})
-	ipcMain.handle("tri:load", async (_event, triPath: string) => {
-		return readTriFromFile(triPath)
-	})
+
 	ipcMain.handle("zipOutput", async () => {
 		const config = readConfig()
 		if (config.outputFolder === config.dataFolder) {
@@ -241,13 +228,6 @@ app.whenReady().then(() => {
 		return path.resolve(config.outputFolder, "BodyGen.zip")
 	})
 
-	ipcMain.handle(
-		"templatesDB",
-		(_event, action: keyof typeof templatesDB, ...rest: any[]) => {
-			// @ts-expect-error
-			return templatesDB[action](...rest)
-		},
-	)
 	ipcMain.handle(
 		"singleRulesDB",
 		(_event, action: keyof typeof singleRulesDB, ...rest: any[]) => {
