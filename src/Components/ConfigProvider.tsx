@@ -21,19 +21,32 @@ const ConfigContext = createContext<ConfigContextValue>({
 export const ConfigProvider = ({ children }: { children: ReactNode }) => {
 	const [config, setConfig] = useState<Config>({})
 	const { setIsLoading } = useOverlay()
+	const [loaded, setLoaded] = useState(false)
 
 	const loadConfig = useCallback(async () => {
 		setIsLoading("Loading configuration...")
 		// @ts-expect-error
-		window.electronAPI.readConfig().then((config: Config) => {
-			setConfig(config)
-			setIsLoading(false)
-		})
+		window.electronAPI
+			.readConfig()
+			.then((config: Config) => {
+				setConfig(config)
+				setIsLoading(false)
+				setLoaded(true)
+			})
+			.catch((error: unknown) => {
+				console.error("Error loading config:", error)
+				setIsLoading(false)
+				setLoaded(true)
+			})
 	}, [setIsLoading])
 
 	useEffect(() => {
 		void loadConfig()
 	}, [loadConfig])
+
+	if (!loaded) {
+		return null
+	}
 
 	return (
 		<ConfigContext.Provider
