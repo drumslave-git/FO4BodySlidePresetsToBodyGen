@@ -60,14 +60,14 @@ const SingleRuleFormFields = ({
 				label="Plugin"
 				placeholder="Plugin"
 				data={ESMs.map((e) => e.name)}
-				value={item.plugin}
-				onChange={(v: string) => onFieldChange("plugin", v)}
+				value={item.plugin ?? ""}
+				onChange={(v) => onFieldChange("plugin", v ?? "")}
 				required
 				searchable
 			/>
 			<Input.Wrapper label="FormID" required>
 				<Input
-					value={item.formId}
+					value={item.formId ?? ""}
 					onChange={(e: ChangeEvent<HTMLInputElement>) =>
 						onFieldChange("formId", e.target.value)
 					}
@@ -126,13 +126,13 @@ const MultiRuleFormFields = ({
 				label="Gender"
 				placeholder="Gender"
 				data={["Male", "Female"]}
-				onChange={(v: string) => onFieldChange("gender", v)}
-				value={item.gender}
+				onChange={(v) => onFieldChange("gender", v ?? "")}
+				value={item.gender ?? ""}
 				required
 			/>
 			<Input.Wrapper label="Race" required>
 				<Input
-					value={item.race}
+					value={item.race ?? ""}
 					onChange={(e: ChangeEvent<HTMLInputElement>) =>
 						onFieldChange("race", e.target.value)
 					}
@@ -153,7 +153,7 @@ const MultiRuleFormFields = ({
 
 const RulesForm = () => {
 	const { id } = useParams()
-	const [ruleType, setRuleType] = useState(undefined)
+	const [ruleType, setRuleType] = useState<"single" | "multi" | null>(null)
 
 	useEffect(() => {
 		if (!id) {
@@ -161,13 +161,18 @@ const RulesForm = () => {
 			return
 		}
 		// @ts-expect-error
-		window.electronAPI.rulesDB("type", id).then(setRuleType)
+		window.electronAPI.rulesDB("type", id).then((type) => {
+			setRuleType(type ?? "single")
+		})
 	}, [id])
 
-	if (ruleType === undefined) return <Text>Loading...</Text>
+	if (ruleType === null) return <Text>Loading...</Text>
 
 	return (
-		<Tabs value={ruleType} onChange={setRuleType}>
+		<Tabs
+			value={ruleType}
+			onChange={(value) => setRuleType(value as "single" | "multi" | null)}
+		>
 			<Tabs.List mb="md">
 				<Tabs.Tab value="single">Single NFC Rule</Tabs.Tab>
 				<Tabs.Tab value="multi">Multi NPC Rule</Tabs.Tab>

@@ -11,8 +11,8 @@ import { useNavigate, useParams } from "react-router"
 import type { BaseItem } from "../../types"
 import { useOverlay } from "../OverlayProvider"
 
-export type FieldsComponentProps = {
-	item: BaseItem
+export type FieldsComponentProps<TItem extends BaseItem = BaseItem> = {
+	item: TItem
 	onFieldChange: (key: string, value: any) => void
 }
 
@@ -21,7 +21,7 @@ const defaultItem: BaseItem = {
 	name: "",
 }
 
-const Form = ({
+const Form = <TItem extends BaseItem>({
 	db,
 	rootUri,
 	defaultValues,
@@ -29,23 +29,20 @@ const Form = ({
 }: {
 	db: string
 	rootUri: string
-	defaultValues: Record<string, any>
-	FieldsComponent: FunctionComponent<FieldsComponentProps>
+	defaultValues: TItem
+	FieldsComponent: FunctionComponent<FieldsComponentProps<TItem>>
 }) => {
 	const { id } = useParams()
 	const navigate = useNavigate()
 	const { setIsLoading, showNotification } = useOverlay()
-	const [item, setItem] = useState<BaseItem>({
+	const [item, setItem] = useState<TItem>({
 		...defaultItem,
 		...defaultValues,
-	})
+	} as TItem)
 
 	useEffect(() => {
 		if (!id) {
-			setItem({
-				...defaultItem,
-				...defaultValues,
-			})
+			setItem({ ...defaultItem, ...defaultValues } as TItem)
 		} else {
 			setIsLoading("Loading item...")
 			// @ts-expect-error
@@ -79,7 +76,7 @@ const Form = ({
 		setIsLoading(false)
 		showNotification({
 			title: "Item saved",
-			text: `Item "${item.name}" has been saved successfully.`,
+			text: `Item "${item.name ?? ""}" has been saved successfully.`,
 			color: "green",
 		})
 	}, [db, id, setIsLoading, showNotification, item])
@@ -94,7 +91,7 @@ const Form = ({
 			}}
 		>
 			<Group>
-				<Text>{id ? `Edit: ${item.name}` : "Create New"}</Text>
+				<Text>{id ? `Edit: ${item.name ?? ""}` : "Create New"}</Text>
 				<Button onClick={onSave}>Save</Button>
 				{id && (
 					<Button color="red" data-id={item.id} onClick={onDelete}>
@@ -108,7 +105,7 @@ const Form = ({
 			<Input.Wrapper label="Name" required>
 				<Input
 					autoFocus
-					value={item.name}
+					value={item.name ?? ""}
 					placeholder="Name"
 					onChange={(e: ChangeEvent<HTMLInputElement>) =>
 						onFieldChange("name", e.target.value)

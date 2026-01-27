@@ -23,7 +23,7 @@ import {
 	useRef,
 	useState,
 } from "react"
-import { MultiRule, type Rule, SingleRule } from "../../db/schema"
+import { type Rule } from "../../db/schema"
 import type {
 	BodySlidePreset,
 	BodySlidePresetParsed,
@@ -51,9 +51,9 @@ const parseTemplateRaw = async (
 				.split(";")
 				.map((rule) => rule.trim())
 				.filter(Boolean),
-			presets: templates
-				.map(({ name, value: bodyGen }: { name: string; value: string }) => {
-					let preset: BodySlidePreset
+				presets: templates
+					.map(({ name, value: bodyGen }: { name: string; value: string }) => {
+					let preset: BodySlidePreset | undefined
 					for (const item of bodySlidePresetsParsed) {
 						if (typeof item.data === "string") continue
 						preset = item.data.find(
@@ -63,7 +63,7 @@ const parseTemplateRaw = async (
 					}
 					return preset
 				})
-				.filter(Boolean),
+				.filter((preset): preset is BodySlidePreset => !!preset),
 		})
 		return acc
 	}, [])
@@ -100,7 +100,7 @@ const Morphs = ({
 					updatedMorphs[morphIndex].rules = updatedMorphs[
 						morphIndex
 					].rules.filter((_, i) => i !== ruleIndex)
-				} else {
+				} else if (value !== undefined) {
 					updatedMorphs[morphIndex].rules[ruleIndex] = value
 				}
 				return updatedMorphs
@@ -179,13 +179,15 @@ const Morphs = ({
 									<Select
 										data={rules.map((r) => ({
 											value: r.formatted,
-											label: r.name,
+											label: r.name ?? "(unnamed)",
 											disabled: selectedRules.includes(r.formatted),
 										}))}
-										value={rule}
-										onChange={(v: string) => onRuleChange(index, ruleIndex, v)}
+										value={rule ?? ""}
+										onChange={(v) =>
+											onRuleChange(index, ruleIndex, v ?? undefined)
+										}
 										searchable
-										label={rule}
+										label={rule ?? ""}
 									/>
 									<ActionIcon
 										onClick={() => onRuleChange(index, ruleIndex, undefined)}

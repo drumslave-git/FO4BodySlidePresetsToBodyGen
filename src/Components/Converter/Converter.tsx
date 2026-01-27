@@ -67,7 +67,7 @@ const Converter = () => {
 	)
 
 	const onWrite = useCallback(async () => {
-		if (!readyToWrite) return
+		if (!readyToWrite || !dataFolder) return
 		setLoading(true)
 		try {
 			// @ts-expect-error
@@ -83,19 +83,20 @@ const Converter = () => {
 			setTemplatesRaw("")
 			validateESMs()
 		} catch (error) {
+			const message = error instanceof Error ? error.message : String(error)
 			console.error("Error while writing:", error)
 			setNotification({
 				color: "red",
 				title: "Error",
-				text: `An error occurred while writing to the ESMs: ${error.message}}`,
+				text: `An error occurred while writing to the ESMs: ${message}`,
 			})
 		} finally {
 			setLoading(false)
 		}
-	}, [readyToWrite, templatesContent])
+	}, [readyToWrite, templatesContent, dataFolder, validateESMs, setTemplatesRaw])
 
 	const onZip = useCallback(async () => {
-		if (outputFolder === dataFolder) return
+		if (!outputFolder || outputFolder === dataFolder) return
 		setLoading(true)
 		try {
 			// @ts-expect-error
@@ -106,16 +107,17 @@ const Converter = () => {
 				text: `Successfully zipped the output: ${result}`,
 			})
 		} catch (error) {
+			const message = error instanceof Error ? error.message : String(error)
 			console.error("Error while zipping:", error)
 			setNotification({
 				color: "red",
 				title: "Error",
-				text: `An error occurred while zipping the output: ${error.message}}`,
+				text: `An error occurred while zipping the output: ${message}`,
 			})
 		} finally {
 			setLoading(false)
 		}
-	}, [])
+	}, [outputFolder, dataFolder])
 
 	return (
 		<>
@@ -132,7 +134,11 @@ const Converter = () => {
 					items={bodySlidePresetsParsed}
 					onSubmit={onBodySlidePresetsSubmit}
 					onCancel={bodySlidePresetsModalClose}
-					selectedPresets={morphs[editedMorphIndex]?.presets}
+					selectedPresets={
+						editedMorphIndex === null
+							? undefined
+							: morphs[editedMorphIndex]?.presets
+					}
 				/>
 			</Modal>
 			{notification && (

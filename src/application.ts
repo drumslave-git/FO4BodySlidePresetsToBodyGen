@@ -140,10 +140,12 @@ app.whenReady().then(() => {
 	ipcMain.handle("readConfig", readConfig)
 	ipcMain.handle("resolveSliders", () => {
 		const config = readConfig()
+		if (!config.dataFolder) return { 0: [], 1: [] }
 		return resolveSliders(config.dataFolder)
 	})
 	ipcMain.handle("resolveCategorisedSliders", () => {
 		const config = readConfig()
+		if (!config.dataFolder) return { 0: {}, 1: {} }
 		return resolveCategorisedSliders(config.dataFolder)
 	})
 	ipcMain.handle("templates:load", (_event, from: string) =>
@@ -153,8 +155,10 @@ app.whenReady().then(() => {
 		parseTemplates(content),
 	)
 	ipcMain.handle("templates:readDefault", () => {
+		const dataFolder = readConfig().dataFolder
+		if (!dataFolder) return ""
 		const defaultTemplatesPath = path.resolve(
-			readConfig().dataFolder,
+			dataFolder,
 			...BODYGEN_RELATIVE_PATH,
 			"Fallout4.esm",
 			"templates.ini",
@@ -169,12 +173,14 @@ app.whenReady().then(() => {
 			validateTemplates(content)
 			return ""
 		} catch (error) {
-			return error.message
+			return error instanceof Error ? error.message : String(error)
 		}
 	})
 	ipcMain.handle("format", (_event, content: string) => formatINIs(content))
 	ipcMain.handle("write", (_event, from: string, content: string) => {
 		const config = readConfig()
+		if (!config.dataFolder) return "Data folder not set."
+		if (!config.outputFolder) return "Output folder not set."
 		let outputFolder = config.outputFolder
 		if (outputFolder !== config.dataFolder) {
 			outputFolder = path.resolve(
@@ -218,6 +224,7 @@ app.whenReady().then(() => {
 
 	ipcMain.handle("zipOutput", async () => {
 		const config = readConfig()
+		if (!config.outputFolder) return "Output folder not set."
 		if (config.outputFolder === config.dataFolder) {
 			return "No need to zip, output folder is the same as data folder."
 		}

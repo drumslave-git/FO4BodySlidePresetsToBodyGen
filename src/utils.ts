@@ -140,11 +140,11 @@ export const formatINIs = (content: string): FormattedData => {
 	const structuredData = parseTemplates(content)
 
 	const templatesContent = Object.entries(structuredData)
-		.reduce((acc, [morphs, templates]) => {
+		.reduce((acc: string[], [morphs, templates]) => {
 			acc.push(`#morphs=${morphs}`)
 			acc.push(
 				templates
-					.reduce((templateAcc, { name, value }) => {
+					.reduce((templateAcc: string[], { name, value }) => {
 						templateAcc.push(`${name}=${value}`)
 						return templateAcc
 					}, [])
@@ -155,7 +155,7 @@ export const formatINIs = (content: string): FormattedData => {
 		.join("\n\n\n")
 
 	const morphsContent = Object.entries(structuredData)
-		.reduce((acc, [morphs, templates]) => {
+		.reduce((acc: string[], [morphs, templates]) => {
 			for (const morph of morphs.split(";")) {
 				const names = templates.map((template) => template.name).join("|")
 				acc.push(`${morph}=${names}`)
@@ -392,7 +392,7 @@ export const resolveBodySlidePresets = (
 					item.errors = errors
 					item.valid = item.errors.length === 0
 					item.bodyGen = cleanedSliders
-						.reduce((acc, slider) => {
+						.reduce((acc: string[], slider) => {
 							acc.push(`${slider.name}@${slider.value}`)
 							return acc
 						}, [])
@@ -404,9 +404,10 @@ export const resolveBodySlidePresets = (
 					data,
 				}
 			} catch (error) {
+				const message = error instanceof Error ? error.message : String(error)
 				return {
 					filename: item,
-					data: error.message,
+					data: message,
 				}
 			}
 		})
@@ -416,20 +417,20 @@ export const zipFolder = async (source: string, destination: string) => {
 	await zip(source, destination)
 }
 
-const resolveFormIDs = (
+const resolveFormIDs = <T extends Record<string, string>>(
 	from: string,
 	columns: string[],
-	filterFN: (item: Record<string, string>) => boolean,
-) => {
+	filterFN: (item: T) => boolean,
+): T[] => {
 	if (!fs.existsSync(from)) return []
 	return fs
 		.readdirSync(from)
 		.filter((item) => item.endsWith(".csv"))
-		.reduce((acc: Record<string, string>[], file) => {
+		.reduce((acc: T[], file) => {
 			const content = fs.readFileSync(path.resolve(from, file)).toString()
 			const lines = content.split(/\r?\n/)
 			const items = lines
-				.reduce((acc2: Record<string, string>[], line) => {
+				.reduce((acc2: T[], line) => {
 					const values = line.split(";").map((part) => part.trim())
 					const item = columns.reduce(
 						(obj: Record<string, string>, col, index) => {
@@ -438,7 +439,7 @@ const resolveFormIDs = (
 						},
 						{},
 					)
-					acc2.push(item)
+					acc2.push(item as T)
 					return acc2
 				}, [])
 				.filter(filterFN)
@@ -452,7 +453,7 @@ export const resolveNPCsFormIDs = (from: string) => {
 		from,
 		["plugin", "formId", "signature", "editorID", "name"],
 		(item: NPCFormIdData) => item.signature === "NPC_" && !!item.name,
-	) as NPCFormIdData[]
+	)
 }
 
 export const resolveRacesFormIDs = (from: string) => {
@@ -460,5 +461,5 @@ export const resolveRacesFormIDs = (from: string) => {
 		from,
 		["plugin", "formId", "editorID", "name"],
 		(item: RaceFormIdData) => !!item.name && !!item.editorID,
-	) as RaceFormIdData[]
+	)
 }

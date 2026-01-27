@@ -48,7 +48,7 @@ export const SharedStateProvider = ({ children }: { children: ReactNode }) => {
 			return
 		}
 		const templates = morphs
-			.reduce((acc, morph) => {
+			.reduce((acc: string[], morph) => {
 				acc.push(`#morphs=${morph.rules.join(";")}`)
 				acc.push(
 					morph.presets

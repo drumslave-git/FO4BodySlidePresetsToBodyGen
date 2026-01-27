@@ -15,15 +15,15 @@ export type FilterComponentProps = {
 	onChange: (values: Record<string, any>) => void
 }
 
-const Filters = ({
+const Filters = <T extends BaseItem>({
 	items,
 	onFilter,
 	filterFn,
 	FiltersComponent,
 }: {
-	items: BaseItem[]
-	onFilter: (items: BaseItem[]) => void
-	filterFn: (item: BaseItem, filtersValues: Record<string, any>) => boolean
+	items: T[]
+	onFilter: (items: T[]) => void
+	filterFn: (item: T, filtersValues: Record<string, any>) => boolean
 	FiltersComponent: FunctionComponent<FilterComponentProps>
 }) => {
 	const [q, setQ] = useState("")
@@ -34,7 +34,9 @@ const Filters = ({
 		setFilteredItems(
 			items
 				.filter((item) => filterFn(item, filtersValues))
-				.filter((item) => item.name.toLowerCase().includes(q.toLowerCase())),
+				.filter((item) =>
+					(item.name ?? "").toLowerCase().includes(q.toLowerCase()),
+				),
 		)
 	}, [items, q, filterFn, filtersValues])
 
@@ -56,7 +58,7 @@ const Filters = ({
 	)
 }
 
-const List = ({
+const List = <T extends BaseItem>({
 	rootUri,
 	db,
 	filterFn,
@@ -65,15 +67,15 @@ const List = ({
 }: {
 	rootUri: string
 	db: string
-	filterFn: (item: BaseItem, filtersValues: Record<string, any>) => boolean
-	ItemComponent: FunctionComponent<BaseItem>
-	FiltersComponent: FunctionComponent
+	filterFn: (item: T, filtersValues: Record<string, any>) => boolean
+	ItemComponent: FunctionComponent<T>
+	FiltersComponent: FunctionComponent<FilterComponentProps>
 }) => {
 	const navigate = useNavigate()
 	const { setIsLoading } = useOverlay()
 
-	const [items, setItems] = useState<BaseItem[]>([])
-	const [filteredItems, setFilteredItems] = useState<BaseItem[]>([])
+	const [items, setItems] = useState<T[]>([])
+	const [filteredItems, setFilteredItems] = useState<T[]>([])
 
 	useEffect(() => {
 		// @ts-expect-error
@@ -111,7 +113,7 @@ const List = ({
 		[setIsLoading, navigate, rootUri, db],
 	)
 
-	const onFilter = useCallback((filteredItems: BaseItem[]) => {
+	const onFilter = useCallback((filteredItems: T[]) => {
 		setFilteredItems(filteredItems)
 	}, [])
 
@@ -125,11 +127,11 @@ const List = ({
 			/>
 			{!items.length && <Text>No items found.</Text>}
 			<SimpleGrid cols={{ base: 1, sm: 2, md: 2, lg: 3 }}>
-				{filteredItems.map((item) => (
-					<Card key={item.id} withBorder>
-						<Text lineClamp={2} title={item.name}>
-							{item.name}
-						</Text>
+			{filteredItems.map((item) => (
+				<Card key={item.id} withBorder>
+					<Text lineClamp={2} title={item.name ?? ""}>
+						{item.name ?? ""}
+					</Text>
 						<Card.Section withBorder inheritPadding mt="sm">
 							<ItemComponent {...item} />
 						</Card.Section>

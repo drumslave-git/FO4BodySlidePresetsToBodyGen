@@ -8,7 +8,7 @@ import type {
 import { drizzle } from "drizzle-orm/better-sqlite3"
 import { migrate } from "drizzle-orm/better-sqlite3/migrator"
 import { eq } from "drizzle-orm/sql/expressions/conditions"
-import type { SQLiteTable } from "drizzle-orm/sqlite-core"
+import type { AnySQLiteColumn, SQLiteTable } from "drizzle-orm/sqlite-core"
 import { app } from "electron"
 
 import log from "../logger"
@@ -62,7 +62,9 @@ export const readConfig = () => {
 		.from(config)
 		.all()
 		.reduce((acc, curr) => {
-			acc[curr.key as keyof Config] = curr.value
+			if (curr.value !== null) {
+				acc[curr.key as keyof Config] = curr.value
+			}
 			return acc
 		}, {} as Config)
 
@@ -78,8 +80,13 @@ export const writeConfig = (key: string, value: string) => {
 	}
 }
 
+type TableWithIdName = SQLiteTable<TableConfig> & {
+	id: AnySQLiteColumn
+	name: AnySQLiteColumn
+}
+
 const commonDB = <
-	TTable extends SQLiteTable<TableConfig>,
+	TTable extends TableWithIdName,
 	TRow = InferSelectModel<TTable>,
 	TNew = InferInsertModel<TTable>,
 >(
@@ -92,28 +99,25 @@ const commonDB = <
 					| undefined)
 			: (db.select().from(table).all() as TRow[]),
 
-	create: (row: TNew) => {
-		const { id: _id, ...rest } = row
-		return db.insert(table).values(rest).run()
-	},
+	create: (row: TNew) =>
+		db.insert(table).values(row as TTable["$inferInsert"]).run(),
 
-	update: (id: number, row: Partial<TRow>) => {
-		const { id: _id, ...rest } = row
-		return db
+	update: (id: number, row: Partial<TNew>) =>
+		db
 			.update(table)
-			.set(rest as unknown as Partial<TRow>)
+			.set(row as Partial<TTable["$inferInsert"]>)
 			.where(eq(table.id, id))
-			.run()
-	},
+			.run(),
 	delete: (id: number) => db.delete(table).where(eq(table.id, id)).run(),
 
 	duplicate: (id: number) => {
 		const item = db.select().from(table).where(eq(table.id, id)).get() as TRow
-		const { id: _id, name, ...rest } = item
-		const newName = `${name} Copy ${Date.now()}`
+		const { id: _id, name, ...rest } = item as { id: number; name?: string | null }
+		const safeName = name ?? "Untitled"
+		const newName = `${safeName} Copy ${Date.now()}`
 		return db
 			.insert(table)
-			.values({ ...rest, name: newName } as unknown as TNew)
+			.values({ ...rest, name: newName } as TTable["$inferInsert"])
 			.run()
 	},
 })
@@ -147,7 +151,9 @@ export const rulesDB = {
 			...rule,
 			formatted: `All|${rule.gender}|${rule.race}`,
 		}))
-		return [...singles, ...multis].sort((a, b) => a.name.localeCompare(b.name))
+		return [...singles, ...multis].sort((a, b) =>
+			(a.name ?? "").localeCompare(b.name ?? ""),
+		)
 	},
 	delete: (id: number) => {
 		const type = rulesDB.type(id)

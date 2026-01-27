@@ -5,12 +5,13 @@ import List, { type FilterComponentProps } from "../common/List"
 
 const filterFn = (
 	item: SingleRule | MultiRule,
-	filtersValues: { types: string[] },
+	filtersValues: Record<string, any>,
 ) => {
+	const types = (filtersValues.types as string[]) ?? []
 	const single = item as SingleRule
 	const multi = item as MultiRule
-	if (single.plugin) return filtersValues.types.includes("single")
-	if (multi.race) return filtersValues.types.includes("multi")
+	if (single.plugin) return types.includes("single")
+	if (multi.race) return types.includes("multi")
 	return true
 }
 

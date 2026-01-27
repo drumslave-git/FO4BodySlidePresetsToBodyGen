@@ -138,7 +138,7 @@ export type CategorizedSlider = Slider & { displayName: string }
 
 export type BaseItem = {
 	id: number
-	name: string
+	name: string | null
 }
 
 export type NPCFormIdData = {

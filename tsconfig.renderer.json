@@ -8,6 +8,12 @@
 		"outDir": "dist/renderer",
 		"allowJs": false
 	},
-	"include": ["src/Components/**/*", "src/renderer.ts", "src/App.tsx"],
+	"include": [
+		"src/Components/**/*",
+		"src/renderer.ts",
+		"src/App.tsx",
+		"src/types.ts",
+		"src/db/schema.ts"
+	],
 	"exclude": ["node_modules"]
 }

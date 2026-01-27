@@ -7,7 +7,7 @@
 		"outDir": "dist/main",
 		"allowJs": false
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "package.json"],
 	"exclude": [
 		"node_modules",
 		"src/Components",

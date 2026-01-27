@@ -31,7 +31,7 @@ const Filter = ({
 	items: BodySlidePresetParsed[]
 	onFilter: (value: FilterValue) => void
 }) => {
-	const [selected, setSelected] = useState([])
+	const [selected, setSelected] = useState<string[]>([])
 	const [options, setOptions] = useState<string[]>([])
 	const [q, setQ] = useState("")
 
@@ -112,6 +112,7 @@ const filterItems = (items: BodySlidePresetParsed[], value: FilterValue) => {
 }
 
 const List = ({
+	items: itemsProp,
 	onSubmit,
 	onCancel,
 	selectedPresets,
@@ -119,6 +120,7 @@ const List = ({
 	ItemComponent = BodySlidePresetComponent,
 	TogglerComponent = PresetToggler,
 }: {
+	items?: BodySlidePresetParsed[]
 	onSubmit?: (selected: BodySlidePreset[]) => void
 	onCancel?: () => void
 	selectedPresets?: BodySlidePreset[]
@@ -126,7 +128,8 @@ const List = ({
 	ItemComponent?: (props: BodySlidePresetComponentProps) => JSX.Element
 	TogglerComponent?: (props: PresetTogglerProps) => JSX.Element
 }) => {
-	const { bodySlidePresetsParsed: items } = useData()
+	const { bodySlidePresetsParsed: itemsFromData } = useData()
+	const items = itemsProp ?? itemsFromData
 	const [selectedItems, setSelectedItems] = useState<BodySlidePreset[]>([])
 	const [filteredItems, setFilteredItems] =
 		useState<BodySlidePresetParsed[]>(items)
@@ -181,6 +184,7 @@ const List = ({
 	}, [])
 
 	const onSubmitSelected = useCallback(() => {
+		if (!onSubmit) return
 		onSubmit(selectedItems)
 	}, [selectedItems, onSubmit])
 
