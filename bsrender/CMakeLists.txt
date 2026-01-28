@@ -5,17 +5,17 @@ project(bsrender LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(ROOT_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
+set(THIRD_PARTY_DIR ${CMAKE_CURRENT_LIST_DIR}/third_party)
 
-add_subdirectory(${ROOT_DIR}/third_party/nifly ${CMAKE_BINARY_DIR}/nifly)
-add_subdirectory(${ROOT_DIR}/third_party/tinyxml2 ${CMAKE_BINARY_DIR}/tinyxml2)
+add_subdirectory(${THIRD_PARTY_DIR}/nifly ${CMAKE_BINARY_DIR}/nifly)
+add_subdirectory(${THIRD_PARTY_DIR}/tinyxml2 ${CMAKE_BINARY_DIR}/tinyxml2)
 
 add_executable(bsrender
     src/main.cpp
 )
 
 target_include_directories(bsrender PRIVATE
-    ${ROOT_DIR}/third_party/stb
+    ${THIRD_PARTY_DIR}/stb
 )
 
 target_link_libraries(bsrender PRIVATE
