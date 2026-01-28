@@ -25,14 +25,13 @@ jobs:
     if: ${{ needs.packageChange.outputs.package == 'true' }}
     steps:
     - uses: actions/setup-node@v4
-    - uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
     - uses: actions/checkout@v4
     - name: Install deps
       run: npm ci
-    - name: Build .NET
-      run: npm run dotnet:build
+    - name: Configure bsrender
+      run: npm run cmake:build
+    - name: Build bsrender
+      run: npm run cmake:release
     - name: Publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
