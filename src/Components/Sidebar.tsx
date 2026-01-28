@@ -1,4 +1,4 @@
-import { Box, Button, em, NavLink, Stack } from "@mantine/core"
+import { Box, Button, em, NavLink, Paper, Stack } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import {
 	IconBrandGithub,
@@ -176,42 +176,44 @@ const Sidebar = () => {
 	)
 
 	return (
-		<Stack justify="space-between" h="100%">
-			<Box>
-				<Navigation
-					items={Nav}
-					activeTab={activeTab}
-					isSmall={isSmall}
-					onNavigate={onNavigate}
-				/>
-			</Box>
-			<Box>
-				<Button
-					fullWidth
-					variant="subtle"
-					color="gray"
-					onClick={reloadData}
-					disabled={noSettings}
-				>
-					Reload Data
-				</Button>
-				<NavLink
-					variant="subtle"
-					color="gray"
-					href="https://github.com/drumslave-git/FO4BodySlidePresetsToBodyGen"
-					onClick={onExternalLinkClick}
-					label={isSmall ? undefined : "GitHub"}
-					leftSection={<IconBrandGithub />}
-				/>
-				<NavLink
-					variant="subtle"
-					color="orange"
-					href="https://www.nexusmods.com/fallout4/mods/96066"
-					onClick={onExternalLinkClick}
-					label={isSmall ? "NM" : "Nexus Mods"}
-				/>
-			</Box>
-		</Stack>
+		<Paper withBorder p="md" h="100%">
+			<Stack justify="space-between" h="100%">
+				<Box>
+					<Navigation
+						items={Nav}
+						activeTab={activeTab}
+						isSmall={isSmall}
+						onNavigate={onNavigate}
+					/>
+				</Box>
+				<Box>
+					<Button
+						fullWidth
+						variant="subtle"
+						color="gray"
+						onClick={reloadData}
+						disabled={noSettings}
+					>
+						Reload Data
+					</Button>
+					<NavLink
+						variant="subtle"
+						color="gray"
+						href="https://github.com/drumslave-git/FO4BodySlidePresetsToBodyGen"
+						onClick={onExternalLinkClick}
+						label={isSmall ? undefined : "GitHub"}
+						leftSection={<IconBrandGithub />}
+					/>
+					<NavLink
+						variant="subtle"
+						color="orange"
+						href="https://www.nexusmods.com/fallout4/mods/96066"
+						onClick={onExternalLinkClick}
+						label={isSmall ? "NM" : "Nexus Mods"}
+					/>
+				</Box>
+			</Stack>
+		</Paper>
 	)
 }
 

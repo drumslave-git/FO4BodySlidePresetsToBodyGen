@@ -50,6 +50,22 @@ const presetIndex = new Map<
 	{ presetName: string; presetFilePath: string; dataFolder: string }
 >()
 
+const cleanupPresetArtifacts = (validBaseNames: Set<string>) => {
+	const outDir = path.resolve(process.cwd(), "data", "presets")
+	if (!fs.existsSync(outDir)) return
+	for (const entry of fs.readdirSync(outDir)) {
+		if (!entry.endsWith(".png") && !entry.endsWith(".glb")) continue
+		const baseName = path.parse(entry).name
+		if (!validBaseNames.has(baseName)) {
+			try {
+				fs.unlinkSync(path.resolve(outDir, entry))
+			} catch (error) {
+				log.warn(`Failed to remove stale preset media ${entry}: ${String(error)}`)
+			}
+		}
+	}
+}
+
 const generatePresetArtifacts = (
 	presetName: string,
 	dataFolder: string,
@@ -469,7 +485,7 @@ export const resolveBodySlidePresets = (
 	const dir = path.resolve(dataFolder, "Tools", "BodySlide", "SliderPresets")
 	if (!fs.existsSync(dir)) return []
 
-	return fs
+	const result = fs
 		.readdirSync(dir)
 		.filter((item) => item.endsWith(".xml"))
 		.map((item) => {
@@ -539,6 +555,11 @@ export const resolveBodySlidePresets = (
 				}
 			}
 		})
+
+	const validBaseNames = new Set(presetIndex.keys())
+	cleanupPresetArtifacts(validBaseNames)
+
+	return result
 }
 
 export const zipFolder = async (source: string, destination: string) => {
