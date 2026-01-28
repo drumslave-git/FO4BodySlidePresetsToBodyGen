@@ -15,6 +15,7 @@
 #include <fstream>
 #include <iostream>
 #include <limits>
+#include <sstream>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -32,6 +33,7 @@ struct Args {
     std::string presetFile;
     std::string sliderSetName;
     std::string outPath;
+    std::string exportGlbPath;
     int size = 1024;
     bool verbose = false;
     float yawDeg = 45.0f;
@@ -46,6 +48,7 @@ static void PrintUsage() {
         << "  --preset-file <file>    Preset XML file to search (optional)\n"
         << "  --slider-set <name>     Override slider set name (optional)\n"
         << "  --size <px>             Output image size (default 1024)\n"
+        << "  --export-glb <file>     Export deformed mesh to GLB\n"
         << "  --yaw <deg>             Yaw around Z axis (default 45)\n"
         << "  --pitch <deg>           Pitch around X axis (default 0)\n"
         << "  --roll <deg>            Roll around Y axis (default 0)\n"
@@ -74,6 +77,8 @@ static bool ParseArgs(int argc, char** argv, Args& args) {
             std::string val;
             if (!next(val)) return false;
             args.size = std::max(64, std::stoi(val));
+        } else if (key == "--export-glb") {
+            if (!next(args.exportGlbPath)) return false;
         } else if (key == "--yaw") {
             std::string val;
             if (!next(val)) return false;
@@ -593,6 +598,152 @@ static Vec3 Normalize(const Vec3& v) {
     return {v.x / len, v.y / len, v.z / len};
 }
 
+static std::vector<Vec3> ComputeVertexNormals(const std::vector<Vec3>& verts,
+                                              const std::vector<std::array<uint32_t, 3>>& tris) {
+    std::vector<Vec3> normals;
+    normals.assign(verts.size(), {0.0f, 0.0f, 0.0f});
+
+    for (const auto& tri : tris) {
+        const Vec3& v0 = verts[tri[0]];
+        const Vec3& v1 = verts[tri[1]];
+        const Vec3& v2 = verts[tri[2]];
+        Vec3 n = Normalize(Cross(Sub(v1, v0), Sub(v2, v0)));
+        normals[tri[0]].x += n.x;
+        normals[tri[0]].y += n.y;
+        normals[tri[0]].z += n.z;
+        normals[tri[1]].x += n.x;
+        normals[tri[1]].y += n.y;
+        normals[tri[1]].z += n.z;
+        normals[tri[2]].x += n.x;
+        normals[tri[2]].y += n.y;
+        normals[tri[2]].z += n.z;
+    }
+
+    for (auto& n : normals) {
+        n = Normalize(n);
+    }
+
+    return normals;
+}
+
+static void AppendBytes(std::vector<uint8_t>& dst, const void* src, size_t size) {
+    const uint8_t* p = static_cast<const uint8_t*>(src);
+    dst.insert(dst.end(), p, p + size);
+}
+
+static void AppendPadded(std::vector<uint8_t>& dst, const std::vector<uint8_t>& src, uint8_t padByte) {
+    dst.insert(dst.end(), src.begin(), src.end());
+    while (dst.size() % 4 != 0) {
+        dst.push_back(padByte);
+    }
+}
+
+static bool ExportGlb(const std::string& path,
+                      const std::vector<Vec3>& verts,
+                      const std::vector<std::array<uint32_t, 3>>& tris,
+                      const std::vector<Vec3>& normals) {
+    if (verts.empty() || tris.empty()) return false;
+    if (normals.size() != verts.size()) return false;
+
+    std::vector<uint8_t> bin;
+    bin.reserve(verts.size() * sizeof(float) * 6 + tris.size() * sizeof(uint32_t) * 3);
+
+    const uint32_t posOffset = static_cast<uint32_t>(bin.size());
+    for (const auto& v : verts) {
+        AppendBytes(bin, &v.x, sizeof(float));
+        AppendBytes(bin, &v.y, sizeof(float));
+        AppendBytes(bin, &v.z, sizeof(float));
+    }
+
+    const uint32_t normOffset = static_cast<uint32_t>(bin.size());
+    for (const auto& n : normals) {
+        AppendBytes(bin, &n.x, sizeof(float));
+        AppendBytes(bin, &n.y, sizeof(float));
+        AppendBytes(bin, &n.z, sizeof(float));
+    }
+
+    const uint32_t idxOffset = static_cast<uint32_t>(bin.size());
+    for (const auto& t : tris) {
+        AppendBytes(bin, &t[0], sizeof(uint32_t));
+        AppendBytes(bin, &t[1], sizeof(uint32_t));
+        AppendBytes(bin, &t[2], sizeof(uint32_t));
+    }
+
+    while (bin.size() % 4 != 0) {
+        bin.push_back(0);
+    }
+
+    float minX = std::numeric_limits<float>::max();
+    float minY = std::numeric_limits<float>::max();
+    float minZ = std::numeric_limits<float>::max();
+    float maxX = std::numeric_limits<float>::lowest();
+    float maxY = std::numeric_limits<float>::lowest();
+    float maxZ = std::numeric_limits<float>::lowest();
+    for (const auto& v : verts) {
+        minX = std::min(minX, v.x);
+        minY = std::min(minY, v.y);
+        minZ = std::min(minZ, v.z);
+        maxX = std::max(maxX, v.x);
+        maxY = std::max(maxY, v.y);
+        maxZ = std::max(maxZ, v.z);
+    }
+
+    std::ostringstream json;
+    json << "{";
+    json << "\"asset\":{\"version\":\"2.0\"},";
+    json << "\"buffers\":[{\"byteLength\":" << bin.size() << "}],";
+    json << "\"bufferViews\":[";
+    json << "{\"buffer\":0,\"byteOffset\":" << posOffset << ",\"byteLength\":" << (verts.size() * sizeof(float) * 3) << "},";
+    json << "{\"buffer\":0,\"byteOffset\":" << normOffset << ",\"byteLength\":" << (normals.size() * sizeof(float) * 3) << "},";
+    json << "{\"buffer\":0,\"byteOffset\":" << idxOffset << ",\"byteLength\":" << (tris.size() * sizeof(uint32_t) * 3) << ",\"target\":34963}";
+    json << "],";
+    json << "\"accessors\":[";
+    json << "{\"bufferView\":0,\"componentType\":5126,\"count\":" << verts.size() << ",\"type\":\"VEC3\",";
+    json << "\"min\":[" << minX << "," << minY << "," << minZ << "],";
+    json << "\"max\":[" << maxX << "," << maxY << "," << maxZ << "]},";
+    json << "{\"bufferView\":1,\"componentType\":5126,\"count\":" << normals.size() << ",\"type\":\"VEC3\"},";
+    json << "{\"bufferView\":2,\"componentType\":5125,\"count\":" << (tris.size() * 3) << ",\"type\":\"SCALAR\"}";
+    json << "],";
+    json << "\"meshes\":[{\"primitives\":[{\"attributes\":{\"POSITION\":0,\"NORMAL\":1},\"indices\":2}]}],";
+    json << "\"nodes\":[{\"mesh\":0}],";
+    json << "\"scenes\":[{\"nodes\":[0]}],";
+    json << "\"scene\":0";
+    json << "}";
+
+    std::string jsonStr = json.str();
+    std::vector<uint8_t> jsonBytes(jsonStr.begin(), jsonStr.end());
+    while (jsonBytes.size() % 4 != 0) {
+        jsonBytes.push_back(' ');
+    }
+
+    std::vector<uint8_t> glb;
+    glb.reserve(12 + 8 + jsonBytes.size() + 8 + bin.size());
+
+    uint32_t magic = 0x46546C67; // 'glTF'
+    uint32_t version = 2;
+    uint32_t length = 12 + 8 + static_cast<uint32_t>(jsonBytes.size()) + 8 + static_cast<uint32_t>(bin.size());
+    AppendBytes(glb, &magic, 4);
+    AppendBytes(glb, &version, 4);
+    AppendBytes(glb, &length, 4);
+
+    uint32_t jsonChunkLen = static_cast<uint32_t>(jsonBytes.size());
+    uint32_t jsonChunkType = 0x4E4F534A; // 'JSON'
+    AppendBytes(glb, &jsonChunkLen, 4);
+    AppendBytes(glb, &jsonChunkType, 4);
+    AppendPadded(glb, jsonBytes, ' ');
+
+    uint32_t binChunkLen = static_cast<uint32_t>(bin.size());
+    uint32_t binChunkType = 0x004E4942; // 'BIN\0'
+    AppendBytes(glb, &binChunkLen, 4);
+    AppendBytes(glb, &binChunkType, 4);
+    AppendPadded(glb, bin, 0);
+
+    std::ofstream out(path, std::ios::binary);
+    if (!out) return false;
+    out.write(reinterpret_cast<const char*>(glb.data()), static_cast<std::streamsize>(glb.size()));
+    return out.good();
+}
+
 struct DrawVertex {
     float sx = 0.0f;
     float sy = 0.0f;
@@ -615,9 +766,6 @@ static bool RenderMesh(const std::vector<Vec3>& verts,
 
     std::vector<Vec3> rotated;
     rotated.reserve(verts.size());
-    std::vector<Vec3> normals;
-    normals.assign(verts.size(), {0.0f, 0.0f, 0.0f});
-
     float minX = std::numeric_limits<float>::max();
     float minY = std::numeric_limits<float>::max();
     float maxX = std::numeric_limits<float>::lowest();
@@ -645,25 +793,7 @@ static bool RenderMesh(const std::vector<Vec3>& verts,
     Vec3 lightDir = Normalize({0.3f, -0.4f, 1.0f});
     Vec3 viewDir = Normalize({0.0f, -1.0f, 0.0f});
 
-    for (const auto& tri : tris) {
-        const Vec3& v0 = rotated[tri[0]];
-        const Vec3& v1 = rotated[tri[1]];
-        const Vec3& v2 = rotated[tri[2]];
-        Vec3 n = Normalize(Cross(Sub(v1, v0), Sub(v2, v0)));
-        normals[tri[0]].x += n.x;
-        normals[tri[0]].y += n.y;
-        normals[tri[0]].z += n.z;
-        normals[tri[1]].x += n.x;
-        normals[tri[1]].y += n.y;
-        normals[tri[1]].z += n.z;
-        normals[tri[2]].x += n.x;
-        normals[tri[2]].y += n.y;
-        normals[tri[2]].z += n.z;
-    }
-
-    for (auto& n : normals) {
-        n = Normalize(n);
-    }
+    std::vector<Vec3> normals = ComputeVertexNormals(rotated, tris);
 
     float scale = std::min((w - 2.0f * pad) / spanX, (h - 2.0f * pad) / spanY);
     float cx = (minX + maxX) * 0.5f;
@@ -845,6 +975,15 @@ int main(int argc, char** argv) {
     if (!RenderMesh(allVerts, allTris, args.size, args.outPath, args.yawDeg, args.pitchDeg, args.rollDeg)) {
         std::cerr << "Failed to render PNG.\n";
         return 6;
+    }
+
+    if (!args.exportGlbPath.empty()) {
+        std::vector<Vec3> normals = ComputeVertexNormals(allVerts, allTris);
+        if (!ExportGlb(args.exportGlbPath, allVerts, allTris, normals)) {
+            std::cerr << "Failed to export GLB.\n";
+            return 7;
+        }
+        std::cout << "Exported GLB: " << args.exportGlbPath << "\n";
     }
 
     std::cout << "Rendered: " << args.outPath << "\n";
