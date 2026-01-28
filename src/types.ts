@@ -51,6 +51,7 @@ export type BodySlidePreset = {
 	sliders: MorphSlider[]
 	bodyGen: string
 	errors: string[]
+	warnings: string[]
 	valid: boolean
 	gender: -1 | 0 | 1
 }

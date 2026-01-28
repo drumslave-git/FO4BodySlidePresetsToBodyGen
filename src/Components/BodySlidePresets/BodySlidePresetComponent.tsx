@@ -23,6 +23,12 @@ const BodySlidePresetComponent = ({
 			.sort()
 			.join(", ")
 	}, [preset])
+	const removedPercent = useMemo(() => {
+		if (!preset.sliders.length) return 0
+		return (
+			Math.round((preset.errors.length / preset.sliders.length) * 1000) / 10
+		)
+	}, [preset])
 
 	return (
 		<Card>
@@ -46,12 +52,17 @@ const BodySlidePresetComponent = ({
 					{groups}
 				</Text>
 			</Spoiler>
+			<Text size="xs" c="dimmed">
+				Removed {preset.errors.length}/{preset.sliders.length} sliders (
+				{removedPercent}%)
+			</Text>
 			<Box>
 				<Collapsable
 					title={
 						<Group>
 							<Text>BodyGen</Text>
 							{!preset.valid && <Text c="red">with errors</Text>}
+							{preset.warnings.length > 0 && <Text c="yellow">warnings</Text>}
 						</Group>
 					}
 					titleProps={{
@@ -62,12 +73,32 @@ const BodySlidePresetComponent = ({
 						size: "sm",
 					}}
 				>
-					<List size="xs">
-						{preset.errors.map((error, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: index
-							<List.Item key={index}>{error}</List.Item>
-						))}
-					</List>
+					{preset.errors.length > 0 && (
+						<>
+							<Text size="xs" mt="xs" c="red">
+								Errors
+							</Text>
+							<List size="xs" c="red">
+								{preset.errors.map((error, index) => (
+									// biome-ignore lint/suspicious/noArrayIndexKey: index
+									<List.Item key={index}>{error}</List.Item>
+								))}
+							</List>
+						</>
+					)}
+					{preset.warnings.length > 0 && (
+						<>
+							<Text size="xs" mt="xs" c="yellow">
+								Warnings
+							</Text>
+							<List size="xs" c="yellow">
+								{preset.warnings.map((warning, index) => (
+									// biome-ignore lint/suspicious/noArrayIndexKey: index
+									<List.Item key={index}>{warning}</List.Item>
+								))}
+							</List>
+						</>
+					)}
 					<Code block>{preset.bodyGen}</Code>
 				</Collapsable>
 			</Box>

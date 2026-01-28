@@ -230,11 +230,13 @@ export const validateSliders = (
 	const supportedSliders = resolveSliders(dataFolder)
 	const cleanedSliders = []
 	const errors = []
+	const warnings = []
 	let gender: -1 | 0 | 1 = -1
 	const genderHits = {
 		0: 0,
 		1: 0,
 	}
+	const originalCount = sliders.length
 	for (const slider of sliders) {
 		const cleanedSlider = {
 			...slider,
@@ -251,13 +253,13 @@ export const validateSliders = (
 			continue
 		}
 		if (slider.value < supportedSlider.minimum) {
-			errors.push(
+			warnings.push(
 				`Slider "${slider.name}" value ${slider.value} is less than minimum allowed. Corrected to ${supportedSlider.minimum}.`,
 			)
 			cleanedSlider.value = supportedSlider.minimum
 		}
 		if (slider.value > supportedSlider.maximum) {
-			errors.push(
+			warnings.push(
 				`Slider "${slider.name}" value ${slider.value} is greater than maximum allowed. Corrected to ${supportedSlider.maximum}.`,
 			)
 			cleanedSlider.value = supportedSlider.maximum
@@ -270,7 +272,13 @@ export const validateSliders = (
 	} else if (genderHits[1] > genderHits[0]) {
 		gender = 1
 	}
-	return { errors, cleanedSliders, gender }
+	return {
+		errors,
+		warnings,
+		cleanedSliders,
+		gender,
+		originalCount,
+	}
 }
 
 export const resolveSliderCategories = (dataFolder: string) => {
@@ -383,16 +391,21 @@ export const resolveBodySlidePresets = (
 						})),
 						bodyGen: "",
 						errors: [],
+						warnings: [],
 						valid: true,
 						gender: -1,
 					}
 
-					const { errors, cleanedSliders, gender } = validateSliders(
-						dataFolder,
-						item.sliders,
-					)
+					const {
+						errors,
+						warnings,
+						cleanedSliders,
+						gender,
+						originalCount,
+					} = validateSliders(dataFolder, item.sliders)
 					item.gender = gender
 					item.errors = errors
+					item.warnings = warnings
 					item.valid = item.errors.length === 0
 					item.bodyGen = cleanedSliders
 						.reduce((acc: string[], slider) => {
