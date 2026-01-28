@@ -18,6 +18,7 @@ const config: ForgeConfig = {
 		// ignore: ["node_modules/electron-edge-js", "node_modules/edge-cs"],
 		// move binaries to resources folder
 		extraResource: [
+			"./bsrender/build/Release/bsrender.exe",
 			"./drizzle",
 			"./FormIDs",
 		],
