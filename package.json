@@ -67,6 +67,8 @@
 		"@mantine/modals": "^8.2.5",
 		"@mantine/notifications": "^8.2.5",
 		"@mantine/tiptap": "^8.2.5",
+		"@react-three/drei": "^10.7.7",
+		"@react-three/fiber": "^9.5.0",
 		"@tiptap/extension-link": "^3.2.0",
 		"@tiptap/pm": "^3.2.0",
 		"@tiptap/react": "^3.2.0",
@@ -79,6 +81,7 @@
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
 		"react-router": "^7.8.1",
+		"three": "^0.182.0",
 		"zip-a-folder": "^3.1.9"
 	}
 }

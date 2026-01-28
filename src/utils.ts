@@ -65,7 +65,7 @@ const ensurePresetArtifacts = (
 			pngPath,
 			glbPath,
 			pngUrl: `presets://local/${encodeURIComponent(`${baseName}.png`)}`,
-			glbUrl: pathToFileURL(glbPath).toString(),
+			glbUrl: `presets://local/${encodeURIComponent(`${baseName}.glb`)}`,
 		}
 	}
 
@@ -117,7 +117,9 @@ const ensurePresetArtifacts = (
 		pngUrl: fs.existsSync(pngPath)
 			? `presets://local/${encodeURIComponent(`${baseName}.png`)}`
 			: "",
-		glbUrl: fs.existsSync(glbPath) ? pathToFileURL(glbPath).toString() : "",
+		glbUrl: fs.existsSync(glbPath)
+			? `presets://local/${encodeURIComponent(`${baseName}.glb`)}`
+			: "",
 	}
 }
 

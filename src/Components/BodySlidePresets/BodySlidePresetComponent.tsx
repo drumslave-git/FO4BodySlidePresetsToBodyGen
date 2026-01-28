@@ -1,7 +1,18 @@
-import { Anchor, Box, Card, Code, Group, Image, List, Spoiler, Text } from "@mantine/core"
-import { type JSX, useMemo } from "react"
+import {
+	Box,
+	Card,
+	Code,
+	Group,
+	Image,
+	List,
+	Modal,
+	Spoiler,
+	Text,
+} from "@mantine/core"
+import { type JSX, useMemo, useState } from "react"
 import { type BodySlidePreset, BodyType } from "../../types"
 import Collapsable from "../common/Collapsable"
+import BodySlideModelPreview from "./BodySlideModelPreview"
 import PresetToggler, { type PresetTogglerProps } from "./PresetToggler"
 
 export type BodySlidePresetComponentProps = {
@@ -17,6 +28,7 @@ const BodySlidePresetComponent = ({
 	onTogglePreset,
 	TogglerComponent = PresetToggler,
 }: BodySlidePresetComponentProps) => {
+	const [isModelOpen, setIsModelOpen] = useState(false)
 	const groups = useMemo(() => {
 		return preset.groups
 			.map((group) => group.name)
@@ -54,13 +66,15 @@ const BodySlidePresetComponent = ({
 				<Text size="sm">{preset.name}</Text>
 			</Group>
 			{preset.previewGlbUrl && (
-				<Anchor
+				<Text
 					size="xs"
 					mt="xs"
-					onClick={() => window.electronAPI.openExternalUrl(preset.previewGlbUrl)}
+					c="blue"
+					style={{ cursor: "pointer" }}
+					onClick={() => setIsModelOpen(true)}
 				>
-					Open model
-				</Anchor>
+					Open model preview
+				</Text>
 			)}
 			<Spoiler
 				maxHeight={15}
@@ -121,6 +135,16 @@ const BodySlidePresetComponent = ({
 					<Code block>{preset.bodyGen}</Code>
 				</Collapsable>
 			</Box>
+			<Modal
+				opened={isModelOpen}
+				onClose={() => setIsModelOpen(false)}
+				title={preset.name}
+				size="lg"
+			>
+				{preset.previewGlbUrl && (
+					<BodySlideModelPreview url={preset.previewGlbUrl} />
+				)}
+			</Modal>
 		</Card>
 	)
 }

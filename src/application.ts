@@ -141,8 +141,8 @@ app.whenReady().then(() => {
 	session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
 		const responseHeaders = details.responseHeaders ?? {}
 		const csp = app.isPackaged
-			? "default-src 'self' 'unsafe-inline' data:; img-src 'self' data: presets:;"
-			: "default-src 'self' 'unsafe-inline' 'unsafe-eval' data:; img-src 'self' data: presets:;"
+			? "default-src 'self' 'unsafe-inline' data: presets:; img-src 'self' data: presets:;"
+			: "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: presets:; img-src 'self' data: presets:;"
 		responseHeaders["Content-Security-Policy"] = [csp]
 		callback({ responseHeaders })
 	})
