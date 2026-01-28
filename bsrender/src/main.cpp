@@ -802,7 +802,7 @@ static bool RenderMesh(const std::vector<Vec3>& verts,
     int h = size;
     int pad = static_cast<int>(size * 0.05f);
 
-    std::vector<uint8_t> img(w * h * 4, 255);
+    std::vector<uint8_t> img(w * h * 4, 0);
     std::vector<float> zbuf(w * h, -std::numeric_limits<float>::infinity());
 
     Vec3 lightDir = Normalize({0.3f, -0.4f, 1.0f});
