@@ -396,13 +396,8 @@ export const resolveBodySlidePresets = (
 						gender: -1,
 					}
 
-					const {
-						errors,
-						warnings,
-						cleanedSliders,
-						gender,
-						originalCount,
-					} = validateSliders(dataFolder, item.sliders)
+					const { errors, warnings, cleanedSliders, gender, originalCount } =
+						validateSliders(dataFolder, item.sliders)
 					item.gender = gender
 					item.errors = errors
 					item.warnings = warnings

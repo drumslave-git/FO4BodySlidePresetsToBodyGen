@@ -11,23 +11,25 @@ import RulesForm from "./Rules/Form"
 import RulesList from "./Rules/List"
 import Settings from "./Settings"
 import { SharedStateProvider } from "./SharedStateProvider"
-import Sliders from "./Sliders"
 import Sidebar from "./Sidebar"
+import Sliders from "./Sliders"
 
 const ESMsBlock = () => {
 	const location = useLocation()
 
-	if (location.pathname !== "/settings" && location.pathname !== "/") {
-		return null
-	}
 	return (
 		<>
-			<Paper mt="md" p="md" shadow="xs" withBorder>
-				<ESMs />
-			</Paper>
-			<Paper mt="md" p="md" shadow="xs" withBorder>
-				<Sliders />
-			</Paper>
+			{(location.pathname === "/settings" || location.pathname === "/") && (
+				<Paper mt="md" p="md" shadow="xs" withBorder>
+					<ESMs />
+				</Paper>
+			)}
+			{(location.pathname === "/settings" ||
+				location.pathname === "/presets") && (
+				<Paper mt="md" p="md" shadow="xs" withBorder>
+					<Sliders />
+				</Paper>
+			)}
 		</>
 	)
 }
