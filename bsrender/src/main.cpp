@@ -14,6 +14,7 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 #include <limits>
 #include <sstream>
 #include <string>
@@ -39,6 +40,7 @@ struct Args {
     float yawDeg = 45.0f;
     float pitchDeg = 0.0f;
     float rollDeg = 0.0f;
+    bool exportYUp = true;
 };
 
 static void PrintUsage() {
@@ -49,6 +51,7 @@ static void PrintUsage() {
         << "  --slider-set <name>     Override slider set name (optional)\n"
         << "  --size <px>             Output image size (default 1024)\n"
         << "  --export-glb <file>     Export deformed mesh to GLB\n"
+        << "  --export-no-yup         Do not convert to Y-up for GLB export\n"
         << "  --yaw <deg>             Yaw around Z axis (default 45)\n"
         << "  --pitch <deg>           Pitch around X axis (default 0)\n"
         << "  --roll <deg>            Roll around Y axis (default 0)\n"
@@ -79,6 +82,8 @@ static bool ParseArgs(int argc, char** argv, Args& args) {
             args.size = std::max(64, std::stoi(val));
         } else if (key == "--export-glb") {
             if (!next(args.exportGlbPath)) return false;
+        } else if (key == "--export-no-yup") {
+            args.exportYUp = false;
         } else if (key == "--yaw") {
             std::string val;
             if (!next(val)) return false;
@@ -580,6 +585,11 @@ static Vec3 RotateYawPitchRoll(const Vec3& v, float yaw, float pitch, float roll
     return r;
 }
 
+static Vec3 ConvertToYUp(const Vec3& v) {
+    // Convert from Z-up (NIF) to Y-up (glTF/Three.js)
+    return {v.x, v.z, -v.y};
+}
+
 static Vec3 Sub(const Vec3& a, const Vec3& b) {
     return {a.x - b.x, a.y - b.y, a.z - b.z};
 }
@@ -621,6 +631,9 @@ static std::vector<Vec3> ComputeVertexNormals(const std::vector<Vec3>& verts,
 
     for (auto& n : normals) {
         n = Normalize(n);
+        if (Dot(n, n) <= 0.000001f) {
+            n = {0.0f, 0.0f, 1.0f};
+        }
     }
 
     return normals;
@@ -689,12 +702,14 @@ static bool ExportGlb(const std::string& path,
     }
 
     std::ostringstream json;
+    json.setf(std::ios::fixed);
+    json << std::setprecision(std::numeric_limits<float>::max_digits10);
     json << "{";
     json << "\"asset\":{\"version\":\"2.0\"},";
     json << "\"buffers\":[{\"byteLength\":" << bin.size() << "}],";
     json << "\"bufferViews\":[";
-    json << "{\"buffer\":0,\"byteOffset\":" << posOffset << ",\"byteLength\":" << (verts.size() * sizeof(float) * 3) << "},";
-    json << "{\"buffer\":0,\"byteOffset\":" << normOffset << ",\"byteLength\":" << (normals.size() * sizeof(float) * 3) << "},";
+    json << "{\"buffer\":0,\"byteOffset\":" << posOffset << ",\"byteLength\":" << (verts.size() * sizeof(float) * 3) << ",\"target\":34962},";
+    json << "{\"buffer\":0,\"byteOffset\":" << normOffset << ",\"byteLength\":" << (normals.size() * sizeof(float) * 3) << ",\"target\":34962},";
     json << "{\"buffer\":0,\"byteOffset\":" << idxOffset << ",\"byteLength\":" << (tris.size() * sizeof(uint32_t) * 3) << ",\"target\":34963}";
     json << "],";
     json << "\"accessors\":[";
@@ -978,8 +993,19 @@ int main(int argc, char** argv) {
     }
 
     if (!args.exportGlbPath.empty()) {
-        std::vector<Vec3> normals = ComputeVertexNormals(allVerts, allTris);
-        if (!ExportGlb(args.exportGlbPath, allVerts, allTris, normals)) {
+        std::vector<Vec3> exportVerts = allVerts;
+        std::vector<Vec3> exportNormals = ComputeVertexNormals(allVerts, allTris);
+
+        if (args.exportYUp) {
+            for (auto& v : exportVerts) {
+                v = ConvertToYUp(v);
+            }
+            for (auto& n : exportNormals) {
+                n = Normalize(ConvertToYUp(n));
+            }
+        }
+
+        if (!ExportGlb(args.exportGlbPath, exportVerts, allTris, exportNormals)) {
             std::cerr << "Failed to export GLB.\n";
             return 7;
         }
