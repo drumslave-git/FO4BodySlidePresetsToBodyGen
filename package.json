@@ -16,7 +16,9 @@
 		"biome:check:fix": "biome check --write",
 		"drizzle:generate": "drizzle-kit generate",
 		"drizzle:push": "drizzle-kit push",
-		"drizzle:studio": "drizzle-kit studio"
+		"drizzle:studio": "drizzle-kit studio",
+		"cmake:build": "cmake -S ./bsrender -B ./bsrender/build",
+		"cmake:release": "cmake --build ./bsrender/build --config Release"
 	},
 	"keywords": [],
 	"author": {
