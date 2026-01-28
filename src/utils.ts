@@ -1,7 +1,6 @@
 import { spawnSync } from "node:child_process"
 import fs from "node:fs"
 import path from "node:path"
-import { pathToFileURL } from "node:url"
 import { XMLParser } from "fast-xml-parser"
 import { zip } from "zip-a-folder"
 
@@ -46,17 +45,22 @@ const resolveBsrenderExe = () => {
 	return null
 }
 
-const ensurePresetArtifacts = (
-	preset: BodySlidePreset,
+const presetIndex = new Map<
+	string,
+	{ presetName: string; presetFilePath: string; dataFolder: string }
+>()
+
+const generatePresetArtifacts = (
+	presetName: string,
 	dataFolder: string,
 	presetFilePath: string,
+	baseName: string,
 ) => {
 	const outDir = path.resolve(process.cwd(), "data", "presets")
 	if (!fs.existsSync(outDir)) {
 		fs.mkdirSync(outDir, { recursive: true })
 	}
 
-	const baseName = sanitizeFilename(preset.name)
 	const pngPath = path.resolve(outDir, `${baseName}.png`)
 	const glbPath = path.resolve(outDir, `${baseName}.glb`)
 
@@ -78,7 +82,7 @@ const ensurePresetArtifacts = (
 	const bodySlideRoot = path.resolve(dataFolder, "Tools", "BodySlide")
 	const args = [
 		"--preset-name",
-		preset.name,
+		presetName,
 		"--preset-file",
 		presetFilePath,
 		"--data-root",
@@ -97,15 +101,15 @@ const ensurePresetArtifacts = (
 		"0",
 	]
 
-	log.info(`Generating assets for preset "${preset.name}"...`)
+	log.info(`Generating assets for preset "${presetName}"...`)
 	const result = spawnSync(exePath, args, {
 		windowsHide: true,
 		encoding: "utf8",
 	})
 
 	if (result.status !== 0) {
-		log.error(
-			`bsrender failed for "${preset.name}": ${result.status}\n${result.stderr || result.stdout}`,
+		log.warn(
+			`bsrender failed for "${presetName}": ${result.status}\n${result.stderr || result.stdout}`,
 		)
 	} else {
 		log.info(`Generated assets: ${pngPath}, ${glbPath}`)
@@ -121,6 +125,17 @@ const ensurePresetArtifacts = (
 			? `presets://local/${encodeURIComponent(`${baseName}.glb`)}`
 			: "",
 	}
+}
+
+export const ensurePresetArtifactsByBaseName = (baseName: string) => {
+	const entry = presetIndex.get(baseName)
+	if (!entry) return null
+	return generatePresetArtifacts(
+		entry.presetName,
+		entry.dataFolder,
+		entry.presetFilePath,
+		baseName,
+	)
 }
 
 export const validateTemplates = (content: string) => {
@@ -502,9 +517,14 @@ export const resolveBodySlidePresets = (
 						}, [])
 						.join(",")
 
-					const artifacts = ensurePresetArtifacts(item, dataFolder, filePath)
-					if (artifacts?.pngUrl) item.previewImageUrl = artifacts.pngUrl
-					if (artifacts?.glbUrl) item.previewGlbUrl = artifacts.glbUrl
+					const baseName = sanitizeFilename(item.name)
+					presetIndex.set(baseName, {
+						presetName: item.name,
+						presetFilePath: filePath,
+						dataFolder,
+					})
+					item.previewImageUrl = `presets://local/${encodeURIComponent(`${baseName}.png`)}`
+					item.previewGlbUrl = `presets://local/${encodeURIComponent(`${baseName}.glb`)}`
 					return item
 				})
 				return {

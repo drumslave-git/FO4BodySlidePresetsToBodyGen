@@ -280,6 +280,30 @@ static bool FindSliderSetFile(const fs::path& sliderSetsDir, const std::string& 
     return false;
 }
 
+static bool LoadFirstSliderSet(const fs::path& sliderSetsDir, SliderSet& outSet) {
+    if (!fs::exists(sliderSetsDir)) return false;
+
+    for (auto& entry : fs::directory_iterator(sliderSetsDir)) {
+        if (!entry.is_regular_file()) continue;
+        if (entry.path().extension() != ".osp") continue;
+        XMLDocument doc;
+        if (doc.LoadFile(entry.path().string().c_str()) != tinyxml2::XML_SUCCESS) {
+            continue;
+        }
+        auto* root = doc.FirstChildElement("SliderSetInfo");
+        if (!root) continue;
+        auto* setElem = root->FirstChildElement("SliderSet");
+        if (!setElem) continue;
+        const char* nameAttr = setElem->Attribute("name");
+        if (!nameAttr) continue;
+        if (LoadSliderSetFromFile(entry.path(), nameAttr, outSet)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 using TargetDataDiffs = std::unordered_map<uint16_t, nifly::Vector3>;
 
 struct OSDFile {
@@ -910,8 +934,14 @@ int main(int argc, char** argv) {
     std::string sliderSetName = args.sliderSetName.empty() ? preset.setName : args.sliderSetName;
     SliderSet sliderSet;
     if (!FindSliderSetFile(sliderSetsDir, sliderSetName, sliderSet)) {
-        std::cerr << "Slider set not found: " << sliderSetName << "\n";
-        return 3;
+        std::cerr << "Warning: slider set not found: " << sliderSetName << "\n";
+        if (!FindSliderSetFile(sliderSetsDir, "CBBE Body", sliderSet)) {
+            if (!LoadFirstSliderSet(sliderSetsDir, sliderSet)) {
+                std::cerr << "No slider sets found; aborting.\n";
+                return 3;
+            }
+        }
+        std::cerr << "Using fallback slider set: " << sliderSet.name << "\n";
     }
 
     std::cout << "Preset: " << preset.name << "\n";

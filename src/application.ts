@@ -25,6 +25,7 @@ import {
 import icon from "./images/icon.png"
 import {
 	formatINIs,
+	ensurePresetArtifactsByBaseName,
 	parseTemplates,
 	resolveBodySlidePresets,
 	resolveCategorisedSliders,
@@ -159,6 +160,10 @@ app.whenReady().then(() => {
 			rel = rel.slice("local/".length)
 		}
 		const filePath = path.normalize(path.join(presetsDir, rel))
+		if (!fs.existsSync(filePath)) {
+			const baseName = path.parse(rel).name
+			ensurePresetArtifactsByBaseName(baseName)
+		}
 		if (!filePath.startsWith(presetsDir)) {
 			callback({ error: -10 })
 			return
