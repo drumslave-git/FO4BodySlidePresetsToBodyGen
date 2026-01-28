@@ -1,7 +1,7 @@
 import { Bounds, Center, OrbitControls, Resize } from "@react-three/drei"
 import { Canvas, useLoader } from "@react-three/fiber"
 import { Suspense, useMemo } from "react"
-import { Box3, Vector3 } from "three"
+import { Box3, Mesh, MeshStandardMaterial, Vector3 } from "three"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 
 type BodySlideModelPreviewProps = {
@@ -15,6 +15,16 @@ const Model = ({ url }: { url: string }) => {
 		const box = new Box3().setFromObject(gltf.scene)
 		const center = box.getCenter(new Vector3())
 		gltf.scene.position.sub(center)
+		const material = new MeshStandardMaterial({
+			color: 0xdcc8be,
+			metalness: 0.0,
+			roughness: 0.6,
+		})
+		gltf.scene.traverse((obj) => {
+			if ((obj as Mesh).isMesh) {
+				;(obj as Mesh).material = material
+			}
+		})
 	}, [gltf])
 	return <primitive object={gltf.scene} />
 }
