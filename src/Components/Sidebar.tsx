@@ -1,4 +1,4 @@
-import { Box, em, NavLink, Stack } from "@mantine/core"
+import { Box, Button, em, NavLink, Stack } from "@mantine/core"
 import { useMediaQuery } from "@mantine/hooks"
 import {
 	IconBrandGithub,
@@ -17,6 +17,7 @@ import {
 } from "react"
 import { useLocation, useNavigate } from "react-router"
 import { useConfig } from "./ConfigProvider"
+import { useData } from "./DataProvider"
 
 type NavItem = {
 	label: string
@@ -139,6 +140,7 @@ const Sidebar = () => {
 	const navigate = useNavigate()
 	const location = useLocation()
 	const { lastActiveLocation, dataFolder, outputFolder } = useConfig()
+	const { reloadData } = useData()
 	const isSmall = useMediaQuery(`(max-width: ${em(750)})`)
 	const [activeTab, setActiveTab] = useState(lastActiveLocation || "/")
 
@@ -184,6 +186,15 @@ const Sidebar = () => {
 				/>
 			</Box>
 			<Box>
+				<Button
+					fullWidth
+					variant="subtle"
+					color="gray"
+					onClick={reloadData}
+					disabled={noSettings}
+				>
+					Reload Data
+				</Button>
 				<NavLink
 					variant="subtle"
 					color="gray"

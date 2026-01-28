@@ -22,6 +22,7 @@ type DataContextValue = {
 	ESMs: ESM[]
 	bodySlidePresetsParsed: BodySlidePresetParsed[]
 	validateESMs: () => void
+	reloadData: () => void
 	defaultTemplates: string
 	sliders: {
 		0: Slider[]
@@ -39,6 +40,7 @@ const DataContext = createContext<DataContextValue>({
 	ESMs: [],
 	bodySlidePresetsParsed: [],
 	validateESMs: () => {},
+	reloadData: () => {},
 	defaultTemplates: "",
 	sliders: { 0: [], 1: [] },
 	categorizedSliders: { 0: {}, 1: {} },
@@ -65,7 +67,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	const [NPCs, setNPCs] = useState<NPCFormIdData[]>([])
 	const [races, setRaces] = useState<RaceFormIdData[]>([])
 
-	useEffect(() => {
+	const reloadData = useCallback(() => {
 		setIsLoading("Loading data...")
 		if (!dataFolder) {
 			setESMs((prev) => (prev.length ? [] : prev))
@@ -102,6 +104,10 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 	}, [dataFolder, setIsLoading])
 
 	useEffect(() => {
+		reloadData()
+	}, [reloadData])
+
+	useEffect(() => {
 		// @ts-expect-error
 		window.electronAPI.resolveNPCs().then(setNPCs)
 		// @ts-expect-error
@@ -131,6 +137,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 				ESMs,
 				bodySlidePresetsParsed,
 				validateESMs,
+				reloadData,
 				defaultTemplates,
 				sliders,
 				categorizedSliders,
