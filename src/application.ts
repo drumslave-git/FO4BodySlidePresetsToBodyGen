@@ -7,6 +7,7 @@ import {
 	ipcMain,
 	Menu,
 	nativeImage,
+	protocol,
 	session,
 	shell,
 } from "electron"
@@ -47,6 +48,18 @@ declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string
 if (require("electron-squirrel-startup")) {
 	app.quit()
 }
+
+protocol.registerSchemesAsPrivileged([
+	{
+		scheme: "presets",
+		privileges: {
+			standard: true,
+			secure: true,
+			supportFetchAPI: true,
+			corsEnabled: true,
+		},
+	},
+])
 
 const fileSystemFix = () => {
 	// https://www.electronjs.org/docs/latest/api/session#event-file-system-access-restricted
@@ -124,6 +137,35 @@ const handleNavigate = (page: string) => {
 
 app.whenReady().then(() => {
 	applyMigrations()
+
+	session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+		const responseHeaders = details.responseHeaders ?? {}
+		const csp = app.isPackaged
+			? "default-src 'self' 'unsafe-inline' data:; img-src 'self' data: presets:;"
+			: "default-src 'self' 'unsafe-inline' 'unsafe-eval' data:; img-src 'self' data: presets:;"
+		responseHeaders["Content-Security-Policy"] = [csp]
+		callback({ responseHeaders })
+	})
+
+	const baseDir = app.isPackaged
+		? path.resolve(app.getAppPath(), "..")
+		: process.cwd()
+	const presetsDir = path.resolve(baseDir, "data", "presets")
+	protocol.registerFileProtocol("presets", (request, callback) => {
+		const url = new URL(request.url)
+		let rel = decodeURIComponent(`${url.hostname}${url.pathname || ""}`)
+		rel = rel.replace(/^\/+/, "").replace(/\/+$/, "")
+		if (rel.toLowerCase().startsWith("local/")) {
+			rel = rel.slice("local/".length)
+		}
+		const filePath = path.normalize(path.join(presetsDir, rel))
+		if (!filePath.startsWith(presetsDir)) {
+			callback({ error: -10 })
+			return
+		}
+		callback({ path: filePath })
+	})
+
 	createWindow()
 
 	ipcMain.handle(

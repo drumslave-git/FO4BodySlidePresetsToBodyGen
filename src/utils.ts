@@ -1,6 +1,7 @@
 import { spawnSync } from "node:child_process"
 import fs from "node:fs"
 import path from "node:path"
+import { pathToFileURL } from "node:url"
 import { XMLParser } from "fast-xml-parser"
 import { zip } from "zip-a-folder"
 
@@ -60,7 +61,12 @@ const ensurePresetArtifacts = (
 	const glbPath = path.resolve(outDir, `${baseName}.glb`)
 
 	if (fs.existsSync(pngPath) && fs.existsSync(glbPath)) {
-		return { pngPath, glbPath }
+		return {
+			pngPath,
+			glbPath,
+			pngUrl: `presets://local/${encodeURIComponent(`${baseName}.png`)}`,
+			glbUrl: pathToFileURL(glbPath).toString(),
+		}
 	}
 
 	const exePath = resolveBsrenderExe()
@@ -105,7 +111,14 @@ const ensurePresetArtifacts = (
 		log.info(`Generated assets: ${pngPath}, ${glbPath}`)
 	}
 
-	return { pngPath, glbPath }
+	return {
+		pngPath,
+		glbPath,
+		pngUrl: fs.existsSync(pngPath)
+			? `presets://local/${encodeURIComponent(`${baseName}.png`)}`
+			: "",
+		glbUrl: fs.existsSync(glbPath) ? pathToFileURL(glbPath).toString() : "",
+	}
 }
 
 export const validateTemplates = (content: string) => {
@@ -487,7 +500,9 @@ export const resolveBodySlidePresets = (
 						}, [])
 						.join(",")
 
-					ensurePresetArtifacts(item, dataFolder, filePath)
+					const artifacts = ensurePresetArtifacts(item, dataFolder, filePath)
+					if (artifacts?.pngUrl) item.previewImageUrl = artifacts.pngUrl
+					if (artifacts?.glbUrl) item.previewGlbUrl = artifacts.glbUrl
 					return item
 				})
 				return {

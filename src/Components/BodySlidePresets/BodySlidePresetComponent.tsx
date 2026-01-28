@@ -1,4 +1,4 @@
-import { Box, Card, Code, Group, List, Spoiler, Text } from "@mantine/core"
+import { Anchor, Box, Card, Code, Group, Image, List, Spoiler, Text } from "@mantine/core"
 import { type JSX, useMemo } from "react"
 import { type BodySlidePreset, BodyType } from "../../types"
 import Collapsable from "../common/Collapsable"
@@ -32,6 +32,16 @@ const BodySlidePresetComponent = ({
 
 	return (
 		<Card>
+			{preset.previewImageUrl && (
+				<Card.Section>
+					<Image
+						src={preset.previewImageUrl}
+						alt={`${preset.name} preview`}
+						height={180}
+						fit="contain"
+					/>
+				</Card.Section>
+			)}
 			<Group>
 				{onTogglePreset && (
 					<TogglerComponent
@@ -43,6 +53,15 @@ const BodySlidePresetComponent = ({
 
 				<Text size="sm">{preset.name}</Text>
 			</Group>
+			{preset.previewGlbUrl && (
+				<Anchor
+					size="xs"
+					mt="xs"
+					onClick={() => window.electronAPI.openExternalUrl(preset.previewGlbUrl)}
+				>
+					Open model
+				</Anchor>
+			)}
 			<Spoiler
 				maxHeight={15}
 				showLabel={<Text size="xs">Show Groups</Text>}

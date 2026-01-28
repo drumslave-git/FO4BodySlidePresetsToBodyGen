@@ -54,6 +54,8 @@ export type BodySlidePreset = {
 	warnings: string[]
 	valid: boolean
 	gender: -1 | 0 | 1
+	previewImageUrl?: string
+	previewGlbUrl?: string
 }
 
 export type BodySlidePresetParsed = {
