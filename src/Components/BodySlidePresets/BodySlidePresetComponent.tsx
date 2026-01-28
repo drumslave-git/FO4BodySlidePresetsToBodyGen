@@ -44,16 +44,6 @@ const BodySlidePresetComponent = ({
 
 	return (
 		<Card>
-			{preset.previewImageUrl && (
-				<Card.Section>
-					<Image
-						src={preset.previewImageUrl}
-						alt={`${preset.name} preview`}
-						height={180}
-						fit="contain"
-					/>
-				</Card.Section>
-			)}
 			<Group>
 				{onTogglePreset && (
 					<TogglerComponent
@@ -65,76 +55,95 @@ const BodySlidePresetComponent = ({
 
 				<Text size="sm">{preset.name}</Text>
 			</Group>
-			{preset.previewGlbUrl && (
-				<Text
-					size="xs"
-					mt="xs"
-					c="blue"
-					style={{ cursor: "pointer" }}
-					onClick={() => setIsModelOpen(true)}
-				>
-					Open model preview
-				</Text>
-			)}
-			<Spoiler
-				maxHeight={15}
-				showLabel={<Text size="xs">Show Groups</Text>}
-				hideLabel={<Text size="xs">Hide</Text>}
-			>
-				<Text size="xs" c="dimmed">
-					{groups}
-				</Text>
-			</Spoiler>
-			<Text size="xs" c="dimmed">
-				Removed {preset.errors.length}/{preset.sliders.length} sliders (
-				{removedPercent}%)
-			</Text>
-			<Box>
-				<Collapsable
-					title={
-						<Group>
-							<Text>BodyGen</Text>
-							{!preset.valid && <Text c="red">with errors</Text>}
-							{preset.warnings.length > 0 && <Text c="yellow">warnings</Text>}
-						</Group>
-					}
-					titleProps={{
-						mt: "md",
-					}}
-					iconProps={{
-						color: !preset.valid ? "red" : undefined,
-						size: "sm",
-					}}
-				>
-					{preset.errors.length > 0 && (
-						<>
-							<Text size="xs" mt="xs" c="red">
-								Errors
-							</Text>
-							<List size="xs" c="red">
-								{preset.errors.map((error, index) => (
-									// biome-ignore lint/suspicious/noArrayIndexKey: index
-									<List.Item key={index}>{error}</List.Item>
-								))}
-							</List>
-						</>
+			<Group justify="space-between" align="flex-start" mt="sm">
+				<Box w="40%" p="md">
+					{preset.previewImageUrl && (
+						<Image
+							src={preset.previewImageUrl}
+							alt={`${preset.name} preview`}
+							height={180}
+							fit="contain"
+							onClick={() => setIsModelOpen(true)}
+							style={{ cursor: "pointer" }}
+						/>
 					)}
-					{preset.warnings.length > 0 && (
-						<>
-							<Text size="xs" mt="xs" c="yellow">
-								Warnings
-							</Text>
-							<List size="xs" c="yellow">
-								{preset.warnings.map((warning, index) => (
-									// biome-ignore lint/suspicious/noArrayIndexKey: index
-									<List.Item key={index}>{warning}</List.Item>
-								))}
-							</List>
-						</>
+					{preset.previewGlbUrl && (
+						<Text
+							size="xs"
+							mt="xs"
+							c="blue"
+							style={{ cursor: "pointer" }}
+							ta="center"
+							onClick={() => setIsModelOpen(true)}
+						>
+							Open model preview
+						</Text>
 					)}
-					<Code block>{preset.bodyGen}</Code>
-				</Collapsable>
-			</Box>
+				</Box>
+				<Box w="50%">
+					<Spoiler
+						maxHeight={15}
+						showLabel={<Text size="xs">Show Groups</Text>}
+						hideLabel={<Text size="xs">Hide</Text>}
+					>
+						<Text size="xs" c="dimmed">
+							{groups}
+						</Text>
+					</Spoiler>
+					<Text size="xs" c="dimmed">
+						Removed {preset.errors.length}/{preset.sliders.length} sliders (
+						{removedPercent}%)
+					</Text>
+					<Box>
+						<Collapsable
+							title={
+								<Group>
+									<Text>BodyGen</Text>
+									{!preset.valid && <Text c="red">with errors</Text>}
+									{preset.warnings.length > 0 && (
+										<Text c="yellow">warnings</Text>
+									)}
+								</Group>
+							}
+							titleProps={{
+								mt: "md",
+							}}
+							iconProps={{
+								color: !preset.valid ? "red" : undefined,
+								size: "sm",
+							}}
+						>
+							{preset.errors.length > 0 && (
+								<>
+									<Text size="xs" mt="xs" c="red">
+										Errors
+									</Text>
+									<List size="xs" c="red">
+										{preset.errors.map((error, index) => (
+											// biome-ignore lint/suspicious/noArrayIndexKey: index
+											<List.Item key={index}>{error}</List.Item>
+										))}
+									</List>
+								</>
+							)}
+							{preset.warnings.length > 0 && (
+								<>
+									<Text size="xs" mt="xs" c="yellow">
+										Warnings
+									</Text>
+									<List size="xs" c="yellow">
+										{preset.warnings.map((warning, index) => (
+											// biome-ignore lint/suspicious/noArrayIndexKey: index
+											<List.Item key={index}>{warning}</List.Item>
+										))}
+									</List>
+								</>
+							)}
+							<Code block>{preset.bodyGen}</Code>
+						</Collapsable>
+					</Box>
+				</Box>
+			</Group>
 			<Modal
 				opened={isModelOpen}
 				onClose={() => setIsModelOpen(false)}
