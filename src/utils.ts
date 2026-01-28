@@ -1,3 +1,4 @@
+import { spawnSync } from "node:child_process"
 import fs from "node:fs"
 import path from "node:path"
 import { XMLParser } from "fast-xml-parser"
@@ -29,6 +30,83 @@ const toCRLF = (text: string) => text.replace(/\r?\n/g, "\r\n")
 
 const writeFileSync = (filePath: string, content: string) =>
 	fs.writeFileSync(filePath, toCRLF(content))
+
+const sanitizeFilename = (name: string) =>
+	name.replace(/[<>:"/\\|?*\x00-\x1F]/g, "_").trim()
+
+const resolveBsrenderExe = () => {
+	const candidates = [
+		path.resolve(process.cwd(), "bsrender", "build", "Release", "bsrender.exe"),
+		path.resolve(process.cwd(), "bsrender", "build", "Debug", "bsrender.exe"),
+	]
+	for (const candidate of candidates) {
+		if (fs.existsSync(candidate)) return candidate
+	}
+	return null
+}
+
+const ensurePresetArtifacts = (
+	preset: BodySlidePreset,
+	dataFolder: string,
+	presetFilePath: string,
+) => {
+	const outDir = path.resolve(process.cwd(), "data", "presets")
+	if (!fs.existsSync(outDir)) {
+		fs.mkdirSync(outDir, { recursive: true })
+	}
+
+	const baseName = sanitizeFilename(preset.name)
+	const pngPath = path.resolve(outDir, `${baseName}.png`)
+	const glbPath = path.resolve(outDir, `${baseName}.glb`)
+
+	if (fs.existsSync(pngPath) && fs.existsSync(glbPath)) {
+		return { pngPath, glbPath }
+	}
+
+	const exePath = resolveBsrenderExe()
+	if (!exePath) {
+		log.warn("bsrender.exe not found; skipping preset asset generation.")
+		return { pngPath, glbPath }
+	}
+
+	const bodySlideRoot = path.resolve(dataFolder, "Tools", "BodySlide")
+	const args = [
+		"--preset-name",
+		preset.name,
+		"--preset-file",
+		presetFilePath,
+		"--data-root",
+		bodySlideRoot,
+		"--out",
+		pngPath,
+		"--export-glb",
+		glbPath,
+		"--size",
+		"1024",
+		"--yaw",
+		"-145",
+		"--pitch",
+		"0",
+		"--roll",
+		"0",
+	]
+
+	log.info(`Generating assets for preset "${preset.name}"...`)
+	const result = spawnSync(exePath, args, {
+		windowsHide: true,
+		encoding: "utf8",
+	})
+
+	if (result.status !== 0) {
+		log.error(
+			`bsrender failed for "${preset.name}": ${result.status}\n${result.stderr || result.stdout}`,
+		)
+	} else {
+		log.info(`Generated assets: ${pngPath}, ${glbPath}`)
+	}
+
+	return { pngPath, glbPath }
+}
 
 export const validateTemplates = (content: string) => {
 	const lines = content.split(/\n\r?/)
@@ -408,6 +486,8 @@ export const resolveBodySlidePresets = (
 							return acc
 						}, [])
 						.join(",")
+
+					ensurePresetArtifacts(item, dataFolder, filePath)
 					return item
 				})
 				return {
