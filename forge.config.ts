@@ -14,39 +14,11 @@ const config: ForgeConfig = {
 	packagerConfig: {
 		asar: true,
 		icon: "./src/images/icon",
-		// exclude edge-js modules from asar archive
-		// ignore: ["node_modules/electron-edge-js", "node_modules/edge-cs"],
-		// move binaries to resources folder
 		extraResource: [
 			"./bsrender/build/Release/bsrender.exe",
 			"./drizzle",
 			"./FormIDs",
 		],
-	},
-	hooks: {
-		// copy "node_modules/electron-edge-js" and "node_modules/edge-cs" to resources folder
-		postPackage: async (_forgeConfig, options) => {
-			console.log("build_path", options.outputPaths)
-			const outAppDir = options.outputPaths[0]
-			const outDir = path.resolve(outAppDir, "..")
-			console.log("outAppDir", outAppDir)
-			// Get node_modules path
-			const nodeModulesPath = path.join(outAppDir, "resources", "node_modules")
-			const modulesToCopy = ["edge-cs", "electron-edge-js"]
-			// loop-for
-			for (const moduleName of modulesToCopy) {
-				const sourcePath = path.join(__dirname, "node_modules", moduleName)
-				const targetPath = path.join(nodeModulesPath, moduleName)
-				console.log(
-					`Copying ${moduleName} from:`,
-					sourcePath,
-					"to:",
-					targetPath,
-				)
-				fs.copySync(sourcePath, targetPath)
-			}
-			console.log("All modules copied successfully!")
-		},
 	},
 	rebuildConfig: {
 		onlyModules: ["better-sqlite3"],

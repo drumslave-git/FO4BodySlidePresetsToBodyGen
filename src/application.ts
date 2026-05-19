@@ -152,6 +152,26 @@ app.whenReady().then(() => {
 		? path.resolve(app.getAppPath(), "..")
 		: process.cwd()
 	const presetsDir = path.resolve(baseDir, "data", "presets")
+	const waitForFile = (
+		filePath: string,
+		timeoutMs: number,
+		intervalMs: number,
+		done: (ok: boolean) => void,
+	) => {
+		const start = Date.now()
+		const timer = setInterval(() => {
+			if (fs.existsSync(filePath)) {
+				clearInterval(timer)
+				done(true)
+				return
+			}
+			if (Date.now() - start > timeoutMs) {
+				clearInterval(timer)
+				done(false)
+			}
+		}, intervalMs)
+	}
+
 	protocol.registerFileProtocol("presets", (request, callback) => {
 		const url = new URL(request.url)
 		let rel = decodeURIComponent(`${url.hostname}${url.pathname || ""}`)
@@ -160,15 +180,27 @@ app.whenReady().then(() => {
 			rel = rel.slice("local/".length)
 		}
 		const filePath = path.normalize(path.join(presetsDir, rel))
-		if (!fs.existsSync(filePath)) {
-			const baseName = path.parse(rel).name
-			ensurePresetArtifactsByBaseName(baseName)
-		}
 		if (!filePath.startsWith(presetsDir)) {
 			callback({ error: -10 })
 			return
 		}
-		callback({ path: filePath })
+		if (fs.existsSync(filePath)) {
+			callback({ path: filePath })
+			return
+		}
+
+		const baseName = path.parse(rel).name
+		ensurePresetArtifactsByBaseName(baseName)
+		const ext = path.extname(filePath).toLowerCase()
+		if (ext === ".png" || ext === ".glb") {
+			waitForFile(filePath, 30000, 200, (ok) => {
+				if (ok) callback({ path: filePath })
+				else callback({ error: -6 })
+			})
+			return
+		}
+
+		callback({ error: -6 })
 	})
 
 	createWindow()

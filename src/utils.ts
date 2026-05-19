@@ -1,4 +1,4 @@
-import { spawnSync } from "node:child_process"
+import { spawn } from "node:child_process"
 import fs from "node:fs"
 import path from "node:path"
 import { XMLParser } from "fast-xml-parser"
@@ -36,6 +36,7 @@ const sanitizeFilename = (name: string) =>
 
 const resolveBsrenderExe = () => {
 	const candidates = [
+		path.resolve(process.resourcesPath || "", "bsrender.exe"),
 		path.resolve(process.cwd(), "bsrender", "build", "Release", "bsrender.exe"),
 		path.resolve(process.cwd(), "bsrender", "build", "Debug", "bsrender.exe"),
 	]
@@ -49,6 +50,7 @@ const presetIndex = new Map<
 	string,
 	{ presetName: string; presetFilePath: string; dataFolder: string }
 >()
+const inFlight = new Set<string>()
 
 const cleanupPresetArtifacts = (validBaseNames: Set<string>) => {
 	const outDir = path.resolve(process.cwd(), "data", "presets")
@@ -117,19 +119,33 @@ const generatePresetArtifacts = (
 		"0",
 	]
 
-	log.info(`Generating assets for preset "${presetName}"...`)
-	const result = spawnSync(exePath, args, {
-		windowsHide: true,
-		encoding: "utf8",
-	})
-
-	if (result.status !== 0) {
-		log.warn(
-			`bsrender failed for "${presetName}": ${result.status}\n${result.stderr || result.stdout}`,
-		)
-	} else {
-		log.info(`Generated assets: ${pngPath}, ${glbPath}`)
+	if (inFlight.has(baseName)) {
+		return { pngPath, glbPath }
 	}
+	inFlight.add(baseName)
+	log.info(`Generating assets for preset "${presetName}"...`)
+	const child = spawn(exePath, args, {
+		windowsHide: true,
+		stdio: ["ignore", "pipe", "pipe"],
+	})
+	let stderr = ""
+	let stdout = ""
+	child.stdout.on("data", (chunk) => {
+		stdout += chunk.toString()
+	})
+	child.stderr.on("data", (chunk) => {
+		stderr += chunk.toString()
+	})
+	child.on("close", (code) => {
+		inFlight.delete(baseName)
+		if (code !== 0) {
+			log.warn(
+				`bsrender failed for "${presetName}": ${code}\n${stderr || stdout}`,
+			)
+		} else {
+			log.info(`Generated assets: ${pngPath}, ${glbPath}`)
+		}
+	})
 
 	return {
 		pngPath,

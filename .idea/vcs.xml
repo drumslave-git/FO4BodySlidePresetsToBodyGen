@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bsrender/third_party/nifly" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bsrender/third_party/tinyxml2" vcs="Git" />
   </component>
 </project>
